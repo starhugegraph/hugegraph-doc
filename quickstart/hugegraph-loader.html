@@ -1178,7 +1178,11 @@ Office,388
           <span class="hljs-string">&quot;city&quot;</span>
         ],
         <span class="hljs-string">&quot;charset&quot;</span>: <span class="hljs-string">&quot;UTF-8&quot;</span>,
-        <span class="hljs-string">&quot;list_format&quot;</span>: <span class="hljs-literal">null</span>
+        <span class="hljs-string">&quot;list_format&quot;</span>: {
+          <span class="hljs-string">&quot;start_symbol&quot;</span>: <span class="hljs-string">&quot;[&quot;</span>,
+          <span class="hljs-string">&quot;elem_delimiter&quot;</span>: <span class="hljs-string">&quot;|&quot;</span>,
+          <span class="hljs-string">&quot;end_symbol&quot;</span>: <span class="hljs-string">&quot;]&quot;</span>
+        }
       },
       <span class="hljs-string">&quot;vertices&quot;</span>: [
         {
@@ -1219,7 +1223,11 @@ Office,388
         <span class="hljs-string">&quot;compression&quot;</span>: <span class="hljs-string">&quot;NONE&quot;</span>,
         <span class="hljs-string">&quot;header&quot;</span>: <span class="hljs-literal">null</span>,
         <span class="hljs-string">&quot;charset&quot;</span>: <span class="hljs-string">&quot;UTF-8&quot;</span>,
-        <span class="hljs-string">&quot;list_format&quot;</span>: <span class="hljs-literal">null</span>
+        <span class="hljs-string">&quot;list_format&quot;</span>: {
+          <span class="hljs-string">&quot;start_symbol&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
+          <span class="hljs-string">&quot;elem_delimiter&quot;</span>: <span class="hljs-string">&quot;,&quot;</span>,
+          <span class="hljs-string">&quot;end_symbol&quot;</span>: <span class="hljs-string">&quot;&quot;</span>
+        }
       },
       <span class="hljs-string">&quot;vertices&quot;</span>: [
         {
@@ -1419,10 +1427,10 @@ Office,388
 <li>time_zone: &#x8BBE;&#x7F6E;&#x65E5;&#x671F;&#x6570;&#x636E;&#x662F;&#x5904;&#x4E8E;&#x54EA;&#x4E2A;&#x65F6;&#x533A;&#x7684;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;<code>GMT+8</code>&#xFF0C;&#x9009;&#x586B;&#xFF1B;</li>
 <li>skipped_line: &#x60F3;&#x8DF3;&#x8FC7;&#x7684;&#x884C;&#xFF0C;&#x590D;&#x5408;&#x7ED3;&#x6784;&#xFF0C;&#x76EE;&#x524D;&#x53EA;&#x80FD;&#x914D;&#x7F6E;&#x8981;&#x8DF3;&#x8FC7;&#x7684;&#x884C;&#x7684;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x7528;&#x5B50;&#x8282;&#x70B9;<code>regex</code>&#x63CF;&#x8FF0;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E0D;&#x8DF3;&#x8FC7;&#x4EFB;&#x4F55;&#x884C;&#xFF0C;&#x9009;&#x586B;&#xFF1B;</li>
 <li>compression: &#x6587;&#x4EF6;&#x7684;&#x538B;&#x7F29;&#x683C;&#x5F0F;&#xFF0C;&#x53EF;&#x9009;&#x503C;&#x4E3A; NONE&#x3001;GZIP&#x3001;BZ2&#x3001;XZ&#x3001;LZMA&#x3001;SNAPPY_RAW&#x3001;SNAPPY_FRAMED&#x3001;Z&#x3001;DEFLATE&#x3001;LZ4_BLOCK&#x3001;LZ4_FRAMED&#x3001;ORC &#x548C; PARQUET&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A; NONE&#xFF0C;&#x8868;&#x793A;&#x975E;&#x538B;&#x7F29;&#x6587;&#x4EF6;&#xFF0C;&#x9009;&#x586B;&#xFF1B;</li>
-<li>list_format: &#x5F53;&#x6587;&#x4EF6;&#x7684;&#x67D0;&#x5217;&#x662F;&#x96C6;&#x5408;&#x7ED3;&#x6784;&#x65F6;&#xFF08;&#x5BF9;&#x5E94;&#x56FE;&#x4E2D;&#x7684; PropertyKey &#x7684; Cardinality &#x4E3A; Set &#x6216; List&#xFF09;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x6B64;&#x9879;&#x8BBE;&#x7F6E;&#x8BE5;&#x5217;&#x7684;&#x8D77;&#x59CB;&#x7B26;&#x3001;&#x5206;&#x9694;&#x7B26;&#x3001;&#x7ED3;&#x675F;&#x7B26;&#xFF0C;&#x590D;&#x5408;&#x7ED3;&#x6784;: <ul>
-<li>start_symbol: &#x96C6;&#x5408;&#x7ED3;&#x6784;&#x5217;&#x7684;&#x8D77;&#x59CB;&#x7B26;&#xFF1B;</li>
-<li>elem_delimiter: &#x96C6;&#x5408;&#x7ED3;&#x6784;&#x5217;&#x7684;&#x5206;&#x9694;&#x7B26;&#xFF1B;</li>
-<li>end_symbol: &#x96C6;&#x5408;&#x7ED3;&#x6784;&#x5217;&#x7684;&#x7ED3;&#x675F;&#x7B26;&#xFF1B;</li>
+<li>list_format: &#x5F53;&#x6587;&#x4EF6;(&#x975E; JSON )&#x7684;&#x67D0;&#x5217;&#x662F;&#x96C6;&#x5408;&#x7ED3;&#x6784;&#x65F6;&#xFF08;&#x5BF9;&#x5E94;&#x56FE;&#x4E2D;&#x7684; PropertyKey &#x7684; Cardinality &#x4E3A; Set &#x6216; List&#xFF09;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x6B64;&#x9879;&#x8BBE;&#x7F6E;&#x8BE5;&#x5217;&#x7684;&#x8D77;&#x59CB;&#x7B26;&#x3001;&#x5206;&#x9694;&#x7B26;&#x3001;&#x7ED3;&#x675F;&#x7B26;&#xFF0C;&#x590D;&#x5408;&#x7ED3;&#x6784;: <ul>
+<li>start_symbol: &#x96C6;&#x5408;&#x7ED3;&#x6784;&#x5217;&#x7684;&#x8D77;&#x59CB;&#x7B26; (&#x9ED8;&#x8BA4;&#x503C;&#x662F; <code>[</code>, JSON &#x683C;&#x5F0F;&#x76EE;&#x524D;&#x4E0D;&#x652F;&#x6301;&#x6307;&#x5B9A;)</li>
+<li>elem_delimiter: &#x96C6;&#x5408;&#x7ED3;&#x6784;&#x5217;&#x7684;&#x5206;&#x9694;&#x7B26; (&#x9ED8;&#x8BA4;&#x503C;&#x662F; <code>|</code>, JSON &#x683C;&#x5F0F;&#x76EE;&#x524D;&#x53EA;&#x652F;&#x6301;&#x539F;&#x751F;<code>,</code>&#x5206;&#x9694;)</li>
+<li>end_symbol: &#x96C6;&#x5408;&#x7ED3;&#x6784;&#x5217;&#x7684;&#x7ED3;&#x675F;&#x7B26; (&#x9ED8;&#x8BA4;&#x503C;&#x662F; <code>]</code>, JSON &#x683C;&#x5F0F;&#x76EE;&#x524D;&#x4E0D;&#x652F;&#x6301;&#x6307;&#x5B9A;)</li>
 </ul>
 </li>
 </ul>
@@ -2016,7 +2024,7 @@ count metrics
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Load data with HugeGraph-Loader","level":"2.2","depth":1,"next":{"title":"Manage with HugeGraph-Tools","level":"2.3","depth":1,"path":"quickstart/hugegraph-tools.md","ref":"quickstart/hugegraph-tools.md","articles":[]},"previous":{"title":"Install HugeGraph-Server","level":"2.1","depth":1,"path":"quickstart/hugegraph-server.md","ref":"quickstart/hugegraph-server.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"quickstart/hugegraph-loader.md","mtime":"2021-02-27T12:28:08.069Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-06-16T08:58:39.130Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Load data with HugeGraph-Loader","level":"2.2","depth":1,"next":{"title":"Manage with HugeGraph-Tools","level":"2.3","depth":1,"path":"quickstart/hugegraph-tools.md","ref":"quickstart/hugegraph-tools.md","articles":[]},"previous":{"title":"Install HugeGraph-Server","level":"2.1","depth":1,"path":"quickstart/hugegraph-server.md","ref":"quickstart/hugegraph-server.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"quickstart/hugegraph-loader.md","mtime":"2021-08-26T03:21:52.481Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-08-26T03:27:31.897Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

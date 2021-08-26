@@ -969,6 +969,19 @@
 <hr>
 <p>&#x63A5;&#x4E0B;&#x6765;&#x7684;&#x793A;&#x4F8B;&#x5747;&#x5047;&#x8BBE;&#x5DF2;&#x7ECF;&#x521B;&#x5EFA;&#x597D;&#x4E86;&#x524D;&#x8FF0;&#x7684;&#x5404;&#x79CD;schema&#x548C;vertex&#x4FE1;&#x606F;</p>
 <h4 id="221-&#x521B;&#x5EFA;&#x4E00;&#x6761;&#x8FB9;">2.2.1 &#x521B;&#x5EFA;&#x4E00;&#x6761;&#x8FB9;</h4>
+<p>Params&#x8BF4;&#x660E;</p>
+<ul>
+<li>label&#xFF1A;&#x8FB9;&#x7C7B;&#x578B;&#x540D;&#x79F0;&#xFF0C;&#x5FC5;&#x586B;</li>
+<li>outV&#xFF1A;&#x6E90;&#x9876;&#x70B9;id&#xFF0C;&#x5FC5;&#x586B;</li>
+<li>inV&#xFF1A;&#x76EE;&#x6807;&#x9876;&#x70B9;id&#xFF0C;&#x5FC5;&#x586B;</li>
+<li>outVLabel&#xFF1A;&#x6E90;&#x9876;&#x70B9;&#x7C7B;&#x578B;&#x3002;&#x5FC5;&#x586B;</li>
+<li>inVLabel&#xFF1A;&#x76EE;&#x6807;&#x9876;&#x70B9;&#x7C7B;&#x578B;&#x3002;&#x5FC5;&#x586B;</li>
+<li>properties: &#x8FB9;&#x5173;&#x8054;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x5BF9;&#x8C61;&#x5185;&#x90E8;&#x7ED3;&#x6784;&#x4E3A;&#xFF1A;<ol>
+<li>name&#xFF1A;&#x5C5E;&#x6027;&#x540D;&#x79F0;</li>
+<li>value&#xFF1A;&#x5C5E;&#x6027;&#x503C;</li>
+</ol>
+</li>
+</ul>
 <h5 id="method--url">Method &amp; Url</h5>
 <pre><code>POST http://localhost:8080/graphs/hugegraph/graph/edges
 </code></pre><h5 id="request-body">Request Body</h5>
@@ -1465,8 +1478,8 @@
 <h5 id="method--url">Method &amp; Url</h5>
 <pre><code>DELETE http://localhost:8080/graphs/hugegraph/graph/edges/S1:peter&gt;1&gt;&gt;S2:lop?label=person
 </code></pre><h5 id="response-status">Response Status</h5>
-<p>```json
-204</p>
+<pre><code class="lang-json"><span class="hljs-number">204</span>
+</code></pre>
 
                                 
                                 </section>
@@ -1519,7 +1532,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Edge","level":"4.1.6","depth":2,"next":{"title":"Traverser","level":"4.1.7","depth":2,"path":"clients/restful-api/traverser.md","ref":"clients/restful-api/traverser.md","articles":[]},"previous":{"title":"Vertex","level":"4.1.5","depth":2,"path":"clients/restful-api/vertex.md","ref":"clients/restful-api/vertex.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"clients/restful-api/edge.md","mtime":"2021-06-16T08:53:44.392Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-06-16T08:58:39.130Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Edge","level":"4.1.6","depth":2,"next":{"title":"Traverser","level":"4.1.7","depth":2,"path":"clients/restful-api/traverser.md","ref":"clients/restful-api/traverser.md","articles":[]},"previous":{"title":"Vertex","level":"4.1.5","depth":2,"path":"clients/restful-api/vertex.md","ref":"clients/restful-api/vertex.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"clients/restful-api/edge.md","mtime":"2021-08-26T03:21:52.401Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-08-26T03:27:31.897Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

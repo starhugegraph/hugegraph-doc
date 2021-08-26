@@ -958,12 +958,12 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="hugegraph-&#x5185;&#x7F6E;&#x7528;&#x6237;&#x6743;&#x9650;&#x4E0E;&#x6269;&#x5C55;&#x6743;&#x9650;&#x914D;&#x7F6E;&#x53CA;&#x4F7F;&#x7528;">HugeGraph &#x5185;&#x7F6E;&#x7528;&#x6237;&#x6743;&#x9650;&#x4E0E;&#x6269;&#x5C55;&#x6743;&#x9650;&#x914D;&#x7F6E;&#x53CA;&#x4F7F;&#x7528;</h2>
+                                <h2 id="hugegraph-&#x7528;&#x6237;&#x9274;&#x6743;&#x914D;&#x7F6E;&#x53CA;&#x4F7F;&#x7528;">HugeGraph &#x7528;&#x6237;&#x9274;&#x6743;&#x914D;&#x7F6E;&#x53CA;&#x4F7F;&#x7528;</h2>
 <h3 id="&#x6982;&#x8FF0;">&#x6982;&#x8FF0;</h3>
 <p>HugeGraph &#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#x4E0D;&#x540C;&#x7528;&#x6237;&#x573A;&#x666F;&#x4E0B;&#x7684;&#x9274;&#x6743;&#x4F7F;&#x7528;&#xFF0C;&#x76EE;&#x524D;&#x5185;&#x7F6E;&#x4E86;&#x4E24;&#x5957;&#x6743;&#x9650;&#x6A21;&#x5F0F;&#xFF1A;</p>
 <ol>
 <li>&#x7B80;&#x5355;&#x7684;<code>ConfigAuthenticator</code>&#x6A21;&#x5F0F;&#xFF0C;&#x901A;&#x8FC7;&#x672C;&#x5730;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x5B58;&#x50A8;&#x7528;&#x6237;&#x540D;&#x548C;&#x5BC6;&#x7801; (&#x4EC5;&#x652F;&#x6301;&#x5355; GraphServer)</li>
-<li>&#x5B8C;&#x5907;&#x7684;<code>StandardAuthenticator</code>&#x6A21;&#x5F0F;&#xFF0C;&#x652F;&#x6301;&#x591A;&#x7528;&#x6237;&#x8BA4;&#x8BC1;&#x3001;&#x4EE5;&#x53CA;&#x7EC6;&#x7C92;&#x5EA6;&#x7684;&#x6743;&#x9650;&#x8BBF;&#x95EE;&#x63A7;&#x5236;&#xFF0C;&#x91C7;&#x7528;&#x57FA;&#x4E8E; &#x201C;&#x7528;&#x6237;-&#x7528;&#x6237;&#x7EC4;-&#x64CD;&#x4F5C;-&#x8D44;&#x6E90;&#x201D; &#x7684; 4 &#x5C42;&#x8BBE;&#x8BA1;&#xFF0C;&#x7075;&#x6D3B;&#x63A7;&#x5236;&#x7528;&#x6237;&#x89D2;&#x8272;&#x4E0E;&#x6743;&#x9650; (&#x652F;&#x6301;&#x591A; GraphServer)</li>
+<li>&#x5B8C;&#x5907;&#x7684;<code>StandardAuthenticator</code>&#xFF08;&#x5373; <code>Graph Server + Auth Server</code>&#xFF09;&#x6A21;&#x5F0F;&#xFF0C;&#x652F;&#x6301;&#x591A;&#x7528;&#x6237;&#x8BA4;&#x8BC1;&#x3001;&#x4EE5;&#x53CA;&#x7EC6;&#x7C92;&#x5EA6;&#x7684;&#x6743;&#x9650;&#x8BBF;&#x95EE;&#x63A7;&#x5236;&#xFF0C;&#x91C7;&#x7528;&#x57FA;&#x4E8E; &#x201C;&#x7528;&#x6237;-&#x7528;&#x6237;&#x7EC4;-&#x64CD;&#x4F5C;-&#x8D44;&#x6E90;&#x201D; &#x7684; 4 &#x5C42;&#x8BBE;&#x8BA1;&#xFF0C;&#x7075;&#x6D3B;&#x63A7;&#x5236;&#x7528;&#x6237;&#x89D2;&#x8272;&#x4E0E;&#x6743;&#x9650; (&#x652F;&#x6301;&#x591A; GraphServer)</li>
 </ol>
 <p>&#x5176;&#x4E2D; <code>StandardAuthenticator</code> &#x6A21;&#x5F0F;&#x7684;&#x51E0;&#x4E2A;&#x6838;&#x5FC3;&#x8BBE;&#x8BA1;&#xFF1A;</p>
 <ul>
@@ -976,52 +976,182 @@
 <pre><code class="lang-java"><span class="hljs-comment">// &#x573A;&#x666F;&#xFF1A;&#x67D0;&#x7528;&#x6237;&#x53EA;&#x6709;&#x5317;&#x4EAC;&#x5730;&#x533A;&#x7684;&#x6570;&#x636E;&#x8BFB;&#x53D6;&#x6743;&#x9650;</span>
 user(name=xx) -belong-&gt; group(name=xx) -access(read)-&gt; target(graph=graph1, resource={label: person, city: Beijing})
 </code></pre>
-<h3 id="&#x914D;&#x7F6E;&#x7528;&#x6237;&#x8BA4;&#x8BC1;">&#x914D;&#x7F6E;&#x7528;&#x6237;&#x8BA4;&#x8BC1;</h3>
-<p>HugeGraph &#x9ED8;&#x8BA4;<strong>&#x4E0D;&#x542F;&#x7528;</strong>&#x7528;&#x6237;&#x8BA4;&#x8BC1;&#x529F;&#x80FD;&#xFF0C;&#x9700;&#x901A;&#x8FC7;&#x4FEE;&#x6539;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x6765;&#x542F;&#x7528;&#x8BE5;&#x529F;&#x80FD;&#x3002;&#x5185;&#x7F6E;&#x5B9E;&#x73B0;&#x4E86;<code>StandardAuthenticator</code>&#x548C;<code>ConfigAuthenticator</code>&#x4E24;&#x79CD;&#x6A21;&#x5F0F;&#xFF0C;<code>StandardAuthenticator</code>&#x6A21;&#x5F0F;&#x652F;&#x6301;&#x591A;&#x7528;&#x6237;&#x8BA4;&#x8BC1;&#x4E0E;&#x7EC6;&#x7C92;&#x5EA6;&#x6743;&#x9650;&#x63A7;&#x5236;&#xFF0C;<code>ConfigAuthenticator</code>&#x6A21;&#x5F0F;&#x652F;&#x6301;&#x7B80;&#x5355;&#x7684;&#x7528;&#x6237;&#x6743;&#x9650;&#x8BA4;&#x8BC1;&#x3002;&#x6B64;&#x5916;&#xFF0C;&#x5F00;&#x53D1;&#x8005;&#x53EF;&#x4EE5;&#x81EA;&#x5B9A;&#x4E49;&#x5B9E;&#x73B0;<code>HugeAuthenticator</code>&#x63A5;&#x53E3;&#x6765;&#x5BF9;&#x63A5;&#x81EA;&#x8EAB;&#x7684;&#x6743;&#x9650;&#x7CFB;&#x7EDF;&#x3002;</p>
+<p>&#x5907;&#x6CE8;&#xFF1A;&#x4E0B;&#x9762;&#x91CD;&#x70B9;&#x9488;&#x5BF9;<code>StandardAuthenticator</code>&#xFF08;&#x5373;<code>Graph Server + Auth Server</code>&#xFF09;&#x6A21;&#x5F0F;&#x90E8;&#x7F72;&#x6D41;&#x7A0B;&#x8FDB;&#x884C;&#x4ECB;&#x7ECD;</p>
+<h3 id="standardauthenticator&#xFF08;graph-server--auth-server&#xFF09;&#x6A21;&#x5F0F;&#x4E0B;&#x90E8;&#x7F72;&#x6D41;&#x7A0B;"><code>StandardAuthenticator</code>&#xFF08;<code>Graph Server + Auth Server</code>&#xFF09;&#x6A21;&#x5F0F;&#x4E0B;&#x90E8;&#x7F72;&#x6D41;&#x7A0B;</h3>
 <p>&#x7528;&#x6237;&#x8BA4;&#x8BC1;&#x65B9;&#x5F0F;&#x5747;&#x91C7;&#x7528; <a href="https://zh.wikipedia.org/wiki/HTTP%E5%9F%BA%E6%9C%AC%E8%AE%A4%E8%AF%81" target="_blank">HTTP Basic Authentication</a> &#xFF0C;&#x7B80;&#x5355;&#x8BF4;&#x5C31;&#x662F;&#x5728;&#x53D1;&#x9001; HTTP &#x8BF7;&#x6C42;&#x65F6;&#x5728; <code>Authentication</code> &#x8BBE;&#x7F6E;&#x9009;&#x62E9; <code>Basic</code> &#x7136;&#x540E;&#x8F93;&#x5165;&#x5BF9;&#x5E94;&#x7684;&#x7528;&#x6237;&#x540D;&#x548C;&#x5BC6;&#x7801;&#xFF0C;&#x5BF9;&#x5E94; HTTP &#x660E;&#x6587;&#x5982;&#x4E0B;&#x6240;&#x793A; :</p>
 <pre><code class="lang-http">GET http://localhost:8080/graphs/hugegraph/schema/vertexlabels
-Authorization: Basic admin xxxx
+Authorization: Basic username xxxxxx
 </code></pre>
-<h4 id="standardauthenticator&#x6A21;&#x5F0F;">StandardAuthenticator&#x6A21;&#x5F0F;</h4>
-<p><code>StandardAuthenticator</code>&#x6A21;&#x5F0F;&#x662F;&#x901A;&#x8FC7;&#x5728;&#x6570;&#x636E;&#x5E93;&#x540E;&#x7AEF;&#x5B58;&#x50A8;&#x7528;&#x6237;&#x4FE1;&#x606F;&#x6765;&#x652F;&#x6301;&#x7528;&#x6237;&#x8BA4;&#x8BC1;&#x548C;&#x6743;&#x9650;&#x63A7;&#x5236;&#xFF0C;&#x8BE5;&#x5B9E;&#x73B0;&#x57FA;&#x4E8E;&#x6570;&#x636E;&#x5E93;&#x5B58;&#x50A8;&#x7684;&#x7528;&#x6237;&#x7684;&#x540D;&#x79F0;&#x4E0E;&#x5BC6;&#x7801;&#x8FDB;&#x884C;&#x8BA4;&#x8BC1;&#xFF08;&#x5BC6;&#x7801;&#x5DF2;&#x88AB;&#x52A0;&#x5BC6;&#xFF09;&#xFF0C;&#x57FA;&#x4E8E;&#x7528;&#x6237;&#x7684;&#x89D2;&#x8272;&#x6765;&#x7EC6;&#x7C92;&#x5EA6;&#x63A7;&#x5236;&#x7528;&#x6237;&#x6743;&#x9650;&#x3002;&#x4E0B;&#x9762;&#x662F;&#x5177;&#x4F53;&#x7684;&#x914D;&#x7F6E;&#x6D41;&#x7A0B;&#xFF08;&#x91CD;&#x542F;&#x670D;&#x52A1;&#x751F;&#x6548;&#xFF09;&#xFF1A;</p>
-<p>&#x5728;&#x914D;&#x7F6E;&#x6587;&#x4EF6;<code>gremlin-server.yaml</code>&#x4E2D;&#x914D;&#x7F6E;<code>authenticator</code>&#x53CA;&#x5176;<code>rest-server</code>&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#xFF1A;</p>
-<pre><code class="lang-yaml"><span class="hljs-attr">authentication:</span> {
-<span class="hljs-attr">  authenticator:</span> com.baidu.hugegraph.auth.StandardAuthenticator,
-<span class="hljs-attr">  authenticationHandler:</span> com.baidu.hugegraph.auth.WsAndHttpBasicAuthHandler,
-<span class="hljs-attr">  config:</span> {tokens: conf/rest-server.properties}
-}
-</code></pre>
-<p>&#x5728;&#x914D;&#x7F6E;&#x6587;&#x4EF6;<code>rest-server.properties</code>&#x4E2D;&#x914D;&#x7F6E;<code>authenticator</code>&#x53CA;&#x5176;<code>graph_store</code>&#x4FE1;&#x606F;&#xFF1A;</p>
-<pre><code class="lang-properties">auth.authenticator=com.baidu.hugegraph.auth.StandardAuthenticator
-auth.graph_store=hugegraph
+<p>Graph Server &#x548C; Auth Server&#x4F7F;&#x7528;&#x540C;&#x4E00;&#x5957;hugegraph-xx.xx.xx.gz&#x5B89;&#x88C5;&#x5305;&#xFF0C;&#x9700;&#x8981;&#x914D;&#x7F6E;&#x7684;&#x6587;&#x4EF6;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre><code># ls /path/hugegraph-xx.xx.xx/conf
 
+&#x251C;&#x2500;&#x2500; computer.yaml
+&#x251C;&#x2500;&#x2500; gremlin-driver-settings.yaml
+&#x251C;&#x2500;&#x2500; gremlin-server.yaml             # Modify
+&#x251C;&#x2500;&#x2500; hugegraph-community.license
+&#x251C;&#x2500;&#x2500; hugegraph.properties             # Modify just for Graph Server 
+&#x251C;&#x2500;&#x2500; hugegraph-server.keystore
+&#x251C;&#x2500;&#x2500; log4j2.xml
+&#x251C;&#x2500;&#x2500; remote-objects.yaml
+&#x251C;&#x2500;&#x2500; remote.yaml
+&#x2514;&#x2500;&#x2500; rest-server.properties             # Modify
+&#x2514;&#x2500;&#x2500; system.properties
+</code></pre><h4 id="&#x914D;&#x7F6E;-graph-server">&#x914D;&#x7F6E; Graph Server</h4>
+<ul>
+<li>&#x914D;&#x7F6E; gremlin-server.yaml
+```yaml
+......
+graphs: {<h1 id="&#x5220;&#x9664;-hugegraph-confhugegraphproperties">&#x5220;&#x9664; hugegraph: conf/hugegraph.properties</h1>
+<h1 id="&#x65B0;&#x589E;-system-confsystemproperties">&#x65B0;&#x589E; system: conf/system.properties</h1>
+system: conf/system.properties
+}</li>
+</ul>
+<h1 id="&#x9700;&#x8981;&#x6DFB;&#x52A0;&#x6B64;&#x6BB5;&#x914D;&#x7F6E;-&#x9ED8;&#x8BA4;&#x2F46;">&#x9700;&#x8981;&#x6DFB;&#x52A0;&#x6B64;&#x6BB5;&#x914D;&#x7F6E; (&#x9ED8;&#x8BA4;&#x2F46;)</h1>
+<p>authentication: {
+  authenticator: com.baidu.hugegraph.auth.StandardAuthenticator,
+  authenticationHandler: com.baidu.hugegraph.auth.WsAndHttpBasicAuthHandler,</p>
+<h1 id="&#x4E0B;&#x2FAF;&#x9700;&#x6539;&#x4E3A;&#x5177;&#x4F53;&#x7684;rest-server&#x8DEF;&#x5F84;&#x540D;">&#x4E0B;&#x2FAF;&#x9700;&#x6539;&#x4E3A;&#x5177;&#x4F53;&#x7684;rest-server&#x8DEF;&#x5F84;&#x540D;</h1>
+<p>  config: {tokens: conf/rest-server.properties}
+}</p>
+<p>scriptEngines: {......</p>
+<pre><code>
+* &#x914D;&#x7F6E; rest-server.properties &#xFF08;&#x91CD;&#x70B9;&#x5173;&#x6CE8;&#x5E8F;&#x53F7;&#x6807;&#x8BB0;&#xFF09;
+```properties
+# bind url
+# &#x2460;. &#x6B64;&#x5904;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x4E3A;&#x5F53;&#x524D;&#x673A;&#x5668;&#x5177;&#x4F53;&#x7684; ip/&#x57DF;&#x540D;
+restserver.url=http://127.0.0.1:8080
+# gremlin server url, need to be consistent with host and port in gremlin-server.yaml
+#gremlinserver.url=http://127.0.0.1:8182
+
+# graphs list with pair NAME:CONF_PATH
+# &#x2461;. &#x6B64;&#x5904;&#x4FEE;&#x6539;&#x4E3A;&#x5982;&#x4E0B;
+# graphs=[hugegraph:conf/hugegraph.properties]
+graphs=[system:conf/system.properties]
+
+# The maximum thread ratio for batch writing, only take effect if the batch.max_write_threads is 0
+batch.max_write_ratio=80
+batch.max_write_threads=0
+
+# authentication configs
+# choose &apos;com.baidu.hugegraph.auth.StandardAuthenticator&apos; or &apos;com.baidu.hugegraph.auth.ConfigAuthenticator&apos;
+# &#x2462;. &#x6B64;&#x5904;&#x9700;&#x8981;&#x53D6;&#x6D88;&#x6CE8;&#x91CA;, &#x4FEE;&#x6539;&#x4E3A;&#x5982;&#x4E0B;
+auth.authenticator=com.baidu.hugegraph.auth.StandardAuthenticator
+
+# for StandardAuthenticator mode
+# &#x2463;. &#x6B64;&#x5904;&#x9700;&#x8981;&#x53D6;&#x6D88;&#x6CE8;&#x91CA;, &#x540D;&#x5B57;&#x9700;&#x4E0E;&#x4E0A;&#x2FAF; &quot;graphs&quot; &#x503C;&#x4FDD;&#x6301;&#x2F00;&#x81F4;
+auth.graph_store=system
 # auth client config
-# &#x5982;&#x679C;&#x662F;&#x5206;&#x5F00;&#x90E8;&#x7F72; GraphServer &#x548C; AuthServer, &#x8FD8;&#x9700;&#x8981;&#x6307;&#x5B9A;&#x4E0B;&#x9762;&#x7684;&#x914D;&#x7F6E;, &#x5730;&#x5740;&#x586B;&#x5199; AuthServer &#x7684; IP:RPC &#x7AEF;&#x53E3;
 #auth.remote_url=127.0.0.1:8899,127.0.0.1:8898,127.0.0.1:8897
-</code></pre>
-<p>&#x5176;&#x4E2D;&#xFF0C;<code>graph_store</code>&#x914D;&#x7F6E;&#x9879;&#x662F;&#x6307;&#x4F7F;&#x7528;&#x54EA;&#x4E00;&#x4E2A;&#x56FE;&#x6765;&#x5B58;&#x50A8;&#x7528;&#x6237;&#x4FE1;&#x606F;&#xFF0C;&#x5982;&#x679C;&#x5B58;&#x5728;&#x591A;&#x4E2A;&#x56FE;&#x7684;&#x8BDD;&#xFF0C;&#x9009;&#x53D6;&#x4EFB;&#x610F;&#x4E00;&#x4E2A;&#x5747;&#x53EF;&#x3002;</p>
-<p>&#x5728;&#x914D;&#x7F6E;&#x6587;&#x4EF6;<code>hugegraph{n}.properties</code>&#x4E2D;&#x914D;&#x7F6E;<code>gremlin.graph</code>&#x4FE1;&#x606F;&#xFF1A;</p>
-<pre><code class="lang-properties">gremlin.graph=com.baidu.hugegraph.auth.HugeFactoryAuthProxy
-</code></pre>
-<p>&#x7136;&#x540E;&#x8BE6;&#x7EC6;&#x7684;&#x6743;&#x9650; API &#x8C03;&#x7528;&#x548C;&#x8BF4;&#x660E;&#x8BF7;&#x53C2;&#x8003; <a href="../clients/restful-api/auth.html">Authentication-API</a> &#x6587;&#x6863; </p>
-<h4 id="configauthenticator&#x6A21;&#x5F0F;">ConfigAuthenticator&#x6A21;&#x5F0F;</h4>
-<p><code>ConfigAuthenticator</code>&#x6A21;&#x5F0F;&#x662F;&#x901A;&#x8FC7;&#x9884;&#x5148;&#x5728;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x8BBE;&#x7F6E;&#x7528;&#x6237;&#x4FE1;&#x606F;&#x6765;&#x652F;&#x6301;&#x7528;&#x6237;&#x8BA4;&#x8BC1;&#xFF0C;&#x8BE5;&#x5B9E;&#x73B0;&#x662F;&#x57FA;&#x4E8E;&#x914D;&#x7F6E;&#x597D;&#x7684;&#x9759;&#x6001;<code>tokens</code>&#x6765;&#x9A8C;&#x8BC1;&#x7528;&#x6237;&#x662F;&#x5426;&#x5408;&#x6CD5;&#x3002;&#x4E0B;&#x9762;&#x662F;&#x5177;&#x4F53;&#x7684;&#x914D;&#x7F6E;&#x6D41;&#x7A0B;&#xFF08;&#x91CD;&#x542F;&#x670D;&#x52A1;&#x751F;&#x6548;&#xFF09;&#xFF1A;</p>
-<p>&#x5728;&#x914D;&#x7F6E;&#x6587;&#x4EF6;<code>gremlin-server.yaml</code>&#x4E2D;&#x914D;&#x7F6E;<code>authenticator</code>&#x53CA;&#x5176;<code>rest-server</code>&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#xFF1A;</p>
-<pre><code class="lang-yaml"><span class="hljs-attr">authentication:</span> {
-<span class="hljs-attr">  authenticator:</span> com.baidu.hugegraph.auth.ConfigAuthenticator,
-<span class="hljs-attr">  authenticationHandler:</span> com.baidu.hugegraph.auth.WsAndHttpBasicAuthHandler,
-<span class="hljs-attr">  config:</span> {tokens: conf/rest-server.properties}
+
+# for ConfigAuthenticator mode
+#auth.admin_token=
+#auth.user_tokens=[]
+
+# rpc group configs of multi graph servers
+# rpc server configs
+# &#x2464;. &#x6B64;&#x5904;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x4E3A;&#x5F53;&#x524D;&#x673A;&#x5668;&#x5177;&#x4F53;&#x7684; ip &#x548C;&#x57DF;&#x540D;
+rpc.server_host=127.0.0.1
+rpc.server_port=8090
+#rpc.server_timeout=30
+
+# rpc client configs (like enable to keep cache consistency)
+# &#x2465;. &#x6B64;&#x5904;&#x9700;&#x8981;&#x6CE8;&#x91CA;(&#x5173;&#x95ED;)
+#rpc.remote_url=127.0.0.1:8090
+#rpc.client_connect_timeout=20
+#rpc.client_reconnect_period=10
+#rpc.client_read_timeout=40
+#rpc.client_retries=3
+#rpc.client_load_balancer=consistentHash
+
+# lightweight load balancing (beta)
+server.id=server-1
+server.role=master
+</code></pre><ul>
+<li>&#x542F;&#x52A8; Auth Server
+```bash
+cd /path/to/hugegraph-xx.xx.xx</li>
+</ul>
+<h1 id="init-store&#x8FC7;&#x7A0B;&#x4E2D;&#x9700;&#x8981;&#x8F93;&#x5165;admin&#x5BC6;&#x7801;&#xFF0C;&#x6CE8;&#x610F;-6-18&#x4F4D;&#x5B57;&#x7B26;&#xFF0C;&#x53EA;&#x80FD;&#x5305;&#x542B;&#x5B57;&#x6BCD;&#x3001;&#x6570;&#x5B57;&#x548C;&#x4E0B;&#x5212;&#x7EBF;">init-store&#x8FC7;&#x7A0B;&#x4E2D;&#x9700;&#x8981;&#x8F93;&#x5165;admin&#x5BC6;&#x7801;&#xFF0C;&#x6CE8;&#x610F; 6-18&#x4F4D;&#x5B57;&#x7B26;&#xFF0C;&#x53EA;&#x80FD;&#x5305;&#x542B;&#x5B57;&#x6BCD;&#x3001;&#x6570;&#x5B57;&#x548C;&#x4E0B;&#x5212;&#x7EBF;</h1>
+<p>sh ./bin/init-store.sh</p>
+<h1 id="&#x542F;&#x52A8;-auth-server">&#x542F;&#x52A8; Auth Server</h1>
+<p>sh ./bin/start-hugegraph.sh</p>
+<pre><code>
+#### &#x914D;&#x7F6E; Graph Server
+* &#x914D;&#x7F6E; gremlin-server.yaml
+```yaml
+......
+graphs: {
+  hugegraph: conf/hugegraph.properties,
+  # &#x65B0;&#x589E; system: conf/system.properties
+  system: conf/system.properties
 }
+
+# &#x9700;&#x8981;&#x6DFB;&#x52A0;&#x6B64;&#x6BB5;&#x914D;&#x7F6E; (&#x9ED8;&#x8BA4;&#x2F46;)
+authentication: {
+  authenticator: com.baidu.hugegraph.auth.StandardAuthenticator,
+  authenticationHandler: com.baidu.hugegraph.auth.WsAndHttpBasicAuthHandler,
+  # &#x4E0B;&#x2FAF;&#x9700;&#x6539;&#x4E3A;&#x5177;&#x4F53;&#x7684;rest-server&#x8DEF;&#x5F84;&#x540D;
+  config: {tokens: conf/rest-server.properties}
+}
+
+scriptEngines: {......
+</code></pre><ul>
+<li><p>&#x914D;&#x7F6E; hugegraph.properties</p>
+<pre><code class="lang-properties"># &#x5C06;&#x5F00;&#x5934;&#x9ED8;&#x8BA4;&#x7684; &quot;com.baidu.hugegraph.HugeFactory&quot; &#x66FF;&#x6362;&#x4E3A;&#x4E0B;&#x2FAF;&#x7684;
+gremlin.graph=com.baidu.hugegraph.auth.HugeFactoryAuthProxy
 </code></pre>
-<p>&#x5728;&#x914D;&#x7F6E;&#x6587;&#x4EF6;<code>rest-server.properties</code>&#x4E2D;&#x914D;&#x7F6E;<code>authenticator</code>&#x53CA;&#x5176;<code>tokens</code>&#x4FE1;&#x606F;&#xFF1A;</p>
-<pre><code class="lang-properties">auth.authenticator=com.baidu.hugegraph.auth.ConfigAuthenticator
-auth.admin_token=token-value-a
-auth.user_tokens=[hugegraph1:token-value-1, hugegraph2:token-value-2]
-</code></pre>
-<p>&#x5728;&#x914D;&#x7F6E;&#x6587;&#x4EF6;<code>hugegraph{n}.properties</code>&#x4E2D;&#x914D;&#x7F6E;<code>gremlin.graph</code>&#x4FE1;&#x606F;&#xFF1A;</p>
-<pre><code class="lang-properties">gremlin.graph=com.baidu.hugegraph.auth.HugeFactoryAuthProxy
-</code></pre>
-<h3 id="&#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x8BA4;&#x8BC1;&#x7CFB;&#x7EDF;">&#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x8BA4;&#x8BC1;&#x7CFB;&#x7EDF;</h3>
+</li>
+<li><p>&#x914D;&#x7F6E; rest-server.properties
+```properties</p>
+<h1 id="bind-url">bind url</h1>
+<h1 id="&#x2460;-&#x6B64;&#x5904;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x4E3A;&#x5F53;&#x524D;&#x673A;&#x5668;&#x5177;&#x4F53;&#x7684;-ip&#x57DF;&#x540D;">&#x2460;. &#x6B64;&#x5904;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x4E3A;&#x5F53;&#x524D;&#x673A;&#x5668;&#x5177;&#x4F53;&#x7684; ip/&#x57DF;&#x540D;</h1>
+<p>restserver.url=<a href="http://127.0.0.1:8080" target="_blank">http://127.0.0.1:8080</a></p>
+<h1 id="gremlin-server-url-need-to-be-consistent-with-host-and-port-in-gremlin-serveryaml">gremlin server url, need to be consistent with host and port in gremlin-server.yaml</h1>
+<h1 id="gremlinserverurlhttp1270018182">gremlinserver.url=<a href="http://127.0.0.1:8182" target="_blank">http://127.0.0.1:8182</a></h1>
+</li>
+</ul>
+<h1 id="graphs-list-with-pair-nameconfpath">graphs list with pair NAME:CONF_PATH</h1>
+<h1 id="&#x2461;-&#x65B0;&#x589E;-system-confsystemproperties">&#x2461;. &#x65B0;&#x589E; system: conf/system.properties</h1>
+<p>graphs=[hugegraph:conf/hugegraph.properties, system: conf/system.properties]</p>
+<h1 id="the-maximum-thread-ratio-for-batch-writing-only-take-effect-if-the-batchmaxwritethreads-is-0">The maximum thread ratio for batch writing, only take effect if the batch.max_write_threads is 0</h1>
+<p>batch.max_write_ratio=80
+batch.max_write_threads=0</p>
+<h1 id="authentication-configs">authentication configs</h1>
+<h1 id="choose-combaiduhugegraphauthstandardauthenticator-or-combaiduhugegraphauthconfigauthenticator">choose &apos;com.baidu.hugegraph.auth.StandardAuthenticator&apos; or &apos;com.baidu.hugegraph.auth.ConfigAuthenticator&apos;</h1>
+<h1 id="&#x2462;-&#x6B64;&#x5904;&#x9700;&#x8981;&#x53D6;&#x6D88;&#x6CE8;&#x91CA;-&#x4FEE;&#x6539;&#x4E3A;&#x5982;&#x4E0B;">&#x2462;. &#x6B64;&#x5904;&#x9700;&#x8981;&#x53D6;&#x6D88;&#x6CE8;&#x91CA;, &#x4FEE;&#x6539;&#x4E3A;&#x5982;&#x4E0B;</h1>
+<p>auth.authenticator=com.baidu.hugegraph.auth.StandardAuthenticator</p>
+<h1 id="for-standardauthenticator-mode">for StandardAuthenticator mode</h1>
+<h1 id="authgraphstorehugegraph">auth.graph_store=hugegraph</h1>
+<h1 id="auth-client-config">auth client config</h1>
+<h1 id="&#x2463;-&#x6B64;&#x5904;&#x9700;&#x8981;&#x53D6;&#x6D88;&#x6CE8;&#x91CA;-&#x586B;&#x5199;-authserver-rpc-&#x8BBE;&#x7F6E;&#x7684;-ip-&#x548C;&#x7AEF;&#x2F1D;-&#x91CD;&#x70B9;">&#x2463;. &#x6B64;&#x5904;&#x9700;&#x8981;&#x53D6;&#x6D88;&#x6CE8;&#x91CA;, &#x586B;&#x5199; AuthServer RPC &#x8BBE;&#x7F6E;&#x7684; IP &#x548C;&#x7AEF;&#x2F1D; (&#x91CD;&#x70B9;)</h1>
+<p>auth.remote_url=AuthServerIP:8090</p>
+<h1 id="for-configauthenticator-mode">for ConfigAuthenticator mode</h1>
+<h1 id="authadmintoken">auth.admin_token=</h1>
+<h1 id="authusertokens">auth.user_tokens=[]</h1>
+<h1 id="rpc-group-configs-of-multi-graph-servers">rpc group configs of multi graph servers</h1>
+<h1 id="rpc-server-configs">rpc server configs</h1>
+<h1 id="&#x2464;-&#x6B64;&#x5904;&#x9700;&#x8981;&#x6CE8;&#x91CA;&#x5173;&#x95ED;">&#x2464;. &#x6B64;&#x5904;&#x9700;&#x8981;&#x6CE8;&#x91CA;(&#x5173;&#x95ED;)</h1>
+<h1 id="rpcserverhost127001">rpc.server_host=127.0.0.1</h1>
+<h1 id="rpcserverport8090">rpc.server_port=8090</h1>
+<h1 id="rpcservertimeout30">rpc.server_timeout=30</h1>
+<h1 id="rpc-client-configs-like-enable-to-keep-cache-consistency">rpc client configs (like enable to keep cache consistency)</h1>
+<h1 id="&#x2465;-&#x6B64;&#x5904;&#x9700;&#x8981;&#x6CE8;&#x91CA;&#x5173;&#x95ED;">&#x2465;. &#x6B64;&#x5904;&#x9700;&#x8981;&#x6CE8;&#x91CA;(&#x5173;&#x95ED;)</h1>
+<h1 id="rpcremoteurl1270018090">rpc.remote_url=127.0.0.1:8090</h1>
+<h1 id="rpcclientconnecttimeout20">rpc.client_connect_timeout=20</h1>
+<h1 id="rpcclientreconnectperiod10">rpc.client_reconnect_period=10</h1>
+<h1 id="rpcclientreadtimeout40">rpc.client_read_timeout=40</h1>
+<h1 id="rpcclientretries3">rpc.client_retries=3</h1>
+<h1 id="rpcclientloadbalancerconsistenthash">rpc.client_load_balancer=consistentHash</h1>
+<h1 id="lightweight-load-balancing-beta">lightweight load balancing (beta)</h1>
+<p>server.id=server-1
+server.role=master</p>
+<pre><code>
+* &#x542F;&#x52A8; Graph Server
+```bash
+cd /path/to/hugegraph-xx.xx.xx
+sh ./bin/init-store.sh
+sh ./bin/start-hugegraph.sh
+</code></pre><h3 id="&#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x8BA4;&#x8BC1;&#x7CFB;&#x7EDF;">&#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x8BA4;&#x8BC1;&#x7CFB;&#x7EDF;</h3>
 <p>&#x5982;&#x679C;&#x9700;&#x8981;&#x652F;&#x6301;&#x66F4;&#x52A0;&#x7075;&#x6D3B;&#x7684;&#x7528;&#x6237;&#x7CFB;&#x7EDF;&#xFF0C;&#x53EF;&#x81EA;&#x5B9A;&#x4E49;authenticator&#x8FDB;&#x884C;&#x6269;&#x5C55;&#xFF0C;&#x81EA;&#x5B9A;&#x4E49;authenticator&#x5B9E;&#x73B0;&#x63A5;&#x53E3;<code>com.baidu.hugegraph.auth.HugeAuthenticator</code>&#x5373;&#x53EF;&#xFF0C;&#x7136;&#x540E;&#x4FEE;&#x6539;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;<code>authenticator</code>&#x914D;&#x7F6E;&#x9879;&#x6307;&#x5411;&#x8BE5;&#x5B9E;&#x73B0;&#x3002;</p>
 
                                 
@@ -1075,7 +1205,7 @@ auth.user_tokens=[hugegraph1:token-value-1, hugegraph2:token-value-2]
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Config Authentication","level":"3.3","depth":1,"next":{"title":"Config HTTPS","level":"3.4","depth":1,"path":"config/config-https.md","ref":"config/config-https.md","articles":[]},"previous":{"title":"Config Options","level":"3.2","depth":1,"path":"config/config-option.md","ref":"config/config-option.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"config/config-authentication.md","mtime":"2021-08-26T03:21:52.401Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-08-26T03:27:31.897Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Config Authentication","level":"3.3","depth":1,"next":{"title":"Config HTTPS","level":"3.4","depth":1,"path":"config/config-https.md","ref":"config/config-https.md","articles":[]},"previous":{"title":"Config Options","level":"3.2","depth":1,"path":"config/config-option.md","ref":"config/config-option.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"config/config-authentication.md","mtime":"2021-08-26T04:15:52.079Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-08-26T04:25:12.864Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

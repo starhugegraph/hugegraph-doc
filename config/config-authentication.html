@@ -996,7 +996,7 @@ Authorization: Basic username xxxxxx
 &#x251C;&#x2500;&#x2500; remote.yaml
 &#x251C;&#x2500;&#x2500; rest-server.properties             # Modify
 &#x2514;&#x2500;&#x2500; system.properties
-</code></pre><h4 id="&#x914D;&#x7F6E;-graph-server">&#x914D;&#x7F6E; Graph Server</h4>
+</code></pre><h4 id="&#x914D;&#x7F6E;-auth-server">&#x914D;&#x7F6E; Auth Server</h4>
 <ul>
 <li>&#x914D;&#x7F6E; gremlin-server.yaml</li>
 </ul>
@@ -1080,15 +1080,12 @@ sh ./bin/start-hugegraph.sh
 <pre><code class="lang-yaml">......
 <span class="hljs-attr">graphs:</span> {
 <span class="hljs-attr">  hugegraph:</span> conf/hugegraph.properties,
-  <span class="hljs-comment"># &#x65B0;&#x589E; system: conf/system.properties</span>
 <span class="hljs-attr">  system:</span> conf/system.properties
 }
 
-<span class="hljs-comment"># &#x9700;&#x8981;&#x6DFB;&#x52A0;&#x6B64;&#x6BB5;&#x914D;&#x7F6E; (&#x9ED8;&#x8BA4;&#x2F46;)</span>
 <span class="hljs-attr">authentication:</span> {
 <span class="hljs-attr">  authenticator:</span> com.baidu.hugegraph.auth.StandardAuthenticator,
 <span class="hljs-attr">  authenticationHandler:</span> com.baidu.hugegraph.auth.WsAndHttpBasicAuthHandler,
-  <span class="hljs-comment"># &#x4E0B;&#x2FAF;&#x9700;&#x6539;&#x4E3A;&#x5177;&#x4F53;&#x7684;rest-server&#x8DEF;&#x5F84;&#x540D;</span>
 <span class="hljs-attr">  config:</span> {tokens: conf/rest-server.properties}
 }
 
@@ -1213,7 +1210,7 @@ sh ./bin/start-hugegraph.sh
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Config Authentication","level":"3.3","depth":1,"next":{"title":"Config HTTPS","level":"3.4","depth":1,"path":"config/config-https.md","ref":"config/config-https.md","articles":[]},"previous":{"title":"Config Options","level":"3.2","depth":1,"path":"config/config-option.md","ref":"config/config-option.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"config/config-authentication.md","mtime":"2021-08-26T04:29:40.862Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-08-26T04:30:30.744Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Config Authentication","level":"3.3","depth":1,"next":{"title":"Config HTTPS","level":"3.4","depth":1,"path":"config/config-https.md","ref":"config/config-https.md","articles":[]},"previous":{"title":"Config Options","level":"3.2","depth":1,"path":"config/config-option.md","ref":"config/config-option.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"config/config-authentication.md","mtime":"2021-08-26T04:31:57.927Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-08-26T04:33:19.166Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

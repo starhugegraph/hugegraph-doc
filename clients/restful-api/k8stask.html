@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Rebuild · GitBook</title>
+        <title>K8sTask · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -66,10 +66,10 @@
     
 
     
-    <link rel="next" href="k8stask.html" />
+    <link rel="next" href="gremlin.html" />
     
     
-    <link rel="prev" href="task.html" />
+    <link rel="prev" href="rebuild.html" />
     
 
     </head>
@@ -116,7 +116,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >Rebuild</a>
+        <a href="../.." >K8sTask</a>
     </h1>
 </div>
 
@@ -492,7 +492,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="4.1.12" data-path="rebuild.html">
+        <li class="chapter " data-level="4.1.12" data-path="rebuild.html">
             
                 <a href="rebuild.html">
             
@@ -505,7 +505,7 @@
             
         </li>
     
-        <li class="chapter " data-level="4.1.13" data-path="k8stask.html">
+        <li class="chapter active" data-level="4.1.13" data-path="k8stask.html">
             
                 <a href="k8stask.html">
             
@@ -971,52 +971,120 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h3 id="62-rebuild">6.2 Rebuild</h3>
-<h4 id="621-&#x91CD;&#x5EFA;indexlabel">6.2.1 &#x91CD;&#x5EFA;IndexLabel</h4>
+                                <h3 id="63-&#x56FE;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;">6.3 &#x56FE;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;</h3>
+<h4 id="631-&#x521B;&#x5EFA;&#x56FE;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;">6.3.1 &#x521B;&#x5EFA;&#x56FE;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;</h4>
+<h5 id="params">Params</h5>
+<ul>
+<li>worker_instances: worker&#x6570;&#x91CF;</li>
+<li>internal_algorithm: &#x7B97;&#x6CD5;&#x540D;&#x79F0;</li>
+<li>params_class: &#x53C2;&#x6570;&#x7C7B;</li>
+</ul>
+<h5 id="request-body">Request Body</h5>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;worker_instances&quot;</span>: <span class="hljs-string">&quot;2&quot;</span>,
+  <span class="hljs-string">&quot;internal_algorithm&quot;</span>: <span class="hljs-string">&quot;[pagerank]&quot;</span>,
+  <span class="hljs-string">&quot;params_class&quot;</span>: <span class="hljs-string">&quot;com.baidu.hugegraph.computer.algorithm.rank.pagerank.PageRankParams&quot;</span>
+}
+</code></pre>
 <h5 id="method--url">Method &amp; Url</h5>
-<pre><code>PUT http://localhost:8080/graphs/hugegraph/jobs/rebuild/indexlabels/personByCity
+<pre><code>POST http://localhost:8080/graphs/{hugegraph}/jobs/computerdis/{algorithm}
 </code></pre><h5 id="response-status">Response Status</h5>
-<pre><code class="lang-json"><span class="hljs-number">202</span>
+<pre><code class="lang-json"><span class="hljs-number">201</span>
 </code></pre>
 <h5 id="response-body">Response Body</h5>
 <pre><code class="lang-json">{
-    <span class="hljs-string">&quot;task_id&quot;</span>: <span class="hljs-number">1</span>
+  <span class="hljs-string">&quot;task_id&quot;</span>: <span class="hljs-string">&quot;xx&quot;</span>,
+  <span class="hljs-string">&quot;message&quot;</span>: <span class="hljs-string">&quot;success&quot;</span>
 }
 </code></pre>
-<p>&#x6CE8;&#xFF1A;</p>
-<blockquote>
-<p>&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>GET http://localhost:8080/graphs/hugegraph/tasks/1</code>&#xFF08;&#x5176;&#x4E2D;&quot;1&quot;&#x662F;task_id&#xFF09;&#x6765;&#x67E5;&#x8BE2;&#x5F02;&#x6B65;&#x4EFB;&#x52A1;&#x7684;&#x6267;&#x884C;&#x72B6;&#x6001;&#xFF0C;&#x66F4;&#x591A;<a href="task.html">&#x5F02;&#x6B65;&#x4EFB;&#x52A1;RESTful API</a></p>
-</blockquote>
-<h4 id="622-vertexlabel&#x5BF9;&#x5E94;&#x7684;&#x5168;&#x90E8;&#x7D22;&#x5F15;&#x91CD;&#x5EFA;">6.2.2 VertexLabel&#x5BF9;&#x5E94;&#x7684;&#x5168;&#x90E8;&#x7D22;&#x5F15;&#x91CD;&#x5EFA;</h4>
+<h4 id="632-&#x5220;&#x9664;&#x56FE;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;">6.3.2 &#x5220;&#x9664;&#x56FE;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;</h4>
 <h5 id="method--url">Method &amp; Url</h5>
-<pre><code>PUT http://localhost:8080/graphs/hugegraph/jobs/rebuild/vertexlabels/person
+<pre><code>DELETE http://localhost:8080/graphs/{hugegraph}/jobs/computerdis/{task_id}
 </code></pre><h5 id="response-status">Response Status</h5>
-<pre><code class="lang-json"><span class="hljs-number">202</span>
+<pre><code class="lang-json"><span class="hljs-number">200</span>
 </code></pre>
 <h5 id="response-body">Response Body</h5>
 <pre><code class="lang-json">{
-    <span class="hljs-string">&quot;task_id&quot;</span>: <span class="hljs-number">2</span>
+  <span class="hljs-string">&quot;task_id&quot;</span>: <span class="hljs-string">&quot;xx&quot;</span>,
+  <span class="hljs-string">&quot;message&quot;</span>: <span class="hljs-string">&quot;success&quot;</span>
 }
 </code></pre>
-<p>&#x6CE8;&#xFF1A;</p>
-<blockquote>
-<p>&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>GET http://localhost:8080/graphs/hugegraph/tasks/2</code>&#xFF08;&#x5176;&#x4E2D;&quot;2&quot;&#x662F;task_id&#xFF09;&#x6765;&#x67E5;&#x8BE2;&#x5F02;&#x6B65;&#x4EFB;&#x52A1;&#x7684;&#x6267;&#x884C;&#x72B6;&#x6001;&#xFF0C;&#x66F4;&#x591A;<a href="task.html">&#x5F02;&#x6B65;&#x4EFB;&#x52A1;RESTful API</a></p>
-</blockquote>
-<h4 id="623-edgelabel&#x5BF9;&#x5E94;&#x7684;&#x5168;&#x90E8;&#x7D22;&#x5F15;&#x91CD;&#x5EFA;">6.2.3 EdgeLabel&#x5BF9;&#x5E94;&#x7684;&#x5168;&#x90E8;&#x7D22;&#x5F15;&#x91CD;&#x5EFA;</h4>
+<h4 id="633-&#x53D6;&#x6D88;&#x56FE;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;">6.3.3 &#x53D6;&#x6D88;&#x56FE;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;</h4>
 <h5 id="method--url">Method &amp; Url</h5>
-<pre><code>PUT http://localhost:8080/graphs/hugegraph/jobs/rebuild/edgelabels/created
+<pre><code>PUT http://localhost:8080/graphs/{hugegraph}/jobs/computerdis/{task_id}
 </code></pre><h5 id="response-status">Response Status</h5>
-<pre><code class="lang-json"><span class="hljs-number">202</span>
+<pre><code class="lang-json"><span class="hljs-number">204</span>
 </code></pre>
 <h5 id="response-body">Response Body</h5>
 <pre><code class="lang-json">{
-    <span class="hljs-string">&quot;task_id&quot;</span>: <span class="hljs-number">3</span>
+    <span class="hljs-string">&quot;task_id&quot;</span>: <span class="hljs-string">&quot;xx&quot;</span>,
+    <span class="hljs-string">&quot;message&quot;</span>: <span class="hljs-string">&quot;success&quot;</span>
 }
 </code></pre>
-<p>&#x6CE8;&#xFF1A;</p>
-<blockquote>
-<p>&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>GET http://localhost:8080/graphs/hugegraph/tasks/3</code>&#xFF08;&#x5176;&#x4E2D;&quot;3&quot;&#x662F;task_id&#xFF09;&#x6765;&#x67E5;&#x8BE2;&#x5F02;&#x6B65;&#x4EFB;&#x52A1;&#x7684;&#x6267;&#x884C;&#x72B6;&#x6001;&#xFF0C;&#x66F4;&#x591A;<a href="task.html">&#x5F02;&#x6B65;&#x4EFB;&#x52A1;RESTful API</a></p>
-</blockquote>
+<h4 id="634-&#x67E5;&#x770B;&#x56FE;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;&#x5217;&#x8868;">6.3.4 &#x67E5;&#x770B;&#x56FE;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;&#x5217;&#x8868;</h4>
+<h5 id="params">Params</h5>
+<ul>
+<li>limit: 100</li>
+</ul>
+<h5 id="method--url">Method &amp; Url</h5>
+<pre><code>GET http://localhost:8080/graphs/{hugegraph}/jobs/computerdis?limit=100
+</code></pre><h5 id="response-status">Response Status</h5>
+<pre><code class="lang-json"><span class="hljs-number">201</span>
+</code></pre>
+<h5 id="response-body">Response Body</h5>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;tasks&quot;</span>: [
+    {
+      <span class="hljs-string">&quot;task_name&quot;</span>: <span class="hljs-string">&quot;computer-proxy:pagerank&quot;</span>,
+      <span class="hljs-string">&quot;task_progress&quot;</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-string">&quot;task_create&quot;</span>: <span class="hljs-number">1630574093172</span>,
+      <span class="hljs-string">&quot;task_status&quot;</span>: <span class="hljs-string">&quot;success&quot;</span>,
+      <span class="hljs-string">&quot;task_update&quot;</span>: <span class="hljs-number">1630574102519</span>,
+      <span class="hljs-string">&quot;task_retries&quot;</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-number">2</span>,
+      <span class="hljs-string">&quot;task_type&quot;</span>: <span class="hljs-string">&quot;computer-proxy&quot;</span>,
+      <span class="hljs-string">&quot;task_server&quot;</span>: <span class="hljs-string">&quot;server-2&quot;</span>
+    },
+    {
+      <span class="hljs-string">&quot;task_name&quot;</span>: <span class="hljs-string">&quot;computer-proxy:pagerank&quot;</span>,
+      <span class="hljs-string">&quot;task_progress&quot;</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-string">&quot;task_create&quot;</span>: <span class="hljs-number">1630574152472</span>,
+      <span class="hljs-string">&quot;task_status&quot;</span>: <span class="hljs-string">&quot;success&quot;</span>,
+      <span class="hljs-string">&quot;task_update&quot;</span>: <span class="hljs-number">1630574165237</span>,
+      <span class="hljs-string">&quot;task_retries&quot;</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-number">3</span>,
+      <span class="hljs-string">&quot;task_type&quot;</span>: <span class="hljs-string">&quot;computer-proxy&quot;</span>,
+      <span class="hljs-string">&quot;task_server&quot;</span>: <span class="hljs-string">&quot;server-2&quot;</span>
+    },
+    {
+      <span class="hljs-string">&quot;task_name&quot;</span>: <span class="hljs-string">&quot;computer-proxy:pagerank&quot;</span>,
+      <span class="hljs-string">&quot;task_progress&quot;</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-string">&quot;task_create&quot;</span>: <span class="hljs-number">1630574926226</span>,
+      <span class="hljs-string">&quot;task_status&quot;</span>: <span class="hljs-string">&quot;failed&quot;</span>,
+      <span class="hljs-string">&quot;task_update&quot;</span>: <span class="hljs-number">1630574935039</span>,
+      <span class="hljs-string">&quot;task_retries&quot;</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-number">4</span>,
+      <span class="hljs-string">&quot;task_type&quot;</span>: <span class="hljs-string">&quot;computer-proxy&quot;</span>,
+      <span class="hljs-string">&quot;task_server&quot;</span>: <span class="hljs-string">&quot;server-2&quot;</span>
+    }
+  ]
+}
+</code></pre>
+<h4 id="635-&#x66F4;&#x65B0;&#x56FE;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;&#x72B6;&#x6001;">6.3.5 &#x66F4;&#x65B0;&#x56FE;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;&#x72B6;&#x6001;</h4>
+<h5 id="params">Params</h5>
+<ul>
+<li>status: RUNNING</li>
+</ul>
+<h5 id="request-body">Request Body</h5>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;status&quot;</span>: <span class="hljs-string">&quot;RUNNING&quot;</span>
+}
+</code></pre>
+<h5 id="method--url">Method &amp; Url</h5>
+<pre><code>GET http://localhost:8080/graphs/{hugegraph}/jobs/computerdis/update/{jobId}
+</code></pre><h5 id="response-status">Response Status</h5>
+<pre><code class="lang-json"><span class="hljs-number">200</span>
+</code></pre>
 
                                 
                                 </section>
@@ -1053,12 +1121,12 @@
 
             
                 
-                <a href="task.html" class="navigation navigation-prev " aria-label="Previous page: Task">
+                <a href="rebuild.html" class="navigation navigation-prev " aria-label="Previous page: Rebuild">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="k8stask.html" class="navigation navigation-next " aria-label="Next page: K8sTask">
+                <a href="gremlin.html" class="navigation navigation-next " aria-label="Next page: Gremlin">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1069,7 +1137,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Rebuild","level":"4.1.12","depth":2,"next":{"title":"K8sTask","level":"4.1.13","depth":2,"path":"clients/restful-api/k8stask.md","ref":"clients/restful-api/k8stask.md","articles":[]},"previous":{"title":"Task","level":"4.1.11","depth":2,"path":"clients/restful-api/task.md","ref":"clients/restful-api/task.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"clients/restful-api/rebuild.md","mtime":"2021-09-02T12:36:55.194Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-09-02T12:47:27.824Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"K8sTask","level":"4.1.13","depth":2,"next":{"title":"Gremlin","level":"4.1.14","depth":2,"path":"clients/restful-api/gremlin.md","ref":"clients/restful-api/gremlin.md","articles":[]},"previous":{"title":"Rebuild","level":"4.1.12","depth":2,"path":"clients/restful-api/rebuild.md","ref":"clients/restful-api/rebuild.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"clients/restful-api/k8stask.md","mtime":"2021-09-02T12:36:50.574Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-09-02T12:47:27.824Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

@@ -1,4 +1,4 @@
-### 8.1 用户认证与权限控制
+### 9.1 用户认证与权限控制
 
 > 开启权限及相关配置请先参考 [权限配置](../../config/config-authentication.md) 文档
 
@@ -10,17 +10,17 @@ HugeGraph支持多用户认证、以及细粒度的权限访问控制，采用�
 支持动态分配或取消权限。初始化数据库时超级管理员用户被创建，后续可通过超级管理员创建各类角色用户，新创建的用户如果被分配足够权限后，可以由其创建或管理更多的用户。
 
 ##### 举例说明：
-user(name=boss) -belong-> group(name=all) -access(read)-> target(graph=graph1, resource={label: person,
+user(name=tester) -belong-> group(name=all) -access(read)-> target(graph=graph1, resource={label: person,
 city: Beijing})  
-描述：用户'boss'拥有对'graph1'图中北京人的读权限。
+描述：用户'tester'拥有对'graph1'图中北京人的读权限。
 
 ##### 接口说明：
 用户认证与权限控制接口包括5类：UserAPI、GroupAPI、TargetAPI、BelongAPI、AccessAPI。
 
-### 8.2 用户（User）API
+### 9.2 用户（User）API
 用户接口包括：创建用户，删除用户，修改用户，和查询用户相关信息接口。
 
-#### 8.2.1 创建用户
+#### 9.2.1 创建用户
 
 ##### Params
 
@@ -35,7 +35,7 @@ city: Beijing})
 
 ```json
 {
-    "user_name": "boss",
+    "user_name": "tester",
     "user_password": "******",
     "user_phone": "182****9088",
     "user_email": "123@xx.com"
@@ -62,15 +62,15 @@ POST http://localhost:8080/graphs/auth/users
     "user_password": "******",
     "user_email": "123@xx.com",
     "user_update": "2020-11-17 14:31:07.833",
-    "user_name": "boss",
+    "user_name": "tester",
     "user_creator": "admin",
     "user_phone": "182****9088",
-    "id": "-63:boss",
+    "id": "-63:tester",
     "user_create": "2020-11-17 14:31:07.833"
 }
 ```
 
-#### 8.2.2 删除用户
+#### 9.2.2 删除用户
 
 ##### Params
 
@@ -80,7 +80,7 @@ POST http://localhost:8080/graphs/auth/users
 ##### Method & Url
 
 ```
-DELETE http://localhost:8080/graphs/auth/users/-63:test
+DELETE http://localhost:8080/graphs/auth/users/-63:tester
 ```
 
 ##### Response Status
@@ -95,7 +95,7 @@ DELETE http://localhost:8080/graphs/auth/users/-63:test
 1
 ```
 
-#### 8.2.3 修改用户
+#### 9.2.3 修改用户
 
 ##### Params
 
@@ -104,14 +104,14 @@ DELETE http://localhost:8080/graphs/auth/users/-63:test
 ##### Method & Url
 
 ```
-PUT http://localhost:8080/graphs/auth/users/-63:test
+PUT http://localhost:8080/graphs/auth/users/-63:tester
 ```
 
 ##### Request Body
 修改user_name、user_password和user_phone
 ```json
 {
-    "user_name": "test",
+    "user_name": "tester",
     "user_password": "******",
     "user_phone": "183****9266"
 }
@@ -129,15 +129,15 @@ PUT http://localhost:8080/graphs/auth/users/-63:test
 {
     "user_password": "******",
     "user_update": "2020-11-12 10:29:30.455",
-    "user_name": "test",
+    "user_name": "tester",
     "user_creator": "admin",
     "user_phone": "183****9266",
-    "id": "-63:test",
+    "id": "-63:tester",
     "user_create": "2020-11-12 10:27:13.601"
 }
 ```
 
-#### 8.2.4 查询用户列表
+#### 9.2.4 查询用户列表
 
 ##### Params
 
@@ -173,7 +173,7 @@ GET http://localhost:8080/graphs/auth/users
 }
 ```
 
-#### 8.2.5 查询某个用户
+#### 9.2.5 查询某个用户
 
 ##### Params
 
@@ -208,12 +208,12 @@ GET http://localhost:8080/graphs/auth/users/-63:admin
 }
 ```
 
-#### 8.2.6 查询某个用户的角色
+#### 9.2.6 查询某个用户的角色
 
 ##### Method & Url
 
 ```
-GET http://localhost:8080/graphs/auth/users/-63:boss/role
+GET http://localhost:8080/graphs/auth/users/-63:tester/role
 ```
 
 ##### Response Status
@@ -240,11 +240,11 @@ GET http://localhost:8080/graphs/auth/users/-63:boss/role
 }
 ```
 
-### 8.3 用户组（Group）API
+### 9.3 用户组（Group）API
 用户组会赋予相应的资源权限，用户会被分配不同的用户组，即可拥有不同的资源权限。  
 用户组接口包括：创建用户组，删除用户组，修改用户组，和查询用户组相关信息接口。
 
-#### 8.3.1 创建用户组
+#### 9.3.1 创建用户组
 
 ##### Params
 
@@ -286,7 +286,7 @@ POST http://localhost:8080/graphs/auth/groups
 }
 ```
 
-#### 8.3.2 删除用户组
+#### 9.3.2 删除用户组
 
 ##### Params
 
@@ -311,7 +311,7 @@ DELETE http://localhost:8080/graphs/auth/groups/-69:grant
 1
 ```
 
-#### 8.3.3 修改用户组
+#### 9.3.3 修改用户组
 
 ##### Params
 
@@ -351,7 +351,7 @@ PUT http://localhost:8080/graphs/auth/groups/-69:grant
 }
 ```
 
-#### 8.3.4 查询用户组列表
+#### 9.3.4 查询用户组列表
 
 ##### Params
 
@@ -386,7 +386,7 @@ GET http://localhost:8080/graphs/auth/groups
 }
 ```
 
-#### 8.3.5 查询某个用户组
+#### 9.3.5 查询某个用户组
 
 ##### Params
 
@@ -417,12 +417,12 @@ GET http://localhost:8080/graphs/auth/groups/-69:all
 }
 ```
 
-### 8.4 资源（Target）API
+### 9.4 资源（Target）API
 资源描述了图数据库中的数据，比如符合某一类条件的顶点，每一个资源包括type、label、properties三个要素，共有18种type、
 任意label、任意properties的组合形成的资源，一个资源的内部条件是且关系，多个资源之间的条件是或关系。   
 资源接口包括：资源的创建、删除、修改和查询。
 
-#### 8.4.1 创建资源
+#### 9.4.1 创建资源
 
 ##### Params
 - target_name: 资源名称
@@ -488,7 +488,7 @@ POST http://localhost:8080/graphs/auth/targets
 }
 ```
 
-#### 8.4.2 删除资源
+#### 9.4.2 删除资源
 
 ##### Params
 
@@ -513,7 +513,7 @@ DELETE http://localhost:8080/graphs/auth/targets/-77:gremlin
 1
 ```
 
-#### 8.4.3 修改资源
+#### 9.4.3 修改资源
 
 ##### Params
 
@@ -568,7 +568,7 @@ PUT http://localhost:8080/graphs/auth/targets/-77:gremlin
 }
 ```
 
-#### 8.4.4 查询资源列表
+#### 9.4.4 查询资源列表
 
 ##### Params
 
@@ -627,7 +627,7 @@ GET http://localhost:8080/graphs/auth/targets
 }
 ```
 
-#### 8.4.5 查询某个资源
+#### 9.4.5 查询某个资源
 
 ##### Params
 
@@ -666,11 +666,11 @@ GET http://localhost:8080/graphs/auth/targets/-77:grant
 }
 ```
 
-### 8.5 关联角色（Belong）API
+### 9.5 关联角色（Belong）API
 关联用户和用户组的关系，一个用户可以关联一个或者多个用户组。用户组拥有相关资源的权限，不同用户组的资源权限可以理解为不同的角色。即给用户关联角色。  
 关联角色接口包括：用户关联角色的创建、删除、修改和查询。
 
-#### 8.5.1 创建用户的关联角色
+#### 9.5.1 创建用户的关联角色
 
 ##### Params
 
@@ -682,7 +682,7 @@ GET http://localhost:8080/graphs/auth/targets/-77:grant
 
 ```json
 {
-    "user": "-63:boss",
+    "user": "-63:tester",
     "group": "-69:all"
 }
 ```
@@ -707,13 +707,13 @@ POST http://localhost:8080/graphs/auth/belongs
     "belong_create": "2020-11-11 16:19:35.422",
     "belong_creator": "admin",
     "belong_update": "2020-11-11 16:19:35.422",
-    "id": "S-63:boss>-82>>S-69:all",
-    "user": "-63:boss",
+    "id": "S-63:tester>-82>>S-69:all",
+    "user": "-63:tester",
     "group": "-69:all"
 }
 ```
 
-#### 8.5.2 删除关联角色
+#### 9.5.2 删除关联角色
 
 ##### Params
 
@@ -722,7 +722,7 @@ POST http://localhost:8080/graphs/auth/belongs
 ##### Method & Url
 
 ```
-DELETE http://localhost:8080/graphs/auth/belongs/S-63:boss>-82>>S-69:grant
+DELETE http://localhost:8080/graphs/auth/belongs/S-63:tester>-82>>S-69:grant
 ```
 
 ##### Response Status
@@ -737,7 +737,7 @@ DELETE http://localhost:8080/graphs/auth/belongs/S-63:boss>-82>>S-69:grant
 1
 ```
 
-#### 8.5.3 修改关联角色
+#### 9.5.3 修改关联角色
 关联角色只能修改描述，不能修改 user 和 group 属性，如果需要修改关联角色，需要删除原来关联关系，新增关联角色。
 
 ##### Params
@@ -747,7 +747,7 @@ DELETE http://localhost:8080/graphs/auth/belongs/S-63:boss>-82>>S-69:grant
 ##### Method & Url
 
 ```
-PUT http://localhost:8080/graphs/auth/belongs/S-63:boss>-82>>S-69:grant
+PUT http://localhost:8080/graphs/auth/belongs/S-63:tester>-82>>S-69:grant
 ```
 
 ##### Request Body
@@ -772,13 +772,13 @@ PUT http://localhost:8080/graphs/auth/belongs/S-63:boss>-82>>S-69:grant
     "belong_create": "2020-11-12 10:40:21.720",
     "belong_creator": "admin",
     "belong_update": "2020-11-12 10:42:47.265",
-    "id": "S-63:boss>-82>>S-69:grant",
-    "user": "-63:boss",
+    "id": "S-63:tester>-82>>S-69:grant",
+    "user": "-63:tester",
     "group": "-69:grant"
 }
 ```
 
-#### 8.5.4 查询关联角色列表
+#### 9.5.4 查询关联角色列表
 
 ##### Params
 
@@ -806,15 +806,15 @@ GET http://localhost:8080/graphs/auth/belongs
             "belong_create": "2020-11-11 16:19:35.422",
             "belong_creator": "admin",
             "belong_update": "2020-11-11 16:19:35.422",
-            "id": "S-63:boss>-82>>S-69:all",
-            "user": "-63:boss",
+            "id": "S-63:tester>-82>>S-69:all",
+            "user": "-63:tester",
             "group": "-69:all"
         }
     ]
 }
 ```
 
-#### 8.5.5 查看某个关联角色
+#### 9.5.5 查看某个关联角色
 
 ##### Params
 
@@ -823,7 +823,7 @@ GET http://localhost:8080/graphs/auth/belongs
 ##### Method & Url
 
 ```
-GET http://localhost:8080/graphs/auth/belongs/S-63:boss>-82>>S-69:all
+GET http://localhost:8080/graphs/auth/belongs/S-63:tester>-82>>S-69:all
 ```
 
 ##### Response Status
@@ -839,17 +839,17 @@ GET http://localhost:8080/graphs/auth/belongs/S-63:boss>-82>>S-69:all
     "belong_create": "2020-11-11 16:19:35.422",
     "belong_creator": "admin",
     "belong_update": "2020-11-11 16:19:35.422",
-    "id": "S-63:boss>-82>>S-69:all",
-    "user": "-63:boss",
+    "id": "S-63:tester>-82>>S-69:all",
+    "user": "-63:tester",
     "group": "-69:all"
 }
 ```
 
-### 8.6 赋权（Access）API
+### 9.6 赋权（Access）API
 给用户组赋予资源的权限，主要包含：读操作(READ)、写操作(WRITE)、删除操作(DELETE)、执行操作(EXECUTE)等。  
 赋权接口包括：赋权的创建、删除、修改和查询。
 
-#### 8.6.1 创建赋权(用户组赋予资源的权限)
+#### 9.6.1 创建赋权(用户组赋予资源的权限)
 
 ##### Params
 
@@ -900,7 +900,7 @@ POST http://localhost:8080/graphs/auth/accesses
 }
 ```
 
-#### 8.6.2 删除赋权
+#### 9.6.2 删除赋权
 
 ##### Params
 
@@ -925,7 +925,7 @@ DELETE http://localhost:8080/graphs/auth/accesses/S-69:all>-88>12>S-77:all
 1
 ```
 
-#### 8.6.3 修改赋权
+#### 9.6.3 修改赋权
 赋权只能修改描述，不能修改用户组、资源和权限许可，如果需要修改赋权的关系，可以删除原来的赋权关系，新增赋权。
 
 ##### Params
@@ -967,7 +967,7 @@ PUT http://localhost:8080/graphs/auth/accesses/S-69:all>-88>12>S-77:all
 }
 ```
 
-#### 8.6.4 查询赋权列表
+#### 9.6.4 查询赋权列表
 
 ##### Params
 
@@ -1003,7 +1003,7 @@ GET http://localhost:8080/graphs/auth/accesses
 }
 ```
 
-#### 8.6.5 查询某个赋权
+#### 9.6.5 查询某个赋权
 
 ##### Params
 

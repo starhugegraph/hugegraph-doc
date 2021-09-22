@@ -256,7 +256,7 @@ GET http://localhost:8080/graphs/{graph}/traversers/kout?source="1:marko"&max_de
 	- vertex_steps：顶点Step集合，单个结构如下：
 		- label：边的类型
 		- properties：通过属性的值过滤边
-    - max_degree：查询过程中，单个顶点遍历的最大邻接边数目，默认为 10000 (注: 0.12版之前 step 内仅支持 degree 作为参数名, 0.12开始统一使用 max_degree, 并向下兼容 degree 写法)
+  - max_degree：查询过程中，单个顶点遍历的最大邻接边数目，默认为 10000 (注: 0.12版之前 step 内仅支持 degree 作为参数名, 0.12开始统一使用 max_degree, 并向下兼容 degree 写法)
 	- skip_degree：用于设置查询过程中舍弃超级顶点的最小边数，即当某个顶点的邻接边数目大于 skip_degree 时，完全舍弃该顶点。选填项，如果开启时，需满足 `skip_degree >= max_degree` 约束，默认为0 (不启用)，表示不跳过任何点 (注意:  开启此配置后，遍历时会尝试访问一个顶点的 skip_degree 条边，而不仅仅是 max_degree 条边，这样有额外的遍历开销，对查询性能影响可能有较大影响，请确认理解后再开启)
 - max_depth：步数，必填项
 - nearest：nearest为true时，代表起始顶点到达结果顶点的最短路径长度为depth，不存在更短的路径；nearest为false时，代表起始顶点到结果顶点有一条长度为depth的路径（未必最短且可以有环），选填项，默认为true
@@ -474,7 +474,7 @@ GET http://localhost:8080/graphs/{graph}/traversers/kneighbor?source=“1:marko�
 
 - source：起始顶点id，必填项
 - 从起始点出发的Step，必填项，结构如下：
-	- direction：表示边的方向（OUT,IN,BOTH），默认是BOTH
+  - direction：表示边的方向（OUT,IN,BOTH），默认是BOTH
 	- edge_steps：边Step集合，单个结构如下：
 		- label：边的类型
 		- properties：通过属性的值过滤边
@@ -488,10 +488,10 @@ GET http://localhost:8080/graphs/{graph}/traversers/kneighbor?source=“1:marko�
 - with_path：true表示返回起始点到每个邻居的最短路径，false表示不返回起始点到每个邻居的最短路径，选填项，默认为false
 - with_edge：选填项，默认为false。仅在count_only为false，且此值为true时，返回结果会包含完整的边信息
 - with_vertex，选填项，默认为false：
-    - true表示返回结果包含完整的顶点信息（路径中的全部顶点）
-        - with_path为true时，返回所有路径中的顶点的完整信息
-        - with_path为false时，返回所有邻居的完整信息
-    - false时表示只返回顶点id
+  - true表示返回结果包含完整的顶点信息（路径中的全部顶点）
+    - with_path为true时，返回所有路径中的顶点的完整信息
+    - with_path为false时，返回所有邻居的完整信息
+  - false时表示只返回顶点id
 - limit：返回的顶点的最大数目，选填项，默认为10000000
 
 ##### 3.2.4.2 使用方法

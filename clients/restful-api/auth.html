@@ -1702,6 +1702,31 @@ P.gte(18)&#xFF09;&#xFF0C;properties&#x5982;&#x679C;&#x4E3A;null&#x8868;&#x793A;&
     <span class="hljs-string">&quot;target&quot;</span>: <span class="hljs-string">&quot;-77:all&quot;</span>
 }
 </code></pre>
+<h3 id="97-token-api">9.7 Token API</h3>
+<p>&#x83B7;&#x53D6;&#x7528;&#x6237;Token&#xFF0C;&#x4E3B;&#x8981;&#x5305;&#x542B;&#xFF1A;&#x767B;&#x5F55;(login)&#x3001;&#x9A8C;&#x8BC1;Token(verify)&#x3002;</p>
+<h4 id="971-&#x767B;&#x5F55;login">9.7.1 &#x767B;&#x5F55;(login)</h4>
+<h5 id="method--url">Method &amp; Url</h5>
+<pre><code>POST http://localhost:8080/graphs/auth/login
+</code></pre><h5 id="response-status">Response Status</h5>
+<pre><code class="lang-json"><span class="hljs-number">200</span>
+</code></pre>
+<h5 id="response-body">Response Body</h5>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;token&quot;</span>: <span class="hljs-string">&quot;eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX25hbWUiOiJneWcxMjM0IiwidXNlcl9pZCI6Ii02MzpneWcxMjM0IiwiZXhwIjoxNjMyNjUzOTE2fQ.T4psT797RIaPqvkqtgVug1qIZQ2djKBLI5yOxQRjuZU&quot;</span>
+}
+</code></pre>
+<h4 id="972-&#x9A8C;&#x8BC1;tokenverify">9.7.2 &#x9A8C;&#x8BC1;Token(verify)</h4>
+<h5 id="method--url">Method &amp; Url</h5>
+<pre><code>POST http://localhost:8080/graphs/auth/verify
+</code></pre><h5 id="response-status">Response Status</h5>
+<pre><code class="lang-json"><span class="hljs-number">200</span>
+</code></pre>
+<h5 id="response-body">Response Body</h5>
+<pre><code class="lang-json">{
+    <span class="hljs-string">&quot;user_name&quot;</span>: <span class="hljs-string">&quot;admin&quot;</span>,
+    <span class="hljs-string">&quot;user_id&quot;</span>: <span class="hljs-string">&quot;-63:admin&quot;</span>
+}
+</code></pre>
 
                                 
                                 </section>
@@ -1754,7 +1779,7 @@ P.gte(18)&#xFF09;&#xFF0C;properties&#x5982;&#x679C;&#x4E3A;null&#x8868;&#x793A;&
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Authentication","level":"4.1.16","depth":2,"next":{"title":"Other","level":"4.1.17","depth":2,"path":"clients/restful-api/other.md","ref":"clients/restful-api/other.md","articles":[]},"previous":{"title":"Gremlin","level":"4.1.15","depth":2,"path":"clients/restful-api/gremlin.md","ref":"clients/restful-api/gremlin.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"clients/restful-api/auth.md","mtime":"2021-09-22T12:46:32.174Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-09-23T03:08:37.403Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Authentication","level":"4.1.16","depth":2,"next":{"title":"Other","level":"4.1.17","depth":2,"path":"clients/restful-api/other.md","ref":"clients/restful-api/other.md","articles":[]},"previous":{"title":"Gremlin","level":"4.1.15","depth":2,"path":"clients/restful-api/gremlin.md","ref":"clients/restful-api/gremlin.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"clients/restful-api/auth.md","mtime":"2021-09-26T11:28:25.761Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-09-26T11:28:37.068Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

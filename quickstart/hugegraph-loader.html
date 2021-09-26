@@ -1473,7 +1473,7 @@ Office,388
 <p>&#x524D;&#x9762;&#x8BF4;&#x5230;&#x8FC7;&#x652F;&#x6301;&#x591A;&#x79CD;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x4F46;&#x7531;&#x4E8E;&#x5B83;&#x4EEC;&#x7684;&#x6620;&#x5C04;&#x7ED3;&#x6784;&#x975E;&#x5E38;&#x76F8;&#x4F3C;&#xFF0C;&#x6545;&#x7EDF;&#x79F0;&#x4E3A; JDBC &#x8F93;&#x5165;&#x6E90;&#xFF0C;&#x7136;&#x540E;&#x7528;<code>vendor</code>&#x8282;&#x70B9;&#x533A;&#x5206;&#x4E0D;&#x540C;&#x7684;&#x6570;&#x636E;&#x5E93;&#x3002;</p>
 <ul>
 <li>type: &#x8F93;&#x5165;&#x6E90;&#x7C7B;&#x578B;&#xFF0C;&#x5FC5;&#x987B;&#x586B; jdbc &#x6216; JDBC&#xFF0C;&#x5FC5;&#x586B;&#xFF1B;</li>
-<li>vendor: &#x6570;&#x636E;&#x5E93;&#x7C7B;&#x578B;&#xFF0C;&#x53EF;&#x9009;&#x9879;&#x4E3A; [MySQL&#x3001;PostgreSQL&#x3001;Oracle&#x3001;SQLServer]&#xFF0C;&#x4E0D;&#x533A;&#x5206;&#x5927;&#x5C0F;&#x5199;&#xFF0C;&#x5FC5;&#x586B;&#xFF1B;</li>
+<li>vendor: &#x6570;&#x636E;&#x5E93;&#x7C7B;&#x578B;&#xFF0C;&#x53EF;&#x9009;&#x9879;&#x4E3A; [MySQL&#x3001;PostgreSQL&#x3001;Oracle&#x3001;SQLServer&#x3001;HIVE]&#xFF0C;&#x4E0D;&#x533A;&#x5206;&#x5927;&#x5C0F;&#x5199;&#xFF0C;&#x5FC5;&#x586B;&#xFF1B;</li>
 <li>driver: jdbc &#x4F7F;&#x7528;&#x7684; driver &#x7C7B;&#x578B;&#xFF0C;&#x5FC5;&#x586B;&#xFF1B;</li>
 <li>url: jdbc &#x8981;&#x8FDE;&#x63A5;&#x7684;&#x6570;&#x636E;&#x5E93;&#x7684; url&#xFF0C;&#x5FC5;&#x586B;&#xFF1B;</li>
 <li>database: &#x8981;&#x8FDE;&#x63A5;&#x7684;&#x6570;&#x636E;&#x5E93;&#x540D;&#xFF0C;&#x5FC5;&#x586B;&#xFF1B;</li>
@@ -1575,6 +1575,30 @@ Office,388
 <tr>
 <td>url</td>
 <td>jdbc:sqlserver://127.0.0.1:1433</td>
+</tr>
+</tbody>
+</table>
+<p>schema: &#x5FC5;&#x586B;</p>
+<p><strong>HIVE</strong></p>
+<table>
+<thead>
+<tr>
+<th>&#x8282;&#x70B9;</th>
+<th>&#x56FA;&#x5B9A;&#x503C;&#x6216;&#x5E38;&#x89C1;&#x503C;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>vendor</td>
+<td>HIVE</td>
+</tr>
+<tr>
+<td>driver</td>
+<td>org.apache.hive.jdbc.HiveDriver</td>
+</tr>
+<tr>
+<td>url</td>
+<td>jdbc:hive2://127.0.0.1:10000</td>
 </tr>
 </tbody>
 </table>
@@ -2050,7 +2074,7 @@ count metrics
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Load data with HugeGraph-Loader","level":"2.2","depth":1,"next":{"title":"Manage with HugeGraph-Tools","level":"2.3","depth":1,"path":"quickstart/hugegraph-tools.md","ref":"quickstart/hugegraph-tools.md","articles":[]},"previous":{"title":"Install HugeGraph-Server","level":"2.1","depth":1,"path":"quickstart/hugegraph-server.md","ref":"quickstart/hugegraph-server.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"quickstart/hugegraph-loader.md","mtime":"2021-09-22T12:46:32.218Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-09-23T03:08:37.403Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Load data with HugeGraph-Loader","level":"2.2","depth":1,"next":{"title":"Manage with HugeGraph-Tools","level":"2.3","depth":1,"path":"quickstart/hugegraph-tools.md","ref":"quickstart/hugegraph-tools.md","articles":[]},"previous":{"title":"Install HugeGraph-Server","level":"2.1","depth":1,"path":"quickstart/hugegraph-server.md","ref":"quickstart/hugegraph-server.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"quickstart/hugegraph-loader.md","mtime":"2021-09-26T11:28:25.761Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-09-26T11:28:37.068Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

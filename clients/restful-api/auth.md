@@ -24,8 +24,8 @@ city: Beijing})
 
 ##### Params
 
-- user_name: 用户名称
-- user_password: 用户密码
+- user_name: 用户名称，长度5-16个字符，可以为字母（区分大小写）、数字、下划线。
+- user_password: 用户密码，长度5-16个字符，可以为字母、数字和特殊符号，其中特殊符号：~!@#$%^&*()_+|<>,.?/:;'`"\[\]{}\\。
 - user_phone: 用户手机号
 - user_email: 用户邮箱  
 
@@ -1046,5 +1046,66 @@ GET http://localhost:8080/graphs/auth/accesses/S-69:all>-88>11>S-77:all
     "access_creator": "admin",
     "group": "-69:all",
     "target": "-77:all"
+}
+```
+
+### 9.7 Token API
+获取用户Token，主要包含：登录(login)、验证Token(verify)。
+
+#### 9.7.1 登录(login)
+
+##### Params
+
+- user_name： 用户名
+- user_password：用户密码
+
+##### Method & Url
+
+```
+POST http://localhost:8080/graphs/auth/login
+```
+##### Request Body
+
+```json
+{
+  "user_name": "admin",
+  "user_password": "admin"
+}
+```
+
+##### Response Status
+
+```json
+200
+```
+
+##### Response Body
+
+```json
+{
+  "token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX25hbWUiOiJneWcxMjM0IiwidXNlcl9pZCI6Ii02MzpneWcxMjM0IiwiZXhwIjoxNjMyNjUzOTE2fQ.T4psT797RIaPqvkqtgVug1qIZQ2djKBLI5yOxQRjuZU"
+}
+```
+
+#### 9.7.2 验证Token(verify)
+
+##### Method & Url
+
+```
+POST http://localhost:8080/graphs/auth/verify
+```
+
+##### Response Status
+
+```json
+200
+```
+
+##### Response Body
+
+```json
+{
+    "user_name": "admin",
+    "user_id": "-63:admin"
 }
 ```

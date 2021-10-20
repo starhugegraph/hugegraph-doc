@@ -1058,7 +1058,7 @@ GET http://localhost:8080/graphs/auth/accesses/S-69:all>-88>11>S-77:all
 
 - user_name： 用户名
 - user_password：用户密码
-- token_expire：Token自系统创建后有效期，单位秒，例如：10800：3小时、86400：1天、604800：1周、2592000：1月
+- token_expire：Token自系统创建后有效期，单位秒，例如：10800：3小时、86400：1天、604800：1周、2592000：1月（注意：实际使用过程Token有效期可能存在有一分钟左右的误差）
 
 ##### Method & Url
 

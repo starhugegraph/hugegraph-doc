@@ -10,7 +10,7 @@
 
 ##### Request Body
 
-page-rank
+示例1: page-rank
 
 ```json
 {
@@ -31,7 +31,7 @@ page-rank
 | pagerank.max_iterations  | 否       | 最大迭代次数           | Int    | 1~2000          | 1000    |
 | bsp.max_super_step       | 否       | 最大迭代次数           | Int    | 1~2000          | 10      |
 
-示例1：degree-centrality
+示例2: degree-centrality
 
 ```json
 {
@@ -46,7 +46,7 @@ page-rank
 | :-------------------------------- | :------- | :--------- | :----- | :------- | :----------------- |
 | degree_centrality.weight_property | 否       | 权重属性名 | String |          | "",为空时边权重为1 |
 
-示例2：rings
+示例3: rings
 
 ```json
 {
@@ -61,7 +61,7 @@ page-rank
 | :----------------- | :------- | :----------- | :--- | :------- | :----- |
 | bsp.max_super_step | 否       | 最大迭代次数 | Int  | 1~2000   | 10     |
 
-示例3：rings-with-filter
+示例4: rings-with-filter
 
 ```json
 {
@@ -78,7 +78,7 @@ page-rank
 | bsp.max_super_step    | 否       | 最大迭代次数     | Int    | 1~2000   | 10     |
 | rings.property_filter | 否       | 点边属性过滤条件 | String |          | {}     |
 
-示例4：closeness-centrality
+示例5: closeness-centrality
 
 ```json
 {
@@ -95,7 +95,7 @@ page-rank
 | closeness_centrality.weight_property | 否       | 权重属性名 | String |          | ""，为空时边权重为1 |
 | closeness_centrality.sample_rate     | 否       | 边的采样率 | Double | (0, 1.0] | 1.0  
 
-示例5：links
+示例6: links
 
 ```json
 {

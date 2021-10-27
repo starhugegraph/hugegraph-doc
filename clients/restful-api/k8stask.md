@@ -95,7 +95,22 @@
 | closeness_centrality.weight_property | 否       | 权重属性名 | String |          | ""，为空时边权重为1 |
 | closeness_centrality.sample_rate     | 否       | 边的采样率 | Double | (0, 1.0] | 1.0  
 
-示例6: links
+示例6: betweeness-centrality
+
+```json
+{
+  "algorithm": "betweeness-centrality",
+  "worker": 5,
+  "params": {
+    "betweenness_centrality.sample_rate": "1.0"
+  }
+}
+```
+| 参数                                 | 是否必选 | 说明       | 类型   | 取值范围 | 默认值              |
+| :----------------------------------- | :------- | :--------- | :----- | :------- | :------------------ |
+| closeness_centrality.sample_rate     | 否       | 边的采样率 | Double | (0, 1.0] | 1.0  
+
+示例7: links
 
 ```json
 {
@@ -112,7 +127,7 @@
 | bsp.max_super_step   | 否       | 最大迭代次数     | Int    | 1~2000   | 10     |
 | links.analyze_config | 是       | 链路传播条件配置 | String |          | {}     |
 
-其他算法，参数可以为空
+*其他算法，参数可以为空*
 
 ##### Hdfs 输出参数
 

@@ -112,6 +112,14 @@
 | bsp.max_super_step   | 否       | 最大迭代次数     | Int    | 1~2000   | 10     |
 | links.analyze_config | 是       | 链路传播条件配置 | String |          | {}     |
 
+**Hdfs 输出参数**
+| 参数                    | 是否必选 | 说明               | 默认值                                                   |
+| ----------------------- | -------- | ------------------ | -------------------------------------------------------- |
+| output.output_class     | 是       | 输出类             | com.baidu.hugegraph.computer.core.output.hdfs.HdfsOutput |
+| output.hdfs_url         | 是       | Hdfs地址           | hdfs://127.0.0.1:9000                                    |
+| output.hdfs_user        | 是       | Hdfs用户           | hadoop                                                   |
+| output.hdfs_path_prefix | 是       | Hdfs结果文件夹前缀 | /hugegraph-computer/results         
+
 其他算法，参数可以为空
 
 ##### Method & Url

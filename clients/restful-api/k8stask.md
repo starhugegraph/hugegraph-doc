@@ -121,7 +121,7 @@
 | output.output_class     | 是       | 输出类             | com.baidu.hugegraph.computer.core.output.hdfs.HdfsOutput |
 | output.hdfs_url         | 是       | Hdfs地址           | hdfs://127.0.0.1:9000                                    |
 | output.hdfs_user        | 是       | Hdfs用户           | hadoop                                                   |
-| output.hdfs_path_prefix | 是       | Hdfs结果文件夹前缀 | /hugegraph-computer/results         
+| output.hdfs_path_prefix | 否       | Hdfs结果文件夹前缀 | /hugegraph-computer/results         
 
 ##### Method & Url
 

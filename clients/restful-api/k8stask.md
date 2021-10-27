@@ -140,6 +140,19 @@
 | output.hdfs_delimiter        | 否       | Hdfs结果文件分割符           | char27                                                   |
 | output.hdfs_merge_partitions | 否       | 是否将输出结果合并成一个文件 | true                                                     |
 
+以 triangle-count 为例
+```json
+{
+  "algorithm": "triangle-count",
+  "worker": 5,
+  "params": {
+    "output.output_class": "com.baidu.hugegraph.computer.core.output.hdfs.HdfsOutput",
+    "output.hdfs_url": "hdfs://127.0.0.1:9000",
+    "output.hdfs_user": "hadoop"
+  }
+}
+```
+
 ##### Method & Url
 
 ```

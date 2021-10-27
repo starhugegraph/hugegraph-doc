@@ -116,12 +116,14 @@
 
 ##### Hdfs 输出参数
 
-| 参数                    | 是否必选 | 说明               | 默认值                                                   |
-| ----------------------- | -------- | ------------------ | -------------------------------------------------------- |
-| output.output_class     | 是       | 输出类             | com.baidu.hugegraph.computer.core.output.hdfs.HdfsOutput |
-| output.hdfs_url         | 是       | Hdfs地址           | hdfs://127.0.0.1:9000                                    |
-| output.hdfs_user        | 是       | Hdfs用户           | hadoop                                                   |
-| output.hdfs_path_prefix | 否       | Hdfs结果文件夹前缀 | /hugegraph-computer/results         
+| 参数                         | 是否必选 | 说明                         | 默认值                                                   |
+| ---------------------------- | -------- | ---------------------------- | -------------------------------------------------------- |
+| output.output_class          | 是       | 输出类                       | com.baidu.hugegraph.computer.core.output.hdfs.HdfsOutput |
+| output.hdfs_url              | 是       | Hdfs地址                     | hdfs://127.0.0.1:9000                                    |
+| output.hdfs_user             | 是       | Hdfs用户                     | hadoop                                                   |
+| output.hdfs_path_prefix      | 否       | Hdfs结果文件夹前缀           | /hugegraph-computer/results                              |
+| output.hdfs_delimiter        | 否       | Hdfs结果文件分割符           | char27                                                   |
+| output.hdfs_merge_partitions | 否       | 是否将输出结果合并成一个文件 | true                                                     |
 
 ##### Method & Url
 

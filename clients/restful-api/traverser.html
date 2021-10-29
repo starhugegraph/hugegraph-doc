@@ -1043,6 +1043,7 @@
 <li>&#x6309;&#x5206;&#x533A;&#x67E5;&#x8BE2;&#x8FB9;&#xFF1B;</li>
 </ul>
 </li>
+<li>Same Neighbors Batch</li>
 </ul>
 <h3 id="32-traverser-api&#x8BE6;&#x89E3;">3.2. traverser API&#x8BE6;&#x89E3;</h3>
 <p>&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x4E2D;&#x7684;&#x4F8B;&#x5B50;&#xFF0C;&#x90FD;&#x662F;&#x57FA;&#x4E8E;TinkerPop&#x5B98;&#x7F51;&#x7ED9;&#x51FA;&#x7684;&#x56FE;&#xFF1A;</p>
@@ -3634,6 +3635,51 @@
 <li>&#x6309;id&#x5217;&#x8868;&#x67E5;&#x8BE2;&#x8FB9;&#xFF0C;&#x53EF;&#x7528;&#x4E8E;&#x6279;&#x91CF;&#x67E5;&#x8BE2;&#x8FB9;</li>
 <li>&#x83B7;&#x53D6;&#x5206;&#x7247;&#x548C;&#x6309;&#x5206;&#x7247;&#x67E5;&#x8BE2;&#x8FB9;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x904D;&#x5386;&#x5168;&#x90E8;&#x8FB9;</li>
 </ul>
+<h5 id="32234-&#x9002;&#x7528;&#x573A;&#x666F;">3.2.23.4 &#x9002;&#x7528;&#x573A;&#x666F;</h5>
+<ul>
+<li>&#x6309;id&#x5217;&#x8868;&#x67E5;&#x8BE2;&#x8FB9;&#xFF0C;&#x53EF;&#x7528;&#x4E8E;&#x6279;&#x91CF;&#x67E5;&#x8BE2;&#x8FB9;</li>
+<li>&#x83B7;&#x53D6;&#x5206;&#x7247;&#x548C;&#x6309;&#x5206;&#x7247;&#x67E5;&#x8BE2;&#x8FB9;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x904D;&#x5386;&#x5168;&#x90E8;&#x8FB9;</li>
+</ul>
+<h4 id="3224-same-neighbors-batch">3.2.24 Same Neighbors Batch</h4>
+<h5 id="32241-&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">3.2.24.1 &#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
+<p>&#x6279;&#x91CF;&#x67E5;&#x8BE2;&#x4E24;&#x4E2A;&#x70B9;&#x7684;&#x5171;&#x540C;&#x90BB;&#x5C45;</p>
+<h6 id="params">Params</h6>
+<ul>
+<li>vertex_list&#xFF1A;&#x70B9;ID&#x5BF9;&#x5217;&#x8868;&#xFF0C;&#x5982;&#xFF1A;[[&quot;0000000001&quot;,&quot;0000376440&quot;],[&quot;0000000001&quot;,&quot;0001822679&quot;]]</li>
+<li>direction&#xFF1A;&#x9876;&#x70B9;&#x5411;&#x5916;&#x53D1;&#x6563;&#x7684;&#x65B9;&#x5411;&#xFF08;OUT,IN,BOTH&#xFF09;&#xFF0C;&#x9009;&#x586B;&#x9879;&#xFF0C;&#x9ED8;&#x8BA4;&#x662F;BOTH</li>
+<li>label&#xFF1A;&#x8FB9;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x9009;&#x586B;&#x9879;&#xFF0C;&#x9ED8;&#x8BA4;&#x4EE3;&#x8868;&#x6240;&#x6709;edge label</li>
+<li>max_degree&#xFF1A;&#x67E5;&#x8BE2;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x5355;&#x4E2A;&#x9876;&#x70B9;&#x904D;&#x5386;&#x7684;&#x6700;&#x5927;&#x90BB;&#x63A5;&#x8FB9;&#x6570;&#x76EE;&#xFF0C;&#x9009;&#x586B;&#x9879;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;10000</li>
+<li>limit&#xFF1A;&#x8FD4;&#x56DE;&#x7684;&#x5171;&#x540C;&#x90BB;&#x5C45;&#x7684;&#x6700;&#x5927;&#x6570;&#x76EE;&#xFF0C;&#x9009;&#x586B;&#x9879;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;10000000</li>
+</ul>
+<h5 id="32242-&#x4F7F;&#x7528;&#x65B9;&#x6CD5;">3.2.24.2 &#x4F7F;&#x7528;&#x65B9;&#x6CD5;</h5>
+<h6 id="method--url">Method &amp; Url</h6>
+<pre><code>POST http://localhost:8080/graphs/{graph}/traversers/sameneighborsbatch
+</code></pre><h6 id="request-body">Request Body</h6>
+<pre><code class="lang-json">{
+    <span class="hljs-string">&quot;vertex_list&quot;</span>: [[<span class="hljs-string">&quot;0000000001&quot;</span>,<span class="hljs-string">&quot;0000376440&quot;</span>],[<span class="hljs-string">&quot;0000000001&quot;</span>,<span class="hljs-string">&quot;0001822679&quot;</span>]],
+    <span class="hljs-string">&quot;direction&quot;</span>: <span class="hljs-string">&quot;OUT&quot;</span>
+}
+</code></pre>
+<h6 id="response-status">Response Status</h6>
+<pre><code class="lang-json"><span class="hljs-number">200</span>
+</code></pre>
+<h6 id="response-body">Response Body</h6>
+<pre><code class="lang-json">{
+    <span class="hljs-string">&quot;same_neighbors&quot;</span>: [
+        [
+            <span class="hljs-string">&quot;0001222009&quot;</span>
+        ],
+        [
+            <span class="hljs-string">&quot;0001397143&quot;</span>
+        ]
+    ]
+}
+</code></pre>
+<h5 id="32243-&#x9002;&#x7528;&#x573A;&#x666F;">3.2.24.3 &#x9002;&#x7528;&#x573A;&#x666F;</h5>
+<p>&#x67E5;&#x627E;&#x4E00;&#x6279;&#x9876;&#x70B9;&#x5BF9;&#x7684;&#x5171;&#x540C;&#x90BB;&#x5C45;&#xFF1A;</p>
+<ul>
+<li>&#x793E;&#x4EA4;&#x5173;&#x7CFB;&#x4E2D;&#x53D1;&#x73B0;&#x4E24;&#x4E2A;&#x7528;&#x6237;&#x7684;&#x5171;&#x540C;&#x7C89;&#x4E1D;&#x6216;&#x8005;&#x5171;&#x540C;&#x5173;&#x6CE8;&#x7528;&#x6237;</li>
+</ul>
 
                                 
                                 </section>
@@ -3686,7 +3732,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Traverser","level":"4.1.9","depth":2,"next":{"title":"Rank","level":"4.1.10","depth":2,"path":"clients/restful-api/rank.md","ref":"clients/restful-api/rank.md","articles":[]},"previous":{"title":"Edge","level":"4.1.8","depth":2,"path":"clients/restful-api/edge.md","ref":"clients/restful-api/edge.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"clients/restful-api/traverser.md","mtime":"2021-10-26T07:23:18.391Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-10-28T07:06:45.911Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Traverser","level":"4.1.9","depth":2,"next":{"title":"Rank","level":"4.1.10","depth":2,"path":"clients/restful-api/rank.md","ref":"clients/restful-api/rank.md","articles":[]},"previous":{"title":"Edge","level":"4.1.8","depth":2,"path":"clients/restful-api/edge.md","ref":"clients/restful-api/edge.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"clients/restful-api/traverser.md","mtime":"2021-10-29T11:40:49.501Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-10-29T11:40:50.296Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

@@ -1506,6 +1506,194 @@
 </code></pre><h5 id="response-status">Response Status</h5>
 <pre><code class="lang-json"><span class="hljs-number">204</span>
 </code></pre>
+<h4 id="229-edges">2.2.9 Edges</h4>
+<h5 id="2291-&#x6839;&#x636E;&#x8FB9;&#x7684;id&#x5217;&#x8868;&#xFF0C;&#x6279;&#x91CF;&#x67E5;&#x8BE2;&#x8FB9;">2.2.9.1 &#x6839;&#x636E;&#x8FB9;&#x7684;id&#x5217;&#x8868;&#xFF0C;&#x6279;&#x91CF;&#x67E5;&#x8BE2;&#x8FB9;</h5>
+<h6 id="params">Params</h6>
+<ul>
+<li>ids&#xFF1A;&#x8981;&#x67E5;&#x8BE2;&#x7684;&#x8FB9;id&#x5217;&#x8868;</li>
+</ul>
+<h6 id="method--url">Method &amp; Url</h6>
+<pre><code>GET http://localhost:8080/graphs/hugegraph/traversers/edges?ids=&quot;S1:josh&gt;1&gt;&gt;S2:lop&quot;&amp;ids=&quot;S1:josh&gt;1&gt;&gt;S2:ripple&quot;
+</code></pre><h6 id="response-status">Response Status</h6>
+<pre><code class="lang-json"><span class="hljs-number">200</span>
+</code></pre>
+<h6 id="response-body">Response Body</h6>
+<pre><code class="lang-json">{
+    <span class="hljs-string">&quot;edges&quot;</span>: [
+        {
+            <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-string">&quot;S1:josh&gt;1&gt;&gt;S2:lop&quot;</span>,
+            <span class="hljs-string">&quot;label&quot;</span>: <span class="hljs-string">&quot;created&quot;</span>,
+            <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;edge&quot;</span>,
+            <span class="hljs-string">&quot;inVLabel&quot;</span>: <span class="hljs-string">&quot;software&quot;</span>,
+            <span class="hljs-string">&quot;outVLabel&quot;</span>: <span class="hljs-string">&quot;person&quot;</span>,
+            <span class="hljs-string">&quot;inV&quot;</span>: <span class="hljs-string">&quot;2:lop&quot;</span>,
+            <span class="hljs-string">&quot;outV&quot;</span>: <span class="hljs-string">&quot;1:josh&quot;</span>,
+            <span class="hljs-string">&quot;properties&quot;</span>: {
+                <span class="hljs-string">&quot;date&quot;</span>: <span class="hljs-string">&quot;20091111&quot;</span>,
+                <span class="hljs-string">&quot;weight&quot;</span>: <span class="hljs-number">0.4</span>
+            }
+        },
+        {
+            <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-string">&quot;S1:josh&gt;1&gt;&gt;S2:ripple&quot;</span>,
+            <span class="hljs-string">&quot;label&quot;</span>: <span class="hljs-string">&quot;created&quot;</span>,
+            <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;edge&quot;</span>,
+            <span class="hljs-string">&quot;inVLabel&quot;</span>: <span class="hljs-string">&quot;software&quot;</span>,
+            <span class="hljs-string">&quot;outVLabel&quot;</span>: <span class="hljs-string">&quot;person&quot;</span>,
+            <span class="hljs-string">&quot;inV&quot;</span>: <span class="hljs-string">&quot;2:ripple&quot;</span>,
+            <span class="hljs-string">&quot;outV&quot;</span>: <span class="hljs-string">&quot;1:josh&quot;</span>,
+            <span class="hljs-string">&quot;properties&quot;</span>: {
+                <span class="hljs-string">&quot;date&quot;</span>: <span class="hljs-string">&quot;20171210&quot;</span>,
+                <span class="hljs-string">&quot;weight&quot;</span>: <span class="hljs-number">1</span>
+            }
+        }
+    ]
+}
+</code></pre>
+<h5 id="2292-&#x83B7;&#x53D6;&#x8FB9;-shard-&#x4FE1;&#x606F;">2.2.9.2 &#x83B7;&#x53D6;&#x8FB9; Shard &#x4FE1;&#x606F;</h5>
+<p>&#x901A;&#x8FC7;&#x6307;&#x5B9A;&#x7684;&#x5206;&#x7247;&#x5927;&#x5C0F;split_size&#xFF0C;&#x83B7;&#x53D6;&#x8FB9;&#x5206;&#x7247;&#x4FE1;&#x606F;&#xFF08;&#x53EF;&#x4EE5;&#x4E0E; 3.2.22.3 &#x4E2D;&#x7684; Scan &#x914D;&#x5408;&#x4F7F;&#x7528;&#x6765;&#x83B7;&#x53D6;&#x8FB9;&#xFF09;&#x3002;</p>
+<h6 id="params">Params</h6>
+<ul>
+<li>split_size&#xFF1A;&#x5206;&#x7247;&#x5927;&#x5C0F;&#xFF0C;&#x5FC5;&#x586B;&#x9879;</li>
+</ul>
+<h6 id="method--url">Method &amp; Url</h6>
+<pre><code>GET http://localhost:8080/graphs/hugegraph/traversers/edges/shards?split_size=4294967295
+</code></pre><h6 id="response-status">Response Status</h6>
+<pre><code class="lang-json"><span class="hljs-number">200</span>
+</code></pre>
+<h6 id="response-body">Response Body</h6>
+<pre><code class="lang-json">{
+    <span class="hljs-string">&quot;shards&quot;</span>:[
+        {
+            <span class="hljs-string">&quot;start&quot;</span>: <span class="hljs-string">&quot;0&quot;</span>,
+            <span class="hljs-string">&quot;end&quot;</span>: <span class="hljs-string">&quot;1073741823&quot;</span>,
+            <span class="hljs-string">&quot;length&quot;</span>: <span class="hljs-number">0</span>
+        },
+        {
+            <span class="hljs-string">&quot;start&quot;</span>: <span class="hljs-string">&quot;1073741823&quot;</span>,
+            <span class="hljs-string">&quot;end&quot;</span>: <span class="hljs-string">&quot;2147483646&quot;</span>,
+            <span class="hljs-string">&quot;length&quot;</span>: <span class="hljs-number">0</span>
+        },
+        {
+            <span class="hljs-string">&quot;start&quot;</span>: <span class="hljs-string">&quot;2147483646&quot;</span>,
+            <span class="hljs-string">&quot;end&quot;</span>: <span class="hljs-string">&quot;3221225469&quot;</span>,
+            <span class="hljs-string">&quot;length&quot;</span>: <span class="hljs-number">0</span>
+        },
+        {
+            <span class="hljs-string">&quot;start&quot;</span>: <span class="hljs-string">&quot;3221225469&quot;</span>,
+            <span class="hljs-string">&quot;end&quot;</span>: <span class="hljs-string">&quot;4294967292&quot;</span>,
+            <span class="hljs-string">&quot;length&quot;</span>: <span class="hljs-number">0</span>
+        },
+        {
+            <span class="hljs-string">&quot;start&quot;</span>: <span class="hljs-string">&quot;4294967292&quot;</span>,
+            <span class="hljs-string">&quot;end&quot;</span>: <span class="hljs-string">&quot;4294967295&quot;</span>,
+            <span class="hljs-string">&quot;length&quot;</span>: <span class="hljs-number">0</span>
+        }
+    ]
+}
+</code></pre>
+<h5 id="2293-&#x6839;&#x636E;-shard-&#x4FE1;&#x606F;&#x6279;&#x91CF;&#x83B7;&#x53D6;&#x8FB9;">2.2.9.3 &#x6839;&#x636E; Shard &#x4FE1;&#x606F;&#x6279;&#x91CF;&#x83B7;&#x53D6;&#x8FB9;</h5>
+<p>&#x901A;&#x8FC7;&#x6307;&#x5B9A;&#x7684;&#x5206;&#x7247;&#x4FE1;&#x606F;&#x6279;&#x91CF;&#x67E5;&#x8BE2;&#x8FB9;&#xFF08;Shard&#x4FE1;&#x606F;&#x7684;&#x83B7;&#x53D6;&#x53C2;&#x89C1; 3.2.22.2&#xFF09;&#x3002;</p>
+<h6 id="params">Params</h6>
+<ul>
+<li>start&#xFF1A;&#x5206;&#x7247;&#x8D77;&#x59CB;&#x4F4D;&#x7F6E;&#xFF0C;&#x5FC5;&#x586B;&#x9879;</li>
+<li>end&#xFF1A;&#x5206;&#x7247;&#x7ED3;&#x675F;&#x4F4D;&#x7F6E;&#xFF0C;&#x5FC5;&#x586B;&#x9879;</li>
+<li>page&#xFF1A;&#x5206;&#x9875;&#x4F4D;&#x7F6E;&#xFF0C;&#x9009;&#x586B;&#x9879;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;null&#xFF0C;&#x4E0D;&#x5206;&#x9875;&#xFF1B;&#x5F53;page&#x4E3A;&#x201C;&#x201D;&#x65F6;&#x8868;&#x793A;&#x5206;&#x9875;&#x7684;&#x7B2C;&#x4E00;&#x9875;&#xFF0C;&#x4ECE;start&#x6307;&#x793A;&#x7684;&#x4F4D;&#x7F6E;&#x5F00;&#x59CB;</li>
+<li>page_limit&#xFF1A;&#x5206;&#x9875;&#x83B7;&#x53D6;&#x8FB9;&#x65F6;&#xFF0C;&#x4E00;&#x9875;&#x4E2D;&#x8FB9;&#x6570;&#x76EE;&#x7684;&#x4E0A;&#x9650;&#xFF0C;&#x9009;&#x586B;&#x9879;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;100000</li>
+</ul>
+<h6 id="method--url">Method &amp; Url</h6>
+<pre><code>GET http://localhost:8080/graphs/hugegraph/traversers/edges/scan?start=0&amp;end=3221225469
+</code></pre><h6 id="response-status">Response Status</h6>
+<pre><code class="lang-json"><span class="hljs-number">200</span>
+</code></pre>
+<h6 id="response-body">Response Body</h6>
+<pre><code class="lang-json">{
+    <span class="hljs-string">&quot;edges&quot;</span>:[
+        {
+            <span class="hljs-string">&quot;id&quot;</span>:<span class="hljs-string">&quot;S1:peter&gt;2&gt;&gt;S2:lop&quot;</span>,
+            <span class="hljs-string">&quot;label&quot;</span>:<span class="hljs-string">&quot;created&quot;</span>,
+            <span class="hljs-string">&quot;type&quot;</span>:<span class="hljs-string">&quot;edge&quot;</span>,
+            <span class="hljs-string">&quot;inVLabel&quot;</span>:<span class="hljs-string">&quot;software&quot;</span>,
+            <span class="hljs-string">&quot;outVLabel&quot;</span>:<span class="hljs-string">&quot;person&quot;</span>,
+            <span class="hljs-string">&quot;inV&quot;</span>:<span class="hljs-string">&quot;2:lop&quot;</span>,
+            <span class="hljs-string">&quot;outV&quot;</span>:<span class="hljs-string">&quot;1:peter&quot;</span>,
+            <span class="hljs-string">&quot;properties&quot;</span>:{
+                <span class="hljs-string">&quot;weight&quot;</span>:<span class="hljs-number">0.2</span>,
+                <span class="hljs-string">&quot;date&quot;</span>:<span class="hljs-string">&quot;20170324&quot;</span>
+            }
+        },
+        {
+            <span class="hljs-string">&quot;id&quot;</span>:<span class="hljs-string">&quot;S1:josh&gt;2&gt;&gt;S2:lop&quot;</span>,
+            <span class="hljs-string">&quot;label&quot;</span>:<span class="hljs-string">&quot;created&quot;</span>,
+            <span class="hljs-string">&quot;type&quot;</span>:<span class="hljs-string">&quot;edge&quot;</span>,
+            <span class="hljs-string">&quot;inVLabel&quot;</span>:<span class="hljs-string">&quot;software&quot;</span>,
+            <span class="hljs-string">&quot;outVLabel&quot;</span>:<span class="hljs-string">&quot;person&quot;</span>,
+            <span class="hljs-string">&quot;inV&quot;</span>:<span class="hljs-string">&quot;2:lop&quot;</span>,
+            <span class="hljs-string">&quot;outV&quot;</span>:<span class="hljs-string">&quot;1:josh&quot;</span>,
+            <span class="hljs-string">&quot;properties&quot;</span>:{
+                <span class="hljs-string">&quot;weight&quot;</span>:<span class="hljs-number">0.4</span>,
+                <span class="hljs-string">&quot;date&quot;</span>:<span class="hljs-string">&quot;20091111&quot;</span>
+            }
+        },
+        {
+            <span class="hljs-string">&quot;id&quot;</span>:<span class="hljs-string">&quot;S1:josh&gt;2&gt;&gt;S2:ripple&quot;</span>,
+            <span class="hljs-string">&quot;label&quot;</span>:<span class="hljs-string">&quot;created&quot;</span>,
+            <span class="hljs-string">&quot;type&quot;</span>:<span class="hljs-string">&quot;edge&quot;</span>,
+            <span class="hljs-string">&quot;inVLabel&quot;</span>:<span class="hljs-string">&quot;software&quot;</span>,
+            <span class="hljs-string">&quot;outVLabel&quot;</span>:<span class="hljs-string">&quot;person&quot;</span>,
+            <span class="hljs-string">&quot;inV&quot;</span>:<span class="hljs-string">&quot;2:ripple&quot;</span>,
+            <span class="hljs-string">&quot;outV&quot;</span>:<span class="hljs-string">&quot;1:josh&quot;</span>,
+            <span class="hljs-string">&quot;properties&quot;</span>:{
+                <span class="hljs-string">&quot;weight&quot;</span>:<span class="hljs-number">1</span>,
+                <span class="hljs-string">&quot;date&quot;</span>:<span class="hljs-string">&quot;20171210&quot;</span>
+            }
+        },
+        {
+            <span class="hljs-string">&quot;id&quot;</span>:<span class="hljs-string">&quot;S1:marko&gt;1&gt;20130220&gt;S1:josh&quot;</span>,
+            <span class="hljs-string">&quot;label&quot;</span>:<span class="hljs-string">&quot;knows&quot;</span>,
+            <span class="hljs-string">&quot;type&quot;</span>:<span class="hljs-string">&quot;edge&quot;</span>,
+            <span class="hljs-string">&quot;inVLabel&quot;</span>:<span class="hljs-string">&quot;person&quot;</span>,
+            <span class="hljs-string">&quot;outVLabel&quot;</span>:<span class="hljs-string">&quot;person&quot;</span>,
+            <span class="hljs-string">&quot;inV&quot;</span>:<span class="hljs-string">&quot;1:josh&quot;</span>,
+            <span class="hljs-string">&quot;outV&quot;</span>:<span class="hljs-string">&quot;1:marko&quot;</span>,
+            <span class="hljs-string">&quot;properties&quot;</span>:{
+                <span class="hljs-string">&quot;weight&quot;</span>:<span class="hljs-number">1</span>,
+                <span class="hljs-string">&quot;date&quot;</span>:<span class="hljs-string">&quot;20130220&quot;</span>
+            }
+        },
+        {
+            <span class="hljs-string">&quot;id&quot;</span>:<span class="hljs-string">&quot;S1:marko&gt;1&gt;20160110&gt;S1:vadas&quot;</span>,
+            <span class="hljs-string">&quot;label&quot;</span>:<span class="hljs-string">&quot;knows&quot;</span>,
+            <span class="hljs-string">&quot;type&quot;</span>:<span class="hljs-string">&quot;edge&quot;</span>,
+            <span class="hljs-string">&quot;inVLabel&quot;</span>:<span class="hljs-string">&quot;person&quot;</span>,
+            <span class="hljs-string">&quot;outVLabel&quot;</span>:<span class="hljs-string">&quot;person&quot;</span>,
+            <span class="hljs-string">&quot;inV&quot;</span>:<span class="hljs-string">&quot;1:vadas&quot;</span>,
+            <span class="hljs-string">&quot;outV&quot;</span>:<span class="hljs-string">&quot;1:marko&quot;</span>,
+            <span class="hljs-string">&quot;properties&quot;</span>:{
+                <span class="hljs-string">&quot;weight&quot;</span>:<span class="hljs-number">0.5</span>,
+                <span class="hljs-string">&quot;date&quot;</span>:<span class="hljs-string">&quot;20160110&quot;</span>
+            }
+        },
+        {
+            <span class="hljs-string">&quot;id&quot;</span>:<span class="hljs-string">&quot;S1:marko&gt;2&gt;&gt;S2:lop&quot;</span>,
+            <span class="hljs-string">&quot;label&quot;</span>:<span class="hljs-string">&quot;created&quot;</span>,
+            <span class="hljs-string">&quot;type&quot;</span>:<span class="hljs-string">&quot;edge&quot;</span>,
+            <span class="hljs-string">&quot;inVLabel&quot;</span>:<span class="hljs-string">&quot;software&quot;</span>,
+            <span class="hljs-string">&quot;outVLabel&quot;</span>:<span class="hljs-string">&quot;person&quot;</span>,
+            <span class="hljs-string">&quot;inV&quot;</span>:<span class="hljs-string">&quot;2:lop&quot;</span>,
+            <span class="hljs-string">&quot;outV&quot;</span>:<span class="hljs-string">&quot;1:marko&quot;</span>,
+            <span class="hljs-string">&quot;properties&quot;</span>:{
+                <span class="hljs-string">&quot;weight&quot;</span>:<span class="hljs-number">0.4</span>,
+                <span class="hljs-string">&quot;date&quot;</span>:<span class="hljs-string">&quot;20171210&quot;</span>
+            }
+        }
+    ]
+}
+</code></pre>
+<h5 id="2294-&#x9002;&#x7528;&#x573A;&#x666F;">2.2.9.4 &#x9002;&#x7528;&#x573A;&#x666F;</h5>
+<ul>
+<li>&#x6309;id&#x5217;&#x8868;&#x67E5;&#x8BE2;&#x8FB9;&#xFF0C;&#x53EF;&#x7528;&#x4E8E;&#x6279;&#x91CF;&#x67E5;&#x8BE2;&#x8FB9;</li>
+<li>&#x83B7;&#x53D6;&#x5206;&#x7247;&#x548C;&#x6309;&#x5206;&#x7247;&#x67E5;&#x8BE2;&#x8FB9;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x904D;&#x5386;&#x5168;&#x90E8;&#x8FB9;</li>
+</ul>
 
                                 
                                 </section>
@@ -1558,7 +1746,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Edge","level":"4.1.8","depth":2,"next":{"title":"Traverser","level":"4.1.9","depth":2,"path":"clients/restful-api/traverser.md","ref":"clients/restful-api/traverser.md","articles":[]},"previous":{"title":"Vertex","level":"4.1.7","depth":2,"path":"clients/restful-api/vertex.md","ref":"clients/restful-api/vertex.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"clients/restful-api/edge.md","mtime":"2021-10-29T11:40:59.569Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-09T08:03:17.931Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Edge","level":"4.1.8","depth":2,"next":{"title":"Traverser","level":"4.1.9","depth":2,"path":"clients/restful-api/traverser.md","ref":"clients/restful-api/traverser.md","articles":[]},"previous":{"title":"Vertex","level":"4.1.7","depth":2,"path":"clients/restful-api/vertex.md","ref":"clients/restful-api/vertex.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"clients/restful-api/edge.md","mtime":"2021-11-09T10:26:28.405Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-09T10:26:51.762Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

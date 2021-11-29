@@ -1190,6 +1190,10 @@ Office,388
             <span class="hljs-string">&quot;*&quot;</span>
           ]
         },
+        <span class="hljs-string">&quot;dir_filter&quot;</span>: {
+          <span class="hljs-string">&quot;include_regex&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
+          <span class="hljs-string">&quot;exclude_regex&quot;</span>: <span class="hljs-string">&quot;&quot;</span>
+        },
         <span class="hljs-string">&quot;format&quot;</span>: <span class="hljs-string">&quot;CSV&quot;</span>,
         <span class="hljs-string">&quot;delimiter&quot;</span>: <span class="hljs-string">&quot;,&quot;</span>,
         <span class="hljs-string">&quot;date_format&quot;</span>: <span class="hljs-string">&quot;yyyy-MM-dd HH:mm:ss&quot;</span>,
@@ -1239,6 +1243,10 @@ Office,388
             <span class="hljs-string">&quot;*&quot;</span>
           ]
         },
+        <span class="hljs-string">&quot;dir_filter&quot;</span>: {
+          <span class="hljs-string">&quot;include_regex&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
+          <span class="hljs-string">&quot;exclude_regex&quot;</span>: <span class="hljs-string">&quot;&quot;</span>
+        },
         <span class="hljs-string">&quot;format&quot;</span>: <span class="hljs-string">&quot;CSV&quot;</span>,
         <span class="hljs-string">&quot;delimiter&quot;</span>: <span class="hljs-string">&quot;,&quot;</span>,
         <span class="hljs-string">&quot;date_format&quot;</span>: <span class="hljs-string">&quot;yyyy-MM-dd HH:mm:ss&quot;</span>,
@@ -1283,6 +1291,10 @@ Office,388
           <span class="hljs-string">&quot;extensions&quot;</span>: [
             <span class="hljs-string">&quot;*&quot;</span>
           ]
+        },
+        <span class="hljs-string">&quot;dir_filter&quot;</span>: {
+          <span class="hljs-string">&quot;include_regex&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
+          <span class="hljs-string">&quot;exclude_regex&quot;</span>: <span class="hljs-string">&quot;&quot;</span>
         },
         <span class="hljs-string">&quot;format&quot;</span>: <span class="hljs-string">&quot;JSON&quot;</span>,
         <span class="hljs-string">&quot;delimiter&quot;</span>: <span class="hljs-literal">null</span>,
@@ -1333,6 +1345,10 @@ Office,388
           <span class="hljs-string">&quot;extensions&quot;</span>: [
             <span class="hljs-string">&quot;*&quot;</span>
           ]
+        },
+        <span class="hljs-string">&quot;dir_filter&quot;</span>: {
+          <span class="hljs-string">&quot;include_regex&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
+          <span class="hljs-string">&quot;exclude_regex&quot;</span>: <span class="hljs-string">&quot;&quot;</span>
         },
         <span class="hljs-string">&quot;format&quot;</span>: <span class="hljs-string">&quot;JSON&quot;</span>,
         <span class="hljs-string">&quot;delimiter&quot;</span>: <span class="hljs-literal">null</span>,
@@ -1445,7 +1461,8 @@ Office,388
 <li>type: &#x8F93;&#x5165;&#x6E90;&#x7C7B;&#x578B;&#xFF0C;&#x5FC5;&#x987B;&#x586B; file &#x6216; FILE&#xFF1B; </li>
 <li>path: &#x672C;&#x5730;&#x6587;&#x4EF6;&#x6216;&#x76EE;&#x5F55;&#x7684;&#x8DEF;&#x5F84;&#xFF0C;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;&#x6216;&#x76F8;&#x5BF9;&#x4E8E;&#x6620;&#x5C04;&#x6587;&#x4EF6;&#x7684;&#x76F8;&#x5BF9;&#x8DEF;&#x5F84;&#xFF0C;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;&#xFF0C;&#x5FC5;&#x586B;&#xFF1B;</li>
 <li>file_filter: &#x4ECE;<code>path</code>&#x4E2D;&#x7B5B;&#x9009;&#x590D;&#x5408;&#x6761;&#x4EF6;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x590D;&#x5408;&#x7ED3;&#x6784;&#xFF0C;&#x76EE;&#x524D;&#x53EA;&#x652F;&#x6301;&#x914D;&#x7F6E;&#x6269;&#x5C55;&#x540D;&#xFF0C;&#x7528;&#x5B50;&#x8282;&#x70B9;<code>extensions</code>&#x8868;&#x793A;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;&quot;*&quot;&#xFF0C;&#x8868;&#x793A;&#x4FDD;&#x7559;&#x6240;&#x6709;&#x6587;&#x4EF6;&#xFF1B;</li>
-<li>format: &#x672C;&#x5730;&#x6587;&#x4EF6;&#x7684;&#x683C;&#x5F0F;&#xFF0C;&#x53EF;&#x9009;&#x503C;&#x4E3A; CSV&#x3001;TEXT &#x53CA; JSON&#xFF0C;&#x5FC5;&#x987B;&#x5927;&#x5199;&#xFF0C;&#x5FC5;&#x586B;&#xFF1B;               </li>
+<li>dir_filter: &#x5F53;<code>path</code>&#x662F;&#x76EE;&#x5F55;&#x8DEF;&#x5F84;&#x65F6;&#xFF0C;&#x9012;&#x5F52;&#x904D;&#x5386;&#x8BE5;&#x8DEF;&#x5F84;&#x4E0B;&#x6240;&#x6709;&#x6587;&#x4EF6;&#xFF0C;&#x904D;&#x5386;&#x8FC7;&#x7A0B;&#x4E2D;&#x5BF9;&#x76EE;&#x5F55;&#x540D;&#x8FDB;&#x884C;&#x6B63;&#x5219;&#x5339;&#x914D;&#xFF0C;&#x5305;&#x62EC;&#x5B50;&#x8282;&#x70B9;<code>include_regex</code>&#x548C;<code>exclude_regex</code>&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;&#x7A7A;&#xFF0C;&#x8868;&#x793A;&#x904D;&#x5386;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x4E0D;&#x5BF9;&#x76EE;&#x5F55;&#x540D;&#x8FDB;&#x884C;&#x5339;&#x914D;&#x8FC7;&#x6EE4;&#xFF1B;</li>
+<li>forma t: &#x672C;&#x5730;&#x6587;&#x4EF6;&#x7684;&#x683C;&#x5F0F;&#xFF0C;&#x53EF;&#x9009;&#x503C;&#x4E3A; CSV&#x3001;TEXT &#x53CA; JSON&#xFF0C;&#x5FC5;&#x987B;&#x5927;&#x5199;&#xFF0C;&#x5FC5;&#x586B;&#xFF1B;               </li>
 <li>header: &#x6587;&#x4EF6;&#x5404;&#x5217;&#x7684;&#x5217;&#x540D;&#xFF0C;&#x5982;&#x4E0D;&#x6307;&#x5B9A;&#x5219;&#x4F1A;&#x4EE5;&#x6570;&#x636E;&#x6587;&#x4EF6;&#x7B2C;&#x4E00;&#x884C;&#x4F5C;&#x4E3A; header&#xFF1B;&#x5F53;&#x6587;&#x4EF6;&#x672C;&#x8EAB;&#x6709;&#x6807;&#x9898;&#x4E14;&#x53C8;&#x6307;&#x5B9A;&#x4E86; header&#xFF0C;&#x6587;&#x4EF6;&#x7684;&#x7B2C;&#x4E00;&#x884C;&#x4F1A;&#x88AB;&#x5F53;&#x4F5C;&#x666E;&#x901A;&#x7684;&#x6570;&#x636E;&#x884C;&#xFF1B;JSON &#x6587;&#x4EF6;&#x4E0D;&#x9700;&#x8981;&#x6307;&#x5B9A; header&#xFF0C;&#x9009;&#x586B;&#xFF1B;    </li>
 <li>delimiter: &#x6587;&#x4EF6;&#x884C;&#x7684;&#x5217;&#x5206;&#x9694;&#x7B26;&#xFF0C;&#x9ED8;&#x8BA4;&#x4EE5;&#x9017;&#x53F7;<code>&quot;,&quot;</code>&#x4F5C;&#x4E3A;&#x5206;&#x9694;&#x7B26;&#xFF0C;<code>JSON</code>&#x6587;&#x4EF6;&#x4E0D;&#x9700;&#x8981;&#x6307;&#x5B9A;&#xFF0C;&#x9009;&#x586B;&#xFF1B;     </li>
 <li>charset: &#x6587;&#x4EF6;&#x7684;&#x7F16;&#x7801;&#x5B57;&#x7B26;&#x96C6;&#xFF0C;&#x9ED8;&#x8BA4;<code>UTF-8</code>&#xFF0C;&#x9009;&#x586B;&#xFF1B;    </li>
@@ -2105,7 +2122,7 @@ count metrics
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Load data with HugeGraph-Loader","level":"2.2","depth":1,"next":{"title":"Manage with HugeGraph-Tools","level":"2.3","depth":1,"path":"quickstart/hugegraph-tools.md","ref":"quickstart/hugegraph-tools.md","articles":[]},"previous":{"title":"Install HugeGraph-Server","level":"2.1","depth":1,"path":"quickstart/hugegraph-server.md","ref":"quickstart/hugegraph-server.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"quickstart/hugegraph-loader.md","mtime":"2021-11-15T06:23:27.542Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-15T06:23:34.597Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Load data with HugeGraph-Loader","level":"2.2","depth":1,"next":{"title":"Manage with HugeGraph-Tools","level":"2.3","depth":1,"path":"quickstart/hugegraph-tools.md","ref":"quickstart/hugegraph-tools.md","articles":[]},"previous":{"title":"Install HugeGraph-Server","level":"2.1","depth":1,"path":"quickstart/hugegraph-server.md","ref":"quickstart/hugegraph-server.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"quickstart/hugegraph-loader.md","mtime":"2021-11-29T11:35:50.347Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-29T11:36:00.172Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

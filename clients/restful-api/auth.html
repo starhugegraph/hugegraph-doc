@@ -1019,7 +1019,10 @@ city: Beijing})<br>&#x63CF;&#x8FF0;&#xFF1A;&#x7528;&#x6237;&apos;tester&apos;&#x
 }
 </code></pre>
 <h5 id="method--url">Method &amp; Url</h5>
-<pre><code>POST http://localhost:8080/graphs/auth/users
+<pre><code># &#x65E7;&#x7248;
+POST http://localhost:8080/graphs/auth/users
+</code></pre><pre><code># &#x65B0;&#x7248;
+POST http://localhost:8080/auth/users
 </code></pre><h5 id="response-status">Response Status</h5>
 <pre><code class="lang-json"><span class="hljs-number">201</span>
 </code></pre>
@@ -1042,7 +1045,10 @@ city: Beijing})<br>&#x63CF;&#x8FF0;&#xFF1A;&#x7528;&#x6237;&apos;tester&apos;&#x
 <li>id: &#x9700;&#x8981;&#x5220;&#x9664;&#x7684;&#x7528;&#x6237; Id</li>
 </ul>
 <h5 id="method--url">Method &amp; Url</h5>
-<pre><code>DELETE http://localhost:8080/graphs/auth/users/-63:tester
+<pre><code># &#x65E7;&#x7248;
+DELETE http://localhost:8080/graphs/auth/users/-63:tester
+</code></pre><pre><code># &#x65B0;&#x7248;
+DELETE http://localhost:8080/auth/users/tester
 </code></pre><h5 id="response-status">Response Status</h5>
 <pre><code class="lang-json"><span class="hljs-number">204</span>
 </code></pre>
@@ -1055,7 +1061,10 @@ city: Beijing})<br>&#x63CF;&#x8FF0;&#xFF1A;&#x7528;&#x6237;&apos;tester&apos;&#x
 <li>id: &#x9700;&#x8981;&#x4FEE;&#x6539;&#x7684;&#x7528;&#x6237; Id</li>
 </ul>
 <h5 id="method--url">Method &amp; Url</h5>
-<pre><code>PUT http://localhost:8080/graphs/auth/users/-63:tester
+<pre><code># &#x65E7;&#x7248;
+PUT http://localhost:8080/graphs/auth/users/-63:tester
+</code></pre><pre><code># &#x65B0;&#x7248;
+PUT http://localhost:8080/auth/users/tester
 </code></pre><h5 id="request-body">Request Body</h5>
 <p>&#x4FEE;&#x6539;user_name&#x3001;user_password&#x548C;user_phone</p>
 <pre><code class="lang-json">{
@@ -1085,7 +1094,10 @@ city: Beijing})<br>&#x63CF;&#x8FF0;&#xFF1A;&#x7528;&#x6237;&apos;tester&apos;&#x
 <li>limit: &#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x6761;&#x6570;&#x7684;&#x4E0A;&#x9650;</li>
 </ul>
 <h5 id="method--url">Method &amp; Url</h5>
-<pre><code>GET http://localhost:8080/graphs/auth/users
+<pre><code># &#x65E7;&#x7248;
+GET http://localhost:8080/graphs/auth/users
+</code></pre><pre><code># &#x65B0;&#x7248;
+GET http://localhost:8080/auth/users
 </code></pre><h5 id="response-status">Response Status</h5>
 <pre><code class="lang-json"><span class="hljs-number">200</span>
 </code></pre>
@@ -1109,7 +1121,10 @@ city: Beijing})<br>&#x63CF;&#x8FF0;&#xFF1A;&#x7528;&#x6237;&apos;tester&apos;&#x
 <li>id: &#x9700;&#x8981;&#x67E5;&#x8BE2;&#x7684;&#x7528;&#x6237; Id</li>
 </ul>
 <h5 id="method--url">Method &amp; Url</h5>
-<pre><code>GET http://localhost:8080/graphs/auth/users/-63:admin
+<pre><code># &#x65E7;&#x7248;
+GET http://localhost:8080/graphs/auth/users/-63:admin
+</code></pre><pre><code># &#x65B0;&#x7248;
+GET http://localhost:8080/auth/users/admin
 </code></pre><h5 id="response-status">Response Status</h5>
 <pre><code class="lang-json"><span class="hljs-number">200</span>
 </code></pre>
@@ -1129,7 +1144,10 @@ city: Beijing})<br>&#x63CF;&#x8FF0;&#xFF1A;&#x7528;&#x6237;&apos;tester&apos;&#x
 </code></pre>
 <h4 id="926-&#x67E5;&#x8BE2;&#x67D0;&#x4E2A;&#x7528;&#x6237;&#x7684;&#x89D2;&#x8272;">9.2.6 &#x67E5;&#x8BE2;&#x67D0;&#x4E2A;&#x7528;&#x6237;&#x7684;&#x89D2;&#x8272;</h4>
 <h5 id="method--url">Method &amp; Url</h5>
-<pre><code>GET http://localhost:8080/graphs/auth/users/-63:tester/role
+<pre><code># &#x65E7;&#x7248;
+GET http://localhost:8080/graphs/auth/users/-63:tester/role
+</code></pre><pre><code># &#x65B0;&#x7248;
+GET http://localhost:8080/auth/users/tester/role
 </code></pre><h5 id="response-status">Response Status</h5>
 <pre><code class="lang-json"><span class="hljs-number">200</span>
 </code></pre>
@@ -1163,7 +1181,10 @@ city: Beijing})<br>&#x63CF;&#x8FF0;&#xFF1A;&#x7528;&#x6237;&apos;tester&apos;&#x
 }
 </code></pre>
 <h5 id="method--url">Method &amp; Url</h5>
-<pre><code>POST http://localhost:8080/graphs/auth/groups
+<pre><code># &#x65E7;&#x7248;
+POST http://localhost:8080/graphs/auth/groups
+</code></pre><pre><code># &#x65B0;&#x7248;
+POST http://localhost:8080/graphspaces/{graphspace}/auth/groups
 </code></pre><h5 id="response-status">Response Status</h5>
 <pre><code class="lang-json"><span class="hljs-number">201</span>
 </code></pre>
@@ -1183,7 +1204,10 @@ city: Beijing})<br>&#x63CF;&#x8FF0;&#xFF1A;&#x7528;&#x6237;&apos;tester&apos;&#x
 <li>id: &#x9700;&#x8981;&#x5220;&#x9664;&#x7684;&#x7528;&#x6237;&#x7EC4; Id</li>
 </ul>
 <h5 id="method--url">Method &amp; Url</h5>
-<pre><code>DELETE http://localhost:8080/graphs/auth/groups/-69:grant
+<pre><code># &#x65E7;&#x7248;
+DELETE http://localhost:8080/graphs/auth/groups/-69:grant
+</code></pre><pre><code># &#x65B0;&#x7248;
+DELETE http://localhost:8080/graphspaces/{graphspace}/auth/groups/grant
 </code></pre><h5 id="response-status">Response Status</h5>
 <pre><code class="lang-json"><span class="hljs-number">204</span>
 </code></pre>
@@ -1196,7 +1220,10 @@ city: Beijing})<br>&#x63CF;&#x8FF0;&#xFF1A;&#x7528;&#x6237;&apos;tester&apos;&#x
 <li>id: &#x9700;&#x8981;&#x4FEE;&#x6539;&#x7684;&#x7528;&#x6237;&#x7EC4; Id</li>
 </ul>
 <h5 id="method--url">Method &amp; Url</h5>
-<pre><code>PUT http://localhost:8080/graphs/auth/groups/-69:grant
+<pre><code># &#x65E7;&#x7248;
+PUT http://localhost:8080/graphs/auth/groups/-69:grant
+</code></pre><pre><code># &#x65B0;&#x7248;
+PUT http://localhost:8080/graphspaces/{graphspace}/auth/groups/grant
 </code></pre><h5 id="request-body">Request Body</h5>
 <p>&#x4FEE;&#x6539;group_description</p>
 <pre><code class="lang-json">{
@@ -1224,7 +1251,10 @@ city: Beijing})<br>&#x63CF;&#x8FF0;&#xFF1A;&#x7528;&#x6237;&apos;tester&apos;&#x
 <li>limit: &#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x6761;&#x6570;&#x7684;&#x4E0A;&#x9650;</li>
 </ul>
 <h5 id="method--url">Method &amp; Url</h5>
-<pre><code>GET http://localhost:8080/graphs/auth/groups
+<pre><code># &#x65E7;&#x7248;
+GET http://localhost:8080/graphs/auth/groups
+</code></pre><pre><code># &#x65B0;&#x7248;
+GET http://localhost:8080/graphspaces/{graphspace}/auth/groups
 </code></pre><h5 id="response-status">Response Status</h5>
 <pre><code class="lang-json"><span class="hljs-number">200</span>
 </code></pre>
@@ -1248,7 +1278,10 @@ city: Beijing})<br>&#x63CF;&#x8FF0;&#xFF1A;&#x7528;&#x6237;&apos;tester&apos;&#x
 <li>id: &#x9700;&#x8981;&#x67E5;&#x8BE2;&#x7684;&#x7528;&#x6237;&#x7EC4; Id</li>
 </ul>
 <h5 id="method--url">Method &amp; Url</h5>
-<pre><code>GET http://localhost:8080/graphs/auth/groups/-69:all
+<pre><code># &#x65E7;&#x7248;
+GET http://localhost:8080/graphs/auth/groups/-69:all
+</code></pre><pre><code># &#x65B0;&#x7248;
+GET http://localhost:8080/graphspaces/{graphspace}/auth/groups/all
 </code></pre><h5 id="response-status">Response Status</h5>
 <pre><code class="lang-json"><span class="hljs-number">200</span>
 </code></pre>
@@ -1304,7 +1337,10 @@ P.gte(18)&#xFF09;&#xFF0C;properties&#x5982;&#x679C;&#x4E3A;null&#x8868;&#x793A;&
 }
 </code></pre>
 <h5 id="method--url">Method &amp; Url</h5>
-<pre><code>POST http://localhost:8080/graphs/auth/targets
+<pre><code># &#x65E7;&#x7248;
+POST http://localhost:8080/graphs/auth/targets
+</code></pre><pre><code># &#x65B0;&#x7248;
+POST http://localhost:8080/graphspaces/{graphspace}/auth/targets
 </code></pre><h5 id="response-status">Response Status</h5>
 <pre><code class="lang-json"><span class="hljs-number">201</span>
 </code></pre>
@@ -1332,7 +1368,10 @@ P.gte(18)&#xFF09;&#xFF0C;properties&#x5982;&#x679C;&#x4E3A;null&#x8868;&#x793A;&
 <li>id: &#x9700;&#x8981;&#x5220;&#x9664;&#x7684;&#x8D44;&#x6E90; Id</li>
 </ul>
 <h5 id="method--url">Method &amp; Url</h5>
-<pre><code>DELETE http://localhost:8080/graphs/auth/targets/-77:gremlin
+<pre><code># &#x65E7;&#x7248;
+DELETE http://localhost:8080/graphs/auth/targets/-77:gremlin
+</code></pre><pre><code># &#x65B0;&#x7248;
+DELETE http://localhost:8080/graphspaces/{graphspace}/auth/targets/gremlin
 </code></pre><h5 id="response-status">Response Status</h5>
 <pre><code class="lang-json"><span class="hljs-number">204</span>
 </code></pre>
@@ -1345,7 +1384,10 @@ P.gte(18)&#xFF09;&#xFF0C;properties&#x5982;&#x679C;&#x4E3A;null&#x8868;&#x793A;&
 <li>id: &#x9700;&#x8981;&#x4FEE;&#x6539;&#x7684;&#x8D44;&#x6E90; Id</li>
 </ul>
 <h5 id="method--url">Method &amp; Url</h5>
-<pre><code>PUT http://localhost:8080/graphs/auth/targets/-77:gremlin
+<pre><code># &#x65E7;&#x7248;
+PUT http://localhost:8080/graphs/auth/targets/-77:gremlin
+</code></pre><pre><code># &#x65B0;&#x7248;
+PUT http://localhost:8080/graphspaces/{graphspace}/auth/targets/gremlin
 </code></pre><h5 id="request-body">Request Body</h5>
 <p>&#x4FEE;&#x6539;&#x8D44;&#x6E90;&#x5B9A;&#x4E49;&#x4E2D;&#x7684;type</p>
 <pre><code class="lang-json">{
@@ -1387,7 +1429,10 @@ P.gte(18)&#xFF09;&#xFF0C;properties&#x5982;&#x679C;&#x4E3A;null&#x8868;&#x793A;&
 <li>limit: &#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x6761;&#x6570;&#x7684;&#x4E0A;&#x9650;</li>
 </ul>
 <h5 id="method--url">Method &amp; Url</h5>
-<pre><code>GET http://localhost:8080/graphs/auth/targets
+<pre><code># &#x65E7;&#x7248;
+GET http://localhost:8080/graphs/auth/targets
+</code></pre><pre><code># &#x65B0;&#x7248;
+GET http://localhost:8080/graphspaces/{graphspace}/auth/targets
 </code></pre><h5 id="response-status">Response Status</h5>
 <pre><code class="lang-json"><span class="hljs-number">200</span>
 </code></pre>
@@ -1435,7 +1480,10 @@ P.gte(18)&#xFF09;&#xFF0C;properties&#x5982;&#x679C;&#x4E3A;null&#x8868;&#x793A;&
 <li>id: &#x9700;&#x8981;&#x67E5;&#x8BE2;&#x7684;&#x8D44;&#x6E90; Id</li>
 </ul>
 <h5 id="method--url">Method &amp; Url</h5>
-<pre><code>GET http://localhost:8080/graphs/auth/targets/-77:grant
+<pre><code># &#x65E7;&#x7248;
+GET http://localhost:8080/graphs/auth/targets/-77:grant
+</code></pre><pre><code># &#x65B0;&#x7248;
+GET http://localhost:8080/graphspaces/{graphspace}/auth/targets/grant
 </code></pre><h5 id="response-status">Response Status</h5>
 <pre><code class="lang-json"><span class="hljs-number">200</span>
 </code></pre>
@@ -1473,7 +1521,10 @@ P.gte(18)&#xFF09;&#xFF0C;properties&#x5982;&#x679C;&#x4E3A;null&#x8868;&#x793A;&
 }
 </code></pre>
 <h5 id="method--url">Method &amp; Url</h5>
-<pre><code>POST http://localhost:8080/graphs/auth/belongs
+<pre><code># &#x65E7;&#x7248;
+POST http://localhost:8080/graphs/auth/belongs
+</code></pre><pre><code># &#x65B0;&#x7248;
+POST http://localhost:8080/graphspaces/{graphspace}/auth/belongs
 </code></pre><h5 id="response-status">Response Status</h5>
 <pre><code class="lang-json"><span class="hljs-number">201</span>
 </code></pre>
@@ -1493,7 +1544,10 @@ P.gte(18)&#xFF09;&#xFF0C;properties&#x5982;&#x679C;&#x4E3A;null&#x8868;&#x793A;&
 <li>id: &#x9700;&#x8981;&#x5220;&#x9664;&#x7684;&#x5173;&#x8054;&#x89D2;&#x8272; Id</li>
 </ul>
 <h5 id="method--url">Method &amp; Url</h5>
-<pre><code>DELETE http://localhost:8080/graphs/auth/belongs/S-63:tester&gt;-82&gt;&gt;S-69:grant
+<pre><code># &#x65E7;&#x7248;
+DELETE http://localhost:8080/graphs/auth/belongs/S-63:tester&gt;-82&gt;&gt;S-69:grant
+</code></pre><pre><code># &#x65B0;&#x7248;
+DELETE http://localhost:8080/graphspaces/{graphspace}/auth/belongs/tester&gt;8&gt;grant
 </code></pre><h5 id="response-status">Response Status</h5>
 <pre><code class="lang-json"><span class="hljs-number">204</span>
 </code></pre>
@@ -1507,7 +1561,10 @@ P.gte(18)&#xFF09;&#xFF0C;properties&#x5982;&#x679C;&#x4E3A;null&#x8868;&#x793A;&
 <li>id: &#x9700;&#x8981;&#x4FEE;&#x6539;&#x7684;&#x5173;&#x8054;&#x89D2;&#x8272; Id</li>
 </ul>
 <h5 id="method--url">Method &amp; Url</h5>
-<pre><code>PUT http://localhost:8080/graphs/auth/belongs/S-63:tester&gt;-82&gt;&gt;S-69:grant
+<pre><code># &#x65E7;&#x7248;
+PUT http://localhost:8080/graphs/auth/belongs/S-63:tester&gt;-82&gt;&gt;S-69:grant
+</code></pre><pre><code># &#x65B0;&#x7248;
+PUT http://localhost:8080/graphspaces/{graphspace}/auth/belongs/tester&gt;8&gt;grant
 </code></pre><h5 id="request-body">Request Body</h5>
 <p>&#x4FEE;&#x6539;belong_description</p>
 <pre><code class="lang-json">{
@@ -1535,7 +1592,10 @@ P.gte(18)&#xFF09;&#xFF0C;properties&#x5982;&#x679C;&#x4E3A;null&#x8868;&#x793A;&
 <li>limit: &#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x6761;&#x6570;&#x7684;&#x4E0A;&#x9650;</li>
 </ul>
 <h5 id="method--url">Method &amp; Url</h5>
-<pre><code>GET http://localhost:8080/graphs/auth/belongs
+<pre><code># &#x65E7;&#x7248;
+GET http://localhost:8080/graphs/auth/belongs
+</code></pre><pre><code># &#x65B0;&#x7248;
+GET http://localhost:8080/graphspaces/{graphspace}/auth/belongs
 </code></pre><h5 id="response-status">Response Status</h5>
 <pre><code class="lang-json"><span class="hljs-number">200</span>
 </code></pre>
@@ -1559,7 +1619,10 @@ P.gte(18)&#xFF09;&#xFF0C;properties&#x5982;&#x679C;&#x4E3A;null&#x8868;&#x793A;&
 <li>id: &#x9700;&#x8981;&#x67E5;&#x8BE2;&#x7684;&#x5173;&#x8054;&#x89D2;&#x8272; Id</li>
 </ul>
 <h5 id="method--url">Method &amp; Url</h5>
-<pre><code>GET http://localhost:8080/graphs/auth/belongs/S-63:tester&gt;-82&gt;&gt;S-69:all
+<pre><code># &#x65E7;&#x7248;
+GET http://localhost:8080/graphs/auth/belongs/S-63:tester&gt;-82&gt;&gt;S-69:all
+</code></pre><pre><code># &#x65B0;&#x7248;
+GET http://localhost:8080/graphspaces/{graphspace}/auth/belongs/tester&gt;2&gt;all
 </code></pre><h5 id="response-status">Response Status</h5>
 <pre><code class="lang-json"><span class="hljs-number">200</span>
 </code></pre>
@@ -1598,7 +1661,10 @@ P.gte(18)&#xFF09;&#xFF0C;properties&#x5982;&#x679C;&#x4E3A;null&#x8868;&#x793A;&
 }
 </code></pre>
 <h5 id="method--url">Method &amp; Url</h5>
-<pre><code>POST http://localhost:8080/graphs/auth/accesses
+<pre><code># &#x65E7;&#x7248;
+POST http://localhost:8080/graphs/auth/accesses
+</code></pre><pre><code># &#x65B0;&#x7248;
+POST http://localhost:8080/graphspaces/{graphspace}/auth/accesses
 </code></pre><h5 id="response-status">Response Status</h5>
 <pre><code class="lang-json"><span class="hljs-number">201</span>
 </code></pre>
@@ -1619,7 +1685,10 @@ P.gte(18)&#xFF09;&#xFF0C;properties&#x5982;&#x679C;&#x4E3A;null&#x8868;&#x793A;&
 <li>id: &#x9700;&#x8981;&#x5220;&#x9664;&#x7684;&#x8D4B;&#x6743; Id</li>
 </ul>
 <h5 id="method--url">Method &amp; Url</h5>
-<pre><code>DELETE http://localhost:8080/graphs/auth/accesses/S-69:all&gt;-88&gt;12&gt;S-77:all
+<pre><code># &#x65E7;&#x7248;
+DELETE http://localhost:8080/graphs/auth/accesses/S-69:all&gt;-88&gt;12&gt;S-77:all
+</code></pre><pre><code># &#x65B0;&#x7248;
+DELETE http://localhost:8080/graphspaces/{graphspace}/auth/accesses/all&gt;8&gt;all
 </code></pre><h5 id="response-status">Response Status</h5>
 <pre><code class="lang-json"><span class="hljs-number">204</span>
 </code></pre>
@@ -1633,7 +1702,10 @@ P.gte(18)&#xFF09;&#xFF0C;properties&#x5982;&#x679C;&#x4E3A;null&#x8868;&#x793A;&
 <li>id: &#x9700;&#x8981;&#x4FEE;&#x6539;&#x7684;&#x8D4B;&#x6743; Id</li>
 </ul>
 <h5 id="method--url">Method &amp; Url</h5>
-<pre><code>PUT http://localhost:8080/graphs/auth/accesses/S-69:all&gt;-88&gt;12&gt;S-77:all
+<pre><code># &#x65E7;&#x7248;
+PUT http://localhost:8080/graphs/auth/accesses/S-69:all&gt;-88&gt;12&gt;S-77:all
+</code></pre><pre><code># &#x65B0;&#x7248;
+PUT http://localhost:8080/graphspaces/{graphspace}/auth/accesses/all&gt;8&gt;all
 </code></pre><h5 id="request-body">Request Body</h5>
 <p>&#x4FEE;&#x6539;access_description</p>
 <pre><code class="lang-json">{
@@ -1662,7 +1734,10 @@ P.gte(18)&#xFF09;&#xFF0C;properties&#x5982;&#x679C;&#x4E3A;null&#x8868;&#x793A;&
 <li>limit: &#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x6761;&#x6570;&#x7684;&#x4E0A;&#x9650;</li>
 </ul>
 <h5 id="method--url">Method &amp; Url</h5>
-<pre><code>GET http://localhost:8080/graphs/auth/accesses
+<pre><code># &#x65E7;&#x7248;
+GET http://localhost:8080/graphs/auth/accesses
+</code></pre><pre><code># &#x65B0;&#x7248;
+GET http://localhost:8080/graphspaces/{graphspace}/auth/accesses
 </code></pre><h5 id="response-status">Response Status</h5>
 <pre><code class="lang-json"><span class="hljs-number">200</span>
 </code></pre>
@@ -1687,7 +1762,10 @@ P.gte(18)&#xFF09;&#xFF0C;properties&#x5982;&#x679C;&#x4E3A;null&#x8868;&#x793A;&
 <li>id: &#x9700;&#x8981;&#x67E5;&#x8BE2;&#x7684;&#x8D4B;&#x6743; Id</li>
 </ul>
 <h5 id="method--url">Method &amp; Url</h5>
-<pre><code>GET http://localhost:8080/graphs/auth/accesses/S-69:all&gt;-88&gt;11&gt;S-77:all
+<pre><code># &#x65E7;&#x7248;
+GET http://localhost:8080/graphs/auth/accesses/S-69:all&gt;-88&gt;11&gt;S-77:all
+</code></pre><pre><code># &#x65B0;&#x7248;
+GET http://localhost:8080/graphspaces/{graphspace}/auth/accesses/all&gt;8&gt;all
 </code></pre><h5 id="response-status">Response Status</h5>
 <pre><code class="lang-json"><span class="hljs-number">200</span>
 </code></pre>
@@ -1712,7 +1790,10 @@ P.gte(18)&#xFF09;&#xFF0C;properties&#x5982;&#x679C;&#x4E3A;null&#x8868;&#x793A;&
 <li>token_expire&#xFF1A;Token&#x81EA;&#x7CFB;&#x7EDF;&#x521B;&#x5EFA;&#x540E;&#x6709;&#x6548;&#x671F;&#xFF0C;&#x5355;&#x4F4D;&#x79D2;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;10800&#xFF1A;3&#x5C0F;&#x65F6;&#x3001;86400&#xFF1A;1&#x5929;&#x3001;604800&#xFF1A;1&#x5468;&#x3001;2592000&#xFF1A;1&#x6708;&#xFF08;&#x6CE8;&#x610F;&#xFF1A;&#x5B9E;&#x9645;&#x4F7F;&#x7528;&#x8FC7;&#x7A0B;Token&#x6709;&#x6548;&#x671F;&#x53EF;&#x80FD;&#x5B58;&#x5728;&#x6709;&#x4E00;&#x5206;&#x949F;&#x5DE6;&#x53F3;&#x7684;&#x8BEF;&#x5DEE;&#xFF09;</li>
 </ul>
 <h5 id="method--url">Method &amp; Url</h5>
-<pre><code>POST http://localhost:8080/graphs/auth/login
+<pre><code># &#x65E7;&#x7248;
+POST http://localhost:8080/graphs/auth/login
+</code></pre><pre><code># &#x65B0;&#x7248;
+POST http://localhost:8080/auth/login
 </code></pre><h5 id="request-body">Request Body</h5>
 <pre><code class="lang-json">{
   <span class="hljs-string">&quot;user_name&quot;</span>: <span class="hljs-string">&quot;admin&quot;</span>,
@@ -1730,7 +1811,10 @@ P.gte(18)&#xFF09;&#xFF0C;properties&#x5982;&#x679C;&#x4E3A;null&#x8868;&#x793A;&
 </code></pre>
 <h4 id="972-&#x9A8C;&#x8BC1;tokenverify">9.7.2 &#x9A8C;&#x8BC1;Token(verify)</h4>
 <h5 id="method--url">Method &amp; Url</h5>
-<pre><code>POST http://localhost:8080/graphs/auth/verify
+<pre><code># &#x65E7;&#x7248;
+POST http://localhost:8080/graphs/auth/verify
+</code></pre><pre><code># &#x65B0;&#x7248;
+POST http://localhost:8080/auth/verify
 </code></pre><h5 id="response-status">Response Status</h5>
 <pre><code class="lang-json"><span class="hljs-number">200</span>
 </code></pre>
@@ -1792,7 +1876,7 @@ P.gte(18)&#xFF09;&#xFF0C;properties&#x5982;&#x679C;&#x4E3A;null&#x8868;&#x793A;&
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Authentication","level":"4.1.16","depth":2,"next":{"title":"Other","level":"4.1.17","depth":2,"path":"clients/restful-api/other.md","ref":"clients/restful-api/other.md","articles":[]},"previous":{"title":"Gremlin","level":"4.1.15","depth":2,"path":"clients/restful-api/gremlin.md","ref":"clients/restful-api/gremlin.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"clients/restful-api/auth.md","mtime":"2021-11-15T06:23:43.670Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-29T11:36:00.172Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Authentication","level":"4.1.16","depth":2,"next":{"title":"Other","level":"4.1.17","depth":2,"path":"clients/restful-api/other.md","ref":"clients/restful-api/other.md","articles":[]},"previous":{"title":"Gremlin","level":"4.1.15","depth":2,"path":"clients/restful-api/gremlin.md","ref":"clients/restful-api/gremlin.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"clients/restful-api/auth.md","mtime":"2021-12-03T03:18:26.290Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-12-03T03:18:45.706Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

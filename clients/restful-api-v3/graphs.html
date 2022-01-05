@@ -1240,33 +1240,24 @@
                                 <h3 id="61-graphs">6.1 Graphs</h3>
 <h4 id="611-&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x56FE;">6.1.1 &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x56FE;</h4>
 <h5 id="method--url">Method &amp; Url</h5>
-<pre><code>POST http://localhost:8080/graphs/hugegraph2
+<pre><code>POST http://localhost:8080/graphs/hg1
 </code></pre><h5 id="request-body">Request Body</h5>
-<pre><code># gremlin entrence to create graph
-gremlin.graph=com.baidu.hugegraph.HugeFactory
-
-# cache config
-#schema.cache_capacity=1048576
-#graph.cache_capacity=10485760
-#graph.cache_expire=600
-
-# schema illegal name template
-#schema.illegal_name_regex=\s+|~.*
-
-#vertex.default_label=vertex
-
-backend=cassandra
-serializer=cassandra
-
-store=hugegraph2
-...
+<pre><code>{
+  &quot;gremlin.graph&quot;: &quot;com.baidu.hugegraph.HugeFactory&quot;,
+  &quot;backend&quot;: &quot;rocksdb&quot;,
+  &quot;serializer&quot;: &quot;binary&quot;,
+  &quot;store&quot;: &quot;hg1&quot;,
+  &quot;schema.init_template&quot;: &quot;s1&quot;,
+  &quot;rocksdb.data_path&quot;: &quot;./hg1&quot;,
+  &quot;rocksdb.wal_path&quot;: &quot;./hg1&quot;
+}
 </code></pre><h5 id="response-status">Response Status</h5>
 <pre><code class="lang-json"><span class="hljs-number">201</span>
 </code></pre>
 <h5 id="response-body">Response Body</h5>
 <pre><code class="lang-json">{
-    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;hugegraph2&quot;</span>,
-    <span class="hljs-string">&quot;backend&quot;</span>: <span class="hljs-string">&quot;cassandra&quot;</span>
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;hg1&quot;</span>,
+    <span class="hljs-string">&quot;backend&quot;</span>: <span class="hljs-string">&quot;rocksdb&quot;</span>
 }
 </code></pre>
 <h4 id="612-&#x5217;&#x51FA;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x5168;&#x90E8;&#x7684;&#x56FE;">6.1.2 &#x5217;&#x51FA;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x5168;&#x90E8;&#x7684;&#x56FE;</h4>
@@ -1279,7 +1270,7 @@ store=hugegraph2
 <pre><code class="lang-json">{
     <span class="hljs-string">&quot;graphs&quot;</span>: [
         <span class="hljs-string">&quot;hugegraph&quot;</span>,
-        <span class="hljs-string">&quot;hugegraph2&quot;</span>
+        <span class="hljs-string">&quot;hg1&quot;</span>
     ]
 }
 </code></pre>
@@ -1301,9 +1292,10 @@ store=hugegraph2
 </code></pre><h5 id="request-body">Request Body</h5>
 <pre><code class="lang-json">{
   <span class="hljs-string">&quot;action&quot;</span>: <span class="hljs-string">&quot;clear&quot;</span>,
-  <span class="hljs-string">&quot;confirm_message&quot;</span>: <span class="hljs-string">&quot;I&apos;m sure to delete all data&quot;</span>
+  <span class="hljs-string">&quot;clear_schema&quot;</span>: <span class="hljs-literal">true</span>
 }
 </code></pre>
+<p>&#x5176;&#x4E2D; clear_schema &#x4E3A; true &#x65F6;&#xFF0C;&#x4E0D;&#x4EC5;&#x5220;&#x9664;&#x56FE;&#x6570;&#x636E;&#xFF08;&#x9876;&#x70B9;&#x548C;&#x8FB9;&#xFF09;&#xFF0C;&#x540C;&#x65F6;&#x5220;&#x9664;&#x5143;&#x6570;&#x636E;&#xFF08;schema&#xFF09;&#xFF1B;clear_schema &#x4E3A; false &#x65F6;&#xFF0C;&#x53EA;&#x5220;&#x9664;&#x56FE;&#x6570;&#x636E;&#xFF08;&#x9876;&#x70B9;&#x548C;&#x8FB9;&#xFF09;&#xFF0C;&#x4FDD;&#x7559;&#x5143;&#x6570;&#x636E;&#xFF08;schema&#xFF09;</p>
 <h5 id="response-status">Response Status</h5>
 <pre><code class="lang-json"><span class="hljs-number">200</span>
 </code></pre>
@@ -1435,6 +1427,17 @@ store=hugegraph
     <span class="hljs-string">&quot;graph_read_mode&quot;</span>: <span class="hljs-string">&quot;ALL&quot;</span>
 }
 </code></pre>
+<h3 id="65-&#x5237;&#x65B0;&#x67D0;&#x4E2A;&#x56FE;&#x5185;&#x5B58;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x5230;&#x78C1;&#x76D8;&#xFF08;&#x4EC5;&#x652F;&#x6301;rocksdb&#x540E;&#x7AEF;&#xFF09;">6.5 &#x5237;&#x65B0;&#x67D0;&#x4E2A;&#x56FE;&#x5185;&#x5B58;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x5230;&#x78C1;&#x76D8;&#xFF08;&#x4EC5;&#x652F;&#x6301;rocksdb&#x540E;&#x7AEF;&#xFF09;</h3>
+<h5 id="method--url">Method &amp; Url</h5>
+<pre><code>PUT http://localhost:8080/graphs/hugegraph/flush
+</code></pre><h5 id="response-status">Response Status</h5>
+<pre><code class="lang-json"><span class="hljs-number">200</span>
+</code></pre>
+<h5 id="response-body">Response Body</h5>
+<pre><code class="lang-json">{
+    <span class="hljs-string">&quot;hugegraph&quot;</span>: <span class="hljs-string">&quot;flushed&quot;</span>
+}
+</code></pre>
 
                                 
                                 </section>
@@ -1487,7 +1490,7 @@ store=hugegraph
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Graphs","level":"4.2.12","depth":2,"next":{"title":"Task","level":"4.2.13","depth":2,"path":"clients/restful-api-v3/task.md","ref":"clients/restful-api-v3/task.md","articles":[]},"previous":{"title":"Variable","level":"4.2.11","depth":2,"path":"clients/restful-api-v3/variable.md","ref":"clients/restful-api-v3/variable.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"clients/restful-api-v3/graphs.md","mtime":"2021-12-06T10:08:05.352Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-12-30T08:50:43.816Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Graphs","level":"4.2.12","depth":2,"next":{"title":"Task","level":"4.2.13","depth":2,"path":"clients/restful-api-v3/task.md","ref":"clients/restful-api-v3/task.md","articles":[]},"previous":{"title":"Variable","level":"4.2.11","depth":2,"path":"clients/restful-api-v3/variable.md","ref":"clients/restful-api-v3/variable.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"clients/restful-api-v3/graphs.md","mtime":"2022-01-05T06:05:11.440Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-05T06:05:37.424Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

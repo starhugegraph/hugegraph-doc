@@ -1981,25 +1981,67 @@ PUT http://localhost:8080/graphspaces/{graphspace}/auth/belongs/tester-&gt;all
   <span class="hljs-string">&quot;target&quot;</span>: <span class="hljs-string">&quot;all_targets&quot;</span>
 }
 </code></pre>
-<h3 id="97-token-api">9.7 Token API</h3>
-<p>&#x83B7;&#x53D6;&#x7528;&#x6237;Token&#xFF0C;&#x4E3B;&#x8981;&#x5305;&#x542B;&#xFF1A;&#x767B;&#x5F55;(login)&#x3001;&#x9A8C;&#x8BC1;Token(verify)&#x3002;</p>
-<h4 id="971-&#x767B;&#x5F55;login">9.7.1 &#x767B;&#x5F55;(login)</h4>
+<h3 id="97-manager-api">9.7 Manager API</h3>
+<p>&#x56FE;&#x7A7A;&#x95F4;&#x7BA1;&#x7406;&#x5458;&#x3001;&#x56FE;&#x7A7A;&#x95F4;&#x8FD0;&#x7EF4;&#x7BA1;&#x7406;&#x5458;&#xFF0C;&#x4E3B;&#x8981;&#x5305;&#x542B;&#xFF1A;&#x521B;&#x5EFA;&#x3001;&#x5220;&#x9664;&#x3002;</p>
+<h4 id="971-&#x521B;&#x5EFA;-manager">9.7.1 &#x521B;&#x5EFA; manager</h4>
 <h5 id="params">Params</h5>
 <ul>
-<li>user_name&#xFF1A; &#x7528;&#x6237;&#x540D;</li>
-<li>user_password&#xFF1A;&#x7528;&#x6237;&#x5BC6;&#x7801;</li>
-<li>token_expire&#xFF1A;Token&#x81EA;&#x7CFB;&#x7EDF;&#x521B;&#x5EFA;&#x540E;&#x6709;&#x6548;&#x671F;&#xFF0C;&#x5355;&#x4F4D;&#x79D2;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;10800&#xFF1A;3&#x5C0F;&#x65F6;&#x3001;86400&#xFF1A;1&#x5929;&#x3001;604800&#xFF1A;1&#x5468;&#x3001;2592000&#xFF1A;1&#x6708;&#xFF08;&#x6CE8;&#x610F;&#xFF1A;&#x5B9E;&#x9645;&#x4F7F;&#x7528;&#x8FC7;&#x7A0B;Token&#x6709;&#x6548;&#x671F;&#x53EF;&#x80FD;&#x5B58;&#x5728;&#x6709;&#x4E00;&#x5206;&#x949F;&#x5DE6;&#x53F3;&#x7684;&#x8BEF;&#x5DEE;&#xFF09;</li>
+<li>user&#xFF1A; &#x7528;&#x6237;&#x540D;</li>
+<li>type&#xFF1A;&#x7BA1;&#x7406;&#x5458;&#x7C7B;&#x578B;&#xFF0C;&#x7C7B;&#x578B;&#x5305;&#x542B;OP&#x3001;SPACE&#xFF0C;&#x5206;&#x522B;&#x4EE3;&#x8868;&#x56FE;&#x7A7A;&#x95F4;&#x8FD0;&#x7EF4;&#x7BA1;&#x7406;&#x5458;&#x3001;&#x56FE;&#x7A7A;&#x95F4;&#x7BA1;&#x7406;&#x5458;</li>
+<li>graphspace&#xFF1A;&#x56FE;&#x7A7A;&#x95F4;</li>
 </ul>
 <h5 id="method--url">Method &amp; Url</h5>
-<pre><code>POST http://localhost:8080/auth/login
+<pre><code>POST http://localhost:8080/auth/managers
 </code></pre><h5 id="request-body">Request Body</h5>
 <pre><code class="lang-json">{
-  <span class="hljs-string">&quot;user_name&quot;</span>: <span class="hljs-string">&quot;admin&quot;</span>,
-  <span class="hljs-string">&quot;user_password&quot;</span>: <span class="hljs-string">&quot;admin&quot;</span>,
-  <span class="hljs-string">&quot;token_expire&quot;</span>: <span class="hljs-number">10800</span>
+  <span class="hljs-string">&quot;user&quot;</span>: <span class="hljs-string">&quot;boss&quot;</span>,
+  <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;SPACE&quot;</span>,
+  <span class="hljs-string">&quot;graphspace&quot;</span>: <span class="hljs-string">&quot;graphspace1&quot;</span>
 }
 </code></pre>
 <h5 id="response-status">Response Status</h5>
+<pre><code class="lang-json"><span class="hljs-number">201</span>
+</code></pre>
+<h5 id="response-body">Response Body</h5>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;user&quot;</span>: <span class="hljs-string">&quot;boss&quot;</span>,
+  <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;SPACE&quot;</span>,
+  <span class="hljs-string">&quot;graphspace&quot;</span>: <span class="hljs-string">&quot;graphspace1&quot;</span>
+}
+</code></pre>
+<h4 id="972-&#x5220;&#x9664;-manager">9.7.2 &#x5220;&#x9664; manager</h4>
+<h5 id="method--url">Method &amp; Url</h5>
+<pre><code>POST http://localhost:8080/auth/managers?user=boss&amp;type=SPACE&amp;graphspace=graphspace1
+</code></pre><h5 id="response-status">Response Status</h5>
+<pre><code class="lang-json"><span class="hljs-number">200</span>
+</code></pre>
+<h5 id="response-body">Response Body</h5>
+<pre><code class="lang-json"><span class="hljs-string">``</span><span class="hljs-string">`
+
+### 9.8 Token API
+&#x83B7;&#x53D6;&#x7528;&#x6237;Token&#xFF0C;&#x4E3B;&#x8981;&#x5305;&#x542B;&#xFF1A;&#x767B;&#x5F55;(login)&#x3001;&#x9A8C;&#x8BC1;Token(verify)&#x3002;
+
+#### 9.8.1 &#x767B;&#x5F55;(login)
+
+##### Params
+
+- user_name&#xFF1A; &#x7528;&#x6237;&#x540D;
+- user_password&#xFF1A;&#x7528;&#x6237;&#x5BC6;&#x7801;
+- token_expire&#xFF1A;Token&#x81EA;&#x7CFB;&#x7EDF;&#x521B;&#x5EFA;&#x540E;&#x6709;&#x6548;&#x671F;&#xFF0C;&#x5355;&#x4F4D;&#x79D2;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;10800&#xFF1A;3&#x5C0F;&#x65F6;&#x3001;86400&#xFF1A;1&#x5929;&#x3001;604800&#xFF1A;1&#x5468;&#x3001;2592000&#xFF1A;1&#x6708;&#xFF08;&#x6CE8;&#x610F;&#xFF1A;&#x5B9E;&#x9645;&#x4F7F;&#x7528;&#x8FC7;&#x7A0B;Token&#x6709;&#x6548;&#x671F;&#x53EF;&#x80FD;&#x5B58;&#x5728;&#x6709;&#x4E00;&#x5206;&#x949F;&#x5DE6;&#x53F3;&#x7684;&#x8BEF;&#x5DEE;&#xFF09;
+
+##### Method &amp; Url
+</span></code></pre>
+<p>POST <a href="http://localhost:8080/auth/login" target="_blank">http://localhost:8080/auth/login</a></p>
+<pre><code>
+##### Request Body
+
+```json
+{
+  &quot;user_name&quot;: &quot;admin&quot;,
+  &quot;user_password&quot;: &quot;admin&quot;,
+  &quot;token_expire&quot;: 10800
+}
+</code></pre><h5 id="response-status">Response Status</h5>
 <pre><code class="lang-json"><span class="hljs-number">200</span>
 </code></pre>
 <h5 id="response-body">Response Body</h5>
@@ -2007,7 +2049,7 @@ PUT http://localhost:8080/graphspaces/{graphspace}/auth/belongs/tester-&gt;all
   <span class="hljs-string">&quot;token&quot;</span>: <span class="hljs-string">&quot;eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX25hbWUiOiJhZG1pbiIsInVzZXJfaWQiOiJhZG1pbiIsImV4cCI6MTYzODg1NDA0M30.2zOSTC98Z-UMo-QblTdPVTGsnFMN4G5dZeTV0-PCuD8&quot;</span>
 }
 </code></pre>
-<h4 id="972-&#x9A8C;&#x8BC1;tokenverify">9.7.2 &#x9A8C;&#x8BC1;Token(verify)</h4>
+<h4 id="982-&#x9A8C;&#x8BC1;tokenverify">9.8.2 &#x9A8C;&#x8BC1;Token(verify)</h4>
 <h5 id="method--url">Method &amp; Url</h5>
 <pre><code>POST http://localhost:8080/auth/verify
 </code></pre><h5 id="response-status">Response Status</h5>
@@ -2071,7 +2113,7 @@ PUT http://localhost:8080/graphspaces/{graphspace}/auth/belongs/tester-&gt;all
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Authentication","level":"4.2.16","depth":2,"next":{"title":"Other","level":"4.2.17","depth":2,"path":"clients/restful-api-v3/other.md","ref":"clients/restful-api-v3/other.md","articles":[]},"previous":{"title":"Gremlin","level":"4.2.15","depth":2,"path":"clients/restful-api-v3/gremlin.md","ref":"clients/restful-api-v3/gremlin.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"clients/restful-api-v3/auth.md","mtime":"2022-01-05T06:05:48.577Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-05T09:13:44.961Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Authentication","level":"4.2.16","depth":2,"next":{"title":"Other","level":"4.2.17","depth":2,"path":"clients/restful-api-v3/other.md","ref":"clients/restful-api-v3/other.md","articles":[]},"previous":{"title":"Gremlin","level":"4.2.15","depth":2,"path":"clients/restful-api-v3/gremlin.md","ref":"clients/restful-api-v3/gremlin.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"clients/restful-api-v3/auth.md","mtime":"2022-01-11T03:34:33.170Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-11T03:34:40.885Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

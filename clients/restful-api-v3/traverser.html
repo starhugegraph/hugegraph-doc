@@ -1432,7 +1432,7 @@
 </ul>
 <h5 id="3212-&#x4F7F;&#x7528;&#x65B9;&#x6CD5;">3.2.1.2 &#x4F7F;&#x7528;&#x65B9;&#x6CD5;</h5>
 <h6 id="method--url">Method &amp; Url</h6>
-<pre><code>GET http://localhost:8080/graphs/{graph}/traversers/kout?source=&quot;1:marko&quot;&amp;max_depth=2
+<pre><code>GET http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/traversers/kout?source=&quot;1:marko&quot;&amp;max_depth=2
 </code></pre><h6 id="response-status">Response Status</h6>
 <pre><code class="lang-json"><span class="hljs-number">200</span>
 </code></pre>
@@ -1500,7 +1500,7 @@
 </ul>
 <h5 id="3222-&#x4F7F;&#x7528;&#x65B9;&#x6CD5;">3.2.2.2 &#x4F7F;&#x7528;&#x65B9;&#x6CD5;</h5>
 <h6 id="method--url">Method &amp; Url</h6>
-<pre><code>POST http://localhost:8080/graphs/{graph}/traversers/kout
+<pre><code>POST http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/traversers/kout
 </code></pre><h6 id="request-body">Request Body</h6>
 <pre><code class="lang-json">{
     <span class="hljs-string">&quot;source&quot;</span>: <span class="hljs-string">&quot;1:marko&quot;</span>, 
@@ -1631,7 +1631,7 @@
 </ul>
 <h5 id="3232-&#x4F7F;&#x7528;&#x65B9;&#x6CD5;">3.2.3.2 &#x4F7F;&#x7528;&#x65B9;&#x6CD5;</h5>
 <h6 id="method--url">Method &amp; Url</h6>
-<pre><code>GET http://localhost:8080/graphs/{graph}/traversers/kneighbor?source=&#x201C;1:marko&#x201D;&amp;max_depth=2
+<pre><code>GET http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/traversers/kneighbor?source=&#x201C;1:marko&#x201D;&amp;max_depth=2
 </code></pre><h6 id="response-status">Response Status</h6>
 <pre><code class="lang-json"><span class="hljs-number">200</span>
 </code></pre>
@@ -1700,7 +1700,7 @@
 </ul>
 <h5 id="3242-&#x4F7F;&#x7528;&#x65B9;&#x6CD5;">3.2.4.2 &#x4F7F;&#x7528;&#x65B9;&#x6CD5;</h5>
 <h6 id="method--url">Method &amp; Url</h6>
-<pre><code>POST http://localhost:8080/graphs/{graph}/traversers/kneighbor
+<pre><code>POST http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/traversers/kneighbor
 </code></pre><h6 id="request-body">Request Body</h6>
 <pre><code class="lang-json">{
     <span class="hljs-string">&quot;source&quot;</span>: <span class="hljs-string">&quot;1:marko&quot;</span>,
@@ -1869,7 +1869,7 @@
 </ul>
 <h5 id="3252-&#x4F7F;&#x7528;&#x65B9;&#x6CD5;">3.2.5.2 &#x4F7F;&#x7528;&#x65B9;&#x6CD5;</h5>
 <h6 id="method--url">Method &amp; Url</h6>
-<pre><code>GET http://localhost:8080/graphs/{graph}/traversers/sameneighbors?vertex=&#x201C;1:marko&#x201D;&amp;other=&quot;1:josh&quot;
+<pre><code>GET http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/traversers/sameneighbors?vertex=&#x201C;1:marko&#x201D;&amp;other=&quot;1:josh&quot;
 </code></pre><h6 id="response-status">Response Status</h6>
 <pre><code class="lang-json"><span class="hljs-number">200</span>
 </code></pre>
@@ -1898,7 +1898,7 @@
 </ul>
 <h5 id="3262-&#x4F7F;&#x7528;&#x65B9;&#x6CD5;">3.2.6.2 &#x4F7F;&#x7528;&#x65B9;&#x6CD5;</h5>
 <h6 id="method--url">Method &amp; Url</h6>
-<pre><code>GET http://localhost:8080/graphs/{graph}/traversers/jaccardsimilarity?vertex=&quot;1:marko&quot;&amp;other=&quot;1:josh&quot;
+<pre><code>GET http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/traversers/jaccardsimilarity?vertex=&quot;1:marko&quot;&amp;other=&quot;1:josh&quot;
 </code></pre><h6 id="response-status">Response Status</h6>
 <pre><code class="lang-json"><span class="hljs-number">200</span>
 </code></pre>
@@ -1931,7 +1931,7 @@
 </ul>
 <h5 id="3272-&#x4F7F;&#x7528;&#x65B9;&#x6CD5;">3.2.7.2 &#x4F7F;&#x7528;&#x65B9;&#x6CD5;</h5>
 <h6 id="method--url">Method &amp; Url</h6>
-<pre><code>POST http://localhost:8080/graphs/{graph}/traversers/jaccardsimilarity
+<pre><code>POST http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/traversers/jaccardsimilarity
 </code></pre><h6 id="request-body">Request Body</h6>
 <pre><code class="lang-json">{
   <span class="hljs-string">&quot;vertex&quot;</span>: <span class="hljs-string">&quot;1:marko&quot;</span>,
@@ -1972,7 +1972,7 @@
 </ul>
 <h5 id="3282-&#x4F7F;&#x7528;&#x65B9;&#x6CD5;">3.2.8.2 &#x4F7F;&#x7528;&#x65B9;&#x6CD5;</h5>
 <h6 id="method--url">Method &amp; Url</h6>
-<pre><code>GET http://localhost:8080/graphs/{graph}/traversers/shortestpath?source=&quot;1:marko&quot;&amp;target=&quot;2:ripple&quot;&amp;max_depth=3
+<pre><code>GET http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/traversers/shortestpath?source=&quot;1:marko&quot;&amp;target=&quot;2:ripple&quot;&amp;max_depth=3
 </code></pre><h6 id="response-status">Response Status</h6>
 <pre><code class="lang-json"><span class="hljs-number">200</span>
 </code></pre>
@@ -2007,7 +2007,7 @@
 </ul>
 <h5 id="3292-&#x4F7F;&#x7528;&#x65B9;&#x6CD5;">3.2.9.2 &#x4F7F;&#x7528;&#x65B9;&#x6CD5;</h5>
 <h6 id="method--url">Method &amp; Url</h6>
-<pre><code>GET http://localhost:8080/graphs/{graph}/traversers/allshortestpaths?source=&quot;A&quot;&amp;target=&quot;Z&quot;&amp;max_depth=10
+<pre><code>GET http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/traversers/allshortestpaths?source=&quot;A&quot;&amp;target=&quot;Z&quot;&amp;max_depth=10
 </code></pre><h6 id="response-status">Response Status</h6>
 <pre><code class="lang-json"><span class="hljs-number">200</span>
 </code></pre>
@@ -2056,7 +2056,7 @@
 </ul>
 <h5 id="32102-&#x4F7F;&#x7528;&#x65B9;&#x6CD5;">3.2.10.2 &#x4F7F;&#x7528;&#x65B9;&#x6CD5;</h5>
 <h6 id="method--url">Method &amp; Url</h6>
-<pre><code>GET http://localhost:8080/graphs/{graph}/traversers/weightedshortestpath?source=&quot;1:marko&quot;&amp;target=&quot;2:ripple&quot;&amp;weight=&quot;weight&quot;&amp;with_vertex=true
+<pre><code>GET http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/traversers/weightedshortestpath?source=&quot;1:marko&quot;&amp;target=&quot;2:ripple&quot;&amp;weight=&quot;weight&quot;&amp;with_vertex=true
 </code></pre><h6 id="response-status">Response Status</h6>
 <pre><code class="lang-json"><span class="hljs-number">200</span>
 </code></pre>
@@ -2126,7 +2126,7 @@
 </ul>
 <h5 id="32112-&#x4F7F;&#x7528;&#x65B9;&#x6CD5;">3.2.11.2 &#x4F7F;&#x7528;&#x65B9;&#x6CD5;</h5>
 <h6 id="method--url">Method &amp; Url</h6>
-<pre><code>GET http://localhost:8080/graphs/{graph}/traversers/singlesourceshortestpath?source=&quot;1:marko&quot;&amp;with_vertex=true
+<pre><code>GET http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/traversers/singlesourceshortestpath?source=&quot;1:marko&quot;&amp;with_vertex=true
 </code></pre><h6 id="response-status">Response Status</h6>
 <pre><code class="lang-json"><span class="hljs-number">200</span>
 </code></pre>
@@ -2271,7 +2271,7 @@
 </ul>
 <h5 id="32122-&#x4F7F;&#x7528;&#x65B9;&#x6CD5;">3.2.12.2 &#x4F7F;&#x7528;&#x65B9;&#x6CD5;</h5>
 <h6 id="method--url">Method &amp; Url</h6>
-<pre><code>POST http://localhost:8080/graphs/{graph}/traversers/multinodeshortestpath
+<pre><code>POST http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/traversers/multinodeshortestpath
 </code></pre><h6 id="request-body">Request Body</h6>
 <pre><code class="lang-json">{
     <span class="hljs-string">&quot;vertices&quot;</span>: {
@@ -2481,7 +2481,7 @@
 </ul>
 <h5 id="32132-&#x4F7F;&#x7528;&#x65B9;&#x6CD5;">3.2.13.2 &#x4F7F;&#x7528;&#x65B9;&#x6CD5;</h5>
 <h6 id="method--url">Method &amp; Url</h6>
-<pre><code>GET http://localhost:8080/graphs/{graph}/traversers/paths?source=&quot;1:marko&quot;&amp;target=&quot;1:josh&quot;&amp;max_depth=5
+<pre><code>GET http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/traversers/paths?source=&quot;1:marko&quot;&amp;target=&quot;1:josh&quot;&amp;max_depth=5
 </code></pre><h6 id="response-status">Response Status</h6>
 <pre><code class="lang-json"><span class="hljs-number">200</span>
 </code></pre>
@@ -2555,7 +2555,7 @@
 </ul>
 <h5 id="32142-&#x4F7F;&#x7528;&#x65B9;&#x6CD5;">3.2.14.2 &#x4F7F;&#x7528;&#x65B9;&#x6CD5;</h5>
 <h6 id="method--url">Method &amp; Url</h6>
-<pre><code>POST http://localhost:8080/graphs/{graph}/traversers/paths
+<pre><code>POST http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/traversers/paths
 </code></pre><h6 id="request-body">Request Body</h6>
 <pre><code class="lang-json">{
 <span class="hljs-string">&quot;sources&quot;</span>: {
@@ -2645,7 +2645,7 @@
 </ul>
 <h5 id="32152-&#x4F7F;&#x7528;&#x65B9;&#x6CD5;">3.2.15.2 &#x4F7F;&#x7528;&#x65B9;&#x6CD5;</h5>
 <h6 id="method--url">Method &amp; Url</h6>
-<pre><code>POST http://localhost:8080/graphs/{graph}/traversers/customizedpaths
+<pre><code>POST http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/traversers/customizedpaths
 </code></pre><h6 id="request-body">Request Body</h6>
 <pre><code class="lang-json">{
     <span class="hljs-string">&quot;sources&quot;</span>:{
@@ -2830,7 +2830,7 @@
 </ul>
 <h5 id="32162-&#x4F7F;&#x7528;&#x65B9;&#x6CD5;">3.2.16.2 &#x4F7F;&#x7528;&#x65B9;&#x6CD5;</h5>
 <h6 id="method--url">Method &amp; Url</h6>
-<pre><code>POST http://localhost:8080/graphs/{graph}/traversers/templatepaths
+<pre><code>POST http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/traversers/templatepaths
 </code></pre><h6 id="request-body">Request Body</h6>
 <pre><code class="lang-json">{
   <span class="hljs-string">&quot;sources&quot;</span>: {
@@ -2974,7 +2974,7 @@
 </ul>
 <h5 id="32172-&#x4F7F;&#x7528;&#x65B9;&#x6CD5;">3.2.17.2 &#x4F7F;&#x7528;&#x65B9;&#x6CD5;</h5>
 <h6 id="method--url">Method &amp; Url</h6>
-<pre><code>GET http://localhost:8080/graphs/{graph}/traversers/crosspoints?source=&quot;2:lop&quot;&amp;target=&quot;2:ripple&quot;&amp;max_depth=5&amp;direction=IN
+<pre><code>GET http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/traversers/crosspoints?source=&quot;2:lop&quot;&amp;target=&quot;2:ripple&quot;&amp;max_depth=5&amp;direction=IN
 </code></pre><h6 id="response-status">Response Status</h6>
 <pre><code class="lang-json"><span class="hljs-number">200</span>
 </code></pre>
@@ -3043,7 +3043,7 @@
 </ul>
 <h5 id="32182-&#x4F7F;&#x7528;&#x65B9;&#x6CD5;">3.2.18.2 &#x4F7F;&#x7528;&#x65B9;&#x6CD5;</h5>
 <h6 id="method--url">Method &amp; Url</h6>
-<pre><code>POST http://localhost:8080/graphs/{graph}/traversers/customizedcrosspoints
+<pre><code>POST http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/traversers/customizedcrosspoints
 </code></pre><h6 id="request-body">Request Body</h6>
 <pre><code class="lang-json">{
     <span class="hljs-string">&quot;sources&quot;</span>:{
@@ -3194,7 +3194,7 @@
 </ul>
 <h5 id="32192-&#x4F7F;&#x7528;&#x65B9;&#x6CD5;">3.2.19.2 &#x4F7F;&#x7528;&#x65B9;&#x6CD5;</h5>
 <h6 id="method--url">Method &amp; Url</h6>
-<pre><code>GET http://localhost:8080/graphs/{graph}/traversers/rings?source=&quot;1:marko&quot;&amp;max_depth=2
+<pre><code>GET http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/traversers/rings?source=&quot;1:marko&quot;&amp;max_depth=2
 </code></pre><h6 id="response-status">Response Status</h6>
 <pre><code class="lang-json"><span class="hljs-number">200</span>
 </code></pre>
@@ -3247,7 +3247,7 @@
 </ul>
 <h5 id="32202-&#x4F7F;&#x7528;&#x65B9;&#x6CD5;">3.2.20.2 &#x4F7F;&#x7528;&#x65B9;&#x6CD5;</h5>
 <h6 id="method--url">Method &amp; Url</h6>
-<pre><code>GET http://localhost:8080/graphs/{graph}/traversers/rays?source=&quot;1:marko&quot;&amp;max_depth=2&amp;direction=OUT
+<pre><code>GET http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/traversers/rays?source=&quot;1:marko&quot;&amp;max_depth=2&amp;direction=OUT
 </code></pre><h6 id="response-status">Response Status</h6>
 <pre><code class="lang-json"><span class="hljs-number">200</span>
 </code></pre>
@@ -3328,7 +3328,7 @@
 </ul>
 <h5 id="32212-&#x4F7F;&#x7528;&#x65B9;&#x6CD5;">3.2.21.2 &#x4F7F;&#x7528;&#x65B9;&#x6CD5;</h5>
 <h6 id="method--url">Method &amp; Url</h6>
-<pre><code>POST http://localhost:8080/graphs/hugegraph/traversers/fusiformsimilarity
+<pre><code>POST http://localhost:8080/graphspaces/{graphspace}/graphs/hugegraph/traversers/fusiformsimilarity
 </code></pre><h6 id="request-body">Request Body</h6>
 <pre><code class="lang-json">{
     <span class="hljs-string">&quot;sources&quot;</span>:{
@@ -3426,7 +3426,7 @@
 </ul>
 <h5 id="32222-&#x4F7F;&#x7528;&#x65B9;&#x6CD5;">3.2.22.2 &#x4F7F;&#x7528;&#x65B9;&#x6CD5;</h5>
 <h6 id="method--url">Method &amp; Url</h6>
-<pre><code class="lang-http">GET http://localhost:8080/graphs/{graph}/traversers/adamicadar?vertex=&quot;1:marko&quot;&amp;other=&quot;1:josh&quot;
+<pre><code class="lang-http">GET http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/traversers/adamicadar?vertex=&quot;1:marko&quot;&amp;other=&quot;1:josh&quot;
 </code></pre>
 <h6 id="request-body">Request Body</h6>
 <p>&#x53EF;&#x9009;</p>
@@ -3455,7 +3455,7 @@
 </ul>
 <h5 id="32232-&#x4F7F;&#x7528;&#x65B9;&#x6CD5;">3.2.23.2 &#x4F7F;&#x7528;&#x65B9;&#x6CD5;</h5>
 <h6 id="method--url">Method &amp; Url</h6>
-<pre><code class="lang-http">GET http://localhost:8080/graphs/{graph}/traversers/resourceallocation?vertex=&quot;1:marko&quot;&amp;other=&quot;1:josh&quot;
+<pre><code class="lang-http">GET http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/traversers/resourceallocation?vertex=&quot;1:marko&quot;&amp;other=&quot;1:josh&quot;
 </code></pre>
 <h6 id="request-body">Request Body</h6>
 <p>&#x53EF;&#x9009;</p>
@@ -3482,7 +3482,7 @@
 </ul>
 <h5 id="32242-&#x4F7F;&#x7528;&#x65B9;&#x6CD5;">3.2.24.2 &#x4F7F;&#x7528;&#x65B9;&#x6CD5;</h5>
 <h6 id="method--url">Method &amp; Url</h6>
-<pre><code>POST http://localhost:8080/graphs/{graph}/traversers/sameneighborsbatch
+<pre><code>POST http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/traversers/sameneighborsbatch
 </code></pre><h6 id="request-body">Request Body</h6>
 <pre><code class="lang-json">{
     <span class="hljs-string">&quot;vertex_list&quot;</span>: [[<span class="hljs-string">&quot;0000000001&quot;</span>,<span class="hljs-string">&quot;0000376440&quot;</span>],[<span class="hljs-string">&quot;0000000001&quot;</span>,<span class="hljs-string">&quot;0001822679&quot;</span>]],
@@ -3561,7 +3561,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Traverser","level":"4.2.9","depth":2,"next":{"title":"Rank","level":"4.2.10","depth":2,"path":"clients/restful-api-v3/rank.md","ref":"clients/restful-api-v3/rank.md","articles":[]},"previous":{"title":"Edge","level":"4.2.8","depth":2,"path":"clients/restful-api-v3/edge.md","ref":"clients/restful-api-v3/edge.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"clients/restful-api-v3/traverser.md","mtime":"2021-12-06T10:08:05.352Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-11T03:47:49.961Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Traverser","level":"4.2.9","depth":2,"next":{"title":"Rank","level":"4.2.10","depth":2,"path":"clients/restful-api-v3/rank.md","ref":"clients/restful-api-v3/rank.md","articles":[]},"previous":{"title":"Edge","level":"4.2.8","depth":2,"path":"clients/restful-api-v3/edge.md","ref":"clients/restful-api-v3/edge.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"clients/restful-api-v3/traverser.md","mtime":"2022-01-12T04:08:20.754Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-12T04:08:28.331Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

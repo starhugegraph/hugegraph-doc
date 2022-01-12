@@ -1278,7 +1278,7 @@
 <p>&#x63A5;&#x4E0B;&#x6765;&#x7684;&#x793A;&#x4F8B;&#x5747;&#x5047;&#x8BBE;&#x5DF2;&#x7ECF;&#x521B;&#x5EFA;&#x597D;&#x4E86;&#x524D;&#x8FF0;&#x7684;&#x5404;&#x79CD; schema &#x4FE1;&#x606F;</p>
 <h4 id="211-&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x9876;&#x70B9;">2.1.1 &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x9876;&#x70B9;</h4>
 <h5 id="method--url">Method &amp; Url</h5>
-<pre><code>POST http://localhost:8080/graphs/hugegraph/graph/vertices
+<pre><code>POST http://localhost:8080/graphspaces/gs1/graphs/hugegraph/graph/vertices
 </code></pre><h5 id="request-body">Request Body</h5>
 <pre><code class="lang-json">{
     <span class="hljs-string">&quot;label&quot;</span>: <span class="hljs-string">&quot;person&quot;</span>,
@@ -1314,7 +1314,7 @@
 </code></pre>
 <h4 id="212-&#x521B;&#x5EFA;&#x591A;&#x4E2A;&#x9876;&#x70B9;">2.1.2 &#x521B;&#x5EFA;&#x591A;&#x4E2A;&#x9876;&#x70B9;</h4>
 <h5 id="method--url">Method &amp; Url</h5>
-<pre><code>POST http://localhost:8080/graphs/hugegraph/graph/vertices/batch
+<pre><code>POST http://localhost:8080/graphspaces/gs1/graphs/hugegraph/graph/vertices/batch
 </code></pre><h5 id="request-body">Request Body</h5>
 <pre><code class="lang-json">[
     {
@@ -1345,7 +1345,7 @@
 </code></pre>
 <h4 id="213-&#x66F4;&#x65B0;&#x9876;&#x70B9;&#x5C5E;&#x6027;">2.1.3 &#x66F4;&#x65B0;&#x9876;&#x70B9;&#x5C5E;&#x6027;</h4>
 <h5 id="method--url">Method &amp; Url</h5>
-<pre><code>PUT http://127.0.0.1:8080/graphs/hugegraph/graph/vertices/&quot;1:marko&quot;?action=append
+<pre><code>PUT http://127.0.0.1:8080/graphspaces/gs1/graphs/hugegraph/graph/vertices/&quot;1:marko&quot;?action=append
 </code></pre><h5 id="request-body">Request Body</h5>
 <pre><code class="lang-json">{
     <span class="hljs-string">&quot;label&quot;</span>: <span class="hljs-string">&quot;person&quot;</span>,
@@ -1433,7 +1433,7 @@
 }
 </code></pre>
 <h5 id="method--url">Method &amp; Url</h5>
-<pre><code>PUT http://127.0.0.1:8080/graphs/hugegraph/graph/vertices/batch
+<pre><code>PUT http://127.0.0.1:8080/graphspaces/gs1/graphs/hugegraph/graph/vertices/batch
 </code></pre><h5 id="request-body">Request Body</h5>
 <pre><code class="lang-json">{
     <span class="hljs-string">&quot;vertices&quot;</span>:[
@@ -1516,7 +1516,7 @@
 <p>&#x5176;&#x4ED6;&#x7684;&#x66F4;&#x65B0;&#x7B56;&#x7565;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;&#x53EF;&#x4EE5;&#x7C7B;&#x63A8;&#xFF0C;&#x4E0D;&#x518D;&#x8D58;&#x8FF0;&#x3002;</p>
 <h4 id="215-&#x5220;&#x9664;&#x9876;&#x70B9;&#x5C5E;&#x6027;">2.1.5 &#x5220;&#x9664;&#x9876;&#x70B9;&#x5C5E;&#x6027;</h4>
 <h5 id="method--url">Method &amp; Url</h5>
-<pre><code>PUT http://127.0.0.1:8080/graphs/hugegraph/graph/vertices/&quot;1:marko&quot;?action=eliminate
+<pre><code>PUT http://127.0.0.1:8080/graphspaces/gs1/graphs/hugegraph/graph/vertices/&quot;1:marko&quot;?action=eliminate
 </code></pre><h5 id="request-body">Request Body</h5>
 <pre><code class="lang-json">{
     <span class="hljs-string">&quot;label&quot;</span>: <span class="hljs-string">&quot;person&quot;</span>,
@@ -1614,7 +1614,7 @@
 </table>
 <p><strong>&#x67E5;&#x8BE2;&#x6240;&#x6709; age &#x4E3A; 20 &#x4E14; label &#x4E3A; person &#x7684;&#x9876;&#x70B9;</strong></p>
 <h5 id="method--url">Method &amp; Url</h5>
-<pre><code>GET http://localhost:8080/graphs/hugegraph/graph/vertices?label=person&amp;properties={&quot;age&quot;:29}&amp;limit=1
+<pre><code>GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph/graph/vertices?label=person&amp;properties={&quot;age&quot;:29}&amp;limit=1
 </code></pre><h5 id="response-status">Response Status</h5>
 <pre><code class="lang-json"><span class="hljs-number">200</span>
 </code></pre>
@@ -1651,7 +1651,7 @@
 </code></pre>
 <p><strong>&#x5206;&#x9875;&#x67E5;&#x8BE2;&#x6240;&#x6709;&#x9876;&#x70B9;&#xFF0C;&#x83B7;&#x53D6;&#x7B2C;&#x4E00;&#x9875;&#xFF08;page&#x4E0D;&#x5E26;&#x53C2;&#x6570;&#x503C;&#xFF09;&#xFF0C;&#x9650;&#x5B9A;3&#x6761;</strong></p>
 <h5 id="method--url">Method &amp; Url</h5>
-<pre><code>GET http://localhost:8080/graphs/hugegraph/graph/vertices?page&amp;limit=3
+<pre><code>GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph/graph/vertices?page&amp;limit=3
 </code></pre><h5 id="response-status">Response Status</h5>
 <pre><code class="lang-json"><span class="hljs-number">200</span>
 </code></pre>
@@ -1722,7 +1722,7 @@
 &#x5728;&#x67E5;&#x8BE2;&#x4E0B;&#x4E00;&#x9875;&#x7684;&#x65F6;&#x5019;&#x5C06;&#x8BE5;&#x503C;&#x8D4B;&#x7ED9;page&#x53C2;&#x6570;&#x3002;</p>
 <p><strong>&#x5206;&#x9875;&#x67E5;&#x8BE2;&#x6240;&#x6709;&#x9876;&#x70B9;&#xFF0C;&#x83B7;&#x53D6;&#x4E0B;&#x4E00;&#x9875;&#xFF08;page&#x5E26;&#x4E0A;&#x4E0A;&#x4E00;&#x9875;&#x8FD4;&#x56DE;&#x7684;page&#x503C;&#xFF09;&#xFF0C;&#x9650;&#x5B9A;3&#x6761;</strong></p>
 <h5 id="method--url">Method &amp; Url</h5>
-<pre><code>GET http://localhost:8080/graphs/hugegraph/graph/vertices?page=001000100853313a706574657200f07ffffffc00e797c6349be736fffc8699e8a502efe10004&amp;limit=3
+<pre><code>GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph/graph/vertices?page=001000100853313a706574657200f07ffffffc00e797c6349be736fffc8699e8a502efe10004&amp;limit=3
 </code></pre><h5 id="response-status">Response Status</h5>
 <pre><code class="lang-json"><span class="hljs-number">200</span>
 </code></pre>
@@ -1792,7 +1792,7 @@
 <p>&#x6B64;&#x65F6;<code>&quot;page&quot;: null</code>&#x8868;&#x793A;&#x5DF2;&#x7ECF;&#x6CA1;&#x6709;&#x4E0B;&#x4E00;&#x9875;&#x4E86; (&#x6CE8;: &#x540E;&#x7AEF;&#x4E3A; Cassandra &#x65F6;&#xFF0C;&#x4E3A;&#x4E86;&#x6027;&#x80FD;&#x8003;&#x8651;&#xFF0C;&#x8FD4;&#x56DE;&#x9875;&#x6070;&#x597D;&#x4E3A;&#x6700;&#x540E;&#x4E00;&#x9875;&#x65F6;&#xFF0C;&#x8FD4;&#x56DE; <code>page</code> &#x503C;&#x53EF;&#x80FD;&#x975E;&#x7A7A;&#xFF0C;&#x901A;&#x8FC7;&#x8BE5; <code>page</code> &#x518D;&#x8BF7;&#x6C42;&#x4E0B;&#x4E00;&#x9875;&#x6570;&#x636E;&#x65F6;&#x5219;&#x8FD4;&#x56DE; <code>&#x7A7A;&#x6570;&#x636E;</code> &#x53CA; <code>page = null</code>&#xFF0C;&#x5176;&#x4ED6;&#x60C5;&#x51B5;&#x7C7B;&#x4F3C;)</p>
 <h4 id="217-&#x6839;&#x636E;id&#x83B7;&#x53D6;&#x9876;&#x70B9;">2.1.7 &#x6839;&#x636E;Id&#x83B7;&#x53D6;&#x9876;&#x70B9;</h4>
 <h5 id="method--url">Method &amp; Url</h5>
-<pre><code>GET http://localhost:8080/graphs/hugegraph/graph/vertices/&quot;1:marko&quot;
+<pre><code>GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph/graph/vertices/&quot;1:marko&quot;
 </code></pre><h5 id="response-status">Response Status</h5>
 <pre><code class="lang-json"><span class="hljs-number">200</span>
 </code></pre>
@@ -1824,14 +1824,14 @@
 </ul>
 <p><strong>&#x4EC5;&#x6839;&#x636E;Id&#x5220;&#x9664;&#x9876;&#x70B9;</strong></p>
 <h5 id="method--url">Method &amp; Url</h5>
-<pre><code>DELETE http://localhost:8080/graphs/hugegraph/graph/vertices/&quot;1:marko&quot;
+<pre><code>DELETE http://localhost:8080/graphspaces/gs1/graphs/hugegraph/graph/vertices/&quot;1:marko&quot;
 </code></pre><h5 id="response-status">Response Status</h5>
 <pre><code class="lang-json"><span class="hljs-number">204</span>
 </code></pre>
 <p><strong>&#x6839;&#x636E;Label+Id&#x5220;&#x9664;&#x9876;&#x70B9;</strong></p>
 <p>&#x901A;&#x8FC7;&#x6307;&#x5B9A;Label&#x53C2;&#x6570;&#x548C;Id&#x6765;&#x5220;&#x9664;&#x9876;&#x70B9;&#x65F6;&#xFF0C;&#x4E00;&#x822C;&#x6765;&#x8BF4;&#x5176;&#x6027;&#x80FD;&#x6BD4;&#x4EC5;&#x6839;&#x636E;Id&#x5220;&#x9664;&#x4F1A;&#x66F4;&#x597D;&#x3002;</p>
 <h5 id="method--url">Method &amp; Url</h5>
-<pre><code>DELETE http://localhost:8080/graphs/hugegraph/graph/vertices/&quot;1:marko&quot;?label=person
+<pre><code>DELETE http://localhost:8080/graphspaces/gs1/graphs/hugegraph/graph/vertices/&quot;1:marko&quot;?label=person
 </code></pre><h5 id="response-status">Response Status</h5>
 <pre><code class="lang-json"><span class="hljs-number">204</span>
 </code></pre>
@@ -1842,7 +1842,7 @@
 <li>ids&#xFF1A;&#x8981;&#x67E5;&#x8BE2;&#x7684;&#x9876;&#x70B9;id&#x5217;&#x8868;</li>
 </ul>
 <h6 id="method--url">Method &amp; Url</h6>
-<pre><code>GET http://localhost:8080/graphs/hugegraph/traversers/vertices?ids=&quot;1:marko&quot;&amp;ids=&quot;2:lop&quot;
+<pre><code>GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph/traversers/vertices?ids=&quot;1:marko&quot;&amp;ids=&quot;2:lop&quot;
 </code></pre><h6 id="response-status">Response Status</h6>
 <pre><code class="lang-json"><span class="hljs-number">200</span>
 </code></pre>
@@ -1909,7 +1909,7 @@
 <li>split_size&#xFF1A;&#x5206;&#x7247;&#x5927;&#x5C0F;&#xFF0C;&#x5FC5;&#x586B;&#x9879;</li>
 </ul>
 <h6 id="method--url">Method &amp; Url</h6>
-<pre><code>GET http://localhost:8080/graphs/hugegraph/traversers/vertices/shards?split_size=67108864
+<pre><code>GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph/traversers/vertices/shards?split_size=67108864
 </code></pre><h6 id="response-status">Response Status</h6>
 <pre><code class="lang-json"><span class="hljs-number">200</span>
 </code></pre>
@@ -1950,7 +1950,7 @@
 <li>page_limit&#xFF1A;&#x5206;&#x9875;&#x83B7;&#x53D6;&#x9876;&#x70B9;&#x65F6;&#xFF0C;&#x4E00;&#x9875;&#x4E2D;&#x9876;&#x70B9;&#x6570;&#x76EE;&#x7684;&#x4E0A;&#x9650;&#xFF0C;&#x9009;&#x586B;&#x9879;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;100000</li>
 </ul>
 <h6 id="method--url">Method &amp; Url</h6>
-<pre><code>GET http://localhost:8080/graphs/hugegraph/traversers/vertices/scan?start=0&amp;end=4294967295
+<pre><code>GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph/traversers/vertices/scan?start=0&amp;end=4294967295
 </code></pre><h6 id="response-status">Response Status</h6>
 <pre><code class="lang-json"><span class="hljs-number">200</span>
 </code></pre>
@@ -2167,7 +2167,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Vertex","level":"4.2.7","depth":2,"next":{"title":"Edge","level":"4.2.8","depth":2,"path":"clients/restful-api-v3/edge.md","ref":"clients/restful-api-v3/edge.md","articles":[]},"previous":{"title":"Rebuild","level":"4.2.6","depth":2,"path":"clients/restful-api-v3/rebuild.md","ref":"clients/restful-api-v3/rebuild.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"clients/restful-api-v3/vertex.md","mtime":"2021-12-06T10:08:05.352Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-11T03:47:49.961Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Vertex","level":"4.2.7","depth":2,"next":{"title":"Edge","level":"4.2.8","depth":2,"path":"clients/restful-api-v3/edge.md","ref":"clients/restful-api-v3/edge.md","articles":[]},"previous":{"title":"Rebuild","level":"4.2.6","depth":2,"path":"clients/restful-api-v3/rebuild.md","ref":"clients/restful-api-v3/rebuild.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"clients/restful-api-v3/vertex.md","mtime":"2022-01-12T04:08:20.754Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-12T04:08:28.331Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

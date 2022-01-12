@@ -1252,7 +1252,7 @@
 </ul>
 <h4 id="121-&#x521B;&#x5EFA;&#x4E00;&#x4E2A;-propertykey">1.2.1 &#x521B;&#x5EFA;&#x4E00;&#x4E2A; PropertyKey</h4>
 <h5 id="method--url">Method &amp; Url</h5>
-<pre><code>POST http://localhost:8080/graphs/hugegraph/schema/propertykeys
+<pre><code>POST http://localhost:8080/graphspaces/gs1/graphs/hugegraph/schema/propertykeys
 </code></pre><h5 id="request-body">Request Body</h5>
 <pre><code class="lang-json">{
     <span class="hljs-string">&quot;property_key&quot;</span> : {
@@ -1282,7 +1282,7 @@
 <li>action: &#x8868;&#x793A;&#x5F53;&#x524D;&#x884C;&#x4E3A;&#x662F;&#x6DFB;&#x52A0;&#x8FD8;&#x662F;&#x79FB;&#x9664;&#xFF0C;&#x53D6;&#x503C;&#x4E3A;<code>append</code>&#xFF08;&#x6DFB;&#x52A0;&#xFF09;&#x548C;<code>eliminate</code>&#xFF08;&#x79FB;&#x9664;&#xFF09;</li>
 </ul>
 <h5 id="method--url">Method &amp; Url</h5>
-<pre><code>PUT http://localhost:8080/graphs/hugegraph/schema/propertykeys/age?action=append
+<pre><code>PUT http://localhost:8080/graphspaces/gs1/graphs/hugegraph/schema/propertykeys/age?action=append
 </code></pre><h5 id="request-body">Request Body</h5>
 <pre><code class="lang-json">{
     <span class="hljs-string">&quot;property_key&quot;</span> : {
@@ -1313,7 +1313,7 @@
 </code></pre>
 <h4 id="123-&#x83B7;&#x53D6;&#x6240;&#x6709;&#x7684;-propertykey">1.2.3 &#x83B7;&#x53D6;&#x6240;&#x6709;&#x7684; PropertyKey</h4>
 <h5 id="method--url">Method &amp; Url</h5>
-<pre><code>GET http://localhost:8080/graphs/hugegraph/schema/propertykeys
+<pre><code>GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph/schema/propertykeys
 </code></pre><h5 id="response-status">Response Status</h5>
 <pre><code class="lang-json"><span class="hljs-number">200</span>
 </code></pre>
@@ -1381,7 +1381,7 @@
 </code></pre>
 <h4 id="124-&#x6839;&#x636E;name&#x83B7;&#x53D6;propertykey">1.2.4 &#x6839;&#x636E;name&#x83B7;&#x53D6;PropertyKey</h4>
 <h5 id="method--url">Method &amp; Url</h5>
-<pre><code>GET http://localhost:8080/graphs/hugegraph/schema/propertykeys/age
+<pre><code>GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph/schema/propertykeys/age
 </code></pre><p>&#x5176;&#x4E2D;&#xFF0C;<code>age</code>&#x4E3A;&#x8981;&#x83B7;&#x53D6;&#x7684;PropertyKey&#x7684;&#x540D;&#x5B57;</p>
 <h5 id="response-status">Response Status</h5>
 <pre><code class="lang-json"><span class="hljs-number">200</span>
@@ -1398,7 +1398,7 @@
 </code></pre>
 <h4 id="125-&#x6839;&#x636E;name&#x5220;&#x9664;propertykey">1.2.5 &#x6839;&#x636E;name&#x5220;&#x9664;PropertyKey</h4>
 <h5 id="method--url">Method &amp; Url</h5>
-<pre><code>DELETE http://localhost:8080/graphs/hugegraph/schema/propertykeys/age
+<pre><code>DELETE http://localhost:8080/graphspaces/gs1/graphs/hugegraph/schema/propertykeys/age
 </code></pre><p>&#x5176;&#x4E2D;&#xFF0C;<code>age</code>&#x4E3A;&#x8981;&#x83B7;&#x53D6;&#x7684;PropertyKey&#x7684;&#x540D;&#x5B57;</p>
 <h5 id="response-status">Response Status</h5>
 <pre><code class="lang-json"><span class="hljs-number">202</span>
@@ -1468,7 +1468,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"PropertyKey","level":"4.2.2","depth":2,"next":{"title":"VertexLabel","level":"4.2.3","depth":2,"path":"clients/restful-api-v3/vertexlabel.md","ref":"clients/restful-api-v3/vertexlabel.md","articles":[]},"previous":{"title":"Schema","level":"4.2.1","depth":2,"path":"clients/restful-api-v3/schema.md","ref":"clients/restful-api-v3/schema.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"clients/restful-api-v3/propertykey.md","mtime":"2021-12-06T10:08:05.352Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-11T03:47:49.961Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"PropertyKey","level":"4.2.2","depth":2,"next":{"title":"VertexLabel","level":"4.2.3","depth":2,"path":"clients/restful-api-v3/vertexlabel.md","ref":"clients/restful-api-v3/vertexlabel.md","articles":[]},"previous":{"title":"Schema","level":"4.2.1","depth":2,"path":"clients/restful-api-v3/schema.md","ref":"clients/restful-api-v3/schema.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"clients/restful-api-v3/propertykey.md","mtime":"2022-01-12T04:08:20.754Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-12T04:08:28.331Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

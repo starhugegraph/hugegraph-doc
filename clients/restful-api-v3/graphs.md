@@ -140,25 +140,16 @@ GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph/conf
 
 ##### Response Body
 
-```properties
-# gremlin entrence to create graph
-gremlin.graph=com.baidu.hugegraph.HugeFactory
-
-# cache config
-#schema.cache_capacity=1048576
-#graph.cache_capacity=10485760
-#graph.cache_expire=600
-
-# schema illegal name template
-#schema.illegal_name_regex=\s+|~.*
-
-#vertex.default_label=vertex
-
-backend=cassandra
-serializer=cassandra
-
-store=hugegraph
-...
+```json
+{
+  "search.text_analyzer": "jieba",
+  "gremlin.graph": "com.baidu.hugegraph.HugeFactory",
+  "search.text_analyzer_mode": "INDEX",
+  "serializer": "binary",
+  "backend": "hstore",
+  "store": "hugegraph1",
+  "pd.peers": "127.0.0.1:8686"
+}
 ```
 
 ### 6.3 Mode

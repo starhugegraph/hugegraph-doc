@@ -5,18 +5,19 @@
 ##### Method & Url
 
 ```
-POST http://localhost:8080/graphspaces/gs1/graphs/hg1
+POST http://localhost:8080/graphspaces/gs1/graphs/hugegraph
 ```
 
 ##### Request Body
 
-```
+```json
 {
   "gremlin.graph": "com.baidu.hugegraph.HugeFactory",
   "backend": "hstore",
   "serializer": "binary",
   "store": "hugegraph",
-  "pd.peers":"ip:port"
+  "search.text_analyzer": "jieba",
+  "search.text_analyzer_mode": "INDEX"
 }
 ```
 
@@ -30,8 +31,9 @@ POST http://localhost:8080/graphspaces/gs1/graphs/hg1
 
 ```json
 {
-    "name": "hg1",
-    "backend": "rocksdb"
+  "name": "hugegraph",
+  "backend": "hstore",
+  "description": ""
 }
 ```
 
@@ -78,8 +80,9 @@ GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph
 
 ```json
 {
-    "name": "hugegraph",
-    "backend": "cassandra"
+  "name": "hugegraph",
+  "backend": "hstore",
+  "description": ""
 }
 ```
 

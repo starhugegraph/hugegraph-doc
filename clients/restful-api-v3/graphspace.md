@@ -183,7 +183,7 @@ PUT http://127.0.0.1:8080/graphspaces/gs1
 ##### Method & Url
 
 ```
-DELETE http://localhost:8080/graphspaces/gs1?confirm_message=I%27m+sure+to+drop+the+graph+space
+DELETE http://localhost:8080/graphspaces/gs1
 ```
 
 > 注意：删除图空间，会导致图空间的全部资源被释放。

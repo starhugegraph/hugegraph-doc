@@ -110,16 +110,10 @@ PUT http://localhost:8080/graphspaces/gs1/graphs/hugegraph
 
 #### 6.1.5 删除某个图，**该操作需要管理员权限**
 
-##### Params
-
-由于删除图是一个比较危险的操作，为避免用户误调用，我们给API添加了用于确认的参数：
-
-- confirm_message: 默认为`I'm sure to drop the graph`
-
 ##### Method & Url
 
 ```
-DELETE http://localhost:8080/graphspaces/gs1/graphs/hugegraph?confirm_message=I%27m+sure+to+drop+the+graph
+DELETE http://localhost:8080/graphspaces/gs1/graphs/hugegraph
 ```
 
 ##### Response Status

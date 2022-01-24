@@ -4,14 +4,30 @@
 
 ##### Params
 
-- status: 异步任务的状态，状态可以为 UNKNOWN、NEW、SCHEDULING、SCHEDULED、QUEUED、RESTORING、RUNNING、SUCCESS、CANCELLING、CANCELLED、FAILED
+- status: 异步任务的状态，状态可以为 UNKNOWN、NEW、SCHEDULING、SCHEDULED、QUEUED、PENDING、RESTORING、RUNNING、SUCCESS、CANCELLING、CANCELLED、FAILED
 - limit：返回异步任务数目上限
 
 ##### Method & Url
 
 ```
-GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph/tasks?status=SUCCESS
+GET http://localhost:8080/graphspaces/{graphspace}/graphs/{hugegraph}/tasks?status=SUCCESS
 ```
+
+##### URI参数说明
+ 
+|  名称 	  | 是否必填  | 类型     | 默认值  | 说明       |
+|  --------   | -------- | ----     |  ----  | ----      |
+| graphspace  | 是       | String   |        | 图空间名称  |
+| hugegraph   | 是       | String   |        | 图名称     |
+| status       | 是       | String   |       | Task状态  |
+
+ 
+##### 请求参数
+ 
+|  名称   | 是否必填  | 类型  | 默认值  | 取值范围  | 说明  |
+|  ----  | ----  | ----  | ----  | ----  | ----  |
+| data  | 是 | String  |   |   |   |
+ 
 
 ##### Response Status
 
@@ -44,8 +60,16 @@ GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph/tasks?status=SUCCESS
 ##### Method & Url
 
 ```
-GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph/tasks/2
+GET http://localhost:8080/graphspaces/{graphspace}/graphs/{hugegraph}/tasks/{id}
 ```
+##### URI参数说明
+ 
+|  名称 	  | 是否必填  | 类型     | 默认值  | 说明       |
+|  --------   | -------- | ----     |  ----  | ----      |
+| graphspace  | 是       | String   |        | 图空间名称  |
+| hugegraph   | 是       | String   |        | 图名称     |
+| id       | 是       | String   |       | Task的id  |
+ 
 
 ##### Response Status
 
@@ -80,13 +104,20 @@ GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph/tasks/2
 ##### Method & Url
 
 ```
-DELETE http://localhost:8080/graphspaces/gs1/graphs/hugegraph/tasks/2
+DELETE http://localhost:8080/graphspaces/{graphspace}/graphs/{hugegraph}/tasks/{id}
 ```
 或者：
 ```
-DELETE http://localhost:8080/graphspaces/gs1/graphs/hugegraph/tasks/2?force=true
+DELETE http://localhost:8080/graphspaces/{graphspace}/graphs/{hugegraph}/tasks/{id}?force=true
 ```
-
+##### URI参数说明
+ 
+|  名称 	  | 是否必填  | 类型     | 默认值  | 说明        |
+|  --------   | -------- | ----     |  ----  | ----        |
+| graphspace  | 是       | String   |        | 图空间名称   |
+| hugegraph   | 是       | String   |        | 图名称      |
+| id          | 是       | String   |       | Task的id     |
+| force       | 否       | Boolean  | false  | 是否强制删除 |
 ##### Response Status
 
 ```json
@@ -112,8 +143,16 @@ DELETE http://localhost:8080/graphspaces/gs1/graphs/hugegraph/tasks/2?force=true
 ##### Method & Url
 
 ```
-PUT http://localhost:8080/graphspaces/gs1/graphs/hugegraph/tasks/2?action=cancel
+PUT http://localhost:8080/graphspaces/{graphspace}/graphs/{hugegraph}/tasks/{id}?action=cancel
 ```
+##### URI参数说明
+ 
+|  名称 	  | 是否必填  | 类型     | 默认值  | 说明       |
+|  --------   | -------- | ----     |  ----  | ----      |
+| graphspace  | 是       | String   |        | 图空间名称  |
+| hugegraph   | 是       | String   |        | 图名称     |
+| id       | 是       | String   |       | Task的id  |
+
 
 > 请保证在10秒内发送该请求，如果超过10秒发送，任务可能已经执行完成，无法取消。
 

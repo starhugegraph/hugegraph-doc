@@ -9,7 +9,7 @@
 ##### URI
 
 ```
-POST http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/jobs/computerdis
+POST /graphspaces/${graphspace}/graphs/${graph}/jobs/computerdis
 ```
 
 ##### URI参数
@@ -182,7 +182,7 @@ POST http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/jobs/computer
 ###### Method & Url
  
 ```
-POST http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/jobs/computerdis
+POST http://localhost:8080/graphspaces/${graphspace}/graphs/${graph}/jobs/computerdis
 ``` 
  
 ###### Request Body 
@@ -217,7 +217,7 @@ POST http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/jobs/computer
 ##### URI
 
 ```
-DELETE http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/jobs/computerdis/{task_id}
+DELETE /graphspaces/${graphspace}/graphs/${graph}/jobs/computerdis/${task_id}
 ```
 ##### URI参数
  
@@ -240,7 +240,7 @@ DELETE http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/jobs/comput
 ###### Method & Url
  
 ```
-DELETE http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/jobs/computerdis/{task_id}
+DELETE http://localhost:8080/graphspaces/${graphspace}/graphs/${graph}/jobs/computerdis/${task_id}
 ```
  
 ###### Response Status
@@ -262,7 +262,7 @@ DELETE http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/jobs/comput
 ##### URI
 
 ```
-PUT http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/jobs/computerdis/{task_id}
+PUT /graphspaces/${graphspace}/graphs/${graph}/jobs/computerdis/${task_id}
 ```
 ##### URI参数说明
  
@@ -284,7 +284,7 @@ PUT http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/jobs/computerd
 ###### Method & Url
  
 ```
-PUT http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/jobs/computerdis/{task_id}
+PUT http://localhost:8080/graphspaces/${graphspace}/graphs/${graph}/jobs/computerdis/${task_id}
 ```
  
 ###### Response Status
@@ -305,7 +305,7 @@ PUT http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/jobs/computerd
 ##### URI
 
 ```
-GET http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/jobs/computerdis/{task_id}
+GET /graphspaces/${graphspace}/graphs/${graph}/jobs/computerdis/${task_id}
 ```
 ##### URI参数
  
@@ -338,7 +338,7 @@ GET http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/jobs/computerd
 ###### Method & Url
  
 ```
-GET http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/jobs/computerdis/{task_id}
+GET http://localhost:8080/graphspaces/${graphspace}/graphs/${graph}/jobs/computerdis/${task_id}
 ```
 
 ###### Response Status
@@ -370,7 +370,7 @@ GET http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/jobs/computerd
 ##### URI
 
 ```
-GET http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/jobs/computerdis?limit=100
+GET /graphspaces/${graphspace}/graphs/${graph}/jobs/computerdis?limit=${limit}
 ```
 ##### URI参数
  
@@ -402,7 +402,7 @@ GET http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/jobs/computerd
 ###### Method & Url
  
 ```
-GET http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/jobs/computerdis?limit=100
+GET http://localhost:8080/graphspaces/${graphspace}/graphs/${graph}/jobs/computerdis?limit=100
 ```
 
 ###### Response Status

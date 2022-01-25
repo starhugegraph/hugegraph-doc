@@ -130,7 +130,7 @@ Loader 导入数据的映射文件问下:
 ###### URI
 
 ```javascript
-POST graphspaces/${graphspace}/graphs/${graph}/traversers/personalrank
+POST /graphspaces/${graphspace}/graphs/${graph}/traversers/personalrank
 ```
 
 ###### URI 参数
@@ -304,7 +304,7 @@ public class Loader {
 ###### URI
 
 ```javascript
-POST graphspaces/${graphspace}/graphs/${graph}/traversers/neighborrank
+POST /graphspaces/${graphspace}/graphs/${graph}/traversers/neighborrank
 ```
 
 ###### URI 参数

@@ -91,7 +91,7 @@ POST http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/graph/vertice
 
 #### 2.1.2 创建多个顶点
 
-#### 功能介绍
+#####  功能介绍
 创建多个顶点
 
 ##### Method & Url
@@ -156,7 +156,7 @@ POST http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/graph/vertice
 
 #### 2.1.3 更新顶点属性
 
-#### 功能介绍
+#####  功能介绍
  更新顶点属性
 
 ##### Method & Url
@@ -405,7 +405,7 @@ PUT http://127.0.0.1:8080/graphspaces/{graphspace}/graphs/{graph}/graph/vertices
 
 #### 2.1.5 删除顶点属性
 
-#### 功能介绍
+#####  功能介绍
 删除顶点属性
 
 ##### Method & Url
@@ -785,7 +785,7 @@ GET http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/graph/vertices
 
 #### 2.1.7 根据Id获取顶点
 
-#### 功能介绍
+#####  功能介绍
 根据Id获取顶点
 
 ##### Method & Url
@@ -847,7 +847,7 @@ GET http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/graph/vertices
 
 #### 2.1.8 删除顶点
 
-#### 功能介绍
+#####  功能介绍
 
 **仅根据Id删除顶点**
 
@@ -877,7 +877,7 @@ DELETE http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/graph/verti
 204
 ```
 
-#### 功能介绍
+#####  功能介绍
 **根据Label+Id删除顶点**
 
 通过指定Label参数和Id来删除顶点时，一般来说其性能比仅根据Id删除会更好。
@@ -912,7 +912,7 @@ DELETE http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/graph/verti
 
 ##### 2.1.9.1 根据顶点的id列表，批量查询顶点
 
-#### 功能介绍
+#####  功能介绍
 根据顶点的Id列表,批量查询顶点
 
 ###### Method & Url
@@ -1007,7 +1007,7 @@ GET http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/graph/vertices
 
 ##### 2.1.9.2 获取顶点 Shard 信息
 
-#### 功能介绍
+#####  功能介绍
 通过指定的分片大小split_size，获取顶点分片信息（可以与 3.2.21.3 中的 Scan 配合使用来获取顶点）。
 
 ###### Method & Url
@@ -1073,7 +1073,7 @@ GET http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/graph/vertices
 
 ##### 2.1.9.3 根据Shard信息批量获取顶点
 
-#### 功能介绍
+#####  功能介绍
 通过指定的分片信息批量查询顶点（Shard信息的获取参见 3.2.21.2 Shard）。
 
 ###### Method & Url

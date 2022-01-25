@@ -13,21 +13,33 @@
 GET http://localhost:8080/graphspaces/{graphspace}/graphs/{hugegraph}/tasks?status=SUCCESS
 ```
 
-##### URI参数说明
+##### URI参数
  
-|  名称 	  | 是否必填  | 类型     | 默认值  | 说明       |
-|  --------   | -------- | ----     |  ----  | ----      |
-| graphspace  | 是       | String   |        | 图空间名称  |
-| hugegraph   | 是       | String   |        | 图名称     |
-| status       | 是       | String   |       | Task状态  |
+|  名称 	  | 是否必填  | 类型     | 默认值  |  取值范围 | 说明       |
+|  --------   | -------- | ----     |  ----  | ---- | ----      |
+| graphspace  | 是       | String   |        |   | 图空间名称  |
+| hugegraph   | 是       | String   |        |  | 图名称     |
+| status       | 是       | String   |       |  | 异步任务状态  |
 
  
-##### 请求参数
+##### Body参数
  
-|  名称   | 是否必填  | 类型  | 默认值  | 取值范围  | 说明  |
-|  ----  | ----  | ----  | ----  | ----  | ----  |
-| data  | 是 | String  |   |   |   |
- 
+无
+
+##### Response
+| 名称                 | 类型            | 说明                   |
+| ------------------  | ------------    | ---------------------- |
+| task_name           | String          | 异步任务名字                       |
+| task_progress       | Int             | 异步任务当前进度                   |
+| task_create         | Long            | 异步任务创建时间点  |
+| task_status         | String          | 异步任务状态 |
+| task_update         | Long            | 异步任务最近更新时间节点 |
+| task_result         | String          | 异步任务运行结果 |
+| task_retries        | Int             | 异步任务累计重试次数 |
+| id                  | Long            | 异步任务id   |
+| task_type           | String          | 异步任务类型 |
+| task_callable       | String          | 异步任务的调度函数 |
+| task_input          | String          | 异步任务的输入值 |
 
 ##### Response Status
 
@@ -64,11 +76,29 @@ GET http://localhost:8080/graphspaces/{graphspace}/graphs/{hugegraph}/tasks/{id}
 ```
 ##### URI参数说明
  
-|  名称 	  | 是否必填  | 类型     | 默认值  | 说明       |
-|  --------   | -------- | ----     |  ----  | ----      |
-| graphspace  | 是       | String   |        | 图空间名称  |
-| hugegraph   | 是       | String   |        | 图名称     |
-| id       | 是       | String   |       | Task的id  |
+|  名称 	  | 是否必填  | 类型     | 默认值  |  取值范围 |说明       |
+|  --------   | -------- | ----     |  ----  | ---- |----      |
+| graphspace  | 是       | String   |        |  | 图空间名称  |
+| hugegraph   | 是       | String   |        |  | 图名称     |
+| id       | 是       | String   |       |      | 异步任务Id  |
+
+##### Body参数
+无
+
+##### Response
+| 名称                 | 类型            | 说明                   |
+| ------------------  | ------------    | ---------------------- |
+| task_name           | String          | 异步任务名字                       |
+| task_progress       | Int             | 异步任务当前进度                   |
+| task_create         | Long            | 异步任务创建时间点  |
+| task_status         | String          | 异步任务状态 |
+| task_update         | Long            | 异步任务最近更新时间节点 |
+| task_result         | String          | 异步任务运行结果 |
+| task_retries        | Int             | 异步任务累计重试次数 |
+| id                  | Long            | 异步任务Id   |
+| task_type           | String          | 异步任务类型 |
+| task_callable       | String          | 异步任务的调度函数 |
+| task_input          | String          | 异步任务的输入值 |
  
 
 ##### Response Status
@@ -110,14 +140,32 @@ DELETE http://localhost:8080/graphspaces/{graphspace}/graphs/{hugegraph}/tasks/{
 ```
 DELETE http://localhost:8080/graphspaces/{graphspace}/graphs/{hugegraph}/tasks/{id}?force=true
 ```
-##### URI参数说明
+##### URI参数
  
-|  名称 	  | 是否必填  | 类型     | 默认值  | 说明        |
-|  --------   | -------- | ----     |  ----  | ----        |
-| graphspace  | 是       | String   |        | 图空间名称   |
-| hugegraph   | 是       | String   |        | 图名称      |
-| id          | 是       | String   |       | Task的id     |
-| force       | 否       | Boolean  | false  | 是否强制删除 |
+|  名称 	  | 是否必填  | 类型     | 默认值  | 取值范围 | 说明        |
+|  --------   | -------- | ----     |  ----  | ---- | ----        |
+| graphspace  | 是       | String   |        |    | 图空间名称   |
+| hugegraph   | 是       | String   |        |    | 图名称      |
+| id          | 是       | String   |       |     | 异步任务Id     |
+| force       | 否       | Boolean  | false  |     |是否强制删除 |
+
+##### Body参数
+无
+
+##### Response
+| 名称                 | 类型            | 说明                   |
+| ------------------  | ------------    | ---------------------- |
+| task_name           | String          | 异步任务名字                       |
+| task_progress       | Int             | 异步任务当前进度                   |
+| task_create         | Long            | 异步任务创建时间点  |
+| task_status         | String          | 异步任务状态 |
+| task_update         | Long            | 异步任务最近更新时间节点 |
+| task_result         | String          | 异步任务运行结果 |
+| task_retries        | Int             | 异步任务累计重试次数 |
+| id                  | Long            | 异步任务id   |
+| task_type           | String          | 异步任务类型 |
+| task_callable       | String          | 异步任务的调度函数 |
+| task_input          | String          | 异步任务的输入值 |
 ##### Response Status
 
 ```json
@@ -147,11 +195,19 @@ PUT http://localhost:8080/graphspaces/{graphspace}/graphs/{hugegraph}/tasks/{id}
 ```
 ##### URI参数说明
  
-|  名称 	  | 是否必填  | 类型     | 默认值  | 说明       |
-|  --------   | -------- | ----     |  ----  | ----      |
+|  名称 	  | 是否必填  | 类型     | 默认值  | 取值范围 | 说明       |
+|  --------   | -------- | ----     |  ----  | ---- | ----      |
 | graphspace  | 是       | String   |        | 图空间名称  |
 | hugegraph   | 是       | String   |        | 图名称     |
-| id       | 是       | String   |       | Task的id  |
+| id       | 是       | String   |       | 异步任务Id |
+
+##### Body参数
+无
+
+##### Response
+| 名称                 | 类型            | 说明                   |
+| ------------------  | ------------    | ---------------------- |
+| cancelled           | Boolean         | 是否取消成功
 
 
 > 请保证在10秒内发送该请求，如果超过10秒发送，任务可能已经执行完成，无法取消。

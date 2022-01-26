@@ -1468,11 +1468,11 @@
 &quot;S1:marko&gt;1&gt;20160110&gt;S1:vadas&quot;,
 &quot;S1:marko&gt;2&gt;&gt;S2:lop&quot;
 </code></pre><h4 id="321-k-out-api&#xFF08;get&#xFF0C;&#x57FA;&#x7840;&#x7248;&#xFF09;">3.2.1 K-out API&#xFF08;GET&#xFF0C;&#x57FA;&#x7840;&#x7248;&#xFF09;</h4>
-<h5 id="3211-&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">3.2.1.1 &#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
+<h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
 <p>&#x6839;&#x636E;&#x8D77;&#x59CB;&#x9876;&#x70B9;&#x3001;&#x65B9;&#x5411;&#x3001;&#x8FB9;&#x7684;&#x7C7B;&#x578B;&#xFF08;&#x53EF;&#x9009;&#xFF09;&#x548C;&#x6DF1;&#x5EA6;depth&#xFF0C;&#x67E5;&#x627E;&#x4ECE;&#x8D77;&#x59CB;&#x9876;&#x70B9;&#x51FA;&#x53D1;&#x6070;&#x597D;depth&#x6B65;&#x53EF;&#x8FBE;&#x7684;&#x9876;&#x70B9;</p>
-<h6 id="uri">URI</h6>
+<h5 id="uri">URI</h5>
 <pre><code>GET /graphspaces/${graphspace}/graphs/${graph}/traversers/kout
-</code></pre><h6 id="uri&#x53C2;&#x6570;">URI&#x53C2;&#x6570;</h6>
+</code></pre><h5 id="uri&#x53C2;&#x6570;">URI&#x53C2;&#x6570;</h5>
 <table>
 <thead>
 <tr>
@@ -1575,9 +1575,9 @@
 </tr>
 </tbody>
 </table>
-<h6 id="body&#x53C2;&#x6570;">Body&#x53C2;&#x6570;</h6>
+<h5 id="body&#x53C2;&#x6570;">Body&#x53C2;&#x6570;</h5>
 <p>&#x65E0;</p>
-<h6 id="response">Response</h6>
+<h5 id="response">Response</h5>
 <table>
 <thead>
 <tr>
@@ -1594,7 +1594,7 @@
 </tr>
 </tbody>
 </table>
-<h5 id="3212-&#x4F7F;&#x7528;&#x793A;&#x4F8B;">3.2.1.2 &#x4F7F;&#x7528;&#x793A;&#x4F8B;</h5>
+<h5 id="&#x4F7F;&#x7528;&#x793A;&#x4F8B;">&#x4F7F;&#x7528;&#x793A;&#x4F8B;</h5>
 <h6 id="method--url">Method &amp; Url</h6>
 <pre><code>GET http://localhost:8080/graphspaces/graphspace/graphs/graph/traversers/kout?source=&quot;1:marko&quot;&amp;max_depth=2
 </code></pre><h6 id="response-status">Response Status</h6>
@@ -1615,7 +1615,7 @@
 <li>&#x793E;&#x4EA4;&#x5173;&#x7CFB;&#x4E2D;&#x53D1;&#x73B0;&#x6F5C;&#x5728;&#x597D;&#x53CB;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;&#x4E0E;&#x76EE;&#x6807;&#x7528;&#x6237;&#x76F8;&#x9694;&#x4E24;&#x5C42;&#x670B;&#x53CB;&#x5173;&#x7CFB;&#x7684;&#x7528;&#x6237;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8FDE;&#x7EED;&#x4E24;&#x6761;&#x201C;&#x670B;&#x53CB;&#x201D;&#x8FB9;&#x5230;&#x8FBE;&#x7684;&#x9876;&#x70B9;&#x3002;</li>
 </ul>
 <h4 id="322-k-out-api&#xFF08;post&#xFF0C;&#x9AD8;&#x7EA7;&#x7248;&#xFF09;">3.2.2 K-out API&#xFF08;POST&#xFF0C;&#x9AD8;&#x7EA7;&#x7248;&#xFF09;</h4>
-<h5 id="3221-&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">3.2.2.1 &#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
+<h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
 <p>&#x6839;&#x636E;&#x8D77;&#x59CB;&#x9876;&#x70B9;&#x3001;&#x6B65;&#x9AA4;&#xFF08;&#x5305;&#x62EC;&#x65B9;&#x5411;&#x3001;&#x8FB9;&#x7C7B;&#x578B;&#x548C;&#x8FC7;&#x6EE4;&#x5C5E;&#x6027;&#xFF09;&#x548C;&#x6DF1;&#x5EA6;depth&#xFF0C;&#x67E5;&#x627E;&#x4ECE;&#x8D77;&#x59CB;&#x9876;&#x70B9;&#x51FA;&#x53D1;&#x6070;&#x597D;depth&#x6B65;&#x53EF;&#x8FBE;&#x7684;&#x9876;&#x70B9;&#x3002;</p>
 <blockquote>
 <p>&#x4E0E;K-out&#x57FA;&#x7840;&#x7248;&#x7684;&#x4E0D;&#x540C;&#x5728;&#x4E8E;&#xFF1A;</p>
@@ -1625,9 +1625,9 @@
 <li>&#x652F;&#x6301;&#x8FD4;&#x56DE;&#x5230;&#x8FBE;&#x90BB;&#x5C45;&#x7684;&#x6700;&#x77ED;&#x8DEF;&#x5F84;</li>
 </ul>
 </blockquote>
-<h6 id="uri">URI</h6>
+<h5 id="uri">URI</h5>
 <pre><code>POST /graphspaces/${graphspace}/graphs/${graph}/traversers/kout
-</code></pre><h6 id="uri&#x53C2;&#x6570;">URI&#x53C2;&#x6570;</h6>
+</code></pre><h5 id="uri&#x53C2;&#x6570;">URI&#x53C2;&#x6570;</h5>
 <table>
 <thead>
 <tr>
@@ -1658,7 +1658,7 @@
 </tr>
 </tbody>
 </table>
-<h6 id="body&#x53C2;&#x6570;">Body&#x53C2;&#x6570;</h6>
+<h5 id="body&#x53C2;&#x6570;">Body&#x53C2;&#x6570;</h5>
 <table>
 <thead>
 <tr>
@@ -1774,7 +1774,7 @@
 | :------| :------- | :----------- | :----- | :-------------- | :---------------------- |
 | label       | &#x5426;       |  String    | -          |   -    |&#x70B9;&#x8FB9;&#x7C7B;&#x578B;           |
 | properties       | &#x5426;       |  Json    | -          |   -    |&#x901A;&#x8FC7;&#x5C5E;&#x6027;&#x7684;&#x503C;&#x8FC7;&#x6EE4;&#x70B9;&#x8FB9;           |</p>
-<h6 id="response">Response</h6>
+<h5 id="response">Response</h5>
 <table>
 <thead>
 <tr>
@@ -1806,7 +1806,7 @@
 </tr>
 </tbody>
 </table>
-<h5 id="3222-&#x4F7F;&#x7528;&#x793A;&#x4F8B;">3.2.2.2 &#x4F7F;&#x7528;&#x793A;&#x4F8B;</h5>
+<h5 id="&#x4F7F;&#x7528;&#x793A;&#x4F8B;">&#x4F7F;&#x7528;&#x793A;&#x4F8B;</h5>
 <h6 id="method--url">Method &amp; Url</h6>
 <pre><code>POST http://localhost:8080/graphspaces/graphspace/graphs/graph/traversers/kout
 </code></pre><h6 id="request-body">Request Body</h6>
@@ -1921,16 +1921,16 @@
 }
 </code></pre>
 <h5 id="3223-&#x9002;&#x7528;&#x573A;&#x666F;">3.2.2.3 &#x9002;&#x7528;&#x573A;&#x666F;</h5>
-<p>&#x53C2;&#x89C1;3.2.1.3</p>
+<p>&#x53C2;&#x89C1; kout</p>
 <h4 id="323-k-neighbor&#xFF08;get&#xFF0C;&#x57FA;&#x7840;&#x7248;&#xFF09;">3.2.3 K-neighbor&#xFF08;GET&#xFF0C;&#x57FA;&#x7840;&#x7248;&#xFF09;</h4>
-<h5 id="3231-&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">3.2.3.1 &#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
+<h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
 <p>&#x6839;&#x636E;&#x8D77;&#x59CB;&#x9876;&#x70B9;&#x3001;&#x65B9;&#x5411;&#x3001;&#x8FB9;&#x7684;&#x7C7B;&#x578B;&#xFF08;&#x53EF;&#x9009;&#xFF09;&#x548C;&#x6DF1;&#x5EA6;depth&#xFF0C;&#x67E5;&#x627E;&#x5305;&#x62EC;&#x8D77;&#x59CB;&#x9876;&#x70B9;&#x5728;&#x5185;&#x3001;depth&#x6B65;&#x4E4B;&#x5185;&#x53EF;&#x8FBE;&#x7684;&#x6240;&#x6709;&#x9876;&#x70B9;</p>
 <blockquote>
 <p>&#x76F8;&#x5F53;&#x4E8E;&#xFF1A;&#x8D77;&#x59CB;&#x9876;&#x70B9;&#x3001;K-out(1)&#x3001;K-out(2)&#x3001;... &#x3001;K-out(max_depth)&#x7684;&#x5E76;&#x96C6;</p>
 </blockquote>
-<h6 id="uri">URI</h6>
+<h5 id="uri">URI</h5>
 <p>GET /graphspaces/$${graphspace}/graphs/${graph}/traversers/kneighbor</p>
-<h6 id="uri&#x53C2;&#x6570;">URI&#x53C2;&#x6570;</h6>
+<h5 id="uri&#x53C2;&#x6570;">URI&#x53C2;&#x6570;</h5>
 <table>
 <thead>
 <tr>
@@ -2009,9 +2009,9 @@
 </tr>
 </tbody>
 </table>
-<h6 id="body&#x53C2;&#x6570;">Body&#x53C2;&#x6570;</h6>
+<h5 id="body&#x53C2;&#x6570;">Body&#x53C2;&#x6570;</h5>
 <p>&#x65E0;</p>
-<h6 id="response">Response</h6>
+<h5 id="response">Response</h5>
 <table>
 <thead>
 <tr>
@@ -2028,7 +2028,7 @@
 </tr>
 </tbody>
 </table>
-<h5 id="3232-&#x4F7F;&#x7528;&#x793A;&#x4F8B;">3.2.3.2 &#x4F7F;&#x7528;&#x793A;&#x4F8B;</h5>
+<h5 id="&#x4F7F;&#x7528;&#x793A;&#x4F8B;">&#x4F7F;&#x7528;&#x793A;&#x4F8B;</h5>
 <h6 id="method--url">Method &amp; Url</h6>
 <pre><code>GET http://localhost:8080/graphspaces/graphspace/graphs/graph/traversers/kneighbor?source=&quot;1:marko&quot;&amp;max_depth=2
 </code></pre><h6 id="response-status">Response Status</h6>
@@ -2046,14 +2046,14 @@
     ]
 }
 </code></pre>
-<h5 id="3233-&#x9002;&#x7528;&#x573A;&#x666F;">3.2.3.3 &#x9002;&#x7528;&#x573A;&#x666F;</h5>
+<h5 id="&#x9002;&#x7528;&#x573A;&#x666F;">&#x9002;&#x7528;&#x573A;&#x666F;</h5>
 <p>&#x67E5;&#x627E;N&#x6B65;&#x4EE5;&#x5185;&#x53EF;&#x8FBE;&#x7684;&#x6240;&#x6709;&#x9876;&#x70B9;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;</p>
 <ul>
 <li>&#x5BB6;&#x65CF;&#x5173;&#x7CFB;&#x4E2D;&#xFF0C;&#x67E5;&#x627E;&#x4E00;&#x4E2A;&#x4EBA;&#x4E94;&#x670D;&#x4EE5;&#x5185;&#x6240;&#x6709;&#x5B50;&#x5B59;&#xFF0C;person A&#x901A;&#x8FC7;&#x8FDE;&#x7EED;&#x7684;5&#x6761;&#x201C;&#x4EB2;&#x5B50;&#x201D;&#x8FB9;&#x5230;&#x8FBE;&#x7684;&#x9876;&#x70B9;&#x96C6;&#x5408;&#x3002;</li>
 <li>&#x793E;&#x4EA4;&#x5173;&#x7CFB;&#x4E2D;&#x53D1;&#x73B0;&#x597D;&#x53CB;&#x5708;&#x5B50;&#xFF0C;&#x4F8B;&#x5982;&#x76EE;&#x6807;&#x7528;&#x6237;&#x901A;&#x8FC7;1&#x6761;&#x3001;2&#x6761;&#x3001;3&#x6761;&#x201C;&#x670B;&#x53CB;&#x201D;&#x8FB9;&#x53EF;&#x5230;&#x8FBE;&#x7684;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x7EC4;&#x6210;&#x76EE;&#x6807;&#x7528;&#x6237;&#x7684;&#x670B;&#x53CB;&#x5708;&#x5B50;</li>
 </ul>
 <h4 id="324-k-neighbor-api&#xFF08;post&#xFF0C;&#x9AD8;&#x7EA7;&#x7248;&#xFF09;">3.2.4 K-neighbor API&#xFF08;POST&#xFF0C;&#x9AD8;&#x7EA7;&#x7248;&#xFF09;</h4>
-<h5 id="3241-&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">3.2.4.1 &#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
+<h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
 <p>&#x6839;&#x636E;&#x8D77;&#x59CB;&#x9876;&#x70B9;&#x3001;&#x6B65;&#x9AA4;&#xFF08;&#x5305;&#x62EC;&#x65B9;&#x5411;&#x3001;&#x8FB9;&#x7C7B;&#x578B;&#x548C;&#x8FC7;&#x6EE4;&#x5C5E;&#x6027;&#xFF09;&#x548C;&#x6DF1;&#x5EA6;depth&#xFF0C;&#x67E5;&#x627E;&#x4ECE;&#x8D77;&#x59CB;&#x9876;&#x70B9;&#x51FA;&#x53D1;depth&#x6B65;&#x5185;&#x53EF;&#x8FBE;&#x7684;&#x6240;&#x6709;&#x9876;&#x70B9;&#x3002;</p>
 <blockquote>
 <p>&#x4E0E;K-neighbor&#x57FA;&#x7840;&#x7248;&#x7684;&#x4E0D;&#x540C;&#x5728;&#x4E8E;&#xFF1A;</p>
@@ -2063,9 +2063,9 @@
 <li>&#x652F;&#x6301;&#x8FD4;&#x56DE;&#x5230;&#x8FBE;&#x90BB;&#x5C45;&#x7684;&#x6700;&#x77ED;&#x8DEF;&#x5F84;</li>
 </ul>
 </blockquote>
-<h6 id="uri">URI</h6>
+<h5 id="uri">URI</h5>
 <pre><code>POST /graphspaces/${graphspace}/graphs/${graph}/traversers/kneighbor
-</code></pre><h6 id="uri&#x53C2;&#x6570;">URI&#x53C2;&#x6570;</h6>
+</code></pre><h5 id="uri&#x53C2;&#x6570;">URI&#x53C2;&#x6570;</h5>
 <table>
 <thead>
 <tr>
@@ -2096,7 +2096,7 @@
 </tr>
 </tbody>
 </table>
-<h6 id="body&#x53C2;&#x6570;">Body&#x53C2;&#x6570;</h6>
+<h5 id="body&#x53C2;&#x6570;">Body&#x53C2;&#x6570;</h5>
 <table>
 <thead>
 <tr>
@@ -2188,7 +2188,7 @@
 | :------| :------- | :----------- | :----- | :-------------- | :---------------------- |
 | label       | &#x5426;       |  String    | -          |   -    |&#x70B9;&#x8FB9;&#x7C7B;&#x578B;           |
 | properties       | &#x5426;       |  Json    | -          |   -    |&#x901A;&#x8FC7;&#x5C5E;&#x6027;&#x7684;&#x503C;&#x8FC7;&#x6EE4;&#x70B9;&#x8FB9;           |</p>
-<h6 id="response">Response</h6>
+<h5 id="response">Response</h5>
 <table>
 <thead>
 <tr>
@@ -2220,7 +2220,7 @@
 </tr>
 </tbody>
 </table>
-<h5 id="3242-&#x4F7F;&#x7528;&#x793A;&#x4F8B;">3.2.4.2 &#x4F7F;&#x7528;&#x793A;&#x4F8B;</h5>
+<h5 id="&#x4F7F;&#x7528;&#x793A;&#x4F8B;">&#x4F7F;&#x7528;&#x793A;&#x4F8B;</h5>
 <h6 id="method--url">Method &amp; Url</h6>
 <pre><code>POST http://localhost:8080/graphspaces/graphspace/graphs/graph/traversers/kneighbor
 </code></pre><h6 id="request-body">Request Body</h6>
@@ -2375,14 +2375,14 @@
     ]
 }
 </code></pre>
-<h5 id="3243-&#x9002;&#x7528;&#x573A;&#x666F;">3.2.4.3 &#x9002;&#x7528;&#x573A;&#x666F;</h5>
-<p>&#x53C2;&#x89C1;3.2.3.3</p>
+<h5 id="&#x9002;&#x7528;&#x573A;&#x666F;">&#x9002;&#x7528;&#x573A;&#x666F;</h5>
+<p>&#x53C2;&#x89C1;K-neighbor</p>
 <h4 id="325-same-neighbors">3.2.5 Same Neighbors</h4>
-<h5 id="3251-&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">3.2.5.1 &#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
+<h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
 <p>&#x67E5;&#x8BE2;&#x4E24;&#x4E2A;&#x70B9;&#x7684;&#x5171;&#x540C;&#x90BB;&#x5C45;</p>
-<h6 id="uri">URI</h6>
+<h5 id="uri">URI</h5>
 <pre><code>GET /graphspaces/${graphspace}/graphs/${graph}/traversers/sameneighbors
-</code></pre><h6 id="uri&#x53C2;&#x6570;">URI&#x53C2;&#x6570;</h6>
+</code></pre><h5 id="uri&#x53C2;&#x6570;">URI&#x53C2;&#x6570;</h5>
 <table>
 <thead>
 <tr>
@@ -2461,9 +2461,9 @@
 </tr>
 </tbody>
 </table>
-<h6 id="body&#x53C2;&#x6570;">Body&#x53C2;&#x6570;</h6>
+<h5 id="body&#x53C2;&#x6570;">Body&#x53C2;&#x6570;</h5>
 <p>&#x65E0;</p>
-<h6 id="response">Response</h6>
+<h5 id="response">Response</h5>
 <table>
 <thead>
 <tr>
@@ -2480,7 +2480,7 @@
 </tr>
 </tbody>
 </table>
-<h6 id="params">Params</h6>
+<h5 id="params">Params</h5>
 <ul>
 <li>vertex&#xFF1A;&#x4E00;&#x4E2A;&#x9876;&#x70B9;id&#xFF0C;&#x5FC5;&#x586B;&#x9879;</li>
 <li>other&#xFF1A;&#x53E6;&#x4E00;&#x4E2A;&#x9876;&#x70B9;id&#xFF0C;&#x5FC5;&#x586B;&#x9879;</li>
@@ -2489,7 +2489,7 @@
 <li>max_degree&#xFF1A;&#x67E5;&#x8BE2;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x5355;&#x4E2A;&#x9876;&#x70B9;&#x904D;&#x5386;&#x7684;&#x6700;&#x5927;&#x90BB;&#x63A5;&#x8FB9;&#x6570;&#x76EE;&#xFF0C;&#x9009;&#x586B;&#x9879;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;10000</li>
 <li>limit&#xFF1A;&#x8FD4;&#x56DE;&#x7684;&#x5171;&#x540C;&#x90BB;&#x5C45;&#x7684;&#x6700;&#x5927;&#x6570;&#x76EE;&#xFF0C;&#x9009;&#x586B;&#x9879;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;10000000</li>
 </ul>
-<h5 id="3252-&#x4F7F;&#x7528;&#x793A;&#x4F8B;">3.2.5.2 &#x4F7F;&#x7528;&#x793A;&#x4F8B;</h5>
+<h5 id="&#x4F7F;&#x7528;&#x793A;&#x4F8B;">&#x4F7F;&#x7528;&#x793A;&#x4F8B;</h5>
 <h6 id="method--url">Method &amp; Url</h6>
 <pre><code>GET http://localhost:8080/graphspaces/graphspace/graphs/graph/traversers/sameneighbors?vertex=&quot;1:marko&quot;&amp;other=&quot;1:josh&quot;
 </code></pre><h6 id="response-status">Response Status</h6>
@@ -2502,17 +2502,17 @@
     ]
 }
 </code></pre>
-<h5 id="3253-&#x9002;&#x7528;&#x573A;&#x666F;">3.2.5.3 &#x9002;&#x7528;&#x573A;&#x666F;</h5>
+<h5 id="&#x9002;&#x7528;&#x573A;&#x666F;">&#x9002;&#x7528;&#x573A;&#x666F;</h5>
 <p>&#x67E5;&#x627E;&#x4E24;&#x4E2A;&#x9876;&#x70B9;&#x7684;&#x5171;&#x540C;&#x90BB;&#x5C45;&#xFF1A;</p>
 <ul>
 <li>&#x793E;&#x4EA4;&#x5173;&#x7CFB;&#x4E2D;&#x53D1;&#x73B0;&#x4E24;&#x4E2A;&#x7528;&#x6237;&#x7684;&#x5171;&#x540C;&#x7C89;&#x4E1D;&#x6216;&#x8005;&#x5171;&#x540C;&#x5173;&#x6CE8;&#x7528;&#x6237;</li>
 </ul>
 <h4 id="326-jaccard-similarity&#xFF08;get&#xFF09;">3.2.6 Jaccard Similarity&#xFF08;GET&#xFF09;</h4>
-<h5 id="3261-&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">3.2.6.1 &#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
+<h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
 <p>&#x8BA1;&#x7B97;&#x4E24;&#x4E2A;&#x9876;&#x70B9;&#x7684;jaccard similarity&#xFF08;&#x4E24;&#x4E2A;&#x9876;&#x70B9;&#x90BB;&#x5C45;&#x7684;&#x4EA4;&#x96C6;&#x6BD4;&#x4E0A;&#x4E24;&#x4E2A;&#x9876;&#x70B9;&#x90BB;&#x5C45;&#x7684;&#x5E76;&#x96C6;&#xFF09;</p>
-<h6 id="uri">URI</h6>
+<h5 id="uri">URI</h5>
 <pre><code>GET /graphspaces/${graphspace}/graphs/${graph}/traversers/jaccardsimilarity
-</code></pre><h6 id="uri&#x53C2;&#x6570;">URI&#x53C2;&#x6570;</h6>
+</code></pre><h5 id="uri&#x53C2;&#x6570;">URI&#x53C2;&#x6570;</h5>
 <table>
 <thead>
 <tr>
@@ -2583,9 +2583,9 @@
 </tr>
 </tbody>
 </table>
-<h6 id="body&#x53C2;&#x6570;">Body&#x53C2;&#x6570;</h6>
+<h5 id="body&#x53C2;&#x6570;">Body&#x53C2;&#x6570;</h5>
 <p>&#x65E0;</p>
-<h6 id="response">Response</h6>
+<h5 id="response">Response</h5>
 <table>
 <thead>
 <tr>
@@ -2602,7 +2602,7 @@
 </tr>
 </tbody>
 </table>
-<h5 id="3262-&#x4F7F;&#x7528;&#x793A;&#x4F8B;">3.2.6.2 &#x4F7F;&#x7528;&#x793A;&#x4F8B;</h5>
+<h5 id="&#x4F7F;&#x7528;&#x793A;&#x4F8B;">&#x4F7F;&#x7528;&#x793A;&#x4F8B;</h5>
 <h6 id="method--url">Method &amp; Url</h6>
 <pre><code>GET http://localhost:8080/graphspaces/graphspace/graphs/graph/traversers/jaccardsimilarity?vertex=&quot;1:marko&quot;&amp;other=&quot;1:josh&quot;
 </code></pre><h6 id="response-status">Response Status</h6>
@@ -2616,14 +2616,14 @@
 <h5 id="3263-&#x9002;&#x7528;&#x573A;&#x666F;">3.2.6.3 &#x9002;&#x7528;&#x573A;&#x666F;</h5>
 <p>&#x7528;&#x4E8E;&#x8BC4;&#x4F30;&#x4E24;&#x4E2A;&#x70B9;&#x7684;&#x76F8;&#x4F3C;&#x6027;&#x6216;&#x8005;&#x7D27;&#x5BC6;&#x5EA6;</p>
 <h4 id="327-jaccard-similarity&#xFF08;post&#xFF09;">3.2.7 Jaccard Similarity&#xFF08;POST&#xFF09;</h4>
-<h5 id="3271-&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">3.2.7.1 &#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
+<h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
 <p>&#x8BA1;&#x7B97;&#x4E0E;&#x6307;&#x5B9A;&#x9876;&#x70B9;&#x7684;jaccard similarity&#x6700;&#x5927;&#x7684;N&#x4E2A;&#x70B9;</p>
 <blockquote>
 <p>jaccard similarity&#x7684;&#x8BA1;&#x7B97;&#x65B9;&#x5F0F;&#x4E3A;&#xFF1A;&#x4E24;&#x4E2A;&#x9876;&#x70B9;&#x90BB;&#x5C45;&#x7684;&#x4EA4;&#x96C6;&#x6BD4;&#x4E0A;&#x4E24;&#x4E2A;&#x9876;&#x70B9;&#x90BB;&#x5C45;&#x7684;&#x5E76;&#x96C6;</p>
 </blockquote>
-<h6 id="uri">URI</h6>
+<h5 id="uri">URI</h5>
 <pre><code>POST /graphspaces/${graphspace}/graphs/${graph}/traversers/kneighbor
-</code></pre><h6 id="uri&#x53C2;&#x6570;">URI&#x53C2;&#x6570;</h6>
+</code></pre><h5 id="uri&#x53C2;&#x6570;">URI&#x53C2;&#x6570;</h5>
 <table>
 <thead>
 <tr>
@@ -2654,7 +2654,7 @@
 </tr>
 </tbody>
 </table>
-<h6 id="body&#x53C2;&#x6570;">Body&#x53C2;&#x6570;</h6>
+<h5 id="body&#x53C2;&#x6570;">Body&#x53C2;&#x6570;</h5>
 <table>
 <thead>
 <tr>
@@ -2714,7 +2714,7 @@
 | :------| :------- | :----------- | :----- | :-------------- | :---------------------- |
 | label       | &#x5426;       |  String    | -          |   -    |&#x70B9;&#x8FB9;&#x7C7B;&#x578B;           |
 | properties       | &#x5426;       |  Json    | -          |   -    |&#x901A;&#x8FC7;&#x5C5E;&#x6027;&#x7684;&#x503C;&#x8FC7;&#x6EE4;&#x70B9;&#x8FB9;           |</p>
-<h6 id="response">Response</h6>
+<h5 id="response">Response</h5>
 <table>
 <thead>
 <tr>
@@ -2731,7 +2731,7 @@
 </tr>
 </tbody>
 </table>
-<h5 id="3272-&#x4F7F;&#x7528;&#x793A;&#x4F8B;">3.2.7.2 &#x4F7F;&#x7528;&#x793A;&#x4F8B;</h5>
+<h5 id="&#x4F7F;&#x7528;&#x793A;&#x4F8B;">&#x4F7F;&#x7528;&#x793A;&#x4F8B;</h5>
 <h6 id="method--url">Method &amp; Url</h6>
 <pre><code>POST http://localhost:8080/graphspaces/${graphspace}/graphs/${graph}/traversers/jaccardsimilarity
 </code></pre><h6 id="request-body">Request Body</h6>
@@ -2756,14 +2756,14 @@
     <span class="hljs-string">&quot;1:josh&quot;</span>: <span class="hljs-number">0.2</span>
 }
 </code></pre>
-<h5 id="3273-&#x9002;&#x7528;&#x573A;&#x666F;">3.2.7.3 &#x9002;&#x7528;&#x573A;&#x666F;</h5>
+<h5 id="&#x9002;&#x7528;&#x573A;&#x666F;">&#x9002;&#x7528;&#x573A;&#x666F;</h5>
 <p>&#x7528;&#x4E8E;&#x5728;&#x56FE;&#x4E2D;&#x627E;&#x51FA;&#x4E0E;&#x6307;&#x5B9A;&#x9876;&#x70B9;&#x76F8;&#x4F3C;&#x6027;&#x6700;&#x9AD8;&#x7684;&#x9876;&#x70B9;</p>
 <h4 id="328-shortest-path">3.2.8 Shortest Path</h4>
-<h5 id="3281-&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">3.2.8.1 &#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
+<h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
 <p>&#x6839;&#x636E;&#x8D77;&#x59CB;&#x9876;&#x70B9;&#x3001;&#x76EE;&#x7684;&#x9876;&#x70B9;&#x3001;&#x65B9;&#x5411;&#x3001;&#x8FB9;&#x7684;&#x7C7B;&#x578B;&#xFF08;&#x53EF;&#x9009;&#xFF09;&#x548C;&#x6700;&#x5927;&#x6DF1;&#x5EA6;&#xFF0C;&#x67E5;&#x627E;&#x4E00;&#x6761;&#x6700;&#x77ED;&#x8DEF;&#x5F84;</p>
-<h6 id="uri">URI</h6>
+<h5 id="uri">URI</h5>
 <pre><code>GET /graphspaces/${graphspace}/graphs/${graph}/traversers/shortestpath
-</code></pre><h6 id="uri&#x53C2;&#x6570;">URI&#x53C2;&#x6570;</h6>
+</code></pre><h5 id="uri&#x53C2;&#x6570;">URI&#x53C2;&#x6570;</h5>
 <table>
 <thead>
 <tr>
@@ -2858,9 +2858,9 @@
 </tr>
 </tbody>
 </table>
-<h6 id="body&#x53C2;&#x6570;">Body&#x53C2;&#x6570;</h6>
+<h5 id="body&#x53C2;&#x6570;">Body&#x53C2;&#x6570;</h5>
 <p>&#x65E0;</p>
-<h6 id="response">Response</h6>
+<h5 id="response">Response</h5>
 <table>
 <thead>
 <tr>
@@ -2877,7 +2877,7 @@
 </tr>
 </tbody>
 </table>
-<h5 id="3282-&#x4F7F;&#x7528;&#x793A;&#x4F8B;">3.2.8.2 &#x4F7F;&#x7528;&#x793A;&#x4F8B;</h5>
+<h5 id="&#x4F7F;&#x7528;&#x793A;&#x4F8B;">&#x4F7F;&#x7528;&#x793A;&#x4F8B;</h5>
 <h6 id="method--url">Method &amp; Url</h6>
 <pre><code>GET http://localhost:8080/graphspaces/graphspace/graphs/graph/traversers/shortestpath?source=&quot;1:marko&quot;&amp;target=&quot;2:ripple&quot;&amp;max_depth=3
 </code></pre><h6 id="response-status">Response Status</h6>
@@ -2892,7 +2892,7 @@
     ]
 }
 </code></pre>
-<h5 id="3283-&#x9002;&#x7528;&#x573A;&#x666F;">3.2.8.3 &#x9002;&#x7528;&#x573A;&#x666F;</h5>
+<h5 id="&#x9002;&#x7528;&#x573A;&#x666F;">&#x9002;&#x7528;&#x573A;&#x666F;</h5>
 <p>&#x67E5;&#x627E;&#x4E24;&#x4E2A;&#x9876;&#x70B9;&#x95F4;&#x7684;&#x6700;&#x77ED;&#x8DEF;&#x5F84;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;</p>
 <ul>
 <li>&#x793E;&#x4EA4;&#x5173;&#x7CFB;&#x7F51;&#x4E2D;&#xFF0C;&#x67E5;&#x627E;&#x4E24;&#x4E2A;&#x7528;&#x6237;&#x6709;&#x5173;&#x7CFB;&#x7684;&#x6700;&#x77ED;&#x8DEF;&#x5F84;&#xFF0C;&#x5373;&#x6700;&#x8FD1;&#x7684;&#x670B;&#x53CB;&#x5173;&#x7CFB;&#x94FE;</li>
@@ -3047,7 +3047,7 @@
 </tr>
 </tbody>
 </table>
-<h5 id="&#x793A;&#x4F8B;">&#x793A;&#x4F8B;</h5>
+<h5 id="&#x4F7F;&#x7528;&#x793A;&#x4F8B;">&#x4F7F;&#x7528;&#x793A;&#x4F8B;</h5>
 <h6 id="method--url">Method &amp; Url</h6>
 <pre><code>GET http://localhost:8080/graphspaces/${graphspace}/graphs/${graph}/traversers/allshortestpaths?source=&quot;A&quot;&amp;target=&quot;Z&quot;&amp;max_depth=10
 </code></pre><h6 id="response-status">Response Status</h6>
@@ -3280,7 +3280,7 @@
 </tr>
 </tbody>
 </table>
-<h5 id="&#x793A;&#x4F8B;">&#x793A;&#x4F8B;</h5>
+<h5 id="&#x4F7F;&#x7528;&#x793A;&#x4F8B;">&#x4F7F;&#x7528;&#x793A;&#x4F8B;</h5>
 <h6 id="method--url">Method &amp; Url</h6>
 <pre><code>GET http://localhost:8080/graphspaces/${graphspace}/graphs/${graph}/traversers/weightedshortestpath?source=&quot;1:marko&quot;&amp;target=&quot;2:ripple&quot;&amp;weight=&quot;weight&quot;&amp;with_vertex=true
 </code></pre><h6 id="response-status">Response Status</h6>
@@ -3534,7 +3534,7 @@
 </tr>
 </tbody>
 </table>
-<h5 id="&#x793A;&#x4F8B;">&#x793A;&#x4F8B;</h5>
+<h5 id="&#x4F7F;&#x7528;&#x793A;&#x4F8B;">&#x4F7F;&#x7528;&#x793A;&#x4F8B;</h5>
 <h6 id="method--url">Method &amp; Url</h6>
 <pre><code>GET http://localhost:8080/graphspaces/${graphspace}/graphs/${graph}/traversers/singlesourceshortestpath?source=&quot;1:marko&quot;&amp;with_vertex=true
 </code></pre><h6 id="response-status">Response Status</h6>
@@ -3898,7 +3898,7 @@
 </tr>
 </tbody>
 </table>
-<h5 id="&#x793A;&#x4F8B;">&#x793A;&#x4F8B;</h5>
+<h5 id="&#x4F7F;&#x7528;&#x793A;&#x4F8B;">&#x4F7F;&#x7528;&#x793A;&#x4F8B;</h5>
 <h6 id="method--url">Method &amp; Url</h6>
 <pre><code>POST http://localhost:8080/graphspaces/${graphspace}/graphs/${graph}/traversers/multinodeshortestpath
 </code></pre><h6 id="request-body">Request Body</h6>
@@ -4243,7 +4243,7 @@
 </tr>
 </tbody>
 </table>
-<h5 id="&#x793A;&#x4F8B;">&#x793A;&#x4F8B;</h5>
+<h5 id="&#x4F7F;&#x7528;&#x793A;&#x4F8B;">&#x4F7F;&#x7528;&#x793A;&#x4F8B;</h5>
 <h6 id="method--url">Method &amp; Url</h6>
 <pre><code>GET http://localhost:8080/graphspaces/${graphspace}/graphs/{$graph}/traversers/paths?source=&quot;1:marko&quot;&amp;target=&quot;1:josh&quot;&amp;max_depth=5
 </code></pre><h6 id="response-status">Response Status</h6>
@@ -4517,7 +4517,7 @@
 </tr>
 </tbody>
 </table>
-<h5 id="&#x793A;&#x4F8B;">&#x793A;&#x4F8B;</h5>
+<h5 id="&#x4F7F;&#x7528;&#x793A;&#x4F8B;">&#x4F7F;&#x7528;&#x793A;&#x4F8B;</h5>
 <h6 id="method--url">Method &amp; Url</h6>
 <pre><code>POST http://localhost:8080/graphspaces/${graphspace}/graphs/${graph}/traversers/paths
 </code></pre><h6 id="request-body">Request Body</h6>
@@ -5374,7 +5374,7 @@
 <p>&#x6839;&#x636E;&#x8D77;&#x59CB;&#x9876;&#x70B9;&#x3001;&#x76EE;&#x7684;&#x9876;&#x70B9;&#x3001;&#x65B9;&#x5411;&#x3001;&#x8FB9;&#x7684;&#x7C7B;&#x578B;&#xFF08;&#x53EF;&#x9009;&#xFF09;&#x548C;&#x6700;&#x5927;&#x6DF1;&#x5EA6;&#x7B49;&#x6761;&#x4EF6;&#x67E5;&#x627E;&#x76F8;&#x4EA4;&#x70B9;</p>
 <h5 id="uri">URI</h5>
 <pre><code>GET graphspaces/${graphspace}/graphs/${graph}/traversers/crosspoints
-</code></pre><h6 id="uri&#x53C2;&#x6570;">URI&#x53C2;&#x6570;</h6>
+</code></pre><h5 id="uri&#x53C2;&#x6570;">URI&#x53C2;&#x6570;</h5>
 <table>
 <thead>
 <tr>
@@ -5758,7 +5758,7 @@
 <p>&#x4F8B;&#x5982;&#xFF1A;1 -&gt; 25 -&gt; 775 -&gt; 14690 -&gt; 25, &#x5176;&#x4E2D;&#x73AF;&#x8DEF;&#x4E3A; 25 -&gt; 775 -&gt; 14690 -&gt; 25</p>
 <h5 id="uri">URI</h5>
 <pre><code>GET graphspaces/${graphspace}/graphs/${graph}/traversers/rings
-</code></pre><h6 id="uri&#x53C2;&#x6570;">URI&#x53C2;&#x6570;</h6>
+</code></pre><h5 id="uri&#x53C2;&#x6570;">URI&#x53C2;&#x6570;</h5>
 <table>
 <thead>
 <tr>
@@ -5856,7 +5856,7 @@
 </tr>
 </tbody>
 </table>
-<h5 id="&#x4F7F;&#x7528;&#x65B9;&#x6CD5;">&#x4F7F;&#x7528;&#x65B9;&#x6CD5;</h5>
+<h5 id="&#x4F7F;&#x7528;&#x793A;&#x4F8B;">&#x4F7F;&#x7528;&#x793A;&#x4F8B;</h5>
 <h6 id="method--url">Method &amp; Url</h6>
 <pre><code>GET http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/traversers/rings?source=&quot;1:marko&quot;&amp;max_depth=2
 </code></pre><h6 id="response-status">Response Status</h6>
@@ -5901,7 +5901,7 @@
 <p>&#x4F8B;&#x5982;&#xFF1A;1 -&gt; 25 -&gt; 775 -&gt; 14690 -&gt; 2289 -&gt; 18379, &#x5176;&#x4E2D; 18379 &#x4E3A;&#x8FB9;&#x754C;&#x9876;&#x70B9;&#xFF0C;&#x5373;&#x6CA1;&#x6709;&#x4ECE; 18379 &#x53D1;&#x51FA;&#x7684;&#x8FB9;</p>
 <h5 id="uri">URI</h5>
 <pre><code>GET graphspaces/${graphspace}/graphs/${graph}/traversers/rays
-</code></pre><h6 id="uri&#x53C2;&#x6570;">URI&#x53C2;&#x6570;</h6>
+</code></pre><h5 id="uri&#x53C2;&#x6570;">URI&#x53C2;&#x6570;</h5>
 <table>
 <thead>
 <tr>
@@ -5991,7 +5991,7 @@
 </tr>
 </tbody>
 </table>
-<h5 id="&#x4F7F;&#x7528;&#x65B9;&#x6CD5;">&#x4F7F;&#x7528;&#x65B9;&#x6CD5;</h5>
+<h5 id="&#x4F7F;&#x7528;&#x793A;&#x4F8B;">&#x4F7F;&#x7528;&#x793A;&#x4F8B;</h5>
 <h6 id="method--url">Method &amp; Url</h6>
 <pre><code>GET graphspaces/${graphspace}/graphs/${graph}/traversers/rays?source=&quot;1:marko&quot;&amp;max_depth=2&amp;direction=OUT
 </code></pre><h6 id="response-status">Response Status</h6>
@@ -6040,7 +6040,7 @@
 <p>&#x6309;&#x7167;&#x6761;&#x4EF6;&#x67E5;&#x8BE2;&#x4E00;&#x6279;&#x9876;&#x70B9;&#x5BF9;&#x5E94;&#x7684;&quot;&#x68AD;&#x5F62;&#x76F8;&#x4F3C;&#x70B9;&quot;&#x3002;&#x5F53;&#x4E24;&#x4E2A;&#x9876;&#x70B9;&#x8DDF;&#x5F88;&#x591A;&#x5171;&#x540C;&#x7684;&#x9876;&#x70B9;&#x4E4B;&#x95F4;&#x6709;&#x67D0;&#x79CD;&#x5173;&#x7CFB;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x8BA4;&#x4E3A;&#x8FD9;&#x4E24;&#x4E2A;&#x70B9;&#x4E3A;&quot;&#x68AD;&#x5F62;&#x76F8;&#x4F3C;&#x70B9;&quot;&#x3002;&#x4E3E;&#x4E2A;&#x4F8B;&#x5B50;&#x8BF4;&#x660E;&quot;&#x68AD;&#x5F62;&#x76F8;&#x4F3C;&#x70B9;&quot;&#xFF1A;&quot;&#x8BFB;&#x8005;A&quot;&#x8BFB;&#x4E86;100&#x672C;&#x4E66;&#xFF0C;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x8BFB;&#x8FC7;&#x8FD9;100&#x672C;&#x4E66;&#x4E2D;&#x7684;80&#x672C;&#x4EE5;&#x4E0A;&#x7684;&#x8BFB;&#x8005;&#xFF0C;&#x662F;&quot;&#x8BFB;&#x8005;A&quot;&#x7684;&quot;&#x68AD;&#x5F62;&#x76F8;&#x4F3C;&#x70B9;&quot;</p>
 <h5 id="uri">URI</h5>
 <pre><code>POST graphspaces/${graphspace}/graphs/${graph}/traversers/fusiformsimilarity
-</code></pre><h6 id="uri&#x53C2;&#x6570;">URI&#x53C2;&#x6570;</h6>
+</code></pre><h5 id="uri&#x53C2;&#x6570;">URI&#x53C2;&#x6570;</h5>
 <p>&#x65E0;</p>
 <h5 id="body&#x53C2;&#x6570;">Body&#x53C2;&#x6570;</h5>
 <table>
@@ -6199,7 +6199,7 @@
 </tr>
 </tbody>
 </table>
-<h5 id="&#x4F7F;&#x7528;&#x65B9;&#x6CD5;">&#x4F7F;&#x7528;&#x65B9;&#x6CD5;</h5>
+<h5 id="&#x4F7F;&#x7528;&#x793A;&#x4F8B;">&#x4F7F;&#x7528;&#x793A;&#x4F8B;</h5>
 <h6 id="method--url">Method &amp; Url</h6>
 <pre><code>POST http://localhost:8080/graphspaces/${graphspace}/graphs/hugegraph/traversers/fusiformsimilarity
 </code></pre><h6 id="request-body">Request Body</h6>
@@ -6290,7 +6290,7 @@
 <p>&#x4E3B;&#x8981;&#x7528;&#x4E8E;&#x793E;&#x4EA4;&#x7F51;&#x7EDC;&#x4E2D;&#x5224;&#x65AD;<strong>&#x4E24;&#x70B9;</strong>&#x7D27;&#x5BC6;&#x5EA6;&#x7684;&#x7B97;&#x6CD5;, &#x7528;&#x6765;&#x6C42;&#x4E24;&#x70B9;&#x95F4;&#x5171;&#x540C;&#x90BB;&#x5C45;&#x5BC6;&#x96C6;&#x5EA6;&#x7684;&#x4E00;&#x4E2A;<strong>&#x7CFB;&#x6570;&#x8868;&#x793A;</strong> (&gt;0)</p>
 <h5 id="uri">URI</h5>
 <pre><code>GET graphspaces/${graphspace}/graphs/${graph}/traversers/adamicadar
-</code></pre><h6 id="uri&#x53C2;&#x6570;">URI&#x53C2;&#x6570;</h6>
+</code></pre><h5 id="uri&#x53C2;&#x6570;">URI&#x53C2;&#x6570;</h5>
 <table>
 <thead>
 <tr>
@@ -6391,8 +6391,7 @@
 <p>&#x4E3B;&#x8981;&#x7528;&#x4E8E;&#x793E;&#x4EA4;&#x7F51;&#x7EDC;&#x4E2D;&#x5224;&#x65AD;<strong>&#x4E24;&#x70B9;</strong>&#x7D27;&#x5BC6;&#x5EA6;&#x7684;&#x7B97;&#x6CD5;, &#x7528;&#x6765;&#x6C42;&#x4E24;&#x70B9;&#x95F4;&#x5171;&#x540C;&#x90BB;&#x5C45;&#x5BC6;&#x96C6;&#x5EA6;&#x7684;&#x4E00;&#x4E2A;<strong>&#x7CFB;&#x6570;&#x8868;&#x793A;</strong> (&gt;0), &#x4E0E; AA &#x7B97;&#x6CD5;&#x6BD4;&#x8F83;&#x7C7B;&#x4F3C;</p>
 <h5 id="uri">URI</h5>
 <pre><code>GET graphspaces/${graphspace}/graphs/${graph}/traversers/resourceallocation}
-</code></pre><h6 id="uri&#x53C2;&#x6570;">URI&#x53C2;&#x6570;</h6>
-<h6 id="uri&#x53C2;&#x6570;">URI&#x53C2;&#x6570;</h6>
+</code></pre><h5 id="uri&#x53C2;&#x6570;">URI&#x53C2;&#x6570;</h5>
 <table>
 <thead>
 <tr>
@@ -6455,6 +6454,8 @@
 </tr>
 </tbody>
 </table>
+<h5 id="body&#x53C2;&#x6570;">Body&#x53C2;&#x6570;</h5>
+<p>&#x65E0;</p>
 <h5 id="response">Response</h5>
 <table>
 <thead>
@@ -6493,7 +6494,7 @@
 <p>&#x6279;&#x91CF;&#x67E5;&#x8BE2;&#x4E24;&#x4E2A;&#x70B9;&#x7684;&#x5171;&#x540C;&#x90BB;&#x5C45;</p>
 <h5 id="uri">URI</h5>
 <pre><code>POST graphspaces/${graphspace}/graphs/${graph}/traversers/sameneighborsbatch
-</code></pre><h6 id="uri&#x53C2;&#x6570;">URI&#x53C2;&#x6570;</h6>
+</code></pre><h5 id="uri&#x53C2;&#x6570;">URI&#x53C2;&#x6570;</h5>
 <p>&#x65E0;</p>
 <h5 id="body&#x53C2;&#x6570;">Body&#x53C2;&#x6570;</h5>
 <table>
@@ -6648,7 +6649,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Traverser","level":"4.2.9","depth":2,"next":{"title":"Rank","level":"4.2.10","depth":2,"path":"clients/restful-api-v3/rank.md","ref":"clients/restful-api-v3/rank.md","articles":[]},"previous":{"title":"Edge","level":"4.2.8","depth":2,"path":"clients/restful-api-v3/edge.md","ref":"clients/restful-api-v3/edge.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"clients/restful-api-v3/traverser.md","mtime":"2022-01-26T03:07:53.497Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-26T03:22:13.368Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Traverser","level":"4.2.9","depth":2,"next":{"title":"Rank","level":"4.2.10","depth":2,"path":"clients/restful-api-v3/rank.md","ref":"clients/restful-api-v3/rank.md","articles":[]},"previous":{"title":"Edge","level":"4.2.8","depth":2,"path":"clients/restful-api-v3/edge.md","ref":"clients/restful-api-v3/edge.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"clients/restful-api-v3/traverser.md","mtime":"2022-01-26T03:45:21.855Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-26T03:45:29.123Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

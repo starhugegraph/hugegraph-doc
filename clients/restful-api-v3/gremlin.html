@@ -1672,7 +1672,7 @@
 <h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
 <p>&#x5411;HugeGraphServer&#x53D1;&#x9001;gremlin&#x8BED;&#x53E5;&#xFF08;POST&#xFF09;&#xFF0C;&#x5F02;&#x6B65;&#x6267;&#x884C;</p>
 <h5 id="uri">URI</h5>
-<pre><code>POST /graphspaces/${graphspace}/graphs/${hugegraph}/jobs/gremlin
+<pre><code>POST /graphspaces/${graphspace}/graphs/${graph}/jobs/gremlin
 </code></pre><h5 id="uri&#x53C2;&#x6570;">URI&#x53C2;&#x6570;</h5>
 <table>
 <thead>
@@ -1695,7 +1695,7 @@
 <td>&#x56FE;&#x7A7A;&#x95F4;</td>
 </tr>
 <tr>
-<td>hugegraph</td>
+<td>graph</td>
 <td>&#x662F;</td>
 <td>String</td>
 <td></td>
@@ -1790,7 +1790,7 @@
 <p>&#x6CE8;&#x610F;&#xFF1A;</p>
 <blockquote>
 <p>&#x5F02;&#x6B65;&#x6267;&#x884C;Gremlin&#x8BED;&#x53E5;&#x6682;&#x4E0D;&#x652F;&#x6301;aliases&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>graph</code> &#x4EE3;&#x8868;&#x8981;&#x64CD;&#x4F5C;&#x7684;&#x56FE;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x56FE;&#x7684;&#x540D;&#x5B57;&#xFF0C; &#x4F8B;&#x5982; <code>hugegraph</code>;
-&#x53E6;&#x5916;<code>g</code>&#x4EE3;&#x8868; traversal&#xFF0C;&#x7B49;&#x4EF7;&#x4E8E; <code>graph.traversal()</code> &#x6216;&#x8005; <code>gs1-hugegraph.traversal()</code></p>
+&#x53E6;&#x5916;<code>g</code>&#x4EE3;&#x8868; traversal&#xFF0C;&#x7B49;&#x4EF7;&#x4E8E; <code>graph.traversal()</code> &#x6216;&#x8005; <code>hugegraph.traversal()</code></p>
 </blockquote>
 <p>&#x6CE8;&#xFF1A;</p>
 <blockquote>
@@ -1848,7 +1848,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Gremlin","level":"4.2.15","depth":2,"next":{"title":"Authentication","level":"4.2.16","depth":2,"path":"clients/restful-api-v3/auth.md","ref":"clients/restful-api-v3/auth.md","articles":[]},"previous":{"title":"K8sTask","level":"4.2.14","depth":2,"path":"clients/restful-api-v3/k8stask.md","ref":"clients/restful-api-v3/k8stask.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"clients/restful-api-v3/gremlin.md","mtime":"2022-01-26T02:15:03.358Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-26T02:54:00.600Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Gremlin","level":"4.2.15","depth":2,"next":{"title":"Authentication","level":"4.2.16","depth":2,"path":"clients/restful-api-v3/auth.md","ref":"clients/restful-api-v3/auth.md","articles":[]},"previous":{"title":"K8sTask","level":"4.2.14","depth":2,"path":"clients/restful-api-v3/k8stask.md","ref":"clients/restful-api-v3/k8stask.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"clients/restful-api-v3/gremlin.md","mtime":"2022-01-26T03:07:35.241Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-26T03:07:41.896Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

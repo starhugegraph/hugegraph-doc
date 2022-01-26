@@ -1291,10 +1291,151 @@
                                 
                                 <h3 id="15-indexlabel">1.5 IndexLabel</h3>
 <p>&#x5047;&#x8BBE;&#x5DF2;&#x7ECF;&#x521B;&#x5EFA;&#x597D;&#x4E86;1.1.3&#x4E2D;&#x7684; PropertyKeys &#x3001;1.2.3&#x4E2D;&#x7684; VertexLabels &#x4EE5;&#x53CA; 1.3.3&#x4E2D;&#x7684; EdgeLabels</p>
-<h4 id="151-&#x521B;&#x5EFA;&#x4E00;&#x4E2A;indexlabel">1.5.1 &#x521B;&#x5EFA;&#x4E00;&#x4E2A;IndexLabel</h4>
-<h5 id="method--url">Method &amp; Url</h5>
+<p>index_type&#x53EF;&#x9009;&#x503C;&#x5217;&#x8868;</p>
+<ul>
+<li>SECONDARY: &#x652F;&#x6301;&#x7CBE;&#x786E;&#x5339;&#x914D;&#x7684;&#x4E8C;&#x7EA7;&#x7D22;&#x5F15;&#xFF0C;&#x5141;&#x8BB8;&#x5EFA;&#x7ACB;&#x8054;&#x5408;&#x7D22;&#x5F15;&#xFF0C;&#x8054;&#x5408;&#x7D22;&#x5F15;&#x652F;&#x6301;&#x7D22;&#x5F15;&#x524D;&#x7F00;&#x641C;&#x7D22;<ul>
+<li>&#x5355;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x652F;&#x6301;&#x76F8;&#x7B49;&#x67E5;&#x8BE2;</li>
+<li>&#x8054;&#x5408;&#x7D22;&#x5F15;&#xFF0C;&#x652F;&#x6301;&#x524D;&#x7F00;&#x67E5;&#x8BE2;&#x548C;&#x76F8;&#x7B49;&#x67E5;&#x8BE2;</li>
+</ul>
+</li>
+<li>Range: &#x652F;&#x6301;&#x6570;&#x503C;&#x7C7B;&#x578B;&#x7684;&#x8303;&#x56F4;&#x67E5;&#x8BE2;<ul>
+<li>RANGE_INT</li>
+<li>RANGE_FLOAT</li>
+<li>RANGE_LONG</li>
+<li>RANGE_DOUBLE</li>
+</ul>
+</li>
+<li>SEARCH: &#x652F;&#x6301;&#x5168;&#x6587;&#x68C0;&#x7D22;&#x7684;&#x7D22;&#x5F15;&#x3002;<ul>
+<li>&#x5FC5;&#x987B;&#x662F;&#x5355;&#x4E2A;&#x6587;&#x672C;&#x5C5E;&#x6027;</li>
+</ul>
+</li>
+<li>SHARD&#xFF1A;&#x652F;&#x6301;&#x524D;&#x7F00;&#x5339;&#x914D; + &#x6570;&#x5B57;&#x8303;&#x56F4;&#x67E5;&#x8BE2;&#x7684;&#x7D22;&#x5F15;<ul>
+<li>shard index N&#x4E2A;&#x5C5E;&#x6027;&#x5168;&#x662F;&#x6587;&#x672C;&#x5C5E;&#x6027;&#x65F6;&#xFF0C;&#x7B49;&#x4EF7;&#x4E8E;secondary index</li>
+<li>shard index&#x53EA;&#x6709;&#x5355;&#x4E2A;&#x6570;&#x5B57;&#x6216;&#x8005;&#x65E5;&#x671F;&#x5C5E;&#x6027;&#x65F6;&#xFF0C;&#x7B49;&#x4EF7;&#x4E8E;range index</li>
+</ul>
+</li>
+<li>UNIQUE: &#x652F;&#x6301;&#x5C5E;&#x6027;&#x503C;&#x552F;&#x4E00;&#x6027;&#x7EA6;&#x675F;&#xFF0C;&#x5373;&#x53EF;&#x4EE5;&#x9650;&#x5B9A;&#x5C5E;&#x6027;&#x7684;&#x503C;&#x4E0D;&#x91CD;&#x590D;&#xFF0C;&#x5141;&#x8BB8;&#x8054;&#x5408;&#x7D22;&#x5F15;&#xFF0C;&#x4F46;&#x4E0D;&#x652F;&#x6301;&#x67E5;&#x8BE2;<ul>
+<li>&#x5355;&#x4E2A;&#x6216;&#x8005;&#x591A;&#x4E2A;&#x5C5E;&#x6027;&#x7684;&#x552F;&#x4E00;&#x6027;&#x7D22;&#x5F15;&#xFF0C;&#x4E0D;&#x53EF;&#x7528;&#x6765;&#x67E5;&#x8BE2;&#xFF0C;&#x53EA;&#x53EF;&#x5BF9;&#x5C5E;&#x6027;&#x7684;&#x503C;&#x8FDB;&#x884C;&#x9650;&#x5B9A;&#xFF0C;&#x5F53;&#x51FA;&#x73B0;&#x91CD;&#x590D;&#x503C;&#x65F6;&#x5C06;&#x62A5;&#x9519;</li>
+</ul>
+</li>
+</ul>
+<h4 id="151-&#x521B;&#x5EFA;">1.5.1 &#x521B;&#x5EFA;</h4>
+<h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
+<p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;IndexLabel, &#x4F1A;&#x4EA7;&#x751F;&#x4E00;&#x4E2A;&#x5F02;&#x6B65;&#x4EFB;&#x52A1;</p>
+<h5 id="uri">URI</h5>
+<pre><code>POST /graphspaces/${graphspace}/graphs/${hugegraph}/schema/indexlabels
+</code></pre><h5 id="uri&#x53C2;&#x6570;">URI&#x53C2;&#x6570;</h5>
+<table>
+<thead>
+<tr>
+<th>&#x540D;&#x79F0;</th>
+<th>&#x662F;&#x5426;&#x5FC5;&#x586B;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x9ED8;&#x8BA4;&#x503C;</th>
+<th>&#x53D6;&#x503C;&#x8303;&#x56F4;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>graphspace</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td></td>
+<td></td>
+<td>&#x56FE;&#x7A7A;&#x95F4;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td>hugegraph</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td></td>
+<td></td>
+<td>&#x56FE;&#x540D;&#x79F0;</td>
+</tr>
+</tbody>
+</table>
+<h5 id="body&#x53C2;&#x6570;">Body&#x53C2;&#x6570;</h5>
+<table>
+<thead>
+<tr>
+<th>&#x540D;&#x79F0;</th>
+<th>&#x662F;&#x5426;&#x5FC5;&#x586B;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x9ED8;&#x8BA4;&#x503C;</th>
+<th>&#x53D6;&#x503C;&#x8303;&#x56F4;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td></td>
+<td></td>
+<td>&#x5C5E;&#x6027;&#x7C7B;&#x578B;&#x7684;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td>base_type</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td></td>
+<td></td>
+<td>&#x521B;&#x5EFA;&#x7D22;&#x5F15;&#x7684;&#x7C7B;&#x578B;</td>
+</tr>
+<tr>
+<td>base_value</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td></td>
+<td></td>
+<td>&#x521B;&#x5EFA;&#x7D22;&#x5F15;&#x7684;&#x7C7B;&#x578B;&#x503C;</td>
+</tr>
+<tr>
+<td>index_type</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td></td>
+<td></td>
+<td>&#x7D22;&#x5F15;&#x7C7B;&#x578B;</td>
+</tr>
+<tr>
+<td>fields</td>
+<td>&#x662F;</td>
+<td>List[String]</td>
+<td></td>
+<td></td>
+<td>&#x521B;&#x5EFA;&#x7D22;&#x5F15;&#x7684;&#x5C5E;&#x6027;&#x5217;</td>
+</tr>
+</tbody>
+</table>
+<h5 id="response">Response</h5>
+<table>
+<thead>
+<tr>
+<th>&#x540D;&#x79F0;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>index_label</td>
+<td>Map</td>
+<td>&#x7D22;&#x5F15;&#x4FE1;&#x606F;</td>
+</tr>
+<tr>
+<td>task_id</td>
+<td>Int</td>
+<td>&#x6784;&#x5EFA;&#x7D22;&#x5F15;&#x4EFB;&#x52A1;&#x7684;task id</td>
+</tr>
+</tbody>
+</table>
+<h5 id="&#x4F7F;&#x7528;&#x793A;&#x4F8B;">&#x4F7F;&#x7528;&#x793A;&#x4F8B;</h5>
+<h6 id="method--url">Method &amp; Url</h6>
 <pre><code>POST http://localhost:8080/graphspaces/gs1/graphs/hugegraph/schema/indexlabels
-</code></pre><h5 id="request-body">Request Body</h5>
+</code></pre><h6 id="request-body">Request Body</h6>
 <pre><code class="lang-json">{
     <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;personByCity&quot;</span>,
     <span class="hljs-string">&quot;base_type&quot;</span>: <span class="hljs-string">&quot;VERTEX_LABEL&quot;</span>,
@@ -1305,10 +1446,10 @@
     ]
 }
 </code></pre>
-<h5 id="response-status">Response Status</h5>
+<h6 id="response-status">Response Status</h6>
 <pre><code class="lang-json"><span class="hljs-number">202</span>
 </code></pre>
-<h5 id="response-body">Response Body</h5>
+<h6 id="response-body">Response Body</h6>
 <pre><code class="lang-json">{
     <span class="hljs-string">&quot;index_label&quot;</span>: {
         <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-number">1</span>,
@@ -1324,12 +1465,67 @@
 }
 </code></pre>
 <h4 id="152-&#x83B7;&#x53D6;&#x6240;&#x6709;&#x7684;indexlabel">1.5.2 &#x83B7;&#x53D6;&#x6240;&#x6709;&#x7684;IndexLabel</h4>
-<h5 id="method--url">Method &amp; Url</h5>
+<h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
+<p>&#x83B7;&#x53D6;&#x6240;&#x6709;&#x7684;IndexLabel&#x5217;&#x8868;</p>
+<h5 id="uri">URI</h5>
+<pre><code>GET /graphspaces/${graphspace}/graphs/${hugegraph}/schema/indexlabels
+</code></pre><h5 id="uri&#x53C2;&#x6570;">URI&#x53C2;&#x6570;</h5>
+<table>
+<thead>
+<tr>
+<th>&#x540D;&#x79F0;</th>
+<th>&#x662F;&#x5426;&#x5FC5;&#x586B;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x9ED8;&#x8BA4;&#x503C;</th>
+<th>&#x53D6;&#x503C;&#x8303;&#x56F4;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>graphspace</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td></td>
+<td></td>
+<td>&#x56FE;&#x7A7A;&#x95F4;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td>hugegraph</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td></td>
+<td></td>
+<td>&#x56FE;&#x540D;&#x79F0;</td>
+</tr>
+</tbody>
+</table>
+<h5 id="body&#x53C2;&#x6570;">Body&#x53C2;&#x6570;</h5>
+<p>&#x65E0;</p>
+<h5 id="response">Response</h5>
+<table>
+<thead>
+<tr>
+<th>&#x540D;&#x79F0;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>indexlabels</td>
+<td>List[Map]</td>
+<td>&#x7D22;&#x5F15;&#x7C7B;&#x578B;&#x5217;&#x8868;</td>
+</tr>
+</tbody>
+</table>
+<h5 id="&#x4F7F;&#x7528;&#x793A;&#x4F8B;">&#x4F7F;&#x7528;&#x793A;&#x4F8B;</h5>
+<h6 id="method--url">Method &amp; Url</h6>
 <pre><code>GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph/schema/indexlabels
-</code></pre><h5 id="response-status">Response Status</h5>
+</code></pre><h6 id="response-status">Response Status</h6>
 <pre><code class="lang-json"><span class="hljs-number">200</span>
 </code></pre>
-<h5 id="response-body">Response Body</h5>
+<h6 id="response-body">Response Body</h6>
 <pre><code class="lang-json">{
     <span class="hljs-string">&quot;indexlabels&quot;</span>: [
         {
@@ -1376,13 +1572,59 @@
     ]
 }
 </code></pre>
-<h4 id="153-&#x6839;&#x636E;name&#x83B7;&#x53D6;indexlabel">1.5.3 &#x6839;&#x636E;name&#x83B7;&#x53D6;IndexLabel</h4>
-<h5 id="method--url">Method &amp; Url</h5>
+<h4 id="153-&#x83B7;&#x53D6;&#x5355;&#x4E2A;indexlabel">1.5.3 &#x83B7;&#x53D6;&#x5355;&#x4E2A;IndexLabel</h4>
+<h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
+<p>&#x6839;&#x636E;name&#x83B7;&#x53D6;IndexLabel</p>
+<h5 id="uri">URI</h5>
+<pre><code>GET /graphspaces/${graphspace}/graphs/${hugegraph}/schema/indexlabels/${name}
+</code></pre><h5 id="uri&#x53C2;&#x6570;">URI&#x53C2;&#x6570;</h5>
+<table>
+<thead>
+<tr>
+<th>&#x540D;&#x79F0;</th>
+<th>&#x662F;&#x5426;&#x5FC5;&#x586B;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x9ED8;&#x8BA4;&#x503C;</th>
+<th>&#x53D6;&#x503C;&#x8303;&#x56F4;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>graphspace</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td></td>
+<td></td>
+<td>&#x56FE;&#x7A7A;&#x95F4;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td>hugegraph</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td></td>
+<td></td>
+<td>&#x56FE;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td>name</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td></td>
+<td></td>
+<td>&#x7D22;&#x5F15;&#x7C7B;&#x578B;&#x540D;</td>
+</tr>
+</tbody>
+</table>
+<h5 id="body&#x53C2;&#x6570;">Body&#x53C2;&#x6570;</h5>
+<p>&#x65E0;</p>
+<h5 id="&#x4F7F;&#x7528;&#x793A;&#x4F8B;">&#x4F7F;&#x7528;&#x793A;&#x4F8B;</h5>
+<h6 id="method--url">Method &amp; Url</h6>
 <pre><code>GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph/schema/indexlabels/personByCity
-</code></pre><h5 id="response-status">Response Status</h5>
+</code></pre><h6 id="response-status">Response Status</h6>
 <pre><code class="lang-json"><span class="hljs-number">200</span>
 </code></pre>
-<h5 id="response-body">Response Body</h5>
+<h6 id="response-body">Response Body</h6>
 <pre><code class="lang-json">{
     <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-number">1</span>,
     <span class="hljs-string">&quot;base_type&quot;</span>: <span class="hljs-string">&quot;VERTEX_LABEL&quot;</span>,
@@ -1394,14 +1636,77 @@
     <span class="hljs-string">&quot;index_type&quot;</span>: <span class="hljs-string">&quot;SECONDARY&quot;</span>
 }
 </code></pre>
-<h4 id="154-&#x6839;&#x636E;name&#x5220;&#x9664;indexlabel">1.5.4 &#x6839;&#x636E;name&#x5220;&#x9664;IndexLabel</h4>
+<h4 id="154--&#x5220;&#x9664;&#x5355;&#x4E2A;indexlabel">1.5.4  &#x5220;&#x9664;&#x5355;&#x4E2A;IndexLabel</h4>
+<h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
+<p>&#x6839;&#x636E;name&#x5220;&#x9664;IndexLabel</p>
 <p>&#x5220;&#x9664; IndexLabel &#x4F1A;&#x5BFC;&#x81F4;&#x5220;&#x9664;&#x76F8;&#x5173;&#x7684;&#x7D22;&#x5F15;&#x6570;&#x636E;&#xFF0C;&#x4F1A;&#x4EA7;&#x751F;&#x4E00;&#x4E2A;&#x5F02;&#x6B65;&#x4EFB;&#x52A1;</p>
-<h5 id="method--url">Method &amp; Url</h5>
+<h5 id="uri">URI</h5>
+<pre><code>DELETE /graphspaces/${graphspace}/graphs/${hugegraph}/schema/indexlabels/${name}
+</code></pre><h5 id="uri&#x53C2;&#x6570;">URI&#x53C2;&#x6570;</h5>
+<table>
+<thead>
+<tr>
+<th>&#x540D;&#x79F0;</th>
+<th>&#x662F;&#x5426;&#x5FC5;&#x586B;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x9ED8;&#x8BA4;&#x503C;</th>
+<th>&#x53D6;&#x503C;&#x8303;&#x56F4;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>graphspace</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td></td>
+<td></td>
+<td>&#x56FE;&#x7A7A;&#x95F4;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td>hugegraph</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td></td>
+<td></td>
+<td>&#x56FE;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td>name</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td></td>
+<td></td>
+<td>&#x7D22;&#x5F15;&#x7C7B;&#x578B;&#x540D;</td>
+</tr>
+</tbody>
+</table>
+<h5 id="body&#x53C2;&#x6570;">Body&#x53C2;&#x6570;</h5>
+<p>&#x65E0;</p>
+<h5 id="response">Response</h5>
+<table>
+<thead>
+<tr>
+<th>&#x540D;&#x79F0;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>task_id</td>
+<td>String</td>
+<td>&#x5220;&#x9664;&#x64CD;&#x4F5C;&#x7684;&#x4EFB;&#x52A1;id</td>
+</tr>
+</tbody>
+</table>
+<h5 id="&#x4F7F;&#x7528;&#x793A;&#x4F8B;">&#x4F7F;&#x7528;&#x793A;&#x4F8B;</h5>
+<h6 id="method--url">Method &amp; Url</h6>
 <pre><code>DELETE http://localhost:8080/graphspaces/gs1/graphs/hugegraph/schema/indexlabels/personByCity
-</code></pre><h5 id="response-status">Response Status</h5>
+</code></pre><h6 id="response-status">Response Status</h6>
 <pre><code class="lang-json"><span class="hljs-number">202</span>
 </code></pre>
-<h5 id="response-body">Response Body</h5>
+<h6 id="response-body">Response Body</h6>
 <pre><code class="lang-json">{
     <span class="hljs-string">&quot;task_id&quot;</span>: <span class="hljs-number">1</span>
 }
@@ -1462,7 +1767,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"IndexLabel","level":"4.2.5","depth":2,"next":{"title":"Rebuild","level":"4.2.6","depth":2,"path":"clients/restful-api-v3/rebuild.md","ref":"clients/restful-api-v3/rebuild.md","articles":[]},"previous":{"title":"EdgeLabel","level":"4.2.4","depth":2,"path":"clients/restful-api-v3/edgelabel.md","ref":"clients/restful-api-v3/edgelabel.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"clients/restful-api-v3/indexlabel.md","mtime":"2022-01-19T11:49:07.474Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-19T11:52:09.266Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"IndexLabel","level":"4.2.5","depth":2,"next":{"title":"Rebuild","level":"4.2.6","depth":2,"path":"clients/restful-api-v3/rebuild.md","ref":"clients/restful-api-v3/rebuild.md","articles":[]},"previous":{"title":"EdgeLabel","level":"4.2.4","depth":2,"path":"clients/restful-api-v3/edgelabel.md","ref":"clients/restful-api-v3/edgelabel.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"clients/restful-api-v3/indexlabel.md","mtime":"2022-01-26T01:53:18.511Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-26T01:53:25.134Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

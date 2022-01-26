@@ -1290,22 +1290,291 @@
                                 <section class="normal markdown-section">
                                 
                                 <h3 id="14-edgelabel">1.4 EdgeLabel</h3>
-<p>&#x5047;&#x8BBE;&#x5DF2;&#x7ECF;&#x521B;&#x5EFA;&#x597D;&#x4E86;1.2.3&#x4E2D;&#x7684; PropertyKeys &#x548C; 1.3.3&#x4E2D;&#x7684; VertexLabels</p>
-<p>Params&#x8BF4;&#x660E;</p>
-<ul>
-<li>name&#xFF1A;&#x9876;&#x70B9;&#x7C7B;&#x578B;&#x540D;&#x79F0;&#xFF0C;&#x5FC5;&#x586B;</li>
-<li>source_label: &#x6E90;&#x9876;&#x70B9;&#x7C7B;&#x578B;&#x7684;&#x540D;&#x79F0;&#xFF0C;&#x5FC5;&#x586B;</li>
-<li>target_label: &#x76EE;&#x6807;&#x9876;&#x70B9;&#x7C7B;&#x578B;&#x7684;&#x540D;&#x79F0;&#xFF0C;&#x5FC5;&#x586B;</li>
-<li>frequency&#xFF1A;&#x4E24;&#x4E2A;&#x70B9;&#x4E4B;&#x95F4;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x6709;&#x591A;&#x6761;&#x8FB9;&#xFF0C;&#x53EF;&#x4EE5;&#x53D6;&#x503C;SINGLE&#x548C;MULTIPLE&#xFF0C;&#x975E;&#x5FC5;&#x586B;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;SINGLE</li>
-<li>properties: &#x8FB9;&#x7C7B;&#x578B;&#x5173;&#x8054;&#x7684;&#x5C5E;&#x6027;&#x7C7B;&#x578B;&#xFF0C;&#x9009;&#x586B;</li>
-<li>sort_keys: &#x5F53;&#x5141;&#x8BB8;&#x5173;&#x8054;&#x591A;&#x6B21;&#x65F6;&#xFF0C;&#x6307;&#x5B9A;&#x533A;&#x5206;&#x952E;&#x5C5E;&#x6027;&#x5217;&#x8868;</li>
-<li>nullable_keys&#xFF1A;&#x53EF;&#x4E3A;&#x7A7A;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x9009;&#x586B;&#xFF0C;&#x9ED8;&#x8BA4;&#x53EF;&#x4E3A;&#x7A7A;</li>
-<li>enable_label_index&#xFF1A; &#x662F;&#x5426;&#x5F00;&#x542F;&#x7C7B;&#x578B;&#x7D22;&#x5F15;&#xFF0C;&#x9ED8;&#x8BA4;&#x5173;&#x95ED;</li>
-</ul>
-<h4 id="141-&#x521B;&#x5EFA;&#x4E00;&#x4E2A;edgelabel">1.4.1 &#x521B;&#x5EFA;&#x4E00;&#x4E2A;EdgeLabel</h4>
-<h5 id="method--url">Method &amp; Url</h5>
+<p>EdgeLabel&#x7684;&#x63CF;&#x8FF0;&#x5B57;&#x6BB5;&#x8BE6;&#x7EC6;&#x8BF4;&#x660E;</p>
+<table>
+<thead>
+<tr>
+<th>&#x5B57;&#x6BB5;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>&#x9876;&#x70B9;&#x7C7B;&#x578B;&#x540D;&#x79F0;&#xFF0C;&#x5FC5;&#x586B;</td>
+</tr>
+<tr>
+<td>source_label</td>
+<td>&#x6E90;&#x9876;&#x70B9;&#x7C7B;&#x578B;&#x7684;&#x540D;&#x79F0;&#xFF0C;&#x5FC5;&#x586B;</td>
+</tr>
+<tr>
+<td>target_label</td>
+<td>&#x76EE;&#x6807;&#x9876;&#x70B9;&#x7C7B;&#x578B;&#x7684;&#x540D;&#x79F0;&#xFF0C;&#x5FC5;&#x586B;</td>
+</tr>
+<tr>
+<td>frequency</td>
+<td>&#x4E24;&#x4E2A;&#x70B9;&#x4E4B;&#x95F4;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x6709;&#x591A;&#x6761;&#x8FB9;&#xFF0C;&#x53EF;&#x4EE5;&#x53D6;&#x503C;SINGLE&#x548C;MULTIPLE&#xFF0C;&#x975E;&#x5FC5;&#x586B;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;SINGLE</td>
+</tr>
+<tr>
+<td>properties</td>
+<td>&#x8FB9;&#x7C7B;&#x578B;&#x5173;&#x8054;&#x7684;&#x5C5E;&#x6027;&#x7C7B;&#x578B;&#xFF0C;&#x9009;&#x586B;</td>
+</tr>
+<tr>
+<td>index_names</td>
+<td>&#x8FB9;&#x7C7B;&#x578B;&#x521B;&#x5EFA;&#x7684;&#x7D22;&#x5F15;</td>
+</tr>
+<tr>
+<td>sort_keys</td>
+<td>&#x5F53;&#x5141;&#x8BB8;&#x5173;&#x8054;&#x591A;&#x6B21;&#x65F6;&#xFF0C;&#x6307;&#x5B9A;&#x533A;&#x5206;&#x952E;&#x5C5E;&#x6027;&#x5217;&#x8868;</td>
+</tr>
+<tr>
+<td>nullable_keys</td>
+<td>&#x53EF;&#x4E3A;&#x7A7A;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x9009;&#x586B;&#xFF0C;&#x9ED8;&#x8BA4;&#x53EF;&#x4E3A;&#x7A7A;</td>
+</tr>
+<tr>
+<td>enable_label_index</td>
+<td>&#x662F;&#x5426;&#x5F00;&#x542F;&#x7C7B;&#x578B;&#x7D22;&#x5F15;&#xFF0C;&#x9ED8;&#x8BA4;&#x5173;&#x95ED;</td>
+</tr>
+<tr>
+<td>ttl</td>
+<td>&#x8FB9;&#x5B58;&#x6D3B;&#x65F6;&#x95F4;, &#x5982;&#x6CA1;&#x6709;&#x8BBE;&#x7F6E;ttl_start_time&#xFF0C;&#x5219;&#x9ED8;&#x9ED8;&#x8BA4;&#x8D77;&#x70B9;&#x65F6;&#x95F4;&#x4EE5;&#x63D2;&#x5165;&#x65F6;&#x95F4;&#x8BA1;&#x7B97;&#xFF0C;&#x5426;&#x5219;&#x4EE5;&#x5236;&#x5B9A;&#x5B57;&#x6BB5;&#x4F5C;&#x4E3A;&#x8D77;&#x70B9;&#x65F6;&#x95F4;&#x3002;&#x4ECE;v0.11.2&#x7248;&#x672C;&#x652F;&#x6301;</td>
+</tr>
+<tr>
+<td>ttl_start_time</td>
+<td>&#x8FB9;&#x5B58;&#x6D3B;&#x65F6;&#x95F4;&#x7684;&#x8D77;&#x70B9;&#x5B57;&#x6BB5;&#x8BBE;&#x7F6E;&#x3002;&#x4ECE;v0.11.2&#x7248;&#x672C;&#x652F;&#x6301;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x4ECE; hugegraph-server v0.11.2 &#x7248;&#x672C;&#x5F00;&#x59CB;&#x652F;&#x6301;&#x8FB9;&#x7684; TTL &#x529F;&#x80FD;&#x3002;&#x8FB9;&#x7684; TTL &#x662F;&#x901A;&#x8FC7; EdgeLabel &#x6765;&#x8BBE;&#x7F6E;&#x7684;&#x3002;</p>
+<p>&#x53E6;&#x5916;&#xFF0C;&#x5F53;&#x8FB9;&#x4E2D;&#x5E26;&#x6709;&quot;&#x521B;&#x5EFA;&#x65F6;&#x95F4;&quot;&#x7684;&#x5C5E;&#x6027;&#x4E14;&#x5E0C;&#x671B;&#x4EE5;&quot;&#x521B;&#x5EFA;&#x65F6;&#x95F4;&quot;&#x5C5E;&#x6027;&#x4F5C;&#x4E3A;&#x8BA1;&#x7B97;&#x8FB9;&#x5B58;&#x6D3B;&#x65F6;&#x95F4;&#x7684;&#x8D77;&#x70B9;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E; EdgeLabel &#x4E2D;&#x7684; ttl_start_time &#x5B57;&#x6BB5;&#x3002;</p>
+<h4 id="141-&#x521B;&#x5EFA;">1.4.1 &#x521B;&#x5EFA;</h4>
+<h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
+<p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;EdgeLabel</p>
+<h5 id="uri">URI</h5>
+<pre><code>POST /graphspaces/${graphspace}/graphs/${hugegraph}/schema/edgelabels
+</code></pre><h5 id="uri&#x53C2;&#x6570;">URI&#x53C2;&#x6570;</h5>
+<table>
+<thead>
+<tr>
+<th>&#x540D;&#x79F0;</th>
+<th>&#x662F;&#x5426;&#x5FC5;&#x586B;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x9ED8;&#x8BA4;&#x503C;</th>
+<th>&#x53D6;&#x503C;&#x8303;&#x56F4;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>graphspace</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td></td>
+<td></td>
+<td>&#x56FE;&#x7A7A;&#x95F4;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td>hugegraph</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td></td>
+<td></td>
+<td>&#x56FE;&#x540D;&#x79F0;</td>
+</tr>
+</tbody>
+</table>
+<h5 id="body&#x53C2;&#x6570;">Body&#x53C2;&#x6570;</h5>
+<table>
+<thead>
+<tr>
+<th>&#x540D;&#x79F0;</th>
+<th>&#x662F;&#x5426;&#x5FC5;&#x586B;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x9ED8;&#x8BA4;&#x503C;</th>
+<th>&#x53D6;&#x503C;&#x8303;&#x56F4;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td></td>
+<td></td>
+<td>&#x5C5E;&#x6027;&#x7C7B;&#x578B;&#x7684;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td>source_label</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td></td>
+<td></td>
+<td>&#x6E90;&#x9876;&#x70B9;&#x7C7B;&#x578B;&#x7684;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td>target_label</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td></td>
+<td></td>
+<td>&#x76EE;&#x6807;&#x9876;&#x70B9;&#x7C7B;&#x578B;&#x7684;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td>frequency</td>
+<td>&#x5426;</td>
+<td>String</td>
+<td>SINGLE</td>
+<td>[&quot;SINGLE&quot;,&quot;MULTIPLE&quot;]</td>
+<td>&#x4E24;&#x4E2A;&#x70B9;&#x4E4B;&#x95F4;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x6709;&#x591A;&#x6761;&#x8FB9;</td>
+</tr>
+<tr>
+<td>properties</td>
+<td>&#x5426;</td>
+<td>List[String]</td>
+<td>[]</td>
+<td></td>
+<td>&#x8FB9;&#x7C7B;&#x578B;&#x5173;&#x8054;&#x7684;&#x5C5E;&#x6027;&#x7C7B;&#x578B;</td>
+</tr>
+<tr>
+<td>index_names</td>
+<td>&#x5426;</td>
+<td>List[String]</td>
+<td>[]</td>
+<td></td>
+<td>&#x9876;&#x70B9;&#x7C7B;&#x578B;&#x521B;&#x5EFA;&#x7684;&#x7D22;&#x5F15;</td>
+</tr>
+<tr>
+<td>sort_keys</td>
+<td>&#x5426;</td>
+<td>List[String]</td>
+<td>[]</td>
+<td></td>
+<td>&#x5F53;&#x5141;&#x8BB8;&#x5173;&#x8054;&#x591A;&#x6B21;&#x65F6;&#xFF0C;&#x6307;&#x5B9A;&#x533A;&#x5206;&#x952E;&#x5C5E;&#x6027;&#x5217;</td>
+</tr>
+<tr>
+<td>nullable_keys</td>
+<td>&#x5426;</td>
+<td>List[String]</td>
+<td>[]</td>
+<td></td>
+<td>&#x53EF;&#x4E3A;&#x7A7A;&#x7684;&#x5C5E;&#x6027;</td>
+</tr>
+<tr>
+<td>enable_label_index</td>
+<td>&#x5426;</td>
+<td>Boolean</td>
+<td>false</td>
+<td></td>
+<td>&#x662F;&#x5426;&#x5F00;&#x542F;&#x7C7B;&#x578B;&#x7D22;&#x5F15;&#xFF0C;&#x9ED8;&#x8BA4;&#x5173;&#x95ED;</td>
+</tr>
+<tr>
+<td>user_data</td>
+<td>&#x5426;</td>
+<td>Map</td>
+<td></td>
+<td></td>
+<td>&#x8FB9;&#x7C7B;&#x578B;&#x7684;&#x901A;&#x7528;&#x4FE1;&#x606F;</td>
+</tr>
+<tr>
+<td>ttl</td>
+<td>&#x5426;</td>
+<td>Int</td>
+<td></td>
+<td></td>
+<td>&#x8FB9;&#x5B58;&#x6D3B;&#x65F6;&#x95F4;</td>
+</tr>
+<tr>
+<td>ttl_start_time</td>
+<td>&#x5426;</td>
+<td>String</td>
+<td></td>
+<td></td>
+<td>&#x8FB9;&#x5B58;&#x6D3B;&#x65F6;&#x95F4;&#x7684;&#x8D77;&#x70B9;&#x5B57;&#x6BB5;</td>
+</tr>
+</tbody>
+</table>
+<h5 id="request">Request</h5>
+<table>
+<thead>
+<tr>
+<th>&#x540D;&#x79F0;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>Int</td>
+<td>&#x8FB9;&#x7C7B;&#x578B;id</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>&#x8FB9;&#x7C7B;&#x578B;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td>source_label</td>
+<td>String</td>
+<td>&#x6E90;&#x9876;&#x70B9;&#x7C7B;&#x578B;&#x7684;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td>target_label</td>
+<td>String</td>
+<td>&#x76EE;&#x6807;&#x9876;&#x70B9;&#x7C7B;&#x578B;&#x7684;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td>frequency</td>
+<td>String</td>
+<td>&#x4E24;&#x4E2A;&#x70B9;&#x4E4B;&#x95F4;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x6709;&#x591A;&#x6761;&#x8FB9;</td>
+</tr>
+<tr>
+<td>properties</td>
+<td>List[String]</td>
+<td>&#x8FB9;&#x7C7B;&#x578B;&#x5173;&#x8054;&#x7684;&#x5C5E;&#x6027;&#x7C7B;&#x578B;</td>
+</tr>
+<tr>
+<td>nullable_keys</td>
+<td>List[String]</td>
+<td>&#x53EF;&#x4E3A;&#x7A7A;&#x7684;&#x5C5E;&#x6027;</td>
+</tr>
+<tr>
+<td>index_names</td>
+<td>List[String]</td>
+<td>&#x8FB9;&#x7C7B;&#x578B;&#x521B;&#x5EFA;&#x7684;&#x7D22;&#x5F15;</td>
+</tr>
+<tr>
+<td>sort_keys</td>
+<td>List[String]</td>
+<td>&#x5F53;&#x5141;&#x8BB8;&#x5173;&#x8054;&#x591A;&#x6B21;&#x65F6;&#xFF0C;&#x6307;&#x5B9A;&#x533A;&#x5206;&#x952E;&#x5C5E;&#x6027;&#x5217;</td>
+</tr>
+<tr>
+<td>enable_label_index</td>
+<td>Boolean</td>
+<td>&#x662F;&#x5426;&#x5F00;&#x542F;&#x7C7B;&#x578B;&#x7D22;&#x5F15;</td>
+</tr>
+<tr>
+<td>user_data</td>
+<td>Map</td>
+<td>&#x8BBE;&#x7F6E;&#x9876;&#x70B9;&#x7C7B;&#x578B;&#x7684;&#x901A;&#x7528;&#x4FE1;&#x606F;</td>
+</tr>
+<tr>
+<td>ttl</td>
+<td>Int</td>
+<td>&#x8FB9;&#x5B58;&#x6D3B;&#x65F6;&#x95F4;</td>
+</tr>
+<tr>
+<td>ttl_start_time</td>
+<td>String</td>
+<td>&#x8FB9;&#x5B58;&#x6D3B;&#x65F6;&#x95F4;&#x7684;&#x8D77;&#x70B9;&#x5B57;&#x6BB5;</td>
+</tr>
+</tbody>
+</table>
+<h5 id="&#x4F7F;&#x7528;&#x793A;&#x4F8B;">&#x4F7F;&#x7528;&#x793A;&#x4F8B;</h5>
+<h6 id="method--url">Method &amp; Url</h6>
 <pre><code>POST http://localhost:8080/graphspaces/gs1/graphs/hugegraph/schema/edgelabels
-</code></pre><h5 id="request-body">Request Body</h5>
+</code></pre><h6 id="request-body">Request Body</h6>
 <pre><code class="lang-json">{
     <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;created&quot;</span>,
     <span class="hljs-string">&quot;source_label&quot;</span>: <span class="hljs-string">&quot;person&quot;</span>,
@@ -1319,10 +1588,10 @@
     <span class="hljs-string">&quot;enable_label_index&quot;</span>: <span class="hljs-literal">true</span>
 }
 </code></pre>
-<h5 id="response-status">Response Status</h5>
+<h6 id="response-status">Response Status</h6>
 <pre><code class="lang-json"><span class="hljs-number">201</span>
 </code></pre>
-<h5 id="response-body">Response Body</h5>
+<h6 id="response-body">Response Body</h6>
 <pre><code class="lang-json">{
     <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-number">1</span>,
     <span class="hljs-string">&quot;sort_keys&quot;</span>: [
@@ -1387,14 +1656,186 @@
     <span class="hljs-string">&quot;user_data&quot;</span>: {}
 }
 </code></pre>
-<h4 id="142-&#x4E3A;&#x5DF2;&#x5B58;&#x5728;&#x7684;edgelabel&#x6DFB;&#x52A0;properties&#x6216;userdata&#xFF0C;&#x6216;&#x8005;&#x79FB;&#x9664;userdata&#xFF08;&#x76EE;&#x524D;&#x4E0D;&#x652F;&#x6301;&#x79FB;&#x9664;properties&#xFF09;">1.4.2 &#x4E3A;&#x5DF2;&#x5B58;&#x5728;&#x7684;EdgeLabel&#x6DFB;&#x52A0;properties&#x6216;userdata&#xFF0C;&#x6216;&#x8005;&#x79FB;&#x9664;userdata&#xFF08;&#x76EE;&#x524D;&#x4E0D;&#x652F;&#x6301;&#x79FB;&#x9664;properties&#xFF09;</h4>
-<h5 id="params">Params</h5>
-<ul>
-<li>action: &#x8868;&#x793A;&#x5F53;&#x524D;&#x884C;&#x4E3A;&#x662F;&#x6DFB;&#x52A0;&#x8FD8;&#x662F;&#x79FB;&#x9664;&#xFF0C;&#x53D6;&#x503C;&#x4E3A;<code>append</code>&#xFF08;&#x6DFB;&#x52A0;&#xFF09;&#x548C;<code>eliminate</code>&#xFF08;&#x79FB;&#x9664;&#xFF09;</li>
-</ul>
-<h5 id="method--url">Method &amp; Url</h5>
+<h4 id="142-&#x66F4;&#x65B0;edgelabel">1.4.2 &#x66F4;&#x65B0;EdgeLabel</h4>
+<h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
+<p>&#x4E3A;&#x5DF2;&#x5B58;&#x5728;&#x7684;EdgeLabel&#x6DFB;&#x52A0;properties&#x6216;userdata&#xFF0C;&#x6216;&#x8005;&#x79FB;&#x9664;userdata&#xFF08;&#x76EE;&#x524D;&#x4E0D;&#x652F;&#x6301;&#x79FB;&#x9664;properties&#xFF09;</p>
+<h5 id="uri">URI</h5>
+<pre><code>PUT /graphspaces/${graphspace}/graphs/${hugegraph}/schema/edgelabels/${name}?action=${action}
+</code></pre><h5 id="uri&#x53C2;&#x6570;">URI&#x53C2;&#x6570;</h5>
+<table>
+<thead>
+<tr>
+<th>&#x540D;&#x79F0;</th>
+<th>&#x662F;&#x5426;&#x5FC5;&#x586B;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x9ED8;&#x8BA4;&#x503C;</th>
+<th>&#x53D6;&#x503C;&#x8303;&#x56F4;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>graphspace</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td></td>
+<td></td>
+<td>&#x56FE;&#x7A7A;&#x95F4;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td>hugegraph</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td></td>
+<td></td>
+<td>&#x56FE;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td>name</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td></td>
+<td></td>
+<td>&#x8FB9;&#x7C7B;&#x578B;&#x540D;</td>
+</tr>
+<tr>
+<td>action</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td></td>
+<td>[&quot;append&quot;, &quot;eliminate&quot;]</td>
+<td>&#x8868;&#x793A;&#x5F53;&#x524D;&#x884C;&#x4E3A;&#x662F;&#x6DFB;&#x52A0;(<code>append</code>)&#x8FD8;&#x662F;&#x79FB;&#x9664;(<code>eliminate</code>&#xFF09;</td>
+</tr>
+</tbody>
+</table>
+<h5 id="body&#x53C2;&#x6570;">Body&#x53C2;&#x6570;</h5>
+<table>
+<thead>
+<tr>
+<th>&#x540D;&#x79F0;</th>
+<th>&#x662F;&#x5426;&#x5FC5;&#x586B;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x9ED8;&#x8BA4;&#x503C;</th>
+<th>&#x53D6;&#x503C;&#x8303;&#x56F4;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td></td>
+<td></td>
+<td>&#x9876;&#x70B9;&#x7C7B;&#x578B;&#x540D;</td>
+</tr>
+<tr>
+<td>properties</td>
+<td>&#x5426;</td>
+<td>List[String]</td>
+<td>[]</td>
+<td></td>
+<td>&#x65B0;&#x589E;&#x7684;&#x8FB9;&#x7C7B;&#x578B;&#x5173;&#x8054;&#x7684;&#x5C5E;&#x6027;&#x7C7B;</td>
+</tr>
+<tr>
+<td>nullable_keys</td>
+<td>&#x5426;</td>
+<td>List[String]</td>
+<td>[]</td>
+<td></td>
+<td>&#x65B0;&#x589E;&#x7684;&#x53EF;&#x4E3A;&#x7A7A;&#x7684;&#x5C5E;&#x6027;</td>
+</tr>
+<tr>
+<td>user_data</td>
+<td>&#x662F;</td>
+<td>Map</td>
+<td></td>
+<td></td>
+<td>&#x8FB9;&#x7C7B;&#x578B;&#x7684;&#x901A;&#x7528;&#x4FE1;&#x606F;</td>
+</tr>
+</tbody>
+</table>
+<h5 id="response">Response</h5>
+<table>
+<thead>
+<tr>
+<th>&#x540D;&#x79F0;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>Int</td>
+<td>&#x8FB9;&#x7C7B;&#x578B;id</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>&#x8FB9;&#x7C7B;&#x578B;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td>source_label</td>
+<td>String</td>
+<td>&#x6E90;&#x9876;&#x70B9;&#x7C7B;&#x578B;&#x7684;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td>target_label</td>
+<td>String</td>
+<td>&#x76EE;&#x6807;&#x9876;&#x70B9;&#x7C7B;&#x578B;&#x7684;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td>frequency</td>
+<td>String</td>
+<td>&#x4E24;&#x4E2A;&#x70B9;&#x4E4B;&#x95F4;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x6709;&#x591A;&#x6761;&#x8FB9;</td>
+</tr>
+<tr>
+<td>properties</td>
+<td>List[String]</td>
+<td>&#x8FB9;&#x7C7B;&#x578B;&#x5173;&#x8054;&#x7684;&#x5C5E;&#x6027;&#x7C7B;&#x578B;</td>
+</tr>
+<tr>
+<td>nullable_keys</td>
+<td>List[String]</td>
+<td>&#x53EF;&#x4E3A;&#x7A7A;&#x7684;&#x5C5E;&#x6027;</td>
+</tr>
+<tr>
+<td>index_names</td>
+<td>List[String]</td>
+<td>&#x8FB9;&#x7C7B;&#x578B;&#x521B;&#x5EFA;&#x7684;&#x7D22;&#x5F15;</td>
+</tr>
+<tr>
+<td>sort_keys</td>
+<td>List[String]</td>
+<td>&#x5F53;&#x5141;&#x8BB8;&#x5173;&#x8054;&#x591A;&#x6B21;&#x65F6;&#xFF0C;&#x6307;&#x5B9A;&#x533A;&#x5206;&#x952E;&#x5C5E;&#x6027;&#x5217;</td>
+</tr>
+<tr>
+<td>enable_label_index</td>
+<td>Boolean</td>
+<td>&#x662F;&#x5426;&#x5F00;&#x542F;&#x7C7B;&#x578B;&#x7D22;&#x5F15;</td>
+</tr>
+<tr>
+<td>user_data</td>
+<td>Map</td>
+<td>&#x8BBE;&#x7F6E;&#x9876;&#x70B9;&#x7C7B;&#x578B;&#x7684;&#x901A;&#x7528;&#x4FE1;&#x606F;</td>
+</tr>
+<tr>
+<td>ttl</td>
+<td>Int</td>
+<td>&#x8FB9;&#x5B58;&#x6D3B;&#x65F6;&#x95F4;</td>
+</tr>
+<tr>
+<td>ttl_start_time</td>
+<td>String</td>
+<td>&#x8FB9;&#x5B58;&#x6D3B;&#x65F6;&#x95F4;&#x7684;&#x8D77;&#x70B9;&#x5B57;&#x6BB5;</td>
+</tr>
+</tbody>
+</table>
+<h5 id="&#x4F7F;&#x7528;&#x793A;&#x4F8B;">&#x4F7F;&#x7528;&#x793A;&#x4F8B;</h5>
+<h6 id="method--url">Method &amp; Url</h6>
 <pre><code>PUT http://localhost:8080/graphspaces/gs1/graphs/hugegraph/schema/edgelabels/created?action=append
-</code></pre><h5 id="request-body">Request Body</h5>
+</code></pre><h6 id="request-body">Request Body</h6>
 <pre><code class="lang-json">{
     <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;created&quot;</span>,
     <span class="hljs-string">&quot;properties&quot;</span>: [
@@ -1405,10 +1846,10 @@
     ]
 }
 </code></pre>
-<h5 id="response-status">Response Status</h5>
+<h6 id="response-status">Response Status</h6>
 <pre><code class="lang-json"><span class="hljs-number">200</span>
 </code></pre>
-<h5 id="response-body">Response Body</h5>
+<h6 id="response-body">Response Body</h6>
 <pre><code class="lang-json">{
     <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-number">2</span>,
     <span class="hljs-string">&quot;sort_keys&quot;</span>: [
@@ -1431,12 +1872,67 @@
 }
 </code></pre>
 <h4 id="143-&#x83B7;&#x53D6;&#x6240;&#x6709;&#x7684;edgelabel">1.4.3 &#x83B7;&#x53D6;&#x6240;&#x6709;&#x7684;EdgeLabel</h4>
-<h5 id="method--url">Method &amp; Url</h5>
+<h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
+<p>&#x83B7;&#x53D6;&#x6240;&#x6709;&#x7684;EdgeLabel&#x5217;&#x8868;</p>
+<h5 id="uri">URI</h5>
+<pre><code>GET /graphspaces/${graphspace}/graphs/${hugegraph}/schema/edgelabels
+</code></pre><h5 id="uri&#x53C2;&#x6570;">URI&#x53C2;&#x6570;</h5>
+<table>
+<thead>
+<tr>
+<th>&#x540D;&#x79F0;</th>
+<th>&#x662F;&#x5426;&#x5FC5;&#x586B;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x9ED8;&#x8BA4;&#x503C;</th>
+<th>&#x53D6;&#x503C;&#x8303;&#x56F4;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>graphspace</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td></td>
+<td></td>
+<td>&#x56FE;&#x7A7A;&#x95F4;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td>hugegraph</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td></td>
+<td></td>
+<td>&#x56FE;&#x540D;&#x79F0;</td>
+</tr>
+</tbody>
+</table>
+<h5 id="body&#x53C2;&#x6570;">Body&#x53C2;&#x6570;</h5>
+<p>&#x65E0;</p>
+<h5 id="response">Response</h5>
+<table>
+<thead>
+<tr>
+<th>&#x540D;&#x79F0;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>edgelabels</td>
+<td>List[Map]</td>
+<td>&#x8FB9;&#x7C7B;&#x578B;&#x5217;&#x8868;</td>
+</tr>
+</tbody>
+</table>
+<h5 id="&#x4F7F;&#x7528;&#x793A;&#x4F8B;">&#x4F7F;&#x7528;&#x793A;&#x4F8B;</h5>
+<h6 id="method--url">Method &amp; Url</h6>
 <pre><code>GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph/schema/edgelabels
-</code></pre><h5 id="response-status">Response Status</h5>
+</code></pre><h6 id="response-status">Response Status</h6>
 <pre><code class="lang-json"><span class="hljs-number">200</span>
 </code></pre>
-<h5 id="response-body">Response Body</h5>
+<h6 id="response-body">Response Body</h6>
 <pre><code class="lang-json">{
     <span class="hljs-string">&quot;edgelabels&quot;</span>: [
         {
@@ -1481,13 +1977,136 @@
     ]
 }
 </code></pre>
-<h4 id="144-&#x6839;&#x636E;name&#x83B7;&#x53D6;edgelabel">1.4.4 &#x6839;&#x636E;name&#x83B7;&#x53D6;EdgeLabel</h4>
-<h5 id="method--url">Method &amp; Url</h5>
+<h4 id="144-&#x83B7;&#x53D6;&#x4E00;&#x4E2A;edgelabel">1.4.4 &#x83B7;&#x53D6;&#x4E00;&#x4E2A;EdgeLabel</h4>
+<h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
+<p>&#x6839;&#x636E;name&#x83B7;&#x53D6;EdgeLabel</p>
+<h5 id="uri">URI</h5>
+<pre><code>GET /graphspaces/${graphspace}/graphs/${hugegraph}/schema/edgelabels/${name}
+</code></pre><h5 id="uri&#x53C2;&#x6570;">URI&#x53C2;&#x6570;</h5>
+<table>
+<thead>
+<tr>
+<th>&#x540D;&#x79F0;</th>
+<th>&#x662F;&#x5426;&#x5FC5;&#x586B;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x9ED8;&#x8BA4;&#x503C;</th>
+<th>&#x53D6;&#x503C;&#x8303;&#x56F4;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>graphspace</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td></td>
+<td></td>
+<td>&#x56FE;&#x7A7A;&#x95F4;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td>hugegraph</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td></td>
+<td></td>
+<td>&#x56FE;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td>name</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td></td>
+<td></td>
+<td>&#x9876;&#x70B9;&#x7C7B;&#x578B;&#x540D;</td>
+</tr>
+</tbody>
+</table>
+<h5 id="body&#x53C2;&#x6570;">Body&#x53C2;&#x6570;</h5>
+<p>&#x65E0;</p>
+<h5 id="response">Response</h5>
+<table>
+<thead>
+<tr>
+<th>&#x540D;&#x79F0;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>Int</td>
+<td>&#x8FB9;&#x7C7B;&#x578B;id</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>&#x8FB9;&#x7C7B;&#x578B;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td>source_label</td>
+<td>String</td>
+<td>&#x6E90;&#x9876;&#x70B9;&#x7C7B;&#x578B;&#x7684;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td>target_label</td>
+<td>String</td>
+<td>&#x76EE;&#x6807;&#x9876;&#x70B9;&#x7C7B;&#x578B;&#x7684;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td>frequency</td>
+<td>String</td>
+<td>&#x4E24;&#x4E2A;&#x70B9;&#x4E4B;&#x95F4;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x6709;&#x591A;&#x6761;&#x8FB9;</td>
+</tr>
+<tr>
+<td>properties</td>
+<td>List[String]</td>
+<td>&#x8FB9;&#x7C7B;&#x578B;&#x5173;&#x8054;&#x7684;&#x5C5E;&#x6027;&#x7C7B;&#x578B;</td>
+</tr>
+<tr>
+<td>nullable_keys</td>
+<td>List[String]</td>
+<td>&#x53EF;&#x4E3A;&#x7A7A;&#x7684;&#x5C5E;&#x6027;</td>
+</tr>
+<tr>
+<td>index_names</td>
+<td>List[String]</td>
+<td>&#x8FB9;&#x7C7B;&#x578B;&#x521B;&#x5EFA;&#x7684;&#x7D22;&#x5F15;</td>
+</tr>
+<tr>
+<td>sort_keys</td>
+<td>List[String]</td>
+<td>&#x5F53;&#x5141;&#x8BB8;&#x5173;&#x8054;&#x591A;&#x6B21;&#x65F6;&#xFF0C;&#x6307;&#x5B9A;&#x533A;&#x5206;&#x952E;&#x5C5E;&#x6027;&#x5217;</td>
+</tr>
+<tr>
+<td>enable_label_index</td>
+<td>Boolean</td>
+<td>&#x662F;&#x5426;&#x5F00;&#x542F;&#x7C7B;&#x578B;&#x7D22;&#x5F15;</td>
+</tr>
+<tr>
+<td>user_data</td>
+<td>Map</td>
+<td>&#x8BBE;&#x7F6E;&#x9876;&#x70B9;&#x7C7B;&#x578B;&#x7684;&#x901A;&#x7528;&#x4FE1;&#x606F;</td>
+</tr>
+<tr>
+<td>ttl</td>
+<td>Int</td>
+<td>&#x8FB9;&#x5B58;&#x6D3B;&#x65F6;&#x95F4;</td>
+</tr>
+<tr>
+<td>ttl_start_time</td>
+<td>String</td>
+<td>&#x8FB9;&#x5B58;&#x6D3B;&#x65F6;&#x95F4;&#x7684;&#x8D77;&#x70B9;&#x5B57;&#x6BB5;</td>
+</tr>
+</tbody>
+</table>
+<h5 id="&#x4F7F;&#x7528;&#x793A;&#x4F8B;">&#x4F7F;&#x7528;&#x793A;&#x4F8B;</h5>
+<h6 id="method--url">Method &amp; Url</h6>
 <pre><code>GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph/schema/edgelabels/created
-</code></pre><h5 id="response-status">Response Status</h5>
+</code></pre><h6 id="response-status">Response Status</h6>
 <pre><code class="lang-json"><span class="hljs-number">200</span>
 </code></pre>
-<h5 id="response-body">Response Body</h5>
+<h6 id="response-body">Response Body</h6>
 <pre><code class="lang-json">{
     <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-number">1</span>,
     <span class="hljs-string">&quot;sort_keys&quot;</span>: [
@@ -1511,14 +2130,77 @@
     <span class="hljs-string">&quot;user_data&quot;</span>: {}
 }
 </code></pre>
-<h4 id="145-&#x6839;&#x636E;name&#x5220;&#x9664;edgelabel">1.4.5 &#x6839;&#x636E;name&#x5220;&#x9664;EdgeLabel</h4>
+<h4 id="145--&#x5220;&#x9664;edgelabel">1.4.5  &#x5220;&#x9664;EdgeLabel</h4>
+<h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
+<p>&#x6839;&#x636E;name&#x5220;&#x9664;EdgeLabel</p>
 <p>&#x5220;&#x9664; EdgeLabel &#x4F1A;&#x5BFC;&#x81F4;&#x5220;&#x9664;&#x5BF9;&#x5E94;&#x7684;&#x8FB9;&#x4EE5;&#x53CA;&#x76F8;&#x5173;&#x7684;&#x7D22;&#x5F15;&#x6570;&#x636E;&#xFF0C;&#x4F1A;&#x4EA7;&#x751F;&#x4E00;&#x4E2A;&#x5F02;&#x6B65;&#x4EFB;&#x52A1;</p>
-<h5 id="method--url">Method &amp; Url</h5>
+<h5 id="uri">URI</h5>
+<pre><code>DELETE /graphspaces/${graphspace}/graphs/${hugegraph}/schema/edgelabels/${name}
+</code></pre><h5 id="uri&#x53C2;&#x6570;">URI&#x53C2;&#x6570;</h5>
+<table>
+<thead>
+<tr>
+<th>&#x540D;&#x79F0;</th>
+<th>&#x662F;&#x5426;&#x5FC5;&#x586B;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x9ED8;&#x8BA4;&#x503C;</th>
+<th>&#x53D6;&#x503C;&#x8303;&#x56F4;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>graphspace</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td></td>
+<td></td>
+<td>&#x56FE;&#x7A7A;&#x95F4;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td>hugegraph</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td></td>
+<td></td>
+<td>&#x56FE;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td>name</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td></td>
+<td></td>
+<td>&#x8FB9;&#x7C7B;&#x578B;&#x540D;</td>
+</tr>
+</tbody>
+</table>
+<h5 id="body&#x53C2;&#x6570;">Body&#x53C2;&#x6570;</h5>
+<p>&#x65E0;</p>
+<h5 id="response">Response</h5>
+<table>
+<thead>
+<tr>
+<th>&#x540D;&#x79F0;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>task_id</td>
+<td>String</td>
+<td>&#x5220;&#x9664;&#x64CD;&#x4F5C;&#x7684;&#x4EFB;&#x52A1;id</td>
+</tr>
+</tbody>
+</table>
+<h5 id="&#x4F7F;&#x7528;&#x793A;&#x4F8B;">&#x4F7F;&#x7528;&#x793A;&#x4F8B;</h5>
+<h6 id="method--url">Method &amp; Url</h6>
 <pre><code>DELETE http://localhost:8080/graphspaces/gs1/graphs/hugegraph/schema/edgelabels/created
-</code></pre><h5 id="response-status">Response Status</h5>
+</code></pre><h6 id="response-status">Response Status</h6>
 <pre><code class="lang-json"><span class="hljs-number">202</span>
 </code></pre>
-<h5 id="response-body">Response Body</h5>
+<h6 id="response-body">Response Body</h6>
 <pre><code class="lang-json">{
     <span class="hljs-string">&quot;task_id&quot;</span>: <span class="hljs-number">1</span>
 }
@@ -1579,7 +2261,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"EdgeLabel","level":"4.2.4","depth":2,"next":{"title":"IndexLabel","level":"4.2.5","depth":2,"path":"clients/restful-api-v3/indexlabel.md","ref":"clients/restful-api-v3/indexlabel.md","articles":[]},"previous":{"title":"VertexLabel","level":"4.2.3","depth":2,"path":"clients/restful-api-v3/vertexlabel.md","ref":"clients/restful-api-v3/vertexlabel.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"clients/restful-api-v3/edgelabel.md","mtime":"2022-01-19T11:49:07.474Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-19T11:52:09.266Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"EdgeLabel","level":"4.2.4","depth":2,"next":{"title":"IndexLabel","level":"4.2.5","depth":2,"path":"clients/restful-api-v3/indexlabel.md","ref":"clients/restful-api-v3/indexlabel.md","articles":[]},"previous":{"title":"VertexLabel","level":"4.2.3","depth":2,"path":"clients/restful-api-v3/vertexlabel.md","ref":"clients/restful-api-v3/vertexlabel.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"clients/restful-api-v3/edgelabel.md","mtime":"2022-01-26T01:53:18.507Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-26T01:53:25.134Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

@@ -6,7 +6,7 @@ HugeGraph 提供单一接口获取和更新某个图的全部 Schema 信息，�
 
 ##### 功能介绍
 
-获取全部schema信息
+获取指定图空间下的某个图的全部schema信息
 
 ##### URI
 
@@ -53,7 +53,7 @@ GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph/schema?format=json
 200
 ```
 
-##### Response Body
+###### Response Body
 
 ```json
 {
@@ -356,12 +356,12 @@ GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph/schema?format=json
 
 ##### 使用示例2
 
-**以 groovy 形式查询 schema**
+##### 使用示例二：以groovy格式请求
 
-##### Method & Url
+###### Method & Url
 
 ```
-GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph/schema
+GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph/schema?format=groovy
 ```
 
 ###### Request Body
@@ -374,20 +374,19 @@ GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph/schema
 200
 ```
 
-##### Response Body
+###### Response Body
 
 ```json
 {"schema":"graph.schema().propertyKey('price').asInt().ifNotExist().create();\ngraph.schema().propertyKey('date').asText().ifNotExist().create();\ngraph.schema().propertyKey('city').asText().ifNotExist().create();\ngraph.schema().propertyKey('age').asInt().ifNotExist().create();\ngraph.schema().propertyKey('lang').asText().ifNotExist().create();\ngraph.schema().propertyKey('weight').asDouble().ifNotExist().create();\ngraph.schema().propertyKey('name').asText().ifNotExist().create();\n\ngraph.schema().vertexLabel('person').properties('name','age','city').primaryKeys('name').nullableKeys('age').enableLabelIndex(true).ifNotExist().create();\ngraph.schema().vertexLabel('software').properties('name','lang','price').primaryKeys('name').nullableKeys('price').enableLabelIndex(true).ifNotExist().create();\n\ngraph.schema().edgeLabel('knows').sourceLabel('person').targetLabel('person').properties('weight','date').multiTimes().sortKeys('date').nullableKeys('weight').enableLabelIndex(true).ifNotExist().create();\ngraph.schema().edgeLabel('created').sourceLabel('person').targetLabel('software').properties('weight','date').nullableKeys('weight').enableLabelIndex(true).ifNotExist().create();\n\ngraph.schema().indexLabel('personByCity').onV('person').by('city').secondary().ifNotExist().create();\ngraph.schema().indexLabel('personByAge').onV('person').by('age').range().ifNotExist().create();\ngraph.schema().indexLabel('softwareByPrice').onV('software').by('price').range().ifNotExist().create();\ngraph.schema().indexLabel('createdByDate').onE('created').by('date').secondary().ifNotExist().create();\ngraph.schema().indexLabel('createdByWeight').onE('created').by('weight').range().ifNotExist().create();\ngraph.schema().indexLabel('knowsByWeight').onE('knows').by('weight').range().ifNotExist().create();\n"}
 ```
 
-#### 1.1.2 以 groovy 形式更新schema信息
+#### 1.1.2 更新schema信息
 
 ##### 功能介绍
 
-以 groovy 形式更新 schema 信息
+以 groovy 形式更新指定空间下指定图的schema信息
 
 ##### URI
-
 ```
 PUT /graphspaces/${graphspace}/graphs/${graph}/schema
 ```
@@ -405,14 +404,14 @@ PUT /graphspaces/${graphspace}/graphs/${graph}/schema
 |  ----  | ----  | ----  | ----  | ----  | ----  |
 | schema  | 是 | String  |   |   | groovy 形式的 schema 信息  |
 
-##### Response（没有就写无）
 
-|  名称   | 类型 |  说明  |
-|  ----  | ---|  ----  |
-| schema  |String| - |
+##### Response
+| 名称   | 类型   | 说明                     |
+| ------ | ------ | ------------------------ |
+| schema | String | 执行成功，则返回"inited" |
+
 
 ##### 使用示例
-
 
 ###### Method & Url
 
@@ -420,7 +419,7 @@ PUT /graphspaces/${graphspace}/graphs/${graph}/schema
 PUT http://localhost:8080/graphspaces/gs1/graphs/hugegraph/schema
 ```
 
-##### Request body
+###### Request body
 
 ```json
 {
@@ -428,13 +427,13 @@ PUT http://localhost:8080/graphspaces/gs1/graphs/hugegraph/schema
 }
 ```
 
-##### Response Status
+###### Response Status
 
 ```json
 202
 ```
 
-##### Response Body
+###### Response Body
 
 ```json
 {

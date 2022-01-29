@@ -114,6 +114,7 @@ raft.rpc_connect_timeout         | 5000                            | The rpc con
 raft.rpc_timeout                 | 60000                           | The rpc timeout for jraft rpc.
 raft.rpc_buf_low_water_mark      | 10485760                        | The ChannelOutboundBuffer's low water mark of netty, when buffer size less than this size, the method ChannelOutboundBuffer.isWritable() will return true, it means that low downstream pressure or good network.
 raft.rpc_buf_high_water_mark     | 20971520                        | The ChannelOutboundBuffer's high water mark of netty, only when buffer size exceed this size, the method ChannelOutboundBuffer.isWritable() will return false, it means that the downstream pressure is too great to process the request or network is very congestion, upstream needs to limit rate at this time.
+cluster.role                     | master                          | The role of current cluster. This property is to indicate the behaviour of data-sync, which supports the data consistant within the multi-cluster architecture. Available roles are [master, slave]. The master cluster will synchronize the persistance command to slave cluster.
 
 ### Cassandra 后端配置项
 

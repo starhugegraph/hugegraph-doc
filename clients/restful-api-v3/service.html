@@ -354,6 +354,19 @@
             
         </li>
     
+        <li class="chapter " data-level="3.6" data-path="../../config/config-encrypt-data.html">
+            
+                <a href="../../config/config-encrypt-data.html">
+            
+                    
+                    Config Encrypting Data
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
         
@@ -1289,9 +1302,9 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h3 id="111-service">11.1 Service</h3>
+                                <h2 id="42&#x670D;&#x52A1;">4.2.&#x670D;&#x52A1;</h2>
 <p>&#x5728; HugeGraph &#x4E2D;&#xFF0C;&#x5728;&#x7EBF;&#x8BA1;&#x7B97;&#xFF08;OLTP&#xFF09;&#x3001;&#x79BB;&#x7EBF;&#x8BA1;&#x7B97;&#xFF08;OLAP&#xFF09;&#x548C;&#x5B58;&#x50A8;&#x90FD;&#x662F;&#x4F5C;&#x4E3A;&#x670D;&#x52A1;&#xFF08;service&#xFF09;&#x5B58;&#x5728;&#x7684;&#x3002;&#x76EE;&#x524D;&#x4EC5;&#x652F;&#x6301;&#x5728;&#x7EBF;&#x8BA1;&#x7B97;&#x670D;&#x52A1;&#x7684;&#x52A8;&#x6001;&#x521B;&#x5EFA;&#x3002;</p>
-<h4 id="1111-&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x670D;&#x52A1;">11.1.1 &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x670D;&#x52A1;</h4>
+<h4 id="421&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x670D;&#x52A1;">4.2.1.&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x670D;&#x52A1;</h4>
 <h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
 <p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x670D;&#x52A1;</p>
 <h5 id="uri">URI</h5>
@@ -1447,10 +1460,10 @@
   <span class="hljs-string">&quot;deployment_type&quot;</span>: <span class="hljs-string">&quot;K8S&quot;</span>
 }
 </code></pre>
-<h5 id="response-status">Response Status</h5>
+<h6 id="response-status">Response Status</h6>
 <pre><code class="lang-json"><span class="hljs-number">201</span>
 </code></pre>
-<h5 id="response-body">Response Body</h5>
+<h6 id="response-body">Response Body</h6>
 <pre><code class="lang-json">{
     <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;sv1&quot;</span>,
     <span class="hljs-string">&quot;deployment_type&quot;</span>: <span class="hljs-string">&quot;K8S&quot;</span>,
@@ -1464,7 +1477,7 @@
     ]
 }
 </code></pre>
-<h4 id="1112-&#x5217;&#x51FA;&#x67D0;&#x4E2A;&#x56FE;&#x7A7A;&#x95F4;&#x7684;&#x6240;&#x6709;&#x670D;&#x52A1;">11.1.2 &#x5217;&#x51FA;&#x67D0;&#x4E2A;&#x56FE;&#x7A7A;&#x95F4;&#x7684;&#x6240;&#x6709;&#x670D;&#x52A1;</h4>
+<h4 id="422&#x5217;&#x51FA;&#x67D0;&#x4E2A;&#x56FE;&#x7A7A;&#x95F4;&#x7684;&#x6240;&#x6709;&#x670D;&#x52A1;">4.2.2.&#x5217;&#x51FA;&#x67D0;&#x4E2A;&#x56FE;&#x7A7A;&#x95F4;&#x7684;&#x6240;&#x6709;&#x670D;&#x52A1;</h4>
 <h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
 <p>&#x5217;&#x51FA;&#x67D0;&#x4E2A;&#x56FE;&#x7A7A;&#x95F4;&#x7684;&#x6240;&#x6709;&#x670D;&#x52A1;</p>
 <h5 id="uri">URI</h5>
@@ -1516,15 +1529,15 @@
 <pre><code>GET http://localhost:8080/graphspaces/gs1/services
 </code></pre><h6 id="request-body">Request Body</h6>
 <p>&#x65E0;</p>
-<h5 id="response-status">Response Status</h5>
+<h6 id="response-status">Response Status</h6>
 <pre><code class="lang-json"><span class="hljs-number">200</span>
 </code></pre>
-<h5 id="response-body">Response Body</h5>
+<h6 id="response-body">Response Body</h6>
 <pre><code class="lang-json">{
     <span class="hljs-string">&quot;services&quot;</span>:[<span class="hljs-string">&quot;sv1&quot;</span>]
 }
 </code></pre>
-<h4 id="1113-&#x67E5;&#x770B;&#x67D0;&#x4E2A;&#x670D;&#x52A1;">11.1.3 &#x67E5;&#x770B;&#x67D0;&#x4E2A;&#x670D;&#x52A1;</h4>
+<h4 id="423&#x67E5;&#x770B;&#x67D0;&#x4E2A;&#x670D;&#x52A1;">4.2.3.&#x67E5;&#x770B;&#x67D0;&#x4E2A;&#x670D;&#x52A1;</h4>
 <h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
 <p>&#x67E5;&#x770B;&#x67D0;&#x4E2A;&#x670D;&#x52A1;</p>
 <h5 id="uri">URI</h5>
@@ -1619,10 +1632,10 @@
 <pre><code>GET http://127.0.0.1:8080/graphspaces/gs1/services/sv1
 </code></pre><h6 id="request-body">Request Body</h6>
 <p>&#x65E0;</p>
-<h5 id="response-status">Response Status</h5>
+<h6 id="response-status">Response Status</h6>
 <pre><code class="lang-json"><span class="hljs-number">200</span>
 </code></pre>
-<h5 id="response-body">Response Body</h5>
+<h6 id="response-body">Response Body</h6>
 <pre><code class="lang-json">{
     <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;sv1&quot;</span>,
     <span class="hljs-string">&quot;deployment_type&quot;</span>: <span class="hljs-string">&quot;K8S&quot;</span>,
@@ -1636,7 +1649,7 @@
     ]
 }
 </code></pre>
-<h4 id="1114-&#x5220;&#x9664;&#x67D0;&#x4E2A;&#x670D;&#x52A1;">11.1.4 &#x5220;&#x9664;&#x67D0;&#x4E2A;&#x670D;&#x52A1;</h4>
+<h4 id="424&#x5220;&#x9664;&#x67D0;&#x4E2A;&#x670D;&#x52A1;">4.2.4.&#x5220;&#x9664;&#x67D0;&#x4E2A;&#x670D;&#x52A1;</h4>
 <h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
 <p>&#x5220;&#x9664;&#x67D0;&#x4E2A;&#x670D;&#x52A1;</p>
 <h5 id="uri">URI</h5>
@@ -1681,7 +1694,7 @@
 <pre><code>DELETE http://localhost:8080/graphspaces/gs1/services/sv1
 </code></pre><h6 id="request-body">Request Body</h6>
 <p>&#x65E0;</p>
-<h5 id="response-status">Response Status</h5>
+<h6 id="response-status">Response Status</h6>
 <pre><code class="lang-json"><span class="hljs-number">204</span>
 </code></pre>
 <blockquote>
@@ -1739,7 +1752,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Service","level":"4.2.18","depth":2,"next":{"title":"SchemaTemplate","level":"4.2.19","depth":2,"path":"clients/restful-api-v3/schematemplate.md","ref":"clients/restful-api-v3/schematemplate.md","articles":[]},"previous":{"title":"GraphSpace","level":"4.2.17","depth":2,"path":"clients/restful-api-v3/graphspace.md","ref":"clients/restful-api-v3/graphspace.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"clients/restful-api-v3/service.md","mtime":"2022-01-27T02:07:32.674Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-27T04:14:37.295Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Service","level":"4.2.18","depth":2,"next":{"title":"SchemaTemplate","level":"4.2.19","depth":2,"path":"clients/restful-api-v3/schematemplate.md","ref":"clients/restful-api-v3/schematemplate.md","articles":[]},"previous":{"title":"GraphSpace","level":"4.2.17","depth":2,"path":"clients/restful-api-v3/graphspace.md","ref":"clients/restful-api-v3/graphspace.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"clients/restful-api-v3/service.md","mtime":"2022-02-08T04:33:40.108Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-08T04:33:53.254Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

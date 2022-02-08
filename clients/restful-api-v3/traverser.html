@@ -354,6 +354,19 @@
             
         </li>
     
+        <li class="chapter " data-level="3.6" data-path="../../config/config-encrypt-data.html">
+            
+                <a href="../../config/config-encrypt-data.html">
+            
+                    
+                    Config Encrypting Data
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
         
@@ -1289,7 +1302,8 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h3 id="31-traverser-api&#x6982;&#x8FF0;">3.1 traverser API&#x6982;&#x8FF0;</h3>
+                                <h2 id="47&#x8054;&#x673A;&#x7B97;&#x6CD5;">4.7.&#x8054;&#x673A;&#x7B97;&#x6CD5;</h2>
+<h3 id="471traverser-api&#x6982;&#x8FF0;">4.7.1.traverser API&#x6982;&#x8FF0;</h3>
 <p>HugeGraphServer&#x4E3A;HugeGraph&#x56FE;&#x6570;&#x636E;&#x5E93;&#x63D0;&#x4F9B;&#x4E86;RESTful API&#x63A5;&#x53E3;&#x3002;&#x9664;&#x4E86;&#x9876;&#x70B9;&#x548C;&#x8FB9;&#x7684;CRUD&#x57FA;&#x672C;&#x64CD;&#x4F5C;&#x4EE5;&#x5916;&#xFF0C;&#x8FD8;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E9B;&#x904D;&#x5386;&#xFF08;traverser&#xFF09;&#x65B9;&#x6CD5;&#xFF0C;&#x6211;&#x4EEC;&#x79F0;&#x4E3A;<code>traverser API</code>&#x3002;&#x8FD9;&#x4E9B;&#x904D;&#x5386;&#x65B9;&#x6CD5;&#x5B9E;&#x73B0;&#x4E86;&#x4E00;&#x4E9B;&#x590D;&#x6742;&#x7684;&#x56FE;&#x7B97;&#x6CD5;&#xFF0C;&#x65B9;&#x4FBF;&#x7528;&#x6237;&#x5BF9;&#x56FE;&#x8FDB;&#x884C;&#x5206;&#x6790;&#x548C;&#x6316;&#x6398;&#x3002;</p>
 <p>HugeGraph&#x652F;&#x6301;&#x7684;Traverser API&#x5305;&#x62EC;&#xFF1A;</p>
 <ul>
@@ -1341,7 +1355,7 @@
 <li>Same Neighbors Batch</li>
 </ul>
 <p>PS: Vertices API &amp; Edges API &#x79FB;&#x52A8;&#x81F3; <a href="vertex.html">Vertex</a> &#x4E0E; <a href="edge.html">Edge</a> &#x9875;&#x9762;&#x4E2D;</p>
-<h3 id="32-traverser-api&#x8BE6;&#x89E3;">3.2. traverser API&#x8BE6;&#x89E3;</h3>
+<h3 id="472traverser-api&#x8BE6;&#x89E3;">4.7.2.traverser API&#x8BE6;&#x89E3;</h3>
 <p>&#x4F7F;&#x7528;&#x793A;&#x4F8B;&#x4E2D;&#x7684;&#x4F8B;&#x5B50;&#xFF0C;&#x90FD;&#x662F;&#x57FA;&#x4E8E;TinkerPop&#x5B98;&#x7F51;&#x7ED9;&#x51FA;&#x7684;&#x56FE;&#xFF1A;</p>
 <p><img src="http://tinkerpop.apache.org/docs/3.4.0/images/tinkerpop-modern.png" alt="tinkerpop&#x793A;&#x4F8B;&#x56FE;"></p>
 <p>&#x6570;&#x636E;&#x5BFC;&#x5165;&#x7A0B;&#x5E8F;&#x5982;&#x4E0B;&#xFF1A;</p>
@@ -1467,7 +1481,7 @@
 &quot;S1:marko&gt;1&gt;20130220&gt;S1:josh&quot;,
 &quot;S1:marko&gt;1&gt;20160110&gt;S1:vadas&quot;,
 &quot;S1:marko&gt;2&gt;&gt;S2:lop&quot;
-</code></pre><h4 id="321-k-out-api&#xFF08;get&#xFF0C;&#x57FA;&#x7840;&#x7248;&#xFF09;">3.2.1 K-out API&#xFF08;GET&#xFF0C;&#x57FA;&#x7840;&#x7248;&#xFF09;</h4>
+</code></pre><h4 id="4721k-out-api&#xFF08;get&#xFF0C;&#x57FA;&#x7840;&#x7248;&#xFF09;">4.7.2.1.K-out API&#xFF08;GET&#xFF0C;&#x57FA;&#x7840;&#x7248;&#xFF09;</h4>
 <h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
 <p>&#x6839;&#x636E;&#x8D77;&#x59CB;&#x9876;&#x70B9;&#x3001;&#x65B9;&#x5411;&#x3001;&#x8FB9;&#x7684;&#x7C7B;&#x578B;&#xFF08;&#x53EF;&#x9009;&#xFF09;&#x548C;&#x6DF1;&#x5EA6;depth&#xFF0C;&#x67E5;&#x627E;&#x4ECE;&#x8D77;&#x59CB;&#x9876;&#x70B9;&#x51FA;&#x53D1;&#x6070;&#x597D;depth&#x6B65;&#x53EF;&#x8FBE;&#x7684;&#x9876;&#x70B9;</p>
 <h5 id="uri">URI</h5>
@@ -1614,7 +1628,7 @@
 <li>&#x5BB6;&#x65CF;&#x5173;&#x7CFB;&#x4E2D;&#xFF0C;&#x67E5;&#x627E;&#x4E00;&#x4E2A;&#x4EBA;&#x7684;&#x6240;&#x6709;&#x5B59;&#x5B50;&#xFF0C;person A&#x901A;&#x8FC7;&#x8FDE;&#x7EED;&#x7684;&#x4E24;&#x6761;&#x201C;&#x513F;&#x5B50;&#x201D;&#x8FB9;&#x5230;&#x8FBE;&#x7684;&#x9876;&#x70B9;&#x96C6;&#x5408;&#x3002;</li>
 <li>&#x793E;&#x4EA4;&#x5173;&#x7CFB;&#x4E2D;&#x53D1;&#x73B0;&#x6F5C;&#x5728;&#x597D;&#x53CB;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;&#x4E0E;&#x76EE;&#x6807;&#x7528;&#x6237;&#x76F8;&#x9694;&#x4E24;&#x5C42;&#x670B;&#x53CB;&#x5173;&#x7CFB;&#x7684;&#x7528;&#x6237;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8FDE;&#x7EED;&#x4E24;&#x6761;&#x201C;&#x670B;&#x53CB;&#x201D;&#x8FB9;&#x5230;&#x8FBE;&#x7684;&#x9876;&#x70B9;&#x3002;</li>
 </ul>
-<h4 id="322-k-out-api&#xFF08;post&#xFF0C;&#x9AD8;&#x7EA7;&#x7248;&#xFF09;">3.2.2 K-out API&#xFF08;POST&#xFF0C;&#x9AD8;&#x7EA7;&#x7248;&#xFF09;</h4>
+<h4 id="4722k-out-api&#xFF08;post&#xFF0C;&#x9AD8;&#x7EA7;&#x7248;&#xFF09;">4.7.2.2.K-out API&#xFF08;POST&#xFF0C;&#x9AD8;&#x7EA7;&#x7248;&#xFF09;</h4>
 <h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
 <p>&#x6839;&#x636E;&#x8D77;&#x59CB;&#x9876;&#x70B9;&#x3001;&#x6B65;&#x9AA4;&#xFF08;&#x5305;&#x62EC;&#x65B9;&#x5411;&#x3001;&#x8FB9;&#x7C7B;&#x578B;&#x548C;&#x8FC7;&#x6EE4;&#x5C5E;&#x6027;&#xFF09;&#x548C;&#x6DF1;&#x5EA6;depth&#xFF0C;&#x67E5;&#x627E;&#x4ECE;&#x8D77;&#x59CB;&#x9876;&#x70B9;&#x51FA;&#x53D1;&#x6070;&#x597D;depth&#x6B65;&#x53EF;&#x8FBE;&#x7684;&#x9876;&#x70B9;&#x3002;</p>
 <blockquote>
@@ -1995,7 +2009,7 @@
 </code></pre>
 <h5 id="&#x9002;&#x7528;&#x573A;&#x666F;">&#x9002;&#x7528;&#x573A;&#x666F;</h5>
 <p>&#x53C2;&#x89C1; kout</p>
-<h4 id="323-k-neighbor&#xFF08;get&#xFF0C;&#x57FA;&#x7840;&#x7248;&#xFF09;">3.2.3 K-neighbor&#xFF08;GET&#xFF0C;&#x57FA;&#x7840;&#x7248;&#xFF09;</h4>
+<h4 id="4723k-neighbor&#xFF08;get&#xFF0C;&#x57FA;&#x7840;&#x7248;&#xFF09;">4.7.2.3.K-neighbor&#xFF08;GET&#xFF0C;&#x57FA;&#x7840;&#x7248;&#xFF09;</h4>
 <h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
 <p>&#x6839;&#x636E;&#x8D77;&#x59CB;&#x9876;&#x70B9;&#x3001;&#x65B9;&#x5411;&#x3001;&#x8FB9;&#x7684;&#x7C7B;&#x578B;&#xFF08;&#x53EF;&#x9009;&#xFF09;&#x548C;&#x6DF1;&#x5EA6;depth&#xFF0C;&#x67E5;&#x627E;&#x5305;&#x62EC;&#x8D77;&#x59CB;&#x9876;&#x70B9;&#x5728;&#x5185;&#x3001;depth&#x6B65;&#x4E4B;&#x5185;&#x53EF;&#x8FBE;&#x7684;&#x6240;&#x6709;&#x9876;&#x70B9;</p>
 <blockquote>
@@ -2125,7 +2139,7 @@
 <li>&#x5BB6;&#x65CF;&#x5173;&#x7CFB;&#x4E2D;&#xFF0C;&#x67E5;&#x627E;&#x4E00;&#x4E2A;&#x4EBA;&#x4E94;&#x670D;&#x4EE5;&#x5185;&#x6240;&#x6709;&#x5B50;&#x5B59;&#xFF0C;person A&#x901A;&#x8FC7;&#x8FDE;&#x7EED;&#x7684;5&#x6761;&#x201C;&#x4EB2;&#x5B50;&#x201D;&#x8FB9;&#x5230;&#x8FBE;&#x7684;&#x9876;&#x70B9;&#x96C6;&#x5408;&#x3002;</li>
 <li>&#x793E;&#x4EA4;&#x5173;&#x7CFB;&#x4E2D;&#x53D1;&#x73B0;&#x597D;&#x53CB;&#x5708;&#x5B50;&#xFF0C;&#x4F8B;&#x5982;&#x76EE;&#x6807;&#x7528;&#x6237;&#x901A;&#x8FC7;1&#x6761;&#x3001;2&#x6761;&#x3001;3&#x6761;&#x201C;&#x670B;&#x53CB;&#x201D;&#x8FB9;&#x53EF;&#x5230;&#x8FBE;&#x7684;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x7EC4;&#x6210;&#x76EE;&#x6807;&#x7528;&#x6237;&#x7684;&#x670B;&#x53CB;&#x5708;&#x5B50;</li>
 </ul>
-<h4 id="324-k-neighbor-api&#xFF08;post&#xFF0C;&#x9AD8;&#x7EA7;&#x7248;&#xFF09;">3.2.4 K-neighbor API&#xFF08;POST&#xFF0C;&#x9AD8;&#x7EA7;&#x7248;&#xFF09;</h4>
+<h4 id="4724k-neighbor-api&#xFF08;post&#xFF0C;&#x9AD8;&#x7EA7;&#x7248;&#xFF09;">4.7.2.4.K-neighbor API&#xFF08;POST&#xFF0C;&#x9AD8;&#x7EA7;&#x7248;&#xFF09;</h4>
 <h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
 <p>&#x6839;&#x636E;&#x8D77;&#x59CB;&#x9876;&#x70B9;&#x3001;&#x6B65;&#x9AA4;&#xFF08;&#x5305;&#x62EC;&#x65B9;&#x5411;&#x3001;&#x8FB9;&#x7C7B;&#x578B;&#x548C;&#x8FC7;&#x6EE4;&#x5C5E;&#x6027;&#xFF09;&#x548C;&#x6DF1;&#x5EA6;depth&#xFF0C;&#x67E5;&#x627E;&#x4ECE;&#x8D77;&#x59CB;&#x9876;&#x70B9;&#x51FA;&#x53D1;depth&#x6B65;&#x5185;&#x53EF;&#x8FBE;&#x7684;&#x6240;&#x6709;&#x9876;&#x70B9;&#x3002;</p>
 <blockquote>
@@ -2523,7 +2537,7 @@
 </code></pre>
 <h5 id="&#x9002;&#x7528;&#x573A;&#x666F;">&#x9002;&#x7528;&#x573A;&#x666F;</h5>
 <p>&#x53C2;&#x89C1;K-neighbor</p>
-<h4 id="325-same-neighbors">3.2.5 Same Neighbors</h4>
+<h4 id="4725same-neighbors">4.7.2.5.Same Neighbors</h4>
 <h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
 <p>&#x67E5;&#x8BE2;&#x4E24;&#x4E2A;&#x70B9;&#x7684;&#x5171;&#x540C;&#x90BB;&#x5C45;</p>
 <h5 id="uri">URI</h5>
@@ -2644,7 +2658,7 @@
 <ul>
 <li>&#x793E;&#x4EA4;&#x5173;&#x7CFB;&#x4E2D;&#x53D1;&#x73B0;&#x4E24;&#x4E2A;&#x7528;&#x6237;&#x7684;&#x5171;&#x540C;&#x7C89;&#x4E1D;&#x6216;&#x8005;&#x5171;&#x540C;&#x5173;&#x6CE8;&#x7528;&#x6237;</li>
 </ul>
-<h4 id="326-jaccard-similarity&#xFF08;get&#xFF09;">3.2.6 Jaccard Similarity&#xFF08;GET&#xFF09;</h4>
+<h4 id="4726jaccard-similarity&#xFF08;get&#xFF09;">4.7.2.6.Jaccard Similarity&#xFF08;GET&#xFF09;</h4>
 <h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
 <p>&#x8BA1;&#x7B97;&#x4E24;&#x4E2A;&#x9876;&#x70B9;&#x7684;jaccard similarity&#xFF08;&#x4E24;&#x4E2A;&#x9876;&#x70B9;&#x90BB;&#x5C45;&#x7684;&#x4EA4;&#x96C6;&#x6BD4;&#x4E0A;&#x4E24;&#x4E2A;&#x9876;&#x70B9;&#x90BB;&#x5C45;&#x7684;&#x5E76;&#x96C6;&#xFF09;</p>
 <h5 id="uri">URI</h5>
@@ -2752,7 +2766,7 @@
 </code></pre>
 <h5 id="&#x9002;&#x7528;&#x573A;&#x666F;">&#x9002;&#x7528;&#x573A;&#x666F;</h5>
 <p>&#x7528;&#x4E8E;&#x8BC4;&#x4F30;&#x4E24;&#x4E2A;&#x70B9;&#x7684;&#x76F8;&#x4F3C;&#x6027;&#x6216;&#x8005;&#x7D27;&#x5BC6;&#x5EA6;</p>
-<h4 id="327-jaccard-similarity&#xFF08;post&#xFF09;">3.2.7 Jaccard Similarity&#xFF08;POST&#xFF09;</h4>
+<h4 id="4727jaccard-similarity&#xFF08;post&#xFF09;">4.7.2.7.Jaccard Similarity&#xFF08;POST&#xFF09;</h4>
 <h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
 <p>&#x8BA1;&#x7B97;&#x4E0E;&#x6307;&#x5B9A;&#x9876;&#x70B9;&#x7684;jaccard similarity&#x6700;&#x5927;&#x7684;N&#x4E2A;&#x70B9;</p>
 <blockquote>
@@ -2968,7 +2982,7 @@
 </code></pre>
 <h5 id="&#x9002;&#x7528;&#x573A;&#x666F;">&#x9002;&#x7528;&#x573A;&#x666F;</h5>
 <p>&#x7528;&#x4E8E;&#x5728;&#x56FE;&#x4E2D;&#x627E;&#x51FA;&#x4E0E;&#x6307;&#x5B9A;&#x9876;&#x70B9;&#x76F8;&#x4F3C;&#x6027;&#x6700;&#x9AD8;&#x7684;&#x9876;&#x70B9;</p>
-<h4 id="328-shortest-path">3.2.8 Shortest Path</h4>
+<h4 id="4728shortest-path">4.7.2.8.Shortest Path</h4>
 <h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
 <p>&#x6839;&#x636E;&#x8D77;&#x59CB;&#x9876;&#x70B9;&#x3001;&#x76EE;&#x7684;&#x9876;&#x70B9;&#x3001;&#x65B9;&#x5411;&#x3001;&#x8FB9;&#x7684;&#x7C7B;&#x578B;&#xFF08;&#x53EF;&#x9009;&#xFF09;&#x548C;&#x6700;&#x5927;&#x6DF1;&#x5EA6;&#xFF0C;&#x67E5;&#x627E;&#x4E00;&#x6761;&#x6700;&#x77ED;&#x8DEF;&#x5F84;</p>
 <h5 id="uri">URI</h5>
@@ -3108,7 +3122,7 @@
 <li>&#x793E;&#x4EA4;&#x5173;&#x7CFB;&#x7F51;&#x4E2D;&#xFF0C;&#x67E5;&#x627E;&#x4E24;&#x4E2A;&#x7528;&#x6237;&#x6709;&#x5173;&#x7CFB;&#x7684;&#x6700;&#x77ED;&#x8DEF;&#x5F84;&#xFF0C;&#x5373;&#x6700;&#x8FD1;&#x7684;&#x670B;&#x53CB;&#x5173;&#x7CFB;&#x94FE;</li>
 <li>&#x8BBE;&#x5907;&#x5173;&#x8054;&#x7F51;&#x7EDC;&#x4E2D;&#xFF0C;&#x67E5;&#x627E;&#x4E24;&#x4E2A;&#x8BBE;&#x5907;&#x6700;&#x77ED;&#x7684;&#x5173;&#x8054;&#x5173;&#x7CFB;</li>
 </ul>
-<h4 id="329-&#x67E5;&#x627E;&#x6700;&#x77ED;&#x8DEF;&#x5F84;">3.2.9 &#x67E5;&#x627E;&#x6700;&#x77ED;&#x8DEF;&#x5F84;</h4>
+<h4 id="4729&#x67E5;&#x627E;&#x6700;&#x77ED;&#x8DEF;&#x5F84;">4.7.2.9.&#x67E5;&#x627E;&#x6700;&#x77ED;&#x8DEF;&#x5F84;</h4>
 <h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
 <p>&#x6839;&#x636E;&#x8D77;&#x59CB;&#x9876;&#x70B9;&#x3001;&#x76EE;&#x7684;&#x9876;&#x70B9;&#x3001;&#x65B9;&#x5411;&#x3001;&#x8FB9;&#x7684;&#x7C7B;&#x578B;&#xFF08;&#x53EF;&#x9009;&#xFF09;&#x548C;&#x6700;&#x5927;&#x6DF1;&#x5EA6;&#xFF0C;&#x67E5;&#x627E;&#x4E24;&#x70B9;&#x95F4;&#x6240;&#x6709;&#x7684;&#x6700;&#x77ED;&#x8DEF;&#x5F84;</p>
 <h5 id="uri">URI</h5>
@@ -3291,7 +3305,7 @@
 <li>&#x793E;&#x4EA4;&#x5173;&#x7CFB;&#x7F51;&#x4E2D;&#xFF0C;&#x67E5;&#x627E;&#x4E24;&#x4E2A;&#x7528;&#x6237;&#x6709;&#x5173;&#x7CFB;&#x7684;&#x5168;&#x90E8;&#x6700;&#x77ED;&#x8DEF;&#x5F84;&#xFF0C;&#x5373;&#x6700;&#x8FD1;&#x7684;&#x670B;&#x53CB;&#x5173;&#x7CFB;&#x94FE;</li>
 <li>&#x8BBE;&#x5907;&#x5173;&#x8054;&#x7F51;&#x7EDC;&#x4E2D;&#xFF0C;&#x67E5;&#x627E;&#x4E24;&#x4E2A;&#x8BBE;&#x5907;&#x5168;&#x90E8;&#x7684;&#x6700;&#x77ED;&#x5173;&#x8054;&#x5173;&#x7CFB;</li>
 </ul>
-<h4 id="3210-&#x67E5;&#x627E;&#x5E26;&#x6743;&#x91CD;&#x7684;&#x6700;&#x77ED;&#x8DEF;&#x5F84;">3.2.10 &#x67E5;&#x627E;&#x5E26;&#x6743;&#x91CD;&#x7684;&#x6700;&#x77ED;&#x8DEF;&#x5F84;</h4>
+<h4 id="47210&#x67E5;&#x627E;&#x5E26;&#x6743;&#x91CD;&#x7684;&#x6700;&#x77ED;&#x8DEF;&#x5F84;">4.7.2.10.&#x67E5;&#x627E;&#x5E26;&#x6743;&#x91CD;&#x7684;&#x6700;&#x77ED;&#x8DEF;&#x5F84;</h4>
 <h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
 <p>&#x6839;&#x636E;&#x8D77;&#x59CB;&#x9876;&#x70B9;&#x3001;&#x76EE;&#x7684;&#x9876;&#x70B9;&#x3001;&#x65B9;&#x5411;&#x3001;&#x8FB9;&#x7684;&#x7C7B;&#x578B;&#xFF08;&#x53EF;&#x9009;&#xFF09;&#x548C;&#x6700;&#x5927;&#x6DF1;&#x5EA6;&#xFF0C;&#x67E5;&#x627E;&#x4E00;&#x6761;&#x5E26;&#x6743;&#x6700;&#x77ED;&#x8DEF;&#x5F84;</p>
 <h5 id="uri">URI</h5>
@@ -3545,7 +3559,7 @@
 <ul>
 <li>&#x4EA4;&#x901A;&#x7EBF;&#x8DEF;&#x4E2D;&#x67E5;&#x627E;&#x4ECE;A&#x57CE;&#x5E02;&#x5230;B&#x57CE;&#x5E02;&#x82B1;&#x94B1;&#x6700;&#x5C11;&#x7684;&#x4EA4;&#x901A;&#x65B9;&#x5F0F;</li>
 </ul>
-<h4 id="3211-&#x4ECE;&#x4E00;&#x4E2A;&#x9876;&#x70B9;&#x51FA;&#x53D1;&#x67E5;&#x627E;&#x6700;&#x77ED;&#x8DEF;&#x5F84;">3.2.11 (&#x4ECE;&#x4E00;&#x4E2A;&#x9876;&#x70B9;&#x51FA;&#x53D1;)&#x67E5;&#x627E;&#x6700;&#x77ED;&#x8DEF;&#x5F84;</h4>
+<h4 id="47211&#x4ECE;&#x4E00;&#x4E2A;&#x9876;&#x70B9;&#x51FA;&#x53D1;&#x67E5;&#x627E;&#x6700;&#x77ED;&#x8DEF;&#x5F84;">4.7.2.11.(&#x4ECE;&#x4E00;&#x4E2A;&#x9876;&#x70B9;&#x51FA;&#x53D1;)&#x67E5;&#x627E;&#x6700;&#x77ED;&#x8DEF;&#x5F84;</h4>
 <h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
 <p>&#x4ECE;&#x4E00;&#x4E2A;&#x9876;&#x70B9;&#x51FA;&#x53D1;&#xFF0C;&#x67E5;&#x627E;&#x8BE5;&#x70B9;&#x5230;&#x56FE;&#x4E2D;&#x5176;&#x4ED6;&#x9876;&#x70B9;&#x7684;&#x6700;&#x77ED;&#x8DEF;&#x5F84;&#xFF08;&#x53EF;&#x9009;&#x662F;&#x5426;&#x5E26;&#x6743;&#x91CD;&#xFF09;</p>
 <h5 id="uri">URI</h5>
@@ -3860,7 +3874,7 @@
 <ul>
 <li>&#x67E5;&#x627E;&#x4ECE;&#x5317;&#x4EAC;&#x51FA;&#x53D1;&#x5230;&#x5168;&#x56FD;&#x5176;&#x4ED6;&#x6240;&#x6709;&#x57CE;&#x5E02;&#x7684;&#x8017;&#x65F6;&#x6700;&#x77ED;&#x7684;&#x4E58;&#x8F66;&#x65B9;&#x6848;</li>
 </ul>
-<h4 id="3212-&#x6307;&#x5B9A;&#x9876;&#x70B9;&#x96C6;&#x67E5;&#x627E;&#x6700;&#x77ED;&#x8DEF;&#x5F84;">3.2.12 (&#x6307;&#x5B9A;&#x9876;&#x70B9;&#x96C6;)&#x67E5;&#x627E;&#x6700;&#x77ED;&#x8DEF;&#x5F84;</h4>
+<h4 id="47212&#x6307;&#x5B9A;&#x9876;&#x70B9;&#x96C6;&#x67E5;&#x627E;&#x6700;&#x77ED;&#x8DEF;&#x5F84;">4.7.2.12.(&#x6307;&#x5B9A;&#x9876;&#x70B9;&#x96C6;)&#x67E5;&#x627E;&#x6700;&#x77ED;&#x8DEF;&#x5F84;</h4>
 <h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
 <p>&#x67E5;&#x627E;&#x6307;&#x5B9A;&#x9876;&#x70B9;&#x96C6;&#x4E24;&#x4E24;&#x4E4B;&#x95F4;&#x7684;&#x6700;&#x77ED;&#x8DEF;&#x5F84;</p>
 <h5 id="uri">URI</h5>
@@ -4304,7 +4318,7 @@
 <ul>
 <li>&#x67E5;&#x627E;&#x591A;&#x4E2A;&#x516C;&#x53F8;&#x548C;&#x6CD5;&#x4EBA;&#x4E4B;&#x95F4;&#x7684;&#x6700;&#x77ED;&#x8DEF;&#x5F84;</li>
 </ul>
-<h4 id="3213-&#x67E5;&#x627E;&#x6240;&#x6709;&#x8DEF;&#x5F84;&#xFF08;get&#xFF0C;&#x57FA;&#x7840;&#x7248;&#xFF09;">3.2.13 &#x67E5;&#x627E;&#x6240;&#x6709;&#x8DEF;&#x5F84;&#xFF08;GET&#xFF0C;&#x57FA;&#x7840;&#x7248;&#xFF09;</h4>
+<h4 id="47213&#x67E5;&#x627E;&#x6240;&#x6709;&#x8DEF;&#x5F84;&#xFF08;get&#xFF0C;&#x57FA;&#x7840;&#x7248;&#xFF09;">4.7.2.13.&#x67E5;&#x627E;&#x6240;&#x6709;&#x8DEF;&#x5F84;&#xFF08;GET&#xFF0C;&#x57FA;&#x7840;&#x7248;&#xFF09;</h4>
 <h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
 <p>&#x6839;&#x636E;&#x8D77;&#x59CB;&#x9876;&#x70B9;&#x3001;&#x76EE;&#x7684;&#x9876;&#x70B9;&#x3001;&#x65B9;&#x5411;&#x3001;&#x8FB9;&#x7684;&#x7C7B;&#x578B;&#xFF08;&#x53EF;&#x9009;&#xFF09;&#x548C;&#x6700;&#x5927;&#x6DF1;&#x5EA6;&#x7B49;&#x6761;&#x4EF6;&#x67E5;&#x627E;&#x6240;&#x6709;&#x8DEF;&#x5F84;</p>
 <h5 id="uri">URI</h5>
@@ -4484,7 +4498,7 @@
 <li>&#x793E;&#x4EA4;&#x7F51;&#x7EDC;&#x4E2D;&#xFF0C;&#x67E5;&#x627E;&#x4E24;&#x4E2A;&#x7528;&#x6237;&#x6240;&#x6709;&#x53EF;&#x80FD;&#x7684;&#x5173;&#x7CFB;&#x8DEF;&#x5F84;</li>
 <li>&#x8BBE;&#x5907;&#x5173;&#x8054;&#x7F51;&#x7EDC;&#x4E2D;&#xFF0C;&#x67E5;&#x627E;&#x4E24;&#x4E2A;&#x8BBE;&#x5907;&#x4E4B;&#x95F4;&#x6240;&#x6709;&#x7684;&#x5173;&#x8054;&#x8DEF;&#x5F84;</li>
 </ul>
-<h4 id="3214-&#x67E5;&#x627E;&#x6240;&#x6709;&#x8DEF;&#x5F84;&#xFF08;post&#xFF0C;&#x9AD8;&#x7EA7;&#x7248;&#xFF09;">3.2.14 &#x67E5;&#x627E;&#x6240;&#x6709;&#x8DEF;&#x5F84;&#xFF08;POST&#xFF0C;&#x9AD8;&#x7EA7;&#x7248;&#xFF09;</h4>
+<h4 id="47214&#x67E5;&#x627E;&#x6240;&#x6709;&#x8DEF;&#x5F84;&#xFF08;post&#xFF0C;&#x9AD8;&#x7EA7;&#x7248;&#xFF09;">4.7.2.14.&#x67E5;&#x627E;&#x6240;&#x6709;&#x8DEF;&#x5F84;&#xFF08;POST&#xFF0C;&#x9AD8;&#x7EA7;&#x7248;&#xFF09;</h4>
 <h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
 <p>&#x6839;&#x636E;&#x8D77;&#x59CB;&#x9876;&#x70B9;&#x3001;&#x76EE;&#x7684;&#x9876;&#x70B9;&#x3001;&#x6B65;&#x9AA4;&#xFF08;step&#xFF09;&#x548C;&#x6700;&#x5927;&#x6DF1;&#x5EA6;&#x7B49;&#x6761;&#x4EF6;&#x67E5;&#x627E;&#x6240;&#x6709;&#x8DEF;&#x5F84;</p>
 <h5 id="uri">URI</h5>
@@ -4780,7 +4794,7 @@
 <li>&#x793E;&#x4EA4;&#x7F51;&#x7EDC;&#x4E2D;&#xFF0C;&#x67E5;&#x627E;&#x4E24;&#x4E2A;&#x7528;&#x6237;&#x6240;&#x6709;&#x53EF;&#x80FD;&#x7684;&#x5173;&#x7CFB;&#x8DEF;&#x5F84;</li>
 <li>&#x8BBE;&#x5907;&#x5173;&#x8054;&#x7F51;&#x7EDC;&#x4E2D;&#xFF0C;&#x67E5;&#x627E;&#x4E24;&#x4E2A;&#x8BBE;&#x5907;&#x4E4B;&#x95F4;&#x6240;&#x6709;&#x7684;&#x5173;&#x8054;&#x8DEF;&#x5F84;</li>
 </ul>
-<h4 id="3215-&#x81EA;&#x5B9A;&#x4E49;&#x8DEF;&#x5F84;&#x67E5;&#x8BE2;">3.2.15 &#x81EA;&#x5B9A;&#x4E49;&#x8DEF;&#x5F84;&#x67E5;&#x8BE2;</h4>
+<h4 id="47215&#x81EA;&#x5B9A;&#x4E49;&#x8DEF;&#x5F84;&#x67E5;&#x8BE2;">4.7.2.15.&#x81EA;&#x5B9A;&#x4E49;&#x8DEF;&#x5F84;&#x67E5;&#x8BE2;</h4>
 <h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
 <p>&#x6839;&#x636E;&#x4E00;&#x6279;&#x8D77;&#x59CB;&#x9876;&#x70B9;&#x3001;&#x8FB9;&#x89C4;&#x5219;&#xFF08;&#x5305;&#x62EC;&#x65B9;&#x5411;&#x3001;&#x8FB9;&#x7684;&#x7C7B;&#x578B;&#x548C;&#x5C5E;&#x6027;&#x8FC7;&#x6EE4;&#xFF09;&#x548C;&#x6700;&#x5927;&#x6DF1;&#x5EA6;&#x7B49;&#x6761;&#x4EF6;&#x67E5;&#x627E;&#x7B26;&#x5408;&#x6761;&#x4EF6;&#x7684;&#x6240;&#x6709;&#x7684;&#x8DEF;&#x5F84;</p>
 <h5 id="uri">URI</h5>
@@ -5169,7 +5183,7 @@
 <li>&#x793E;&#x4EA4;&#x7F51;&#x7EDC;&#x4E2D;&#xFF0C;&#x67E5;&#x627E;&#x770B;&#x8FC7;&#x5F20;&#x827A;&#x8C0B;&#x6240;&#x5BFC;&#x6F14;&#x7684;&#x7535;&#x5F71;&#x7684;&#x7528;&#x6237;&#x5173;&#x6CE8;&#x7684;&#x5927;V&#x7684;&#x8DEF;&#x5F84;&#xFF08;&#x5F20;&#x827A;&#x8C0B;---&gt;&#x7535;&#x5F71;----&gt;&#x7528;&#x6237;---&gt;&#x5927;V&#xFF09;</li>
 <li>&#x98CE;&#x63A7;&#x7F51;&#x7EDC;&#x4E2D;&#xFF0C;&#x67E5;&#x627E;&#x591A;&#x4E2A;&#x9AD8;&#x98CE;&#x9669;&#x7528;&#x6237;&#x7684;&#x76F4;&#x7CFB;&#x4EB2;&#x5C5E;&#x7684;&#x670B;&#x53CB;&#x7684;&#x8DEF;&#x5F84;&#xFF08;&#x9AD8;&#x98CE;&#x9669;&#x7528;&#x6237;---&gt;&#x76F4;&#x7CFB;&#x4EB2;&#x5C5E;---&gt;&#x670B;&#x53CB;&#xFF09;</li>
 </ul>
-<h4 id="3216-&#x6A21;&#x7248;&#x8DEF;&#x5F84;&#x67E5;&#x8BE2;">3.2.16 &#x6A21;&#x7248;&#x8DEF;&#x5F84;&#x67E5;&#x8BE2;</h4>
+<h4 id="47216&#x6A21;&#x7248;&#x8DEF;&#x5F84;&#x67E5;&#x8BE2;">4.7.2.16.&#x6A21;&#x7248;&#x8DEF;&#x5F84;&#x67E5;&#x8BE2;</h4>
 <h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
 <p>&#x6839;&#x636E;&#x4E00;&#x6279;&#x8D77;&#x59CB;&#x9876;&#x70B9;&#x3001;&#x8FB9;&#x89C4;&#x5219;&#xFF08;&#x5305;&#x62EC;&#x65B9;&#x5411;&#x3001;&#x8FB9;&#x7684;&#x7C7B;&#x578B;&#x548C;&#x5C5E;&#x6027;&#x8FC7;&#x6EE4;&#xFF09;&#x548C;&#x6700;&#x5927;&#x6DF1;&#x5EA6;&#x7B49;&#x6761;&#x4EF6;&#x67E5;&#x627E;&#x7B26;&#x5408;&#x6761;&#x4EF6;&#x7684;&#x6240;&#x6709;&#x7684;&#x8DEF;&#x5F84;</p>
 <h5 id="uri">URI</h5>
@@ -5579,7 +5593,7 @@
 </code></pre>
 <h5 id="&#x9002;&#x7528;&#x573A;&#x666F;">&#x9002;&#x7528;&#x573A;&#x666F;</h5>
 <p>&#x9002;&#x5408;&#x67E5;&#x627E;&#x5404;&#x79CD;&#x590D;&#x6742;&#x7684;&#x6A21;&#x677F;&#x8DEF;&#x5F84;&#xFF0C;&#x6BD4;&#x5982;personA -(&#x670B;&#x53CB;)-&gt; personB -(&#x540C;&#x5B66;)-&gt; personC&#xFF0C;&#x5176;&#x4E2D;&quot;&#x670B;&#x53CB;&quot;&#x548C;&quot;&#x540C;&#x5B66;&quot;&#x8FB9;&#x53EF;&#x4EE5;&#x5206;&#x522B;&#x662F;&#x6700;&#x591A;3&#x5C42;&#x548C;4&#x5C42;&#x7684;&#x60C5;&#x51B5;</p>
-<h4 id="3217-crosspoints">3.2.17 Crosspoints</h4>
+<h4 id="47217crosspoints">4.7.2.17.Crosspoints</h4>
 <h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
 <p>&#x6839;&#x636E;&#x8D77;&#x59CB;&#x9876;&#x70B9;&#x3001;&#x76EE;&#x7684;&#x9876;&#x70B9;&#x3001;&#x65B9;&#x5411;&#x3001;&#x8FB9;&#x7684;&#x7C7B;&#x578B;&#xFF08;&#x53EF;&#x9009;&#xFF09;&#x548C;&#x6700;&#x5927;&#x6DF1;&#x5EA6;&#x7B49;&#x6761;&#x4EF6;&#x67E5;&#x627E;&#x76F8;&#x4EA4;&#x70B9;</p>
 <h5 id="uri">URI</h5>
@@ -5713,7 +5727,7 @@
 <li>&#x793E;&#x4EA4;&#x7F51;&#x7EDC;&#x4E2D;&#xFF0C;&#x67E5;&#x627E;&#x4E24;&#x4E2A;&#x7528;&#x6237;&#x5171;&#x540C;&#x5173;&#x6CE8;&#x7684;&#x8BDD;&#x9898;&#x6216;&#x8005;&#x5927;V</li>
 <li>&#x5BB6;&#x65CF;&#x5173;&#x7CFB;&#x4E2D;&#xFF0C;&#x67E5;&#x627E;&#x5171;&#x540C;&#x7684;&#x7956;&#x5148;</li>
 </ul>
-<h4 id="3218-customized-crosspoints">3.2.18 Customized Crosspoints</h4>
+<h4 id="47218customized-crosspoints">4.7.2.18.Customized Crosspoints</h4>
 <h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
 <p>&#x6839;&#x636E;&#x4E00;&#x6279;&#x8D77;&#x59CB;&#x9876;&#x70B9;&#x3001;&#x591A;&#x79CD;&#x8FB9;&#x89C4;&#x5219;&#xFF08;&#x5305;&#x62EC;&#x65B9;&#x5411;&#x3001;&#x8FB9;&#x7684;&#x7C7B;&#x578B;&#x548C;&#x5C5E;&#x6027;&#x8FC7;&#x6EE4;&#xFF09;&#x548C;&#x6700;&#x5927;&#x6DF1;&#x5EA6;&#x7B49;&#x6761;&#x4EF6;&#x67E5;&#x627E;&#x7B26;&#x5408;&#x6761;&#x4EF6;&#x7684;&#x6240;&#x6709;&#x7684;&#x8DEF;&#x5F84;&#x7EC8;&#x70B9;&#x7684;&#x4EA4;&#x96C6;</p>
 <h5 id="uri">URI</h5>
@@ -5962,7 +5976,7 @@
 <ul>
 <li>&#x5728;&#x5546;&#x54C1;&#x56FE;&#x8C31;&#x4E2D;&#xFF0C;&#x591A;&#x6B3E;&#x624B;&#x673A;&#x3001;&#x5B66;&#x4E60;&#x673A;&#x3001;&#x6E38;&#x620F;&#x673A;&#x901A;&#x8FC7;&#x4E0D;&#x540C;&#x7684;&#x4F4E;&#x7EA7;&#x522B;&#x7684;&#x7C7B;&#x76EE;&#x8DEF;&#x5F84;&#xFF0C;&#x6700;&#x7EC8;&#x90FD;&#x5C5E;&#x4E8E;&#x4E00;&#x7EA7;&#x7C7B;&#x76EE;&#x7684;&#x7535;&#x5B50;&#x8BBE;&#x5907;</li>
 </ul>
-<h4 id="3219-rings">3.2.19 Rings</h4>
+<h4 id="47219rings">4.7.2.19.Rings</h4>
 <h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
 <p>&#x6839;&#x636E;&#x8D77;&#x59CB;&#x9876;&#x70B9;&#x3001;&#x65B9;&#x5411;&#x3001;&#x8FB9;&#x7684;&#x7C7B;&#x578B;&#xFF08;&#x53EF;&#x9009;&#xFF09;&#x548C;&#x6700;&#x5927;&#x6DF1;&#x5EA6;&#x7B49;&#x6761;&#x4EF6;&#x67E5;&#x627E;&#x53EF;&#x8FBE;&#x7684;&#x73AF;&#x8DEF;</p>
 <p>&#x4F8B;&#x5982;&#xFF1A;1 -&gt; 25 -&gt; 775 -&gt; 14690 -&gt; 25, &#x5176;&#x4E2D;&#x73AF;&#x8DEF;&#x4E3A; 25 -&gt; 775 -&gt; 14690 -&gt; 25</p>
@@ -6105,7 +6119,7 @@
 <li>&#x98CE;&#x63A7;&#x9879;&#x76EE;&#x4E2D;&#xFF0C;&#x67E5;&#x8BE2;&#x4E00;&#x4E2A;&#x7528;&#x6237;&#x53EF;&#x8FBE;&#x7684;&#x5FAA;&#x73AF;&#x62C5;&#x4FDD;&#x7684;&#x4EBA;&#x6216;&#x8005;&#x8BBE;&#x5907;</li>
 <li>&#x8BBE;&#x5907;&#x5173;&#x8054;&#x7F51;&#x7EDC;&#x4E2D;&#xFF0C;&#x53D1;&#x73B0;&#x4E00;&#x4E2A;&#x8BBE;&#x5907;&#x5468;&#x56F4;&#x7684;&#x5FAA;&#x73AF;&#x5F15;&#x7528;&#x7684;&#x8BBE;&#x5907;</li>
 </ul>
-<h4 id="3220-rays">3.2.20 Rays</h4>
+<h4 id="47220rays">4.7.2.20.Rays</h4>
 <h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
 <p>&#x6839;&#x636E;&#x8D77;&#x59CB;&#x9876;&#x70B9;&#x3001;&#x65B9;&#x5411;&#x3001;&#x8FB9;&#x7684;&#x7C7B;&#x578B;&#xFF08;&#x53EF;&#x9009;&#xFF09;&#x548C;&#x6700;&#x5927;&#x6DF1;&#x5EA6;&#x7B49;&#x6761;&#x4EF6;&#x67E5;&#x627E;&#x53D1;&#x6563;&#x5230;&#x8FB9;&#x754C;&#x9876;&#x70B9;&#x7684;&#x8DEF;&#x5F84;</p>
 <p>&#x4F8B;&#x5982;&#xFF1A;1 -&gt; 25 -&gt; 775 -&gt; 14690 -&gt; 2289 -&gt; 18379, &#x5176;&#x4E2D; 18379 &#x4E3A;&#x8FB9;&#x754C;&#x9876;&#x70B9;&#xFF0C;&#x5373;&#x6CA1;&#x6709;&#x4ECE; 18379 &#x53D1;&#x51FA;&#x7684;&#x8FB9;</p>
@@ -6245,7 +6259,7 @@
 <li>&#x5BB6;&#x65CF;&#x5173;&#x7CFB;&#x4E2D;&#xFF0C;&#x67E5;&#x627E;&#x4E00;&#x4E2A;&#x4EBA;&#x5230;&#x6240;&#x6709;&#x8FD8;&#x6CA1;&#x6709;&#x5B69;&#x5B50;&#x7684;&#x5B50;&#x5B59;&#x7684;&#x8DEF;&#x5F84;</li>
 <li>&#x8BBE;&#x5907;&#x5173;&#x8054;&#x7F51;&#x7EDC;&#x4E2D;&#xFF0C;&#x627E;&#x5230;&#x67D0;&#x4E2A;&#x8BBE;&#x5907;&#x5230;&#x7EC8;&#x7AEF;&#x8BBE;&#x5907;&#x7684;&#x8DEF;&#x5F84;</li>
 </ul>
-<h4 id="3221-fusiform-similarity">3.2.21 Fusiform Similarity</h4>
+<h4 id="47221fusiform-similarity">4.7.2.21.Fusiform Similarity</h4>
 <h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
 <p>&#x6309;&#x7167;&#x6761;&#x4EF6;&#x67E5;&#x8BE2;&#x4E00;&#x6279;&#x9876;&#x70B9;&#x5BF9;&#x5E94;&#x7684;&quot;&#x68AD;&#x5F62;&#x76F8;&#x4F3C;&#x70B9;&quot;&#x3002;&#x5F53;&#x4E24;&#x4E2A;&#x9876;&#x70B9;&#x8DDF;&#x5F88;&#x591A;&#x5171;&#x540C;&#x7684;&#x9876;&#x70B9;&#x4E4B;&#x95F4;&#x6709;&#x67D0;&#x79CD;&#x5173;&#x7CFB;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x8BA4;&#x4E3A;&#x8FD9;&#x4E24;&#x4E2A;&#x70B9;&#x4E3A;&quot;&#x68AD;&#x5F62;&#x76F8;&#x4F3C;&#x70B9;&quot;&#x3002;&#x4E3E;&#x4E2A;&#x4F8B;&#x5B50;&#x8BF4;&#x660E;&quot;&#x68AD;&#x5F62;&#x76F8;&#x4F3C;&#x70B9;&quot;&#xFF1A;&quot;&#x8BFB;&#x8005;A&quot;&#x8BFB;&#x4E86;100&#x672C;&#x4E66;&#xFF0C;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x8BFB;&#x8FC7;&#x8FD9;100&#x672C;&#x4E66;&#x4E2D;&#x7684;80&#x672C;&#x4EE5;&#x4E0A;&#x7684;&#x8BFB;&#x8005;&#xFF0C;&#x662F;&quot;&#x8BFB;&#x8005;A&quot;&#x7684;&quot;&#x68AD;&#x5F62;&#x76F8;&#x4F3C;&#x70B9;&quot;</p>
 <h5 id="uri">URI</h5>
@@ -6494,7 +6508,7 @@
 <li>&#x8DDF;&#x4E00;&#x4E2A;&#x8BFB;&#x8005;&#x6709;&#x7C7B;&#x4F3C;&#x4E66;&#x5355;&#x7684;&#x8BFB;&#x8005;</li>
 <li>&#x8DDF;&#x4E00;&#x4E2A;&#x73A9;&#x5BB6;&#x73A9;&#x7C7B;&#x4F3C;&#x6E38;&#x620F;&#x7684;&#x73A9;&#x5BB6;</li>
 </ul>
-<h4 id="3222-adamic-adar">3.2.22 Adamic Adar</h4>
+<h4 id="47222adamic-adar">4.7.2.22.Adamic Adar</h4>
 <p>AdamicAdar, &#x4E00;&#x822C;&#x7B80;&#x79F0; AA &#x7B97;&#x6CD5;</p>
 <h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
 <p>&#x4E3B;&#x8981;&#x7528;&#x4E8E;&#x793E;&#x4EA4;&#x7F51;&#x7EDC;&#x4E2D;&#x5224;&#x65AD;<strong>&#x4E24;&#x70B9;</strong>&#x7D27;&#x5BC6;&#x5EA6;&#x7684;&#x7B97;&#x6CD5;, &#x7528;&#x6765;&#x6C42;&#x4E24;&#x70B9;&#x95F4;&#x5171;&#x540C;&#x90BB;&#x5C45;&#x5BC6;&#x96C6;&#x5EA6;&#x7684;&#x4E00;&#x4E2A;<strong>&#x7CFB;&#x6570;&#x8868;&#x793A;</strong> (&gt;0)</p>
@@ -6595,7 +6609,7 @@
 </code></pre>
 <h5 id="&#x9002;&#x7528;&#x573A;&#x666F;">&#x9002;&#x7528;&#x573A;&#x666F;</h5>
 <p>&#x5224;&#x65AD;&#x4E24;&#x4E2A;&#x94F6;&#x884C;&#x8D26;&#x6237;&#x7684;&#x5173;&#x7CFB;&#x7D27;&#x5BC6;&#x7A0B;&#x5EA6;, &#x662F;&#x5171;&#x540C;&#x90BB;&#x5C45;&#x7684;&#x6539;&#x8FDB;&#x7CFB;&#x6570;&#x7248;, &#x5E76;&#x4E14;&#x53EF;&#x4EE5;&#x51CF;&#x5C11;&#x8D85;&#x7EA7;&#x9876;&#x70B9;&#x5728;&#x5176;&#x4E2D;&#x7684;&#x6743;&#x91CD;&#x5F71;&#x54CD;</p>
-<h4 id="3223-resource-allocation">3.2.23 Resource Allocation</h4>
+<h4 id="47223resource-allocation">4.7.2.23.Resource Allocation</h4>
 <p>ResourceAllocation(RA), &#x4E00;&#x822C;&#x79F0;&#x4E3A;&#x8D44;&#x6E90;&#x5206;&#x914D;&#x7B97;&#x6CD5;</p>
 <h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
 <p>&#x4E3B;&#x8981;&#x7528;&#x4E8E;&#x793E;&#x4EA4;&#x7F51;&#x7EDC;&#x4E2D;&#x5224;&#x65AD;<strong>&#x4E24;&#x70B9;</strong>&#x7D27;&#x5BC6;&#x5EA6;&#x7684;&#x7B97;&#x6CD5;, &#x7528;&#x6765;&#x6C42;&#x4E24;&#x70B9;&#x95F4;&#x5171;&#x540C;&#x90BB;&#x5C45;&#x5BC6;&#x96C6;&#x5EA6;&#x7684;&#x4E00;&#x4E2A;<strong>&#x7CFB;&#x6570;&#x8868;&#x793A;</strong> (&gt;0), &#x4E0E; AA &#x7B97;&#x6CD5;&#x6BD4;&#x8F83;&#x7C7B;&#x4F3C;</p>
@@ -6699,7 +6713,7 @@
 </code></pre>
 <h5 id="&#x9002;&#x7528;&#x573A;&#x666F;">&#x9002;&#x7528;&#x573A;&#x666F;</h5>
 <p>&#x5224;&#x65AD;&#x4E24;&#x4E2A;&#x94F6;&#x884C;&#x8D26;&#x6237;&#x7684;&#x5173;&#x7CFB;&#x7D27;&#x5BC6;&#x7A0B;&#x5EA6;, &#x662F;&#x5171;&#x540C;&#x90BB;&#x5C45;&#x7684;&#x6539;&#x8FDB;&#x7CFB;&#x6570;&#x7248;, &#x548C; AA &#x7B97;&#x6CD5;&#x4E0D;&#x540C;&#x7684;&#x662F;, &#x5B83;&#x4E0D;&#x5FFD;&#x7565;&#x8D85;&#x7EA7;&#x9876;&#x70B9;&#x5728;&#x5176;&#x4E2D;&#x7684;&#x6743;&#x91CD;&#x5F71;&#x54CD;</p>
-<h4 id="3224-same-neighbors-batch">3.2.24 Same Neighbors Batch</h4>
+<h4 id="47224same-neighbors-batch">4.7.2.24.Same Neighbors Batch</h4>
 <h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
 <p>&#x6279;&#x91CF;&#x67E5;&#x8BE2;&#x4E24;&#x4E2A;&#x70B9;&#x7684;&#x5171;&#x540C;&#x90BB;&#x5C45;</p>
 <h5 id="uri">URI</h5>
@@ -6859,7 +6873,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Traverser","level":"4.2.9","depth":2,"next":{"title":"Rank","level":"4.2.10","depth":2,"path":"clients/restful-api-v3/rank.md","ref":"clients/restful-api-v3/rank.md","articles":[]},"previous":{"title":"Edge","level":"4.2.8","depth":2,"path":"clients/restful-api-v3/edge.md","ref":"clients/restful-api-v3/edge.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"clients/restful-api-v3/traverser.md","mtime":"2022-01-27T02:07:32.674Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-27T04:14:37.295Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Traverser","level":"4.2.9","depth":2,"next":{"title":"Rank","level":"4.2.10","depth":2,"path":"clients/restful-api-v3/rank.md","ref":"clients/restful-api-v3/rank.md","articles":[]},"previous":{"title":"Edge","level":"4.2.8","depth":2,"path":"clients/restful-api-v3/edge.md","ref":"clients/restful-api-v3/edge.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"clients/restful-api-v3/traverser.md","mtime":"2022-02-08T04:33:40.108Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-08T04:33:53.254Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

@@ -105,13 +105,13 @@ sudo mount /dev/mapper/$MAPPER_FILE $MOUNT_PATH
 export ENCRYPTED_HSTORE_PATH='<path-to-encrypted-directory>'
 
 # The mount directory
-export MOUNT_DIRECTORY='<path-to-mount-directory>'
+export MOUNT_PATH='<path-to-mount-directory>'
 ```
 
-- 挂载，并将Hstore的存储目录指向$MOUNT_DIRECTORY
+- 挂载，并将Hstore的存储目录指向$MOUNT_PATH
 
 注意：挂在口上过程中需要输入密码
 
 ```bash
-sudo mount -t ecryptfs $ENCRYPTED_HSTORE_PATH $MOUNT_DIRECTORY
+sudo mount -t ecryptfs $ENCRYPTED_HSTORE_PATH $MOUNT_PATH
 ```

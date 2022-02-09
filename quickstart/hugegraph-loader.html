@@ -2024,9 +2024,6 @@ Office,388
 <h4 id="34-&#x6267;&#x884C;&#x547D;&#x4EE4;&#x5BFC;&#x5165;">3.4 &#x6267;&#x884C;&#x547D;&#x4EE4;&#x5BFC;&#x5165;</h4>
 <p>&#x51C6;&#x5907;&#x597D;&#x56FE;&#x6A21;&#x578B;&#x3001;&#x6570;&#x636E;&#x6587;&#x4EF6;&#x4EE5;&#x53CA;&#x8F93;&#x5165;&#x6E90;&#x6620;&#x5C04;&#x5173;&#x7CFB;&#x6587;&#x4EF6;&#x540E;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x5C31;&#x53EF;&#x4EE5;&#x5C06;&#x6570;&#x636E;&#x6587;&#x4EF6;&#x5BFC;&#x5165;&#x5230;&#x56FE;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x3002;</p>
 <p>&#x5BFC;&#x5165;&#x8FC7;&#x7A0B;&#x7531;&#x7528;&#x6237;&#x63D0;&#x4EA4;&#x7684;&#x547D;&#x4EE4;&#x63A7;&#x5236;&#xFF0C;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4E0D;&#x540C;&#x7684;&#x53C2;&#x6570;&#x63A7;&#x5236;&#x6267;&#x884C;&#x7684;&#x5177;&#x4F53;&#x6D41;&#x7A0B;&#x3002;</p>
-<p>&#x6570;&#x636E;&#x5BFC;&#x5165;HugeGraphServer&#x7684;&#x9009;&#x62E9;&#x6709;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#xFF0C;&#x65E2;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x6307;&#x5B9A;HugeGraphServer&#x7684;&#x5730;&#x5740;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x914D;&#x7F6E;meta server&#x5730;&#x5740;&#x81EA;&#x52A8;&#x83B7;&#x53D6;HugeGraphServer&#x7684;&#x5730;&#x5740;&#x3002;</p>
-<p>&#x9ED8;&#x8BA4;&#x65B9;&#x5F0F;&#x4E3A;&#x76F4;&#x8FDE;HugeGraphServer&#x7684;&#x5730;&#x5740;, &#x901A;&#x8FC7;&#x53C2;&#x6570;--host&#x3001;--port&#x6307;&#x5B9A;&#xFF0C;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x7684;&#x5BFC;&#x5165;&#x3002;</p>
-<p>&#x5F53;&#x91C7;&#x7528;meta server&#x65B9;&#x5F0F;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x901A;&#x8FC7;--meta-urls&#x6307;&#x5B9A;meta server&#x5730;&#x5740;&#xFF0C;&#x8FD9;&#x6837;loader&#x4F1A;&#x81EA;&#x52A8;&#x83B7;&#x53D6;&#x76F8;&#x5173;HugeGraphServer&#x4FE1;&#x606F;&#xFF0C;&#x5E76;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x7684;&#x5BFC;&#x5165;&#x3002;</p>
 <h5 id="341-&#x53C2;&#x6570;&#x8BF4;&#x660E;">3.4.1 &#x53C2;&#x6570;&#x8BF4;&#x660E;</h5>
 <table>
 <thead>
@@ -2043,18 +2040,6 @@ Office,388
 <td></td>
 <td>Y</td>
 <td>&#x914D;&#x7F6E;&#x811A;&#x672C;&#x7684;&#x8DEF;&#x5F84;</td>
-</tr>
-<tr>
-<td>--graphspace</td>
-<td>DEFAULT</td>
-<td></td>
-<td>&#x56FE;&#x6570;&#x636E;&#x5E93;&#x6240;&#x5C5E;namespace</td>
-</tr>
-<tr>
-<td>-g &#x6216; --graph</td>
-<td></td>
-<td>Y</td>
-<td>&#x56FE;&#x6570;&#x636E;&#x5E93;&#x7A7A;&#x95F4;</td>
 </tr>
 <tr>
 <td>-g &#x6216; --graph</td>
@@ -2079,42 +2064,6 @@ Office,388
 <td>8080</td>
 <td></td>
 <td>HugeGraphServer &#x7684;&#x7AEF;&#x53E3;&#x53F7;</td>
-</tr>
-<tr>
-<td>-t &#x6216; --meta-type</td>
-<td>etcd</td>
-<td></td>
-<td>meta server&#x7C7B;&#x578B;&#xFF0C;etcd/pd&#x3002; </td>
-</tr>
-<tr>
-<td>-m &#x6216; --meta-urls</td>
-<td></td>
-<td></td>
-<td>meta server&#x5730;&#x5740;</td>
-</tr>
-<tr>
-<td>--cluster</td>
-<td>hg</td>
-<td></td>
-<td>&#x56FE;&#x6570;&#x636E;&#x5E93;&#x6240;&#x5C5E;&#x96C6;&#x7FA4;&#xFF0C;&#x5F53;&#x542F;&#x7528;meta server&#xFF0C;&#x4E14;--meta-type&#x4E3A;etcd&#x65F6;&#x6709;&#x6548;</td>
-</tr>
-<tr>
-<td>--meta-ca</td>
-<td></td>
-<td></td>
-<td>&#x53CC;&#x5411;&#x8BA4;&#x8BC1;ca&#x6839;&#x8BC1;&#x4E66;&#xFF0C;&#x5F53;meta server&#x5F00;&#x542F; SSL&#x53CC;&#x5411;&#x8BA4;&#x8BC1;&#x65F6;&#x4F7F;&#x7528;</td>
-</tr>
-<tr>
-<td>--meta-client-ca</td>
-<td></td>
-<td></td>
-<td>loader&#x53CC;&#x5411;&#x8BA4;&#x8BC1;&#x5C31;&#x7684;&#x8BC1;&#x4E66;&#xFF0C;&#x5F53;meta server&#x5F00;&#x542F; SSL&#x53CC;&#x5411;&#x8BA4;&#x8BC1;&#x65F6;&#x4F7F;&#x7528;</td>
-</tr>
-<tr>
-<td>--meta-client-key</td>
-<td></td>
-<td></td>
-<td>loader&#x53CC;&#x5411;&#x8BA4;&#x8BC1;&#x7684;&#x79C1;&#x94A5;&#xFF0C;&#x5F53;meta server&#x5F00;&#x542F; SSL&#x53CC;&#x5411;&#x8BA4;&#x8BC1;&#x65F6;&#x4F7F;&#x7528;</td>
 </tr>
 <tr>
 <td>--username</td>
@@ -2510,7 +2459,7 @@ count metrics
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Load data with HugeGraph-Loader","level":"2.2","depth":1,"next":{"title":"Manage with HugeGraph-Tools","level":"2.3","depth":1,"path":"quickstart/hugegraph-tools.md","ref":"quickstart/hugegraph-tools.md","articles":[]},"previous":{"title":"Install HugeGraph-Server","level":"2.1","depth":1,"path":"quickstart/hugegraph-server.md","ref":"quickstart/hugegraph-server.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"quickstart/hugegraph-loader.md","mtime":"2022-01-27T04:14:48.776Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-08T04:33:53.254Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Load data with HugeGraph-Loader","level":"2.2","depth":1,"next":{"title":"Manage with HugeGraph-Tools","level":"2.3","depth":1,"path":"quickstart/hugegraph-tools.md","ref":"quickstart/hugegraph-tools.md","articles":[]},"previous":{"title":"Install HugeGraph-Server","level":"2.1","depth":1,"path":"quickstart/hugegraph-server.md","ref":"quickstart/hugegraph-server.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"quickstart/hugegraph-loader.md","mtime":"2022-02-09T12:20:37.054Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-09T12:20:44.473Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

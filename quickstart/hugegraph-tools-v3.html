@@ -204,7 +204,20 @@
             
         </li>
     
-        <li class="chapter " data-level="2.3" data-path="hugegraph-tools.html">
+        <li class="chapter " data-level="2.3" data-path="hugegraph-loader-v3.html">
+            
+                <a href="hugegraph-loader-v3.html">
+            
+                    
+                    Load data with HugeGraph-Loader-V3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="hugegraph-tools.html">
             
                 <a href="hugegraph-tools.html">
             
@@ -217,7 +230,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.4" data-path="hugegraph-tools-v3.html">
+        <li class="chapter active" data-level="2.5" data-path="hugegraph-tools-v3.html">
             
                 <a href="hugegraph-tools-v3.html">
             
@@ -230,7 +243,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.5" data-path="hugegraph-hubble.html">
+        <li class="chapter " data-level="2.6" data-path="hugegraph-hubble.html">
             
                 <a href="hugegraph-hubble.html">
             
@@ -243,7 +256,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.6" data-path="hugegraph-studio.html">
+        <li class="chapter " data-level="2.7" data-path="hugegraph-studio.html">
             
                 <a href="hugegraph-studio.html">
             
@@ -256,7 +269,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.7" data-path="hugegraph-client.html">
+        <li class="chapter " data-level="2.8" data-path="hugegraph-client.html">
             
                 <a href="hugegraph-client.html">
             
@@ -269,7 +282,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.8" data-path="hugegraph-spark.html">
+        <li class="chapter " data-level="2.9" data-path="hugegraph-spark.html">
             
                 <a href="hugegraph-spark.html">
             
@@ -1302,31 +1315,9 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="hugegraph-tools-quick-start-v3">HugeGraph-Tools Quick Start V3</h2>
-<h3 id="1-&#x6982;&#x8FF0;">1 &#x6982;&#x8FF0;</h3>
-<p>HugeGraph-Tools &#x662F; HugeGragh &#x7684;&#x81EA;&#x52A8;&#x5316;&#x90E8;&#x7F72;&#x3001;&#x7BA1;&#x7406;&#x548C;&#x5907;&#x4EFD;/&#x8FD8;&#x539F;&#x7EC4;&#x4EF6;&#x3002;</p>
-<h3 id="2-&#x83B7;&#x53D6;-hugegraph-tools">2 &#x83B7;&#x53D6; HugeGraph-Tools</h3>
-<p>&#x6709;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#x53EF;&#x4EE5;&#x83B7;&#x53D6; HugeGraph-Tools&#xFF1A;</p>
-<ul>
-<li>&#x4E0B;&#x8F7D;&#x4E8C;&#x8FDB;&#x5236;tar&#x5305;</li>
-<li>&#x4E0B;&#x8F7D;&#x6E90;&#x7801;&#x7F16;&#x8BD1;&#x5B89;&#x88C5;</li>
-</ul>
-<h4 id="21-&#x4E0B;&#x8F7D;&#x4E8C;&#x8FDB;&#x5236;tar&#x5305;">2.1 &#x4E0B;&#x8F7D;&#x4E8C;&#x8FDB;&#x5236;tar&#x5305;</h4>
-<p>&#x4E0B;&#x8F7D;&#x6700;&#x65B0;&#x7248;&#x672C;&#x7684; HugeGraph-Tools &#x5305;&#xFF1A;</p>
-<pre><code class="lang-bash">wget https://github.com/starhugegraph/hugegraph-tools/releases/download/v<span class="hljs-variable">${version}</span>/hugegraph-tools-<span class="hljs-variable">${version}</span>.tar.gz
-tar zxvf hugegraph-tools-<span class="hljs-variable">${version}</span>.tar.gz
-</code></pre>
-<h4 id="22-&#x4E0B;&#x8F7D;&#x6E90;&#x7801;&#x7F16;&#x8BD1;&#x5B89;&#x88C5;">2.2 &#x4E0B;&#x8F7D;&#x6E90;&#x7801;&#x7F16;&#x8BD1;&#x5B89;&#x88C5;</h4>
-<p>&#x4E0B;&#x8F7D;&#x6700;&#x65B0;&#x7248;&#x672C;&#x7684; HugeGraph-Tools &#x6E90;&#x7801;&#x5305;&#xFF1A;</p>
-<pre><code class="lang-bash">$ git <span class="hljs-built_in">clone</span> https://github.com/hugegraph/hugegraph-tools.git
-</code></pre>
-<p>&#x7F16;&#x8BD1;&#x751F;&#x6210; tar &#x5305;:</p>
-<pre><code class="lang-bash"><span class="hljs-built_in">cd</span> hugegraph-tools
-mvn package -DskipTests
-</code></pre>
-<p>&#x751F;&#x6210; tar &#x5305; hugegraph-tools-${version}.tar.gz</p>
-<h3 id="3-&#x4F7F;&#x7528;">3 &#x4F7F;&#x7528;</h3>
-<h4 id="31-&#x529F;&#x80FD;&#x6982;&#x89C8;">3.1 &#x529F;&#x80FD;&#x6982;&#x89C8;</h4>
+                                <h1 id="3tools&#x4F7F;&#x7528;&#x8BF4;&#x660E;">3.Tools&#x4F7F;&#x7528;&#x8BF4;&#x660E;</h1>
+<h2 id="31&#x6982;&#x8FF0;">3.1.&#x6982;&#x8FF0;</h2>
+<p>HugeGraph-Tools &#x662F; HugeGragh &#x7BA1;&#x7406;&#x548C;&#x5907;&#x4EFD;/&#x8FD8;&#x539F;&#x7EC4;&#x4EF6;&#x3002;</p>
 <p>&#x89E3;&#x538B;&#x540E;&#xFF0C;&#x8FDB;&#x5165; hugegraph-tools &#x76EE;&#x5F55;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>bin/hugegraph</code>&#x6216;&#x8005;<code>bin/hugegraph help</code>&#x6765;&#x67E5;&#x770B; usage &#x4FE1;&#x606F;&#x3002;&#x4E3B;&#x8981;&#x5206;&#x4E3A;&#xFF1A;</p>
 <ul>
 <li>&#x56FE;&#x7BA1;&#x7406;&#x7C7B;&#xFF0C;graph-mode-set&#x3001;graph-mode-get&#x3001;graph-create&#x3001;graph-list&#x3001;graph-get&#x3001;graph-clear &#x548C; graph-drop</li>
@@ -1336,7 +1327,7 @@ mvn package -DskipTests
 </ul>
 <pre><code class="lang-bash">Usage: hugegraph [options] [<span class="hljs-built_in">command</span>] [<span class="hljs-built_in">command</span> options]
 </code></pre>
-<h5 id="32-options-&#x5168;&#x5C40;&#x53D8;&#x91CF;">3.2 [options]-&#x5168;&#x5C40;&#x53D8;&#x91CF;</h5>
+<h2 id="32options-&#x5168;&#x5C40;&#x53D8;&#x91CF;">3.2.[options]-&#x5168;&#x5C40;&#x53D8;&#x91CF;</h2>
 <p><code>options</code>&#x662F; HugeGraph-Tools &#x7684;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#xFF0C;&#x53EF;&#x4EE5;&#x5728; hugegraph-tools/bin/hugegraph &#x4E2D;&#x914D;&#x7F6E;,&#x5305;&#x62EC;&#xFF1A;</p>
 <ul>
 <li>--space&#xFF0C;HugeGraph-Tools &#x64CD;&#x4F5C;&#x7684;&#x56FE;&#x7A7A;&#x95F4;&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x662F; DEFAULT</li>
@@ -1354,7 +1345,7 @@ mvn package -DskipTests
 <tr>
 <th>&#x5168;&#x5C40;&#x53D8;&#x91CF;</th>
 <th>&#x73AF;&#x5883;&#x53D8;&#x91CF;</th>
-<th>&#x793A;&#x4F8B;                                           </th>
+<th>&#x793A;&#x4F8B;</th>
 </tr>
 </thead>
 <tbody>
@@ -1371,7 +1362,7 @@ mvn package -DskipTests
 <tr>
 <td>--graph</td>
 <td>HUGEGRAPH_GRAPH</td>
-<td>export HUGEGRAPH_GRAPH=hugegraph </td>
+<td>export HUGEGRAPH_GRAPH=hugegraph</td>
 </tr>
 <tr>
 <td>--user</td>
@@ -1412,7 +1403,8 @@ mvn package -DskipTests
 #export HUGEGRAPH_TIMEOUT=
 #export HUGEGRAPH_TRUST_STORE_FILE=
 #export HUGEGRAPH_TRUST_STORE_PASSWORD=
-</code></pre><h5 id="33-&#x56FE;&#x7BA1;&#x7406;&#x7C7B;&#xFF0C;graph-mode-set&#x3001;graph-mode-get&#x3001;graph-list&#x3001;graph-get&#x548C;graph-clear">3.3 &#x56FE;&#x7BA1;&#x7406;&#x7C7B;&#xFF0C;graph-mode-set&#x3001;graph-mode-get&#x3001;graph-list&#x3001;graph-get&#x548C;graph-clear</h5>
+</code></pre><h2 id="33&#x56FE;&#x7BA1;&#x7406;&#x7C7B;">3.3.&#x56FE;&#x7BA1;&#x7406;&#x7C7B;</h2>
+<p>&#x56FE;&#x7BA1;&#x7406;&#x7C7B;&#x5305;&#x62EC;graph-mode-set&#x3001;graph-mode-get&#x3001;graph-list&#x3001;graph-get&#x548C;graph-clear&#x3002;&#x5177;&#x4F53;&#x63CF;&#x8FF0;&#x5982;&#x4E0B;&#xFF1A;</p>
 <ul>
 <li>graph-mode-set&#xFF0C;&#x8BBE;&#x7F6E;&#x56FE;&#x7684; restore mode<ul>
 <li>--graph-mode &#x6216;&#x8005; -m&#xFF0C;&#x5FC5;&#x586B;&#x9879;&#xFF0C;&#x6307;&#x5B9A;&#x5C06;&#x8981;&#x8BBE;&#x7F6E;&#x7684;&#x6A21;&#x5F0F;&#xFF0C;&#x5408;&#x6CD5;&#x503C;&#x5305;&#x62EC; [NONE, RESTORING, MERGING, LOADING]</li>
@@ -1432,7 +1424,8 @@ mvn package -DskipTests
 <blockquote>
 <p>&#x5F53;&#x9700;&#x8981;&#x628A;&#x5907;&#x4EFD;&#x7684;&#x56FE;&#x539F;&#x6837;&#x6062;&#x590D;&#x5230;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x56FE;&#x4E2D;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x9700;&#x8981;&#x5148;&#x5C06;&#x56FE;&#x6A21;&#x5F0F;&#x8BBE;&#x7F6E;&#x4E3A; RESTORING &#x6A21;&#x5F0F;&#xFF1B;&#x5F53;&#x9700;&#x8981;&#x5C06;&#x5907;&#x4EFD;&#x7684;&#x56FE;&#x5408;&#x5E76;&#x5230;&#x5DF2;&#x5B58;&#x5728;&#x7684;&#x56FE;&#x4E2D;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x5148;&#x5C06;&#x56FE;&#x6A21;&#x5F0F;&#x8BBE;&#x7F6E;&#x4E3A; MERGING &#x6A21;&#x5F0F;&#x3002;</p>
 </blockquote>
-<h5 id="34-&#x5F02;&#x6B65;&#x4EFB;&#x52A1;&#x7BA1;&#x7406;&#x7C7B;&#xFF0C;task-list&#x3001;task-get&#x548C;task-delete">3.4 &#x5F02;&#x6B65;&#x4EFB;&#x52A1;&#x7BA1;&#x7406;&#x7C7B;&#xFF0C;task-list&#x3001;task-get&#x548C;task-delete</h5>
+<h2 id="34&#x5F02;&#x6B65;&#x4EFB;&#x52A1;&#x7BA1;&#x7406;&#x7C7B;">3.4.&#x5F02;&#x6B65;&#x4EFB;&#x52A1;&#x7BA1;&#x7406;&#x7C7B;</h2>
+<p>&#x5F02;&#x6B65;&#x4EFB;&#x52A1;&#x7BA1;&#x7406;&#x7C7B;task-list&#x3001;task-get&#x548C;task-delete&#x3002;&#x5177;&#x4F53;&#x63CF;&#x8FF0;&#x5982;&#x4E0B;&#xFF1A;</p>
 <ul>
 <li>task-list&#xFF0C;&#x5217;&#x51FA;&#x67D0;&#x4E2A;&#x56FE;&#x4E2D;&#x7684;&#x5F02;&#x6B65;&#x4EFB;&#x52A1;&#xFF0C;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x4EFB;&#x52A1;&#x7684;&#x72B6;&#x6001;&#x8FC7;&#x6EE4;<ul>
 <li>--status&#xFF0C;&#x9009;&#x586B;&#x9879;&#xFF0C;&#x6307;&#x5B9A;&#x8981;&#x67E5;&#x770B;&#x7684;&#x4EFB;&#x52A1;&#x7684;&#x72B6;&#x6001;&#xFF0C;&#x5373;&#x6309;&#x72B6;&#x6001;&#x8FC7;&#x6EE4;&#x4EFB;&#x52A1;</li>
@@ -1457,7 +1450,8 @@ mvn package -DskipTests
 </ul>
 </li>
 </ul>
-<h5 id="35-gremlin&#x7C7B;&#xFF0C;gremlin-execute&#x548C;gremlin-schedule">3.5 Gremlin&#x7C7B;&#xFF0C;gremlin-execute&#x548C;gremlin-schedule</h5>
+<h2 id="35gremlin&#x7C7B;">3.5.Gremlin&#x7C7B;</h2>
+<p>Gremlin&#x7C7B;&#x5305;&#x62EC;gremlin-execute&#x548C;gremlin-schedule&#x3002;&#x5177;&#x4F53;&#x63CF;&#x8FF0;&#x5982;&#x4E0B;&#xFF1A;</p>
 <ul>
 <li>gremlin-execute&#xFF0C;&#x53D1;&#x9001; Gremlin &#x8BED;&#x53E5;&#x5230; HugeGraph-Server &#x6765;&#x6267;&#x884C;&#x67E5;&#x8BE2;&#x6216;&#x4FEE;&#x6539;&#x64CD;&#x4F5C;&#xFF0C;&#x540C;&#x6B65;&#x6267;&#x884C;&#xFF0C;&#x7ED3;&#x675F;&#x540E;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;<ul>
 <li>--file &#x6216;&#x8005; -f&#xFF0C;&#x6307;&#x5B9A;&#x8981;&#x6267;&#x884C;&#x7684;&#x811A;&#x672C;&#x6587;&#x4EF6;&#xFF0C;UTF-8&#x7F16;&#x7801;&#xFF0C;&#x4E0E; --script &#x4E92;&#x65A5;</li>
@@ -1481,7 +1475,7 @@ mvn package -DskipTests
 </ul>
 </li>
 </ul>
-<h5 id="36-&#x5907;&#x4EFD;&#x6062;&#x590D;&#x7C7B;">3.6 &#x5907;&#x4EFD;/&#x6062;&#x590D;&#x7C7B;</h5>
+<h2 id="36&#x5907;&#x4EFD;&#x6062;&#x590D;&#x7C7B;">3.6.&#x5907;&#x4EFD;/&#x6062;&#x590D;&#x7C7B;</h2>
 <ul>
 <li>backup&#xFF0C;&#x5C06;&#x67D0;&#x5F20;&#x56FE;&#x4E2D;&#x7684; schema &#x6216;&#x8005; data &#x5907;&#x4EFD;&#x5230; HugeGraph &#x7CFB;&#x7EDF;&#x4E4B;&#x5916;&#xFF0C;&#x4EE5; JSON &#x5F62;&#x5F0F;&#x5B58;&#x5728;&#x672C;&#x5730;&#x78C1;&#x76D8;&#x6216;&#x8005; HDFS<ul>
 <li>--format&#xFF0C;&#x5907;&#x4EFD;&#x7684;&#x683C;&#x5F0F;&#xFF0C;&#x53EF;&#x9009;&#x503C;&#x5305;&#x62EC; [json, text]&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A; json</li>
@@ -1494,7 +1488,7 @@ mvn package -DskipTests
 <li>--log &#x6216;&#x8005; -l&#xFF0C;&#x6307;&#x5B9A;&#x65E5;&#x5FD7;&#x76EE;&#x5F55;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;&#x5F53;&#x524D;&#x76EE;&#x5F55;</li>
 <li>--retry&#xFF0C;&#x6307;&#x5B9A;&#x5931;&#x8D25;&#x91CD;&#x8BD5;&#x6B21;&#x6570;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A; 3</li>
 <li>--split-size &#x6216;&#x8005; -s&#xFF0C;&#x6307;&#x5B9A;&#x5728;&#x5907;&#x4EFD;&#x65F6;&#x5BF9;&#x9876;&#x70B9;&#x6216;&#x8005;&#x8FB9;&#x5206;&#x5757;&#x7684;&#x5927;&#x5C0F;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A; 1048576</li>
-<li>-D&#xFF0C;&#x7528; -Dkey=value &#x7684;&#x6A21;&#x5F0F;&#x6307;&#x5B9A;&#x52A8;&#x6001;&#x53C2;&#x6570;&#xFF0C;&#x7528;&#x6765;&#x5907;&#x4EFD;&#x6570;&#x636E;&#x5230; HDFS &#x65F6;&#xFF0C;&#x6307;&#x5B9A; HDFS &#x7684;&#x914D;&#x7F6E;&#x9879;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;-Dfs.default.name=hdfs://localhost:9000 </li>
+<li>-D&#xFF0C;&#x7528; -Dkey=value &#x7684;&#x6A21;&#x5F0F;&#x6307;&#x5B9A;&#x52A8;&#x6001;&#x53C2;&#x6570;&#xFF0C;&#x7528;&#x6765;&#x5907;&#x4EFD;&#x6570;&#x636E;&#x5230; HDFS &#x65F6;&#xFF0C;&#x6307;&#x5B9A; HDFS &#x7684;&#x914D;&#x7F6E;&#x9879;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;-Dfs.default.name=hdfs://localhost:9000</li>
 </ul>
 </li>
 <li>restore&#xFF0C;&#x5C06; JSON &#x683C;&#x5F0F;&#x5B58;&#x50A8;&#x7684; schema &#x6216;&#x8005; data &#x6062;&#x590D;&#x5230;&#x4E00;&#x4E2A;&#x65B0;&#x56FE;&#x4E2D;&#xFF08;RESTORING &#x6A21;&#x5F0F;&#xFF09;&#x6216;&#x8005;&#x5408;&#x5E76;&#x5230;&#x5DF2;&#x5B58;&#x5728;&#x7684;&#x56FE;&#x4E2D;&#xFF08;MERGING &#x6A21;&#x5F0F;&#xFF09;<ul>
@@ -1549,7 +1543,7 @@ mvn package -DskipTests
 <blockquote>
 <p>deploy&#x547D;&#x4EE4;&#x4E2D;&#x6709;&#x53EF;&#x9009;&#x53C2;&#x6570; -u&#xFF0C;&#x63D0;&#x4F9B;&#x65F6;&#x4F1A;&#x4F7F;&#x7528;&#x6307;&#x5B9A;&#x7684;&#x4E0B;&#x8F7D;&#x5730;&#x5740;&#x66FF;&#x4EE3;&#x9ED8;&#x8BA4;&#x4E0B;&#x8F7D;&#x5730;&#x5740;&#x4E0B;&#x8F7D; tar &#x5305;&#xFF0C;&#x5E76;&#x4E14;&#x5C06;&#x5730;&#x5740;&#x5199;&#x5165;<code>~/hugegraph-download-url-prefix</code>&#x6587;&#x4EF6;&#x4E2D;&#xFF1B;&#x4E4B;&#x540E;&#x5982;&#x679C;&#x4E0D;&#x6307;&#x5B9A;&#x5730;&#x5740;&#x65F6;&#xFF0C;&#x4F1A;&#x4F18;&#x5148;&#x4ECE;<code>~/hugegraph-download-url-prefix</code>&#x6307;&#x5B9A;&#x7684;&#x5730;&#x5740;&#x4E0B;&#x8F7D; tar &#x5305;&#xFF1B;&#x5982;&#x679C; -u &#x548C;<code>~/hugegraph-download-url-prefix</code>&#x90FD;&#x6CA1;&#x6709;&#x65F6;&#xFF0C;&#x4F1A;&#x4ECE;&#x9ED8;&#x8BA4;&#x4E0B;&#x8F7D;&#x5730;&#x5740;&#x8FDB;&#x884C;&#x4E0B;&#x8F7D;</p>
 </blockquote>
-<h5 id="37-&#x5177;&#x4F53;&#x547D;&#x4EE4;&#x53C2;&#x6570;">3.7 &#x5177;&#x4F53;&#x547D;&#x4EE4;&#x53C2;&#x6570;</h5>
+<h2 id="37&#x5177;&#x4F53;&#x547D;&#x4EE4;&#x53C2;&#x6570;">3.7.&#x5177;&#x4F53;&#x547D;&#x4EE4;&#x53C2;&#x6570;</h2>
 <p>&#x5404;&#x5B50;&#x547D;&#x4EE4;&#x7684;&#x5177;&#x4F53;&#x53C2;&#x6570;&#x5982;&#x4E0B;&#xFF1A;</p>
 <pre><code class="lang-bash">Usage: hugegraph [options] [<span class="hljs-built_in">command</span>] [<span class="hljs-built_in">command</span> options]
   Options:
@@ -1931,22 +1925,22 @@ mvn package -DskipTests
     <span class="hljs-built_in">help</span>      Print usage
       Usage: <span class="hljs-built_in">help</span>
 </code></pre>
-<h5 id="38-&#x5177;&#x4F53;&#x547D;&#x4EE4;&#x793A;&#x4F8B;">3.8 &#x5177;&#x4F53;&#x547D;&#x4EE4;&#x793A;&#x4F8B;</h5>
-<h6 id="1-gremlin&#x8BED;&#x53E5;">1. gremlin&#x8BED;&#x53E5;</h6>
+<h2 id="38&#x5177;&#x4F53;&#x547D;&#x4EE4;&#x793A;&#x4F8B;">3.8.&#x5177;&#x4F53;&#x547D;&#x4EE4;&#x793A;&#x4F8B;</h2>
+<h3 id="381gremlin&#x8BED;&#x53E5;">3.8.1.gremlin&#x8BED;&#x53E5;</h3>
 <pre><code class="lang-bash"><span class="hljs-comment"># &#x540C;&#x6B65;&#x6267;&#x884C;gremlin</span>
 ./bin/hugegraph --url http://127.0.0.1:8080 --space gs1 --graph hugegraph gremlin-execute --script <span class="hljs-string">&apos;g.V().count()&apos;</span>
 
 <span class="hljs-comment"># &#x5F02;&#x6B65;&#x6267;&#x884C;gremlin</span>
 ./bin/hugegraph --url http://127.0.0.1:8080 --space gs1 --graph hugegraph gremlin-schedule --script <span class="hljs-string">&apos;g.V().count()&apos;</span>
 </code></pre>
-<h6 id="2-&#x67E5;&#x770B;task&#x60C5;&#x51B5;">2. &#x67E5;&#x770B;task&#x60C5;&#x51B5;</h6>
+<h3 id="382&#x67E5;&#x770B;task&#x60C5;&#x51B5;">3.8.2.&#x67E5;&#x770B;task&#x60C5;&#x51B5;</h3>
 <pre><code class="lang-bash">./bin/hugegraph --url http://127.0.0.1:8080 --space gs1 --graph hugegraph task-list
 
 ./bin/hugegraph --url http://127.0.0.1:8080 --space gs1 --graph hugegraph task-list --limit 5
 
 ./bin/hugegraph --url http://127.0.0.1:8080 --space gs1 --graph hugegraph task-list --status success
 </code></pre>
-<h6 id="3-&#x56FE;&#x6A21;&#x5F0F;&#x67E5;&#x770B;&#x548C;&#x8BBE;&#x7F6E;">3. &#x56FE;&#x6A21;&#x5F0F;&#x67E5;&#x770B;&#x548C;&#x8BBE;&#x7F6E;</h6>
+<h3 id="383&#x56FE;&#x6A21;&#x5F0F;&#x67E5;&#x770B;&#x548C;&#x8BBE;&#x7F6E;">3.8.3.&#x56FE;&#x6A21;&#x5F0F;&#x67E5;&#x770B;&#x548C;&#x8BBE;&#x7F6E;</h3>
 <pre><code class="lang-bash">./bin/hugegraph --url http://127.0.0.1:8080 --space gs1 --graph hugegraph graph-mode-set -m RESTORING MERGING NONE
 
 ./bin/hugegraph --url http://127.0.0.1:8080 --space gs1 --graph hugegraph graph-mode-set -m RESTORING
@@ -1955,22 +1949,22 @@ mvn package -DskipTests
 
 ./bin/hugegraph --url http://127.0.0.1:8080 --space gs1 --graph hugegraph graph-list
 </code></pre>
-<h6 id="4-&#x521B;&#x5EFA;&#x56FE;">4. &#x521B;&#x5EFA;&#x56FE;</h6>
+<h3 id="384&#x521B;&#x5EFA;&#x56FE;">3.8.4.&#x521B;&#x5EFA;&#x56FE;</h3>
 <pre><code class="lang-bash">./bin/hugegraph --url http://127.0.0.1:8080 --space gs1 graph-create -n hugegraph2 <span class="hljs-_">-f</span> ./hugegraph2.properties
 </code></pre>
-<h6 id="5-&#x6E05;&#x7A7A;&#x56FE;">5. &#x6E05;&#x7A7A;&#x56FE;</h6>
+<h3 id="385&#x6E05;&#x7A7A;&#x56FE;">3.8.5.&#x6E05;&#x7A7A;&#x56FE;</h3>
 <pre><code class="lang-bash">./bin/hugegraph --url http://127.0.0.1:8080 --space gs1 --graph hugegraph graph-clear
 </code></pre>
-<h6 id="6-&#x5220;&#x9664;&#x56FE;">6. &#x5220;&#x9664;&#x56FE;</h6>
+<h3 id="386&#x5220;&#x9664;&#x56FE;">3.8.6.&#x5220;&#x9664;&#x56FE;</h3>
 <pre><code class="lang-bash">./bin/hugegraph --url http://127.0.0.1:8080 --space gs1 --graph hugegraph graph-drop
 </code></pre>
-<h6 id="7-&#x56FE;&#x5907;&#x4EFD;">7. &#x56FE;&#x5907;&#x4EFD;</h6>
+<h3 id="387&#x56FE;&#x5907;&#x4EFD;">3.8.7.&#x56FE;&#x5907;&#x4EFD;</h3>
 <pre><code class="lang-bash">./bin/hugegraph --url http://127.0.0.1:8080 --space gs1 --graph hugegraph backup -t all --directory ./backup-test
 </code></pre>
-<h6 id="8-&#x5468;&#x671F;&#x6027;&#x7684;&#x5907;&#x4EFD;">8. &#x5468;&#x671F;&#x6027;&#x7684;&#x5907;&#x4EFD;</h6>
+<h3 id="388&#x5468;&#x671F;&#x6027;&#x7684;&#x5907;&#x4EFD;">3.8.8.&#x5468;&#x671F;&#x6027;&#x7684;&#x5907;&#x4EFD;</h3>
 <pre><code class="lang-bash">./bin/hugegraph --url http://127.0.0.1:8080 --space gs1 --graph hugegraph --interval */2 * * * * schedule-backup <span class="hljs-_">-d</span> ./backup-0.10.2
 </code></pre>
-<h6 id="9-&#x56FE;&#x6062;&#x590D;">9. &#x56FE;&#x6062;&#x590D;</h6>
+<h3 id="389&#x56FE;&#x6062;&#x590D;">3.8.9.&#x56FE;&#x6062;&#x590D;</h3>
 <pre><code class="lang-bash"><span class="hljs-comment"># &#x8BBE;&#x7F6E;&#x56FE;&#x6A21;&#x5F0F;</span>
 ./bin/hugegraph --url http://127.0.0.1:8080 --space gs1 --graph hugegraph graph-mode-set -m RESTORING
 
@@ -1980,7 +1974,7 @@ mvn package -DskipTests
 <span class="hljs-comment"># &#x6062;&#x590D;&#x56FE;&#x6A21;&#x5F0F;</span>
 ./bin/hugegraph --url http://127.0.0.1:8080 --space gs1 --graph hugegraph graph-mode-set -m NONE
 </code></pre>
-<h6 id="10-&#x56FE;&#x8FC1;&#x79FB;">10. &#x56FE;&#x8FC1;&#x79FB;</h6>
+<h3 id="3810&#x56FE;&#x8FC1;&#x79FB;">3.8.10.&#x56FE;&#x8FC1;&#x79FB;</h3>
 <pre><code class="lang-bash">./bin/hugegraph --url http://127.0.0.1:8080 --space gs1 --graph hugegraph migrate --target-url http://127.0.0.1:8090 --target-graph hugegraph
 </code></pre>
 
@@ -2035,7 +2029,7 @@ mvn package -DskipTests
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Manage with HugeGraph-Tools-V3","level":"2.4","depth":1,"next":{"title":"Visual with HugeGraph-Hubble","level":"2.5","depth":1,"path":"quickstart/hugegraph-hubble.md","ref":"quickstart/hugegraph-hubble.md","articles":[]},"previous":{"title":"Manage with HugeGraph-Tools","level":"2.3","depth":1,"path":"quickstart/hugegraph-tools.md","ref":"quickstart/hugegraph-tools.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"quickstart/hugegraph-tools-v3.md","mtime":"2022-02-09T12:20:56.490Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-10T01:23:43.168Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Manage with HugeGraph-Tools-V3","level":"2.5","depth":1,"next":{"title":"Visual with HugeGraph-Hubble","level":"2.6","depth":1,"path":"quickstart/hugegraph-hubble.md","ref":"quickstart/hugegraph-hubble.md","articles":[]},"previous":{"title":"Manage with HugeGraph-Tools","level":"2.4","depth":1,"path":"quickstart/hugegraph-tools.md","ref":"quickstart/hugegraph-tools.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"quickstart/hugegraph-tools-v3.md","mtime":"2022-02-14T11:34:49.037Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-14T11:34:49.750Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

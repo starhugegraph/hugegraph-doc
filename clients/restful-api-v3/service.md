@@ -26,24 +26,34 @@ POST /graphspaces/${graphspace}/services
 |  名称   | 是否必填  | 类型  | 默认值  | 取值范围  | 说明  |
 |  ----  | ----  | ----  | ----  | ----  | ----  |
 | name  | 是 | String  |   | 小写字母、数字和下划线组成，首字符必须是小写字母，长度不超过48  |  service 的名字 |
-| description  | 是 | String  |   |   |  service 的描述信息 |
-| count  | 是 | Int |   | > 0  |  HugeGraphServer 的数目 |
-| cpu_limit  | 是 | String  |   | > 0  |  HugeGraphServer 的 CPU 核数 |
-| memory_limit  | 是 | String  |   | > 0  |  HugeGraphServer 的内存大小，单位 GB |
+| type  | 是 | String  |   | OLTP, OLAP, STORAGE  |  目前只支持OLTP |
 | deployment_type  | 是 | String  |   | K8S、MANUAL  |  service 的部署类型，K8S 指通过K8S集群启动服务，MANUAL 指通过手动部署的方式启动服务 |
+| count  | 是 | Int |   | > 0  |  HugeGraphServer 的数目 |
+| cpu_limit  | 是 | Int  |   | > 0  |  HugeGraphServer 的 CPU 核数 |
+| memory_limit  | 是 | Int  |   | > 0  |  HugeGraphServer 的内存大小，单位 GB |
+| storage_limit  | 是 | Int  |   | > 0  |  HugeGraphServer 的存储大小，单位 GB |
+| route_type  | 是 | String  |   | ClusterIP，LoadBalancer，NodePort  |  只有在 deployment_type 为 K8S 时需要设置 |
+| port  | 是 | Int  |   |   |  只有在 deployment_type 为 K8S 时需要设置 |
+| urls  | 是 | Array  |   |   |  只有在 deployment_type 为 MANUAL 时需要设置 |
+| description  | 是 | String  |   |   |  service 的描述信息 |
 
 ##### Response
 
 |  名称   | 类型 |  说明  |
 |  ----  | ---|  ----  |
 | name  | String | service 的名字 |
-| description  | String |  service 的描述信息 |
+| type  | String | 服务类型 |
+| port  | Int | 端口 |
+| route_type  | String | 路由类型 |
 | count  | Int |  HugeGraphServer 的总数目 |
 | running | Int | 运行的 HugeGraphServer 的数目
 | cpu_limit  | Int  |  HugeGraphServer 的 CPU 核数 |
 | memory_limit  | Int  |  HugeGraphServer 的内存大小，单位 GB |
+| storage_limit  | Int  |  HugeGraphServer 的存储大小，单位 GB |
 | deployment_type  | String  |  service 的部署类型 |
 | urls | Array | service 地址列表 |
+| pd_service_id  | String |  pd service id |
+| description  | String |  service 的描述信息 |
 
 ##### 使用示例
 
@@ -58,11 +68,15 @@ POST http://localhost:8080/graphspaces/gs1/services
 ```json
 {
   "name": "sv1",
-  "description": "test oltp service",
-  "count": 1,
-  "cpu_limit": 2,
-  "memory_limit": 4,
-  "deployment_type": "K8S"
+  "type": "OLTP",
+  "port": 0,
+  "count": 2,
+  "cpu_limit": 4,
+  "memory_limit": 6,
+  "storage_limit": 4096,
+  "deployment_type": "MANUAL",
+  "urls": ["http://xx.xx.xx.xx:8080", "http://xx.xx.xx.xx:8080" ],
+  "description": "test oltp service"
 }
 ```
 
@@ -76,18 +90,23 @@ POST http://localhost:8080/graphspaces/gs1/services
 
 ```json
 {
-    "name": "sv1",
-    "deployment_type": "K8S",
-    "description": "test oltp service",
-    "count": 1,
-    "running": 0,
-    "cpu_limit": 2,
-    "memory_limit": 4,
-    "urls": [
-        "10.254.222.85:32357"
-    ]
+  "name": "sv1",
+  "type": "OLTP",
+  "deployment_type": "MANUAL",
+  "description": "test oltp service",
+  "count": 2,
+  "running": 0,
+  "cpu_limit": 4,
+  "memory_limit": 6,
+  "storage_limit": 4096,
+  "route_type": null,
+  "port": 0,
+  "urls": [
+    "http://10.27.154.54:8080",
+    "http://10.27.154.55:8080"
+  ],
+  "pd_service_id": "895e0c269e07130200f26bd1a747d599"
 }
-
 ```
 
 #### 4.2.2.列出某个图空间的所有服务
@@ -174,13 +193,18 @@ GET /graphspaces/${graphspace}/services/${service}
 |  名称   | 类型 |  说明  |
 |  ----  | ---|  ----  |
 | name  | String | service 的名字 |
-| description  | String |  service 的描述信息 |
+| type  | String | 服务类型 |
+| port  | Int | 端口 |
+| route_type  | String | 路由类型 |
 | count  | Int |  HugeGraphServer 的总数目 |
 | running | Int | 运行的 HugeGraphServer 的数目
 | cpu_limit  | Int  |  HugeGraphServer 的 CPU 核数 |
 | memory_limit  | Int  |  HugeGraphServer 的内存大小，单位 GB |
+| storage_limit  | Int  |  HugeGraphServer 的存储大小，单位 GB |
 | deployment_type  | String  |  service 的部署类型 |
 | urls | Array | service 地址列表 |
+| pd_service_id  | String |  pd service id |
+| description  | String |  service 的描述信息 |
 
 ##### 使用示例
 
@@ -204,16 +228,22 @@ GET http://127.0.0.1:8080/graphspaces/gs1/services/sv1
 
 ```json
 {
-    "name": "sv1",
-    "deployment_type": "K8S",
-    "description": "test oltp service",
-    "count": 1,
-    "running": 1,
-    "cpu_limit": 2,
-    "memory_limit": 4,
-    "urls": [
-        "10.254.222.85:32357"
-    ]
+  "name": "sv1",
+  "type": "OLTP",
+  "deployment_type": "MANUAL",
+  "description": "test oltp service",
+  "count": 2,
+  "running": 0,
+  "cpu_limit": 4,
+  "memory_limit": 6,
+  "storage_limit": 4096,
+  "route_type": null,
+  "port": 0,
+  "urls": [
+    "http://10.27.154.54:8080",
+    "http://10.27.154.55:8080"
+  ],
+  "pd_service_id": "895e0c269e07130200f26bd1a747d599"
 }
 ```
 

@@ -1354,28 +1354,36 @@
 <td>&#x56FE;&#x7A7A;&#x95F4;&#x7684;&#x63CF;&#x8FF0;&#x4FE1;&#x606F;</td>
 </tr>
 <tr>
+<td>cpu_limit</td>
+<td>&#x662F;</td>
+<td>Int</td>
+<td></td>
+<td>&gt; 0</td>
+<td>CPU &#x6838;&#x6570;</td>
+</tr>
+<tr>
+<td>memory_limit</td>
+<td>&#x662F;</td>
+<td>Int</td>
+<td></td>
+<td>&gt; 0</td>
+<td>&#x5185;&#x5B58;&#x5927;&#x5C0F;&#xFF0C;&#x5355;&#x4F4D; GB</td>
+</tr>
+<tr>
+<td>storage_limit</td>
+<td>&#x662F;</td>
+<td>Int</td>
+<td></td>
+<td>&gt; 0</td>
+<td>&#x56FE;&#x7A7A;&#x95F4;&#x7684;&#x6570;&#x636E;&#x5360;&#x636E;&#x7684;&#x78C1;&#x76D8;&#x7A7A;&#x95F4;&#x4E0A;&#x9650;</td>
+</tr>
+<tr>
 <td>oltp_namespace</td>
 <td>&#x662F;</td>
 <td>String</td>
 <td></td>
 <td></td>
 <td>OLTP &#x7684;k8s&#x547D;&#x540D;&#x7A7A;&#x95F4;</td>
-</tr>
-<tr>
-<td>oltp_cpu_limit</td>
-<td>&#x662F;</td>
-<td>Int</td>
-<td></td>
-<td>&gt; 0</td>
-<td>OLTP HugeGraphServer &#x7684; CPU &#x6838;&#x6570;</td>
-</tr>
-<tr>
-<td>oltp_memory_limit</td>
-<td>&#x662F;</td>
-<td>Int</td>
-<td></td>
-<td>&gt; 0</td>
-<td>OLTP HugeGraphServer &#x7684;&#x5185;&#x5B58;&#x5927;&#x5C0F;&#xFF0C;&#x5355;&#x4F4D; GB</td>
 </tr>
 <tr>
 <td>olap_namespace</td>
@@ -1386,28 +1394,12 @@
 <td>OLAP &#x7684;k8s&#x547D;&#x540D;&#x7A7A;&#x95F4;</td>
 </tr>
 <tr>
-<td>olap_cpu_limit</td>
+<td>storage_namespace</td>
 <td>&#x662F;</td>
-<td>Int</td>
+<td>String</td>
 <td></td>
-<td>&gt; 0</td>
-<td>OLAP &#x4EFB;&#x52A1;&#x7684; CPU &#x6838;&#x6570;</td>
-</tr>
-<tr>
-<td>olap_memory_limit</td>
-<td>&#x662F;</td>
-<td>Int</td>
 <td></td>
-<td>&gt; 0</td>
-<td>OLAP &#x4EFB;&#x52A1;&#x7684;&#x5185;&#x5B58;&#x5927;&#x5C0F;&#xFF0C;&#x5355;&#x4F4D; GB</td>
-</tr>
-<tr>
-<td>storage_limit</td>
-<td>&#x662F;</td>
-<td>Int</td>
-<td></td>
-<td>&gt; 0</td>
-<td>&#x56FE;&#x7A7A;&#x95F4;&#x7684;&#x6570;&#x636E;&#x5360;&#x636E;&#x7684;&#x78C1;&#x76D8;&#x7A7A;&#x95F4;&#x4E0A;&#x9650;</td>
+<td>&#x5B58;&#x50A8; &#x7684;k8s&#x547D;&#x540D;&#x7A7A;&#x95F4;</td>
 </tr>
 <tr>
 <td>max_graph_number</td>
@@ -1433,6 +1425,14 @@
 <td>true, false</td>
 <td>&#x56FE;&#x7A7A;&#x95F4;&#x662F;&#x5426;&#x652F;&#x6301;&#x6743;&#x9650;&#x8BA4;&#x8BC1;</td>
 </tr>
+<tr>
+<td>configs</td>
+<td>&#x5426;</td>
+<td>Map</td>
+<td></td>
+<td></td>
+<td>&#x5176;&#x4ED6;&#x914D;&#x7F6E;&#x4FE1;&#x606F;</td>
+</tr>
 </tbody>
 </table>
 <h5 id="response">Response</h5>
@@ -1456,44 +1456,14 @@
 <td>&#x56FE;&#x7A7A;&#x95F4;&#x7684;&#x63CF;&#x8FF0;&#x4FE1;&#x606F;</td>
 </tr>
 <tr>
-<td>oltp_namespace</td>
-<td>String</td>
-<td>OLTP &#x7684;k8s&#x547D;&#x540D;&#x7A7A;&#x95F4;</td>
-</tr>
-<tr>
-<td>oltp_cpu_limit</td>
+<td>cpu_limit</td>
 <td>Int</td>
-<td>OLTP HugeGraphServer &#x7684; CPU &#x6838;&#x6570;&#x4E0A;&#x9650;</td>
+<td>CPU &#x6838;&#x6570;&#x4E0A;&#x9650;</td>
 </tr>
 <tr>
-<td>oltp_memory_limit</td>
+<td>memory_limit</td>
 <td>Int</td>
-<td>OLTP HugeGraphServer &#x7684;&#x5185;&#x5B58;&#x5927;&#x5C0F;&#x4E0A;&#x9650;&#xFF0C;&#x5355;&#x4F4D; GB</td>
-</tr>
-<tr>
-<td>oltp_cpu_used</td>
-<td>Int</td>
-<td>OLTP HugeGraphServer &#x5DF2;&#x4F7F;&#x7528;&#x7684; CPU &#x6838;&#x6570;</td>
-</tr>
-<tr>
-<td>oltp_memory_used</td>
-<td>Int</td>
-<td>OLTP HugeGraphServer &#x5DF2;&#x4F7F;&#x7528;&#x7684;&#x5185;&#x5B58;&#x5927;&#x5C0F;&#xFF0C;&#x5355;&#x4F4D; GB</td>
-</tr>
-<tr>
-<td>olap_namespace</td>
-<td>String</td>
-<td>OLAP &#x7684;k8s&#x547D;&#x540D;&#x7A7A;&#x95F4;</td>
-</tr>
-<tr>
-<td>olap_cpu_limit</td>
-<td>Int</td>
-<td>OLAP &#x4EFB;&#x52A1;&#x7684; CPU &#x6838;&#x6570;</td>
-</tr>
-<tr>
-<td>olap_memory_limit</td>
-<td>Int</td>
-<td>OLAP &#x4EFB;&#x52A1;&#x7684;&#x5185;&#x5B58;&#x5927;&#x5C0F;&#xFF0C;&#x5355;&#x4F4D; GB</td>
+<td>&#x5185;&#x5B58;&#x5927;&#x5C0F;&#x4E0A;&#x9650;&#xFF0C;&#x5355;&#x4F4D; GB</td>
 </tr>
 <tr>
 <td>storage_limit</td>
@@ -1501,9 +1471,19 @@
 <td>&#x56FE;&#x7A7A;&#x95F4;&#x7684;&#x6570;&#x636E;&#x5360;&#x636E;&#x7684;&#x78C1;&#x76D8;&#x7A7A;&#x95F4;&#x4E0A;&#x9650;</td>
 </tr>
 <tr>
-<td>storage_used</td>
-<td>Int</td>
-<td>&#x56FE;&#x7A7A;&#x95F4;&#x7684;&#x6570;&#x636E;&#x5DF2;&#x5360;&#x636E;&#x7684;&#x78C1;&#x76D8;&#x7A7A;&#x95F4;</td>
+<td>oltp_namespace</td>
+<td>String</td>
+<td>OLTP &#x7684;k8s&#x547D;&#x540D;&#x7A7A;&#x95F4;</td>
+</tr>
+<tr>
+<td>olap_namespace</td>
+<td>String</td>
+<td>OLAP &#x7684;k8s&#x547D;&#x540D;&#x7A7A;&#x95F4;</td>
+</tr>
+<tr>
+<td>storage_namespace</td>
+<td>String</td>
+<td>&#x5B58;&#x50A8;&#x7684;k8s&#x547D;&#x540D;&#x7A7A;&#x95F4;</td>
 </tr>
 <tr>
 <td>max_graph_number</td>
@@ -1514,6 +1494,21 @@
 <td>max_role_number</td>
 <td>Int</td>
 <td>&#x56FE;&#x7A7A;&#x95F4;&#x7684;&#x89D2;&#x8272;&#x6570;&#x76EE;&#x7684;&#x4E0A;&#x9650;</td>
+</tr>
+<tr>
+<td>cpu_used</td>
+<td>Int</td>
+<td>&#x5DF2;&#x4F7F;&#x7528;&#x7684; CPU &#x6838;&#x6570;</td>
+</tr>
+<tr>
+<td>memory_used</td>
+<td>Int</td>
+<td>&#x5DF2;&#x4F7F;&#x7528;&#x7684;&#x5185;&#x5B58;&#x5927;&#x5C0F;&#xFF0C;&#x5355;&#x4F4D; GB</td>
+</tr>
+<tr>
+<td>storage_used</td>
+<td>Int</td>
+<td>&#x56FE;&#x7A7A;&#x95F4;&#x7684;&#x6570;&#x636E;&#x5DF2;&#x5360;&#x636E;&#x7684;&#x78C1;&#x76D8;&#x7A7A;&#x95F4;</td>
 </tr>
 <tr>
 <td>graph_number_used</td>
@@ -1537,18 +1532,18 @@
 <pre><code>POST http://localhost:8080/graphspaces
 </code></pre><h6 id="request-body">Request Body</h6>
 <pre><code class="lang-json">{
-    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;gs1&quot;</span>,
-    <span class="hljs-string">&quot;description&quot;</span>: <span class="hljs-string">&quot;1st graph space&quot;</span>,
-    <span class="hljs-string">&quot;oltp_namespace&quot;</span>: <span class="hljs-string">&quot;hugegraph-server&quot;</span>,
-    <span class="hljs-string">&quot;oltp_cpu_limit&quot;</span>: <span class="hljs-number">1000</span>,
-    <span class="hljs-string">&quot;oltp_memory_limit&quot;</span>: <span class="hljs-number">1024</span>,
-    <span class="hljs-string">&quot;olap_namespace&quot;</span>: <span class="hljs-string">&quot;hugegraph-server&quot;</span>,
-    <span class="hljs-string">&quot;olap_cpu_limit&quot;</span>: <span class="hljs-number">1000</span>,
-    <span class="hljs-string">&quot;olap_memory_limit&quot;</span>: <span class="hljs-number">1024</span>,
-    <span class="hljs-string">&quot;storage_limit&quot;</span>: <span class="hljs-number">1000</span>,
-    <span class="hljs-string">&quot;max_graph_number&quot;</span>: <span class="hljs-number">100</span>,
-    <span class="hljs-string">&quot;max_role_number&quot;</span>: <span class="hljs-number">10</span>,
-    <span class="hljs-string">&quot;auth&quot;</span>: <span class="hljs-literal">false</span>
+  <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;gs1&quot;</span>,
+  <span class="hljs-string">&quot;description&quot;</span>: <span class="hljs-string">&quot;1st graph space&quot;</span>,
+  <span class="hljs-string">&quot;cpu_limit&quot;</span>: <span class="hljs-number">1000</span>,
+  <span class="hljs-string">&quot;memory_limit&quot;</span>: <span class="hljs-number">1024</span>,
+  <span class="hljs-string">&quot;storage_limit&quot;</span>: <span class="hljs-number">1000</span>,
+  <span class="hljs-string">&quot;oltp_namespace&quot;</span>: <span class="hljs-string">&quot;hugegraph-server&quot;</span>,
+  <span class="hljs-string">&quot;olap_namespace&quot;</span>: <span class="hljs-string">&quot;hugegraph-server&quot;</span>,
+  <span class="hljs-string">&quot;storage_namespace&quot;</span>: <span class="hljs-string">&quot;hugegraph-server&quot;</span>,
+  <span class="hljs-string">&quot;max_graph_number&quot;</span>: <span class="hljs-number">100</span>,
+  <span class="hljs-string">&quot;max_role_number&quot;</span>: <span class="hljs-number">10</span>,
+  <span class="hljs-string">&quot;auth&quot;</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-string">&quot;configs&quot;</span>: {}
 }
 </code></pre>
 <h6 id="response-status">Response Status</h6>
@@ -1556,23 +1551,22 @@
 </code></pre>
 <h6 id="response-body">Response Body</h6>
 <pre><code class="lang-json">{
-    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;gs1&quot;</span>,
-    <span class="hljs-string">&quot;description&quot;</span>: <span class="hljs-string">&quot;1st graph space&quot;</span>,
-    <span class="hljs-string">&quot;oltp_namespace&quot;</span>: <span class="hljs-string">&quot;hugegraph-server&quot;</span>,
-    <span class="hljs-string">&quot;oltp_cpu_limit&quot;</span>: <span class="hljs-number">1000</span>,
-    <span class="hljs-string">&quot;oltp_memory_limit&quot;</span>: <span class="hljs-number">1024</span>,
-    <span class="hljs-string">&quot;oltp_cpu_used&quot;</span>: <span class="hljs-number">0</span>,
-    <span class="hljs-string">&quot;oltp_memory_used&quot;</span>: <span class="hljs-number">0</span>,
-    <span class="hljs-string">&quot;olap_namespace&quot;</span>: <span class="hljs-string">&quot;hugegraph-server&quot;</span>,
-    <span class="hljs-string">&quot;olap_cpu_limit&quot;</span>: <span class="hljs-number">1000</span>,
-    <span class="hljs-string">&quot;olap_memory_limit&quot;</span>: <span class="hljs-number">1024</span>,
-    <span class="hljs-string">&quot;storage_limit&quot;</span>: <span class="hljs-number">1000</span>,
-    <span class="hljs-string">&quot;storage_used&quot;</span>: <span class="hljs-number">0</span>,
-    <span class="hljs-string">&quot;max_graph_number&quot;</span>: <span class="hljs-number">100</span>,
-    <span class="hljs-string">&quot;max_role_number&quot;</span>: <span class="hljs-number">10</span>,
-    <span class="hljs-string">&quot;graph_number_used&quot;</span>: <span class="hljs-number">0</span>,
-    <span class="hljs-string">&quot;role_number_used&quot;</span>: <span class="hljs-number">0</span>,
-    <span class="hljs-string">&quot;auth&quot;</span>: <span class="hljs-literal">false</span>
+  <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;gs1&quot;</span>,
+  <span class="hljs-string">&quot;description&quot;</span>: <span class="hljs-string">&quot;1st graph space&quot;</span>,
+  <span class="hljs-string">&quot;cpu_limit&quot;</span>: <span class="hljs-number">1000</span>,
+  <span class="hljs-string">&quot;memory_limit&quot;</span>: <span class="hljs-number">1024</span>,
+  <span class="hljs-string">&quot;storage_limit&quot;</span>: <span class="hljs-number">1000</span>,
+  <span class="hljs-string">&quot;oltp_namespace&quot;</span>: <span class="hljs-string">&quot;hugegraph-server&quot;</span>,
+  <span class="hljs-string">&quot;olap_namespace&quot;</span>: <span class="hljs-string">&quot;hugegraph-server&quot;</span>,
+  <span class="hljs-string">&quot;storage_namespace&quot;</span>: <span class="hljs-string">&quot;hugegraph-server&quot;</span>,
+  <span class="hljs-string">&quot;max_graph_number&quot;</span>: <span class="hljs-number">100</span>,
+  <span class="hljs-string">&quot;max_role_number&quot;</span>: <span class="hljs-number">10</span>,
+  <span class="hljs-string">&quot;cpu_used&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-string">&quot;memory_used&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-string">&quot;storage_used&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-string">&quot;graph_number_used&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-string">&quot;role_number_used&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-string">&quot;auth&quot;</span>: <span class="hljs-literal">true</span>
 }
 </code></pre>
 <h4 id="412&#x5217;&#x51FA;&#x7CFB;&#x7EDF;&#x6240;&#x6709;&#x56FE;&#x7A7A;&#x95F4;">4.1.2.&#x5217;&#x51FA;&#x7CFB;&#x7EDF;&#x6240;&#x6709;&#x56FE;&#x7A7A;&#x95F4;</h4>
@@ -1668,44 +1662,14 @@
 <td>&#x56FE;&#x7A7A;&#x95F4;&#x7684;&#x63CF;&#x8FF0;&#x4FE1;&#x606F;</td>
 </tr>
 <tr>
-<td>oltp_namespace</td>
-<td>String</td>
-<td>OLTP &#x7684;k8s&#x547D;&#x540D;&#x7A7A;&#x95F4;</td>
-</tr>
-<tr>
-<td>oltp_cpu_limit</td>
+<td>cpu_limit</td>
 <td>Int</td>
-<td>OLTP HugeGraphServer &#x7684; CPU &#x6838;&#x6570;&#x4E0A;&#x9650;</td>
+<td>CPU &#x6838;&#x6570;&#x4E0A;&#x9650;</td>
 </tr>
 <tr>
-<td>oltp_memory_limit</td>
+<td>memory_limit</td>
 <td>Int</td>
-<td>OLTP HugeGraphServer &#x7684;&#x5185;&#x5B58;&#x5927;&#x5C0F;&#x4E0A;&#x9650;&#xFF0C;&#x5355;&#x4F4D; GB</td>
-</tr>
-<tr>
-<td>oltp_cpu_used</td>
-<td>Int</td>
-<td>OLTP HugeGraphServer &#x5DF2;&#x4F7F;&#x7528;&#x7684; CPU &#x6838;&#x6570;</td>
-</tr>
-<tr>
-<td>oltp_memory_used</td>
-<td>Int</td>
-<td>OLTP HugeGraphServer &#x5DF2;&#x4F7F;&#x7528;&#x7684;&#x5185;&#x5B58;&#x5927;&#x5C0F;&#xFF0C;&#x5355;&#x4F4D; GB</td>
-</tr>
-<tr>
-<td>olap_namespace</td>
-<td>String</td>
-<td>OLAP &#x7684;k8s&#x547D;&#x540D;&#x7A7A;&#x95F4;</td>
-</tr>
-<tr>
-<td>olap_cpu_limit</td>
-<td>Int</td>
-<td>OLAP &#x4EFB;&#x52A1;&#x7684; CPU &#x6838;&#x6570;</td>
-</tr>
-<tr>
-<td>olap_memory_limit</td>
-<td>Int</td>
-<td>OLAP &#x4EFB;&#x52A1;&#x7684;&#x5185;&#x5B58;&#x5927;&#x5C0F;&#xFF0C;&#x5355;&#x4F4D; GB</td>
+<td>&#x5185;&#x5B58;&#x5927;&#x5C0F;&#x4E0A;&#x9650;&#xFF0C;&#x5355;&#x4F4D; GB</td>
 </tr>
 <tr>
 <td>storage_limit</td>
@@ -1713,9 +1677,19 @@
 <td>&#x56FE;&#x7A7A;&#x95F4;&#x7684;&#x6570;&#x636E;&#x5360;&#x636E;&#x7684;&#x78C1;&#x76D8;&#x7A7A;&#x95F4;&#x4E0A;&#x9650;</td>
 </tr>
 <tr>
-<td>storage_used</td>
-<td>Int</td>
-<td>&#x56FE;&#x7A7A;&#x95F4;&#x7684;&#x6570;&#x636E;&#x5DF2;&#x5360;&#x636E;&#x7684;&#x78C1;&#x76D8;&#x7A7A;&#x95F4;</td>
+<td>oltp_namespace</td>
+<td>String</td>
+<td>OLTP &#x7684;k8s&#x547D;&#x540D;&#x7A7A;&#x95F4;</td>
+</tr>
+<tr>
+<td>olap_namespace</td>
+<td>String</td>
+<td>OLAP &#x7684;k8s&#x547D;&#x540D;&#x7A7A;&#x95F4;</td>
+</tr>
+<tr>
+<td>storage_namespace</td>
+<td>String</td>
+<td>&#x5B58;&#x50A8;&#x7684;k8s&#x547D;&#x540D;&#x7A7A;&#x95F4;</td>
 </tr>
 <tr>
 <td>max_graph_number</td>
@@ -1726,6 +1700,21 @@
 <td>max_role_number</td>
 <td>Int</td>
 <td>&#x56FE;&#x7A7A;&#x95F4;&#x7684;&#x89D2;&#x8272;&#x6570;&#x76EE;&#x7684;&#x4E0A;&#x9650;</td>
+</tr>
+<tr>
+<td>cpu_used</td>
+<td>Int</td>
+<td>&#x5DF2;&#x4F7F;&#x7528;&#x7684; CPU &#x6838;&#x6570;</td>
+</tr>
+<tr>
+<td>memory_used</td>
+<td>Int</td>
+<td>&#x5DF2;&#x4F7F;&#x7528;&#x7684;&#x5185;&#x5B58;&#x5927;&#x5C0F;&#xFF0C;&#x5355;&#x4F4D; GB</td>
+</tr>
+<tr>
+<td>storage_used</td>
+<td>Int</td>
+<td>&#x56FE;&#x7A7A;&#x95F4;&#x7684;&#x6570;&#x636E;&#x5DF2;&#x5360;&#x636E;&#x7684;&#x78C1;&#x76D8;&#x7A7A;&#x95F4;</td>
 </tr>
 <tr>
 <td>graph_number_used</td>
@@ -1754,23 +1743,22 @@
 </code></pre>
 <h6 id="response-body">Response Body</h6>
 <pre><code class="lang-json">{
-    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;gs1&quot;</span>,
-    <span class="hljs-string">&quot;description&quot;</span>: <span class="hljs-string">&quot;1st graph space&quot;</span>,
-    <span class="hljs-string">&quot;oltp_namespace&quot;</span>: <span class="hljs-string">&quot;hugegraph-server&quot;</span>,
-    <span class="hljs-string">&quot;oltp_cpu_limit&quot;</span>: <span class="hljs-number">1000</span>,
-    <span class="hljs-string">&quot;oltp_memory_limit&quot;</span>: <span class="hljs-number">1024</span>,
-    <span class="hljs-string">&quot;oltp_cpu_used&quot;</span>: <span class="hljs-number">0</span>,
-    <span class="hljs-string">&quot;oltp_memory_used&quot;</span>: <span class="hljs-number">0</span>,
-    <span class="hljs-string">&quot;olap_namespace&quot;</span>: <span class="hljs-string">&quot;hugegraph-server&quot;</span>,
-    <span class="hljs-string">&quot;olap_cpu_limit&quot;</span>: <span class="hljs-number">1000</span>,
-    <span class="hljs-string">&quot;olap_memory_limit&quot;</span>: <span class="hljs-number">1024</span>,
-    <span class="hljs-string">&quot;storage_limit&quot;</span>: <span class="hljs-number">1000</span>,
-    <span class="hljs-string">&quot;storage_used&quot;</span>: <span class="hljs-number">0</span>,
-    <span class="hljs-string">&quot;max_graph_number&quot;</span>: <span class="hljs-number">100</span>,
-    <span class="hljs-string">&quot;max_role_number&quot;</span>: <span class="hljs-number">10</span>,
-    <span class="hljs-string">&quot;graph_number_used&quot;</span>: <span class="hljs-number">0</span>,
-    <span class="hljs-string">&quot;role_number_used&quot;</span>: <span class="hljs-number">0</span>,
-    <span class="hljs-string">&quot;auth&quot;</span>: <span class="hljs-literal">false</span>
+  <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;gs1&quot;</span>,
+  <span class="hljs-string">&quot;description&quot;</span>: <span class="hljs-string">&quot;1st graph space&quot;</span>,
+  <span class="hljs-string">&quot;cpu_limit&quot;</span>: <span class="hljs-number">1000</span>,
+  <span class="hljs-string">&quot;memory_limit&quot;</span>: <span class="hljs-number">1024</span>,
+  <span class="hljs-string">&quot;storage_limit&quot;</span>: <span class="hljs-number">1000</span>,
+  <span class="hljs-string">&quot;oltp_namespace&quot;</span>: <span class="hljs-string">&quot;hugegraph-server&quot;</span>,
+  <span class="hljs-string">&quot;olap_namespace&quot;</span>: <span class="hljs-string">&quot;hugegraph-server&quot;</span>,
+  <span class="hljs-string">&quot;storage_namespace&quot;</span>: <span class="hljs-string">&quot;hugegraph-server&quot;</span>,
+  <span class="hljs-string">&quot;max_graph_number&quot;</span>: <span class="hljs-number">100</span>,
+  <span class="hljs-string">&quot;max_role_number&quot;</span>: <span class="hljs-number">10</span>,
+  <span class="hljs-string">&quot;cpu_used&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-string">&quot;memory_used&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-string">&quot;storage_used&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-string">&quot;graph_number_used&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-string">&quot;role_number_used&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-string">&quot;auth&quot;</span>: <span class="hljs-literal">true</span>
 }
 </code></pre>
 <h4 id="414&#x66F4;&#x65B0;&#x67D0;&#x4E2A;&#x56FE;&#x7A7A;&#x95F4;">4.1.4.&#x66F4;&#x65B0;&#x67D0;&#x4E2A;&#x56FE;&#x7A7A;&#x95F4;</h4>
@@ -1824,15 +1812,7 @@
 <td>&#x56FE;&#x7A7A;&#x95F4;&#x7684;&#x63CF;&#x8FF0;&#x4FE1;&#x606F;</td>
 </tr>
 <tr>
-<td>oltp_namespace</td>
-<td>&#x662F;</td>
-<td>String</td>
-<td></td>
-<td></td>
-<td>OLTP &#x7684;k8s&#x547D;&#x540D;&#x7A7A;&#x95F4;</td>
-</tr>
-<tr>
-<td>oltp_cpu_limit</td>
+<td>cpu_limit</td>
 <td>&#x662F;</td>
 <td>Int</td>
 <td></td>
@@ -1840,12 +1820,28 @@
 <td>OLTP HugeGraphServer &#x7684; CPU &#x6838;&#x6570;</td>
 </tr>
 <tr>
-<td>oltp_memory_limit</td>
+<td>memory_limit</td>
 <td>&#x662F;</td>
 <td>Int</td>
 <td></td>
 <td>&gt; 0</td>
 <td>OLTP HugeGraphServer &#x7684;&#x5185;&#x5B58;&#x5927;&#x5C0F;&#xFF0C;&#x5355;&#x4F4D; GB</td>
+</tr>
+<tr>
+<td>storage_limit</td>
+<td>&#x662F;</td>
+<td>Int</td>
+<td></td>
+<td>&gt; 0</td>
+<td>&#x56FE;&#x7A7A;&#x95F4;&#x7684;&#x6570;&#x636E;&#x5360;&#x636E;&#x7684;&#x78C1;&#x76D8;&#x7A7A;&#x95F4;&#x4E0A;&#x9650;</td>
+</tr>
+<tr>
+<td>oltp_namespace</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td></td>
+<td></td>
+<td>OLTP &#x7684;k8s&#x547D;&#x540D;&#x7A7A;&#x95F4;</td>
 </tr>
 <tr>
 <td>olap_namespace</td>
@@ -1856,28 +1852,12 @@
 <td>OLAP &#x7684;k8s&#x547D;&#x540D;&#x7A7A;&#x95F4;</td>
 </tr>
 <tr>
-<td>olap_cpu_limit</td>
+<td>storage_namespace</td>
 <td>&#x662F;</td>
-<td>Int</td>
+<td>String</td>
 <td></td>
-<td>&gt; 0</td>
-<td>OLAP &#x4EFB;&#x52A1;&#x7684; CPU &#x6838;&#x6570;</td>
-</tr>
-<tr>
-<td>olap_memory_limit</td>
-<td>&#x662F;</td>
-<td>Int</td>
 <td></td>
-<td>&gt; 0</td>
-<td>OLAP &#x4EFB;&#x52A1;&#x7684;&#x5185;&#x5B58;&#x5927;&#x5C0F;&#xFF0C;&#x5355;&#x4F4D; GB</td>
-</tr>
-<tr>
-<td>storage_limit</td>
-<td>&#x662F;</td>
-<td>Int</td>
-<td></td>
-<td>&gt; 0</td>
-<td>&#x56FE;&#x7A7A;&#x95F4;&#x7684;&#x6570;&#x636E;&#x5360;&#x636E;&#x7684;&#x78C1;&#x76D8;&#x7A7A;&#x95F4;&#x4E0A;&#x9650;</td>
+<td>&#x5B58;&#x50A8;&#x7684;k8s&#x547D;&#x540D;&#x7A7A;&#x95F4;</td>
 </tr>
 <tr>
 <td>max_graph_number</td>
@@ -1918,44 +1898,14 @@
 <td>&#x56FE;&#x7A7A;&#x95F4;&#x7684;&#x63CF;&#x8FF0;&#x4FE1;&#x606F;</td>
 </tr>
 <tr>
-<td>oltp_namespace</td>
-<td>String</td>
-<td>OLTP &#x7684;k8s&#x547D;&#x540D;&#x7A7A;&#x95F4;</td>
-</tr>
-<tr>
-<td>oltp_cpu_limit</td>
+<td>cpu_limit</td>
 <td>Int</td>
-<td>OLTP HugeGraphServer &#x7684; CPU &#x6838;&#x6570;&#x4E0A;&#x9650;</td>
+<td>CPU &#x6838;&#x6570;&#x4E0A;&#x9650;</td>
 </tr>
 <tr>
-<td>oltp_memory_limit</td>
+<td>memory_limit</td>
 <td>Int</td>
-<td>OLTP HugeGraphServer &#x7684;&#x5185;&#x5B58;&#x5927;&#x5C0F;&#x4E0A;&#x9650;&#xFF0C;&#x5355;&#x4F4D; GB</td>
-</tr>
-<tr>
-<td>oltp_cpu_used</td>
-<td>Int</td>
-<td>OLTP HugeGraphServer &#x5DF2;&#x4F7F;&#x7528;&#x7684; CPU &#x6838;&#x6570;</td>
-</tr>
-<tr>
-<td>oltp_memory_used</td>
-<td>Int</td>
-<td>OLTP HugeGraphServer &#x5DF2;&#x4F7F;&#x7528;&#x7684;&#x5185;&#x5B58;&#x5927;&#x5C0F;&#xFF0C;&#x5355;&#x4F4D; GB</td>
-</tr>
-<tr>
-<td>olap_namespace</td>
-<td>String</td>
-<td>OLAP &#x7684;k8s&#x547D;&#x540D;&#x7A7A;&#x95F4;</td>
-</tr>
-<tr>
-<td>olap_cpu_limit</td>
-<td>Int</td>
-<td>OLAP &#x4EFB;&#x52A1;&#x7684; CPU &#x6838;&#x6570;</td>
-</tr>
-<tr>
-<td>olap_memory_limit</td>
-<td>Int</td>
-<td>OLAP &#x4EFB;&#x52A1;&#x7684;&#x5185;&#x5B58;&#x5927;&#x5C0F;&#xFF0C;&#x5355;&#x4F4D; GB</td>
+<td>&#x5185;&#x5B58;&#x5927;&#x5C0F;&#x4E0A;&#x9650;&#xFF0C;&#x5355;&#x4F4D; GB</td>
 </tr>
 <tr>
 <td>storage_limit</td>
@@ -1963,9 +1913,19 @@
 <td>&#x56FE;&#x7A7A;&#x95F4;&#x7684;&#x6570;&#x636E;&#x5360;&#x636E;&#x7684;&#x78C1;&#x76D8;&#x7A7A;&#x95F4;&#x4E0A;&#x9650;</td>
 </tr>
 <tr>
-<td>storage_used</td>
-<td>Int</td>
-<td>&#x56FE;&#x7A7A;&#x95F4;&#x7684;&#x6570;&#x636E;&#x5DF2;&#x5360;&#x636E;&#x7684;&#x78C1;&#x76D8;&#x7A7A;&#x95F4;</td>
+<td>oltp_namespace</td>
+<td>String</td>
+<td>OLTP &#x7684;k8s&#x547D;&#x540D;&#x7A7A;&#x95F4;</td>
+</tr>
+<tr>
+<td>olap_namespace</td>
+<td>String</td>
+<td>OLAP &#x7684;k8s&#x547D;&#x540D;&#x7A7A;&#x95F4;</td>
+</tr>
+<tr>
+<td>storage_namespace</td>
+<td>String</td>
+<td>&#x5B58;&#x50A8;&#x7684;k8s&#x547D;&#x540D;&#x7A7A;&#x95F4;</td>
 </tr>
 <tr>
 <td>max_graph_number</td>
@@ -1976,6 +1936,21 @@
 <td>max_role_number</td>
 <td>Int</td>
 <td>&#x56FE;&#x7A7A;&#x95F4;&#x7684;&#x89D2;&#x8272;&#x6570;&#x76EE;&#x7684;&#x4E0A;&#x9650;</td>
+</tr>
+<tr>
+<td>cpu_used</td>
+<td>Int</td>
+<td>&#x5DF2;&#x4F7F;&#x7528;&#x7684; CPU &#x6838;&#x6570;</td>
+</tr>
+<tr>
+<td>memory_used</td>
+<td>Int</td>
+<td>&#x5DF2;&#x4F7F;&#x7528;&#x7684;&#x5185;&#x5B58;&#x5927;&#x5C0F;&#xFF0C;&#x5355;&#x4F4D; GB</td>
+</tr>
+<tr>
+<td>storage_used</td>
+<td>Int</td>
+<td>&#x56FE;&#x7A7A;&#x95F4;&#x7684;&#x6570;&#x636E;&#x5DF2;&#x5360;&#x636E;&#x7684;&#x78C1;&#x76D8;&#x7A7A;&#x95F4;</td>
 </tr>
 <tr>
 <td>graph_number_used</td>
@@ -2014,23 +1989,22 @@
 </code></pre>
 <h6 id="response-body">Response Body</h6>
 <pre><code class="lang-json">{
-    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;gs1&quot;</span>,
-    <span class="hljs-string">&quot;description&quot;</span>: <span class="hljs-string">&quot;1st graph space&quot;</span>,
-    <span class="hljs-string">&quot;oltp_namespace&quot;</span>: <span class="hljs-string">&quot;hugegraph-server&quot;</span>,
-    <span class="hljs-string">&quot;oltp_cpu_limit&quot;</span>: <span class="hljs-number">2000</span>,
-    <span class="hljs-string">&quot;oltp_memory_limit&quot;</span>: <span class="hljs-number">40960</span>,
-    <span class="hljs-string">&quot;oltp_cpu_used&quot;</span>: <span class="hljs-number">0</span>,
-    <span class="hljs-string">&quot;oltp_memory_used&quot;</span>: <span class="hljs-number">0</span>,
-    <span class="hljs-string">&quot;olap_namespace&quot;</span>: <span class="hljs-string">&quot;hugegraph-server&quot;</span>,
-    <span class="hljs-string">&quot;olap_cpu_limit&quot;</span>: <span class="hljs-number">1000</span>,
-    <span class="hljs-string">&quot;olap_memory_limit&quot;</span>: <span class="hljs-number">1024</span>,
-    <span class="hljs-string">&quot;storage_limit&quot;</span>: <span class="hljs-number">2048</span>,
-    <span class="hljs-string">&quot;storage_used&quot;</span>: <span class="hljs-number">0</span>,
-    <span class="hljs-string">&quot;max_graph_number&quot;</span>: <span class="hljs-number">1000</span>,
-    <span class="hljs-string">&quot;max_role_number&quot;</span>: <span class="hljs-number">100</span>,
-    <span class="hljs-string">&quot;graph_number_used&quot;</span>: <span class="hljs-number">0</span>,
-    <span class="hljs-string">&quot;role_number_used&quot;</span>: <span class="hljs-number">0</span>,
-    <span class="hljs-string">&quot;auth&quot;</span>: <span class="hljs-literal">false</span>
+  <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;gs1&quot;</span>,
+  <span class="hljs-string">&quot;description&quot;</span>: <span class="hljs-string">&quot;1st graph space&quot;</span>,
+  <span class="hljs-string">&quot;cpu_limit&quot;</span>: <span class="hljs-number">1000</span>,
+  <span class="hljs-string">&quot;memory_limit&quot;</span>: <span class="hljs-number">1024</span>,
+  <span class="hljs-string">&quot;storage_limit&quot;</span>: <span class="hljs-number">1000</span>,
+  <span class="hljs-string">&quot;oltp_namespace&quot;</span>: <span class="hljs-string">&quot;hugegraph-server&quot;</span>,
+  <span class="hljs-string">&quot;olap_namespace&quot;</span>: <span class="hljs-string">&quot;hugegraph-server&quot;</span>,
+  <span class="hljs-string">&quot;storage_namespace&quot;</span>: <span class="hljs-string">&quot;hugegraph-server&quot;</span>,
+  <span class="hljs-string">&quot;max_graph_number&quot;</span>: <span class="hljs-number">100</span>,
+  <span class="hljs-string">&quot;max_role_number&quot;</span>: <span class="hljs-number">10</span>,
+  <span class="hljs-string">&quot;cpu_used&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-string">&quot;memory_used&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-string">&quot;storage_used&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-string">&quot;graph_number_used&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-string">&quot;role_number_used&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-string">&quot;auth&quot;</span>: <span class="hljs-literal">true</span>
 }
 </code></pre>
 <h4 id="415-&#x5220;&#x9664;&#x67D0;&#x4E2A;&#x56FE;&#x7A7A;&#x95F4;">4.1.5 &#x5220;&#x9664;&#x67D0;&#x4E2A;&#x56FE;&#x7A7A;&#x95F4;</h4>
@@ -2128,7 +2102,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"GraphSpace","level":"4.2.17","depth":2,"next":{"title":"Service","level":"4.2.18","depth":2,"path":"clients/restful-api-v3/service.md","ref":"clients/restful-api-v3/service.md","articles":[]},"previous":{"title":"Authentication","level":"4.2.16","depth":2,"path":"clients/restful-api-v3/auth.md","ref":"clients/restful-api-v3/auth.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"clients/restful-api-v3/graphspace.md","mtime":"2022-02-14T11:35:02.769Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-16T08:07:57.174Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"GraphSpace","level":"4.2.17","depth":2,"next":{"title":"Service","level":"4.2.18","depth":2,"path":"clients/restful-api-v3/service.md","ref":"clients/restful-api-v3/service.md","articles":[]},"previous":{"title":"Authentication","level":"4.2.16","depth":2,"path":"clients/restful-api-v3/auth.md","ref":"clients/restful-api-v3/auth.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"clients/restful-api-v3/graphspace.md","mtime":"2022-02-16T08:11:27.495Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-16T08:11:27.943Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

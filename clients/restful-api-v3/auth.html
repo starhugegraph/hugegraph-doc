@@ -4589,7 +4589,7 @@ city: Beijing})<br>&#x63CF;&#x8FF0;&#xFF1A;&#x7528;&#x6237;&apos;tester&apos;&#x
 }
 </code></pre>
 <h3 id="4127manager-api">4.12.7.Manager API</h3>
-<p>&#x7BA1;&#x7406;&#x8D85;&#x7EA7;&#x7BA1;&#x7406;&#x5458;&#x3001;&#x56FE;&#x7A7A;&#x95F4;&#x7BA1;&#x7406;&#x5458;&#xFF0C;&#x4E3B;&#x8981;&#x5305;&#x542B;&#xFF1A;&#x521B;&#x5EFA;&#x3001;&#x5220;&#x9664;&#x3002;</p>
+<p>&#x7BA1;&#x7406;&#x8D85;&#x7EA7;&#x7BA1;&#x7406;&#x5458;&#x3001;&#x56FE;&#x7A7A;&#x95F4;&#x7BA1;&#x7406;&#x5458;&#xFF0C;&#x4E3B;&#x8981;&#x5305;&#x542B;&#xFF1A;&#x521B;&#x5EFA;&#x3001;&#x5220;&#x9664;&#x3001;&#x67E5;&#x770B;&#x3002;</p>
 <h4 id="41271&#x521B;&#x5EFA;-manager">4.12.7.1.&#x521B;&#x5EFA; manager</h4>
 <h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
 <p>&#x521B;&#x5EFA;&#x8D85;&#x7EA7;&#x7BA1;&#x7406;&#x5458;&#x6216;&#x8005;&#x56FE;&#x7A7A;&#x95F4;&#x7BA1;&#x7406;&#x5458;</p>
@@ -4741,7 +4741,74 @@ city: Beijing})<br>&#x63CF;&#x8FF0;&#xFF1A;&#x7528;&#x6237;&apos;tester&apos;&#x
 </code></pre>
 <h6 id="response-body">Response Body</h6>
 <p>&#x65E0;</p>
-<h2 id="413token-api">4.13.Token API</h2>
+<h4 id="41273&#x67E5;&#x770B;-manager-&#x5217;&#x8868;">4.12.7.3.&#x67E5;&#x770B; manager &#x5217;&#x8868;</h4>
+<h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
+<p>&#x67E5;&#x770B;&#x8D85;&#x7EA7;&#x7BA1;&#x7406;&#x5458;&#x6216;&#x8005;&#x56FE;&#x7A7A;&#x95F4;&#x7BA1;&#x7406;&#x5458;&#x7ACB;&#x6807;</p>
+<h5 id="uri">URI</h5>
+<pre><code>GET /auth/managers?type=${type}&amp;graphspace=${graphspace}
+</code></pre><h5 id="uri&#x53C2;&#x6570;">URI&#x53C2;&#x6570;</h5>
+<table>
+<thead>
+<tr>
+<th>&#x540D;&#x79F0;</th>
+<th>&#x662F;&#x5426;&#x5FC5;&#x586B;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x9ED8;&#x8BA4;&#x503C;</th>
+<th>&#x53D6;&#x503C;&#x8303;&#x56F4;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td></td>
+<td>ADMIN&#x3001;SPACE</td>
+<td>ADMIN&#x3001;SPACE&#xFF0C;&#x5206;&#x522B;&#x4EE3;&#x8868;&#x8D85;&#x7EA7;&#x7BA1;&#x7406;&#x5458;&#x3001;&#x56FE;&#x7A7A;&#x95F4;&#x7BA1;&#x7406;&#x5458;</td>
+</tr>
+<tr>
+<td>graphspace</td>
+<td>&#x5426;</td>
+<td>String</td>
+<td></td>
+<td></td>
+<td>&#x5982;&#x679C;type&#x9009;&#x62E9;SPACE&#xFF0C;&#x90A3;&#x4E48;graphspace&#x662F;&#x5FC5;&#x586B;&#x9879;&#xFF1B;&#x5982;&#x679C;type&#x9009;&#x62E9;ADMIN&#xFF0C;&#x90A3;&#x4E48;graphspace&#x5FFD;&#x7565;</td>
+</tr>
+</tbody>
+</table>
+<h5 id="body&#x53C2;&#x6570;">Body&#x53C2;&#x6570;</h5>
+<p>&#x65E0;</p>
+<h5 id="response">Response</h5>
+<table>
+<thead>
+<tr>
+<th>&#x540D;&#x79F0;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>admins</td>
+<td>List[String]</td>
+<td>&#x7BA1;&#x7406;&#x5458;&#x5217;&#x8868;</td>
+</tr>
+</tbody>
+</table>
+<h5 id="&#x4F7F;&#x7528;&#x793A;&#x4F8B;">&#x4F7F;&#x7528;&#x793A;&#x4F8B;</h5>
+<h6 id="method--url">Method &amp; Url</h6>
+<pre><code>GET http://localhost:8080/auth/managers?type=SPACE&amp;graphspace=graphspace1
+</code></pre><h6 id="request-body">Request Body</h6>
+<p>&#x65E0;</p>
+<h6 id="response-status">Response Status</h6>
+<pre><code class="lang-json"><span class="hljs-number">200</span>
+</code></pre>
+<h6 id="response-body">Response Body</h6>
+<pre><code>{
+  &quot;admins&quot;: [&quot;boss&quot;]
+}
+</code></pre><h2 id="413token-api">4.13.Token API</h2>
 <p>&#x83B7;&#x53D6;&#x7528;&#x6237;Token&#xFF0C;&#x4E3B;&#x8981;&#x5305;&#x542B;&#xFF1A;&#x767B;&#x5F55;(login)&#x3001;&#x9A8C;&#x8BC1;Token(verify)&#x3002;</p>
 <h4 id="4131&#x767B;&#x5F55;login">4.13.1.&#x767B;&#x5F55;(login)</h4>
 <h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
@@ -4921,7 +4988,7 @@ city: Beijing})<br>&#x63CF;&#x8FF0;&#xFF1A;&#x7528;&#x6237;&apos;tester&apos;&#x
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Authentication","level":"4.2.16","depth":2,"next":{"title":"GraphSpace","level":"4.2.17","depth":2,"path":"clients/restful-api-v3/graphspace.md","ref":"clients/restful-api-v3/graphspace.md","articles":[]},"previous":{"title":"Gremlin","level":"4.2.15","depth":2,"path":"clients/restful-api-v3/gremlin.md","ref":"clients/restful-api-v3/gremlin.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"clients/restful-api-v3/auth.md","mtime":"2022-02-16T08:08:09.545Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-16T08:11:27.943Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Authentication","level":"4.2.16","depth":2,"next":{"title":"GraphSpace","level":"4.2.17","depth":2,"path":"clients/restful-api-v3/graphspace.md","ref":"clients/restful-api-v3/graphspace.md","articles":[]},"previous":{"title":"Gremlin","level":"4.2.15","depth":2,"path":"clients/restful-api-v3/gremlin.md","ref":"clients/restful-api-v3/gremlin.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"clients/restful-api-v3/auth.md","mtime":"2022-02-18T02:28:35.604Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-18T02:28:36.047Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

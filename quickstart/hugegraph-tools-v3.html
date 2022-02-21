@@ -906,7 +906,20 @@
             
         </li>
     
-        <li class="chapter " data-level="4.3" data-path="../clients/hugegraph-client.html">
+        <li class="chapter " data-level="4.3" data-path="../computer-v3/algorithm.html">
+            
+                <a href="../computer-v3/algorithm.html">
+            
+                    
+                    Computer API V3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../clients/hugegraph-client.html">
             
                 <a href="../clients/hugegraph-client.html">
             
@@ -919,7 +932,7 @@
             
         </li>
     
-        <li class="chapter " data-level="4.4" data-path="../clients/gremlin-console.html">
+        <li class="chapter " data-level="4.5" data-path="../clients/gremlin-console.html">
             
                 <a href="../clients/gremlin-console.html">
             
@@ -1506,7 +1519,7 @@
 <li>migrate, &#x5C06;&#x5F53;&#x524D;&#x8FDE;&#x63A5;&#x7684;&#x56FE;&#x8FC1;&#x79FB;&#x81F3;&#x53E6;&#x4E00;&#x4E2A; HugeGraphServer &#x4E2D;<ul>
 <li>--target-graph&#xFF0C;&#x76EE;&#x6807;&#x56FE;&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A; hugegraph</li>
 <li>--target-url&#xFF0C;&#x76EE;&#x6807;&#x56FE;&#x6240;&#x5728;&#x7684; HugeGraphServer&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A; <a href="http://127.0.0.1:8081" target="_blank">http://127.0.0.1:8081</a></li>
-<li>--target-username&#xFF0C;&#x8BBF;&#x95EE;&#x76EE;&#x6807;&#x56FE;&#x7684;&#x7528;&#x6237;&#x540D;</li>
+<li>--target-user&#xFF0C;&#x8BBF;&#x95EE;&#x76EE;&#x6807;&#x56FE;&#x7684;&#x7528;&#x6237;&#x540D;</li>
 <li>--target-password&#xFF0C;&#x8BBF;&#x95EE;&#x76EE;&#x6807;&#x56FE;&#x7684;&#x5BC6;&#x7801;</li>
 <li>--target-timeout&#xFF0C;&#x8BBF;&#x95EE;&#x76EE;&#x6807;&#x56FE;&#x7684;&#x8D85;&#x65F6;&#x65F6;&#x95F4;</li>
 <li>--target-trust-store-file&#xFF0C;&#x8BBF;&#x95EE;&#x76EE;&#x6807;&#x56FE;&#x4F7F;&#x7528;&#x7684; truststore &#x6587;&#x4EF6;</li>
@@ -1928,54 +1941,54 @@
 <h2 id="38&#x5177;&#x4F53;&#x547D;&#x4EE4;&#x793A;&#x4F8B;">3.8.&#x5177;&#x4F53;&#x547D;&#x4EE4;&#x793A;&#x4F8B;</h2>
 <h3 id="381gremlin&#x8BED;&#x53E5;">3.8.1.gremlin&#x8BED;&#x53E5;</h3>
 <pre><code class="lang-bash"><span class="hljs-comment"># &#x540C;&#x6B65;&#x6267;&#x884C;gremlin</span>
-./bin/hugegraph --url http://127.0.0.1:8080 --space gs1 --graph hugegraph gremlin-execute --script <span class="hljs-string">&apos;g.V().count()&apos;</span>
+./bin/hugegraph --url http://127.0.0.1:8080 --user admin --password admin --space gs1 --graph hugegraph gremlin-execute --script <span class="hljs-string">&apos;g.V().count()&apos;</span>
 
 <span class="hljs-comment"># &#x5F02;&#x6B65;&#x6267;&#x884C;gremlin</span>
-./bin/hugegraph --url http://127.0.0.1:8080 --space gs1 --graph hugegraph gremlin-schedule --script <span class="hljs-string">&apos;g.V().count()&apos;</span>
+./bin/hugegraph --url http://127.0.0.1:8080 --user admin --password admin --space gs1 --graph hugegraph gremlin-schedule --script <span class="hljs-string">&apos;g.V().count()&apos;</span>
 </code></pre>
 <h3 id="382&#x67E5;&#x770B;task&#x60C5;&#x51B5;">3.8.2.&#x67E5;&#x770B;task&#x60C5;&#x51B5;</h3>
-<pre><code class="lang-bash">./bin/hugegraph --url http://127.0.0.1:8080 --space gs1 --graph hugegraph task-list
+<pre><code class="lang-bash">./bin/hugegraph --url http://127.0.0.1:8080 --user admin --password admin --space gs1 --graph hugegraph task-list
 
-./bin/hugegraph --url http://127.0.0.1:8080 --space gs1 --graph hugegraph task-list --limit 5
+./bin/hugegraph --url http://127.0.0.1:8080 --user admin --password admin --space gs1 --graph hugegraph task-list --limit 5
 
-./bin/hugegraph --url http://127.0.0.1:8080 --space gs1 --graph hugegraph task-list --status success
+./bin/hugegraph --url http://127.0.0.1:8080 --user admin --password admin --space gs1 --graph hugegraph task-list --status success
 </code></pre>
 <h3 id="383&#x56FE;&#x6A21;&#x5F0F;&#x67E5;&#x770B;&#x548C;&#x8BBE;&#x7F6E;">3.8.3.&#x56FE;&#x6A21;&#x5F0F;&#x67E5;&#x770B;&#x548C;&#x8BBE;&#x7F6E;</h3>
-<pre><code class="lang-bash">./bin/hugegraph --url http://127.0.0.1:8080 --space gs1 --graph hugegraph graph-mode-set -m RESTORING MERGING NONE
+<pre><code class="lang-bash">./bin/hugegraph --url http://127.0.0.1:8080 --user admin --password admin --space gs1 --graph hugegraph graph-mode-set -m RESTORING MERGING NONE
 
-./bin/hugegraph --url http://127.0.0.1:8080 --space gs1 --graph hugegraph graph-mode-set -m RESTORING
+./bin/hugegraph --url http://127.0.0.1:8080 --user admin --password admin --space gs1 --graph hugegraph graph-mode-set -m RESTORING
 
-./bin/hugegraph --url http://127.0.0.1:8080 --space gs1 --graph hugegraph graph-mode-get
+./bin/hugegraph --url http://127.0.0.1:8080 --user admin --password admin --space gs1 --graph hugegraph graph-mode-get
 
-./bin/hugegraph --url http://127.0.0.1:8080 --space gs1 --graph hugegraph graph-list
+./bin/hugegraph --url http://127.0.0.1:8080 --user admin --password admin --space gs1 --graph hugegraph graph-list
 </code></pre>
 <h3 id="384&#x521B;&#x5EFA;&#x56FE;">3.8.4.&#x521B;&#x5EFA;&#x56FE;</h3>
-<pre><code class="lang-bash">./bin/hugegraph --url http://127.0.0.1:8080 --space gs1 graph-create -n hugegraph2 <span class="hljs-_">-f</span> ./hugegraph2.properties
+<pre><code class="lang-bash">./bin/hugegraph --url http://127.0.0.1:8080 --user admin --password admin --space gs1 graph-create -n hugegraph2 <span class="hljs-_">-f</span> ./hugegraph2.properties
 </code></pre>
 <h3 id="385&#x6E05;&#x7A7A;&#x56FE;">3.8.5.&#x6E05;&#x7A7A;&#x56FE;</h3>
-<pre><code class="lang-bash">./bin/hugegraph --url http://127.0.0.1:8080 --space gs1 --graph hugegraph graph-clear
+<pre><code class="lang-bash">./bin/hugegraph --url http://127.0.0.1:8080 --user admin --password admin --space gs1 --graph hugegraph graph-clear
 </code></pre>
 <h3 id="386&#x5220;&#x9664;&#x56FE;">3.8.6.&#x5220;&#x9664;&#x56FE;</h3>
-<pre><code class="lang-bash">./bin/hugegraph --url http://127.0.0.1:8080 --space gs1 --graph hugegraph graph-drop
+<pre><code class="lang-bash">./bin/hugegraph --url http://127.0.0.1:8080 --user admin --password admin --space gs1 --graph hugegraph graph-drop
 </code></pre>
 <h3 id="387&#x56FE;&#x5907;&#x4EFD;">3.8.7.&#x56FE;&#x5907;&#x4EFD;</h3>
-<pre><code class="lang-bash">./bin/hugegraph --url http://127.0.0.1:8080 --space gs1 --graph hugegraph backup -t all --directory ./backup-test
+<pre><code class="lang-bash">./bin/hugegraph --url http://127.0.0.1:8080 --user admin --password admin --space gs1 --graph hugegraph backup -t all --directory ./backup-test
 </code></pre>
 <h3 id="388&#x5468;&#x671F;&#x6027;&#x7684;&#x5907;&#x4EFD;">3.8.8.&#x5468;&#x671F;&#x6027;&#x7684;&#x5907;&#x4EFD;</h3>
-<pre><code class="lang-bash">./bin/hugegraph --url http://127.0.0.1:8080 --space gs1 --graph hugegraph --interval */2 * * * * schedule-backup <span class="hljs-_">-d</span> ./backup-0.10.2
+<pre><code class="lang-bash">./bin/hugegraph --url http://127.0.0.1:8080 --user admin --password admin --space gs1 --graph hugegraph --interval */2 * * * * schedule-backup <span class="hljs-_">-d</span> ./backup-0.10.2
 </code></pre>
 <h3 id="389&#x56FE;&#x6062;&#x590D;">3.8.9.&#x56FE;&#x6062;&#x590D;</h3>
 <pre><code class="lang-bash"><span class="hljs-comment"># &#x8BBE;&#x7F6E;&#x56FE;&#x6A21;&#x5F0F;</span>
-./bin/hugegraph --url http://127.0.0.1:8080 --space gs1 --graph hugegraph graph-mode-set -m RESTORING
+./bin/hugegraph --url http://127.0.0.1:8080 --user admin --password admin --space gs1 --graph hugegraph graph-mode-set -m RESTORING
 
 <span class="hljs-comment"># &#x6062;&#x590D;&#x56FE;</span>
-./bin/hugegraph --url http://127.0.0.1:8080 --space gs1 --graph hugegraph restore -t all --directory ./backup-test
+./bin/hugegraph --url http://127.0.0.1:8080 --user admin --password admin --space gs1 --graph hugegraph restore -t all --directory ./backup-test
 
 <span class="hljs-comment"># &#x6062;&#x590D;&#x56FE;&#x6A21;&#x5F0F;</span>
-./bin/hugegraph --url http://127.0.0.1:8080 --space gs1 --graph hugegraph graph-mode-set -m NONE
+./bin/hugegraph --url http://127.0.0.1:8080 --user admin --password admin --space gs1 --graph hugegraph graph-mode-set -m NONE
 </code></pre>
 <h3 id="3810&#x56FE;&#x8FC1;&#x79FB;">3.8.10.&#x56FE;&#x8FC1;&#x79FB;</h3>
-<pre><code class="lang-bash">./bin/hugegraph --url http://127.0.0.1:8080 --space gs1 --graph hugegraph migrate --target-url http://127.0.0.1:8090 --target-graph hugegraph
+<pre><code class="lang-bash">./bin/hugegraph --url http://127.0.0.1:8080 --user admin --password admin --space gs1 --graph hugegraph migrate --target-url http://127.0.0.1:8090 --target-graph hugegraph
 </code></pre>
 
                                 
@@ -2029,7 +2042,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Manage with HugeGraph-Tools-V3","level":"2.5","depth":1,"next":{"title":"Visual with HugeGraph-Hubble","level":"2.6","depth":1,"path":"quickstart/hugegraph-hubble.md","ref":"quickstart/hugegraph-hubble.md","articles":[]},"previous":{"title":"Manage with HugeGraph-Tools","level":"2.4","depth":1,"path":"quickstart/hugegraph-tools.md","ref":"quickstart/hugegraph-tools.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"quickstart/hugegraph-tools-v3.md","mtime":"2022-02-16T08:11:39.695Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-18T02:28:36.047Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Manage with HugeGraph-Tools-V3","level":"2.5","depth":1,"next":{"title":"Visual with HugeGraph-Hubble","level":"2.6","depth":1,"path":"quickstart/hugegraph-hubble.md","ref":"quickstart/hugegraph-hubble.md","articles":[]},"previous":{"title":"Manage with HugeGraph-Tools","level":"2.4","depth":1,"path":"quickstart/hugegraph-tools.md","ref":"quickstart/hugegraph-tools.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"quickstart/hugegraph-tools-v3.md","mtime":"2022-02-21T09:32:41.990Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-21T09:32:42.621Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

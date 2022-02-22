@@ -1341,18 +1341,18 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="5hugegraph-computer-&#x4F7F;&#x7528;&#x8BF4;&#x660E;">5.Hugegraph-Computer &#x4F7F;&#x7528;&#x8BF4;&#x660E;</h2>
-<h3 id="51olap-&#x7B97;&#x6CD5;">5.1.OLAP &#x7B97;&#x6CD5;</h3>
-<h4 id="511pagerank-&#x7B97;&#x6CD5;">5.1.1.PageRank &#x7B97;&#x6CD5;</h4>
-<h4 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h4>
+                                <h1 id="5hugegraph-computer-&#x4F7F;&#x7528;&#x8BF4;&#x660E;">5.Hugegraph-Computer &#x4F7F;&#x7528;&#x8BF4;&#x660E;</h1>
+<h2 id="51olap-&#x7B97;&#x6CD5;">5.1.OLAP &#x7B97;&#x6CD5;</h2>
+<h3 id="511pagerank-&#x7B97;&#x6CD5;">5.1.1.PageRank &#x7B97;&#x6CD5;</h3>
+<h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
 <p>PageRank&#x7B97;&#x6CD5;&#x53C8;&#x79F0;&#x7F51;&#x9875;&#x6392;&#x540D;&#x7B97;&#x6CD5;&#xFF0C;&#x662F;&#x4E00;&#x79CD;&#x7531;&#x641C;&#x7D22;&#x5F15;&#x64CE;&#x6839;&#x636E;&#x7F51;&#x9875;&#xFF08;&#x8282;&#x70B9;&#xFF09;&#x4E4B;&#x95F4;&#x76F8;&#x4E92;&#x7684;&#x8D85;&#x94FE;&#x63A5;&#x8FDB;&#x884C;&#x8BA1;&#x7B97;&#x7684;&#x6280;&#x672F;&#xFF0C;&#x7528;&#x6765;&#x4F53;&#x73B0;&#x7F51;&#x9875;&#xFF08;&#x8282;&#x70B9;&#xFF09;&#x7684;&#x76F8;&#x5173;&#x6027;&#x548C;&#x91CD;&#x8981;&#x6027;&#x3002;</p>
 <ul>
 <li>&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x7F51;&#x9875;&#x88AB;&#x5F88;&#x591A;&#x5176;&#x4ED6;&#x7F51;&#x9875;&#x94FE;&#x63A5;&#x5230;&#xFF0C;&#x8BF4;&#x660E;&#x8FD9;&#x4E2A;&#x7F51;&#x9875;&#x6BD4;&#x8F83;&#x91CD;&#x8981;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x5176;PageRank&#x503C;&#x4F1A;&#x76F8;&#x5BF9;&#x8F83;&#x9AD8;&#x3002;</li>
 <li>&#x5982;&#x679C;&#x4E00;&#x4E2A;PageRank&#x503C;&#x5F88;&#x9AD8;&#x7684;&#x7F51;&#x9875;&#x94FE;&#x63A5;&#x5230;&#x5176;&#x4ED6;&#x7F51;&#x9875;&#xFF0C;&#x90A3;&#x4E48;&#x88AB;&#x94FE;&#x63A5;&#x5230;&#x7684;&#x7F51;&#x9875;&#x7684;PageRank&#x503C;&#x4F1A;&#x76F8;&#x5E94;&#x5730;&#x63D0;&#x9AD8;&#x3002;</li>
 </ul>
-<h4 id="&#x9002;&#x7528;&#x573A;&#x666F;">&#x9002;&#x7528;&#x573A;&#x666F;</h4>
+<h5 id="&#x9002;&#x7528;&#x573A;&#x666F;">&#x9002;&#x7528;&#x573A;&#x666F;</h5>
 <p>PageRank&#x7B97;&#x6CD5;&#x9002;&#x7528;&#x4E8E;&#x7F51;&#x9875;&#x6392;&#x5E8F;&#x3001;&#x793E;&#x4EA4;&#x7F51;&#x7EDC;&#x91CD;&#x70B9;&#x4EBA;&#x7269;&#x53D1;&#x6398;&#x7B49;&#x573A;&#x666F;&#x3002;</p>
-<h4 id="&#x53C2;&#x6570;&#x8BF4;&#x660E;">&#x53C2;&#x6570;&#x8BF4;&#x660E;</h4>
+<h5 id="&#x53C2;&#x6570;&#x8BF4;&#x660E;">&#x53C2;&#x6570;&#x8BF4;&#x660E;</h5>
 <table>
 <thead>
 <tr>
@@ -1391,7 +1391,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="k8s&#x793A;&#x4F8B;">k8s&#x793A;&#x4F8B;</h4>
+<h5 id="k8s&#x793A;&#x4F8B;">k8s&#x793A;&#x4F8B;</h5>
 <pre><code class="lang-yaml">cat &lt;&lt;EOF | kubectl apply --filename -
 <span class="hljs-attr">apiVersion:</span> hugegraph.baidu.com/v1
 <span class="hljs-attr">kind:</span> HugeGraphComputerJob
@@ -1411,10 +1411,10 @@
     hugegraph.name: <span class="hljs-string">&quot;default/hugegraph&quot;</span> <span class="hljs-comment"># &#x56FE;&#x7A7A;&#x95F4;/&#x56FE;&#x540D;</span>
 EOF
 </code></pre>
-<h4 id="rest-api-&#x793A;&#x4F8B;">rest-api &#x793A;&#x4F8B;</h4>
-<h5 id="method--url">Method &amp; Url</h5>
+<h5 id="rest-api-&#x793A;&#x4F8B;">rest-api &#x793A;&#x4F8B;</h5>
+<h6 id="method--url">Method &amp; Url</h6>
 <p>POST <a href="http://localhost:8080/graphspaces/{graphspace}/graphs/{hugegraph}/jobs/computerdis" target="_blank">http://localhost:8080/graphspaces/{graphspace}/graphs/{hugegraph}/jobs/computerdis</a></p>
-<h5 id="request-body">Request Body</h5>
+<h6 id="request-body">Request Body</h6>
 <pre><code class="lang-json">{
   <span class="hljs-string">&quot;algorithm&quot;</span>: <span class="hljs-string">&quot;page-rank&quot;</span>,
   <span class="hljs-string">&quot;worker&quot;</span>: <span class="hljs-number">5</span>,
@@ -1425,21 +1425,21 @@ EOF
   }
 }
 </code></pre>
-<h5 id="response-body">Response Body</h5>
+<h6 id="response-body">Response Body</h6>
 <pre><code class="lang-json">{
   <span class="hljs-string">&quot;task_id&quot;</span>: <span class="hljs-string">&quot;7&quot;</span>
 }
 </code></pre>
-<h4 id="&#x8F93;&#x51FA;">&#x8F93;&#x51FA;</h4>
+<h5 id="&#x8F93;&#x51FA;">&#x8F93;&#x51FA;</h5>
 <p>&#x8F93;&#x51FA;&#x6BCF;&#x4E2A;&#x9876;&#x70B9;&#x7684;PageRank&#x503C;&#xFF0C;&#x7ED3;&#x679C;&#x7C7B;&#x578B;&#x4E3A;&#x6D6E;&#x70B9;&#x6570;&#x3002;</p>
-<h4 id="512weakly-connected-component">5.1.2.Weakly Connected Component</h4>
-<h4 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h4>
+<h3 id="512weakly-connected-component">5.1.2.Weakly Connected Component</h3>
+<h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
 <p>&#x5F31;&#x8FDE;&#x901A;&#x5206;&#x91CF;&#xFF0C;&#x8BA1;&#x7B97;&#x65E0;&#x5411;&#x56FE;&#x4E2D;&#x6240;&#x6709;&#x8054;&#x901A;&#x7684;&#x5B50;&#x56FE;&#xFF0C;&#x8F93;&#x51FA;&#x5404;&#x9876;&#x70B9;&#x6240;&#x5C5E;&#x7684;&#x5F31;&#x8054;&#x901A;&#x5B50;&#x56FE;id</p>
-<h4 id="&#x9002;&#x7528;&#x573A;&#x666F;">&#x9002;&#x7528;&#x573A;&#x666F;</h4>
+<h5 id="&#x9002;&#x7528;&#x573A;&#x666F;">&#x9002;&#x7528;&#x573A;&#x666F;</h5>
 <p>&#x8868;&#x660E;&#x5404;&#x4E2A;&#x70B9;&#x4E4B;&#x95F4;&#x7684;&#x8FDE;&#x901A;&#x6027;&#xFF0C;&#x533A;&#x5206;&#x4E0D;&#x540C;&#x7684;&#x8FDE;&#x901A;&#x793E;&#x533A;</p>
-<h4 id="&#x53C2;&#x6570;&#x8BF4;&#x660E;">&#x53C2;&#x6570;&#x8BF4;&#x660E;</h4>
+<h5 id="&#x53C2;&#x6570;&#x8BF4;&#x660E;">&#x53C2;&#x6570;&#x8BF4;&#x660E;</h5>
 <p>&#x65E0;</p>
-<h4 id="k8s&#x793A;&#x4F8B;">k8s&#x793A;&#x4F8B;</h4>
+<h5 id="k8s&#x793A;&#x4F8B;">k8s&#x793A;&#x4F8B;</h5>
 <pre><code class="lang-yaml">cat &lt;&lt;EOF | kubectl apply --filename -
 <span class="hljs-attr">apiVersion:</span> hugegraph.baidu.com/v1
 <span class="hljs-attr">kind:</span> HugeGraphComputerJob
@@ -1459,29 +1459,29 @@ EOF
     hugegraph.name: <span class="hljs-string">&quot;default/hugegraph&quot;</span> <span class="hljs-comment"># &#x56FE;&#x7A7A;&#x95F4;/&#x56FE;&#x540D;</span>
 EOF
 </code></pre>
-<h4 id="rest-api-&#x793A;&#x4F8B;">rest-api &#x793A;&#x4F8B;</h4>
-<h5 id="method--url">Method &amp; Url</h5>
+<h5 id="rest-api-&#x793A;&#x4F8B;">rest-api &#x793A;&#x4F8B;</h5>
+<h6 id="method--url">Method &amp; Url</h6>
 <p>POST <a href="http://localhost:8080/graphspaces/{graphspace}/graphs/{hugegraph}/jobs/computerdis" target="_blank">http://localhost:8080/graphspaces/{graphspace}/graphs/{hugegraph}/jobs/computerdis</a></p>
-<h5 id="request-body">Request Body</h5>
+<h6 id="request-body">Request Body</h6>
 <pre><code class="lang-json">{
   <span class="hljs-string">&quot;algorithm&quot;</span>: <span class="hljs-string">&quot;wcc&quot;</span>,
   <span class="hljs-string">&quot;worker&quot;</span>: <span class="hljs-number">5</span>,
   <span class="hljs-string">&quot;params&quot;</span>: {}
 }
 </code></pre>
-<h5 id="response-body">Response Body</h5>
+<h6 id="response-body">Response Body</h6>
 <pre><code class="lang-json">{
   <span class="hljs-string">&quot;task_id&quot;</span>: <span class="hljs-string">&quot;7&quot;</span>
 }
 </code></pre>
-<h4 id="&#x8F93;&#x51FA;">&#x8F93;&#x51FA;</h4>
+<h5 id="&#x8F93;&#x51FA;">&#x8F93;&#x51FA;</h5>
 <p>&#x8F93;&#x51FA;&#x6BCF;&#x4E2A;&#x9876;&#x70B9;&#x7684;&#x5F31;&#x8054;&#x901A;&#x5B50;&#x56FE;id&#x503C;&#xFF0C;&#x7ED3;&#x679C;&#x7C7B;&#x578B;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#x3002;</p>
-<h4 id="513degree-centrality">5.1.3.Degree Centrality</h4>
-<h4 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h4>
+<h3 id="513degree-centrality">5.1.3.Degree Centrality</h3>
+<h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
 <p>&#x5EA6;&#x4E2D;&#x5FC3;&#x6027;&#x7B97;&#x6CD5;&#xFF0C;&#x7B97;&#x6CD5;&#x7528;&#x4E8E;&#x8BA1;&#x7B97;&#x56FE;&#x4E2D;&#x6BCF;&#x4E2A;&#x8282;&#x70B9;&#x7684;&#x5EA6;&#x4E2D;&#x5FC3;&#x6027;&#x503C;&#xFF0C;&#x652F;&#x6301;&#x65E0;&#x5411;&#x56FE;&#x548C;&#x6709;&#x5411;&#x56FE;&#x3002;&#x5EA6;&#x4E2D;&#x5FC3;&#x6027;&#x662F;&#x8861;&#x91CF;&#x8282;&#x70B9;&#x91CD;&#x8981;&#x6027;&#x7684;&#x91CD;&#x8981;&#x6307;&#x6807;&#xFF0C;&#x8282;&#x70B9;&#x4E0E;&#x5176;&#x5B83;&#x8282;&#x70B9;&#x7684;&#x8FB9;&#x8D8A;&#x591A;&#xFF0C;&#x5219;&#x8282;&#x70B9;&#x7684;&#x5EA6;&#x4E2D;&#x5FC3;&#x6027;&#x503C;&#x8D8A;&#x5927;&#xFF0C;&#x8282;&#x70B9;&#x5728;&#x56FE;&#x4E2D;&#x7684;&#x91CD;&#x8981;&#x6027;&#x4E5F;&#x5C31;&#x8D8A;&#x9AD8;&#x3002;&#x5728;&#x65E0;&#x5411;&#x56FE;&#x4E2D;&#xFF0C;&#x5EA6;&#x4E2D;&#x5FC3;&#x6027;&#x7684;&#x8BA1;&#x7B97;&#x662F;&#x57FA;&#x4E8E;&#x8FB9;&#x4FE1;&#x606F;&#x7EDF;&#x8BA1;&#x8282;&#x70B9;&#x51FA;&#x73B0;&#x6B21;&#x6570;&#xFF0C;&#x5F97;&#x51FA;&#x8282;&#x70B9;&#x7684;&#x5EA6;&#x4E2D;&#x5FC3;&#x6027;&#x7684;&#x503C;&#xFF0C;&#x5728;&#x6709;&#x5411;&#x56FE;&#x4E2D;&#x5219;&#x57FA;&#x4E8E;&#x8FB9;&#x7684;&#x65B9;&#x5411;&#x8FDB;&#x884C;&#x7B5B;&#x9009;&#xFF0C;&#x57FA;&#x4E8E;&#x8F93;&#x5165;&#x8FB9;&#x6216;&#x8F93;&#x51FA;&#x8FB9;&#x4FE1;&#x606F;&#x7EDF;&#x8BA1;&#x8282;&#x70B9;&#x51FA;&#x73B0;&#x6B21;&#x6570;&#xFF0C;&#x5F97;&#x5230;&#x8282;&#x70B9;&#x7684;&#x5165;&#x5EA6;&#x503C;&#x6216;&#x51FA;&#x5EA6;&#x503C;&#x3002;</p>
-<h4 id="&#x9002;&#x7528;&#x573A;&#x666F;">&#x9002;&#x7528;&#x573A;&#x666F;</h4>
+<h5 id="&#x9002;&#x7528;&#x573A;&#x666F;">&#x9002;&#x7528;&#x573A;&#x666F;</h5>
 <p>&#x8868;&#x660E;&#x5404;&#x4E2A;&#x70B9;&#x7684;&#x91CD;&#x8981;&#x6027;&#xFF0C;&#x4E00;&#x822C;&#x8D8A;&#x91CD;&#x8981;&#x7684;&#x70B9;&#x5EA6;&#x6570;&#x8D8A;&#x9AD8;&#x3002;</p>
-<h4 id="&#x53C2;&#x6570;&#x8BF4;&#x660E;">&#x53C2;&#x6570;&#x8BF4;&#x660E;</h4>
+<h5 id="&#x53C2;&#x6570;&#x8BF4;&#x660E;">&#x53C2;&#x6570;&#x8BF4;&#x660E;</h5>
 <table>
 <thead>
 <tr>
@@ -1504,7 +1504,7 @@ EOF
 </tr>
 </tbody>
 </table>
-<h4 id="k8s&#x793A;&#x4F8B;">k8s&#x793A;&#x4F8B;</h4>
+<h5 id="k8s&#x793A;&#x4F8B;">k8s&#x793A;&#x4F8B;</h5>
 <pre><code class="lang-yaml">cat &lt;&lt;EOF | kubectl apply --filename -
 <span class="hljs-attr">apiVersion:</span> hugegraph.baidu.com/v1
 <span class="hljs-attr">kind:</span> HugeGraphComputerJob
@@ -1524,10 +1524,10 @@ EOF
     hugegraph.name: <span class="hljs-string">&quot;default/hugegraph&quot;</span> <span class="hljs-comment"># &#x56FE;&#x7A7A;&#x95F4;/&#x56FE;&#x540D;</span>
 EOF
 </code></pre>
-<h4 id="rest-api-&#x793A;&#x4F8B;">rest-api &#x793A;&#x4F8B;</h4>
-<h5 id="method--url">Method &amp; Url</h5>
+<h5 id="rest-api-&#x793A;&#x4F8B;">rest-api &#x793A;&#x4F8B;</h5>
+<h6 id="method--url">Method &amp; Url</h6>
 <p>POST <a href="http://localhost:8080/graphspaces/{graphspace}/graphs/{hugegraph}/jobs/computerdis" target="_blank">http://localhost:8080/graphspaces/{graphspace}/graphs/{hugegraph}/jobs/computerdis</a></p>
-<h5 id="request-body">Request Body</h5>
+<h6 id="request-body">Request Body</h6>
 <pre><code class="lang-json">{
   <span class="hljs-string">&quot;algorithm&quot;</span>: <span class="hljs-string">&quot;degree-centrality&quot;</span>,
   <span class="hljs-string">&quot;worker&quot;</span>: <span class="hljs-number">5</span>,
@@ -1536,21 +1536,21 @@ EOF
   }
 }
 </code></pre>
-<h5 id="response-body">Response Body</h5>
+<h6 id="response-body">Response Body</h6>
 <pre><code class="lang-json">{
   <span class="hljs-string">&quot;task_id&quot;</span>: <span class="hljs-string">&quot;7&quot;</span>
 }
 </code></pre>
-<h4 id="&#x8F93;&#x51FA;">&#x8F93;&#x51FA;</h4>
+<h5 id="&#x8F93;&#x51FA;">&#x8F93;&#x51FA;</h5>
 <p>&#x8F93;&#x51FA;&#x6BCF;&#x4E2A;&#x9876;&#x70B9;&#x7684;&#x5EA6;&#x4E2D;&#x5FC3;&#x6027;&#x7684;&#x503C;&#xFF0C;&#x7ED3;&#x679C;&#x7C7B;&#x578B;&#x4E3A;&#x6D6E;&#x70B9;&#x6570;&#x3002;</p>
-<h4 id="514closeness-centrality">5.1.4.Closeness Centrality</h4>
-<h4 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h4>
+<h3 id="514closeness-centrality">5.1.4.Closeness Centrality</h3>
+<h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
 <p>&#x7D27;&#x5BC6;&#x4E2D;&#x5FC3;&#x5EA6;&#x7B97;&#x6CD5;&#xFF08;Closeness Centrality&#xFF09;&#x8BA1;&#x7B97;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x5230;&#x6240;&#x6709;&#x5176;&#x4ED6;&#x53EF;&#x8FBE;&#x8282;&#x70B9;&#x7684;&#x6700;&#x77ED;&#x8DDD;&#x79BB;&#x7684;&#x5012;&#x6570;&#xFF0C;&#x8FDB;&#x884C;&#x7D2F;&#x79EF;&#x540E;&#x5F52;&#x4E00;&#x5316;&#x7684;&#x503C;&#x3002;&#x7D27;&#x5BC6;&#x4E2D;&#x5FC3;&#x5EA6;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x8861;&#x91CF;&#x4FE1;&#x606F;&#x4ECE;&#x8BE5;&#x8282;&#x70B9;&#x4F20;&#x8F93;&#x5230;&#x5176;&#x4ED6;&#x8282;&#x70B9;&#x7684;&#x65F6;&#x95F4;&#x957F;&#x77ED;&#x3002;&#x8282;&#x70B9;&#x7684; &#x201C;Closeness Centrality&#x201D; &#x8D8A;&#x5927;&#xFF0C;&#x5176;&#x5728;&#x6240;&#x5728;&#x56FE;&#x4E2D;&#x7684;&#x4F4D;&#x7F6E;&#x8D8A;&#x9760;&#x8FD1;&#x4E2D;&#x5FC3;&#x3002;</p>
-<h4 id="&#x9002;&#x7528;&#x573A;&#x666F;">&#x9002;&#x7528;&#x573A;&#x666F;</h4>
+<h5 id="&#x9002;&#x7528;&#x573A;&#x666F;">&#x9002;&#x7528;&#x573A;&#x666F;</h5>
 <p>&#x7D27;&#x5BC6;&#x4E2D;&#x5FC3;&#x5EA6;&#x7B97;&#x6CD5;&#xFF08;Closeness Centrality&#xFF09;&#x9002;&#x7528;&#x4E8E;&#x793E;&#x4EA4;&#x7F51;&#x7EDC;&#x4E2D;&#x5173;&#x952E;&#x8282;&#x70B9;&#x53D1;&#x6398;&#x7B49;&#x573A;&#x666F;&#x3002;</p>
-<h4 id="&#x6027;&#x80FD;&#x8BF4;&#x660E;">&#x6027;&#x80FD;&#x8BF4;&#x660E;</h4>
+<h5 id="&#x6027;&#x80FD;&#x8BF4;&#x660E;">&#x6027;&#x80FD;&#x8BF4;&#x660E;</h5>
 <p>&#x7531;&#x4E8E;&#x4E2D;&#x5FC3;&#x6027;&#x7B97;&#x6CD5;&#x5C5E;&#x4E8E;&#x6307;&#x6570;&#x81A8;&#x80C0;&#x7B97;&#x6CD5;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x4F5C;&#x9650;&#x5236;&#x662F;&#x8DD1;&#x4E0D;&#x4E0B;&#x53BB;&#x7684;&#xFF0C;&#x6839;&#x636E;&#x786C;&#x4EF6;&#x8D44;&#x6E90;&#x7684;&#x60C5;&#x51B5;&#x53EF;&#x8C03;&#x6574; sample_rate &#xFF08;&#x91C7;&#x6837;&#x7387;&#xFF09;&#x548C; limit_edges_in_one_vertex &#xFF08;&#x6700;&#x5927;&#x51FA;&#x8FB9;&#x9650;&#x5236;&#xFF09;&#xFF0C;&#x4EE5;&#x514D;&#x8DD1;&#x4E0D;&#x4E0B;&#x53BB;&#x3002;&#x56E0;&#x4E3A;&#x91C7;&#x6837;&#x80FD;&#x4E00;&#x5B9A;&#x7A0B;&#x5EA6;&#x7684;&#x8868;&#x5F81;&#x5B9A;&#x70B9;&#x7684;&#x4E2D;&#x5FC3;&#x6027;&#xFF0C;&#x6240;&#x4EE5;&#x5C0F;&#x91C7;&#x6837;&#x7387;&#x4E0D;&#x4EC5;&#x53EF;&#x4EE5;&#x51CF;&#x5C11;&#x8BA1;&#x7B97;&#x91CF;&#xFF0C;&#x8FD8;&#x53EF;&#x80FD;&#x5BF9;&#x6700;&#x7EC8;&#x7ED3;&#x679C;&#x5F71;&#x54CD;&#x6BD4;&#x8F83;&#x5C0F;&#x3002;</p>
-<h4 id="&#x53C2;&#x6570;&#x8BF4;&#x660E;">&#x53C2;&#x6570;&#x8BF4;&#x660E;</h4>
+<h5 id="&#x53C2;&#x6570;&#x8BF4;&#x660E;">&#x53C2;&#x6570;&#x8BF4;&#x660E;</h5>
 <table>
 <thead>
 <tr>
@@ -1589,7 +1589,7 @@ EOF
 </tr>
 </tbody>
 </table>
-<h4 id="k8s&#x793A;&#x4F8B;">k8s&#x793A;&#x4F8B;</h4>
+<h5 id="k8s&#x793A;&#x4F8B;">k8s&#x793A;&#x4F8B;</h5>
 <pre><code class="lang-yaml">cat &lt;&lt;EOF | kubectl apply --filename -
 <span class="hljs-attr">apiVersion:</span> hugegraph.baidu.com/v1
 <span class="hljs-attr">kind:</span> HugeGraphComputerJob
@@ -1612,10 +1612,10 @@ EOF
     hugegraph.name: <span class="hljs-string">&quot;default/hugegraph&quot;</span> <span class="hljs-comment"># &#x56FE;&#x7A7A;&#x95F4;/&#x56FE;&#x540D;</span>
 EOF
 </code></pre>
-<h4 id="rest-api-&#x793A;&#x4F8B;">rest-api &#x793A;&#x4F8B;</h4>
-<h5 id="method--url">Method &amp; Url</h5>
+<h5 id="rest-api-&#x793A;&#x4F8B;">rest-api &#x793A;&#x4F8B;</h5>
+<h6 id="method--url">Method &amp; Url</h6>
 <p>POST <a href="http://localhost:8080/graphspaces/{graphspace}/graphs/{hugegraph}/jobs/computerdis" target="_blank">http://localhost:8080/graphspaces/{graphspace}/graphs/{hugegraph}/jobs/computerdis</a></p>
-<h5 id="request-body">Request Body</h5>
+<h6 id="request-body">Request Body</h6>
 <pre><code class="lang-json">{
   <span class="hljs-string">&quot;algorithm&quot;</span>: <span class="hljs-string">&quot;closeness-centrality&quot;</span>,
   <span class="hljs-string">&quot;worker&quot;</span>: <span class="hljs-number">5</span>,
@@ -1627,21 +1627,21 @@ EOF
   }
 }
 </code></pre>
-<h5 id="response-body">Response Body</h5>
+<h6 id="response-body">Response Body</h6>
 <pre><code class="lang-json">{
   <span class="hljs-string">&quot;task_id&quot;</span>: <span class="hljs-string">&quot;7&quot;</span>
 }
 </code></pre>
-<h4 id="&#x8F93;&#x51FA;">&#x8F93;&#x51FA;</h4>
+<h5 id="&#x8F93;&#x51FA;">&#x8F93;&#x51FA;</h5>
 <p>&#x8F93;&#x51FA;&#x6BCF;&#x4E2A;&#x9876;&#x70B9;&#x7684;&#x7D27;&#x5BC6;&#x4E2D;&#x5FC3;&#x6027;&#x7684;&#x503C;&#xFF0C;&#x7ED3;&#x679C;&#x7C7B;&#x578B;&#x4E3A;&#x6D6E;&#x70B9;&#x6570;&#x3002;</p>
-<h4 id="515triangle-count">5.1.5.Triangle Count</h4>
-<h4 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h4>
+<h3 id="515triangle-count">5.1.5.Triangle Count</h3>
+<h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
 <p>&#x4E09;&#x89D2;&#x5F62;&#x8BA1;&#x6570;&#x7B97;&#x6CD5;&#xFF0C;&#x7528;&#x4E8E;&#x8BA1;&#x7B97;&#x901A;&#x8FC7;&#x6BCF;&#x4E2A;&#x9876;&#x70B9;&#x7684;&#x4E09;&#x89D2;&#x5F62;&#x4E2A;&#x6570;&#x3002;</p>
-<h4 id="&#x9002;&#x7528;&#x573A;&#x666F;">&#x9002;&#x7528;&#x573A;&#x666F;</h4>
+<h5 id="&#x9002;&#x7528;&#x573A;&#x666F;">&#x9002;&#x7528;&#x573A;&#x666F;</h5>
 <p>&#x8BA1;&#x7B97;&#x7528;&#x6237;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;&#xFF0C;&#x5173;&#x8054;&#x6027;&#x662F;&#x4E0D;&#x662F;&#x6210;&#x4E09;&#x89D2;&#x5F62;&#x3002;</p>
-<h4 id="&#x6027;&#x80FD;&#x8BF4;&#x660E;">&#x6027;&#x80FD;&#x8BF4;&#x660E;</h4>
+<h5 id="&#x6027;&#x80FD;&#x8BF4;&#x660E;">&#x6027;&#x80FD;&#x8BF4;&#x660E;</h5>
 <p>&#x5728;&#x4E09;&#x89D2;&#x5F62;&#x8BA1;&#x6570;&#x4E2D;&#xFF0C;&#x8D85;&#x7EA7;&#x70B9;&#x4F1A;&#x4EA7;&#x751F;&#x5927;&#x91CF;&#x7684;&#x6D88;&#x606F;&#xFF0C;&#x5BFC;&#x81F4;&#x78C1;&#x76D8;&#x548C;&#x7B97;&#x529B;&#x9700;&#x6C42;&#x975E;&#x5E38;&#x9AD8;&#xFF0C;&#x4F46;&#x5B9E;&#x9645;&#x5E94;&#x7528;&#x4E2D;&#x8D85;&#x7EA7;&#x70B9;&#x7684;&#x4E09;&#x89D2;&#x5F62;&#x7279;&#x522B;&#x591A;&#xFF0C;&#x6C42;&#x51FA;&#x6765;&#x6CA1;&#x6709;&#x591A;&#x5C11;&#x5B9E;&#x9645;&#x610F;&#x4E49;&#xFF0C;&#x6240;&#x4EE5;&#x5EFA;&#x8BAE;&#x8BBE;&#x7F6E;&#x9650;&#x5236;&#x51FA;&#x8FB9;&#x7684;&#x53C2;&#x6570;&#x6765;&#x51CF;&#x5C11;&#x8D44;&#x6E90;&#x548C;&#x7B97;&#x529B;&#x6D88;&#x8017;&#x3002;&#x8BE6;&#x60C5;&#x89C1; 5.2.4.&#x9650;&#x5236;&#x6BCF;&#x4E2A;&#x70B9;&#x7684;&#x6700;&#x5927;&#x8FB9;&#x6570;&#x3002;</p>
-<h4 id="&#x53C2;&#x6570;&#x8BF4;&#x660E;">&#x53C2;&#x6570;&#x8BF4;&#x660E;</h4>
+<h5 id="&#x53C2;&#x6570;&#x8BF4;&#x660E;">&#x53C2;&#x6570;&#x8BF4;&#x660E;</h5>
 <table>
 <thead>
 <tr>
@@ -1664,7 +1664,7 @@ EOF
 </tr>
 </tbody>
 </table>
-<h4 id="k8s&#x793A;&#x4F8B;">k8s&#x793A;&#x4F8B;</h4>
+<h5 id="k8s&#x793A;&#x4F8B;">k8s&#x793A;&#x4F8B;</h5>
 <pre><code class="lang-yaml">cat &lt;&lt;EOF | kubectl apply --filename -
 <span class="hljs-attr">apiVersion:</span> hugegraph.baidu.com/v1
 <span class="hljs-attr">kind:</span> HugeGraphComputerJob
@@ -1685,10 +1685,10 @@ EOF
     hugegraph.name: <span class="hljs-string">&quot;default/hugegraph&quot;</span> <span class="hljs-comment"># &#x56FE;&#x7A7A;&#x95F4;/&#x56FE;&#x540D;</span>
 EOF
 </code></pre>
-<h4 id="rest-api-&#x793A;&#x4F8B;">rest-api &#x793A;&#x4F8B;</h4>
-<h5 id="method--url">Method &amp; Url</h5>
+<h5 id="rest-api-&#x793A;&#x4F8B;">rest-api &#x793A;&#x4F8B;</h5>
+<h6 id="method--url">Method &amp; Url</h6>
 <p>POST <a href="http://localhost:8080/graphspaces/{graphspace}/graphs/{hugegraph}/jobs/computerdis" target="_blank">http://localhost:8080/graphspaces/{graphspace}/graphs/{hugegraph}/jobs/computerdis</a></p>
-<h5 id="request-body">Request Body</h5>
+<h6 id="request-body">Request Body</h6>
 <pre><code class="lang-json">{
   <span class="hljs-string">&quot;algorithm&quot;</span>: <span class="hljs-string">&quot;triangle-count&quot;</span>,
   <span class="hljs-string">&quot;worker&quot;</span>: <span class="hljs-number">5</span>,
@@ -1696,21 +1696,21 @@ EOF
   <span class="hljs-string">&quot;params&quot;</span>: {}
 }
 </code></pre>
-<h5 id="response-body">Response Body</h5>
+<h6 id="response-body">Response Body</h6>
 <pre><code class="lang-json">{
   <span class="hljs-string">&quot;task_id&quot;</span>: <span class="hljs-string">&quot;7&quot;</span>
 }
 </code></pre>
-<h4 id="&#x8F93;&#x51FA;">&#x8F93;&#x51FA;</h4>
+<h5 id="&#x8F93;&#x51FA;">&#x8F93;&#x51FA;</h5>
 <p>&#x8F93;&#x51FA;&#x6BCF;&#x4E2A;&#x9876;&#x70B9;&#x6240;&#x5C5E;&#x7684;&#x4E09;&#x89D2;&#x5F62;&#x4E2A;&#x503C;&#xFF0C;&#x7ED3;&#x679C;&#x7C7B;&#x578B;&#x4E3A;&#x6574;&#x5F62;&#x3002;</p>
-<h4 id="516rings-detection">5.1.6.Rings Detection</h4>
-<h4 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h4>
+<h3 id="516rings-detection">5.1.6.Rings Detection</h3>
+<h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
 <p>&#x73AF;&#x8DEF;&#x68C0;&#x6D4B;&#x7B97;&#x6CD5;&#xFF08;Rings Detection&#xFF09;&#xFF0C;&#x7528;&#x4E8E;&#x68C0;&#x6D4B;&#x56FE;&#x4E2D;&#x7684;&#x73AF;&#x8DEF;&#xFF0C;&#x73AF;&#x8DEF;&#x7684;&#x8DEF;&#x5F84;&#x7531;&#x73AF;&#x8DEF;&#x4E2D;&#x6700;&#x5C0F;id&#x7684;&#x9876;&#x70B9;&#x6765;&#x8BB0;&#x5F55;&#x3002;</p>
-<h4 id="&#x9002;&#x7528;&#x573A;&#x666F;">&#x9002;&#x7528;&#x573A;&#x666F;</h4>
+<h5 id="&#x9002;&#x7528;&#x573A;&#x666F;">&#x9002;&#x7528;&#x573A;&#x666F;</h5>
 <p>&#x68C0;&#x6D4B;&#x6709;&#x6CA1;&#x6709;&#x5FAA;&#x73AF;&#x8F6C;&#x8D26;&#x7B49;&#x3002;</p>
-<h4 id="&#x6027;&#x80FD;&#x8BF4;&#x660E;">&#x6027;&#x80FD;&#x8BF4;&#x660E;</h4>
+<h5 id="&#x6027;&#x80FD;&#x8BF4;&#x660E;">&#x6027;&#x80FD;&#x8BF4;&#x660E;</h5>
 <p>&#x7531;&#x4E8E;&#x73AF;&#x8DEF;&#x68C0;&#x6D4B;&#x7B97;&#x6CD5;&#x662F;&#x4E00;&#x4E2A;&#x6307;&#x6570;&#x589E;&#x957F;&#x7684;&#x7B97;&#x6CD5;&#xFF0C;&#x4E0D;&#x5E26;&#x6761;&#x4EF6;&#x7684;&#x73AF;&#x8DEF;&#x68C0;&#x6D4B;&#x53EA;&#x80FD;&#x8DD1;&#x5F88;&#x5C0F;&#x7684;&#x6570;&#x636E;&#xFF08;&#x51E0;&#x5341;&#x4E07;&#x8FB9;&#xFF09;&#xFF0C;&#x8981;&#x5728;&#x5927;&#x6570;&#x636E;&#x96C6;&#x4E0A;&#x8DD1;&#x73AF;&#x8DEF;&#x68C0;&#x6D4B;&#xFF0C;&#x8BF7;&#x53C2;&#x89C1;&#x5E26;&#x6761;&#x4EF6;&#x7684;&#x73AF;&#x8DEF;&#x68C0;&#x6D4B;&#xFF0C;&#x7528;&#x6761;&#x4EF6;&#x628A;&#x4E0D;&#x9700;&#x8981;&#x7684;&#x6570;&#x636E;&#x8FC7;&#x6EE4;&#x6389;&#x3002;</p>
-<h4 id="&#x53C2;&#x6570;&#x8BF4;&#x660E;">&#x53C2;&#x6570;&#x8BF4;&#x660E;</h4>
+<h5 id="&#x53C2;&#x6570;&#x8BF4;&#x660E;">&#x53C2;&#x6570;&#x8BF4;&#x660E;</h5>
 <table>
 <thead>
 <tr>
@@ -1733,7 +1733,7 @@ EOF
 </tr>
 </tbody>
 </table>
-<h4 id="k8s&#x793A;&#x4F8B;">k8s&#x793A;&#x4F8B;</h4>
+<h5 id="k8s&#x793A;&#x4F8B;">k8s&#x793A;&#x4F8B;</h5>
 <pre><code class="lang-yaml">cat &lt;&lt;EOF | kubectl apply --filename -
 <span class="hljs-attr">apiVersion:</span> hugegraph.baidu.com/v1
 <span class="hljs-attr">kind:</span> HugeGraphComputerJob
@@ -1754,10 +1754,10 @@ EOF
     input.edge_freq: <span class="hljs-string">&quot;MULTIPLE&quot;</span> <span class="hljs-comment"># &#x9ED8;&#x8BA4;&#x662F;MULTIPLE&#xFF0C;&#x53EF;&#x9009;&#x8303;&#x56F4;&quot;SINGLE&quot;, &quot;SINGLE_PER_LABEL&quot;, &quot;MULTIPLE&quot;&#x3002;&#x5206;&#x522B;&#x4EE3;&#x8868;&#x4E24;&#x70B9;&#x4E4B;&#x95F4;&#x53EA;&#x5141;&#x8BB8;&#x6709;&#x4E00;&#x6761;&#x8FB9;&#x3001;&#x4E24;&#x70B9;&#x4E4B;&#x95F4;&#x540C;label&#x591A;&#x6761;&#x8FB9;&#x3001;&#x4E24;&#x70B9;&#x4E4B;&#x95F4;&#x591A;&#x6761;&#x8FB9;&#x3002;</span>
 EOF
 </code></pre>
-<h4 id="rest-api-&#x793A;&#x4F8B;">rest-api &#x793A;&#x4F8B;</h4>
-<h5 id="method--url">Method &amp; Url</h5>
+<h5 id="rest-api-&#x793A;&#x4F8B;">rest-api &#x793A;&#x4F8B;</h5>
+<h6 id="method--url">Method &amp; Url</h6>
 <p>POST <a href="http://localhost:8080/graphspaces/{graphspace}/graphs/{hugegraph}/jobs/computerdis" target="_blank">http://localhost:8080/graphspaces/{graphspace}/graphs/{hugegraph}/jobs/computerdis</a></p>
-<h5 id="request-body">Request Body</h5>
+<h6 id="request-body">Request Body</h6>
 <pre><code class="lang-json">{
   <span class="hljs-string">&quot;algorithm&quot;</span>: <span class="hljs-string">&quot;rings&quot;</span>,
   <span class="hljs-string">&quot;worker&quot;</span>: <span class="hljs-number">5</span>,
@@ -1766,21 +1766,21 @@ EOF
   }
 }
 </code></pre>
-<h5 id="response-body">Response Body</h5>
+<h6 id="response-body">Response Body</h6>
 <pre><code class="lang-json">{
   <span class="hljs-string">&quot;task_id&quot;</span>: <span class="hljs-string">&quot;7&quot;</span>
 }
 </code></pre>
-<h4 id="&#x8F93;&#x51FA;">&#x8F93;&#x51FA;</h4>
+<h5 id="&#x8F93;&#x51FA;">&#x8F93;&#x51FA;</h5>
 <p>&#x7ED3;&#x679C;&#x7C7B;&#x578B;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#x96C6;&#x5408;&#xFF0C;&#x96C6;&#x5408;&#x4E2D;&#x6BCF;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x662F;&#x4E00;&#x4E2A;&#x73AF;&#x8DEF;&#x3002;&#x4E00;&#x4E2A;&#x73AF;&#x8DEF;&#x53EA;&#x4F1A;&#x88AB;&#x8BB0;&#x5F55;&#x5728;&#x73AF;&#x8DEF;&#x4E2D;id&#x6700;&#x5C0F;&#x7684;&#x9876;&#x70B9;&#x4E0A;&#x3002;</p>
-<h4 id="517filtered-rings-detection">5.1.7.Filtered Rings Detection</h4>
-<h4 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h4>
+<h3 id="517filtered-rings-detection">5.1.7.Filtered Rings Detection</h3>
+<h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
 <p>&#x5E26;&#x8FC7;&#x6EE4;&#x6761;&#x4EF6;&#x7684;&#x73AF;&#x8DEF;&#x68C0;&#x6D4B;&#x7B97;&#x6CD5;&#xFF08;Filtered Rings Detection&#xFF09;&#x7528;&#x4E8E;&#x68C0;&#x6D4B;&#x56FE;&#x4E2D;&#x7684;&#x73AF;&#x8DEF;&#xFF0C;&#x73AF;&#x8DEF;&#x7684;&#x8DEF;&#x5F84;&#x7531;&#x73AF;&#x8DEF;&#x4E2D;&#x6700;&#x5C0F;id&#x7684;&#x9876;&#x70B9;&#x6765;&#x8BB0;&#x5F55;&#x3002;&#x53EF;&#x901A;&#x8FC7;&#x6307;&#x5B9A;&#x70B9;&#x3001;&#x8FB9;&#x5C5E;&#x6027;&#x8FC7;&#x6EE4;&#x89C4;&#x5219;&#x8BA9;&#x7B97;&#x6CD5;&#x9009;&#x62E9;&#x6027;&#x7684;&#x505A;&#x8DEF;&#x5F84;&#x4F20;&#x64AD;&#x3002;</p>
-<h4 id="&#x9002;&#x7528;&#x573A;&#x666F;">&#x9002;&#x7528;&#x573A;&#x666F;</h4>
+<h5 id="&#x9002;&#x7528;&#x573A;&#x666F;">&#x9002;&#x7528;&#x573A;&#x666F;</h5>
 <p>&#x68C0;&#x6D4B;&#x6709;&#x6CA1;&#x6709;&#x5FAA;&#x73AF;&#x8F6C;&#x8D26;&#x7B49;&#x3002;</p>
-<h4 id="&#x6027;&#x80FD;&#x8BF4;&#x660E;">&#x6027;&#x80FD;&#x8BF4;&#x660E;</h4>
+<h5 id="&#x6027;&#x80FD;&#x8BF4;&#x660E;">&#x6027;&#x80FD;&#x8BF4;&#x660E;</h5>
 <p>&#x6B64;&#x7B97;&#x6CD5;&#x4E3A;&#x6307;&#x6570;&#x589E;&#x957F;&#x7684;&#x7B97;&#x6CD5;&#xFF0C;&#x8981;&#x7528;&#x6761;&#x4EF6;&#x9650;&#x5236;&#x70B9;&#x548C;&#x8FB9;&#x7684;&#x6570;&#x91CF;&#xFF0C;&#x4E0D;&#x7136;&#x8DD1;&#x4E0D;&#x51FA;&#x6765;&#x3002;</p>
-<h4 id="&#x53C2;&#x6570;&#x8BF4;&#x660E;">&#x53C2;&#x6570;&#x8BF4;&#x660E;</h4>
+<h5 id="&#x53C2;&#x6570;&#x8BF4;&#x660E;">&#x53C2;&#x6570;&#x8BF4;&#x660E;</h5>
 <table>
 <thead>
 <tr>
@@ -1811,7 +1811,7 @@ EOF
 </tr>
 </tbody>
 </table>
-<h4 id="&#x989D;&#x5916;&#x8BF4;&#x660E;">&#x989D;&#x5916;&#x8BF4;&#x660E;</h4>
+<h5 id="&#x989D;&#x5916;&#x8BF4;&#x660E;">&#x989D;&#x5916;&#x8BF4;&#x660E;</h5>
 <ul>
 <li>vertex_filter&#x548C;edge_filter&#x5206;&#x522B;&#x8868;&#x793A;&#x70B9;&#x548C;&#x8FB9;&#x7684;&#x8FC7;&#x6EE4;&#x6761;&#x4EF6;&#xFF0C;&#x53EF;&#x4EE5;&#x4E3A;&#x4E0D;&#x540C;label&#x7684;&#x70B9;&#x8FB9;&#x914D;&#x7F6E;&#x4E0D;&#x540C;&#x7684;&#x8FC7;&#x6EE4;&#x89C4;&#x5219;&#x3002;&#x76F8;&#x540C;label&#x7684;&#x70B9;&#x6216;&#x8FB9;&#x7684;&#x8FC7;&#x6EE4;&#x6761;&#x4EF6;&#x53EA;&#x4F1A;&#x4FDD;&#x7559;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x3002;</li>
 <li>vertex_filter&#x548C;edge_filter&#x53EF;&#x4EE5;&#x662F;&#x975E;&#x5FC5;&#x9009;&#x7684;&#x3002;&#x5BF9;&#x4E8E;vertex_filter&#x548C;edge_filter&#x4EFB;&#x4F55;&#x4E00;&#x4E2A;&#x5355;&#x72EC;&#x6765;&#x770B;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x6307;&#x5B9A;&#x8FC7;&#x6EE4;&#x6761;&#x4EF6;&#x7684;&#x8BDD;&#x5C06;&#x5BF9;&#x6240;&#x6709;&#x5BF9;&#x5E94;&#x7684;&#x5143;&#x7D20;&#x653E;&#x884C;&#xFF0C;&#x5982;&#x679C;&#x6307;&#x5B9A;&#x4E86;&#x7684;&#x8BDD;&#xFF0C;&#x90A3;&#x4E48;&#x53EA;&#x4F1A;&#x5BF9;label&#x76F8;&#x540C;&#x5E76;&#x4E14;&#x5C5E;&#x6027;&#x6EE1;&#x8DB3;&#x6761;&#x4EF6;&#x7684;&#x653E;&#x884C;&#xFF0C;&#x672A;&#x914D;&#x7F6E;label&#x7684;&#x5143;&#x7D20;&#x5C06;&#x76F4;&#x63A5;&#x88AB;&#x8FC7;&#x6EE4;&#x6389;&#x3002;</li>
@@ -1819,7 +1819,7 @@ EOF
 <li>$element&#x3001;$out&#x3001;$in&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A;&#x5185;&#x7F6E;&#x53D8;&#x91CF;&#x3002;$element&#x5728;vertex_filter&#x4E2D;&#x8868;&#x793A;&#x5F53;&#x524D;&#x70B9;&#x7684;&#x5C5E;&#x6027;&#x5BF9;&#x8C61;&#x3002;&#x5728;edge_filter&#x4E2D;$in&#x548C;$out&#x5206;&#x522B;&#x4EE3;&#x8868;&#x8868;&#x793A;&#x5F53;&#x524D;&#x9876;&#x70B9;&#x7684;&#x5165;&#x8FB9;&#x5C5E;&#x6027;&#x548C;&#x51FA;&#x8FB9;&#x5C5E;&#x6027;&#x5BF9;&#x8C61;&#x3002;$element.xxx&#x3001;$in.xxx&#x3001;$out.xxx&#x7684;&#x65B9;&#x5F0F;&#x83B7;&#x53D6;&#x5230;&#x5BF9;&#x5E94;&#x540D;&#x79F0;&#x7684;&#x5C5E;&#x6027;&#x7684;&#x503C;&#x3002;</li>
 <li>property_filter&#x4F7F;&#x7528;&#x7684;&#x662F;Aviator&#x89C4;&#x5219;&#x5F15;&#x64CE;&#x3002;&#x53EF;&#x4EE5;&#x652F;&#x6301;&#x6B63;&#x5E38;&#x7684;&#x6761;&#x4EF6;&#x5224;&#x65AD;&#x548C;&#x6570;&#x503C;&#x8BA1;&#x7B97;&#x3002;&#x9AD8;&#x7EA7;&#x64CD;&#x4F5C;&#x5177;&#x4F53;&#x67E5;&#x770B;Aviator&#x89C4;&#x5219;&#x5F15;&#x64CE;&#x6587;&#x6863;&#x3002;</li>
 </ul>
-<h4 id="&#x8FC7;&#x6EE4;&#x6761;&#x4EF6;&#x53C2;&#x6570;&#x8BF4;&#x660E;">&#x8FC7;&#x6EE4;&#x6761;&#x4EF6;&#x53C2;&#x6570;&#x8BF4;&#x660E;</h4>
+<h5 id="&#x8FC7;&#x6EE4;&#x6761;&#x4EF6;&#x53C2;&#x6570;&#x8BF4;&#x660E;">&#x8FC7;&#x6EE4;&#x6761;&#x4EF6;&#x53C2;&#x6570;&#x8BF4;&#x660E;</h5>
 <pre><code class="lang-java"><span class="hljs-comment">// &#x9700;&#x8981;&#x5C06;&#x8FD9;&#x4E2A;json&#x8FDB;&#x884C;&#x5E8F;&#x5217;&#x8BDD;&#x5E76;&#x8F6C;&#x8BD1;&#x4E4B;&#x540E;&#xFF0C;&#x8D34;&#x5230;&#x4E0A;&#x9762;&#x7684;&#x8FC7;&#x6EE4;&#x6761;&#x4EF6;&#x914D;&#x7F6E;&#x4E2D;</span>
 {
     <span class="hljs-string">&quot;vertex_filter&quot;</span>: [
@@ -1864,7 +1864,7 @@ EOF
     ]
 }
 </code></pre>
-<h4 id="k8s&#x793A;&#x4F8B;">k8s&#x793A;&#x4F8B;</h4>
+<h5 id="k8s&#x793A;&#x4F8B;">k8s&#x793A;&#x4F8B;</h5>
 <pre><code class="lang-yaml">cat &lt;&lt;EOF | kubectl apply --filename -
 <span class="hljs-attr">apiVersion:</span> hugegraph.baidu.com/v1
 <span class="hljs-attr">kind:</span> HugeGraphComputerJob
@@ -1886,10 +1886,10 @@ EOF
     rings.property_filter: <span class="hljs-string">&quot;{\&quot;vertex_filter\&quot;:[{\&quot;label\&quot;:\&quot;user\&quot;,\&quot;property_filter\&quot;:\&quot;$element.weight==1\&quot;}]}&quot;</span>  <span class="hljs-comment"># &#x8FC7;&#x6EE4;&#x6761;&#x4EF6;&#x89C4;&#x5219;&#x3002;&#x914D;&#x7F6E;&#x89C4;&#x5219;&#x8BF7;&#x89C1;&#x4E0B;&#x65B9;&#x7684;&#x8FC7;&#x6EE4;&#x6761;&#x4EF6;&#x53C2;&#x6570;&#x8BF4;&#x660E;&#xFF0C;&#x7528;&#x4E0B;&#x9762;json&#x66FF;&#x6362;{}&#x90E8;&#x5206;</span>
 EOF
 </code></pre>
-<h4 id="rest-api-&#x793A;&#x4F8B;">rest-api &#x793A;&#x4F8B;</h4>
-<h5 id="method--url">Method &amp; Url</h5>
+<h5 id="rest-api-&#x793A;&#x4F8B;">rest-api &#x793A;&#x4F8B;</h5>
+<h6 id="method--url">Method &amp; Url</h6>
 <p>POST <a href="http://localhost:8080/graphspaces/{graphspace}/graphs/{hugegraph}/jobs/computerdis" target="_blank">http://localhost:8080/graphspaces/{graphspace}/graphs/{hugegraph}/jobs/computerdis</a></p>
-<h5 id="request-body">Request Body</h5>
+<h6 id="request-body">Request Body</h6>
 <pre><code class="lang-json">{
   <span class="hljs-string">&quot;algorithm&quot;</span>: <span class="hljs-string">&quot;rings-with-filter&quot;</span>,
   <span class="hljs-string">&quot;worker&quot;</span>: <span class="hljs-number">5</span>,
@@ -1899,14 +1899,14 @@ EOF
   }
 }
 </code></pre>
-<h5 id="response-body">Response Body</h5>
+<h6 id="response-body">Response Body</h6>
 <pre><code class="lang-json">{
   <span class="hljs-string">&quot;task_id&quot;</span>: <span class="hljs-string">&quot;7&quot;</span>
 }
 </code></pre>
-<h4 id="&#x8F93;&#x51FA;">&#x8F93;&#x51FA;</h4>
+<h5 id="&#x8F93;&#x51FA;">&#x8F93;&#x51FA;</h5>
 <p>&#x7ED3;&#x679C;&#x7C7B;&#x578B;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#x96C6;&#x5408;&#xFF0C;&#x96C6;&#x5408;&#x4E2D;&#x6BCF;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x662F;&#x4E00;&#x4E2A;&#x73AF;&#x8DEF;&#x3002;&#x4E00;&#x4E2A;&#x73AF;&#x8DEF;&#x53EA;&#x4F1A;&#x88AB;&#x8BB0;&#x5F55;&#x5728;&#x73AF;&#x8DEF;&#x4E2D;id&#x6700;&#x5C0F;&#x7684;&#x9876;&#x70B9;&#x4E0A;&#x3002;</p>
-<h4 id="518-links">5.1.8. Links</h4>
+<h3 id="518-links">5.1.8. Links</h3>
 <h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
 <p>&#x94FE;&#x8DEF;&#x8FFD;&#x8E2A;&#x7B97;&#x6CD5;&#xFF0C;&#x901A;&#x8FC7;&#x6307;&#x5B9A;&#x7684;&#x4E00;&#x6279;&#x5F00;&#x59CB;&#x9876;&#x70B9;&#xFF0C;&#x6309;&#x7167;&#x6307;&#x5B9A;&#x7684;&#x4F20;&#x64AD;&#x89C4;&#x5219;&#x8FDB;&#x884C;&#x4F20;&#x64AD;&#xFF0C;&#x5230;&#x6307;&#x5B9A;&#x7684;&#x7ED3;&#x675F;&#x6761;&#x4EF6;&#x540E;&#x505C;&#x6B62;&#x5E76;&#x8BB0;&#x5F55;&#x4E0B;&#x8DEF;&#x5F84;&#x3002;</p>
 <h5 id="&#x9002;&#x7528;&#x573A;&#x666F;">&#x9002;&#x7528;&#x573A;&#x666F;</h5>
@@ -2009,7 +2009,7 @@ EOF
 }
 </code></pre><h5 id="&#x8F93;&#x51FA;">&#x8F93;&#x51FA;</h5>
 <p>&#x56FE;&#x4E2D;&#x9876;&#x70B9;&#x7684;&#x4F1A;&#x6DFB;&#x52A0;&#x540D;&#x4E3A;rings_with_filter&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x8BE5;&#x5C5E;&#x6027;&#x8BB0;&#x5F55;&#x662F;&#x94FE;&#x8DEF;&#x4FE1;&#x606F;&#x3002;&#x7ED3;&#x679C;&#x7C7B;&#x578B;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#x96C6;&#x5408;&#xFF0C;&#x96C6;&#x5408;&#x4E2D;&#x6BCF;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x662F;&#x4E00;&#x4E2A;&#x94FE;&#x8DEF;&#x3002;&#x94FE;&#x8DEF;&#x4F1A;&#x88AB;&#x8BB0;&#x5F55;&#x5230;&#x94FE;&#x8DEF;&#x7ED3;&#x675F;&#x7684;&#x90A3;&#x4E2A;&#x9876;&#x70B9;&#x4E0A;&#x3002;</p>
-<h4 id="519-cluster-coefficient">5.1.9. Cluster Coefficient</h4>
+<h3 id="519-cluster-coefficient">5.1.9. Cluster Coefficient</h3>
 <h5 id="&#x6982;&#x8FF0;">&#x6982;&#x8FF0;</h5>
 <p>&#x805A;&#x96C6;&#x7CFB;&#x6570;&#xFF0C;&#x8BA1;&#x7B97;&#x6BCF;&#x4E2A;&#x70B9;&#x5C40;&#x90E8;&#x7684;&#x805A;&#x96C6;&#x7CFB;&#x6570;, &#x6682;&#x65F6;&#x672A;&#x63D0;&#x4F9B;&#x5168;&#x5C40;&#x805A;&#x96C6;&#x7CFB;&#x6570;&#x3002;</p>
 <h5 id="&#x9002;&#x7528;&#x573A;&#x666F;">&#x9002;&#x7528;&#x573A;&#x666F;</h5>
@@ -2053,7 +2053,7 @@ EOF
 </code></pre>
 <h5 id="&#x8F93;&#x51FA;">&#x8F93;&#x51FA;</h5>
 <p>&#x56FE;&#x4E2D;&#x9876;&#x70B9;&#x7684;&#x4F1A;&#x6DFB;&#x52A0;&#x540D;&#x4E3A;clustering_coefficient&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x8BE5;&#x5C5E;&#x6027;&#x7684;&#x503C;&#x662F;&#x9876;&#x70B9;&#x7684;&#x805A;&#x96C6;&#x7CFB;&#x6570;&#x7684;&#x503C;&#x3002;&#x7ED3;&#x679C;&#x7C7B;&#x578B;&#x4E3A;&#x6D6E;&#x70B9;&#x6570;&#x3002;</p>
-<h4 id="5110-betweenness-centrality">5.1.10. Betweenness Centrality</h4>
+<h3 id="5110-betweenness-centrality">5.1.10. Betweenness Centrality</h3>
 <h5 id="&#x6982;&#x8FF0;">&#x6982;&#x8FF0;</h5>
 <p>&#x4E2D;&#x4ECB;&#x4E2D;&#x5FC3;&#x6027;&#x7B97;&#x6CD5;&#xFF08;Betweeness Centrality&#xFF09;&#x5224;&#x65AD;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x5177;&#x6709;&quot;&#x6865;&#x6881;&quot;&#x8282;&#x70B9;&#x7684;&#x503C;, &#x503C;&#x8D8A;&#x5927;&#x8BF4;&#x660E;&#x5B83;&#x4F5C;&#x4E3A;&#x56FE;&#x4E2D;&#x4E24;&#x70B9;&#x95F4;&#x5FC5;&#x7ECF;&#x8DEF;&#x5F84;&#x7684;&#x53EF;&#x80FD;&#x6027;&#x8D8A;&#x5927;, &#x5178;&#x578B;&#x7684;&#x4F8B;&#x5B50;&#x5305;&#x62EC;&#x793E;&#x4EA4;&#x7F51;&#x7EDC;&#x4E2D;&#x7684;<strong>&#x5171;&#x540C;&#x5173;&#x6CE8;</strong>&#x7684;&#x4EBA;</p>
 <h5 id="&#x9002;&#x7528;&#x573A;&#x666F;">&#x9002;&#x7528;&#x573A;&#x666F;</h5>
@@ -2131,7 +2131,7 @@ EOF
 </code></pre>
 <h5 id="&#x8F93;&#x51FA;">&#x8F93;&#x51FA;</h5>
 <p>&#x56FE;&#x4E2D;&#x9876;&#x70B9;&#x7684;&#x4F1A;&#x6DFB;&#x52A0;&#x540D;&#x4E3A;betweenness_centrality&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x8BE5;&#x5C5E;&#x6027;&#x7684;&#x503C;&#x662F;&#x9876;&#x70B9;&#x7684;&#x4E2D;&#x4ECB;&#x4E2D;&#x5FC3;&#x6027;&#x7684;&#x503C;&#x3002;&#x7ED3;&#x679C;&#x7C7B;&#x578B;&#x4E3A;&#x6D6E;&#x70B9;&#x6570;&#x3002;</p>
-<h4 id="5111-label-propagation-algorithm">5.1.11 Label Propagation Algorithm</h4>
+<h3 id="5111-label-propagation-algorithm">5.1.11 Label Propagation Algorithm</h3>
 <h5 id="&#x6982;&#x8FF0;">&#x6982;&#x8FF0;</h5>
 <p>&#x6807;&#x7B7E;&#x4F20;&#x9012;&#x7B97;&#x6CD5;&#xFF0C;&#x662F;&#x4E00;&#x79CD;&#x56FE;&#x805A;&#x7C7B;&#x7B97;&#x6CD5;&#xFF0C;&#x5E38;&#x7528;&#x5728;&#x793E;&#x4EA4;&#x7F51;&#x7EDC;&#x4E2D;&#x3002;</p>
 <h5 id="&#x9002;&#x7528;&#x573A;&#x666F;">&#x9002;&#x7528;&#x573A;&#x666F;</h5>
@@ -2175,7 +2175,7 @@ EOF
 </code></pre>
 <h5 id="&#x8F93;&#x51FA;">&#x8F93;&#x51FA;</h5>
 <p> &#x56FE;&#x4E2D;&#x9876;&#x70B9;&#x7684;&#x4F1A;&#x6DFB;&#x52A0;&#x540D;&#x4E3A;lpa&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x8BE5;&#x5C5E;&#x6027;&#x7684;&#x503C;&#x662F;&#x9876;&#x70B9;&#x6240;&#x5C5E;&#x7684;&#x6807;&#x7B7E;&#x3002;&#x7ED3;&#x679C;&#x7C7B;&#x578B;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#x3002;</p>
-<h4 id="5112-louvain">5.1.12 louvain</h4>
+<h3 id="5112-louvain">5.1.12 louvain</h3>
 <h5 id="&#x6982;&#x8FF0;">&#x6982;&#x8FF0;</h5>
 <p> Louvain &#x7B97;&#x6CD5;&#x662F;&#x57FA;&#x4E8E;&#x6A21;&#x5757;&#x5EA6;&#x7684;&#x793E;&#x533A;&#x53D1;&#x73B0;&#x7B97;&#x6CD5;&#x3002;&#x7531;&#x4E8E;louvain&#x7B97;&#x6CD5;&#x7684;&#x7279;&#x6B8A;&#x6027;&#xFF0C;&#x53EA;&#x7528;&#x4E00;&#x4E2A;worker instance&#x8FD0;&#x884C;&#x3002;</p>
 <h5 id="&#x9002;&#x7528;&#x573A;&#x666F;">&#x9002;&#x7528;&#x573A;&#x666F;</h5>
@@ -2215,7 +2215,7 @@ EOF
 <h6 id=""> </h6>
 <h5 id="&#x8F93;&#x51FA;">&#x8F93;&#x51FA;</h5>
 <p>&#x8F93;&#x51FA;&#x4E3A;&#x6BCF;&#x4E2A;&#x9876;&#x70B9;&#x7684;&#x793E;&#x533A;&#x7F16;&#x53F7;</p>
-<h4 id="5113-filter-subgraph-matching">5.1.13. Filter SubGraph Matching</h4>
+<h3 id="5113-filter-subgraph-matching">5.1.13. Filter SubGraph Matching</h3>
 <h5 id="&#x6982;&#x8FF0;">&#x6982;&#x8FF0;</h5>
 <p>&#x5E26;&#x5C5E;&#x6027;&#x8FC7;&#x6EE4;&#x7684;&#x5B50;&#x56FE;&#x5339;&#x914D;&#x7B97;&#x6CD5;&#x3002;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x4F20;&#x5165;&#x4E00;&#x4E2A;&#x5E26;&#x5C5E;&#x6027;&#x8FC7;&#x6EE4;&#x7684;&#x67E5;&#x8BE2;&#x56FE;&#x7ED3;&#x6784;&#xFF0C;&#x7B97;&#x6CD5;&#x4F1A;&#x5728;&#x56FE;&#x4E2D;&#x5339;&#x914D;&#x6240;&#x6709;&#x4E0E;&#x8BE5;&#x67E5;&#x8BE2;&#x56FE;&#x540C;&#x6784;&#x7684;&#x5B50;&#x56FE;&#x3002;</p>
 <h5 id="&#x9002;&#x7528;&#x573A;&#x666F;">&#x9002;&#x7528;&#x573A;&#x666F;</h5>
@@ -2382,7 +2382,7 @@ EOF
 </code></pre>
 <h5 id="&#x8F93;&#x51FA;">&#x8F93;&#x51FA;</h5>
 <p>&#x7B97;&#x6CD5;&#x4F1A;&#x4ECE;&#x67E5;&#x8BE2;&#x56FE;&#x4E2D;&#x627E;&#x51FA;&#x4E00;&#x4E2A;&#x4E2D;&#x5FC3;&#x70B9;&#xFF0C;&#x5B50;&#x56FE;&#x7ED3;&#x679C;&#x4F1A;&#x5728;&#x5339;&#x914D;&#x4E2D;&#x5FC3;&#x70B9;&#x7684;&#x9876;&#x70B9;&#x4E0A;&#x8F93;&#x51FA;&#xFF0C;&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x662F;&#x4E00;&#x4E2A;&#x9876;&#x70B9;id&#x7684;&#x5217;&#x8868;&#xFF0C;&#x8868;&#x793A;&#x54EA;&#x4E9B;&#x9876;&#x70B9;&#x662F;&#x4E00;&#x4E2A;&#x5339;&#x914D;&#x7684;&#x5B50;&#x56FE;&#x3002;</p>
-<h4 id="5114-k-core">5.1.14. K-Core</h4>
+<h3 id="5114-k-core">5.1.14. K-Core</h3>
 <h5 id="&#x6982;&#x8FF0;">&#x6982;&#x8FF0;</h5>
 <p>K-Core&#x7B97;&#x6CD5;&#xFF0C;&#x6807;&#x8BB0;&#x6240;&#x6709;&#x5EA6;&#x6570;&#x4E3A;K&#x7684;&#x9876;&#x70B9;&#x3002;</p>
 <h5 id="&#x9002;&#x7528;&#x573A;&#x666F;">&#x9002;&#x7528;&#x573A;&#x666F;</h5>
@@ -2431,9 +2431,8 @@ EOF
     kcore.k: <span class="hljs-string">&quot;3&quot;</span> <span class="hljs-comment"># k-core&#x7B97;&#x6CD5;&#x7684;k&#x503C;</span>
 </code></pre>
 <h6 id="method--url">Method &amp; Url</h6>
-<pre><code class="lang-http">POST http://localhost:8080/graphspaces/{graphspace}/graphs/{hugegraph}/jobs/computerdis
-</code></pre>
-<h6 id="request-body">Request Body</h6>
+<pre><code>POST http://localhost:8080/graphspaces/{graphspace}/graphs/{hugegraph}/jobs/computerdis
+</code></pre><h6 id="request-body">Request Body</h6>
 <pre><code class="lang-json">{
   <span class="hljs-string">&quot;algorithm&quot;</span>: <span class="hljs-string">&quot;k-core&quot;</span>,
   <span class="hljs-string">&quot;worker&quot;</span>: <span class="hljs-number">5</span>,
@@ -2444,7 +2443,7 @@ EOF
 </code></pre>
 <h5 id="&#x8F93;&#x51FA;">&#x8F93;&#x51FA;</h5>
 <p>&#x7B97;&#x6CD5;&#x4F1A;&#x7ED9;&#x6240;&#x6709;&#x7B26;&#x5408;&#x6761;&#x4EF6;&#x7684;&#x9876;&#x70B9;&#x6807;&#x8BB0;&#x4E0A;&#x5BF9;&#x5E94;&#x7684;core&#x503C;&#xFF0C;core&#x503C;&#x5C0F;&#x4E8E;k&#x7684;&#x9876;&#x70B9;&#x7684;&#x7ED3;&#x679C;&#x4E3A;0&#x3002;</p>
-<h4 id="5115-personalpagerank">5.1.15. PersonalPageRank</h4>
+<h3 id="5115-personalpagerank">5.1.15. PersonalPageRank</h3>
 <h5 id="&#x6982;&#x8FF0;">&#x6982;&#x8FF0;</h5>
 <p>   PersonalPageRank &#x7B97;&#x6CD5;&#x53C8;&#x79F0;&#x4E2A;&#x6027;&#x5316;&#x63A8;&#x8350;&#x7B97;&#x6CD5;&#xFF0C;&#x662F;&#x4E00;&#x79CD;&#x7531;&#x641C;&#x7D22;&#x5F15;&#x64CE;&#x6839;&#x636E;&#x7F51;&#x9875;&#xFF08;&#x8282;&#x70B9;&#xFF09;&#x4E4B;&#x95F4;&#x76F8;&#x4E92;&#x7684;&#x8D85;&#x94FE;&#x63A5;&#x8FDB;&#x884C;&#x8BA1;&#x7B97;&#x7684;&#x6280;&#x672F;&#xFF0C;&#x7528;&#x6765;&#x4F53;&#x73B0;&#x7F51;&#x9875;&#xFF08;&#x8282;&#x70B9;&#xFF09;&#x7684;&#x76F8;&#x5173;&#x6027;&#x548C;&#x91CD;&#x8981;&#x6027;, &#x5176;&#x4ED6;&#x8BF4;&#x660E;&#x548C;&#x4ECB;&#x7ECD;&#x8BE6;&#x89C1; [TP &#x90E8;&#x5206;]</p>
 <p>   &#x5B83;&#x53EF;&#x4EE5;&#x8BA1;&#x7B97;&#x51FA;&#x4E24;&#x7C7B;&#x4E0D;&#x540C;&#x9876;&#x70B9;&#x8FDE;&#x63A5;&#x5F62;&#x6210;&#x7684;&#x4E8C;&#x5206;&#x56FE;&#x4E2D;&#xFF0C;&#x7ED9;&#x67D0;&#x4E2A;&#x70B9;&#x63A8;&#x8350;&#x76F8;&#x5173;&#x6027;&#x6700;&#x9AD8;&#x7684;&#x5176;&#x4ED6;&#x9876;&#x70B9;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;</p>
@@ -2553,8 +2552,8 @@ EOF
 </code></pre>
 <h5 id="&#x8F93;&#x51FA;">&#x8F93;&#x51FA;</h5>
 <p>&#x9876;&#x70B9;&#x7684; personal page rank &#x503C;</p>
-<h3 id="52&#x5168;&#x5C40;&#x914D;&#x7F6E;">5.2.&#x5168;&#x5C40;&#x914D;&#x7F6E;</h3>
-<h4 id="521hdfs-&#x8F93;&#x51FA;&#x914D;&#x7F6E;">5.2.1.Hdfs &#x8F93;&#x51FA;&#x914D;&#x7F6E;</h4>
+<h2 id="52&#x5168;&#x5C40;&#x914D;&#x7F6E;">5.2.&#x5168;&#x5C40;&#x914D;&#x7F6E;</h2>
+<h3 id="521hdfs-&#x8F93;&#x51FA;&#x914D;&#x7F6E;">5.2.1.Hdfs &#x8F93;&#x51FA;&#x914D;&#x7F6E;</h3>
 <h5 id="&#x53C2;&#x6570;&#x8BF4;&#x660E;">&#x53C2;&#x6570;&#x8BF4;&#x660E;</h5>
 <table>
 <thead>
@@ -2706,7 +2705,7 @@ kubectl create secret generic kerberos-secret --from-file=/etc/krb5.conf --from-
 
 EOF
 </code></pre>
-<h4 id="rest-api-&#x793A;&#x4F8B;">rest-api &#x793A;&#x4F8B;</h4>
+<h5 id="rest-api-&#x793A;&#x4F8B;">rest-api &#x793A;&#x4F8B;</h5>
 <p><strong>Method &amp; Url</strong></p>
 <pre><code>POST http://localhost:8080/graphspaces/{graphspace}/graphs/{hugegraph}/jobs/computerdis
 </code></pre><p><strong>Request Body</strong> </p>
@@ -2755,7 +2754,7 @@ EOF
 <li>&#x7B97;&#x6CD5;&#x53C2;&#x6570;&#x4E2D;&#x6307;&#x5B9A;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;,&#x76F8;&#x5173;&#x914D;&#x7F6E; output.hdfs_krb5_conf&#x3002;
 &#x6240;&#x4EE5;&#x53EA;&#x8981;&#x628A;&#x4E0D;&#x540C;&#x7528;&#x6237;&#x7684;&#x914D;&#x7F6E;&#x521B;&#x5EFA;&#x6210;&#x4E0D;&#x540C;&#x7684;configmap&#xFF0C;&#x5E76;&#x6620;&#x5C04;&#x6210;&#x5BB9;&#x5668;&#x5185;&#x7684;&#x4E0D;&#x540C;&#x6587;&#x4EF6;&#xFF0C;&#x5C31;&#x80FD;&#x5728;&#x8BF7;&#x6C42;&#x4E2D;&#x6307;&#x5B9A;&#x76F8;&#x5E94;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x548C;&#x7528;&#x6237;&#x540D;&#x8FDB;&#x884C;&#x8BA4;&#x8BC1;&#x3002;</li>
 </ul>
-<h4 id="522hdfs-&#x8F93;&#x5165;&#x914D;">5.2.2.Hdfs &#x8F93;&#x5165;&#x914D;</h4>
+<h3 id="522hdfs-&#x8F93;&#x5165;&#x914D;">5.2.2.Hdfs &#x8F93;&#x5165;&#x914D;</h3>
 <p>HDFS &#x6570;&#x636E;&#x8F93;&#x5165;&#x662F;&#x57FA;&#x4E8E; hugegraph loader &#x7684;&#x683C;&#x5F0F;&#xFF0C;&#x70B9;&#x8FB9;&#x6587;&#x4EF6;&#x7684;&#x683C;&#x5F0F;&#x8BF7;&#x53C2;&#x89C1; loader &#x7684;&#x64CD;&#x4F5C;&#x6587;&#x6863;</p>
 <table>
 <thead>
@@ -3207,7 +3206,7 @@ kubectl create secret generic kerberos-secret --from-file=/etc/krb5.conf --from-
 
 EOF
 </code></pre>
-<h4 id="rest-api-&#x793A;&#x4F8B;">rest-api &#x793A;&#x4F8B;</h4>
+<h5 id="rest-api-&#x793A;&#x4F8B;">rest-api &#x793A;&#x4F8B;</h5>
 <p><strong>Method &amp; Url</strong></p>
 <pre><code>POST http://localhost:8080/graphspaces/{graphspace}/graphs/{hugegraph}/jobs/computerdis
 </code></pre><pre><code class="lang-json">{
@@ -3246,7 +3245,7 @@ EOF
 
 }
 </code></pre>
-<h4 id="523-docker-&#x4E2D;-host-&#x89E3;&#x6790;&#x95EE;&#x9898;">5.2.3. docker &#x4E2D; host &#x89E3;&#x6790;&#x95EE;&#x9898;</h4>
+<h3 id="523-docker-&#x4E2D;-host-&#x89E3;&#x6790;&#x95EE;&#x9898;">5.2.3. docker &#x4E2D; host &#x89E3;&#x6790;&#x95EE;&#x9898;</h3>
 <p>&#x5982;&#x679C; hdfs &#x4E2D;&#x4F7F;&#x7528;&#x5230;&#x57DF;&#x540D;&#x89E3;&#x6790;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x5355;&#x72EC;&#x5728; docker &#x4E2D;&#x5355;&#x72EC;&#x6307;&#x5B9A; hosts &#x89E3;&#x6790;&#x57DF;&#x540D;&#x3002;</p>
 <p>&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#xFF1A;&#x5EFA;&#x7ACB; k8s configmap&#xFF0C;&#x628A;&#x5BBF;&#x4E3B;&#x673A;&#x7684; hosts &#x6587;&#x4EF6;&#x914D;&#x7F6E;&#x5230; k8s &#x4E2D;&#xFF0C;&#x518D;&#x628A;&#x914D;&#x7F6E;&#x6307;&#x5B9A;&#x5230; docker &#x7684; hosts &#x6587;&#x4EF6;&#x4E0A; </p>
 <pre><code># &#x521B;&#x5EFA; hosts-config-map, &#x5C06; hdfs &#x89E3;&#x6790;&#x6240;&#x7528;&#x7684; hosts &#x6587;&#x4EF6;&#x8FFD;&#x52A0;&#x5230; master &#x673A;&#x5668;&#x7684; /etc/hosts &#x4E2D;
@@ -3322,7 +3321,7 @@ kubectl create secret generic kerberos-secret --from-file=/etc/krb5.conf --from-
 
 EOF
 </code></pre>
-<h4 id="rest-api-&#x793A;&#x4F8B;">rest-api &#x793A;&#x4F8B;</h4>
+<h5 id="rest-api-&#x793A;&#x4F8B;">rest-api &#x793A;&#x4F8B;</h5>
 <p><strong>Method &amp; Url</strong></p>
 <pre><code>POST http://localhost:8080/graphspaces/{graphspace}/graphs/{hugegraph}/jobs/computerdis
 </code></pre><pre><code class="lang-json">{
@@ -3353,7 +3352,7 @@ EOF
 
 }
 </code></pre>
-<h4 id="524&#x9650;&#x5236;&#x6BCF;&#x4E2A;&#x70B9;&#x7684;&#x6700;&#x5927;&#x8FB9;&#x6570;-&#x53EF;&#x9009;">5.2.4.&#x9650;&#x5236;&#x6BCF;&#x4E2A;&#x70B9;&#x7684;&#x6700;&#x5927;&#x8FB9;&#x6570; (&#x53EF;&#x9009;)</h4>
+<h3 id="524&#x9650;&#x5236;&#x6BCF;&#x4E2A;&#x70B9;&#x7684;&#x6700;&#x5927;&#x8FB9;&#x6570;-&#x53EF;&#x9009;">5.2.4.&#x9650;&#x5236;&#x6BCF;&#x4E2A;&#x70B9;&#x7684;&#x6700;&#x5927;&#x8FB9;&#x6570; (&#x53EF;&#x9009;)</h3>
 <p>&#x7B97;&#x6CD5;&#x63D0;&#x4EA4;&#x65F6;, &#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x9644;&#x52A0; input.limit_edges_in_one_vertex &#x53C2;&#x6570;&#x6765;&#x9650;&#x5236;&#x5F53;&#x524D;&#x7B97;&#x6CD5;&#x6BCF;&#x4E2A;&#x70B9;&#x7684;&#x6700;&#x5927;&#x51FA;&#x8FB9;&#x6570;, &#x9ED8;&#x8BA4;&#x503C; -1 &#x4EE3;&#x8868;&#x4E0D;&#x9650;&#x5236;, &#x9700;&#x8981;&#x8BBE;&#x7F6E;&#x4E3A;&#x6B63;&#x6574;&#x6570;, &#x4F8B;&#x5982;</p>
 <pre><code class="lang-yaml">cat &lt;&lt;EOF | kubectl apply --filename -
 
@@ -3392,7 +3391,7 @@ EOF
 
 EOF
 </code></pre>
-<h4 id="rest-api-&#x793A;&#x4F8B;">rest-api &#x793A;&#x4F8B;</h4>
+<h5 id="rest-api-&#x793A;&#x4F8B;">rest-api &#x793A;&#x4F8B;</h5>
 <p><strong>Method &amp; Url</strong></p>
 <pre><code>POST http://localhost:8080/graphspaces/{graphspace}/graphs/{hugegraph}/jobs/computerdis
 </code></pre><p><strong>Request Body</strong></p>
@@ -3421,7 +3420,7 @@ EOF
 
 }
 </code></pre>
-<h4 id="525&#x81EA;&#x5B9A;&#x4E49;&#x7B97;&#x6CD5;&#x8F93;&#x51FA;&#x53C2;&#x6570;">5.2.5.&#x81EA;&#x5B9A;&#x4E49;&#x7B97;&#x6CD5;&#x8F93;&#x51FA;&#x53C2;&#x6570;</h4>
+<h3 id="525&#x81EA;&#x5B9A;&#x4E49;&#x7B97;&#x6CD5;&#x8F93;&#x51FA;&#x53C2;&#x6570;">5.2.5.&#x81EA;&#x5B9A;&#x4E49;&#x7B97;&#x6CD5;&#x8F93;&#x51FA;&#x53C2;&#x6570;</h3>
 <p>&#x7B97;&#x6CD5;&#x53EF;&#x4EE5;&#x81EA;&#x5B9A;&#x4E49;&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x901A;&#x8FC7; output.output_property_name &#x53C2;&#x6570;&#x6765;&#x6307;&#x5B9A;&#x7B97;&#x6CD5;&#x7684;&#x8F93;&#x51FA;&#x5C5E;&#x6027;&#x3002;&#x6B64;&#x53C2;&#x6570;&#x5E76;&#x4E0D;&#x662F;&#x5FC5;&#x987B;&#x7684;&#xFF0C;&#x6BCF;&#x4E2A;&#x7B97;&#x6CD5;&#x90FD;&#x6709;&#x9ED8;&#x8BA4;&#x7684;&#x8F93;&#x51FA;&#x5C5E;&#x6027;&#x3002;&#x672A;&#x8BBE;&#x7F6E;&#x8BE5;&#x5C5E;&#x6027;&#x5C06;&#x4F7F;&#x7528;&#x7B97;&#x6CD5;&#x9ED8;&#x8BA4;&#x8F93;&#x51FA;&#x5C5E;&#x6027;&#xFF0C;&#x5982;&#x679C;&#x8BBE;&#x7F6E;&#x4E86;&#x5C06;&#x4F7F;&#x7528;&#x7528;&#x6237;&#x8BBE;&#x7F6E;&#x7684;&#x8F93;&#x51FA;&#x5C5E;&#x6027;&#x3002;</p>
 <pre><code class="lang-yaml">cat &lt;&lt;EOF | kubectl apply --filename -
 
@@ -3461,7 +3460,7 @@ EOF
 
 EOF
 </code></pre>
-<h4 id="rest-api-&#x793A;&#x4F8B;">rest-api &#x793A;&#x4F8B;</h4>
+<h5 id="rest-api-&#x793A;&#x4F8B;">rest-api &#x793A;&#x4F8B;</h5>
 <p><strong>Method &amp; Url</strong></p>
 <pre><code>POST [http://localhost:8080/graphspaces/{graphspace}/graphs/{hugegraph}/jobs/computerdis](http://localhost:8080/graphs/{hugegraph}/jobs/computerdis)
 </code></pre><p><strong>Request Body</strong></p>
@@ -3492,7 +3491,7 @@ EOF
 
 }
 </code></pre>
-<h4 id="526worker&#x5E73;&#x5747;&#x5206;&#x914D;&#x7684;&#x95EE;&#x9898;">5.2.6.worker&#x5E73;&#x5747;&#x5206;&#x914D;&#x7684;&#x95EE;&#x9898;</h4>
+<h3 id="526worker&#x5E73;&#x5747;&#x5206;&#x914D;&#x7684;&#x95EE;&#x9898;">5.2.6.worker&#x5E73;&#x5747;&#x5206;&#x914D;&#x7684;&#x95EE;&#x9898;</h3>
 <p>&#x7531;&#x4E8E;k8s pod &#x5206;&#x914D;&#x7B56;&#x7565;&#x6BD4;&#x8F83;&#x590D;&#x6742;&#xFF0C;&#x4F1A;&#x7EFC;&#x5408;&#x5404;&#x79CD;&#x56E0;&#x7D20;&#x7B97;&#x5206;&#x6700;&#x7EC8;&#x786E;&#x5B9A;pod&#x5206;&#x914D;&#xFF0C;&#x6240;&#x4EE5;&#x5728;&#x67D0;&#x4E9B;&#x73AF;&#x5883;&#x4E0B;&#xFF0C;worker&#x5168;&#x90FD;&#x5206;&#x914D;&#x5230;&#x4E00;&#x53F0;&#x673A;&#x5668;&#x4E0A;&#xFF0C;&#x4E25;&#x91CD;&#x5F71;&#x54CD;&#x6027;&#x80FD;&#x3002;&#x76EE;&#x524D;&#x6839;&#x636E; k8s &#x7248;&#x672C;&#x7684;&#x4E0D;&#x540C;&#x6709;&#x4E24;&#x79CD;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#xFF1A;</p>
 <p>1) k8s &lt;= 1.15.10</p>
 <p>&#x6B64;&#x7248;&#x672C;&#x7684; k8s &#x4E0D;&#x652F;&#x6301;&#x4EB2;&#x548C;&#x6027;&#x7B56;&#x7565;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x9650;&#x5236;&#x6700;&#x5927;&#x5185;&#x5B58;&#x7684;&#x65B9;&#x5F0F;&#x8FBE;&#x5230;&#x5E73;&#x5747;&#x5206;&#x914D;&#x7684;&#x76EE;&#x7684;&#x3002;</p>
@@ -3560,7 +3559,7 @@ EOF
 </code></pre>
 <p>2) k8s &gt; 1.15.10</p>
 <p>&#x6B64;&#x7248;&#x672C;&#x7684; k8s &#x652F;&#x6301;&#x4EB2;&#x548C;&#x6027;&#x7B56;&#x7565;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x7A0B;&#x5E8F;&#x4E2D;&#x5185;&#x7F6E;&#x4E86;&#x4EB2;&#x548C;&#x6027;&#x7B56;&#x7565;&#xFF0C;&#x9ED8;&#x8BA4;&#x5C31;&#x53EF;&#x4EE5;&#x5E73;&#x5747;&#x5206;&#x914D;&#x3002;</p>
-<h4 id="527partition&#x5E76;&#x884C;&#x8BA1;&#x7B97;">5.2.7.partition&#x5E76;&#x884C;&#x8BA1;&#x7B97;</h4>
+<h3 id="527partition&#x5E76;&#x884C;&#x8BA1;&#x7B97;">5.2.7.partition&#x5E76;&#x884C;&#x8BA1;&#x7B97;</h3>
 <h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
 <p>&#x56FE;&#x8BA1;&#x7B97;&#x7684;&#x6BCF;&#x4E2A;worker&#x4E0A;&#x6709;&#x591A;&#x4E2A;partition&#xFF0C;&#x6846;&#x67B6;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;partition&#x5E76;&#x884C;&#x8BA1;&#x7B97;&#x7684;&#x7EBF;&#x7A0B;&#x6570;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x662F;4&#x3002;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x53C2;&#x6570; job.partitions_thread_nums &#x6307;&#x5B9A;&#x8BA1;&#x7B97;&#x7EBF;&#x7A0B;&#x6570;&#x3002;</p>
 <h5 id="&#x4F7F;&#x7528;&#x793A;&#x4F8B;">&#x4F7F;&#x7528;&#x793A;&#x4F8B;</h5>
@@ -3596,7 +3595,7 @@ EOF
   }
 }
 </code></pre>
-<h4 id="528configmapsecret-&#x6302;&#x8F7D;&#x914D;&#x7F6E;&#x8BF4;&#x660E;">5.2.8.configmap/secret &#x6302;&#x8F7D;&#x914D;&#x7F6E;&#x8BF4;&#x660E;</h4>
+<h3 id="528configmapsecret-&#x6302;&#x8F7D;&#x914D;&#x7F6E;&#x8BF4;&#x660E;">5.2.8.configmap/secret &#x6302;&#x8F7D;&#x914D;&#x7F6E;&#x8BF4;&#x660E;</h3>
 <h5 id="configmap&#x914D;&#x7F6E;&#x8BF4;&#x660E;">configmap&#x914D;&#x7F6E;&#x8BF4;&#x660E;</h5>
 <p>yaml &#x53C2;&#x6570;&#xFF1A;configMapPaths</p>
 <p>yaml &#x53C2;&#x6570;&#x683C;&#x5F0F;&#xFF1A;</p>
@@ -3623,7 +3622,7 @@ EOF
 <p>&#x6CE8;&#x610F;&#xFF1A;&#x5982;&#x679C; secret &#x5185;&#x53EA;&#x6709;&#x5355;&#x6587;&#x4EF6;&#x65F6;&#x4E0D;&#x4F1A;&#x8986;&#x76D6;&#x539F;&#x6709;&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x5176;&#x4ED6;&#x6587;&#x4EF6;&#xFF0C;secret &#x5185;&#x6709;&#x591A;&#x4E2A;&#x6587;&#x4EF6;&#x65F6;&#x4F1A;&#x8986;&#x76D6;&#x539F;&#x6709;&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x6240;&#x6709;&#x6587;&#x4EF6;</p>
 <p>secret &#x6982;&#x5FF5;&#x8BF7;&#x53C2;&#x8003; k8s &#x5B98;&#x65B9;&#x6587;&#x6863;&#x3002;</p>
 <p>&#x521B;&#x5EFA; secret &#x7684;&#x65B9;&#x6CD5;&#x8BF7;&#x53C2;&#x8003; k8s &#x5B98;&#x65B9;&#x6587;&#x6863;</p>
-<h4 id="529&#x5E76;&#x884C;&#x5BFC;&#x5165;&#x6570;&#x636E;">5.2.9.&#x5E76;&#x884C;&#x5BFC;&#x5165;&#x6570;&#x636E;</h4>
+<h3 id="529&#x5E76;&#x884C;&#x5BFC;&#x5165;&#x6570;&#x636E;">5.2.9.&#x5E76;&#x884C;&#x5BFC;&#x5165;&#x6570;&#x636E;</h3>
 <h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
 <p>&#x4E00;&#x4E2A;worker&#x4E2D;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; input.parallel_num &#x6765;&#x6307;&#x5B9A;&#x540C;&#x65F6;&#x5BFC;&#x5165;&#x6570;&#x636E;&#x7684;&#x7EBF;&#x7A0B;&#x6570;&#xFF0C;&#x4EE5;&#x63D0;&#x9AD8;&#x6570;&#x636E;&#x5BFC;&#x5165;&#x901F;&#x5EA6;&#xFF0C;&#x9ED8;&#x8BA4;4&#x4E2A;&#x3002;</p>
 <h5 id="&#x53C2;&#x6570;&#x8BF4;&#x660E;">&#x53C2;&#x6570;&#x8BF4;&#x660E;</h5>
@@ -3682,7 +3681,7 @@ EOF
   }
 }
 </code></pre>
-<h4 id="5210&#x5185;&#x5B58;&#x8D44;&#x6E90;&#x9650;&#x5236;">5.2.10.&#x5185;&#x5B58;&#x8D44;&#x6E90;&#x9650;&#x5236;</h4>
+<h3 id="5210&#x5185;&#x5B58;&#x8D44;&#x6E90;&#x9650;&#x5236;">5.2.10.&#x5185;&#x5B58;&#x8D44;&#x6E90;&#x9650;&#x5236;</h3>
 <h5 id="&#x53C2;&#x6570;&#x8BF4;&#x660E;">&#x53C2;&#x6570;&#x8BF4;&#x660E;</h5>
 <table>
 <thead>
@@ -3768,7 +3767,7 @@ EOF
   }
 }
 </code></pre>
-<h3 id="53&#x53C2;&#x6570;&#x5217;&#x8868;">5.3.&#x53C2;&#x6570;&#x5217;&#x8868;</h3>
+<h2 id="53&#x53C2;&#x6570;&#x5217;&#x8868;">5.3.&#x53C2;&#x6570;&#x5217;&#x8868;</h2>
 <p>&#x4E0B;&#x8868;&#x4E3A;&#x56FE;&#x8BA1;&#x7B97;&#x53EF;&#x8BBE;&#x7F6E;&#x7684;&#x53C2;&#x6570;&#x5217;&#x8868;&#x3002;&#x53C2;&#x6570;&#x7C7B;&#x578B;&#x4E3A;&#x5185;&#x90E8;&#x7C7B;&#x578B;&#xFF0C;rest api &#x4E0A;&#x90FD;&#x9700;&#x8981;&#x4F20;&#x5B57;&#x7B26;&#x4E32;&#x3002;</p>
 <table>
 <thead>
@@ -4350,90 +4349,90 @@ EOF
 </tr>
 </tbody>
 </table>
-<h3 id="54&#x7B97;&#x6CD5;&#x652F;&#x6301;&#x6570;&#x91CF;&#x7EA7;">5.4.&#x7B97;&#x6CD5;&#x652F;&#x6301;&#x6570;&#x91CF;&#x7EA7;</h3>
+<h2 id="54&#x7B97;&#x6CD5;&#x652F;&#x6301;&#x6570;&#x91CF;&#x7EA7;">5.4.&#x7B97;&#x6CD5;&#x652F;&#x6301;&#x6570;&#x91CF;&#x7EA7;</h2>
 <table>
 <thead>
 <tr>
-<th>&#x7B97;&#x6CD5;&#x540D;</th>
-<th>&#x652F;&#x6301;&#x6570;&#x91CF;&#x7EA7;</th>
-<th>&#x5185;&#x5B58;&#x5F00;&#x9500; </th>
+<th style="text-align:left">&#x7B97;&#x6CD5;&#x540D;</th>
+<th style="text-align:left">&#x652F;&#x6301;&#x6570;&#x91CF;&#x7EA7;</th>
+<th style="text-align:left">&#x5185;&#x5B58;&#x5F00;&#x9500;</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>PageRank</td>
-<td>100&#x4EBF;</td>
-<td>&#x6BCF;&#x4E2A; worker 5G &#x4EE5;&#x4E0B;  </td>
+<td style="text-align:left">PageRank</td>
+<td style="text-align:left">100&#x4EBF;</td>
+<td style="text-align:left">&#x6BCF;&#x4E2A; worker 5G &#x4EE5;&#x4E0B;</td>
 </tr>
 <tr>
-<td>Weakly Connected Component</td>
-<td>100&#x4EBF;</td>
-<td>&#x6BCF;&#x4E2A; worker 5G &#x4EE5;&#x4E0B;  </td>
+<td style="text-align:left">Weakly Connected Component</td>
+<td style="text-align:left">100&#x4EBF;</td>
+<td style="text-align:left">&#x6BCF;&#x4E2A; worker 5G &#x4EE5;&#x4E0B;</td>
 </tr>
 <tr>
-<td>Degree Centrality</td>
-<td>100&#x4EBF;</td>
-<td>&#x6BCF;&#x4E2A; worker 5G &#x4EE5;&#x4E0B;  </td>
+<td style="text-align:left">Degree Centrality</td>
+<td style="text-align:left">100&#x4EBF;</td>
+<td style="text-align:left">&#x6BCF;&#x4E2A; worker 5G &#x4EE5;&#x4E0B;</td>
 </tr>
 <tr>
-<td>Closeness Centrality</td>
-<td>10&#x4EBF;</td>
-<td>&#x6BCF;&#x4E2A; worker 5G &#x4EE5;&#x4E0B;  </td>
+<td style="text-align:left">Closeness Centrality</td>
+<td style="text-align:left">10&#x4EBF;</td>
+<td style="text-align:left">&#x6BCF;&#x4E2A; worker 5G &#x4EE5;&#x4E0B;</td>
 </tr>
 <tr>
-<td>Betweenness Centrality</td>
-<td>10&#x4EBF;</td>
-<td>&#x6BCF;&#x4E2A; worker 5G &#x4EE5;&#x4E0B;  </td>
+<td style="text-align:left">Betweenness Centrality</td>
+<td style="text-align:left">10&#x4EBF;</td>
+<td style="text-align:left">&#x6BCF;&#x4E2A; worker 5G &#x4EE5;&#x4E0B;</td>
 </tr>
 <tr>
-<td>Triangle Count</td>
-<td>10&#x4EBF;</td>
-<td>twitter 14&#x4EBF;&#x8FB9;&#xFF0C;5&#x53F0;&#x673A;&#x5668;&#xFF0C;&#x6BCF;&#x53F0;100G  </td>
+<td style="text-align:left">Triangle Count</td>
+<td style="text-align:left">10&#x4EBF;</td>
+<td style="text-align:left">twitter 14&#x4EBF;&#x8FB9;&#xFF0C;5&#x53F0;&#x673A;&#x5668;&#xFF0C;&#x6BCF;&#x53F0;100G</td>
 </tr>
 <tr>
-<td>Cluster Coefficient</td>
-<td>10&#x4EBF;</td>
-<td>twitter 14&#x4EBF;&#x8FB9;&#xFF0C;5&#x53F0;&#x673A;&#x5668;&#xFF0C;&#x6BCF;&#x53F0;100G  </td>
+<td style="text-align:left">Cluster Coefficient</td>
+<td style="text-align:left">10&#x4EBF;</td>
+<td style="text-align:left">twitter 14&#x4EBF;&#x8FB9;&#xFF0C;5&#x53F0;&#x673A;&#x5668;&#xFF0C;&#x6BCF;&#x53F0;100G</td>
 </tr>
 <tr>
-<td>Rings Detection</td>
-<td>10&#x4E07;</td>
-<td>&#x6BCF;&#x4E2A; worker 5G &#x4EE5;&#x4E0B;  </td>
+<td style="text-align:left">Rings Detection</td>
+<td style="text-align:left">10&#x4E07;</td>
+<td style="text-align:left">&#x6BCF;&#x4E2A; worker 5G &#x4EE5;&#x4E0B;</td>
 </tr>
 <tr>
-<td>Filtered Rings Detection</td>
-<td>1&#x4EBF;</td>
-<td>&#x6BCF;&#x4E2A; worker 5G &#x4EE5;&#x4E0B;  </td>
+<td style="text-align:left">Filtered Rings Detection</td>
+<td style="text-align:left">1&#x4EBF;</td>
+<td style="text-align:left">&#x6BCF;&#x4E2A; worker 5G &#x4EE5;&#x4E0B;</td>
 </tr>
 <tr>
-<td>Links</td>
-<td>1&#x4EBF;</td>
-<td>&#x6BCF;&#x4E2A; worker 5G &#x4EE5;&#x4E0B;  </td>
+<td style="text-align:left">Links</td>
+<td style="text-align:left">1&#x4EBF;</td>
+<td style="text-align:left">&#x6BCF;&#x4E2A; worker 5G &#x4EE5;&#x4E0B;</td>
 </tr>
 <tr>
-<td>Label Propagation Algorithm</td>
-<td>100&#x4EBF;</td>
-<td>&#x6BCF;&#x4E2A; worker 5G &#x4EE5;&#x4E0B;  </td>
+<td style="text-align:left">Label Propagation Algorithm</td>
+<td style="text-align:left">100&#x4EBF;</td>
+<td style="text-align:left">&#x6BCF;&#x4E2A; worker 5G &#x4EE5;&#x4E0B;</td>
 </tr>
 <tr>
-<td>Louvain</td>
-<td>10&#x4EBF;</td>
-<td>twitter 14&#x4EBF;&#x8FB9;&#xFF0C;&#x9700;&#x8981;&#x4E00;&#x53F0;120G&#x4EE5;&#x4E0A;&#x7684;&#x673A;&#x5668;</td>
+<td style="text-align:left">Louvain</td>
+<td style="text-align:left">10&#x4EBF;</td>
+<td style="text-align:left">twitter 14&#x4EBF;&#x8FB9;&#xFF0C;&#x9700;&#x8981;&#x4E00;&#x53F0;120G&#x4EE5;&#x4E0A;&#x7684;&#x673A;&#x5668;</td>
 </tr>
 <tr>
-<td>Filter SubGraph Matching</td>
-<td>10&#x4EBF;</td>
-<td>&#x6BCF;&#x4E2A; worker 5G &#x4EE5;&#x4E0B;  </td>
+<td style="text-align:left">Filter SubGraph Matching</td>
+<td style="text-align:left">10&#x4EBF;</td>
+<td style="text-align:left">&#x6BCF;&#x4E2A; worker 5G &#x4EE5;&#x4E0B;</td>
 </tr>
 <tr>
-<td>K-Core</td>
-<td>100&#x4EBF;</td>
-<td>&#x6BCF;&#x4E2A; worker 5G &#x4EE5;&#x4E0B;  </td>
+<td style="text-align:left">K-Core</td>
+<td style="text-align:left">100&#x4EBF;</td>
+<td style="text-align:left">&#x6BCF;&#x4E2A; worker 5G &#x4EE5;&#x4E0B;</td>
 </tr>
 <tr>
-<td>Personal PageRank</td>
-<td>100&#x4EBF;</td>
-<td>&#x6BCF;&#x4E2A; worker 5G &#x4EE5;&#x4E0B;  </td>
+<td style="text-align:left">Personal PageRank</td>
+<td style="text-align:left">100&#x4EBF;</td>
+<td style="text-align:left">&#x6BCF;&#x4E2A; worker 5G &#x4EE5;&#x4E0B;</td>
 </tr>
 </tbody>
 </table>
@@ -4489,7 +4488,7 @@ EOF
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Computer API V3","level":"4.3","depth":1,"next":{"title":"Java Client","level":"4.4","depth":1,"path":"clients/hugegraph-client.md","ref":"clients/hugegraph-client.md","articles":[]},"previous":{"title":"Other","level":"4.2.20","depth":2,"path":"clients/restful-api-v3/other.md","ref":"clients/restful-api-v3/other.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"computer-v3/algorithm.md","mtime":"2022-02-22T08:12:29.322Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-22T08:12:29.763Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Computer API V3","level":"4.3","depth":1,"next":{"title":"Java Client","level":"4.4","depth":1,"path":"clients/hugegraph-client.md","ref":"clients/hugegraph-client.md","articles":[]},"previous":{"title":"Other","level":"4.2.20","depth":2,"path":"clients/restful-api-v3/other.md","ref":"clients/restful-api-v3/other.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"computer-v3/algorithm.md","mtime":"2022-02-22T09:31:42.093Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-22T09:31:42.536Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -1037,7 +1037,20 @@
             
         </li>
     
-        <li class="chapter " data-level="6.2" data-path="../language/hugegraph-example.html">
+        <li class="chapter " data-level="6.2" data-path="../language/hugegraph-gremlin-v3.html">
+            
+                <a href="../language/hugegraph-gremlin-v3.html">
+            
+                    
+                    Gremlin Query Language V3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../language/hugegraph-example.html">
             
                 <a href="../language/hugegraph-example.html">
             
@@ -2540,7 +2553,9 @@ EOF
 </code></pre>
 <h5 id="&#x8F93;&#x51FA;">&#x8F93;&#x51FA;</h5>
 <p>&#x9876;&#x70B9;&#x7684; personal page rank &#x503C;</p>
+<h3 id="52&#x5168;&#x5C40;&#x914D;&#x7F6E;">5.2.&#x5168;&#x5C40;&#x914D;&#x7F6E;</h3>
 <h4 id="521hdfs-&#x8F93;&#x51FA;&#x914D;&#x7F6E;">5.2.1.Hdfs &#x8F93;&#x51FA;&#x914D;&#x7F6E;</h4>
+<h5 id="&#x53C2;&#x6570;&#x8BF4;&#x660E;">&#x53C2;&#x6570;&#x8BF4;&#x660E;</h5>
 <table>
 <thead>
 <tr>
@@ -2732,6 +2747,14 @@ EOF
 
 }
 </code></pre>
+<h5 id="&#x5173;&#x4E8E;&#x652F;&#x6301;hdfs&#x591A;&#x7528;&#x6237;&#x7684;&#x95EE;&#x9898;">&#x5173;&#x4E8E;&#x652F;&#x6301;HDFS&#x591A;&#x7528;&#x6237;&#x7684;&#x95EE;&#x9898;</h5>
+<p>&#x8BBF;&#x95EE;HDFS&#x9700;&#x8981;HDFS&#x7684;&#x914D;&#x7F6E;&#x548C;&#x8BA4;&#x8BC1;&#x6587;&#x4EF6;&#xFF0C;k8s &#x5BB9;&#x5668;&#x5185;&#x4E5F;&#x9700;&#x8981;&#x76F8;&#x5173;&#x914D;&#x7F6E;&#xFF0C;&#x5BB9;&#x5668;&#x5185;&#x83B7;&#x53D6;&#x914D;&#x7F6E;&#x9700;&#x8981;&#x4E09;&#x6B65;</p>
+<ul>
+<li>&#x628A;&#x5BBF;&#x4E3B;&#x673A;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x901A;&#x8FC7;&#x521B;&#x5EFA; k8s configmap &#x653E;&#x5230; k8s &#x4E2D;&#xFF0C;&#x76F8;&#x5173;&#x547D;&#x4EE4; kubectl create configmap&#x3002;</li>
+<li>&#x628A; configmap &#x6620;&#x5C04;&#x5230;&#x5BB9;&#x5668;&#x7684;&#x78C1;&#x76D8;&#x4E2D;&#x4F7F;&#x7528;&#xFF0C;&#x76F8;&#x5173;&#x914D;&#x7F6E; k8s.secret_paths&#x3002;</li>
+<li>&#x7B97;&#x6CD5;&#x53C2;&#x6570;&#x4E2D;&#x6307;&#x5B9A;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;,&#x76F8;&#x5173;&#x914D;&#x7F6E; output.hdfs_krb5_conf&#x3002;
+&#x6240;&#x4EE5;&#x53EA;&#x8981;&#x628A;&#x4E0D;&#x540C;&#x7528;&#x6237;&#x7684;&#x914D;&#x7F6E;&#x521B;&#x5EFA;&#x6210;&#x4E0D;&#x540C;&#x7684;configmap&#xFF0C;&#x5E76;&#x6620;&#x5C04;&#x6210;&#x5BB9;&#x5668;&#x5185;&#x7684;&#x4E0D;&#x540C;&#x6587;&#x4EF6;&#xFF0C;&#x5C31;&#x80FD;&#x5728;&#x8BF7;&#x6C42;&#x4E2D;&#x6307;&#x5B9A;&#x76F8;&#x5E94;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x548C;&#x7528;&#x6237;&#x540D;&#x8FDB;&#x884C;&#x8BA4;&#x8BC1;&#x3002;</li>
+</ul>
 <h4 id="522hdfs-&#x8F93;&#x5165;&#x914D;">5.2.2.Hdfs &#x8F93;&#x5165;&#x914D;</h4>
 <p>HDFS &#x6570;&#x636E;&#x8F93;&#x5165;&#x662F;&#x57FA;&#x4E8E; hugegraph loader &#x7684;&#x683C;&#x5F0F;&#xFF0C;&#x70B9;&#x8FB9;&#x6587;&#x4EF6;&#x7684;&#x683C;&#x5F0F;&#x8BF7;&#x53C2;&#x89C1; loader &#x7684;&#x64CD;&#x4F5C;&#x6587;&#x6863;</p>
 <table>
@@ -3410,13 +3433,13 @@ EOF
 
 <span class="hljs-attr"> namespace:</span> hugegraph-computer-system
 
-<span class="hljs-attr"> name:</span> &amp;jobId closeness-centrality-beta6 <span class="hljs-comment"># &#x4EFB;&#x52A1;ID</span>
+<span class="hljs-attr"> name:</span> &amp;jobId pagerank-beta6 <span class="hljs-comment"># &#x4EFB;&#x52A1;ID</span>
 
 <span class="hljs-attr">spec:</span>
 
 <span class="hljs-attr"> jobId:</span> <span class="hljs-meta">*jobId</span>
 
-<span class="hljs-attr"> algorithmName:</span> closeness-centrality <span class="hljs-comment"># &#x7B97;&#x6CD5;&#x540D;</span>
+<span class="hljs-attr"> algorithmName:</span> pagerank <span class="hljs-comment"># &#x7B97;&#x6CD5;&#x540D;</span>
 
 <span class="hljs-attr"> image:</span> xxxxx/xxxxx:latest <span class="hljs-comment"># &#x7B97;&#x6CD5;&#x955C;&#x50CF;&#x5730;&#x5740;</span>
 
@@ -3546,10 +3569,10 @@ EOF
 <span class="hljs-attr">kind:</span> HugeGraphComputerJob
 <span class="hljs-attr">metadata:</span>
 <span class="hljs-attr">  namespace:</span> hugegraph-computer-system
-<span class="hljs-attr">  name:</span> &amp;jobId closeness-centrality-beta6 <span class="hljs-comment"># &#x4EFB;&#x52A1;ID</span>
+<span class="hljs-attr">  name:</span> &amp;jobId pagerank-beta6 <span class="hljs-comment"># &#x4EFB;&#x52A1;ID</span>
 <span class="hljs-attr">spec:</span>
 <span class="hljs-attr">  jobId:</span> <span class="hljs-meta">*jobId</span>
-<span class="hljs-attr">  algorithmName:</span> closeness-centrality <span class="hljs-comment"># &#x7B97;&#x6CD5;&#x540D;</span>
+<span class="hljs-attr">  algorithmName:</span> pagerank <span class="hljs-comment"># &#x7B97;&#x6CD5;&#x540D;</span>
 <span class="hljs-attr">  image:</span> xxxxx/xxxxx:latest <span class="hljs-comment"># &#x7B97;&#x6CD5;&#x955C;&#x50CF;&#x5730;&#x5740;</span>
 <span class="hljs-attr">  pullPolicy:</span> Always <span class="hljs-comment"># &#x662F;&#x5426;&#x91CD;&#x65B0;&#x62C9;&#x53D6;&#x955C;&#x50CF;</span>
 <span class="hljs-attr">  workerInstances:</span> <span class="hljs-number">10</span> <span class="hljs-comment"># worker &#x5B9E;&#x4F8B;&#x6570;</span>
@@ -3632,10 +3655,10 @@ EOF
 <span class="hljs-attr">kind:</span> HugeGraphComputerJob
 <span class="hljs-attr">metadata:</span>
 <span class="hljs-attr">  namespace:</span> hugegraph-computer-system
-<span class="hljs-attr">  name:</span> &amp;jobId closeness-centrality-beta6 <span class="hljs-comment"># &#x4EFB;&#x52A1;ID</span>
+<span class="hljs-attr">  name:</span> &amp;jobId pagerank-beta6 <span class="hljs-comment"># &#x4EFB;&#x52A1;ID</span>
 <span class="hljs-attr">spec:</span>
 <span class="hljs-attr">  jobId:</span> <span class="hljs-meta">*jobId</span>
-<span class="hljs-attr">  algorithmName:</span> closeness-centrality <span class="hljs-comment"># &#x7B97;&#x6CD5;&#x540D;</span>
+<span class="hljs-attr">  algorithmName:</span> pagerank <span class="hljs-comment"># &#x7B97;&#x6CD5;&#x540D;</span>
 <span class="hljs-attr">  image:</span> xxxxx/xxxxx:latest <span class="hljs-comment"># &#x7B97;&#x6CD5;&#x955C;&#x50CF;&#x5730;&#x5740;</span>
 <span class="hljs-attr">  pullPolicy:</span> Always <span class="hljs-comment"># &#x662F;&#x5426;&#x91CD;&#x65B0;&#x62C9;&#x53D6;&#x955C;&#x50CF;</span>
 <span class="hljs-attr">  workerInstances:</span> <span class="hljs-number">10</span> <span class="hljs-comment"># worker &#x5B9E;&#x4F8B;&#x6570;</span>
@@ -3656,6 +3679,92 @@ EOF
     <span class="hljs-string">&quot;pagerank.l1DiffThreshold&quot;</span>: <span class="hljs-string">&quot;0.00001&quot;</span>,
     <span class="hljs-string">&quot;bsp.max_super_step&quot;</span>: <span class="hljs-string">&quot;10&quot;</span>,
     <span class="hljs-string">&quot;input.parallel_num&quot;</span>: <span class="hljs-string">&quot;5&quot;</span>
+  }
+}
+</code></pre>
+<h4 id="5210&#x5185;&#x5B58;&#x8D44;&#x6E90;&#x9650;&#x5236;">5.2.10.&#x5185;&#x5B58;&#x8D44;&#x6E90;&#x9650;&#x5236;</h4>
+<h5 id="&#x53C2;&#x6570;&#x8BF4;&#x660E;">&#x53C2;&#x6570;&#x8BF4;&#x660E;</h5>
+<table>
+<thead>
+<tr>
+<th>&#x540D;&#x79F0;</th>
+<th>&#x662F;&#x5426;&#x5FC5;&#x586B;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x9ED8;&#x8BA4;&#x503C;</th>
+<th>&#x53D6;&#x503C;&#x8303;&#x56F4;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>k8s.master_request_memory</td>
+<td>&#x5426;</td>
+<td>String</td>
+<td>-</td>
+<td>-</td>
+<td>master&#x6700;&#x5C0F;&#x5185;&#x5B58;&#xFF0C;&#x4E0D;&#x6EE1;&#x8DB3;&#x6700;&#x5C0F;&#x5185;&#x5B58;&#x5219;&#x5206;&#x914D;&#x4E0D;&#x6210;&#x529F;</td>
+</tr>
+<tr>
+<td>k8s.worker_request_memory</td>
+<td>&#x5426;</td>
+<td>String</td>
+<td>-</td>
+<td>-</td>
+<td>worker&#x6700;&#x5C0F;&#x5185;&#x5B58;&#xFF0C;&#x4E0D;&#x6EE1;&#x8DB3;&#x6700;&#x5C0F;&#x5185;&#x5B58;&#x5219;&#x5206;&#x914D;&#x4E0D;&#x6210;&#x529F;</td>
+</tr>
+<tr>
+<td>k8s.master_memory</td>
+<td>&#x5426;</td>
+<td>String</td>
+<td>-</td>
+<td>-</td>
+<td>master&#x6700;&#x5927;&#x5185;&#x5B58;&#xFF0C;&#x8D85;&#x8FC7;&#x6700;&#x5927;&#x5185;&#x5B58;&#x5219;&#x4F1A;&#x88AB;k8s&#x4E2D;&#x6B62;</td>
+</tr>
+<tr>
+<td>k8s.worker_memory</td>
+<td>&#x5426;</td>
+<td>String</td>
+<td>-</td>
+<td>-</td>
+<td>worker&#x6700;&#x5927;&#x5185;&#x5B58;&#xFF0C;&#x8D85;&#x8FC7;&#x6700;&#x5927;&#x5185;&#x5B58;&#x5219;&#x4F1A;&#x88AB;k8s&#x4E2D;&#x6B62;</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-yaml">cat &lt;&lt;EOF | kubectl apply --filename -
+<span class="hljs-attr">apiVersion:</span> hugegraph.baidu.com/v1
+<span class="hljs-attr">kind:</span> HugeGraphComputerJob
+<span class="hljs-attr">metadata:</span>
+<span class="hljs-attr">  namespace:</span> hugegraph-computer-system
+<span class="hljs-attr">  name:</span> &amp;jobId pagerank-beta6 <span class="hljs-comment"># &#x4EFB;&#x52A1;ID</span>
+<span class="hljs-attr">spec:</span>
+<span class="hljs-attr">  jobId:</span> <span class="hljs-meta">*jobId</span>
+<span class="hljs-attr">  algorithmName:</span> pagerank <span class="hljs-comment"># &#x7B97;&#x6CD5;&#x540D;</span>
+<span class="hljs-attr">  image:</span> xxxxx/xxxxx:latest <span class="hljs-comment"># &#x7B97;&#x6CD5;&#x955C;&#x50CF;&#x5730;&#x5740;</span>
+<span class="hljs-attr">  pullPolicy:</span> Always <span class="hljs-comment"># &#x662F;&#x5426;&#x91CD;&#x65B0;&#x62C9;&#x53D6;&#x955C;&#x50CF;</span>
+<span class="hljs-attr">  workerInstances:</span> <span class="hljs-number">5</span> <span class="hljs-comment"># worker &#x5B9E;&#x4F8B;&#x6570;</span>
+<span class="hljs-attr">  computerConf:</span>
+    algorithm.params_class: com.baidu.hugegraph.computer.algorithm.centrality.pagerank.PageRankParams <span class="hljs-comment"># &#x7B97;&#x6CD5;&#x914D;&#x7F6E;&#x7C7B;</span>
+    pd.peers: <span class="hljs-string">&quot;127.0.0.1:8686&quot;</span>  <span class="hljs-comment"># pd &#x5730;&#x5740;</span>
+    hugegraph.name: <span class="hljs-string">&quot;default/hugegraph&quot;</span> <span class="hljs-comment"># &#x56FE;&#x7A7A;&#x95F4;/&#x56FE;&#x540D;</span>
+    job.partitions_count: <span class="hljs-string">&quot;50&quot;</span> <span class="hljs-comment"># &#x5206;&#x533A;&#x6570;</span>
+    k8s.master_request_memory: <span class="hljs-string">&quot;100Mi&quot;</span>
+    k8s.worker_request_memory: <span class="hljs-string">&quot;5Gi&quot;</span>
+    k8s.master_memory: <span class="hljs-string">&quot;500Mi&quot;</span>
+    k8s.worker_memory: <span class="hljs-string">&quot;50Gi&quot;</span>
+EOF
+</code></pre>
+<h5 id="rest-&#x793A;&#x4F8B;">rest &#x793A;&#x4F8B;</h5>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;algorithm&quot;</span>: <span class="hljs-string">&quot;page-rank&quot;</span>,
+  <span class="hljs-string">&quot;worker&quot;</span>: <span class="hljs-number">5</span>,
+  <span class="hljs-string">&quot;params&quot;</span>: {
+    <span class="hljs-string">&quot;pagerank.alpha&quot;</span>: <span class="hljs-string">&quot;0.15&quot;</span>,
+    <span class="hljs-string">&quot;pagerank.l1DiffThreshold&quot;</span>: <span class="hljs-string">&quot;0.00001&quot;</span>,
+    <span class="hljs-string">&quot;bsp.max_super_step&quot;</span>: <span class="hljs-string">&quot;10&quot;</span>,
+    <span class="hljs-string">&quot;k8s.master_request_memory&quot;</span>: <span class="hljs-string">&quot;100Mi&quot;</span>,
+    <span class="hljs-string">&quot;k8s.worker_request_memory&quot;</span>: <span class="hljs-string">&quot;5Gi&quot;</span>,
+    <span class="hljs-string">&quot;k8s.master_memory&quot;</span>: <span class="hljs-string">&quot;500Mi&quot;</span>,
+    <span class="hljs-string">&quot;k8s.worker_memory&quot;</span>: <span class="hljs-string">&quot;50Gi&quot;</span>,
   }
 }
 </code></pre>
@@ -4241,6 +4350,93 @@ EOF
 </tr>
 </tbody>
 </table>
+<h3 id="54&#x7B97;&#x6CD5;&#x652F;&#x6301;&#x6570;&#x91CF;&#x7EA7;">5.4.&#x7B97;&#x6CD5;&#x652F;&#x6301;&#x6570;&#x91CF;&#x7EA7;</h3>
+<table>
+<thead>
+<tr>
+<th>&#x7B97;&#x6CD5;&#x540D;</th>
+<th>&#x652F;&#x6301;&#x6570;&#x91CF;&#x7EA7;</th>
+<th>&#x5185;&#x5B58;&#x5F00;&#x9500; </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PageRank</td>
+<td>100&#x4EBF;</td>
+<td>&#x6BCF;&#x4E2A; worker 5G &#x4EE5;&#x4E0B;  </td>
+</tr>
+<tr>
+<td>Weakly Connected Component</td>
+<td>100&#x4EBF;</td>
+<td>&#x6BCF;&#x4E2A; worker 5G &#x4EE5;&#x4E0B;  </td>
+</tr>
+<tr>
+<td>Degree Centrality</td>
+<td>100&#x4EBF;</td>
+<td>&#x6BCF;&#x4E2A; worker 5G &#x4EE5;&#x4E0B;  </td>
+</tr>
+<tr>
+<td>Closeness Centrality</td>
+<td>10&#x4EBF;</td>
+<td>&#x6BCF;&#x4E2A; worker 5G &#x4EE5;&#x4E0B;  </td>
+</tr>
+<tr>
+<td>Betweenness Centrality</td>
+<td>10&#x4EBF;</td>
+<td>&#x6BCF;&#x4E2A; worker 5G &#x4EE5;&#x4E0B;  </td>
+</tr>
+<tr>
+<td>Triangle Count</td>
+<td>10&#x4EBF;</td>
+<td>twitter 14&#x4EBF;&#x8FB9;&#xFF0C;5&#x53F0;&#x673A;&#x5668;&#xFF0C;&#x6BCF;&#x53F0;100G  </td>
+</tr>
+<tr>
+<td>Cluster Coefficient</td>
+<td>10&#x4EBF;</td>
+<td>twitter 14&#x4EBF;&#x8FB9;&#xFF0C;5&#x53F0;&#x673A;&#x5668;&#xFF0C;&#x6BCF;&#x53F0;100G  </td>
+</tr>
+<tr>
+<td>Rings Detection</td>
+<td>10&#x4E07;</td>
+<td>&#x6BCF;&#x4E2A; worker 5G &#x4EE5;&#x4E0B;  </td>
+</tr>
+<tr>
+<td>Filtered Rings Detection</td>
+<td>1&#x4EBF;</td>
+<td>&#x6BCF;&#x4E2A; worker 5G &#x4EE5;&#x4E0B;  </td>
+</tr>
+<tr>
+<td>Links</td>
+<td>1&#x4EBF;</td>
+<td>&#x6BCF;&#x4E2A; worker 5G &#x4EE5;&#x4E0B;  </td>
+</tr>
+<tr>
+<td>Label Propagation Algorithm</td>
+<td>100&#x4EBF;</td>
+<td>&#x6BCF;&#x4E2A; worker 5G &#x4EE5;&#x4E0B;  </td>
+</tr>
+<tr>
+<td>Louvain</td>
+<td>10&#x4EBF;</td>
+<td>twitter 14&#x4EBF;&#x8FB9;&#xFF0C;&#x9700;&#x8981;&#x4E00;&#x53F0;120G&#x4EE5;&#x4E0A;&#x7684;&#x673A;&#x5668;</td>
+</tr>
+<tr>
+<td>Filter SubGraph Matching</td>
+<td>10&#x4EBF;</td>
+<td>&#x6BCF;&#x4E2A; worker 5G &#x4EE5;&#x4E0B;  </td>
+</tr>
+<tr>
+<td>K-Core</td>
+<td>100&#x4EBF;</td>
+<td>&#x6BCF;&#x4E2A; worker 5G &#x4EE5;&#x4E0B;  </td>
+</tr>
+<tr>
+<td>Personal PageRank</td>
+<td>100&#x4EBF;</td>
+<td>&#x6BCF;&#x4E2A; worker 5G &#x4EE5;&#x4E0B;  </td>
+</tr>
+</tbody>
+</table>
 
                                 
                                 </section>
@@ -4293,7 +4489,7 @@ EOF
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Computer API V3","level":"4.3","depth":1,"next":{"title":"Java Client","level":"4.4","depth":1,"path":"clients/hugegraph-client.md","ref":"clients/hugegraph-client.md","articles":[]},"previous":{"title":"Other","level":"4.2.20","depth":2,"path":"clients/restful-api-v3/other.md","ref":"clients/restful-api-v3/other.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"computer-v3/algorithm.md","mtime":"2022-02-21T09:32:57.115Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-22T02:06:55.034Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Computer API V3","level":"4.3","depth":1,"next":{"title":"Java Client","level":"4.4","depth":1,"path":"clients/hugegraph-client.md","ref":"clients/hugegraph-client.md","articles":[]},"previous":{"title":"Other","level":"4.2.20","depth":2,"path":"clients/restful-api-v3/other.md","ref":"clients/restful-api-v3/other.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"computer-v3/algorithm.md","mtime":"2022-02-22T08:12:29.322Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-22T08:12:29.763Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

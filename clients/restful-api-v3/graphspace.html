@@ -1037,7 +1037,20 @@
             
         </li>
     
-        <li class="chapter " data-level="6.2" data-path="../../language/hugegraph-example.html">
+        <li class="chapter " data-level="6.2" data-path="../../language/hugegraph-gremlin-v3.html">
+            
+                <a href="../../language/hugegraph-gremlin-v3.html">
+            
+                    
+                    Gremlin Query Language V3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../../language/hugegraph-example.html">
             
                 <a href="../../language/hugegraph-example.html">
             
@@ -1817,6 +1830,22 @@
 </thead>
 <tbody>
 <tr>
+<td>action</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td></td>
+<td>update</td>
+<td>&#x6807;&#x8BB0;&#x672C;&#x6B21;&#x64CD;&#x4F5C;&#x4E3A;Update&#x52A8;&#x4F5C;&#xFF0C;&#x53D6;&#x503C;&#x56FA;&#x5B9A;</td>
+</tr>
+<tr>
+<td>update</td>
+<td>&#x662F;</td>
+<td>Map</td>
+<td></td>
+<td></td>
+<td>&#x5373;&#x5C06;&#x66F4;&#x65B0;&#x7684;&#x503C;&#xFF0C;<strong>&#x4E0B;&#x8FF0;&#x53C2;&#x6570;&#x90FD;&#x5E94;&#x7F6E;&#x4E8E;update&#x4E2D;</strong></td>
+</tr>
+<tr>
 <td>description</td>
 <td>&#x662F;</td>
 <td>String</td>
@@ -1987,14 +2016,17 @@
 <pre><code>PUT http://127.0.0.1:8080/graphspaces/gs1
 </code></pre><h6 id="request-body">Request Body</h6>
 <pre><code class="lang-json">{
-    <span class="hljs-string">&quot;description&quot;</span>: <span class="hljs-string">&quot;1st graph space&quot;</span>,
-    <span class="hljs-string">&quot;cpu_limit&quot;</span>: <span class="hljs-number">2000</span>,
-    <span class="hljs-string">&quot;memory_limit&quot;</span>: <span class="hljs-number">40960</span>,
-    <span class="hljs-string">&quot;storage_limit&quot;</span>: <span class="hljs-number">2048</span>,
-    <span class="hljs-string">&quot;oltp_namespace&quot;</span>: <span class="hljs-string">&quot;hugegraph-server&quot;</span>,
-    <span class="hljs-string">&quot;olap_namespace&quot;</span>: <span class="hljs-string">&quot;hugegraph-server&quot;</span>,
-    <span class="hljs-string">&quot;max_graph_number&quot;</span>: <span class="hljs-number">1000</span>,
-    <span class="hljs-string">&quot;max_role_number&quot;</span>: <span class="hljs-number">100</span>
+    <span class="hljs-string">&quot;action&quot;</span>: <span class="hljs-string">&quot;update&quot;</span>,
+    <span class="hljs-string">&quot;update&quot;</span>: {
+      <span class="hljs-string">&quot;description&quot;</span>: <span class="hljs-string">&quot;1st graph space&quot;</span>,
+      <span class="hljs-string">&quot;cpu_limit&quot;</span>: <span class="hljs-number">2000</span>,
+      <span class="hljs-string">&quot;memory_limit&quot;</span>: <span class="hljs-number">40960</span>,
+      <span class="hljs-string">&quot;storage_limit&quot;</span>: <span class="hljs-number">2048</span>,
+      <span class="hljs-string">&quot;oltp_namespace&quot;</span>: <span class="hljs-string">&quot;hugegraph-server&quot;</span>,
+      <span class="hljs-string">&quot;olap_namespace&quot;</span>: <span class="hljs-string">&quot;hugegraph-server&quot;</span>,
+      <span class="hljs-string">&quot;max_graph_number&quot;</span>: <span class="hljs-number">1000</span>,
+      <span class="hljs-string">&quot;max_role_number&quot;</span>: <span class="hljs-number">100</span>
+    }
 }
 </code></pre>
 <h6 id="response-status">Response Status</h6>
@@ -2115,7 +2147,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"GraphSpace","level":"4.2.17","depth":2,"next":{"title":"Service","level":"4.2.18","depth":2,"path":"clients/restful-api-v3/service.md","ref":"clients/restful-api-v3/service.md","articles":[]},"previous":{"title":"Authentication","level":"4.2.16","depth":2,"path":"clients/restful-api-v3/auth.md","ref":"clients/restful-api-v3/auth.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"clients/restful-api-v3/graphspace.md","mtime":"2022-02-21T09:32:57.111Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-22T02:06:55.034Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"GraphSpace","level":"4.2.17","depth":2,"next":{"title":"Service","level":"4.2.18","depth":2,"path":"clients/restful-api-v3/service.md","ref":"clients/restful-api-v3/service.md","articles":[]},"previous":{"title":"Authentication","level":"4.2.16","depth":2,"path":"clients/restful-api-v3/auth.md","ref":"clients/restful-api-v3/auth.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"clients/restful-api-v3/graphspace.md","mtime":"2022-02-22T08:12:29.322Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-22T08:12:29.763Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

@@ -1662,6 +1662,14 @@ EOF
 <td style="text-align:left">-</td>
 <td style="text-align:left">&#x6700;&#x5927;&#x51FA;&#x8FB9;&#x9650;&#x5236;</td>
 </tr>
+<tr>
+<td style="text-align:left">input.minimum_edges_use_superedge_cache</td>
+<td style="text-align:left">&#x5426;</td>
+<td style="text-align:left">Int</td>
+<td style="text-align:left">100</td>
+<td style="text-align:left">1 - 100000</td>
+<td style="text-align:left">&#x5229;&#x7528;&#x5185;&#x5B58;&#x51CF;&#x5C11;&#x6D88;&#x606F;&#x91CF;&#xFF0C;&#x5982;&#x679C;&#x5185;&#x5B58;&#x4E0D;&#x591F;&#xFF0C;&#x53EF;&#x4EE5;&#x4ECE;100&#x6539;&#x6210;1000&#xFF0C;&#x4F46;&#x4E09;&#x89D2;&#x8BA1;&#x6570;&#x53EF;&#x80FD;&#x8BA1;&#x7B97;&#x4E0D;&#x5B8C;</td>
+</tr>
 </tbody>
 </table>
 <h5 id="k8s&#x793A;&#x4F8B;">k8s&#x793A;&#x4F8B;</h5>
@@ -1813,6 +1821,7 @@ EOF
 </table>
 <h5 id="&#x989D;&#x5916;&#x8BF4;&#x660E;">&#x989D;&#x5916;&#x8BF4;&#x660E;</h5>
 <ul>
+<li>start_vertex_filter&#x7528;&#x4E8E;&#x8FDB;&#x884C;&#x521D;&#x59CB;&#x9876;&#x70B9;&#x7684;&#x8FC7;&#x6EE4;&#xFF0C;&#x9002;&#x7528;&#x4E8E;&#x7B5B;&#x9009;&#x9876;&#x70B9;&#x7684;&#x3002;</li>
 <li>vertex_filter&#x548C;edge_filter&#x5206;&#x522B;&#x8868;&#x793A;&#x70B9;&#x548C;&#x8FB9;&#x7684;&#x8FC7;&#x6EE4;&#x6761;&#x4EF6;&#xFF0C;&#x53EF;&#x4EE5;&#x4E3A;&#x4E0D;&#x540C;label&#x7684;&#x70B9;&#x8FB9;&#x914D;&#x7F6E;&#x4E0D;&#x540C;&#x7684;&#x8FC7;&#x6EE4;&#x89C4;&#x5219;&#x3002;&#x76F8;&#x540C;label&#x7684;&#x70B9;&#x6216;&#x8FB9;&#x7684;&#x8FC7;&#x6EE4;&#x6761;&#x4EF6;&#x53EA;&#x4F1A;&#x4FDD;&#x7559;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x3002;</li>
 <li>vertex_filter&#x548C;edge_filter&#x53EF;&#x4EE5;&#x662F;&#x975E;&#x5FC5;&#x9009;&#x7684;&#x3002;&#x5BF9;&#x4E8E;vertex_filter&#x548C;edge_filter&#x4EFB;&#x4F55;&#x4E00;&#x4E2A;&#x5355;&#x72EC;&#x6765;&#x770B;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x6307;&#x5B9A;&#x8FC7;&#x6EE4;&#x6761;&#x4EF6;&#x7684;&#x8BDD;&#x5C06;&#x5BF9;&#x6240;&#x6709;&#x5BF9;&#x5E94;&#x7684;&#x5143;&#x7D20;&#x653E;&#x884C;&#xFF0C;&#x5982;&#x679C;&#x6307;&#x5B9A;&#x4E86;&#x7684;&#x8BDD;&#xFF0C;&#x90A3;&#x4E48;&#x53EA;&#x4F1A;&#x5BF9;label&#x76F8;&#x540C;&#x5E76;&#x4E14;&#x5C5E;&#x6027;&#x6EE1;&#x8DB3;&#x6761;&#x4EF6;&#x7684;&#x653E;&#x884C;&#xFF0C;&#x672A;&#x914D;&#x7F6E;label&#x7684;&#x5143;&#x7D20;&#x5C06;&#x76F4;&#x63A5;&#x88AB;&#x8FC7;&#x6EE4;&#x6389;&#x3002;</li>
 <li>property_filter&#x7528;&#x4E8E;&#x89C4;&#x5B9A;&#x5C5E;&#x6027;&#x7684;&#x8FC7;&#x6EE4;&#x89C4;&#x5219;&#xFF0C;&#x5728;vertex_filter&#x4E2D;&#x7B26;&#x5408;&#x6761;&#x4EF6;&#x7684;&#x70B9;&#x624D;&#x4F1A;&#x7EE7;&#x7EED;&#x5411;&#x4E0B;&#x4F20;&#x64AD;&#x8DEF;&#x5F84;&#xFF0C;&#x5728;edge_filter&#x4E2D;&#x7B26;&#x5408;&#x6761;&#x4EF6;&#x7684;&#x51FA;&#x8FB9;&#x624D;&#x80FD;&#x4F20;&#x64AD;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x7528;&#x5165;&#x8FB9;&#x8DDF;&#x51FA;&#x8FB9;&#x4E4B;&#x95F4;&#x505A;&#x5C5E;&#x6027;&#x6BD4;&#x8F83;&#x5224;&#x65AD;&#x8FC7;&#x6EE4;&#x3002;&#x4E0D;&#x540C;label&#x4E4B;&#x95F4;&#x662F;&#x6216;&#x7684;&#x5173;&#x7CFB;&#x3002;</li>
@@ -1822,6 +1831,12 @@ EOF
 <h5 id="&#x8FC7;&#x6EE4;&#x6761;&#x4EF6;&#x53C2;&#x6570;&#x8BF4;&#x660E;">&#x8FC7;&#x6EE4;&#x6761;&#x4EF6;&#x53C2;&#x6570;&#x8BF4;&#x660E;</h5>
 <pre><code class="lang-java"><span class="hljs-comment">// &#x9700;&#x8981;&#x5C06;&#x8FD9;&#x4E2A;json&#x8FDB;&#x884C;&#x5E8F;&#x5217;&#x8BDD;&#x5E76;&#x8F6C;&#x8BD1;&#x4E4B;&#x540E;&#xFF0C;&#x8D34;&#x5230;&#x4E0A;&#x9762;&#x7684;&#x8FC7;&#x6EE4;&#x6761;&#x4EF6;&#x914D;&#x7F6E;&#x4E2D;</span>
 {
+    <span class="hljs-string">&quot;start_vertex_filter&quot;</span>: [
+        {
+        <span class="hljs-string">&quot;label&quot;</span>: <span class="hljs-string">&quot;person&quot;</span>,
+        <span class="hljs-string">&quot;property_filter&quot;</span>: <span class="hljs-string">&quot;$element.weight&gt;=4&quot;</span>
+        }
+    ],
     <span class="hljs-string">&quot;vertex_filter&quot;</span>: [
         {
             <span class="hljs-string">&quot;label&quot;</span>: <span class="hljs-string">&quot;user&quot;</span>,
@@ -2015,7 +2030,28 @@ EOF
 <h5 id="&#x9002;&#x7528;&#x573A;&#x666F;">&#x9002;&#x7528;&#x573A;&#x666F;</h5>
 <p>&#x805A;&#x7C7B;&#x7CFB;&#x6570;&#x7B97;&#x6CD5;&#xFF08;Cluster Coefficient&#xFF09;&#x9002;&#x7528;&#x4E8E;&#x8861;&#x91CF;&#x56FE;&#x7684;&#x7ED3;&#x6784;&#x7279;&#x6027;&#x573A;&#x666F;&#x3002;</p>
 <h5 id="&#x53C2;&#x6570;&#x8BF4;&#x660E;">&#x53C2;&#x6570;&#x8BF4;&#x660E;</h5>
-<p>&#x65E0;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x540D;&#x79F0;</th>
+<th style="text-align:left">&#x662F;&#x5426;&#x5FC5;&#x586B;</th>
+<th style="text-align:left">&#x7C7B;&#x578B;</th>
+<th style="text-align:left">&#x9ED8;&#x8BA4;&#x503C;</th>
+<th style="text-align:left">&#x53D6;&#x503C;&#x8303;&#x56F4;</th>
+<th style="text-align:left">&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">input.minimum_edges_use_superedge_cache</td>
+<td style="text-align:left">&#x5426;</td>
+<td style="text-align:left">Int</td>
+<td style="text-align:left">100</td>
+<td style="text-align:left">1 - 100000</td>
+<td style="text-align:left">&#x5229;&#x7528;&#x5185;&#x5B58;&#x51CF;&#x5C11;&#x6D88;&#x606F;&#x91CF;&#xFF0C;&#x5982;&#x679C;&#x5185;&#x5B58;&#x4E0D;&#x591F;&#xFF0C;&#x53EF;&#x4EE5;&#x4ECE;100&#x6539;&#x6210;1000&#xFF0C;&#x4F46;&#x805A;&#x96C6;&#x7CFB;&#x6570;&#x53EF;&#x80FD;&#x8BA1;&#x7B97;&#x4E0D;&#x5B8C;</td>
+</tr>
+</tbody>
+</table>
 <h5 id="k8s&#x793A;&#x4F8B;">k8s&#x793A;&#x4F8B;</h5>
 <pre><code class="lang-yaml">cat &lt;&lt;EOF | kubectl apply --filename -
 <span class="hljs-attr">apiVersion:</span> hugegraph.baidu.com/v1
@@ -4491,7 +4527,7 @@ EOF
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Computer API V3","level":"4.3","depth":1,"next":{"title":"Java Client","level":"4.4","depth":1,"path":"clients/hugegraph-client.md","ref":"clients/hugegraph-client.md","articles":[]},"previous":{"title":"Other","level":"4.2.20","depth":2,"path":"clients/restful-api-v3/other.md","ref":"clients/restful-api-v3/other.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"computer-v3/algorithm.md","mtime":"2022-02-25T02:55:38.040Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-25T02:55:38.479Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Computer API V3","level":"4.3","depth":1,"next":{"title":"Java Client","level":"4.4","depth":1,"path":"clients/hugegraph-client.md","ref":"clients/hugegraph-client.md","articles":[]},"previous":{"title":"Other","level":"4.2.20","depth":2,"path":"clients/restful-api-v3/other.md","ref":"clients/restful-api-v3/other.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"computer-v3/algorithm.md","mtime":"2022-03-04T09:50:53.855Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-03-04T09:50:54.457Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

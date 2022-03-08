@@ -1,18 +1,68 @@
-### 6.1 Graphs
+## 4.3.图操作
+### 4.3.1.图数据
+#### 4.3.1.1.创建图
 
-#### 6.1.1 创建一个新图
+##### 功能介绍
 
-##### Method & Url
+创建一个新图，该操作需要图空间管理员或者超级管理员权限
+
+##### URI
+
+```
+POST /graphspaces/${graphspace}/graphs/${graph}
+```
+
+##### URI参数
+
+|  名称   | 是否必填  | 类型  | 默认值 | 取值范围 | 说明  |
+|  ----  | ----  | ----  | ----  | ----  | ---- |
+| graphspace  | 是 | String  |   |  | 图空间  |
+| graph  | 是 | String  |   |  | 图  |
+
+##### Body参数
+
+|  名称   | 是否必填  | 类型  | 默认值 | 取值范围 | 说明  |
+|  ----  | ----  | ----  | ----  | ----  | ---- |
+| backend  | 是 | String  |   |  | 存储类型，目前仅支持hstore  |
+| serializer  | 是 | String  |   |  | 序列化类型，目前仅支持binary  |
+| store  | 是 | String  |   |  | 与图名保持一致  |
+| search.text_analyzer  | 否 | String  | jieba  | [word, ansj, hanlp, smartcn, jieba, jcseg, mmseg4j, ikanalyzer] |   |
+| search.text_analyzer_mode  | 否 | String  | INDEX  |  |   |
+| task.scheduler_type | 否 | String | local | [local, etcd] | 使用何种调度器进行异步任务调度，默认为local。 调度器类型不可修改 |
+
+```
+search.text_analyzer_mode:
+
+word: [MaximumMatching, ReverseMaximumMatching, MinimumMatching, ReverseMinimumMatching, BidirectionalMaximumMatching, BidirectionalMinimumMatching, BidirectionalMaximumMinimumMatching, FullSegmentation, MinimalWordCount, MaxNgramScore, PureEnglish]
+ansj: [BaseAnalysis, IndexAnalysis, ToAnalysis, NlpAnalysis]
+hanlp: [standard, nlp, index, nShort, shortest, speed]
+smartcn: []
+jieba: [SEARCH, INDEX]
+jcseg: [Simple, Complex]
+mmseg4j: [Simple, Complex, MaxWord]
+ikanalyzer: [smart, max_word]
+```
+
+##### Response
+
+|  名称   | 类型  |  说明  |
+|  ----  | ----  | ----  |
+| name  | String |  图名 |
+| backend  | String |  存储类型 |
+| description  | String |  描述 |
+
+##### 使用示例
+
+###### Method & Url
 
 ```
 POST http://localhost:8080/graphspaces/gs1/graphs/hugegraph
 ```
 
-##### Request Body
+###### Request Body
 
 ```json
 {
-  "gremlin.graph": "com.baidu.hugegraph.HugeFactory",
   "backend": "hstore",
   "serializer": "binary",
   "store": "hugegraph",
@@ -21,13 +71,13 @@ POST http://localhost:8080/graphspaces/gs1/graphs/hugegraph
 }
 ```
 
-##### Response Status
+###### Response Status
 
 ```json
 201
 ```
 
-##### Response Body
+###### Response Body
 
 ```json
 {
@@ -37,21 +87,53 @@ POST http://localhost:8080/graphspaces/gs1/graphs/hugegraph
 }
 ```
 
-#### 6.1.2 列出数据库中全部的图
+#### 4.3.1.2.列出图空间中全部的图
 
-##### Method & Url
+##### 功能介绍
+
+列出图空间下中全部的图
+
+##### URI
+
+```
+GET /graphspaces/${graphspace}/graphs
+```
+
+##### URI参数
+
+|  名称   | 是否必填  | 类型  | 默认值 | 取值范围 | 说明  |
+|  ----  | ----  | ----  | ----  | ----  | ---- |
+| graphspace  | 是 | String  |   |  | 图空间  |
+
+##### Body参数
+
+无
+
+##### Response
+
+|  名称   | 类型  |  说明  |
+|  ----  | ----  | ----  |
+| graphs  | Array |  图列表 |
+
+##### 使用示例
+
+###### Method & Url
 
 ```
 GET http://localhost:8080/graphspaces/gs1/graphs
 ```
 
-##### Response Status
+###### Request Body
+
+无
+
+###### Response Status
 
 ```json
 200
 ```
 
-##### Response Body
+###### Response Body
 
 ```json
 {
@@ -62,21 +144,56 @@ GET http://localhost:8080/graphspaces/gs1/graphs
 }
 ```
 
-#### 6.1.3 查看某个图的信息
+#### 4.3.1.3.查看某个图的信息
 
-##### Method & Url
+##### 功能介绍
+
+查看图空间下某个图的信息
+
+##### URI
+
+```
+GET /graphspaces/${graphspace}/graphs/${graph}
+```
+
+##### URI参数
+
+|  名称   | 是否必填  | 类型  | 默认值 | 取值范围 | 说明  |
+|  ----  | ----  | ----  | ----  | ----  | ---- |
+| graphspace  | 是 | String  |   |  | 图空间  |
+| graph  | 是 | String  |   |  | 图  |
+
+##### Body参数
+
+无
+
+##### Response
+
+|  名称   | 类型  |  说明  |
+|  ----  | ----  | ----  |
+| name  | String |  图名 |
+| backend  | String |  存储类型 |
+| description  | String |  描述 |
+
+##### 使用示例
+
+###### Method & Url
 
 ```
 GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph
 ```
 
-##### Response Status
+###### Request Body
+
+无
+
+###### Response Status
 
 ```json
 200
 ```
 
-##### Response Body
+###### Response Body
 
 ```json
 {
@@ -86,15 +203,45 @@ GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph
 }
 ```
 
-#### 6.1.4 清空某个图的全部数据，包括schema、vertex、edge和index等，**该操作需要管理员权限**
+#### 4.3.1.4.清空图数据，包括schema、vertex、edge和index等
 
-##### Method & Url
+##### 功能介绍
+
+清空某个图的全部数据，包括schema、vertex、edge和index等，该操作需要图空间管理员或者超级管理员权限
+
+##### URI
+
+```
+PUT /graphspaces/${graphspace}/graphs/${graph}
+```
+
+##### URI参数
+
+|  名称   | 是否必填  | 类型  | 默认值 | 取值范围 | 说明  |
+|  ----  | ----  | ----  | ----  | ----  | ---- |
+| graphspace  | 是 | String  |   |  | 图空间  |
+| graph  | 是 | String  |   |  | 图  |
+
+##### Body参数
+
+|  名称   | 是否必填  | 类型  | 默认值 | 取值范围 | 说明  |
+|  ----  | ----  | ----  | ----  | ----  | ---- |
+| action  | 是 | String  |   | clear | 动作  |
+| clear_schema  | 是 | Boolean  |   |  | 其中 clear_schema 为 true 时，不仅删除图数据（顶点和边），同时删除元数据（schema）；clear_schema 为 false 时，只删除图数据（顶点和边），保留元数据（schema）|
+
+##### Response
+
+无
+
+##### 使用示例
+
+###### Method & Url
 
 ```
 PUT http://localhost:8080/graphspaces/gs1/graphs/hugegraph
 ```
 
-##### Request Body
+###### Request Body
 
 ```json
 {
@@ -103,45 +250,121 @@ PUT http://localhost:8080/graphspaces/gs1/graphs/hugegraph
 }
 ```
 
-其中 clear_schema 为 true 时，不仅删除图数据（顶点和边），同时删除元数据（schema）；clear_schema 为 false 时，只删除图数据（顶点和边），保留元数据（schema）
-
-##### Response Status
+###### Response Status
 
 ```json
 200
 ```
 
-#### 6.1.5 删除某个图，**该操作需要管理员权限**
+###### Response Body
 
-##### Method & Url
+无
+
+#### 4.3.1.5.删除图
+
+##### 功能介绍
+
+删除某个图，该操作需要图空间管理员权限或者超级管理员权限
+
+##### URI
+
+```
+DELETE /graphspaces/${graphspace}/graphs/${graph}
+```
+
+##### URI参数
+
+|  名称   | 是否必填  | 类型  | 默认值 | 取值范围 | 说明  |
+|  ----  | ----  | ----  | ----  | ----  | ---- |
+| graphspace  | 是 | String  |   |  | 图空间  |
+| graph  | 是 | String  |   |  | 图  |
+
+##### Body参数
+
+无
+
+##### Response
+
+无
+
+##### 使用示例
+
+###### Method & Url
 
 ```
 DELETE http://localhost:8080/graphspaces/gs1/graphs/hugegraph
 ```
 
-##### Response Status
+###### Request Body
+
+无
+
+###### Response Status
 
 ```json
 204
 ```
 
-### 6.2 Conf
+###### Response Body
 
-#### 6.2.1 查看某个图的配置，**该操作需要管理员权限**
+无
 
-##### Method & Url
+### 4.3.2 图配置
+
+#### 4.3.2.1.查看图的配置
+
+##### 功能介绍
+
+查看某个图的配置，**该操作需要管理员权限**
+
+##### URI
+
+```
+GET /graphspaces/${graphspace}/graphs/${graph}/conf
+```
+
+##### URI参数
+
+|  名称   | 是否必填  | 类型  | 默认值 | 取值范围 | 说明  |
+|  ----  | ----  | ----  | ----  | ----  | ---- |
+| graphspace  | 是 | String  |   |  | 图空间  |
+| graph  | 是 | String  |   |  | 图  |
+
+##### Body参数
+
+无
+
+##### Response
+
+|  名称   | 类型  |  说明  |
+|  ----  | ----  | ----  |
+| search.text_analyzer  | String |   |
+| search.text_analyzer_mode  | String |   |
+| gremlin.graph  | String |   |
+| serializer  | String |   |
+| backend  | String | 后端存储  |
+| store  | String | 图名  |
+| pd.peers  | String | pd地址  |
+
+##### 使用示例
+
+###### Method & Url
 
 ```
 GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph/conf
 ```
 
-##### Response Status
+###### Request Body
+
+无
+
+###### Response Status
 
 ```json
 200
 ```
 
-##### Response Body
+###### Response Body
 
 ```json
 {
@@ -155,7 +378,7 @@ GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph/conf
 }
 ```
 
-### 6.3 Mode
+### 4.3.3.图模式
 
 合法的图模式包括：NONE，RESTORING，MERGING，LOADING
     
@@ -177,21 +400,54 @@ Restore 时存在两种不同的模式： Restoring 和 Merging
 正常情况下，图模式为 None，当需要 Restore 图时，需要根据需要临时修改图模式为 Restoring 模式或者 Merging 模式，并在完成 Restore 时，恢复图模式为 None。
 
 
-#### 6.3.1 查看某个图的模式. **该操作需要管理员权限**
+#### 4.3.3.1 查看图模式
 
-##### Method & Url
+##### 功能介绍
+
+查看某个图的模式
+
+##### URI
+
+```
+GET /graphspaces/${graphspace}/graphs/${graph}/mode
+```
+
+##### URI参数
+
+|  名称   | 是否必填  | 类型  | 默认值 | 取值范围 | 说明  |
+|  ----  | ----  | ----  | ----  | ----  | ---- |
+| graphspace  | 是 | String  |   |  | 图空间  |
+| graph  | 是 | String  |   |  | 图  |
+
+##### Body参数
+
+无
+
+##### Response
+
+|  名称   | 类型  |  说明  |
+|  ----  | ----  | ----  |
+| mode  | String |  图模式 |
+
+##### 使用示例
+
+###### Method & Url
 
 ```
 GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph/mode
 ```
 
-##### Response Status
+###### Request Body
+
+无
+
+###### Response Status
 
 ```json
 200
 ```
 
-##### Response Body
+###### Response Body
 
 ```json
 {
@@ -201,15 +457,47 @@ GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph/mode
 
 > 合法的图模式包括：NONE，RESTORING，MERGING
 
-#### 6.3.2 设置某个图的模式. **该操作需要管理员权限**
 
-##### Method & Url
+#### 4.3.3.2.设置图模式
+
+##### 功能介绍
+
+设置某个图的模式
+
+##### URI
+
+```
+PUT /graphspaces/${graphspace}/graphs/${graph}/mode
+```
+
+##### URI参数
+
+|  名称   | 是否必填  | 类型  | 默认值 | 取值范围 | 说明  |
+|  ----  | ----  | ----  | ----  | ----  | ---- |
+| graphspace  | 是 | String  |   |  | 图空间  |
+| graph  | 是 | String  |   |  | 图  |
+
+##### Body参数
+
+|  名称   | 是否必填  | 类型  | 默认值 | 取值范围 | 说明  |
+|  ----  | ----  | ----  | ----  | ----  | ---- |
+| NONE 或者 RESTORING 或者 MERGING  | 是 | String  |   |  | 模式  |
+
+##### Response
+
+|  名称   | 类型  |  说明  |
+|  ----  | ----  | ----  |
+| mode  | String |  图模式 |
+
+##### 使用示例
+
+###### Method & Url
 
 ```
 PUT http://localhost:8080/graphspaces/gs1/graphs/hugegraph/mode
 ```
 
-##### Request Body
+###### Request Body
 
 ```
 "RESTORING"
@@ -217,13 +505,13 @@ PUT http://localhost:8080/graphspaces/gs1/graphs/hugegraph/mode
 
 > 合法的图模式包括：NONE，RESTORING，MERGING
 
-##### Response Status
+###### Response Status
 
 ```json
 200
 ```
 
-##### Response Body
+###### Response Body
 
 ```json
 {
@@ -231,29 +519,61 @@ PUT http://localhost:8080/graphspaces/gs1/graphs/hugegraph/mode
 }
 ```
 
-
-### 6.4 Graph Read Mode
+### 4.3.4.图的读模式（Graph Read Mode）
 
 合法的图的读模式包括：OLTP_ONLY, ALL
     
 - OLTP 模式（默认），图的查询结果只包含OLTP类型的属性，不包含OLAP属性
 - ALL 模式，图的查询结果既包含OLTP类型的属性，又包含OLAP属性（如果有）
 
-#### 6.4.1 查看某个图的读模式
+#### 4.3.4.1.查看图的读模式
 
-##### Method & Url
+##### 功能介绍
+
+查看图的读模式
+
+##### URI
+
+```
+GET /graphspaces/${graphspace}/graphs/${graph}/graph_read_mode
+```
+
+##### URI参数
+
+|  名称   | 是否必填  | 类型  | 默认值 | 取值范围 | 说明  |
+|  ----  | ----  | ----  | ----  | ----  | ---- |
+| graphspace  | 是 | String  |   |  | 图空间  |
+| graph  | 是 | String  |   |  | 图  |
+
+##### Body参数
+
+无
+
+##### Response
+
+|  名称   | 类型  |  说明  |
+|  ----  | ----  | ----  |
+| graph_read_mode  | String |  图模式 |
+
+##### 使用示例
+
+###### Method & Url
 
 ```
 GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph/graph_read_mode
 ```
 
-##### Response Status
+###### Request Body
+
+无
+
+###### Response Status
 
 ```json
 200
 ```
 
-##### Response Body
+###### Response Body
 
 ```json
 {
@@ -261,55 +581,61 @@ GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph/graph_read_mode
 }
 ```
 
+#### 4.3.4.2.设置图的读模式
 
-#### 6.4.2 设置某个图的读模式. **该操作需要管理员权限**
+##### 功能介绍
 
-##### Method & Url
+设置某个图的读模式. **该操作需要管理员权限**
+
+##### URI
+
+```
+PUT /graphspaces/${graphspace}/graphs/${graph}/graph_read_mode
+```
+
+##### URI参数
+
+|  名称   | 是否必填  | 类型  | 默认值 | 取值范围 | 说明  |
+|  ----  | ----  | ----  | ----  | ----  | ---- |
+| graphspace  | 是 | String  |   |  | 图空间  |
+| graph  | 是 | String  |   |  | 图  |
+
+##### Body参数
+
+|  名称   | 是否必填  | 类型  | 默认值 | 取值范围 | 说明  |
+|  ----  | ----  | ----  | ----  | ----  | ---- |
+| ALL 或者 OLTP_ONLY  | 是 | String  |   |  | 合法的图模式包括：OLTP_ONLY，ALL  |
+
+##### Response
+
+|  名称   | 类型  |  说明  |
+|  ----  | ----  | ----  |
+| graph_read_mode  | String |  图模式 |
+
+##### 使用示例
+
+###### Method & Url
 
 ```
 PUT http://localhost:8080/graphspaces/gs1/graphs/hugegraph/graph_read_mode
 ```
 
-##### Request Body
+###### Request Body
 
 ```
 "ALL"
 ```
 
-> 合法的图模式包括：OLTP_ONLY，ALL
-
-##### Response Status
+###### Response Status
 
 ```json
 200
 ```
 
-##### Response Body
+###### Response Body
 
 ```json
 {
     "graph_read_mode": "ALL"
-}
-```
-
-### 6.5 刷新某个图内存中的数据到磁盘（仅支持rocksdb后端）
-
-##### Method & Url
-
-```
-PUT http://localhost:8080/graphspaces/gs1/graphs/hugegraph/flush
-```
-
-##### Response Status
-
-```json
-200
-```
-
-##### Response Body
-
-```json
-{
-    "hugegraph": "flushed"
 }
 ```

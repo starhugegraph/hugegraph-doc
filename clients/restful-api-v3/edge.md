@@ -1,4 +1,4 @@
-### 2.2 Edge
+### 4.5.2.边
 
 顶点 id 格式的修改也影响到了边的 Id 以及源顶点和目标顶点 id 的格式。
 
@@ -12,20 +12,48 @@ EdgeId是由 `src-vertex-id + direction + label + sort-values + tgt-vertex-id` �
 
 接下来的示例均假设已经创建好了前述的各种schema和vertex信息
 
-#### 2.2.1 创建一条边
+#### 4.5.2.1.创建边
 
-Params说明
+##### 功能介绍
+创建一条边
 
-- label：边类型名称，必填
-- outV：源顶点id，必填
-- inV：目标顶点id，必填
-- outVLabel：源顶点类型。必填
-- inVLabel：目标顶点类型。必填
-- properties: 边关联的属性，对象内部结构为：
-  1. name：属性名称
-  2. value：属性值
+##### URI
+
+```
+POST /graphspaces/{graphspace}/graphs/{hugegraph}/graph/edges
+```
+
+##### URI参数
+| 名称       | 是否必填  | 类型   | 默认值  | 取值范围 | 说明       |
+| ---------- | -------- | ------ | ------ | -------- | ---------- |
+| graphspace | 是       | String |        |          | 图空间名称 |
+| hugegraph  | 是       | String |        |          | 图名称     |
+
+##### Body参数
+| 名称               | 是否必填  | 类型         | 默认值  | 取值范围               | 说明                               |
+| ------------------ | -------- | ------------ | ------ | --------------------- | ---------------------------------- |
+| label              | 是       | String       |        |                       | 边类型名称                          |
+| outV               | 是       | String       |        |                       | 源顶点Id                            |
+| intV               | 是       | String       |        |                       | 目标顶点Id                          |
+| outVLabel          | 是       | String       |        |                       | 源顶点类型                           |
+| intVLabel          | 是       | String       |        |                       | 目标顶点类型                         |
+| properties         | 否       | Map          |        |                       | 边关联的属性，可以有多组              |
 
 
+##### Response
+| 名称               | 类型         | 说明                                |
+| ------------------ | ------------ | ---------------------------------- |
+| id                 | String       | 边Id                               |
+| label              | String       | 边类型名称                          |
+| outV               | String       | 源顶点Id                           |
+| intV               | String       | 目标顶点Id                          |
+| outVLabel          | String       | 源顶点类型                          |
+| intVLabel          | String       | 目标顶点类型                        |
+| properties         | Map          | 边关联的属性，可以有多组             |
+
+##### 使用示例
+
+创建一条从来源顶点1:peter到目标顶点2:lop的边
 ##### Method & Url
 
 ```
@@ -72,18 +100,49 @@ POST http://localhost:8080/graphspaces/gs1/graphs/hugegraph/graph/edges
 }
 ```
 
-#### 2.2.2 创建多条边
+#### 4.5.2.2.创建多条边
 
-##### Params
+##### 功能介绍
+创建多条边
 
-- check_vertex: 是否检查顶点存在(true | false)，当设置为 true 而待插入边的源顶点或目标顶点不存在时会报错。
+##### URI
+
+```
+POST /graphspaces/{graphspace}/graphs/{hugegraph}/graph/edges/batch?check_vertex={check_vertex}
+```
+
+##### URI参数
+| 名称       | 是否必填  | 类型   | 默认值  | 取值范围 | 说明       |
+| ---------- | -------- | ------ | ------ | -------- | ---------- |
+| graphspace | 是       | String |        |          | 图空间名称 |
+| hugegraph  | 是       | String |        |          | 图名称     |
+
+##### Body参数
+| 名称               | 是否必填  | 类型         | 默认值  | 取值范围               | 说明                               |
+| ------------------ | -------- | ------------ | ------ | --------------------- | ---------------------------------- |
+|                    | 是       | List[Map]    |        |                       | 待创建边的列表
+| label              | 是       | String       |        |                       | 边类型名称                          |
+| outV               | 是       | String       |        |                       | 源顶点Id                            |
+| intV               | 是       | String       |        |                       | 目标顶点Id                          |
+| outVLabel          | 是       | String       |        |                       | 源顶点类型                           |
+| intVLabel          | 是       | String       |        |                       | 目标顶点类型                         |
+| properties         | 否       | Map          |        |                       | 边关联的属性，可以有多组              |
+| check_vertex       | 否       | Boolean      | true   | true, false           | 是否检查顶点存在，当设置为 true 而待插入边的源顶点或目标顶点不存在时会报错。 |
+
+
+##### Response
+| 名称               | 类型         | 说明                                |
+| ------------------ | ------------ | ---------------------------------- |
+|                    | List[String] | 边的Id列表                               |
+
+##### 使用示例
+创建多条边，注意使用数组的方式传入每条边的信息
 
 ##### Method & Url
 
 ```
 POST http://localhost:8080/graphspaces/gs1/graphs/hugegraph/graph/edges/batch
 ```
-
 ##### Request Body
 
 ```json
@@ -128,7 +187,39 @@ POST http://localhost:8080/graphspaces/gs1/graphs/hugegraph/graph/edges/batch
 ]
 ```
 
-#### 2.2.3 更新边属性
+#### 4.5.2.3.更新边属性
+
+##### URI
+
+```
+PUT /graphspaces/{graphspace}/graphs/{hugegraph}/graph/edges/{edgeId}?action=append
+```
+##### URI参数
+| 名称       | 是否必填  | 类型   | 默认值  | 取值范围 | 说明       |
+| ---------- | -------- | ------ | ------ | -------- | ---------- |
+| graphspace | 是       | String |        |          | 图空间名称 |
+| hugegraph  | 是       | String |        |          | 图名称     |
+| edgeId     | 是       | String |        |          | 边Id，例如 S1:peter>1>>S2:lop |
+
+##### Body参数
+| 名称               | 是否必填  | 类型         | 默认值  | 取值范围               | 说明                               |
+| ------------------ | -------- | ------------ | ------ | --------------------- | ---------------------------------- |
+| properties         | 否       | Map          |        |                       | 待更新的边关联的属性，可以有多组      |
+
+
+##### Response
+| 名称               | 类型         | 说明                                |
+| ------------------ | ------------ | ---------------------------------- |
+| id                 | String       | 边Id                               |
+| label              | String       | 边类型名称                          |
+| outV               | String       | 源顶点Id                           |
+| intV               | String       | 目标顶点Id                          |
+| outVLabel          | String       | 源顶点类型                          |
+| intVLabel          | String       | 目标顶点类型                        |
+| properties         | Map          | 边关联的属性，可以有多组             |
+
+##### 使用示例
+更新边S1:peter>1>>S2:lop的weight属性
 
 ##### Method & Url
 
@@ -172,11 +263,49 @@ PUT http://localhost:8080/graphspaces/gs1/graphs/hugegraph/graph/edges/S1:peter>
 }
 ```
 
-#### 2.2.4 批量更新边属性
+#### 4.5.2.4.批量更新边属性
 
-##### 功能说明
+###### 功能介绍
 
 与批量更新顶点属性类似
+
+##### URI
+
+```
+PUT /graphspaces/{graphspace}/graphs/{hugegraph}/graph/edges/batch
+```
+##### URI参数
+| 名称       | 是否必填  | 类型   | 默认值  | 取值范围 | 说明       |
+| ---------- | -------- | ------ | ------ | -------- | ---------- |
+| graphspace | 是       | String |        |          | 图空间名称 |
+| hugegraph  | 是       | String |        |          | 图名称     |
+
+##### Body参数
+| 名称               | 是否必填  | 类型         | 默认值  | 取值范围               | 说明                               |
+| ------------------ | -------- | ------------ | ------ | --------------------- | ---------------------------------- |
+| edges              | 是       | List[Map]    |        |                       | 待更新的边的列表                     |
+| label              | 是       | String       |        |                       | 边类型名称                          |
+| outV               | 是       | String       |        |                       | 源顶点Id                            |
+| intV               | 是       | String       |        |                       | 目标顶点Id                          |
+| outVLabel          | 是       | String       |        |                       | 源顶点类型                           |
+| intVLabel          | 是       | String       |        |                       | 目标顶点类型                         |
+| properties         | 否       | Map          |        |                       | 边关联的属性，可以有多组              |
+| update_strategies  | 否       | Map          |        |                       | 根据不同的标签对应的更新策略          |
+| check_vertex       | 否       | Boolean      | true   | true, false           | 是否检查顶点存在，当设置为 true 而待插入边的源顶点或目标顶点不存在时会报错。 |
+| create_if_not_exist| 否       | Boolean      | true   | true, false           | 在边不存在时自动创建新的边 |
+
+##### Response
+| 名称               | 类型         | 说明                                |
+| ------------------ | ------------ | ---------------------------------- |
+| id                 | String       | 边Id                               |
+| label              | String       | 边类型名称                          |
+| outV               | String       | 源顶点Id                           |
+| intV               | String       | 目标顶点Id                          |
+| outVLabel          | String       | 源顶点类型                          |
+| intVLabel          | String       | 目标顶点类型                        |
+| properties         | Map          | 边关联的属性，可以有多组             |
+
+##### 使用示例
 
 假设原边及属性为：
 
@@ -212,11 +341,10 @@ PUT http://localhost:8080/graphspaces/gs1/graphs/hugegraph/graph/edges/S1:peter>
     ]
 }
 ```
-
 ##### Method & Url
 
 ```
-PUT http://127.0.0.1:8080/graphspaces/gs1/graphs/hugegraph/graph/edges/batch
+PUT http://127.0.0.1:8080/graphspaces/{graphspace}/graphs/{hugegraph}/graph/edges/batch
 ```
 
 ##### Request Body
@@ -299,12 +427,42 @@ PUT http://127.0.0.1:8080/graphspaces/gs1/graphs/hugegraph/graph/edges/batch
 }
 ```
 
-#### 2.2.5 删除边属性
+#### 4.5.2.5.删除边属性
 
-##### Method & Url
+##### URI
 
 ```
-PUT http://localhost:8080/graphspaces/gs1/graphs/hugegraph/graph/edges/S1:peter>1>>S2:lop?action=eliminate
+PUT /graphspaces/{graphspace}/graphs/{hugegraph}/graph/edges/{edgeId}?action=eliminate
+```
+##### URI参数
+| 名称       | 是否必填  | 类型   | 默认值  | 取值范围 | 说明       |
+| ---------- | -------- | ------ | ------ | -------- | ---------- |
+| graphspace | 是       | String |        |          | 图空间名称 |
+| hugegraph  | 是       | String |        |          | 图名称     |
+| edgeId     | 是       | String |        |          | 边Id，例如 S1:peter>1>>S2:lop |
+
+##### Body参数
+| 名称               | 是否必填  | 类型         | 默认值  | 取值范围               | 说明                               |
+| ------------------ | -------- | ------------ | ------ | --------------------- | ---------------------------------- |
+| properties         | 否       | Map          |        |                       | 边关联的属性，可以有多组              |
+
+##### Response
+| 名称               | 类型         | 说明                                |
+| ------------------ | ------------ | ---------------------------------- |
+| id                 | String       | 边Id                               |
+| label              | String       | 边类型名称                          |
+| outV               | String       | 源顶点Id                           |
+| intV               | String       | 目标顶点Id                          |
+| outVLabel          | String       | 源顶点类型                          |
+| intVLabel          | String       | 目标顶点类型                        |
+| properties         | Map          | 边关联的属性，可以有多组             |
+
+
+##### 使用示例
+
+##### Method & Url
+```
+PUT http://127.0.0.1:8080/graphspaces/{graphspace}/graphs/{hugegraph}/graph/edges/S1:peter>1>>S2:lop?action=eliminate
 ```
 
 ##### Request Body
@@ -342,17 +500,9 @@ PUT http://localhost:8080/graphspaces/gs1/graphs/hugegraph/graph/edges/S1:peter>
 }
 ```
 
-#### 2.2.6 获取符合条件的边
+#### 4.5.2.6.获取符合条件的边
 
-##### Params
-
-- vertex_id: 顶点id
-- direction: 边的方向(OUT | IN | BOTH)
-- label: 边的标签
-- properties: 属性键值对(根据属性查询的前提是预先建立了索引)
-- offset：偏移，默认为0
-- limit: 查询数目，默认为100
-- page: 页号
+##### 功能介绍
 
 支持的查询有以下几种：
 
@@ -377,12 +527,47 @@ P.inside(number1,number2)             | 属性值大于number1且小于number2�
 P.outside(number1,number2)            | 属性值小于number1且大于number2的边
 P.within(value1,value2,value3,...)    | 属性值等于任何一个给定value的边
 
+##### URI
+
+```
+GET /graphspaces/{graphspace}/graphs/{hugegraph}/graph/edges?vertex_id={vertexId}&direction=BOTH&label=created&properties={properties}&offset={offset}&limit={limit}&page={page}
+```
+##### URI参数
+| 名称       | 是否必填  | 类型   | 默认值  | 取值范围      | 说明       |
+| ---------- | -------- | ------ | ------ | --------      | ---------- |
+| graphspace | 是       | String |        |               | 图空间名称 |
+| hugegraph  | 是       | String |        |               | 图名称     |
+| vertexId   | 否       | String |        |               | 顶点Id，需要包含引号，例如"1:josh"  |
+| direction  | 否       | String |        | IN, OUT, BOTH | 边的方向  |
+| label      | 否       | String |        |               | 边的标签  |
+| properties | 否       | String |        |               | 属性键值对(根据属性查询的前提是预先建立了索引) |
+| offset     | 否       | Int    | 0      |               | 偏移      |
+| limit      | 否       | Int    | 100    |               | 查询数目   |
+| page       | 否       | String |        |               | 页号       |
+
+##### Body参数
+无
+
+##### Response
+| 名称               | 类型         | 说明                                |
+| ------------------ | ------------ | ---------------------------------- |
+| edges              | List[Map]    | 查询到的边的列表                    |
+| id                 | String       | 边Id                               |
+| label              | String       | 边类型名称                          |
+| outV               | String       | 源顶点Id                           |
+| intV               | String       | 目标顶点Id                          |
+| outVLabel          | String       | 源顶点类型                          |
+| intVLabel          | String       | 目标顶点类型                        |
+| properties         | Map          | 边关联的属性，可以有多组             |
+
+##### 使用示例
+
 **查询与顶点 person:josh(vertex_id="1:josh") 相连且 label 为 created 的边**
 
 ##### Method & Url
 
 ```
-GET http://127.0.0.1:8080/graphspaces/gs1/graphs/hugegraph/graph/edges?vertex_id="1:josh"&direction=BOTH&label=created&properties={}
+GET http://127.0.0.1:8080/graphspaces/{graphspace}/graphs/{hugegraph}/graph/edges?vertex_id="1:josh"&direction=BOTH&label=created&properties={}
 ```
 
 ##### Response Status
@@ -426,12 +611,14 @@ GET http://127.0.0.1:8080/graphspaces/gs1/graphs/hugegraph/graph/edges?vertex_id
 }
 ```
 
+##### 使用示例
+
 **分页查询所有边，获取第一页（page不带参数值），限定3条**
 
 ##### Method & Url
 
 ```
-GET http://127.0.0.1:8080/graphspaces/gs1/graphs/hugegraph/graph/edges?page&limit=3
+GET http://127.0.0.1:8080/graphspaces/{graphspace}/graphs/{hugegraph}/graph/edges?page&limit=3
 ```
 
 ##### Response Status
@@ -491,14 +678,15 @@ GET http://127.0.0.1:8080/graphspaces/gs1/graphs/hugegraph/graph/edges?page&limi
 返回的body里面是带有下一页的页号信息的，`"page": "002500100753313a6a6f73681210010004000000020953323a726970706c65f07ffffffcf07ffffffd8460d63f4b398dd2721ed4fdb7716b420004"`，
 在查询下一页的时候将该值赋给page参数。
 
+##### 使用示例
+
 **分页查询所有边，获取下一页（page带上上一页返回的page值），限定3条**
 
 ##### Method & Url
 
 ```
-GET http://127.0.0.1:8080/graphspaces/gs1/graphs/hugegraph/graph/edges?page=002500100753313a6a6f73681210010004000000020953323a726970706c65f07ffffffcf07ffffffd8460d63f4b398dd2721ed4fdb7716b420004&limit=3
+GET http://127.0.0.1:8080/graphspaces/{graphspace}/graphs/{hugegraph}/graph/edges?page=002500100753313a6a6f73681210010004000000020953323a726970706c65f07ffffffcf07ffffffd8460d63f4b398dd2721ed4fdb7716b420004&limit=3
 ```
-
 ##### Response Status
 
 ```json
@@ -555,14 +743,46 @@ GET http://127.0.0.1:8080/graphspaces/gs1/graphs/hugegraph/graph/edges?page=0025
 
 此时`"page": null`表示已经没有下一页了 (注: 后端为 Cassandra 时，为了性能考虑，返回页恰好为最后一页时，返回 `page` 值可能非空，通过该 `page` 再请求下一页数据时则返回 `空数据` 及 `page = null`，其他情况类似)
 
-#### 2.2.7 根据Id获取边
+#### 4.5.2.7.根据Id获取边
+
+##### URI
+
+```
+GET /graphspaces/{graphspace}/graphs/{hugegraph}/graph/edges/{edgeId}
+```
+##### URI参数
+| 名称       | 是否必填  | 类型   | 默认值  | 取值范围      | 说明       |
+| ---------- | -------- | ------ | ------ | --------      | ---------- |
+| graphspace | 是       | String |        |               | 图空间名称 |
+| hugegraph  | 是       | String |        |               | 图名称     |
+| edgeId     | 是       | String |        |               | 边Id，例如 S1:peter>1>>S2:lop |
+
+
+##### Body参数
+无
+
+##### Response
+| 名称               | 类型         | 说明                                |
+| ------------------ | ------------ | ---------------------------------- |
+| id                 | String       | 边Id                               |
+| label              | String       | 边类型名称                          |
+| outV               | String       | 源顶点Id                           |
+| intV               | String       | 目标顶点Id                          |
+| outVLabel          | String       | 源顶点类型                          |
+| intVLabel          | String       | 目标顶点类型                        |
+| properties         | Map          | 边关联的属性，可以有多组             |
+| page               | String       | 页号，null表示后面没有更多的页了     |
+
+
+##### 使用示例
+
+获取Id为S1:peter>1>>S2:lop的边的信息
 
 ##### Method & Url
 
 ```
 GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph/graph/edges/S1:peter>1>>S2:lop
 ```
-
 ##### Response Status
 
 ```json
@@ -587,11 +807,29 @@ GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph/graph/edges/S1:peter>
 }
 ```
 
-#### 2.2.8 根据Id删除边
+#### 4.5.2.8.根据Id删除边
 
-##### Params
+##### URI
 
-- label: 边类型，可选参数
+```
+DELETE /graphspaces/{graphspace}/graphs/{hugegraph}/graph/edges/{edgeId}
+```
+##### URI参数
+| 名称       | 是否必填  | 类型   | 默认值  | 取值范围      | 说明       |
+| ---------- | -------- | ------ | ------ | --------      | ---------- |
+| graphspace | 是       | String |        |               | 图空间名称 |
+| hugegraph  | 是       | String |        |               | 图名称     |
+| edgeId     | 是       | String |        |               | 边Id，例如 S1:peter>1>>S2:lop |
+| label      | 否       | String |        |               | 边的标签   |
+
+##### Body参数
+无
+
+##### Response
+无
+
+----
+##### 使用示例
 
 **仅根据Id删除边**
 
@@ -606,6 +844,8 @@ DELETE http://localhost:8080/graphspaces/gs1/graphs/hugegraph/graph/edges/S1:pet
 ```json
 204
 ```
+
+##### 使用示例
 
 **根据Label+Id删除边**
 
@@ -623,20 +863,49 @@ DELETE http://localhost:8080/graphspaces/gs1/graphs/hugegraph/graph/edges/S1:pet
 204
 ```
 
-#### 2.2.9 Edges
+#### 4.5.2.9.Edges
 
-##### 2.2.9.1 根据边的id列表，批量查询边
+##### 4.5.2.9.1.根据边的id列表，批量查询边
 
-###### Params
 
-- ids：要查询的边id列表
+###### URI
+
+```
+GET /graphspaces/{graphspace}/graphs/{hugegraph}/traversers/edges?ids={ids}
+```
+##### URI参数
+| 名称       | 是否必填  | 类型   | 默认值  | 取值范围      | 说明       |
+| ---------- | -------- | ------ | ------ | --------      | ---------- |
+| graphspace | 是       | String |        |               | 图空间名称 |
+| hugegraph  | 是       | String |        |               | 图名称     |
+| ids        | 是       | String |        |               | 边Id列表，例如 S1:peter>1>>S2:lop，通过重复输入进行批量查询 |
+
+
+##### Body参数
+无
+
+##### Response
+| 名称               | 类型         | 说明                                |
+| ------------------ | ------------ | ---------------------------------- |
+| edges              | List[Map]    | 查询到的边的列表                    |
+| id                 | String       | 边Id                               |
+| label              | String       | 边类型名称                          |
+| outV               | String       | 源顶点Id                           |
+| intV               | String       | 目标顶点Id                          |
+| outVLabel          | String       | 源顶点类型                          |
+| intVLabel          | String       | 目标顶点类型                        |
+| properties         | Map          | 边关联的属性，可以有多组             |
+
+
+##### 使用示例
+
+删除Id分别为S1:josh>1>>S2:lop和S1:josh>1>>S2:ripple的边，通过重复输入ids字段进行批量删除
 
 ###### Method & Url
 
 ```
 GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph/traversers/edges?ids="S1:josh>1>>S2:lop"&ids="S1:josh>1>>S2:ripple"
 ```
-
 ###### Response Status
 
 ```json
@@ -678,19 +947,47 @@ GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph/traversers/edges?ids=
 }
 ```
 
-##### 2.2.9.2 获取边 Shard 信息
+##### 4.5.2.9.2.获取边 Shard 信息
 
+##### 功能介绍
 通过指定的分片大小split_size，获取边分片信息（可以与 3.2.22.3 中的 Scan 配合使用来获取边）。
 
-###### Params
 
-- split_size：分片大小，必填项
+###### URI
+
+```
+GET /graphspaces/{graphspace}/graphs/{hugegraph}/traversers/edges/shards?split_size={splitSize}
+```
+##### URI参数
+| 名称       | 是否必填  | 类型   | 默认值  | 取值范围      | 说明       |
+| ---------- | -------- | ------ | ------ | --------      | ---------- |
+| graphspace | 是       | String |        |               | 图空间名称 |
+| hugegraph  | 是       | String |        |               | 图名称     |
+| splitSize  | 是       | Int    |        |               | 分片的大小 |
+
+
+##### Body参数
+无
+
+##### Response
+| 名称               | 类型         | 说明                    |
+| ------------------ | ------------ | ---------------------- |
+| shard              | List[Map]    | 分片信息的类表          |
+| start              | String       | 分片起始位置            |
+| end                | String       | 分片结束位置（不包含）   |
+| length             | Int          | 分片的长度              |
+
+##### 使用示例
+
+获取分片大小为4294967295的分片信息，用于进一步的Scan查询
+
 
 ###### Method & Url
 
 ```
 GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph/traversers/edges/shards?split_size=4294967295
 ```
+
 
 ###### Response Status
 
@@ -732,16 +1029,44 @@ GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph/traversers/edges/shar
 }
 ```
 
-##### 2.2.9.3 根据 Shard 信息批量获取边
+##### 4.5.2.9.3.根据 Shard 信息批量获取边
 
-通过指定的分片信息批量查询边（Shard信息的获取参见 3.2.22.2）。
+##### 功能介绍
+通过指定的分片信息批量查询边（Shard信息的获取参见 2.2.9.2）。
 
-###### Params
+###### URI
 
-- start：分片起始位置，必填项
-- end：分片结束位置，必填项
-- page：分页位置，选填项，默认为null，不分页；当page为“”时表示分页的第一页，从start指示的位置开始
-- page_limit：分页获取边时，一页中边数目的上限，选填项，默认为100000
+```
+GET /graphspaces/{graphspace}/graphs/{hugegraph}/traversers/edges/scan?start={start}&end={end}&page={page}&page_limit={pageLimit}
+```
+##### URI参数
+| 名称       | 是否必填  | 类型   | 默认值  | 取值范围  | 说明       |
+| ---------- | -------- | ------ | ------ | -------- | ---------- |
+| graphspace | 是       | String |        |          | 图空间名称 |
+| hugegraph  | 是       | String |        |          | 图名称     |
+| start      | 是       | String |        |          | 分片起始位置           |
+| end        | 是       | String |        |          | 分片结束位置           |
+| page       | 否       | String | null   |          | 分页位置           |
+| pageLimit  | 否       | Int    | 1000   |          | 分页获取边时，一页中边数目的上限          |
+
+
+##### Body参数
+无
+
+##### Response
+| 名称               | 类型         | 说明                                |
+| ------------------ | ------------ | ---------------------------------- |
+| edges              | List[Map]    | 查询到的边的列表                    |
+| id                 | String       | 边Id                               |
+| label              | String       | 边类型名称                          |
+| outV               | String       | 源顶点Id                           |
+| intV               | String       | 目标顶点Id                          |
+| outVLabel          | String       | 源顶点类型                          |
+| intVLabel          | String       | 目标顶点类型                        |
+| properties         | Map          | 边关联的属性，可以有多组             |
+
+##### 使用示例
+扫描查询start和end由0到3221225469边的信息
 
 ###### Method & Url
 
@@ -842,7 +1167,7 @@ GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph/traversers/edges/scan
 }
 ```
 
-##### 2.2.9.4 适用场景
+##### 4.5.2.9.4.适用场景
 
 - 按id列表查询边，可用于批量查询边
 - 获取分片和按分片查询边，可以用来遍历全部边

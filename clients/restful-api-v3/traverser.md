@@ -1,4 +1,6 @@
-### 3.1 traverser API概述
+## 4.7.联机算法
+
+### 4.7.1.traverser API概述
 
 HugeGraphServer为HugeGraph图数据库提供了RESTful API接口。除了顶点和边的CRUD基本操作以外，还提供了一些遍历（traverser）方法，我们称为`traverser API`。这些遍历方法实现了一些复杂的图算法，方便用户对图进行分析和挖掘。
 
@@ -41,7 +43,7 @@ HugeGraph支持的Traverser API包括：
 
 PS: Vertices API & Edges API 移动至 [Vertex](./vertex.md) 与 [Edge](./edge.md) 页面中
 
-### 3.2. traverser API详解
+### 4.7.2.traverser API详解
 
 使用示例中的例子，都是基于TinkerPop官网给出的图：
 
@@ -181,19 +183,19 @@ public class Loader {
 "S1:marko>2>>S2:lop"
 ```
 
-#### 3.2.1 K-out API（GET，基础版）
+#### 4.7.2.1.K-out API（GET，基础版）
 
-##### 3.2.1.1 功能介绍
+##### 功能介绍
 
 根据起始顶点、方向、边的类型（可选）和深度depth，查找从起始顶点出发恰好depth步可达的顶点
 
-###### URI
+##### URI
 
 ```
 GET /graphspaces/${graphspace}/graphs/${graph}/traversers/kout
 ```
 
-###### URI参数
+##### URI参数
 
 | 名称                     | 是否必填 |  类型   | 默认值  |取值范围        |  说明                   |
 | :----------------------- | :------- | :--------------------- | :----- | :-------------- | :------ |
@@ -209,14 +211,24 @@ GET /graphspaces/${graphspace}/graphs/${graph}/traversers/kout
 | limit       | 否       |  Int    |  10000000      |大于等于0          |返回的顶点的最大数目           |
 | algorithm       | 否       |  String    |  breadth_first（广度优先搜索）      | breadth_first,deep_first（广度优先，深度优先）  |遍历方式,常情况下，deep_first（深度优先搜索）方式会具有更好的遍历性能。但当参数nearest为true时，可能会包含非最近邻的节点，尤其是数据量较大时 |
 
-###### Body参数
+##### Body参数
 无
-###### Response
-| 名称                     |  类型     |  说明                   |
+
+##### Response
+| 名称                     | 类型     | 说明                   |
 | :----------------------- | :----- | :-------------- |
 | vertices | List | 点Id列表 |
+| measure | Object | 统计信息，详情见表1 Measure 对象 |
 
-##### 3.2.1.2 使用示例
+表1
+
+| 名称                     | 类型     | 说明                   |
+| :----------------------- | :----- | :-------------- |
+| cost | Long | 耗时(毫秒) |
+| vertice_iters | Long | 扫描点总数 |
+| edge_iters | Long | 扫描边总数 |
+
+##### 使用示例
 
 ###### Method & Url
 
@@ -237,20 +249,25 @@ GET http://localhost:8080/graphspaces/graphspace/graphs/graph/traversers/kout?so
     "vertices":[
         "2:ripple",
         "1:peter"
-    ]
+    ],
+    "measure": {
+        "cost": 423133,
+        "vertice_iters": 562243,
+        "edge_iters": 223748444
+    }
 }
 ```
 
-##### 3.2.1.3 适用场景
+##### 适用场景
 
 查找恰好N步关系可达的顶点。两个例子：
 
 - 家族关系中，查找一个人的所有孙子，person A通过连续的两条“儿子”边到达的顶点集合。
 - 社交关系中发现潜在好友，例如：与目标用户相隔两层朋友关系的用户，可以通过连续两条“朋友”边到达的顶点。
 
-#### 3.2.2 K-out API（POST，高级版）
+#### 4.7.2.2.K-out API（POST，高级版）
 
-##### 3.2.2.1 功能介绍
+##### 功能介绍
 
 根据起始顶点、步骤（包括方向、边类型和过滤属性）和深度depth，查找从起始顶点出发恰好depth步可达的顶点。
 
@@ -259,20 +276,20 @@ GET http://localhost:8080/graphspaces/graphspace/graphs/graph/traversers/kout?so
 > - 支持边属性过滤
 > - 支持返回到达邻居的最短路径
 
-###### URI
+##### URI
 
 ```
 POST /graphspaces/${graphspace}/graphs/${graph}/traversers/kout
 ```
 
-###### URI参数
+##### URI参数
 
 | 名称                     | 是否必填 |  类型   | 默认值  |取值范围        |  说明                   |
 | :----------------------- | :------- | :--------------------- | :----- | :-------------- | :------ |
 | graphspace           | 是       |  String | - | -    |图空间 |
 | graph           | 是       |  String | - | -    |图名称 |
 
-###### Body参数
+##### Body参数
 
 | 名称                     | 是否必填 |  类型   | 默认值  |取值范围        |  说明                   |
 | :----------------------- | :------- | :--------------------- | :----- | :-------------- | :------ |
@@ -289,6 +306,7 @@ POST /graphspaces/${graphspace}/graphs/${graph}/traversers/kout
 | with_vertex       | 否       |  Bool    |  false  |true,false   | false时表示只返回顶点id，true表示返回结果包含完整的顶点信息（路径中的全部顶点）,为true时with_path为true，返回所有路径中的顶点的完整信息，with_path为false，返回所有邻居的完整信息     |
 
 表1 Steps 对象
+
 | 名称                     | 是否必填 |  类型   | 默认值  |取值范围        |  说明                   |
 | :----------------------- | :------- | :--------------------- | :----- | :-------------- | :------ |
 | direction | 否       |  String |  BOTH | OUT,IN,BOTH（出，入，双向） |起始顶点向外发散的方向 |
@@ -298,20 +316,30 @@ POST /graphspaces/${graphspace}/graphs/${graph}/traversers/kout
 | vertex_steps       | 否       |  List    | -          |   -    |点Step集合，详情见表2 点边Step           |
 
 表2 点边Step
+
 | 名称       | 是否必填 |  类型   | 默认值  |取值范围        |  说明                   |
 | :------| :------- | :----------- | :----- | :-------------- | :---------------------- |
 | label       | 否       |  String    | -          |   -    |点边类型           |
 | properties       | 否       |  Json    | -          |   -    |通过属性的值过滤点边           |
 
-###### Response
+##### Response
 | 名称                     |  类型     |  说明                   |
 | :----------------------- | :----- | :-------------- |
 | vertices | List | 点信息列表 |
 | size | Int | 点个数 |
 | kout | List | 点Id列表 |
 | paths | List | 边路径列表 |
+| measure | Object | 统计信息，详情见表1 Measure 对象 |
 
-##### 3.2.2.2 使用示例
+表1
+
+| 名称                     | 类型     | 说明                   |
+| :----------------------- | :----- | :-------------- |
+| cost | Long | 耗时(毫秒) |
+| vertice_iters | Long | 扫描点总数 |
+| edge_iters | Long | 扫描边总数 |
+
+##### 使用示例
 
 ###### Method & Url
 
@@ -435,28 +463,33 @@ POST http://localhost:8080/graphspaces/graphspace/graphs/graph/traversers/kout
                 "price": 328
             }
         }
-    ]
+    ],
+    "measure": {
+        "cost": 423133,
+        "vertice_iters": 562243,
+        "edge_iters": 223748444
+    }
 }
 
 ```
 
-##### 3.2.2.3 适用场景
+##### 适用场景
 
-参见3.2.1.3
+参见 kout
 
-#### 3.2.3 K-neighbor（GET，基础版）
+#### 4.7.2.3.K-neighbor（GET，基础版）
 
-##### 3.2.3.1 功能介绍
+##### 功能介绍
 
 根据起始顶点、方向、边的类型（可选）和深度depth，查找包括起始顶点在内、depth步之内可达的所有顶点
 
 > 相当于：起始顶点、K-out(1)、K-out(2)、... 、K-out(max_depth)的并集
 
-###### URI
+##### URI
 
-GET /graphspaces/$${graphspace}/graphs/${graph}/traversers/kneighbor
+GET /graphspaces/${graphspace}/graphs/${graph}/traversers/kneighbor
 
-###### URI参数
+##### URI参数
 
 | 名称                     | 是否必填 |  类型   | 默认值  |取值范围        |  说明                   |
 | :----------------------- | :------- | :--------------------- | :----- | :-------------- | :------ |
@@ -469,15 +502,24 @@ GET /graphspaces/$${graphspace}/graphs/${graph}/traversers/kneighbor
 | max_degree       | 否       |  Int    | 10000      | 大于等于0          |查询过程中，单个顶点遍历的最大邻接边数目           |
 | limit       | 否       |  Int    |  10000000      |大于等于0          |返回的顶点的最大数目           |
 
-###### Body参数
+##### Body参数
 无
 
-###### Response
+##### Response
 | 名称                     |  类型     |  说明                   |
 | :----------------------- | :----- | :-------------- |
 | vertices | List | 点Id列表 |
+| measure | Object | 统计信息，详情见表1 Measure 对象 |
 
-##### 3.2.3.2 使用示例
+表1
+
+| 名称                     | 类型     | 说明                   |
+| :----------------------- | :----- | :-------------- |
+| cost | Long | 耗时(毫秒) |
+| vertice_iters | Long | 扫描点总数 |
+| edge_iters | Long | 扫描边总数 |
+
+##### 使用示例
 
 ###### Method & Url
 
@@ -502,11 +544,16 @@ GET http://localhost:8080/graphspaces/graphspace/graphs/graph/traversers/kneighb
         "1:vadas",
         "1:peter",
         "2:lop"
-    ]
+    ],
+    "measure": {
+        "cost": 423133,
+        "vertice_iters": 562243,
+        "edge_iters": 223748444
+    }
 }
 ```
 
-##### 3.2.3.3 适用场景
+##### 适用场景
 
 查找N步以内可达的所有顶点，例如：
 
@@ -514,9 +561,9 @@ GET http://localhost:8080/graphspaces/graphspace/graphs/graph/traversers/kneighb
 - 社交关系中发现好友圈子，例如目标用户通过1条、2条、3条“朋友”边可到达的用户可以组成目标用户的朋友圈子
 
 
-#### 3.2.4 K-neighbor API（POST，高级版）
+#### 4.7.2.4.K-neighbor API（POST，高级版）
 
-##### 3.2.4.1 功能介绍
+##### 功能介绍
 
 根据起始顶点、步骤（包括方向、边类型和过滤属性）和深度depth，查找从起始顶点出发depth步内可达的所有顶点。
 
@@ -525,19 +572,19 @@ GET http://localhost:8080/graphspaces/graphspace/graphs/graph/traversers/kneighb
 > - 支持边属性过滤
 > - 支持返回到达邻居的最短路径
 
-###### URI
+##### URI
 ```
 POST /graphspaces/${graphspace}/graphs/${graph}/traversers/kneighbor
 ```
 
-###### URI参数
+##### URI参数
 
 | 名称                     | 是否必填 |  类型   | 默认值  |取值范围        |  说明                   |
 | :----------------------- | :------- | :--------------------- | :----- | :-------------- | :------ |
 | graphspace           | 是       |  String | - | -    |图空间 |
 | graph           | 是       |  String | - | -    |图名称 |
 
-###### Body参数
+##### Body参数
 
 | 名称                     | 是否必填 |  类型   | 默认值  |取值范围        |  说明                   |
 | :----------------------- | :------- | :--------------------- | :----- | :-------------- | :------ |
@@ -551,6 +598,7 @@ POST /graphspaces/${graphspace}/graphs/${graph}/traversers/kneighbor
 | with_vertex       | 否       |  Bool    |  false  |true,false   | false时表示只返回顶点id，true表示返回结果包含完整的顶点信息（路径中的全部顶点）,为true时with_path为true，返回所有路径中的顶点的完整信息，with_path为false，返回所有邻居的完整信息     |
 
 表1 Steps 对象
+
 | 名称                     | 是否必填 |  类型   | 默认值  |取值范围        |  说明                   |
 | :----------------------- | :------- | :--------------------- | :----- | :-------------- | :------ |
 | direction | 否       |  String |  BOTH | OUT,IN,BOTH（出，入，双向） |起始顶点向外发散的方向 |
@@ -560,20 +608,30 @@ POST /graphspaces/${graphspace}/graphs/${graph}/traversers/kneighbor
 | vertex_steps       | 否       |  List    | -          |   -    |点Step集合，详情见表2 点边Steps           |
 
 表2 点边Steps
+
 | 名称       | 是否必填 |  类型   | 默认值  |取值范围        |  说明                   |
 | :------| :------- | :----------- | :----- | :-------------- | :---------------------- |
 | label       | 否       |  String    | -          |   -    |点边类型           |
 | properties       | 否       |  Json    | -          |   -    |通过属性的值过滤点边           |
 
-###### Response
+##### Response
 | 名称                     |  类型     |  说明                   |
 | :----------------------- | :----- | :-------------- |
 | vertices | List | 点信息列表 |
 | size | Int | 点个数 |
 | kneighbor | List | 点Id列表 |
 | paths | List | 边路径列表 |
+| measure | Object | 统计信息，详情见表1 Measure 对象 |
 
-##### 3.2.4.2 使用示例
+表1
+
+| 名称                     | 类型     | 说明                   |
+| :----------------------- | :----- | :-------------- |
+| cost | Long | 耗时(毫秒) |
+| vertice_iters | Long | 扫描点总数 |
+| edge_iters | Long | 扫描边总数 |
+
+##### 使用示例
 
 ###### Method & Url
 
@@ -738,27 +796,32 @@ POST http://localhost:8080/graphspaces/graphspace/graphs/graph/traversers/kneigh
                 "price": 328
             }
         }
-    ]
+    ],
+    "measure": {
+        "cost": 423133,
+        "vertice_iters": 562243,
+        "edge_iters": 223748444
+    }
 }
 ```
 
-##### 3.2.4.3 适用场景
+##### 适用场景
 
-参见3.2.3.3
+参见K-neighbor
 
-#### 3.2.5 Same Neighbors
+#### 4.7.2.5.Same Neighbors
 
-##### 3.2.5.1 功能介绍
+##### 功能介绍
 
 查询两个点的共同邻居
 
-###### URI
+##### URI
 
 ```
 GET /graphspaces/${graphspace}/graphs/${graph}/traversers/sameneighbors
 ```
 
-###### URI参数
+##### URI参数
 
 | 名称                     | 是否必填 |  类型   | 默认值  |取值范围        |  说明                   |
 | :----------------------- | :------- | :--------------------- | :----- | :-------------- | :------ |
@@ -771,24 +834,15 @@ GET /graphspaces/${graphspace}/graphs/${graph}/traversers/sameneighbors
 | max_degree       | 否       |  Int    | 10000      | 大于等于0          |查询过程中，单个顶点遍历的最大邻接边数目           |
 | limit       | 否       |  Int    |  10000000      |大于等于0          |返回的共同邻居的最大数目           |
 
-###### Body参数
+##### Body参数
 无
 
-###### Response
+##### Response
 | 名称                     |  类型     |  说明                   |
 | :----------------------- | :----- | :-------------- |
 | same_neighbors | List | 共同邻居点Id列表 |
 
-###### Params
-
-- vertex：一个顶点id，必填项
-- other：另一个顶点id，必填项
-- direction：顶点向外发散的方向（OUT,IN,BOTH），选填项，默认是BOTH
-- label：边的类型，选填项，默认代表所有edge label
-- max_degree：查询过程中，单个顶点遍历的最大邻接边数目，选填项，默认为10000
-- limit：返回的共同邻居的最大数目，选填项，默认为10000000
-
-##### 3.2.5.2 使用示例
+##### 使用示例
 
 ###### Method & Url
 
@@ -812,25 +866,25 @@ GET http://localhost:8080/graphspaces/graphspace/graphs/graph/traversers/samenei
 }
 ```
 
-##### 3.2.5.3 适用场景
+##### 适用场景
 
 查找两个顶点的共同邻居：
 
 - 社交关系中发现两个用户的共同粉丝或者共同关注用户
 
-#### 3.2.6 Jaccard Similarity（GET）
+#### 4.7.2.6.Jaccard Similarity（GET）
 
-##### 3.2.6.1 功能介绍
+##### 功能介绍
 
 计算两个顶点的jaccard similarity（两个顶点邻居的交集比上两个顶点邻居的并集）
 
-###### URI
+##### URI
 
 ```
 GET /graphspaces/${graphspace}/graphs/${graph}/traversers/jaccardsimilarity
 ```
 
-###### URI参数
+##### URI参数
 
 | 名称                     | 是否必填 |  类型   | 默认值  |取值范围        |  说明                   |
 | :----------------------- | :------- | :--------------------- | :----- | :-------------- | :------ |
@@ -842,15 +896,15 @@ GET /graphspaces/${graphspace}/graphs/${graph}/traversers/jaccardsimilarity
 | label       | 否       |  String    | -          |   -    |边的类型（默认代表所有edge label）           |
 | max_degree       | 否       |  Int    | 10000      | 大于等于0          |查询过程中，单个顶点遍历的最大邻接边数目           |
 
-###### Body参数
+##### Body参数
 无
 
-###### Response
+##### Response
 | 名称                     |  类型     |  说明                   |
 | :----------------------- | :----- | :-------------- |
 | jaccard_similarity | Double | jaccard相似系数 |
 
-##### 3.2.6.2 使用示例
+##### 使用示例
 
 ###### Method & Url
 
@@ -872,31 +926,31 @@ GET http://localhost:8080/graphspaces/graphspace/graphs/graph/traversers/jaccard
 }
 ```
 
-##### 3.2.6.3 适用场景
+##### 适用场景
 
 用于评估两个点的相似性或者紧密度
 
-#### 3.2.7 Jaccard Similarity（POST）
+#### 4.7.2.7.Jaccard Similarity（POST）
 
-##### 3.2.7.1 功能介绍
+##### 功能介绍
 
 计算与指定顶点的jaccard similarity最大的N个点
 
 > jaccard similarity的计算方式为：两个顶点邻居的交集比上两个顶点邻居的并集
 
-###### URI
+##### URI
 ```
 POST /graphspaces/${graphspace}/graphs/${graph}/traversers/kneighbor
 ```
 
-###### URI参数
+##### URI参数
 
 | 名称                     | 是否必填 |  类型   | 默认值  |取值范围        |  说明                   |
 | :----------------------- | :------- | :--------------------- | :----- | :-------------- | :------ |
 | graphspace           | 是       |  String | - | -    |图空间 |
 | graph           | 是       |  String | - | -    |图名称 |
 
-###### Body参数
+##### Body参数
 
 | 名称                     | 是否必填 |  类型   | 默认值  |取值范围        |  说明                   |
 | :----------------------- | :------- | :--------------------- | :----- | :-------------- | :------ |
@@ -906,6 +960,7 @@ POST /graphspaces/${graphspace}/graphs/${graph}/traversers/kneighbor
 | steps       | 是       |  Json    |  -  |-          | 从起始点出发的Step集合，详情见表1 Steps 对象          |
 
 表1 Steps 对象
+
 | 名称                     | 是否必填 |  类型   | 默认值  |取值范围        |  说明                   |
 | :----------------------- | :------- | :--------------------- | :----- | :-------------- | :------ |
 | direction | 否       |  String |  BOTH | OUT,IN,BOTH（出，入，双向） |起始顶点向外发散的方向 |
@@ -915,17 +970,18 @@ POST /graphspaces/${graphspace}/graphs/${graph}/traversers/kneighbor
 | properties       | 否       |  Json    | -          |   -    |通过属性的值过滤边           |
 
 表2 点边Steps
+
 | 名称       | 是否必填 |  类型   | 默认值  |取值范围        |  说明                   |
 | :------| :------- | :----------- | :----- | :-------------- | :---------------------- |
 | label       | 否       |  String    | -          |   -    |点边类型           |
 | properties       | 否       |  Json    | -          |   -    |通过属性的值过滤点边           |
 
-###### Response
+##### Response
 | 名称                     |  类型     |  说明                   |
 | :----------------------- | :----- | :-------------- |
 | map | Json | kv，key是点Id，v是jaccard系数 |
 
-##### 3.2.7.2 使用示例
+##### 使用示例
 
 ###### Method & Url
 
@@ -964,23 +1020,23 @@ POST http://localhost:8080/graphspaces/${graphspace}/graphs/${graph}/traversers/
 }
 ```
 
-##### 3.2.7.3 适用场景
+##### 适用场景
 
 用于在图中找出与指定顶点相似性最高的顶点
 
-#### 3.2.8 Shortest Path
+#### 4.7.2.8.Shortest Path
 
-##### 3.2.8.1 功能介绍
+##### 功能介绍
 
 根据起始顶点、目的顶点、方向、边的类型（可选）和最大深度，查找一条最短路径
 
-###### URI
+##### URI
 
 ```
 GET /graphspaces/${graphspace}/graphs/${graph}/traversers/shortestpath
 ```
 
-###### URI参数
+##### URI参数
 
 | 名称                     | 是否必填 |  类型   | 默认值  |取值范围        |  说明                   |
 | :----------------------- | :------- | :--------------------- | :----- | :-------------- | :------ |
@@ -995,15 +1051,15 @@ GET /graphspaces/${graphspace}/graphs/${graph}/traversers/shortestpath
 | capacity       | 否       |  Int    |  10000000  |大于等于0          | 遍历过程中最大的访问的顶点数目           |
 | skip_degree       | 否       |  Int    | 0          |   大于等于0    |用于设置查询过程中舍弃超级顶点的最小边数，即当某个顶点的邻接边数目大于 skip_degree 时，完全舍弃该顶点。选填项，如果开启时，需满足 `skip_degree >= max_degree` 约束，默认为0 (不启用)，表示不跳过任何点 (注意:  开启此配置后，遍历时会尝试访问一个顶点的 skip_degree 条边，而不仅仅是 max_degree 条边，这样有额外的遍历开销，对查询性能影响可能有较大影响，请确认理解后再开启)           |
 
-###### Body参数
+##### Body参数
 无
 
-###### Response
+##### Response
 | 名称                     |  类型     |  说明                   |
 | :----------------------- | :----- | :-------------- |
 | path | List | 路径点Id |
 
-##### 3.2.8.2 使用示例
+##### 使用示例
 
 ###### Method & Url
 
@@ -1029,14 +1085,14 @@ GET http://localhost:8080/graphspaces/graphspace/graphs/graph/traversers/shortes
 }
 ```
 
-##### 3.2.8.3 适用场景
+##### 适用场景
 
 查找两个顶点间的最短路径，例如：
 
 - 社交关系网中，查找两个用户有关系的最短路径，即最近的朋友关系链
 - 设备关联网络中，查找两个设备最短的关联关系
 
-#### 3.2.9 查找最短路径
+#### 4.7.2.9.查找最短路径
 
 ##### 功能介绍
 
@@ -1080,7 +1136,7 @@ GET /graphspaces/${graphspace}/graphs/${graph}/traversers/allshortestpaths
 | ----  | ----  | ----  |
 | objects | Array | 最短路径上的点Id列表  |
 
-##### 示例
+##### 使用示例
 
 ###### Method & Url
 
@@ -1126,7 +1182,7 @@ GET http://localhost:8080/graphspaces/${graphspace}/graphs/${graph}/traversers/a
 - 社交关系网中，查找两个用户有关系的全部最短路径，即最近的朋友关系链
 - 设备关联网络中，查找两个设备全部的最短关联关系
 
-#### 3.2.10 查找带权重的最短路径
+#### 4.7.2.10.查找带权重的最短路径
 
 ##### 功能介绍
 
@@ -1182,7 +1238,7 @@ GET /graphspaces/${graphspace}/graphs/${graph}/traversers/weightedshortestpath
 | type | String | Object类型(这里必然为vertex) |
 | properties | Map | 属性Map，key为属性名(String类型)，value为属性值(类型由schema定义决定) |
 
-##### 示例
+##### 使用示例
 
 ###### Method & Url
 
@@ -1249,7 +1305,7 @@ GET http://localhost:8080/graphspaces/${graphspace}/graphs/${graph}/traversers/w
 
 - 交通线路中查找从A城市到B城市花钱最少的交通方式
 
-#### 3.2.11 (从一个顶点出发)查找最短路径
+#### 4.7.2.11.(从一个顶点出发)查找最短路径
 
 ##### 功能介绍
 
@@ -1305,7 +1361,7 @@ GET /graphspaces/${graphspace}/graphs/${graph}/traversers/singlesourceshortestpa
 | type | String | Object类型(这里必然为vertex) |
 | properties | Map | 属性Map，key为属性名(String类型)，value为属性值(类型由schema定义决定) |
 
-##### 示例
+##### 使用示例
 
 ###### Method & Url
 
@@ -1433,7 +1489,7 @@ GET http://localhost:8080/graphspaces/${graphspace}/graphs/${graph}/traversers/s
 
 - 查找从北京出发到全国其他所有城市的耗时最短的乘车方案
 
-#### 3.2.12 (指定顶点集)查找最短路径
+#### 4.7.2.12.(指定顶点集)查找最短路径
 
 ##### 功能介绍
 
@@ -1503,7 +1559,7 @@ POST /graphspaces/${graphspace}/graphs/${graph}/traversers/multinodeshortestpath
 | properties | Map | 属性Map，key为属性名(String类型)，value为属性值(类型由schema定义决定) |
 
 
-##### 示例
+##### 使用示例
 
 ###### Method & Url
 
@@ -1714,7 +1770,7 @@ POST http://localhost:8080/graphspaces/${graphspace}/graphs/${graph}/traversers/
 
 - 查找多个公司和法人之间的最短路径
 
-#### 3.2.13 查找所有路径（GET，基础版）
+#### 4.7.2.13.查找所有路径（GET，基础版）
 
 ##### 功能介绍
 
@@ -1740,9 +1796,9 @@ GET /graphspaces/${graphspace}/graphs/${graph}/traversers/paths
 | source | 是 | Id  |   | | 起始顶点id  |
 | target | 是 | Id  |   | | 目的顶点id  |
 | direction | 否 | String  | BOTH | OUT,IN,BOTH | 起始顶点向外发散的方向(出边，入边，双边) |
-| max_depth  | 是 | Int  |   | | 最大步数  |
+| max_depth  | 是 | Int  |   | (0, 5000] | 最大步数  |
 | label  | 否 | String  |   | | 边的类型, 默认代表所有edge label |
-| max_degree  | 否 | Long  | 10000 | | 查询过程中，单个顶点遍历的最大邻接边数目  |
+| max_degree  | 否 | Long  | 10000 | (0, 800000) | 查询过程中，单个顶点遍历的最大邻接边数目  |
 | capacity  | 否 | Long  | 10000000 | | 遍历过程中最大的访问的顶点数目  |
 | limit  | 否 | Long  |  10 | | 查询到的目标顶点个数，也是返回的最短路径的条数  |
 
@@ -1758,7 +1814,7 @@ GET /graphspaces/${graphspace}/graphs/${graph}/traversers/paths
 | ----  | ----  | ----  |
 | objects | Array | 路径上的点Id列表  |
 
-##### 示例
+##### 使用示例
 
 ###### Method & Url
 
@@ -1801,7 +1857,7 @@ GET http://localhost:8080/graphspaces/${graphspace}/graphs/{$graph}/traversers/p
 - 社交网络中，查找两个用户所有可能的关系路径
 - 设备关联网络中，查找两个设备之间所有的关联路径
 
-#### 3.2.14 查找所有路径（POST，高级版）
+#### 4.7.2.14.查找所有路径（POST，高级版）
 
 ##### 功能介绍
 
@@ -1827,7 +1883,7 @@ POST /graphspaces/${graphspace}/graphs/${graph}/traversers/paths
 | sources | 是 | Object 详见表1 vertices对象  |   | | 定义起始顶点  |
 | targets | 是 | Object 详见表1 vertices对象  |   | | 定义终止顶点  |
 | step | 是 | Object 详见表2 step对象  | | | 表示从起始顶点到终止顶点走过的路径 |
-| max_depth  | 是 | Int  |  | | 步数  |
+| max_depth  | 是 | Int  |  | (0, 5000]  | 步数  |
 | nearest  | 否| Boolean | true | | nearest为true时，代表起始顶点到达结果顶点的最短路径长度为depth，不存在更短的路径；nearest为false时，代表起始顶点到结果顶点有一条长度为depth的路径（未必最短且可以有环） |
 | capacity  | 否 | Long  | 10000000 | | 遍历过程中最大的访问的顶点数目  |
 | limit  | 否 | Long  |  10 | | 返回的路径的最大条数  |
@@ -1864,7 +1920,7 @@ POST /graphspaces/${graphspace}/graphs/${graph}/traversers/paths
 | objects | Array | 路径上的点Id列表  |
 
 
-##### 示例
+##### 使用示例
 
 ###### Method & Url
 
@@ -1933,7 +1989,7 @@ POST http://localhost:8080/graphspaces/${graphspace}/graphs/${graph}/traversers/
 - 社交网络中，查找两个用户所有可能的关系路径
 - 设备关联网络中，查找两个设备之间所有的关联路径
 
-#### 3.2.15 自定义路径查询
+#### 4.7.2.15.自定义路径查询
 
 ##### 功能介绍
 
@@ -2116,7 +2172,7 @@ POST http://localhost:8080/graphspaces/${graphspace}/graphs/${graph}/traversers/
 - 社交网络中，查找看过张艺谋所导演的电影的用户关注的大V的路径（张艺谋--->电影---->用户--->大V）
 - 风控网络中，查找多个高风险用户的直系亲属的朋友的路径（高风险用户--->直系亲属--->朋友）
 
-#### 3.2.16 模版路径查询
+#### 4.7.2.16.模版路径查询
 
 ##### 功能介绍
 
@@ -2336,7 +2392,7 @@ POST http://localhost:8080/graphspaces/${graphspace}/graphs/${graph}/traversers/
 
 适合查找各种复杂的模板路径，比如personA -(朋友)-> personB -(同学)-> personC，其中"朋友"和"同学"边可以分别是最多3层和4层的情况
 
-#### 3.2.17 Crosspoints
+#### 4.7.2.17.Crosspoints
 
 ##### 功能介绍
 
@@ -2348,15 +2404,15 @@ POST http://localhost:8080/graphspaces/${graphspace}/graphs/${graph}/traversers/
 GET graphspaces/${graphspace}/graphs/${graph}/traversers/crosspoints
 ```
 
-###### URI参数
+##### URI参数
 |  名称   | 是否必填  | 类型  | 默认值 | 取值范围 | 说明  |
 |  ----  | ----  | ----  | ----  | ----  | ---- |
 | source  | 是 | String |   |   | 起始顶点id |
 | target  | 是 | String |   |   | 目的顶点id |
 | direction  | 否 | Enum | BOTH | OUT,IN,BOTH | 起始顶点到目的顶点的方向, 目的点到起始点是反方向，BOTH时不考虑方向  |
 | label  | 否 | String  |   |   | 默认代表所有edge label |
-| max_depth  | 是 | Int  |   |   | 步数 |
-| max_degree | 否 | Int  | 10000 |   | 查询过程中，单个顶点遍历的最大邻接边数目 |
+| max_depth  | 是 | Int  |   | (0, 5000]  | 步数 |
+| max_degree | 否 | Int  | 10000 | (0, 800000) | 查询过程中，单个顶点遍历的最大邻接边数目 |
 | capacity  | 否 | Int  | 10000000 |   | 遍历过程中最大的访问的顶点数目 |
 | limit  | 否 | Int  | 10 |   | 返回的交点的最大数目 |
 
@@ -2410,7 +2466,7 @@ GET http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/traversers/cro
 - 社交网络中，查找两个用户共同关注的话题或者大V
 - 家族关系中，查找共同的祖先
 
-#### 3.2.18 Customized Crosspoints
+#### 4.7.2.18.Customized Crosspoints
 
 ##### 功能介绍
 
@@ -2430,14 +2486,22 @@ POST graphspaces/${graphspace}/graphs/${graph}/traversers/customizedcrosspoints
 
 | 名称          | 是否必填 | 类型                  | 默认值   | 取值范围 | 说明                                                         |
 | ------------- | -------- | --------------------- | -------- | -------- | ------------------------------------------------------------ |
-| sources       | 是       | Ids                   |          |          | 通过顶点id列表提供起始顶点                                   |
-|               |          | 或者 label/properties |          |          | 如果没有指定ids，则使用label和properties的联合条件查询起始顶点  ***注意：properties中的属性值可以是列表，表示只要key对应的value在列表中就可以*** |
+| sources | 是 | Object 详见表1 vertices对象  |   | | 定义起始顶点  |
 | path_patterns | 是       |                       |          |          | 表示从起始顶点走过的路径规则，是一组规则的列表               |
 |               |          |                       |          |          | 每个PathPattern是一组Step列表，每个Step结构如下 <br/>1. direction：表示边的方向（OUT,IN,BOTH），默认是BOTH<br/>2.  labels：边的类型列表<br/>3.  properties：通过属性的值过滤边<br/>4. max_degree：查询过程中，单个顶点遍历的最大邻接边数目，默认为 10000 (注: 0.12版之前 step 内仅支持 degree 作为参数名, 0.12开始统一使用 max_degree, 并向下兼容 degree 写法) |
 | capacity      | 否       | Int                   | 10000000 |          | 遍历过程中最大的访问的顶点数目                               |
 | limit         | 否       | Int                   | 10       |          | 返回的路径的最大数目                                         |
 | with_path     | 否       | Bool                  | false    |          | true表示返回交点所在的路径，false表示不返回交点所在的路径，选填项，默认为false |
 | with_vertex   | 否       | Bool                  | false    |          | true表示返回结果包含完整的顶点信息（路径中的全部顶点） <br/>       with_path为true时，返回所有路径中的顶点的完整信息<br/>       with_path为false时，返回所有交点的完整信息 false时表示只返回顶点id<br/>false时表示只返回顶点id |
+
+表1 vertices对象
+
+|  名称   | 是否必填  | 类型  | 默认值 | 取值范围 | 说明  |
+|  ----  | ----  | ----  | ----  | ---- | ----  |
+| ids | 否 | Array |   | | 通过顶点id列表提供起始(或终止)顶点，如果没有指定ids，则使用label和properties的联合条件查询起始(或终止)顶点 |
+| label  | 否 | String  |   | | 顶点的类型 |
+| properties  | 否 | Map  |  | | 属性Map，key为属性名(String类型)，value为属性值(类型由schema定义决定)。注意：properties中的属性值可以是列表，表示只要key对应的value在列表中就可以  |
+
 ##### Response
 
 
@@ -2598,7 +2662,7 @@ POST http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/traversers/cu
 
 - 在商品图谱中，多款手机、学习机、游戏机通过不同的低级别的类目路径，最终都属于一级类目的电子设备
 
-#### 3.2.19 Rings
+#### 4.7.2.19.Rings
 
 ##### 功能介绍
 
@@ -2612,7 +2676,7 @@ POST http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/traversers/cu
 GET graphspaces/${graphspace}/graphs/${graph}/traversers/rings
 ```
 
-###### URI参数
+##### URI参数
 
 | 名称       | 是否必填 | 类型   | 默认值   | 取值范围    | 说明                                                         |
 | ---------- | -------- | ------ | -------- | ----------- | ------------------------------------------------------------ |
@@ -2635,12 +2699,12 @@ GET graphspaces/${graphspace}/graphs/${graph}/traversers/rings
 | ----- | ---- | ---- |
 | rings | List | 环路 |
 
-##### 使用方法
+##### 使用示例
 
 ###### Method & Url
 
 ```
-GET http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/traversers/rings?source="1:marko"&max_depth=2
+GET http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/traversers/rings?source="1:marko"&max_depth=3
 ```
 
 ###### Response Status
@@ -2658,19 +2722,6 @@ GET http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/traversers/rin
             "objects":[
                 "1:marko",
                 "1:josh",
-                "1:marko"
-            ]
-        },
-        {
-            "objects":[
-                "1:marko",
-                "1:vadas",
-                "1:marko"
-            ]
-        },
-        {
-            "objects":[
-                "1:marko",
                 "2:lop",
                 "1:marko"
             ]
@@ -2686,7 +2737,7 @@ GET http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/traversers/rin
 - 风控项目中，查询一个用户可达的循环担保的人或者设备
 - 设备关联网络中，发现一个设备周围的循环引用的设备
 
-#### 3.2.20 Rays
+#### 4.7.2.20.Rays
 
 ##### 功能介绍
 
@@ -2699,7 +2750,7 @@ GET http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/traversers/rin
 GET graphspaces/${graphspace}/graphs/${graph}/traversers/rays
 ```
 
-###### URI参数
+##### URI参数
 | 名称       | 是否必填 | 类型   | 默认值   | 取值范围    | 说明                                                         |
 | ---------- | -------- | ------ | -------- | ----------- | ------------------------------------------------------------ |
 | source     | 是       | Id     |          |             | 起始顶点id                                                   |
@@ -2722,7 +2773,7 @@ GET graphspaces/${graphspace}/graphs/${graph}/traversers/rays
 | rays | List | 到边界点的路径 |
 
 
-##### 使用方法
+##### 使用示例
 
 ###### Method & Url
 
@@ -2778,7 +2829,7 @@ GET graphspaces/${graphspace}/graphs/${graph}/traversers/rays?source="1:marko"&m
 - 家族关系中，查找一个人到所有还没有孩子的子孙的路径
 - 设备关联网络中，找到某个设备到终端设备的路径
 
-#### 3.2.21 Fusiform Similarity
+#### 4.7.2.21.Fusiform Similarity
 
 ##### 功能介绍
 
@@ -2790,7 +2841,7 @@ GET graphspaces/${graphspace}/graphs/${graph}/traversers/rays?source="1:marko"&m
 POST graphspaces/${graphspace}/graphs/${graph}/traversers/fusiformsimilarity
 ```
 
-###### URI参数
+##### URI参数
 
 无
 
@@ -2798,8 +2849,7 @@ POST graphspaces/${graphspace}/graphs/${graph}/traversers/fusiformsimilarity
 
 | 名称          | 是否必填 | 类型                  | 默认值 | 取值范围    | 说明                                                         |
 | ------------- | -------- | --------------------- | ------ | ----------- | ------------------------------------------------------------ |
-| source        | 是       | Ids                   |        |             | 通过顶点id列表提供起始顶点                                   |
-|               |          | 或者label和properties |        |             | 如果没有指定ids，则使用label和properties的联合条件查询起始顶点  ***注意：properties中的属性值可以是列表，表示只要key对应的value在列表中就可以*** |
+| sources | 是 | Object 详见表1 vertices对象  |   | | 定义起始顶点  |
 | label         | 否       | String                |        |             | 默认代表所有edge label                                       |
 | direction     | 否       | String                | BOTH   | OUT,IN,BOTH | 起始顶点向外发散的方向                                       |
 | min_neighbors | 是       | Int                   |        |             | 最少邻居数目，邻居数目少于这个阈值时，认为起点不具备"梭形相似点"。比如想要找一个"读者A"读过的书的"梭形相似点"，那么`min_neighbors`为100时，表示"读者A"至少要读过100本书才可以有"梭形相似点"。 |
@@ -2813,6 +2863,15 @@ POST graphspaces/${graphspace}/graphs/${graph}/traversers/fusiformsimilarity
 | limit |否|Int|10||返回的结果数目上限（一个起点及其"梭形相似点"算一个结果）|
 | with_intermediary |否|Bool|False||是否返回起点及其"梭形相似点"共同关联的中间点|
 | with_vertex |否|Bool|False||true表示返回结果包含完整的顶点信息<br/>false时表示只返回顶点id|
+
+表1 vertices对象
+
+|  名称   | 是否必填  | 类型  | 默认值 | 取值范围 | 说明  |
+|  ----  | ----  | ----  | ----  | ---- | ----  |
+| ids | 否 | Array |   | | 通过顶点id列表提供起始(或终止)顶点，如果没有指定ids，则使用label和properties的联合条件查询起始(或终止)顶点 |
+| label  | 否 | String  |   | | 顶点的类型 |
+| properties  | 否 | Map  |  | | 属性Map，key为属性名(String类型)，value为属性值(类型由schema定义决定)。注意：properties中的属性值可以是列表，表示只要key对应的value在列表中就可以  |
+
 ##### Response
 
 
@@ -2821,7 +2880,7 @@ POST graphspaces/${graphspace}/graphs/${graph}/traversers/fusiformsimilarity
 | similars | IdList | 相似点的Id, score以及共同关联中间点 |
 | vertices | IdList | 查找点和相似点的详细信息            |
 
-##### 使用方法
+##### 使用示例
 
 ###### Method & Url
 
@@ -2847,7 +2906,7 @@ POST http://localhost:8080/graphspaces/${graphspace}/graphs/hugegraph/traversers
     "min_similars":1,
     "top":0,
     "group_property":"city",
-    "min_group":2,
+    "min_groups":2,
     "max_degree": 10000,
     "capacity": -1,
     "limit": -1,
@@ -2922,7 +2981,7 @@ POST http://localhost:8080/graphspaces/${graphspace}/graphs/hugegraph/traversers
 - 跟一个读者有类似书单的读者
 - 跟一个玩家玩类似游戏的玩家
 
-#### 3.2.22 Adamic Adar
+#### 4.7.2.22.Adamic Adar
 
 AdamicAdar, 一般简称 AA 算法
 
@@ -2935,19 +2994,23 @@ AdamicAdar, 一般简称 AA 算法
 GET graphspaces/${graphspace}/graphs/${graph}/traversers/adamicadar
 ```
 
-###### URI参数
+##### URI参数
+ 
+|  名称   | 是否必填  | 类型  | 默认值 | 取值范围 | 说明  |
+|  ----  | ----  | ----  | ----  | ----  | ---- |
+| graphspace  | 是 | String  |   |   | 图空间名称  |
+| graph  | 是 | String  |   |   | 图名称  |
+
+##### Body参数
+
 | 名称       | 是否必填 | 类型   | 默认值 | 取值范围    | 说明                                                         |
 | ---------- | -------- | ------ | ------ | ----------- | ------------------------------------------------------------ |
-| vertex     | 是       | String |        |             | 定义起始顶点                                                 |
-| other      | 是       | String |        |             | 定义终点顶点                                                 |
+| vertex     | 是       | Id |        |             | 定义起始顶点                                                 |
+| other      | 是       | Id |        |             | 定义终点顶点                                                 |
 | direction  | 否       | String | BOTH   | OUT,IN,BOTH | 起始顶点到目的顶点的方向, 目的点到起始点是反方向，BOTH时不考虑方向 |
 | label      | 否       | String |        |             | 默认代表所有edge label                                       |
 | max_degree | 否       | Int    | 10000  |             | 查询过程中，单个顶点遍历的最大邻接边数目                     |
 | limit      | 否       | Int    | 10000  |             | 返回的交点的最大数目                                         |
-
-##### Body参数
-
-无
 
 ##### Response
 | 名称       | 类型   | 说明     |
@@ -2959,7 +3022,7 @@ GET graphspaces/${graphspace}/graphs/${graph}/traversers/adamicadar
 ###### Method & Url
 
 ```
-GET http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/traversers/adamicadar?vertex="1:marko"&other="1:josh"
+GET http://localhost:8080/graphspaces/${graphspace}/graphs/${graph}/traversers/adamicadar?vertex="1:marko"&other="1:josh"
 ```
 
 ###### Response Status
@@ -2981,7 +3044,7 @@ GET http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/traversers/ada
 判断两个银行账户的关系紧密程度, 是共同邻居的改进系数版, 并且可以减少超级顶点在其中的权重影响
 
 
-#### 3.2.23 Resource Allocation
+#### 4.7.2.23.Resource Allocation
 
 ResourceAllocation(RA), 一般称为资源分配算法
 
@@ -2991,14 +3054,22 @@ ResourceAllocation(RA), 一般称为资源分配算法
 
 ##### URI
 ```
-GET graphspaces/${graphspace}/graphs/${graph}/traversers/resourceallocation}
+GET graphspaces/${graphspace}/graphs/${graph}/traversers/resourceallocation
 ```
-###### URI参数
-###### URI参数
+##### URI参数
+
+|  名称   | 是否必填  | 类型  | 默认值 | 取值范围 | 说明  |
+|  ----  | ----  | ----  | ----  | ----  | ---- |
+| graphspace  | 是 | String  |   |   | 图空间名称  |
+| graph  | 是 | String  |   |   | 图名称  |
+
+
+##### Body参数
+
 | 名称       | 是否必填 | 类型   | 默认值 | 取值范围    | 说明                                                         |
 | ---------- | -------- | ------ | ------ | ----------- | ------------------------------------------------------------ |
-| vertex     | 是       | String |        |             | 定义起始顶点                                                 |
-| other      | 是       | String |        |             | 定义终点顶点                                                 |
+| vertex     | 是       | Id |        |             | 定义起始顶点                                                 |
+| other      | 是       | Id |        |             | 定义终点顶点                                                 |
 | direction  | 否       | String | BOTH   | OUT,IN,BOTH | 起始顶点到目的顶点的方向, 目的点到起始点是反方向，BOTH时不考虑方向 |
 | label      | 否       | String |        |             | 默认代表所有edge label                                       |
 | max_degree | 否       | Int    | 10000  |             | 查询过程中，单个顶点遍历的最大邻接边数目                     |
@@ -3016,7 +3087,7 @@ GET graphspaces/${graphspace}/graphs/${graph}/traversers/resourceallocation}
 ###### Method & Url
 
 ```http
-GET http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/traversers/resourceallocation?vertex="1:marko"&other="1:josh"
+GET http://localhost:8080/graphspaces/${graphspace}/graphs/${graph}/traversers/resourceallocation?vertex="1:marko"&other="1:josh"
 ```
 
 ###### Request Body
@@ -3041,7 +3112,7 @@ GET http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/traversers/res
 
 判断两个银行账户的关系紧密程度, 是共同邻居的改进系数版, 和 AA 算法不同的是, 它不忽略超级顶点在其中的权重影响
 
-#### 3.2.24 Same Neighbors Batch
+#### 4.7.2.24.Same Neighbors Batch
 
 ##### 功能介绍
 
@@ -3053,9 +3124,12 @@ GET http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/traversers/res
 POST graphspaces/${graphspace}/graphs/${graph}/traversers/sameneighborsbatch
 ```
 
-###### URI参数
+##### URI参数
 
-无
+|  名称   | 是否必填  | 类型  | 默认值 | 取值范围 | 说明  |
+|  ----  | ----  | ----  | ----  | ----  | ---- |
+| graphspace  | 是 | String  |   |   | 图空间名称  |
+| graph  | 是 | String  |   |   | 图名称  |
 
 ##### Body参数
 
@@ -3068,18 +3142,17 @@ POST graphspaces/${graphspace}/graphs/${graph}/traversers/sameneighborsbatch
 | limit       | 否       | Int              | 10000000 |             | 返回的交点的最大数目                                         |
 
 ##### Response
+
 | 名称           | 类型 | 说明     |
 | -------------- | ---- | -------- |
-| same_neighbors | List | 共同邻居 |
-
-
+| same_neighbors | List List | 共同邻居Id列表 |
 
 ##### 使用示例
 
 ###### Method & Url
 
 ```
-POST http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/traversers/sameneighborsbatch
+POST http://localhost:8080/graphspaces/${graphspace}/graphs/${graph}/traversers/sameneighborsbatch
 ```
 
 ###### Request Body
@@ -3118,3 +3191,195 @@ POST http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/traversers/sa
 查找一批顶点对的共同邻居：
 
 - 社交关系中发现两个用户的共同粉丝或者共同关注用户
+
+#### 4.7.2.25.Egonet
+
+##### 功能介绍
+
+查找一批顶点的 K 层邻居, 并支持针对不同点 / 边 Label 的过滤条件, 结果中会包含起始顶点 (原单点 Kneighbor-API 不包含)
+
+##### URI
+
+```
+POST graphspaces/${graphspace}/graphs/${graph}/traversers/egonet
+```
+
+##### URI参数
+
+|  名称   | 是否必填  | 类型  | 默认值 | 取值范围 | 说明  |
+|  ----  | ----  | ----  | ----  | ----  | ---- |
+| graphspace  | 是 | String  |   |   | 图空间名称  |
+| graph  | 是 | String  |   |   | 图名称  |
+
+##### Body参数
+
+| 名称        | 是否必填 | 类型             | 默认值   | 取值范围    | 说明                                                         |
+| ----------- | -------- | ---------------- | -------- | ----------- | ------------------------------------------------------------ |
+| sources | 是       | List |          |             | 起始顶点 id 集合，支持传入多个不同顶点 |
+| steps       | 是       |  Json    |  -  |-          | 从起始点出发的Step集合，详情见表1 Steps 对象          |
+| max_degree  | 是 | Long  | 10000 | | 查询过程中，单个顶点遍历的最大邻接边数目  |
+| skip_degree | 否 | Long  | 0（不启用) | | 用于设置查询过程中舍弃超级顶点的最小边数，即当某个顶点的邻接边数目大于 skip_degree 时，完全舍弃该顶点。选填项，如果开启时，需满足 `skip_degree >= max_degree` 约束，默认为0 (不启用)，表示不跳过任何点 (注意:  开启此配置后，遍历时会尝试访问一个顶点的 skip_degree 条边，而不仅仅是 max_degree 条边，这样有额外的遍历开销，对查询性能影响可能有较大影响，请确认理解后再开启)  |
+| max_depth  | 是 | Int  |  | | 步数  |
+| count_only       | 否       |  Bool    |  false  |true,false          |   true表示只统计结果的数目，不返回具体结果；false表示返回具体的结果         |
+| with_path       | 否       |  Bool    |  false  |true,false   | true表示返回起始点到每个邻居的最短路径，false表示不返回起始点到每个邻居的最短路径    |
+| with_edge       | 否       |  Bool    |  false  |true,false   | 仅在count_only为false，且此值为true时，返回结果会包含完整的边信息    |
+| with_vertex       | 否       |  Bool    |  false  |true,false   | false时表示只返回顶点id，true表示返回结果包含完整的顶点信息（路径中的全部顶点）,为true时with_path为true，返回所有路径中的顶点的完整信息，with_path为false，返回所有邻居的完整信息     |
+| limit       | 否       | Int              | 10000000 |             | 返回的交点的最大数目                                         |
+
+表1 Steps 对象
+
+| 名称                     | 是否必填 |  类型   | 默认值  |取值范围        |  说明                   |
+| :----------------------- | :------- | :--------------------- | :----- | :-------------- | :------ |
+| direction | 否       |  String |  BOTH | OUT,IN,BOTH（出，入，双向） |起始顶点向外发散的方向 |
+| max_degree       | 否       |  Int    | 10000      | 大于等于0          |查询过程中，单个顶点遍历的最大邻接边数目(注: 0.12版之前 step 内仅支持 degree 作为参数名, 0.12开始统一使用 max_degree, 并向下兼容 degree 写法)           |
+| skip_degree       | 否       |  Int    | 0          |   大于等于0    |用于设置查询过程中舍弃超级顶点的最小边数，即当某个顶点的邻接边数目大于 skip_degree 时，完全舍弃该顶点。选填项，如果开启时，需满足 `skip_degree >= max_degree` 约束，默认为0 (不启用)，表示不跳过任何点 (注意:  开启此配置后，遍历时会尝试访问一个顶点的 skip_degree 条边，而不仅仅是 max_degree 条边，这样有额外的遍历开销，对查询性能影响可能有较大影响，请确认理解后再开启)           |
+| edge_steps       | 否       |  List    | -          |   -    |边Step集合，详情见表2 点边Step          |
+| vertex_steps       | 否       |  List    | -          |   -    |点Step集合，详情见表2 点边Step           |
+
+表2 点边Step
+
+| 名称       | 是否必填 |  类型   | 默认值  |取值范围        |  说明                   |
+| :------| :------- | :----------- | :----- | :-------------- | :---------------------- |
+| label       | 否       |  String    | -          |   -    |点边类型           |
+| properties       | 否       |  Json    | -          |   -    |通过属性的值过滤点边           |
+
+以下是当前可支持的过滤条件及其写法:
+
+1. P.eq() 代表过滤出数值相等的元素
+1. P.neq() 代表过滤出数值不相等的元素
+1. P.lt() 代表过滤出数值小于 (<) 某数的元素
+1. P.lte() 代表过滤出数值小于相等 (≤) 某数的元素
+1. P.gt() 代表过滤出数值大于 (>) 某数的元素
+1. P.gte() 代表过滤出数值大于相等 (≥) 的元素
+1. P.between(a, b) 代表过滤出数值在(a, b)范围内的元素
+1. P.textcontains(str) 代表过滤出包含 str 子串的元素
+1. P.contains(str) 代表从集合中过滤出包含 str 字符串的元素
+1. P.within(a, b, c) 代表过滤出包含给定集合中任一子元素的元素
+
+
+##### Response
+
+| 名称           | 类型 | 说明     |
+| -------------- | ---- | -------- |
+| vertices | List | 点信息列表 详见表1 vertex对象|
+| size | Int | 点个数 |
+| egonet | List | 点Id列表 |
+| paths | List | 边路径列表 详见表2 path对象 |
+
+表1 vertex对象
+
+| 名称   | 类型  |  说明  |
+| ----  | ----  | ----  |
+| id | Id | 点Id |
+| label | String | 点类型 |
+| type | String | Object类型(这里必然为vertex) |
+| properties | Map | 属性Map，key为属性名(String类型)，value为属性值(类型由schema定义决定) |
+
+表2 path对象
+
+| 名称   | 类型  |  说明  |
+| ----  | ----  | ----  |
+| objects | Array | 路径上的点Id |
+
+##### 使用示例
+
+###### Method & Url
+
+```
+POST http://localhost:8080/graphspaces/${graphspace}/graphs/${graph}/traversers/egonet
+```
+
+###### Request Body
+
+```json
+{
+    "sources": ["1:marko", "1:vadas"],
+    "steps": {
+        "direction": "BOTH",
+        "edge_steps": [
+            {
+                "label": "knows"
+            },
+            {
+                "label": "created",
+                "properties": {}
+            }
+        ],
+        "vertex_steps": [
+            {
+                "label": "person",
+                "properties": {
+                    "age": "P.lt(35)"
+                }
+            },
+            {
+                "label": "software",
+                "properties": {}
+            }
+        ],
+        "max_degree": 100,
+        "skip_degree": 1000
+    },
+    "max_depth": 3,
+    "limit": 1000,
+    "with_vertex": true
+}
+```
+
+
+###### Response Status
+
+```json
+200
+```
+
+###### Response Body
+
+```json
+{
+    "egonet": [
+        "1:marko",
+        "1:vadas",
+        "2:lop"
+    ],
+    "size": 3,
+    "paths": [
+    ],
+    "vertices": [
+        {
+            "id": "1:vadas",
+            "label": "person",
+            "type": "vertex",
+            "properties": {
+                "name": "vadas",
+                "age": 27,
+                "city": "Hongkong"
+            }
+        },
+        {
+            "id": "2:lop",
+            "label": "software",
+            "type": "vertex",
+            "properties": {
+                "lang": "java",
+                "price": 328,
+                "name": "lop"
+            }
+        }
+    ],
+    "edges": [
+    ]
+}
+
+```
+
+#### 4.7.2.26.标签统计
+
+##### 功能介绍
+
+Label count 算法暂存于此, 后续有更合适的位置再进行迁移, 它仅有一句 gremlin 查询即可实现点 / 边的所有 label 的数目统计, 不过要注意的是耗时可能较高, 需要异步任务提交, 建议使用 hubble 直接发送异步任务, 效果如下图: (注意数据量必须提交异步任务)
+
+![hubble label count task](../../images/api/label_count_task.png)
+
+Gremlin 语句: g.V().groupCount().by(label);    (如果统计边, 就把 g.V() 换成 g.E(), 其他不用变)
+也可以直接发送 HTTP 请求, 使用异步执行 Gremlin 的接口, 可以参考异步 Gremlin 任务的文档

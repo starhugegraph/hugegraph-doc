@@ -1,26 +1,59 @@
-### 1.1 Schema
+### 4.4.5.Schema信息
 
 HugeGraph 提供单一接口获取和更新某个图的全部 Schema 信息，包括：PropertyKey、VertexLabel、EdgeLabel 和 IndexLabel。
 
-#### 1.1.1 获取全部schema信息
+#### 4.4.5.1.获取全部schema信息
 
-##### Params
+##### 功能介绍
 
-- format: 返回 schema 的格式，默认为 json，可选值为 [json, groovy]
+获取指定图空间下的某个图的全部schema信息
 
-##### Method & Url
+##### URI
+
+```
+GET /graphspaces/${graphspace}/graphs/${graph}/schema?format=${format}
+```
+
+##### URI参数
+
+|  名称   | 是否必填  | 类型  | 默认值 | 取值范围 | 说明  |
+|  ----  | ----  | ----  | ----  | ----  | ---- |
+| graphspace  | 是 | String  |   |   | 图空间名称  |
+| graph  | 是 | String  |   |   | 图名称  |
+| format  | 是 | String  | json  |  json, groovy | schema 返回的格式  |
+
+##### Body参数
+
+无
+
+##### Response
+
+|  名称   | 类型 |  说明  |
+|  ----  | ---|  ----  |
+| propertykeys  |Array| propertykey 的列表 |
+| vertexlabels  |Array| vertexlabel 的列表 |
+| edgelabels  |Array| edgelabel 的列表 |
+| indexlabels  |Array| indexlabel 的列表 |
+
+##### 使用示例1
+
+###### Method & Url
 
 ```
 GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph/schema?format=json
 ```
 
-##### Response Status
+###### Request Body
+
+无
+
+###### Response Status
 
 ```json
 200
 ```
 
-##### Response Body
+###### Response Body
 
 ```json
 {
@@ -321,14 +354,19 @@ GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph/schema?format=json
 }
 ```
 
+##### 使用示例2
 
-**以 groovy 形式查询 schema**
+##### 使用示例二：以groovy格式请求
 
-##### Method & Url
+###### Method & Url
 
 ```
-GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph/schema
+GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph/schema?format=groovy
 ```
+
+###### Request Body
+
+无
 
 ##### Response Status
 
@@ -336,21 +374,52 @@ GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph/schema
 200
 ```
 
-##### Response Body
+###### Response Body
 
 ```json
-{"schema":"graph.schema().propertyKey(\"price\").asInt().ifNotExist().create();\ngraph.schema().propertyKey(\"date\").asText().ifNotExist().create();\ngraph.schema().propertyKey(\"city\").asText().ifNotExist().create();\ngraph.schema().propertyKey(\"age\").asInt().ifNotExist().create();\ngraph.schema().propertyKey(\"lang\").asText().ifNotExist().create();\ngraph.schema().propertyKey(\"weight\").asDouble().ifNotExist().create();\ngraph.schema().propertyKey(\"name\").asText().ifNotExist().create();\n\ngraph.schema().vertexLabel(\"person\").properties(\"name\",\"age\",\"city\").primaryKeys(\"name\").nullableKeys(\"age\").enableLabelIndex(true).ifNotExist().create();\ngraph.schema().vertexLabel(\"software\").properties(\"name\",\"lang\",\"price\").primaryKeys(\"name\").nullableKeys(\"price\").enableLabelIndex(true).ifNotExist().create();\n\ngraph.schema().edgeLabel(\"knows\").sourceLabel(\"person\").targetLabel(\"person\").properties(\"weight\",\"date\").multiTimes().sortKeys(\"date\").nullableKeys(\"weight\").enableLabelIndex(true).ifNotExist().create();\ngraph.schema().edgeLabel(\"created\").sourceLabel(\"person\").targetLabel(\"software\").properties(\"weight\",\"date\").nullableKeys(\"weight\").enableLabelIndex(true).ifNotExist().create();\n\ngraph.schema().indexLabel(\"personByCity\").onV(\"person\").by(\"city\").secondary().ifNotExist().create();\ngraph.schema().indexLabel(\"personByAge\").onV(\"person\").by(\"age\").range().ifNotExist().create();\ngraph.schema().indexLabel(\"softwareByPrice\").onV(\"software\").by(\"price\").range().ifNotExist().create();\ngraph.schema().indexLabel(\"createdByDate\").onE(\"created\").by(\"date\").secondary().ifNotExist().create();\ngraph.schema().indexLabel(\"createdByWeight\").onE(\"created\").by(\"weight\").range().ifNotExist().create();\ngraph.schema().indexLabel(\"knowsByWeight\").onE(\"knows\").by(\"weight\").range().ifNotExist().create();\n"}
+{"schema":"graph.schema().propertyKey('price').asInt().ifNotExist().create();\ngraph.schema().propertyKey('date').asText().ifNotExist().create();\ngraph.schema().propertyKey('city').asText().ifNotExist().create();\ngraph.schema().propertyKey('age').asInt().ifNotExist().create();\ngraph.schema().propertyKey('lang').asText().ifNotExist().create();\ngraph.schema().propertyKey('weight').asDouble().ifNotExist().create();\ngraph.schema().propertyKey('name').asText().ifNotExist().create();\n\ngraph.schema().vertexLabel('person').properties('name','age','city').primaryKeys('name').nullableKeys('age').enableLabelIndex(true).ifNotExist().create();\ngraph.schema().vertexLabel('software').properties('name','lang','price').primaryKeys('name').nullableKeys('price').enableLabelIndex(true).ifNotExist().create();\n\ngraph.schema().edgeLabel('knows').sourceLabel('person').targetLabel('person').properties('weight','date').multiTimes().sortKeys('date').nullableKeys('weight').enableLabelIndex(true).ifNotExist().create();\ngraph.schema().edgeLabel('created').sourceLabel('person').targetLabel('software').properties('weight','date').nullableKeys('weight').enableLabelIndex(true).ifNotExist().create();\n\ngraph.schema().indexLabel('personByCity').onV('person').by('city').secondary().ifNotExist().create();\ngraph.schema().indexLabel('personByAge').onV('person').by('age').range().ifNotExist().create();\ngraph.schema().indexLabel('softwareByPrice').onV('software').by('price').range().ifNotExist().create();\ngraph.schema().indexLabel('createdByDate').onE('created').by('date').secondary().ifNotExist().create();\ngraph.schema().indexLabel('createdByWeight').onE('created').by('weight').range().ifNotExist().create();\ngraph.schema().indexLabel('knowsByWeight').onE('knows').by('weight').range().ifNotExist().create();\n"}
 ```
 
-#### 1.1.2 以 groovy 形式更新schema信息
+#### 4.4.5.2.更新schema信息
 
-##### Method & Url
+##### 功能介绍
+
+以 groovy 形式更新指定空间下指定图的schema信息
+
+##### URI
+```
+PUT /graphspaces/${graphspace}/graphs/${graph}/schema
+```
+
+##### URI参数
+
+|  名称   | 是否必填  | 类型  | 默认值 | 取值范围 | 说明  |
+|  ----  | ----  | ----  | ----  | ----  | ---- |
+| graphspace  | 是 | String  |   |   | 图空间名称  |
+| graph  | 是 | String  |   |   | 图名称  |
+
+##### Body参数
+
+|  名称   | 是否必填  | 类型  | 默认值  | 取值范围  | 说明  |
+|  ----  | ----  | ----  | ----  | ----  | ----  |
+| schema  | 是 | String  |   |   | groovy 形式的 schema 信息  |
+
+
+##### Response
+| 名称   | 类型   | 说明                     |
+| ------ | ------ | ------------------------ |
+| schema | String | 执行成功，则返回"inited" |
+
+
+##### 使用示例
+
+###### Method & Url
 
 ```
 PUT http://localhost:8080/graphspaces/gs1/graphs/hugegraph/schema
 ```
 
-##### Request body
+###### Request body
 
 ```json
 {
@@ -358,13 +427,13 @@ PUT http://localhost:8080/graphspaces/gs1/graphs/hugegraph/schema
 }
 ```
 
-##### Response Status
+###### Response Status
 
 ```json
-200
+202
 ```
 
-##### Response Body
+###### Response Body
 
 ```json
 {

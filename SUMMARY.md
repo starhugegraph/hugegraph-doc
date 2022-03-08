@@ -5,6 +5,7 @@
 ## Quickstart
 * [Install HugeGraph-Server](quickstart/hugegraph-server.md)
 * [Load data with HugeGraph-Loader](quickstart/hugegraph-loader.md)
+* [Load data with HugeGraph-Loader-V3](quickstart/hugegraph-loader-v3.md)
 * [Manage with HugeGraph-Tools](quickstart/hugegraph-tools.md)
 * [Manage with HugeGraph-Tools-V3](quickstart/hugegraph-tools-v3.md)
 * [Visual with HugeGraph-Hubble](quickstart/hugegraph-hubble.md)
@@ -18,6 +19,7 @@
 * [Config Authentication](config/config-authentication.md)
 * [Config Authentication V3](config/config-authentication-v3.md)
 * [Config HTTPS](config/config-https.md)
+* [Config Encrypting Data](config/config-encrypt-data.md)
 
 
 ## API
@@ -60,6 +62,7 @@
     * [Service](clients/restful-api-v3/service.md)
     * [SchemaTemplate](clients/restful-api-v3/schematemplate.md)
     * [Other](clients/restful-api-v3/other.md)
+* [Computer API V3](computer-v3/algorithm.md)
 * [Java Client](clients/hugegraph-client.md)
 * [Gremlin Console](clients/gremlin-console.md)
 
@@ -72,6 +75,7 @@
 
 ## Query Language
 * [Gremlin Query Language](language/hugegraph-gremlin.md)
+* [Gremlin Query Language V3](language/hugegraph-gremlin-v3.md)
 * [HugeGraph Examples](language/hugegraph-example.md)
 
 ## Performance

@@ -2217,7 +2217,28 @@ EOF
 <h5 id="&#x9002;&#x7528;&#x573A;&#x666F;">&#x9002;&#x7528;&#x573A;&#x666F;</h5>
 <p>&#x793E;&#x533A;&#x53D1;&#x73B0;&#x3002;</p>
 <h5 id="&#x53C2;&#x6570;&#x8BF4;&#x660E;">&#x53C2;&#x6570;&#x8BF4;&#x660E;</h5>
-<p>&#x65E0;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x540D;&#x79F0;</th>
+<th style="text-align:left">&#x662F;&#x5426;&#x5FC5;&#x586B;</th>
+<th style="text-align:left">&#x7C7B;&#x578B;</th>
+<th style="text-align:left">&#x9ED8;&#x8BA4;&#x503C;</th>
+<th style="text-align:left">&#x53D6;&#x503C;&#x8303;&#x56F4;</th>
+<th style="text-align:left">&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">louvain.weightkey</td>
+<td style="text-align:left">&#x5426;</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">&quot;&quot;,&#x4E3A;&#x7A7A;&#x65F6;&#x8FB9;&#x6743;&#x91CD;&#x4E3A;1</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">&#x6743;&#x91CD;&#x5C5E;&#x6027;&#x540D;</td>
+</tr>
+</tbody>
+</table>
 <h5 id="k8s&#x793A;&#x4F8B;">k8s&#x793A;&#x4F8B;</h5>
 <pre><code class="lang-yaml">cat &lt;&lt;EOF | kubectl apply --filename -
 <span class="hljs-attr">apiVersion:</span> hugegraph.baidu.com/v1
@@ -2245,7 +2266,9 @@ EOF
 <pre><code class="lang-json">{
   <span class="hljs-string">&quot;algorithm&quot;</span>: <span class="hljs-string">&quot;louvain&quot;</span>,
   <span class="hljs-string">&quot;worker&quot;</span>: <span class="hljs-number">1</span>,
-  <span class="hljs-string">&quot;params&quot;</span>: {}
+  <span class="hljs-string">&quot;params&quot;</span>: {
+    <span class="hljs-string">&quot;louvain.weightkey&quot;</span>: <span class="hljs-string">&quot;&quot;</span>
+  }
 }
 </code></pre>
 <h6 id=""> </h6>
@@ -4527,7 +4550,7 @@ EOF
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Computer API V3","level":"4.3","depth":1,"next":{"title":"Java Client","level":"4.4","depth":1,"path":"clients/hugegraph-client.md","ref":"clients/hugegraph-client.md","articles":[]},"previous":{"title":"Other","level":"4.2.20","depth":2,"path":"clients/restful-api-v3/other.md","ref":"clients/restful-api-v3/other.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"computer-v3/algorithm.md","mtime":"2022-03-04T09:50:53.855Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-03-04T09:50:54.457Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Computer API V3","level":"4.3","depth":1,"next":{"title":"Java Client","level":"4.4","depth":1,"path":"clients/hugegraph-client.md","ref":"clients/hugegraph-client.md","articles":[]},"previous":{"title":"Other","level":"4.2.20","depth":2,"path":"clients/restful-api-v3/other.md","ref":"clients/restful-api-v3/other.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"computer-v3/algorithm.md","mtime":"2022-03-08T09:34:12.663Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-03-08T09:34:13.113Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

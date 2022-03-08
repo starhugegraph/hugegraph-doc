@@ -1417,6 +1417,135 @@
 <td>&#x4E0E;&#x56FE;&#x540D;&#x4FDD;&#x6301;&#x4E00;&#x81F4;</td>
 </tr>
 <tr>
+<td>rate_limit.write</td>
+<td>&#x5426;</td>
+<td>Integer</td>
+<td>0</td>
+<td>[0, Integer.MAX_VALUE)</td>
+<td>&#x6BCF;&#x79D2;&#x5199;&#x5165;/&#x66F4;&#x65B0;/&#x5220;&#x9664;&#x7684;&#x8BF7;&#x6C42;&#x6570;&#x4E0A;&#x9650;&#xFF0C;0&#x8868;&#x793A;&#x4E0D;&#x9650;&#x5236;</td>
+</tr>
+<tr>
+<td>rate_limit.read</td>
+<td>&#x5426;</td>
+<td>Integer</td>
+<td>0</td>
+<td>[0, Integer.MAX_VALUE)</td>
+<td>&#x6BCF;&#x79D2;&#x8BFB;&#x8BF7;&#x6C42;&#x6570;&#x4E0A;&#x9650;&#xFF0C;0&#x8868;&#x793A;&#x4E0D;&#x9650;&#x5236;</td>
+</tr>
+<tr>
+<td>task.wait_timeout</td>
+<td>&#x5426;</td>
+<td>Long</td>
+<td>10L</td>
+<td>[0, Long.MAX_VALUE)</td>
+<td>&#x5F02;&#x6B65;&#x4EFB;&#x52A1;&#x7684;&#x7B49;&#x5F85;&#x65F6;&#x95F4;</td>
+</tr>
+<tr>
+<td>task.input_size_limit</td>
+<td>&#x5426;</td>
+<td>Integer</td>
+<td>10<em>1024</em>1024</td>
+<td>[0, 1024<em>1024</em>1024)</td>
+<td>&#x4EFB;&#x52A1;&#x7684;&#x8F93;&#x5165;&#x5927;&#x5C0F;&#x9650;&#x5236;&#xFF0C;&#x5355;&#x4F4D;&#x5B57;&#x8282;</td>
+</tr>
+<tr>
+<td>task.result_size_limit</td>
+<td>&#x5426;</td>
+<td>Integer</td>
+<td>10<em>1024</em>1024</td>
+<td>[0, 1024<em>1024</em>1024)</td>
+<td>&#x4EFB;&#x52A1;&#x7684;&#x7ED3;&#x679C;&#x5927;&#x5C0F;&#x9650;&#x5236;&#xFF0C;&#x5355;&#x4F4D;&#x5B57;&#x8282;</td>
+</tr>
+<tr>
+<td>task.scheduler_type</td>
+<td>&#x5426;</td>
+<td>String</td>
+<td>local</td>
+<td>[local, etcd]</td>
+<td>&#x4F7F;&#x7528;&#x4F55;&#x79CD;&#x8C03;&#x5EA6;&#x5668;&#x8FDB;&#x884C;&#x5F02;&#x6B65;&#x4EFB;&#x52A1;&#x8C03;&#x5EA6;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;local&#x3002; &#x8C03;&#x5EA6;&#x5668;&#x7C7B;&#x578B;&#x4E0D;&#x53EF;&#x4FEE;&#x6539;</td>
+</tr>
+<tr>
+<td>vertex.check_customized_id_exist</td>
+<td>&#x5426;</td>
+<td>Boolean</td>
+<td>false</td>
+<td></td>
+<td>&#x662F;&#x5426;&#x68C0;&#x67E5;&#x6307;&#x5B9A;&#x7684;&#x9876;&#x70B9;&#x6216;&#x8FB9;&#x7684;ID&#x662F;&#x5426;&#x5B58;&#x5728;</td>
+</tr>
+<tr>
+<td>vertex.tx_capacity</td>
+<td>&#x5426;</td>
+<td>Integer</td>
+<td>10000</td>
+<td>[500, 1000000)</td>
+<td>&#x4E8B;&#x52A1;&#x91CC;&#x672A;&#x63D0;&#x4EA4;&#x7684;&#x9876;&#x70B9;&#x6570;&#x76EE;&#x9650;&#x5236;</td>
+</tr>
+<tr>
+<td>edge.tx_capacity</td>
+<td>&#x5426;</td>
+<td>Integer</td>
+<td>10000</td>
+<td>[500, 1000000)</td>
+<td>&#x4E8B;&#x52A1;&#x91CC;&#x672A;&#x63D0;&#x4EA4;&#x7684;&#x8FB9;&#x6570;&#x76EE;&#x9650;&#x5236;</td>
+</tr>
+<tr>
+<td>schema.init_template</td>
+<td>&#x5426;</td>
+<td>String</td>
+<td></td>
+<td></td>
+<td>&#x521B;&#x5EFA;&#x56FE;&#x65F6;&#x7528;&#x6765;&#x521D;&#x59CB;&#x5316;&#x7684;&#x5143;&#x6570;&#x636E;&#x6A21;&#x677F;</td>
+</tr>
+<tr>
+<td>schema.illegal_name_regex</td>
+<td>&#x5426;</td>
+<td>String</td>
+<td>&quot;.*\s+$</td>
+<td>~.*&quot;</td>
+<td></td>
+<td>&#x975E;&#x6CD5;&#x7684;&#x5143;&#x6570;&#x636E;&#x540D;&#x5B57;&#x7684;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;</td>
+</tr>
+<tr>
+<td>schema.cache_capacity</td>
+<td>&#x5426;</td>
+<td>Long</td>
+<td>10000</td>
+<td>[0, Long.MAX_VALUE)</td>
+<td>&#x5143;&#x6570;&#x636E;&#x7F13;&#x5B58;&#x6570;&#x76EE;&#x4E0A;&#x9650;</td>
+</tr>
+<tr>
+<td>vertex.cache_capacity</td>
+<td>&#x5426;</td>
+<td>Long</td>
+<td>10<em>1000</em>1000L</td>
+<td>[0, Long.MAX_VALUE)</td>
+<td>&#x9876;&#x70B9;&#x7F13;&#x5B58;&#x6570;&#x76EE;&#x4E0A;&#x9650;</td>
+</tr>
+<tr>
+<td>vertex.cache_expire</td>
+<td>&#x5426;</td>
+<td>Integer</td>
+<td>600</td>
+<td>[0, Integer.MAX_VALUE)</td>
+<td>&#x9876;&#x70B9;&#x5728;&#x7F13;&#x5B58;&#x4E2D;&#x8FC7;&#x671F;&#x7684;&#x671F;&#x9650;</td>
+</tr>
+<tr>
+<td>edge.cache_capacity</td>
+<td>&#x5426;</td>
+<td>Long</td>
+<td>1000*1000L</td>
+<td>[0, Long.MAX_VALUE)</td>
+<td>&#x8FB9;&#x7F13;&#x5B58;&#x6570;&#x76EE;&#x4E0A;&#x9650;</td>
+</tr>
+<tr>
+<td>edge.cache_expire</td>
+<td>&#x5426;</td>
+<td>Integer</td>
+<td>600</td>
+<td>[0, Integer.MAX_VALUE)</td>
+<td>&#x8FB9;&#x5728;&#x7F13;&#x5B58;&#x4E2D;&#x8FC7;&#x671F;&#x7684;&#x671F;&#x9650;</td>
+</tr>
+<tr>
 <td>search.text_analyzer</td>
 <td>&#x5426;</td>
 <td>String</td>
@@ -1430,15 +1559,6 @@
 <td>String</td>
 <td>INDEX</td>
 <td></td>
-<td></td>
-</tr>
-<tr>
-<td>task.scheduler_type</td>
-<td>&#x5426;</td>
-<td>String</td>
-<td>local</td>
-<td>[local, etcd]</td>
-<td>&#x4F7F;&#x7528;&#x4F55;&#x79CD;&#x8C03;&#x5EA6;&#x5668;&#x8FDB;&#x884C;&#x5F02;&#x6B65;&#x4EFB;&#x52A1;&#x8C03;&#x5EA6;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;local&#x3002; &#x8C03;&#x5EA6;&#x5668;&#x7C7B;&#x578B;&#x4E0D;&#x53EF;&#x4FEE;&#x6539;</td>
 </tr>
 </tbody>
 </table>
@@ -2287,7 +2407,7 @@ ikanalyzer: [smart, max_word]
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Graphs","level":"4.2.12","depth":2,"next":{"title":"Task","level":"4.2.13","depth":2,"path":"clients/restful-api-v3/task.md","ref":"clients/restful-api-v3/task.md","articles":[]},"previous":{"title":"Variable","level":"4.2.11","depth":2,"path":"clients/restful-api-v3/variable.md","ref":"clients/restful-api-v3/variable.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"clients/restful-api-v3/graphs.md","mtime":"2022-02-25T02:55:50.588Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-03-04T09:50:54.457Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Graphs","level":"4.2.12","depth":2,"next":{"title":"Task","level":"4.2.13","depth":2,"path":"clients/restful-api-v3/task.md","ref":"clients/restful-api-v3/task.md","articles":[]},"previous":{"title":"Variable","level":"4.2.11","depth":2,"path":"clients/restful-api-v3/variable.md","ref":"clients/restful-api-v3/variable.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"clients/restful-api-v3/graphs.md","mtime":"2022-03-08T09:34:12.663Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-03-08T09:34:13.113Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

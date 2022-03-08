@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Graphs · GitBook</title>
+        <title>Config · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -66,10 +66,10 @@
     
 
     
-    <link rel="next" href="task.html" />
+    <link rel="next" href="other.html" />
     
     
-    <link rel="prev" href="variable.html" />
+    <link rel="prev" href="schematemplate.html" />
     
 
     </head>
@@ -116,7 +116,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >Graphs</a>
+        <a href="../.." >Config</a>
     </h1>
 </div>
 
@@ -784,7 +784,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="4.2.12" data-path="graphs.html">
+        <li class="chapter " data-level="4.2.12" data-path="graphs.html">
             
                 <a href="graphs.html">
             
@@ -888,7 +888,7 @@
             
         </li>
     
-        <li class="chapter " data-level="4.2.20" data-path="config.html">
+        <li class="chapter active" data-level="4.2.20" data-path="config.html">
             
                 <a href="config.html">
             
@@ -1354,13 +1354,198 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="43&#x56FE;&#x64CD;&#x4F5C;">4.3.&#x56FE;&#x64CD;&#x4F5C;</h2>
-<h3 id="431&#x56FE;&#x6570;&#x636E;">4.3.1.&#x56FE;&#x6570;&#x636E;</h3>
-<h4 id="4311&#x521B;&#x5EFA;&#x56FE;">4.3.1.1.&#x521B;&#x5EFA;&#x56FE;</h4>
+                                <h2 id="414&#x5176;&#x5B83;&#x7C7B;">4.14.&#x5176;&#x5B83;&#x7C7B;</h2>
+<h4 id="4141&#x8BBE;&#x7F6E;&#x670D;&#x52A1;rest&#x914D;&#x7F6E;">4.14.1.&#x8BBE;&#x7F6E;&#x670D;&#x52A1;Rest&#x914D;&#x7F6E;</h4>
 <h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
-<p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x56FE;&#xFF0C;&#x8BE5;&#x64CD;&#x4F5C;&#x9700;&#x8981;&#x56FE;&#x7A7A;&#x95F4;&#x7BA1;&#x7406;&#x5458;&#x6216;&#x8005;&#x8D85;&#x7EA7;&#x7BA1;&#x7406;&#x5458;&#x6743;&#x9650;</p>
+<p>&#x8BBE;&#x7F6E;&#x670D;&#x52A1;Rest&#x914D;&#x7F6E;</p>
 <h5 id="uri">URI</h5>
-<pre><code>POST /graphspaces/${graphspace}/graphs/${graph}
+<pre><code>PUT graphspaces/${graphspace}/configs/rest
+</code></pre><h5 id="uri&#x53C2;&#x6570;">URI&#x53C2;&#x6570;</h5>
+<table>
+<thead>
+<tr>
+<th>&#x540D;&#x79F0;</th>
+<th>&#x662F;&#x5426;&#x5FC5;&#x586B;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x9ED8;&#x8BA4;&#x503C;</th>
+<th>&#x53D6;&#x503C;&#x8303;&#x56F4;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>graphspace</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td></td>
+<td></td>
+<td>&#x56FE;&#x7A7A;&#x95F4;</td>
+</tr>
+</tbody>
+</table>
+<h5 id="body&#x53C2;&#x6570;">Body&#x53C2;&#x6570;</h5>
+<table>
+<thead>
+<tr>
+<th>&#x540D;&#x79F0;</th>
+<th>&#x662F;&#x5426;&#x5FC5;&#x586B;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x9ED8;&#x8BA4;&#x503C;</th>
+<th>&#x53D6;&#x503C;&#x8303;&#x56F4;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>properties</td>
+<td>&#x662F;</td>
+<td>Map</td>
+<td></td>
+<td></td>
+<td>&#x914D;&#x7F6E;&#x4FE1;&#x606F;</td>
+</tr>
+</tbody>
+</table>
+<h5 id="response">Response</h5>
+<table>
+<thead>
+<tr>
+<th>&#x540D;&#x79F0;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>*</td>
+<td>Map</td>
+<td>&#x8FD4;&#x56DE;&#x63D0;&#x4EA4;&#x7684;Map&#x4FE1;&#x606F;</td>
+</tr>
+</tbody>
+</table>
+<h5 id="&#x4F7F;&#x7528;&#x793A;&#x4F8B;">&#x4F7F;&#x7528;&#x793A;&#x4F8B;</h5>
+<h6 id="method--url">Method &amp; Url</h6>
+<pre><code>PUT  http://localhost:8080/graphspaces/gs1/configs/rest
+</code></pre><h6 id="request-body">Request Body</h6>
+<pre><code class="lang-json">{
+    <span class="hljs-string">&quot;restserver.url&quot;</span>: <span class="hljs-string">&quot;http://0.0.0.0:8080&quot;</span>,
+    <span class="hljs-string">&quot;server.start_ignore_single_graph_error&quot;</span>: <span class="hljs-string">&quot;true&quot;</span>,
+    <span class="hljs-string">&quot;batch.max_write_ratio&quot;</span>: <span class="hljs-string">&quot;80&quot;</span>,
+    <span class="hljs-string">&quot;batch.max_write_threads&quot;</span>: <span class="hljs-string">&quot;0&quot;</span>,
+    <span class="hljs-string">&quot;batch.max_vertices_per_batch&quot;</span>: <span class="hljs-string">&quot;2000&quot;</span>,
+    <span class="hljs-string">&quot;batch.max_edges_per_batch&quot;</span>: <span class="hljs-string">&quot;2000&quot;</span>,
+    <span class="hljs-string">&quot;server.k8s_url&quot;</span>: <span class="hljs-string">&quot;https://127.0.0.1:6443&quot;</span>,
+    <span class="hljs-string">&quot;server.k8s_use_ca&quot;</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">&quot;server.k8s_ca&quot;</span>: <span class="hljs-string">&quot;/etc/kubernetes/ssl/ca.pem&quot;</span>,
+    <span class="hljs-string">&quot;server.k8s_client_ca&quot;</span>: <span class="hljs-string">&quot;/etc/kubernetes/ssl/kubernetes.pem&quot;</span>,
+    <span class="hljs-string">&quot;server.k8s_client_key&quot;</span>: <span class="hljs-string">&quot;/etc/kubernetes/ssl/kubernetes-key8.pem&quot;</span>,
+    <span class="hljs-string">&quot;server.k8s_oltp_image&quot;</span>: <span class="hljs-string">&quot;xx.xx.xx.xx/kgs_bd/hugegraphserver:3.0.0&quot;</span>,
+    <span class="hljs-string">&quot;k8s.internal_algorithm_image_url&quot;</span>: <span class="hljs-string">&quot;xx.xx.xx.xx/kgs_bd/hugegraph-computer-algorithm:3.x.x&quot;</span>,
+    <span class="hljs-string">&quot;k8s.internal_algorithm&quot;</span>: <span class="hljs-string">&quot;[page-rank, degree-centrality, wcc, triangle-count, rings, rings-with-filter, betweenness-centrality, closeness-centrality, lpa, links, kcore, louvain, clustering-coefficient]&quot;</span>,
+    <span class="hljs-string">&quot;k8s.algorithms&quot;</span>: <span class="hljs-string">&quot;[page-rank:com.baidu.hugegraph.computer.algorithm.centrality.pagerank.PageRankParams, degree-centrality:com.baidu.hugegraph.computer.algorithm.centrality.degree.DegreeCentralityParams, wcc:com.baidu.hugegraph.computer.algorithm.community.wcc.WccParams, triangle-count:com.baidu.hugegraph.computer.algorithm.community.trianglecount.TriangleCountParams, rings:com.baidu.hugegraph.computer.algorithm.path.rings.RingsDetectionParams, rings-with-filter:com.baidu.hugegraph.computer.algorithm.path.rings.filter.RingsDetectionWithFilterParams, betweenness-centrality:com.baidu.hugegraph.computer.algorithm.centrality.betweenness.BetweennessCentralityParams, closeness-centrality:com.baidu.hugegraph.computer.algorithm.centrality.closeness.ClosenessCentralityParams, lpa:com.baidu.hugegraph.computer.algorithm.community.lpa.LpaParams, links:com.baidu.hugegraph.computer.algorithm.path.links.LinksParams, kcore:com.baidu.hugegraph.computer.algorithm.community.kcore.KCoreParams, louvain:com.baidu.hugegraph.computer.algorithm.community.louvain.LouvainParams, clustering-coefficient:com.baidu.hugegraph.computer.algorithm.community.cc.ClusteringCoefficientParams]&quot;</span>
+}
+</code></pre>
+<h6 id="response-status">Response Status</h6>
+<pre><code class="lang-json"><span class="hljs-number">200</span>
+</code></pre>
+<h6 id="response-body">Response Body</h6>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;restserver.url&quot;</span>: <span class="hljs-string">&quot;http://0.0.0.0:8080&quot;</span>,
+  <span class="hljs-string">&quot;server.start_ignore_single_graph_error&quot;</span>: <span class="hljs-string">&quot;true&quot;</span>,
+  <span class="hljs-string">&quot;batch.max_write_ratio&quot;</span>: <span class="hljs-string">&quot;80&quot;</span>,
+  <span class="hljs-string">&quot;batch.max_write_threads&quot;</span>: <span class="hljs-string">&quot;0&quot;</span>,
+  <span class="hljs-string">&quot;batch.max_vertices_per_batch&quot;</span>: <span class="hljs-string">&quot;2000&quot;</span>,
+  <span class="hljs-string">&quot;batch.max_edges_per_batch&quot;</span>: <span class="hljs-string">&quot;2000&quot;</span>,
+  <span class="hljs-string">&quot;server.k8s_url&quot;</span>: <span class="hljs-string">&quot;https://127.0.0.1:6443&quot;</span>,
+  <span class="hljs-string">&quot;server.k8s_use_ca&quot;</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">&quot;server.k8s_ca&quot;</span>: <span class="hljs-string">&quot;/etc/kubernetes/ssl/ca.pem&quot;</span>,
+  <span class="hljs-string">&quot;server.k8s_client_ca&quot;</span>: <span class="hljs-string">&quot;/etc/kubernetes/ssl/kubernetes.pem&quot;</span>,
+  <span class="hljs-string">&quot;server.k8s_client_key&quot;</span>: <span class="hljs-string">&quot;/etc/kubernetes/ssl/kubernetes-key8.pem&quot;</span>,
+  <span class="hljs-string">&quot;server.k8s_oltp_image&quot;</span>: <span class="hljs-string">&quot;xx.xx.xx.xx/kgs_bd/hugegraphserver:3.0.0&quot;</span>,
+  <span class="hljs-string">&quot;k8s.internal_algorithm_image_url&quot;</span>: <span class="hljs-string">&quot;xx.xx.xx.xx/kgs_bd/hugegraph-computer-algorithm:3.x.x&quot;</span>,
+  <span class="hljs-string">&quot;k8s.internal_algorithm&quot;</span>: <span class="hljs-string">&quot;[page-rank, degree-centrality, wcc, triangle-count, rings, rings-with-filter, betweenness-centrality, closeness-centrality, lpa, links, kcore, louvain, clustering-coefficient]&quot;</span>,
+  <span class="hljs-string">&quot;k8s.algorithms&quot;</span>: <span class="hljs-string">&quot;[page-rank:com.baidu.hugegraph.computer.algorithm.centrality.pagerank.PageRankParams, degree-centrality:com.baidu.hugegraph.computer.algorithm.centrality.degree.DegreeCentralityParams, wcc:com.baidu.hugegraph.computer.algorithm.community.wcc.WccParams, triangle-count:com.baidu.hugegraph.computer.algorithm.community.trianglecount.TriangleCountParams, rings:com.baidu.hugegraph.computer.algorithm.path.rings.RingsDetectionParams, rings-with-filter:com.baidu.hugegraph.computer.algorithm.path.rings.filter.RingsDetectionWithFilterParams, betweenness-centrality:com.baidu.hugegraph.computer.algorithm.centrality.betweenness.BetweennessCentralityParams, closeness-centrality:com.baidu.hugegraph.computer.algorithm.centrality.closeness.ClosenessCentralityParams, lpa:com.baidu.hugegraph.computer.algorithm.community.lpa.LpaParams, links:com.baidu.hugegraph.computer.algorithm.path.links.LinksParams, kcore:com.baidu.hugegraph.computer.algorithm.community.kcore.KCoreParams, louvain:com.baidu.hugegraph.computer.algorithm.community.louvain.LouvainParams, clustering-coefficient:com.baidu.hugegraph.computer.algorithm.community.cc.ClusteringCoefficientParams]&quot;</span>
+}
+</code></pre>
+<h4 id="4142&#x67E5;&#x8BE2;&#x670D;&#x52A1;rest&#x914D;&#x7F6E;">4.14.2.&#x67E5;&#x8BE2;&#x670D;&#x52A1;Rest&#x914D;&#x7F6E;</h4>
+<h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
+<p>&#x67E5;&#x8BE2;&#x670D;&#x52A1;Rest&#x914D;&#x7F6E;</p>
+<h5 id="uri">URI</h5>
+<pre><code>GET graphspaces/${graphspace}/configs/rest
+</code></pre><h5 id="uri&#x53C2;&#x6570;">URI&#x53C2;&#x6570;</h5>
+<table>
+<thead>
+<tr>
+<th>&#x540D;&#x79F0;</th>
+<th>&#x662F;&#x5426;&#x5FC5;&#x586B;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x9ED8;&#x8BA4;&#x503C;</th>
+<th>&#x53D6;&#x503C;&#x8303;&#x56F4;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>graphspace</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td></td>
+<td></td>
+<td>&#x56FE;&#x7A7A;&#x95F4;</td>
+</tr>
+</tbody>
+</table>
+<h5 id="body&#x53C2;&#x6570;">Body&#x53C2;&#x6570;</h5>
+<p>&#x65E0;</p>
+<h5 id="response">Response</h5>
+<table>
+<thead>
+<tr>
+<th>&#x540D;&#x79F0;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>*</td>
+<td>Map</td>
+<td>Rest&#x914D;&#x7F6E;&#x4FE1;&#x606F;</td>
+</tr>
+</tbody>
+</table>
+<h5 id="&#x4F7F;&#x7528;&#x793A;&#x4F8B;">&#x4F7F;&#x7528;&#x793A;&#x4F8B;</h5>
+<h6 id="method--url">Method &amp; Url</h6>
+<pre><code>GET  http://localhost:8080/graphspaces/gs1/configs/rest
+</code></pre><h6 id="request-body">Request Body</h6>
+<p>&#x65E0;</p>
+<h6 id="response-status">Response Status</h6>
+<pre><code class="lang-json"><span class="hljs-number">200</span>
+</code></pre>
+<h6 id="response-body">Response Body</h6>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;restserver.url&quot;</span>: <span class="hljs-string">&quot;http://0.0.0.0:8080&quot;</span>,
+  <span class="hljs-string">&quot;server.start_ignore_single_graph_error&quot;</span>: <span class="hljs-string">&quot;true&quot;</span>,
+  <span class="hljs-string">&quot;batch.max_write_ratio&quot;</span>: <span class="hljs-string">&quot;80&quot;</span>,
+  <span class="hljs-string">&quot;batch.max_write_threads&quot;</span>: <span class="hljs-string">&quot;0&quot;</span>,
+  <span class="hljs-string">&quot;batch.max_vertices_per_batch&quot;</span>: <span class="hljs-string">&quot;2000&quot;</span>,
+  <span class="hljs-string">&quot;batch.max_edges_per_batch&quot;</span>: <span class="hljs-string">&quot;2000&quot;</span>,
+  <span class="hljs-string">&quot;server.k8s_url&quot;</span>: <span class="hljs-string">&quot;https://127.0.0.1:6443&quot;</span>,
+  <span class="hljs-string">&quot;server.k8s_use_ca&quot;</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">&quot;server.k8s_ca&quot;</span>: <span class="hljs-string">&quot;/etc/kubernetes/ssl/ca.pem&quot;</span>,
+  <span class="hljs-string">&quot;server.k8s_client_ca&quot;</span>: <span class="hljs-string">&quot;/etc/kubernetes/ssl/kubernetes.pem&quot;</span>,
+  <span class="hljs-string">&quot;server.k8s_client_key&quot;</span>: <span class="hljs-string">&quot;/etc/kubernetes/ssl/kubernetes-key8.pem&quot;</span>,
+  <span class="hljs-string">&quot;server.k8s_oltp_image&quot;</span>: <span class="hljs-string">&quot;xx.xx.xx.xx/kgs_bd/hugegraphserver:3.0.0&quot;</span>,
+  <span class="hljs-string">&quot;k8s.internal_algorithm_image_url&quot;</span>: <span class="hljs-string">&quot;xx.xx.xx.xx/kgs_bd/hugegraph-computer-algorithm:3.x.x&quot;</span>,
+  <span class="hljs-string">&quot;k8s.internal_algorithm&quot;</span>: <span class="hljs-string">&quot;[page-rank, degree-centrality, wcc, triangle-count, rings, rings-with-filter, betweenness-centrality, closeness-centrality, lpa, links, kcore, louvain, clustering-coefficient]&quot;</span>,
+  <span class="hljs-string">&quot;k8s.algorithms&quot;</span>: <span class="hljs-string">&quot;[page-rank:com.baidu.hugegraph.computer.algorithm.centrality.pagerank.PageRankParams, degree-centrality:com.baidu.hugegraph.computer.algorithm.centrality.degree.DegreeCentralityParams, wcc:com.baidu.hugegraph.computer.algorithm.community.wcc.WccParams, triangle-count:com.baidu.hugegraph.computer.algorithm.community.trianglecount.TriangleCountParams, rings:com.baidu.hugegraph.computer.algorithm.path.rings.RingsDetectionParams, rings-with-filter:com.baidu.hugegraph.computer.algorithm.path.rings.filter.RingsDetectionWithFilterParams, betweenness-centrality:com.baidu.hugegraph.computer.algorithm.centrality.betweenness.BetweennessCentralityParams, closeness-centrality:com.baidu.hugegraph.computer.algorithm.centrality.closeness.ClosenessCentralityParams, lpa:com.baidu.hugegraph.computer.algorithm.community.lpa.LpaParams, links:com.baidu.hugegraph.computer.algorithm.path.links.LinksParams, kcore:com.baidu.hugegraph.computer.algorithm.community.kcore.KCoreParams, louvain:com.baidu.hugegraph.computer.algorithm.community.louvain.LouvainParams, clustering-coefficient:com.baidu.hugegraph.computer.algorithm.community.cc.ClusteringCoefficientParams]&quot;</span>
+}
+</code></pre>
+<h4 id="4143&#x5220;&#x9664;&#x670D;&#x52A1;rest&#x914D;&#x7F6E;">4.14.3.&#x5220;&#x9664;&#x670D;&#x52A1;Rest&#x914D;&#x7F6E;</h4>
+<h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
+<p>&#x5220;&#x9664;&#x670D;&#x52A1;Rest&#x914D;&#x7F6E;&#xFF0C;&#x6CE8;&#x610F;&#xFF1A;&#x53EA;&#x80FD;&#x9010;&#x6761;&#x5220;&#x9664;</p>
+<h5 id="uri">URI</h5>
+<pre><code>DELETE graphspaces/${graphspace}/configs/rest/${key}
 </code></pre><h5 id="uri&#x53C2;&#x6570;">URI&#x53C2;&#x6570;</h5>
 <table>
 <thead>
@@ -1383,12 +1568,86 @@
 <td>&#x56FE;&#x7A7A;&#x95F4;</td>
 </tr>
 <tr>
-<td>graph</td>
+<td>key</td>
 <td>&#x662F;</td>
 <td>String</td>
 <td></td>
 <td></td>
-<td>&#x56FE;</td>
+<td>&#x914D;&#x7F6E;key&#x503C;</td>
+</tr>
+</tbody>
+</table>
+<h5 id="body&#x53C2;&#x6570;">Body&#x53C2;&#x6570;</h5>
+<p>&#x65E0;</p>
+<h5 id="response">Response</h5>
+<table>
+<thead>
+<tr>
+<th>&#x540D;&#x79F0;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>*</td>
+<td>Map</td>
+<td>Rest&#x914D;&#x7F6E;&#x4FE1;&#x606F;</td>
+</tr>
+</tbody>
+</table>
+<h5 id="&#x4F7F;&#x7528;&#x793A;&#x4F8B;">&#x4F7F;&#x7528;&#x793A;&#x4F8B;</h5>
+<h6 id="method--url">Method &amp; Url</h6>
+<pre><code>DELETE  http://localhost:8080/graphspaces/gs1/configs/rest/server.start_ignore_single_graph_error
+</code></pre><h6 id="request-body">Request Body</h6>
+<p>&#x65E0;</p>
+<h6 id="response-status">Response Status</h6>
+<pre><code class="lang-json"><span class="hljs-number">200</span>
+</code></pre>
+<h6 id="response-body">Response Body</h6>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;restserver.url&quot;</span>: <span class="hljs-string">&quot;http://0.0.0.0:8080&quot;</span>,
+  <span class="hljs-string">&quot;batch.max_write_ratio&quot;</span>: <span class="hljs-string">&quot;80&quot;</span>,
+  <span class="hljs-string">&quot;batch.max_write_threads&quot;</span>: <span class="hljs-string">&quot;0&quot;</span>,
+  <span class="hljs-string">&quot;batch.max_vertices_per_batch&quot;</span>: <span class="hljs-string">&quot;2000&quot;</span>,
+  <span class="hljs-string">&quot;batch.max_edges_per_batch&quot;</span>: <span class="hljs-string">&quot;2000&quot;</span>,
+  <span class="hljs-string">&quot;server.k8s_url&quot;</span>: <span class="hljs-string">&quot;https://127.0.0.1:6443&quot;</span>,
+  <span class="hljs-string">&quot;server.k8s_use_ca&quot;</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">&quot;server.k8s_ca&quot;</span>: <span class="hljs-string">&quot;/etc/kubernetes/ssl/ca.pem&quot;</span>,
+  <span class="hljs-string">&quot;server.k8s_client_ca&quot;</span>: <span class="hljs-string">&quot;/etc/kubernetes/ssl/kubernetes.pem&quot;</span>,
+  <span class="hljs-string">&quot;server.k8s_client_key&quot;</span>: <span class="hljs-string">&quot;/etc/kubernetes/ssl/kubernetes-key8.pem&quot;</span>,
+  <span class="hljs-string">&quot;server.k8s_oltp_image&quot;</span>: <span class="hljs-string">&quot;xx.xx.xx.xx/kgs_bd/hugegraphserver:3.0.0&quot;</span>,
+  <span class="hljs-string">&quot;k8s.internal_algorithm_image_url&quot;</span>: <span class="hljs-string">&quot;xx.xx.xx.xx/kgs_bd/hugegraph-computer-algorithm:3.x.x&quot;</span>,
+  <span class="hljs-string">&quot;k8s.internal_algorithm&quot;</span>: <span class="hljs-string">&quot;[page-rank, degree-centrality, wcc, triangle-count, rings, rings-with-filter, betweenness-centrality, closeness-centrality, lpa, links, kcore, louvain, clustering-coefficient]&quot;</span>,
+  <span class="hljs-string">&quot;k8s.algorithms&quot;</span>: <span class="hljs-string">&quot;[page-rank:com.baidu.hugegraph.computer.algorithm.centrality.pagerank.PageRankParams, degree-centrality:com.baidu.hugegraph.computer.algorithm.centrality.degree.DegreeCentralityParams, wcc:com.baidu.hugegraph.computer.algorithm.community.wcc.WccParams, triangle-count:com.baidu.hugegraph.computer.algorithm.community.trianglecount.TriangleCountParams, rings:com.baidu.hugegraph.computer.algorithm.path.rings.RingsDetectionParams, rings-with-filter:com.baidu.hugegraph.computer.algorithm.path.rings.filter.RingsDetectionWithFilterParams, betweenness-centrality:com.baidu.hugegraph.computer.algorithm.centrality.betweenness.BetweennessCentralityParams, closeness-centrality:com.baidu.hugegraph.computer.algorithm.centrality.closeness.ClosenessCentralityParams, lpa:com.baidu.hugegraph.computer.algorithm.community.lpa.LpaParams, links:com.baidu.hugegraph.computer.algorithm.path.links.LinksParams, kcore:com.baidu.hugegraph.computer.algorithm.community.kcore.KCoreParams, louvain:com.baidu.hugegraph.computer.algorithm.community.louvain.LouvainParams, clustering-coefficient:com.baidu.hugegraph.computer.algorithm.community.cc.ClusteringCoefficientParams]&quot;</span>
+}
+</code></pre>
+<hr>
+<h4 id="4144&#x8BBE;&#x7F6E;&#x670D;&#x52A1;gremlin&#x914D;&#x7F6E;">4.14.4.&#x8BBE;&#x7F6E;&#x670D;&#x52A1;Gremlin&#x914D;&#x7F6E;</h4>
+<h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
+<p>&#x8BBE;&#x7F6E;&#x670D;&#x52A1;Gremlin&#x914D;&#x7F6E;</p>
+<h5 id="uri">URI</h5>
+<pre><code>PUT graphspaces/${graphspace}/configs/gremlin
+</code></pre><h5 id="uri&#x53C2;&#x6570;">URI&#x53C2;&#x6570;</h5>
+<table>
+<thead>
+<tr>
+<th>&#x540D;&#x79F0;</th>
+<th>&#x662F;&#x5426;&#x5FC5;&#x586B;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x9ED8;&#x8BA4;&#x503C;</th>
+<th>&#x53D6;&#x503C;&#x8303;&#x56F4;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>graphspace</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td></td>
+<td></td>
+<td>&#x56FE;&#x7A7A;&#x95F4;</td>
 </tr>
 </tbody>
 </table>
@@ -1406,647 +1665,257 @@
 </thead>
 <tbody>
 <tr>
-<td>backend</td>
+<td>yaml</td>
 <td>&#x662F;</td>
 <td>String</td>
 <td></td>
 <td></td>
-<td>&#x5B58;&#x50A8;&#x7C7B;&#x578B;&#xFF0C;&#x76EE;&#x524D;&#x4EC5;&#x652F;&#x6301;hstore</td>
-</tr>
-<tr>
-<td>serializer</td>
-<td>&#x662F;</td>
-<td>String</td>
-<td></td>
-<td></td>
-<td>&#x5E8F;&#x5217;&#x5316;&#x7C7B;&#x578B;&#xFF0C;&#x76EE;&#x524D;&#x4EC5;&#x652F;&#x6301;binary</td>
-</tr>
-<tr>
-<td>store</td>
-<td>&#x662F;</td>
-<td>String</td>
-<td></td>
-<td></td>
-<td>&#x4E0E;&#x56FE;&#x540D;&#x4FDD;&#x6301;&#x4E00;&#x81F4;</td>
-</tr>
-<tr>
-<td>rate_limit.write</td>
-<td>&#x5426;</td>
-<td>Integer</td>
-<td>0</td>
-<td>[0, Integer.MAX_VALUE)</td>
-<td>&#x6BCF;&#x79D2;&#x5199;&#x5165;/&#x66F4;&#x65B0;/&#x5220;&#x9664;&#x7684;&#x8BF7;&#x6C42;&#x6570;&#x4E0A;&#x9650;&#xFF0C;0&#x8868;&#x793A;&#x4E0D;&#x9650;&#x5236;</td>
-</tr>
-<tr>
-<td>rate_limit.read</td>
-<td>&#x5426;</td>
-<td>Integer</td>
-<td>0</td>
-<td>[0, Integer.MAX_VALUE)</td>
-<td>&#x6BCF;&#x79D2;&#x8BFB;&#x8BF7;&#x6C42;&#x6570;&#x4E0A;&#x9650;&#xFF0C;0&#x8868;&#x793A;&#x4E0D;&#x9650;&#x5236;</td>
-</tr>
-<tr>
-<td>task.wait_timeout</td>
-<td>&#x5426;</td>
-<td>Long</td>
-<td>10L</td>
-<td>[0, Long.MAX_VALUE)</td>
-<td>&#x5F02;&#x6B65;&#x4EFB;&#x52A1;&#x7684;&#x7B49;&#x5F85;&#x65F6;&#x95F4;</td>
-</tr>
-<tr>
-<td>task.input_size_limit</td>
-<td>&#x5426;</td>
-<td>Integer</td>
-<td>10<em>1024</em>1024</td>
-<td>[0, 1024<em>1024</em>1024)</td>
-<td>&#x4EFB;&#x52A1;&#x7684;&#x8F93;&#x5165;&#x5927;&#x5C0F;&#x9650;&#x5236;&#xFF0C;&#x5355;&#x4F4D;&#x5B57;&#x8282;</td>
-</tr>
-<tr>
-<td>task.result_size_limit</td>
-<td>&#x5426;</td>
-<td>Integer</td>
-<td>10<em>1024</em>1024</td>
-<td>[0, 1024<em>1024</em>1024)</td>
-<td>&#x4EFB;&#x52A1;&#x7684;&#x7ED3;&#x679C;&#x5927;&#x5C0F;&#x9650;&#x5236;&#xFF0C;&#x5355;&#x4F4D;&#x5B57;&#x8282;</td>
-</tr>
-<tr>
-<td>task.scheduler_type</td>
-<td>&#x5426;</td>
-<td>String</td>
-<td>local</td>
-<td>[local, etcd]</td>
-<td>&#x4F7F;&#x7528;&#x4F55;&#x79CD;&#x8C03;&#x5EA6;&#x5668;&#x8FDB;&#x884C;&#x5F02;&#x6B65;&#x4EFB;&#x52A1;&#x8C03;&#x5EA6;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;local&#x3002; &#x8C03;&#x5EA6;&#x5668;&#x7C7B;&#x578B;&#x4E0D;&#x53EF;&#x4FEE;&#x6539;</td>
-</tr>
-<tr>
-<td>vertex.check_customized_id_exist</td>
-<td>&#x5426;</td>
-<td>Boolean</td>
-<td>false</td>
-<td></td>
-<td>&#x662F;&#x5426;&#x68C0;&#x67E5;&#x6307;&#x5B9A;&#x7684;&#x9876;&#x70B9;&#x6216;&#x8FB9;&#x7684;ID&#x662F;&#x5426;&#x5B58;&#x5728;</td>
-</tr>
-<tr>
-<td>vertex.tx_capacity</td>
-<td>&#x5426;</td>
-<td>Integer</td>
-<td>10000</td>
-<td>[500, 1000000)</td>
-<td>&#x4E8B;&#x52A1;&#x91CC;&#x672A;&#x63D0;&#x4EA4;&#x7684;&#x9876;&#x70B9;&#x6570;&#x76EE;&#x9650;&#x5236;</td>
-</tr>
-<tr>
-<td>edge.tx_capacity</td>
-<td>&#x5426;</td>
-<td>Integer</td>
-<td>10000</td>
-<td>[500, 1000000)</td>
-<td>&#x4E8B;&#x52A1;&#x91CC;&#x672A;&#x63D0;&#x4EA4;&#x7684;&#x8FB9;&#x6570;&#x76EE;&#x9650;&#x5236;</td>
-</tr>
-<tr>
-<td>schema.init_template</td>
-<td>&#x5426;</td>
-<td>String</td>
-<td></td>
-<td></td>
-<td>&#x521B;&#x5EFA;&#x56FE;&#x65F6;&#x7528;&#x6765;&#x521D;&#x59CB;&#x5316;&#x7684;&#x5143;&#x6570;&#x636E;&#x6A21;&#x677F;</td>
-</tr>
-<tr>
-<td>schema.illegal_name_regex</td>
-<td>&#x5426;</td>
-<td>String</td>
-<td>&quot;.*\s+$</td>
-<td>~.*&quot;</td>
-<td></td>
-<td>&#x975E;&#x6CD5;&#x7684;&#x5143;&#x6570;&#x636E;&#x540D;&#x5B57;&#x7684;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;</td>
-</tr>
-<tr>
-<td>schema.cache_capacity</td>
-<td>&#x5426;</td>
-<td>Long</td>
-<td>10000</td>
-<td>[0, Long.MAX_VALUE)</td>
-<td>&#x5143;&#x6570;&#x636E;&#x7F13;&#x5B58;&#x6570;&#x76EE;&#x4E0A;&#x9650;</td>
-</tr>
-<tr>
-<td>vertex.cache_capacity</td>
-<td>&#x5426;</td>
-<td>Long</td>
-<td>10<em>1000</em>1000L</td>
-<td>[0, Long.MAX_VALUE)</td>
-<td>&#x9876;&#x70B9;&#x7F13;&#x5B58;&#x6570;&#x76EE;&#x4E0A;&#x9650;</td>
-</tr>
-<tr>
-<td>vertex.cache_expire</td>
-<td>&#x5426;</td>
-<td>Integer</td>
-<td>600</td>
-<td>[0, Integer.MAX_VALUE)</td>
-<td>&#x9876;&#x70B9;&#x5728;&#x7F13;&#x5B58;&#x4E2D;&#x8FC7;&#x671F;&#x7684;&#x671F;&#x9650;</td>
-</tr>
-<tr>
-<td>edge.cache_capacity</td>
-<td>&#x5426;</td>
-<td>Long</td>
-<td>1000*1000L</td>
-<td>[0, Long.MAX_VALUE)</td>
-<td>&#x8FB9;&#x7F13;&#x5B58;&#x6570;&#x76EE;&#x4E0A;&#x9650;</td>
-</tr>
-<tr>
-<td>edge.cache_expire</td>
-<td>&#x5426;</td>
-<td>Integer</td>
-<td>600</td>
-<td>[0, Integer.MAX_VALUE)</td>
-<td>&#x8FB9;&#x5728;&#x7F13;&#x5B58;&#x4E2D;&#x8FC7;&#x671F;&#x7684;&#x671F;&#x9650;</td>
-</tr>
-<tr>
-<td>search.text_analyzer</td>
-<td>&#x5426;</td>
-<td>String</td>
-<td>jieba</td>
-<td>[word, ansj, hanlp, smartcn, jieba, jcseg, mmseg4j, ikanalyzer]</td>
-<td></td>
-</tr>
-<tr>
-<td>search.text_analyzer_mode</td>
-<td>&#x5426;</td>
-<td>String</td>
-<td>INDEX</td>
-<td></td>
+<td>&#x914D;&#x7F6E;&#x4FE1;&#x606F;</td>
 </tr>
 </tbody>
 </table>
-<pre><code>search.text_analyzer_mode:
+<h5 id="response">Response</h5>
+<table>
+<thead>
+<tr>
+<th>&#x540D;&#x79F0;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>*</td>
+<td>String</td>
+<td>&#x8FD4;&#x56DE;Gremlin&#x914D;&#x7F6E;&#x4FE1;&#x606F;</td>
+</tr>
+</tbody>
+</table>
+<h5 id="&#x4F7F;&#x7528;&#x793A;&#x4F8B;">&#x4F7F;&#x7528;&#x793A;&#x4F8B;</h5>
+<h6 id="method--url">Method &amp; Url</h6>
+<pre><code>PUT  http://localhost:8080/graphspaces/gs1/configs/gremlin
+</code></pre><h6 id="request-body">Request Body</h6>
+<pre><code class="lang-yaml"><span class="hljs-comment"># host and port of gremlin server, need to be consistent with host and port in rest-server.properties</span>
+<span class="hljs-comment">#host: 127.0.0.1</span>
+<span class="hljs-comment">#port: 8182</span>
 
-word: [MaximumMatching, ReverseMaximumMatching, MinimumMatching, ReverseMinimumMatching, BidirectionalMaximumMatching, BidirectionalMinimumMatching, BidirectionalMaximumMinimumMatching, FullSegmentation, MinimalWordCount, MaxNgramScore, PureEnglish]
-ansj: [BaseAnalysis, IndexAnalysis, ToAnalysis, NlpAnalysis]
-hanlp: [standard, nlp, index, nShort, shortest, speed]
-smartcn: []
-jieba: [SEARCH, INDEX]
-jcseg: [Simple, Complex]
-mmseg4j: [Simple, Complex, MaxWord]
-ikanalyzer: [smart, max_word]
-</code></pre><h5 id="response">Response</h5>
-<table>
-<thead>
-<tr>
-<th>&#x540D;&#x79F0;</th>
-<th>&#x7C7B;&#x578B;</th>
-<th>&#x8BF4;&#x660E;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>name</td>
-<td>String</td>
-<td>&#x56FE;&#x540D;</td>
-</tr>
-<tr>
-<td>backend</td>
-<td>String</td>
-<td>&#x5B58;&#x50A8;&#x7C7B;&#x578B;</td>
-</tr>
-<tr>
-<td>description</td>
-<td>String</td>
-<td>&#x63CF;&#x8FF0;</td>
-</tr>
-</tbody>
-</table>
-<h5 id="&#x4F7F;&#x7528;&#x793A;&#x4F8B;">&#x4F7F;&#x7528;&#x793A;&#x4F8B;</h5>
-<h6 id="method--url">Method &amp; Url</h6>
-<pre><code>POST http://localhost:8080/graphspaces/gs1/graphs/hugegraph
-</code></pre><h6 id="request-body">Request Body</h6>
-<pre><code class="lang-json">{
-  <span class="hljs-string">&quot;backend&quot;</span>: <span class="hljs-string">&quot;hstore&quot;</span>,
-  <span class="hljs-string">&quot;serializer&quot;</span>: <span class="hljs-string">&quot;binary&quot;</span>,
-  <span class="hljs-string">&quot;store&quot;</span>: <span class="hljs-string">&quot;hugegraph&quot;</span>,
-  <span class="hljs-string">&quot;search.text_analyzer&quot;</span>: <span class="hljs-string">&quot;jieba&quot;</span>,
-  <span class="hljs-string">&quot;search.text_analyzer_mode&quot;</span>: <span class="hljs-string">&quot;INDEX&quot;</span>
+<span class="hljs-comment"># timeout in ms of gremlin query</span>
+<span class="hljs-attr">scriptEvaluationTimeout:</span> <span class="hljs-number">30000</span>
+
+<span class="hljs-attr">channelizer:</span> org.apache.tinkerpop.gremlin.server.channel.WsAndHttpChannelizer
+
+<span class="hljs-attr">graphs:</span> {}
+
+<span class="hljs-attr">authentication:</span> {
+<span class="hljs-attr">  authenticator:</span> com.baidu.hugegraph.auth.StandardAuthenticator,
+<span class="hljs-attr">  authenticationHandler:</span> com.baidu.hugegraph.auth.WsAndHttpBasicAuthHandler,
+<span class="hljs-attr">  config:</span> {tokens: conf/rest-server.properties}
 }
-</code></pre>
-<h6 id="response-status">Response Status</h6>
-<pre><code class="lang-json"><span class="hljs-number">201</span>
-</code></pre>
-<h6 id="response-body">Response Body</h6>
-<pre><code class="lang-json">{
-  <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;hugegraph&quot;</span>,
-  <span class="hljs-string">&quot;backend&quot;</span>: <span class="hljs-string">&quot;hstore&quot;</span>,
-  <span class="hljs-string">&quot;description&quot;</span>: <span class="hljs-string">&quot;&quot;</span>
+
+<span class="hljs-attr">scriptEngines:</span> {
+<span class="hljs-attr">  gremlin-groovy:</span> {
+<span class="hljs-attr">    plugins:</span> {
+      com.baidu.hugegraph.plugin.HugeGraphGremlinPlugin: {},
+      org.apache.tinkerpop.gremlin.server.jsr223.GremlinServerGremlinPlugin: {},
+      org.apache.tinkerpop.gremlin.jsr223.ImportGremlinPlugin: {
+<span class="hljs-attr">        classImports:</span> [
+            java.lang.Math,
+            com.baidu.hugegraph.backend.id.IdGenerator,
+            com.baidu.hugegraph.type.define.Directions,
+            com.baidu.hugegraph.type.define.NodeRole,
+            com.baidu.hugegraph.traversal.algorithm.CollectionPathsTraverser,
+            com.baidu.hugegraph.traversal.algorithm.CountTraverser,
+            com.baidu.hugegraph.traversal.algorithm.CustomizedCrosspointsTraverser,
+            com.baidu.hugegraph.traversal.algorithm.CustomizePathsTraverser,
+            com.baidu.hugegraph.traversal.algorithm.FusiformSimilarityTraverser,
+            com.baidu.hugegraph.traversal.algorithm.HugeTraverser,
+            com.baidu.hugegraph.traversal.algorithm.JaccardSimilarTraverser,
+            com.baidu.hugegraph.traversal.algorithm.KneighborTraverser,
+            com.baidu.hugegraph.traversal.algorithm.KoutTraverser,
+            com.baidu.hugegraph.traversal.algorithm.MultiNodeShortestPathTraverser,
+            com.baidu.hugegraph.traversal.algorithm.NeighborRankTraverser,
+            com.baidu.hugegraph.traversal.algorithm.PathsTraverser,
+            com.baidu.hugegraph.traversal.algorithm.PersonalRankTraverser,
+            com.baidu.hugegraph.traversal.algorithm.SameNeighborTraverser,
+            com.baidu.hugegraph.traversal.algorithm.ShortestPathTraverser,
+            com.baidu.hugegraph.traversal.algorithm.SingleSourceShortestPathTraverser,
+            com.baidu.hugegraph.traversal.algorithm.SubGraphTraverser,
+            com.baidu.hugegraph.traversal.algorithm.TemplatePathsTraverser,
+            com.baidu.hugegraph.traversal.algorithm.steps.EdgeStep,
+            com.baidu.hugegraph.traversal.algorithm.steps.RepeatEdgeStep,
+            com.baidu.hugegraph.traversal.algorithm.steps.WeightedEdgeStep,
+            com.baidu.hugegraph.traversal.optimize.Text,
+            com.baidu.hugegraph.traversal.optimize.TraversalUtil,
+            com.baidu.hugegraph.util.DateUtil
+        ],
+<span class="hljs-attr">        methodImports:</span> [java.lang.Math<span class="hljs-comment">#*]</span>
+      },
+      org.apache.tinkerpop.gremlin.jsr223.ScriptFileGremlinPlugin: {
+<span class="hljs-attr">        files:</span> [scripts/empty-sample.groovy]
+      }
+    }
+  }
 }
-</code></pre>
-<h4 id="4312&#x5217;&#x51FA;&#x56FE;&#x7A7A;&#x95F4;&#x4E2D;&#x5168;&#x90E8;&#x7684;&#x56FE;">4.3.1.2.&#x5217;&#x51FA;&#x56FE;&#x7A7A;&#x95F4;&#x4E2D;&#x5168;&#x90E8;&#x7684;&#x56FE;</h4>
-<h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
-<p>&#x5217;&#x51FA;&#x56FE;&#x7A7A;&#x95F4;&#x4E0B;&#x4E2D;&#x5168;&#x90E8;&#x7684;&#x56FE;</p>
-<h5 id="uri">URI</h5>
-<pre><code>GET /graphspaces/${graphspace}/graphs
-</code></pre><h5 id="uri&#x53C2;&#x6570;">URI&#x53C2;&#x6570;</h5>
-<table>
-<thead>
-<tr>
-<th>&#x540D;&#x79F0;</th>
-<th>&#x662F;&#x5426;&#x5FC5;&#x586B;</th>
-<th>&#x7C7B;&#x578B;</th>
-<th>&#x9ED8;&#x8BA4;&#x503C;</th>
-<th>&#x53D6;&#x503C;&#x8303;&#x56F4;</th>
-<th>&#x8BF4;&#x660E;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>graphspace</td>
-<td>&#x662F;</td>
-<td>String</td>
-<td></td>
-<td></td>
-<td>&#x56FE;&#x7A7A;&#x95F4;</td>
-</tr>
-</tbody>
-</table>
-<h5 id="body&#x53C2;&#x6570;">Body&#x53C2;&#x6570;</h5>
-<p>&#x65E0;</p>
-<h5 id="response">Response</h5>
-<table>
-<thead>
-<tr>
-<th>&#x540D;&#x79F0;</th>
-<th>&#x7C7B;&#x578B;</th>
-<th>&#x8BF4;&#x660E;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>graphs</td>
-<td>Array</td>
-<td>&#x56FE;&#x5217;&#x8868;</td>
-</tr>
-</tbody>
-</table>
-<h5 id="&#x4F7F;&#x7528;&#x793A;&#x4F8B;">&#x4F7F;&#x7528;&#x793A;&#x4F8B;</h5>
-<h6 id="method--url">Method &amp; Url</h6>
-<pre><code>GET http://localhost:8080/graphspaces/gs1/graphs
-</code></pre><h6 id="request-body">Request Body</h6>
-<p>&#x65E0;</p>
-<h6 id="response-status">Response Status</h6>
-<pre><code class="lang-json"><span class="hljs-number">200</span>
-</code></pre>
-<h6 id="response-body">Response Body</h6>
-<pre><code class="lang-json">{
-    <span class="hljs-string">&quot;graphs&quot;</span>: [
-        <span class="hljs-string">&quot;hugegraph&quot;</span>,
-        <span class="hljs-string">&quot;hg1&quot;</span>
-    ]
+<span class="hljs-attr">serializers:</span>
+<span class="hljs-bullet">  -</span> { className: org.apache.tinkerpop.gremlin.driver.ser.GraphBinaryMessageSerializerV1,
+<span class="hljs-attr">      config:</span> {
+<span class="hljs-attr">        serializeResultToString:</span> <span class="hljs-literal">false</span>,
+<span class="hljs-attr">        ioRegistries:</span> [com.baidu.hugegraph.io.HugeGraphIoRegistry]
+      }
+  }
+<span class="hljs-bullet">  -</span> { className: org.apache.tinkerpop.gremlin.driver.ser.GraphSONMessageSerializerV1d0,
+<span class="hljs-attr">      config:</span> {
+<span class="hljs-attr">        serializeResultToString:</span> <span class="hljs-literal">false</span>,
+<span class="hljs-attr">        ioRegistries:</span> [com.baidu.hugegraph.io.HugeGraphIoRegistry]
+      }
+  }
+<span class="hljs-bullet">  -</span> { className: org.apache.tinkerpop.gremlin.driver.ser.GraphSONMessageSerializerV2d0,
+<span class="hljs-attr">      config:</span> {
+<span class="hljs-attr">        serializeResultToString:</span> <span class="hljs-literal">false</span>,
+<span class="hljs-attr">        ioRegistries:</span> [com.baidu.hugegraph.io.HugeGraphIoRegistry]
+      }
+  }
+<span class="hljs-bullet">  -</span> { className: org.apache.tinkerpop.gremlin.driver.ser.GraphSONMessageSerializerV3d0,
+<span class="hljs-attr">      config:</span> {
+<span class="hljs-attr">        serializeResultToString:</span> <span class="hljs-literal">false</span>,
+<span class="hljs-attr">        ioRegistries:</span> [com.baidu.hugegraph.io.HugeGraphIoRegistry]
+      }
+  }
+<span class="hljs-attr">metrics:</span> {
+<span class="hljs-attr">  consoleReporter:</span> {enabled: <span class="hljs-literal">false</span>, interval: <span class="hljs-number">180000</span>},
+<span class="hljs-attr">  csvReporter:</span> {enabled: <span class="hljs-literal">false</span>, interval: <span class="hljs-number">180000</span>, fileName: ./metrics/gremlin-server-metrics.csv},
+<span class="hljs-attr">  jmxReporter:</span> {enabled: <span class="hljs-literal">false</span>},
+<span class="hljs-attr">  slf4jReporter:</span> {enabled: <span class="hljs-literal">false</span>, interval: <span class="hljs-number">180000</span>},
+<span class="hljs-attr">  gangliaReporter:</span> {enabled: <span class="hljs-literal">false</span>, interval: <span class="hljs-number">180000</span>, addressingMode: MULTICAST},
+<span class="hljs-attr">  graphiteReporter:</span> {enabled: <span class="hljs-literal">false</span>, interval: <span class="hljs-number">180000</span>}
 }
-</code></pre>
-<h4 id="4313&#x67E5;&#x770B;&#x67D0;&#x4E2A;&#x56FE;&#x7684;&#x4FE1;&#x606F;">4.3.1.3.&#x67E5;&#x770B;&#x67D0;&#x4E2A;&#x56FE;&#x7684;&#x4FE1;&#x606F;</h4>
-<h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
-<p>&#x67E5;&#x770B;&#x56FE;&#x7A7A;&#x95F4;&#x4E0B;&#x67D0;&#x4E2A;&#x56FE;&#x7684;&#x4FE1;&#x606F;</p>
-<h5 id="uri">URI</h5>
-<pre><code>GET /graphspaces/${graphspace}/graphs/${graph}
-</code></pre><h5 id="uri&#x53C2;&#x6570;">URI&#x53C2;&#x6570;</h5>
-<table>
-<thead>
-<tr>
-<th>&#x540D;&#x79F0;</th>
-<th>&#x662F;&#x5426;&#x5FC5;&#x586B;</th>
-<th>&#x7C7B;&#x578B;</th>
-<th>&#x9ED8;&#x8BA4;&#x503C;</th>
-<th>&#x53D6;&#x503C;&#x8303;&#x56F4;</th>
-<th>&#x8BF4;&#x660E;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>graphspace</td>
-<td>&#x662F;</td>
-<td>String</td>
-<td></td>
-<td></td>
-<td>&#x56FE;&#x7A7A;&#x95F4;</td>
-</tr>
-<tr>
-<td>graph</td>
-<td>&#x662F;</td>
-<td>String</td>
-<td></td>
-<td></td>
-<td>&#x56FE;</td>
-</tr>
-</tbody>
-</table>
-<h5 id="body&#x53C2;&#x6570;">Body&#x53C2;&#x6570;</h5>
-<p>&#x65E0;</p>
-<h5 id="response">Response</h5>
-<table>
-<thead>
-<tr>
-<th>&#x540D;&#x79F0;</th>
-<th>&#x7C7B;&#x578B;</th>
-<th>&#x8BF4;&#x660E;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>name</td>
-<td>String</td>
-<td>&#x56FE;&#x540D;</td>
-</tr>
-<tr>
-<td>backend</td>
-<td>String</td>
-<td>&#x5B58;&#x50A8;&#x7C7B;&#x578B;</td>
-</tr>
-<tr>
-<td>description</td>
-<td>String</td>
-<td>&#x63CF;&#x8FF0;</td>
-</tr>
-</tbody>
-</table>
-<h5 id="&#x4F7F;&#x7528;&#x793A;&#x4F8B;">&#x4F7F;&#x7528;&#x793A;&#x4F8B;</h5>
-<h6 id="method--url">Method &amp; Url</h6>
-<pre><code>GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph
-</code></pre><h6 id="request-body">Request Body</h6>
-<p>&#x65E0;</p>
-<h6 id="response-status">Response Status</h6>
-<pre><code class="lang-json"><span class="hljs-number">200</span>
-</code></pre>
-<h6 id="response-body">Response Body</h6>
-<pre><code class="lang-json">{
-  <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;hugegraph&quot;</span>,
-  <span class="hljs-string">&quot;backend&quot;</span>: <span class="hljs-string">&quot;hstore&quot;</span>,
-  <span class="hljs-string">&quot;description&quot;</span>: <span class="hljs-string">&quot;&quot;</span>
-}
-</code></pre>
-<h4 id="4314&#x6E05;&#x7A7A;&#x56FE;&#x6570;&#x636E;&#xFF0C;&#x5305;&#x62EC;schema&#x3001;vertex&#x3001;edge&#x548C;index&#x7B49;">4.3.1.4.&#x6E05;&#x7A7A;&#x56FE;&#x6570;&#x636E;&#xFF0C;&#x5305;&#x62EC;schema&#x3001;vertex&#x3001;edge&#x548C;index&#x7B49;</h4>
-<h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
-<p>&#x6E05;&#x7A7A;&#x67D0;&#x4E2A;&#x56FE;&#x7684;&#x5168;&#x90E8;&#x6570;&#x636E;&#xFF0C;&#x5305;&#x62EC;schema&#x3001;vertex&#x3001;edge&#x548C;index&#x7B49;&#xFF0C;&#x8BE5;&#x64CD;&#x4F5C;&#x9700;&#x8981;&#x56FE;&#x7A7A;&#x95F4;&#x7BA1;&#x7406;&#x5458;&#x6216;&#x8005;&#x8D85;&#x7EA7;&#x7BA1;&#x7406;&#x5458;&#x6743;&#x9650;</p>
-<h5 id="uri">URI</h5>
-<pre><code>PUT /graphspaces/${graphspace}/graphs/${graph}
-</code></pre><h5 id="uri&#x53C2;&#x6570;">URI&#x53C2;&#x6570;</h5>
-<table>
-<thead>
-<tr>
-<th>&#x540D;&#x79F0;</th>
-<th>&#x662F;&#x5426;&#x5FC5;&#x586B;</th>
-<th>&#x7C7B;&#x578B;</th>
-<th>&#x9ED8;&#x8BA4;&#x503C;</th>
-<th>&#x53D6;&#x503C;&#x8303;&#x56F4;</th>
-<th>&#x8BF4;&#x660E;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>graphspace</td>
-<td>&#x662F;</td>
-<td>String</td>
-<td></td>
-<td></td>
-<td>&#x56FE;&#x7A7A;&#x95F4;</td>
-</tr>
-<tr>
-<td>graph</td>
-<td>&#x662F;</td>
-<td>String</td>
-<td></td>
-<td></td>
-<td>&#x56FE;</td>
-</tr>
-</tbody>
-</table>
-<h5 id="body&#x53C2;&#x6570;">Body&#x53C2;&#x6570;</h5>
-<table>
-<thead>
-<tr>
-<th>&#x540D;&#x79F0;</th>
-<th>&#x662F;&#x5426;&#x5FC5;&#x586B;</th>
-<th>&#x7C7B;&#x578B;</th>
-<th>&#x9ED8;&#x8BA4;&#x503C;</th>
-<th>&#x53D6;&#x503C;&#x8303;&#x56F4;</th>
-<th>&#x8BF4;&#x660E;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>action</td>
-<td>&#x662F;</td>
-<td>String</td>
-<td></td>
-<td>clear</td>
-<td>&#x52A8;&#x4F5C;</td>
-</tr>
-<tr>
-<td>clear_schema</td>
-<td>&#x662F;</td>
-<td>Boolean</td>
-<td></td>
-<td></td>
-<td>&#x5176;&#x4E2D; clear_schema &#x4E3A; true &#x65F6;&#xFF0C;&#x4E0D;&#x4EC5;&#x5220;&#x9664;&#x56FE;&#x6570;&#x636E;&#xFF08;&#x9876;&#x70B9;&#x548C;&#x8FB9;&#xFF09;&#xFF0C;&#x540C;&#x65F6;&#x5220;&#x9664;&#x5143;&#x6570;&#x636E;&#xFF08;schema&#xFF09;&#xFF1B;clear_schema &#x4E3A; false &#x65F6;&#xFF0C;&#x53EA;&#x5220;&#x9664;&#x56FE;&#x6570;&#x636E;&#xFF08;&#x9876;&#x70B9;&#x548C;&#x8FB9;&#xFF09;&#xFF0C;&#x4FDD;&#x7559;&#x5143;&#x6570;&#x636E;&#xFF08;schema&#xFF09;</td>
-</tr>
-</tbody>
-</table>
-<h5 id="response">Response</h5>
-<p>&#x65E0;</p>
-<h5 id="&#x4F7F;&#x7528;&#x793A;&#x4F8B;">&#x4F7F;&#x7528;&#x793A;&#x4F8B;</h5>
-<h6 id="method--url">Method &amp; Url</h6>
-<pre><code>PUT http://localhost:8080/graphspaces/gs1/graphs/hugegraph
-</code></pre><h6 id="request-body">Request Body</h6>
-<pre><code class="lang-json">{
-  <span class="hljs-string">&quot;action&quot;</span>: <span class="hljs-string">&quot;clear&quot;</span>,
-  <span class="hljs-string">&quot;clear_schema&quot;</span>: <span class="hljs-literal">true</span>
+<span class="hljs-attr">maxInitialLineLength:</span> <span class="hljs-number">4096</span>
+<span class="hljs-attr">maxHeaderSize:</span> <span class="hljs-number">8192</span>
+<span class="hljs-attr">maxChunkSize:</span> <span class="hljs-number">8192</span>
+<span class="hljs-attr">maxContentLength:</span> <span class="hljs-number">65536</span>
+<span class="hljs-attr">maxAccumulationBufferComponents:</span> <span class="hljs-number">1024</span>
+<span class="hljs-attr">resultIterationBatchSize:</span> <span class="hljs-number">64</span>
+<span class="hljs-attr">writeBufferLowWaterMark:</span> <span class="hljs-number">32768</span>
+<span class="hljs-attr">writeBufferHighWaterMark:</span> <span class="hljs-number">65536</span>
+<span class="hljs-attr">ssl:</span> {
+<span class="hljs-attr">  enabled:</span> <span class="hljs-literal">false</span>
 }
 </code></pre>
 <h6 id="response-status">Response Status</h6>
 <pre><code class="lang-json"><span class="hljs-number">200</span>
 </code></pre>
 <h6 id="response-body">Response Body</h6>
-<p>&#x65E0;</p>
-<h4 id="4315&#x5220;&#x9664;&#x56FE;">4.3.1.5.&#x5220;&#x9664;&#x56FE;</h4>
-<h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
-<p>&#x5220;&#x9664;&#x67D0;&#x4E2A;&#x56FE;&#xFF0C;&#x8BE5;&#x64CD;&#x4F5C;&#x9700;&#x8981;&#x56FE;&#x7A7A;&#x95F4;&#x7BA1;&#x7406;&#x5458;&#x6743;&#x9650;&#x6216;&#x8005;&#x8D85;&#x7EA7;&#x7BA1;&#x7406;&#x5458;&#x6743;&#x9650;</p>
-<h5 id="uri">URI</h5>
-<pre><code>DELETE /graphspaces/${graphspace}/graphs/${graph}
-</code></pre><h5 id="uri&#x53C2;&#x6570;">URI&#x53C2;&#x6570;</h5>
-<table>
-<thead>
-<tr>
-<th>&#x540D;&#x79F0;</th>
-<th>&#x662F;&#x5426;&#x5FC5;&#x586B;</th>
-<th>&#x7C7B;&#x578B;</th>
-<th>&#x9ED8;&#x8BA4;&#x503C;</th>
-<th>&#x53D6;&#x503C;&#x8303;&#x56F4;</th>
-<th>&#x8BF4;&#x660E;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>graphspace</td>
-<td>&#x662F;</td>
-<td>String</td>
-<td></td>
-<td></td>
-<td>&#x56FE;&#x7A7A;&#x95F4;</td>
-</tr>
-<tr>
-<td>graph</td>
-<td>&#x662F;</td>
-<td>String</td>
-<td></td>
-<td></td>
-<td>&#x56FE;</td>
-</tr>
-</tbody>
-</table>
-<h5 id="body&#x53C2;&#x6570;">Body&#x53C2;&#x6570;</h5>
-<p>&#x65E0;</p>
-<h5 id="response">Response</h5>
-<p>&#x65E0;</p>
-<h5 id="&#x4F7F;&#x7528;&#x793A;&#x4F8B;">&#x4F7F;&#x7528;&#x793A;&#x4F8B;</h5>
-<h6 id="method--url">Method &amp; Url</h6>
-<pre><code>DELETE http://localhost:8080/graphspaces/gs1/graphs/hugegraph
-</code></pre><h6 id="request-body">Request Body</h6>
-<p>&#x65E0;</p>
-<h6 id="response-status">Response Status</h6>
-<pre><code class="lang-json"><span class="hljs-number">204</span>
-</code></pre>
-<h6 id="response-body">Response Body</h6>
-<p>&#x65E0;</p>
-<h3 id="432-&#x56FE;&#x914D;&#x7F6E;">4.3.2 &#x56FE;&#x914D;&#x7F6E;</h3>
-<h4 id="4321&#x67E5;&#x770B;&#x56FE;&#x7684;&#x914D;&#x7F6E;">4.3.2.1.&#x67E5;&#x770B;&#x56FE;&#x7684;&#x914D;&#x7F6E;</h4>
-<h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
-<p>&#x67E5;&#x770B;&#x67D0;&#x4E2A;&#x56FE;&#x7684;&#x914D;&#x7F6E;&#xFF0C;<strong>&#x8BE5;&#x64CD;&#x4F5C;&#x9700;&#x8981;&#x7BA1;&#x7406;&#x5458;&#x6743;&#x9650;</strong></p>
-<h5 id="uri">URI</h5>
-<pre><code>GET /graphspaces/${graphspace}/graphs/${graph}/conf
-</code></pre><h5 id="uri&#x53C2;&#x6570;">URI&#x53C2;&#x6570;</h5>
-<table>
-<thead>
-<tr>
-<th>&#x540D;&#x79F0;</th>
-<th>&#x662F;&#x5426;&#x5FC5;&#x586B;</th>
-<th>&#x7C7B;&#x578B;</th>
-<th>&#x9ED8;&#x8BA4;&#x503C;</th>
-<th>&#x53D6;&#x503C;&#x8303;&#x56F4;</th>
-<th>&#x8BF4;&#x660E;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>graphspace</td>
-<td>&#x662F;</td>
-<td>String</td>
-<td></td>
-<td></td>
-<td>&#x56FE;&#x7A7A;&#x95F4;</td>
-</tr>
-<tr>
-<td>graph</td>
-<td>&#x662F;</td>
-<td>String</td>
-<td></td>
-<td></td>
-<td>&#x56FE;</td>
-</tr>
-</tbody>
-</table>
-<h5 id="body&#x53C2;&#x6570;">Body&#x53C2;&#x6570;</h5>
-<p>&#x65E0;</p>
-<h5 id="response">Response</h5>
-<table>
-<thead>
-<tr>
-<th>&#x540D;&#x79F0;</th>
-<th>&#x7C7B;&#x578B;</th>
-<th>&#x8BF4;&#x660E;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>search.text_analyzer</td>
-<td>String</td>
-<td></td>
-</tr>
-<tr>
-<td>search.text_analyzer_mode</td>
-<td>String</td>
-<td></td>
-</tr>
-<tr>
-<td>gremlin.graph</td>
-<td>String</td>
-<td></td>
-</tr>
-<tr>
-<td>serializer</td>
-<td>String</td>
-<td></td>
-</tr>
-<tr>
-<td>backend</td>
-<td>String</td>
-<td>&#x540E;&#x7AEF;&#x5B58;&#x50A8;</td>
-</tr>
-<tr>
-<td>store</td>
-<td>String</td>
-<td>&#x56FE;&#x540D;</td>
-</tr>
-<tr>
-<td>pd.peers</td>
-<td>String</td>
-<td>pd&#x5730;&#x5740;</td>
-</tr>
-</tbody>
-</table>
-<h5 id="&#x4F7F;&#x7528;&#x793A;&#x4F8B;">&#x4F7F;&#x7528;&#x793A;&#x4F8B;</h5>
-<h6 id="method--url">Method &amp; Url</h6>
-<pre><code>GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph/conf
-</code></pre><h6 id="request-body">Request Body</h6>
-<p>&#x65E0;</p>
-<h6 id="response-status">Response Status</h6>
-<pre><code class="lang-json"><span class="hljs-number">200</span>
-</code></pre>
-<h6 id="response-body">Response Body</h6>
-<pre><code class="lang-json">{
-  <span class="hljs-string">&quot;search.text_analyzer&quot;</span>: <span class="hljs-string">&quot;jieba&quot;</span>,
-  <span class="hljs-string">&quot;gremlin.graph&quot;</span>: <span class="hljs-string">&quot;com.baidu.hugegraph.HugeFactory&quot;</span>,
-  <span class="hljs-string">&quot;search.text_analyzer_mode&quot;</span>: <span class="hljs-string">&quot;INDEX&quot;</span>,
-  <span class="hljs-string">&quot;serializer&quot;</span>: <span class="hljs-string">&quot;binary&quot;</span>,
-  <span class="hljs-string">&quot;backend&quot;</span>: <span class="hljs-string">&quot;hstore&quot;</span>,
-  <span class="hljs-string">&quot;store&quot;</span>: <span class="hljs-string">&quot;hugegraph1&quot;</span>,
-  <span class="hljs-string">&quot;pd.peers&quot;</span>: <span class="hljs-string">&quot;127.0.0.1:8686&quot;</span>
+<pre><code class="lang-yaml"><span class="hljs-comment"># host and port of gremlin server, need to be consistent with host and port in rest-server.properties</span>
+<span class="hljs-comment">#host: 127.0.0.1</span>
+<span class="hljs-comment">#port: 8182</span>
+
+<span class="hljs-comment"># timeout in ms of gremlin query</span>
+<span class="hljs-attr">scriptEvaluationTimeout:</span> <span class="hljs-number">30000</span>
+
+<span class="hljs-attr">channelizer:</span> org.apache.tinkerpop.gremlin.server.channel.WsAndHttpChannelizer
+
+<span class="hljs-attr">graphs:</span> {}
+
+<span class="hljs-attr">authentication:</span> {
+<span class="hljs-attr">  authenticator:</span> com.baidu.hugegraph.auth.StandardAuthenticator,
+<span class="hljs-attr">  authenticationHandler:</span> com.baidu.hugegraph.auth.WsAndHttpBasicAuthHandler,
+<span class="hljs-attr">  config:</span> {tokens: conf/rest-server.properties}
+}
+
+<span class="hljs-attr">scriptEngines:</span> {
+<span class="hljs-attr">  gremlin-groovy:</span> {
+<span class="hljs-attr">    plugins:</span> {
+      com.baidu.hugegraph.plugin.HugeGraphGremlinPlugin: {},
+      org.apache.tinkerpop.gremlin.server.jsr223.GremlinServerGremlinPlugin: {},
+      org.apache.tinkerpop.gremlin.jsr223.ImportGremlinPlugin: {
+<span class="hljs-attr">        classImports:</span> [
+            java.lang.Math,
+            com.baidu.hugegraph.backend.id.IdGenerator,
+            com.baidu.hugegraph.type.define.Directions,
+            com.baidu.hugegraph.type.define.NodeRole,
+            com.baidu.hugegraph.traversal.algorithm.CollectionPathsTraverser,
+            com.baidu.hugegraph.traversal.algorithm.CountTraverser,
+            com.baidu.hugegraph.traversal.algorithm.CustomizedCrosspointsTraverser,
+            com.baidu.hugegraph.traversal.algorithm.CustomizePathsTraverser,
+            com.baidu.hugegraph.traversal.algorithm.FusiformSimilarityTraverser,
+            com.baidu.hugegraph.traversal.algorithm.HugeTraverser,
+            com.baidu.hugegraph.traversal.algorithm.JaccardSimilarTraverser,
+            com.baidu.hugegraph.traversal.algorithm.KneighborTraverser,
+            com.baidu.hugegraph.traversal.algorithm.KoutTraverser,
+            com.baidu.hugegraph.traversal.algorithm.MultiNodeShortestPathTraverser,
+            com.baidu.hugegraph.traversal.algorithm.NeighborRankTraverser,
+            com.baidu.hugegraph.traversal.algorithm.PathsTraverser,
+            com.baidu.hugegraph.traversal.algorithm.PersonalRankTraverser,
+            com.baidu.hugegraph.traversal.algorithm.SameNeighborTraverser,
+            com.baidu.hugegraph.traversal.algorithm.ShortestPathTraverser,
+            com.baidu.hugegraph.traversal.algorithm.SingleSourceShortestPathTraverser,
+            com.baidu.hugegraph.traversal.algorithm.SubGraphTraverser,
+            com.baidu.hugegraph.traversal.algorithm.TemplatePathsTraverser,
+            com.baidu.hugegraph.traversal.algorithm.steps.EdgeStep,
+            com.baidu.hugegraph.traversal.algorithm.steps.RepeatEdgeStep,
+            com.baidu.hugegraph.traversal.algorithm.steps.WeightedEdgeStep,
+            com.baidu.hugegraph.traversal.optimize.Text,
+            com.baidu.hugegraph.traversal.optimize.TraversalUtil,
+            com.baidu.hugegraph.util.DateUtil
+        ],
+<span class="hljs-attr">        methodImports:</span> [java.lang.Math<span class="hljs-comment">#*]</span>
+      },
+      org.apache.tinkerpop.gremlin.jsr223.ScriptFileGremlinPlugin: {
+<span class="hljs-attr">        files:</span> [scripts/empty-sample.groovy]
+      }
+    }
+  }
+}
+<span class="hljs-attr">serializers:</span>
+<span class="hljs-bullet">  -</span> { className: org.apache.tinkerpop.gremlin.driver.ser.GraphBinaryMessageSerializerV1,
+<span class="hljs-attr">      config:</span> {
+<span class="hljs-attr">        serializeResultToString:</span> <span class="hljs-literal">false</span>,
+<span class="hljs-attr">        ioRegistries:</span> [com.baidu.hugegraph.io.HugeGraphIoRegistry]
+      }
+  }
+<span class="hljs-bullet">  -</span> { className: org.apache.tinkerpop.gremlin.driver.ser.GraphSONMessageSerializerV1d0,
+<span class="hljs-attr">      config:</span> {
+<span class="hljs-attr">        serializeResultToString:</span> <span class="hljs-literal">false</span>,
+<span class="hljs-attr">        ioRegistries:</span> [com.baidu.hugegraph.io.HugeGraphIoRegistry]
+      }
+  }
+<span class="hljs-bullet">  -</span> { className: org.apache.tinkerpop.gremlin.driver.ser.GraphSONMessageSerializerV2d0,
+<span class="hljs-attr">      config:</span> {
+<span class="hljs-attr">        serializeResultToString:</span> <span class="hljs-literal">false</span>,
+<span class="hljs-attr">        ioRegistries:</span> [com.baidu.hugegraph.io.HugeGraphIoRegistry]
+      }
+  }
+<span class="hljs-bullet">  -</span> { className: org.apache.tinkerpop.gremlin.driver.ser.GraphSONMessageSerializerV3d0,
+<span class="hljs-attr">      config:</span> {
+<span class="hljs-attr">        serializeResultToString:</span> <span class="hljs-literal">false</span>,
+<span class="hljs-attr">        ioRegistries:</span> [com.baidu.hugegraph.io.HugeGraphIoRegistry]
+      }
+  }
+<span class="hljs-attr">metrics:</span> {
+<span class="hljs-attr">  consoleReporter:</span> {enabled: <span class="hljs-literal">false</span>, interval: <span class="hljs-number">180000</span>},
+<span class="hljs-attr">  csvReporter:</span> {enabled: <span class="hljs-literal">false</span>, interval: <span class="hljs-number">180000</span>, fileName: ./metrics/gremlin-server-metrics.csv},
+<span class="hljs-attr">  jmxReporter:</span> {enabled: <span class="hljs-literal">false</span>},
+<span class="hljs-attr">  slf4jReporter:</span> {enabled: <span class="hljs-literal">false</span>, interval: <span class="hljs-number">180000</span>},
+<span class="hljs-attr">  gangliaReporter:</span> {enabled: <span class="hljs-literal">false</span>, interval: <span class="hljs-number">180000</span>, addressingMode: MULTICAST},
+<span class="hljs-attr">  graphiteReporter:</span> {enabled: <span class="hljs-literal">false</span>, interval: <span class="hljs-number">180000</span>}
+}
+<span class="hljs-attr">maxInitialLineLength:</span> <span class="hljs-number">4096</span>
+<span class="hljs-attr">maxHeaderSize:</span> <span class="hljs-number">8192</span>
+<span class="hljs-attr">maxChunkSize:</span> <span class="hljs-number">8192</span>
+<span class="hljs-attr">maxContentLength:</span> <span class="hljs-number">65536</span>
+<span class="hljs-attr">maxAccumulationBufferComponents:</span> <span class="hljs-number">1024</span>
+<span class="hljs-attr">resultIterationBatchSize:</span> <span class="hljs-number">64</span>
+<span class="hljs-attr">writeBufferLowWaterMark:</span> <span class="hljs-number">32768</span>
+<span class="hljs-attr">writeBufferHighWaterMark:</span> <span class="hljs-number">65536</span>
+<span class="hljs-attr">ssl:</span> {
+<span class="hljs-attr">  enabled:</span> <span class="hljs-literal">false</span>
 }
 </code></pre>
-<h3 id="433&#x56FE;&#x6A21;&#x5F0F;">4.3.3.&#x56FE;&#x6A21;&#x5F0F;</h3>
-<p>&#x5408;&#x6CD5;&#x7684;&#x56FE;&#x6A21;&#x5F0F;&#x5305;&#x62EC;&#xFF1A;NONE&#xFF0C;RESTORING&#xFF0C;MERGING&#xFF0C;LOADING</p>
-<ul>
-<li>None &#x6A21;&#x5F0F;&#xFF08;&#x9ED8;&#x8BA4;&#xFF09;&#xFF0C;&#x5143;&#x6570;&#x636E;&#x548C;&#x56FE;&#x6570;&#x636E;&#x7684;&#x5199;&#x5165;&#x5C5E;&#x4E8E;&#x6B63;&#x5E38;&#x72B6;&#x6001;&#x3002;&#x7279;&#x522B;&#x7684;&#xFF1A;<ul>
-<li>&#x5143;&#x6570;&#x636E;&#xFF08;schema&#xFF09;&#x521B;&#x5EFA;&#x65F6;&#x4E0D;&#x5141;&#x8BB8;&#x6307;&#x5B9A; ID</li>
-<li>&#x56FE;&#x6570;&#x636E;&#xFF08;vertex&#xFF09;&#x5728; id strategy &#x4E3A; Automatic &#x65F6;&#xFF0C;&#x4E0D;&#x5141;&#x8BB8;&#x6307;&#x5B9A; ID</li>
-</ul>
-</li>
-<li>LOADING&#xFF1A;&#x6279;&#x91CF;&#x5BFC;&#x5165;&#x6570;&#x636E;&#x65F6;&#x81EA;&#x52A8;&#x542F;&#x7528;&#xFF0C;&#x7279;&#x522B;&#x7684;&#xFF1A;<ul>
-<li>&#x6DFB;&#x52A0;&#x9876;&#x70B9;/&#x8FB9;&#x65F6;&#xFF0C;&#x4E0D;&#x4F1A;&#x68C0;&#x67E5;&#x5FC5;&#x586B;&#x5C5E;&#x6027;&#x662F;&#x5426;&#x4F20;&#x5165;</li>
-</ul>
-</li>
-</ul>
-<p>Restore &#x65F6;&#x5B58;&#x5728;&#x4E24;&#x79CD;&#x4E0D;&#x540C;&#x7684;&#x6A21;&#x5F0F;&#xFF1A; Restoring &#x548C; Merging</p>
-<ul>
-<li>Restoring &#x6A21;&#x5F0F;&#xFF0C;&#x6062;&#x590D;&#x5230;&#x4E00;&#x4E2A;&#x65B0;&#x56FE;&#x4E2D;&#xFF0C;&#x7279;&#x522B;&#x7684;&#xFF1A;<ul>
-<li>&#x5143;&#x6570;&#x636E;&#xFF08;schema&#xFF09;&#x521B;&#x5EFA;&#x65F6;&#x5141;&#x8BB8;&#x6307;&#x5B9A; ID</li>
-<li>&#x56FE;&#x6570;&#x636E;&#xFF08;vertex&#xFF09;&#x5728; id strategy &#x4E3A; Automatic &#x65F6;&#xFF0C;&#x5141;&#x8BB8;&#x6307;&#x5B9A; ID</li>
-</ul>
-</li>
-<li>Merging &#x6A21;&#x5F0F;&#xFF0C;&#x5408;&#x5E76;&#x5230;&#x4E00;&#x4E2A;&#x5DF2;&#x5B58;&#x5728;&#x5143;&#x6570;&#x636E;&#x548C;&#x56FE;&#x6570;&#x636E;&#x7684;&#x56FE;&#x4E2D;&#xFF0C;&#x7279;&#x522B;&#x7684;&#xFF1A;<ul>
-<li>&#x5143;&#x6570;&#x636E;&#xFF08;schema&#xFF09;&#x521B;&#x5EFA;&#x65F6;&#x4E0D;&#x5141;&#x8BB8;&#x6307;&#x5B9A; ID</li>
-<li>&#x56FE;&#x6570;&#x636E;&#xFF08;vertex&#xFF09;&#x5728; id strategy &#x4E3A; Automatic &#x65F6;&#xFF0C;&#x5141;&#x8BB8;&#x6307;&#x5B9A; ID</li>
-</ul>
-</li>
-</ul>
-<p>&#x6B63;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x56FE;&#x6A21;&#x5F0F;&#x4E3A; None&#xFF0C;&#x5F53;&#x9700;&#x8981; Restore &#x56FE;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x6839;&#x636E;&#x9700;&#x8981;&#x4E34;&#x65F6;&#x4FEE;&#x6539;&#x56FE;&#x6A21;&#x5F0F;&#x4E3A; Restoring &#x6A21;&#x5F0F;&#x6216;&#x8005; Merging &#x6A21;&#x5F0F;&#xFF0C;&#x5E76;&#x5728;&#x5B8C;&#x6210; Restore &#x65F6;&#xFF0C;&#x6062;&#x590D;&#x56FE;&#x6A21;&#x5F0F;&#x4E3A; None&#x3002;</p>
-<h4 id="4331-&#x67E5;&#x770B;&#x56FE;&#x6A21;&#x5F0F;">4.3.3.1 &#x67E5;&#x770B;&#x56FE;&#x6A21;&#x5F0F;</h4>
+<h4 id="4145&#x67E5;&#x8BE2;&#x670D;&#x52A1;gremlin&#x914D;&#x7F6E;">4.14.5.&#x67E5;&#x8BE2;&#x670D;&#x52A1;Gremlin&#x914D;&#x7F6E;</h4>
 <h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
-<p>&#x67E5;&#x770B;&#x67D0;&#x4E2A;&#x56FE;&#x7684;&#x6A21;&#x5F0F;</p>
+<p>&#x67E5;&#x8BE2;&#x670D;&#x52A1;Gremlin&#x914D;&#x7F6E;</p>
 <h5 id="uri">URI</h5>
-<pre><code>GET /graphspaces/${graphspace}/graphs/${graph}/mode
+<pre><code>GET graphspaces/${graphspace}/configs/gremlin
 </code></pre><h5 id="uri&#x53C2;&#x6570;">URI&#x53C2;&#x6570;</h5>
 <table>
 <thead>
@@ -2068,14 +1937,6 @@ ikanalyzer: [smart, max_word]
 <td></td>
 <td>&#x56FE;&#x7A7A;&#x95F4;</td>
 </tr>
-<tr>
-<td>graph</td>
-<td>&#x662F;</td>
-<td>String</td>
-<td></td>
-<td></td>
-<td>&#x56FE;</td>
-</tr>
 </tbody>
 </table>
 <h5 id="body&#x53C2;&#x6570;">Body&#x53C2;&#x6570;</h5>
@@ -2091,281 +1952,125 @@ ikanalyzer: [smart, max_word]
 </thead>
 <tbody>
 <tr>
-<td>mode</td>
+<td>*</td>
 <td>String</td>
-<td>&#x56FE;&#x6A21;&#x5F0F;</td>
+<td>Gremlin&#x914D;&#x7F6E;&#x4FE1;&#x606F;</td>
 </tr>
 </tbody>
 </table>
 <h5 id="&#x4F7F;&#x7528;&#x793A;&#x4F8B;">&#x4F7F;&#x7528;&#x793A;&#x4F8B;</h5>
 <h6 id="method--url">Method &amp; Url</h6>
-<pre><code>GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph/mode
+<pre><code>GET  http://localhost:8080/graphspaces/gs1/configs/gremlin
 </code></pre><h6 id="request-body">Request Body</h6>
 <p>&#x65E0;</p>
 <h6 id="response-status">Response Status</h6>
 <pre><code class="lang-json"><span class="hljs-number">200</span>
 </code></pre>
 <h6 id="response-body">Response Body</h6>
-<pre><code class="lang-json">{
-    <span class="hljs-string">&quot;mode&quot;</span>: <span class="hljs-string">&quot;NONE&quot;</span>
+<pre><code class="lang-yaml"><span class="hljs-comment"># host and port of gremlin server, need to be consistent with host and port in rest-server.properties</span>
+<span class="hljs-comment">#host: 127.0.0.1</span>
+<span class="hljs-comment">#port: 8182</span>
+
+<span class="hljs-comment"># timeout in ms of gremlin query</span>
+<span class="hljs-attr">scriptEvaluationTimeout:</span> <span class="hljs-number">30000</span>
+
+<span class="hljs-attr">channelizer:</span> org.apache.tinkerpop.gremlin.server.channel.WsAndHttpChannelizer
+
+<span class="hljs-attr">graphs:</span> {}
+
+<span class="hljs-attr">authentication:</span> {
+<span class="hljs-attr">  authenticator:</span> com.baidu.hugegraph.auth.StandardAuthenticator,
+<span class="hljs-attr">  authenticationHandler:</span> com.baidu.hugegraph.auth.WsAndHttpBasicAuthHandler,
+<span class="hljs-attr">  config:</span> {tokens: conf/rest-server.properties}
 }
-</code></pre>
-<blockquote>
-<p>&#x5408;&#x6CD5;&#x7684;&#x56FE;&#x6A21;&#x5F0F;&#x5305;&#x62EC;&#xFF1A;NONE&#xFF0C;RESTORING&#xFF0C;MERGING</p>
-</blockquote>
-<h4 id="4332&#x8BBE;&#x7F6E;&#x56FE;&#x6A21;&#x5F0F;">4.3.3.2.&#x8BBE;&#x7F6E;&#x56FE;&#x6A21;&#x5F0F;</h4>
-<h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
-<p>&#x8BBE;&#x7F6E;&#x67D0;&#x4E2A;&#x56FE;&#x7684;&#x6A21;&#x5F0F;</p>
-<h5 id="uri">URI</h5>
-<pre><code>PUT /graphspaces/${graphspace}/graphs/${graph}/mode
-</code></pre><h5 id="uri&#x53C2;&#x6570;">URI&#x53C2;&#x6570;</h5>
-<table>
-<thead>
-<tr>
-<th>&#x540D;&#x79F0;</th>
-<th>&#x662F;&#x5426;&#x5FC5;&#x586B;</th>
-<th>&#x7C7B;&#x578B;</th>
-<th>&#x9ED8;&#x8BA4;&#x503C;</th>
-<th>&#x53D6;&#x503C;&#x8303;&#x56F4;</th>
-<th>&#x8BF4;&#x660E;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>graphspace</td>
-<td>&#x662F;</td>
-<td>String</td>
-<td></td>
-<td></td>
-<td>&#x56FE;&#x7A7A;&#x95F4;</td>
-</tr>
-<tr>
-<td>graph</td>
-<td>&#x662F;</td>
-<td>String</td>
-<td></td>
-<td></td>
-<td>&#x56FE;</td>
-</tr>
-</tbody>
-</table>
-<h5 id="body&#x53C2;&#x6570;">Body&#x53C2;&#x6570;</h5>
-<table>
-<thead>
-<tr>
-<th>&#x540D;&#x79F0;</th>
-<th>&#x662F;&#x5426;&#x5FC5;&#x586B;</th>
-<th>&#x7C7B;&#x578B;</th>
-<th>&#x9ED8;&#x8BA4;&#x503C;</th>
-<th>&#x53D6;&#x503C;&#x8303;&#x56F4;</th>
-<th>&#x8BF4;&#x660E;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>NONE &#x6216;&#x8005; RESTORING &#x6216;&#x8005; MERGING</td>
-<td>&#x662F;</td>
-<td>String</td>
-<td></td>
-<td></td>
-<td>&#x6A21;&#x5F0F;</td>
-</tr>
-</tbody>
-</table>
-<h5 id="response">Response</h5>
-<table>
-<thead>
-<tr>
-<th>&#x540D;&#x79F0;</th>
-<th>&#x7C7B;&#x578B;</th>
-<th>&#x8BF4;&#x660E;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>mode</td>
-<td>String</td>
-<td>&#x56FE;&#x6A21;&#x5F0F;</td>
-</tr>
-</tbody>
-</table>
-<h5 id="&#x4F7F;&#x7528;&#x793A;&#x4F8B;">&#x4F7F;&#x7528;&#x793A;&#x4F8B;</h5>
-<h6 id="method--url">Method &amp; Url</h6>
-<pre><code>PUT http://localhost:8080/graphspaces/gs1/graphs/hugegraph/mode
-</code></pre><h6 id="request-body">Request Body</h6>
-<pre><code>&quot;RESTORING&quot;
-</code></pre><blockquote>
-<p>&#x5408;&#x6CD5;&#x7684;&#x56FE;&#x6A21;&#x5F0F;&#x5305;&#x62EC;&#xFF1A;NONE&#xFF0C;RESTORING&#xFF0C;MERGING</p>
-</blockquote>
-<h6 id="response-status">Response Status</h6>
-<pre><code class="lang-json"><span class="hljs-number">200</span>
-</code></pre>
-<h6 id="response-body">Response Body</h6>
-<pre><code class="lang-json">{
-    <span class="hljs-string">&quot;mode&quot;</span>: <span class="hljs-string">&quot;RESTORING&quot;</span>
+
+<span class="hljs-attr">scriptEngines:</span> {
+<span class="hljs-attr">  gremlin-groovy:</span> {
+<span class="hljs-attr">    plugins:</span> {
+      com.baidu.hugegraph.plugin.HugeGraphGremlinPlugin: {},
+      org.apache.tinkerpop.gremlin.server.jsr223.GremlinServerGremlinPlugin: {},
+      org.apache.tinkerpop.gremlin.jsr223.ImportGremlinPlugin: {
+<span class="hljs-attr">        classImports:</span> [
+            java.lang.Math,
+            com.baidu.hugegraph.backend.id.IdGenerator,
+            com.baidu.hugegraph.type.define.Directions,
+            com.baidu.hugegraph.type.define.NodeRole,
+            com.baidu.hugegraph.traversal.algorithm.CollectionPathsTraverser,
+            com.baidu.hugegraph.traversal.algorithm.CountTraverser,
+            com.baidu.hugegraph.traversal.algorithm.CustomizedCrosspointsTraverser,
+            com.baidu.hugegraph.traversal.algorithm.CustomizePathsTraverser,
+            com.baidu.hugegraph.traversal.algorithm.FusiformSimilarityTraverser,
+            com.baidu.hugegraph.traversal.algorithm.HugeTraverser,
+            com.baidu.hugegraph.traversal.algorithm.JaccardSimilarTraverser,
+            com.baidu.hugegraph.traversal.algorithm.KneighborTraverser,
+            com.baidu.hugegraph.traversal.algorithm.KoutTraverser,
+            com.baidu.hugegraph.traversal.algorithm.MultiNodeShortestPathTraverser,
+            com.baidu.hugegraph.traversal.algorithm.NeighborRankTraverser,
+            com.baidu.hugegraph.traversal.algorithm.PathsTraverser,
+            com.baidu.hugegraph.traversal.algorithm.PersonalRankTraverser,
+            com.baidu.hugegraph.traversal.algorithm.SameNeighborTraverser,
+            com.baidu.hugegraph.traversal.algorithm.ShortestPathTraverser,
+            com.baidu.hugegraph.traversal.algorithm.SingleSourceShortestPathTraverser,
+            com.baidu.hugegraph.traversal.algorithm.SubGraphTraverser,
+            com.baidu.hugegraph.traversal.algorithm.TemplatePathsTraverser,
+            com.baidu.hugegraph.traversal.algorithm.steps.EdgeStep,
+            com.baidu.hugegraph.traversal.algorithm.steps.RepeatEdgeStep,
+            com.baidu.hugegraph.traversal.algorithm.steps.WeightedEdgeStep,
+            com.baidu.hugegraph.traversal.optimize.Text,
+            com.baidu.hugegraph.traversal.optimize.TraversalUtil,
+            com.baidu.hugegraph.util.DateUtil
+        ],
+<span class="hljs-attr">        methodImports:</span> [java.lang.Math<span class="hljs-comment">#*]</span>
+      },
+      org.apache.tinkerpop.gremlin.jsr223.ScriptFileGremlinPlugin: {
+<span class="hljs-attr">        files:</span> [scripts/empty-sample.groovy]
+      }
+    }
+  }
 }
-</code></pre>
-<h3 id="434&#x56FE;&#x7684;&#x8BFB;&#x6A21;&#x5F0F;&#xFF08;graph-read-mode&#xFF09;">4.3.4.&#x56FE;&#x7684;&#x8BFB;&#x6A21;&#x5F0F;&#xFF08;Graph Read Mode&#xFF09;</h3>
-<p>&#x5408;&#x6CD5;&#x7684;&#x56FE;&#x7684;&#x8BFB;&#x6A21;&#x5F0F;&#x5305;&#x62EC;&#xFF1A;OLTP_ONLY, ALL</p>
-<ul>
-<li>OLTP &#x6A21;&#x5F0F;&#xFF08;&#x9ED8;&#x8BA4;&#xFF09;&#xFF0C;&#x56FE;&#x7684;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x53EA;&#x5305;&#x542B;OLTP&#x7C7B;&#x578B;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x4E0D;&#x5305;&#x542B;OLAP&#x5C5E;&#x6027;</li>
-<li>ALL &#x6A21;&#x5F0F;&#xFF0C;&#x56FE;&#x7684;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x65E2;&#x5305;&#x542B;OLTP&#x7C7B;&#x578B;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x53C8;&#x5305;&#x542B;OLAP&#x5C5E;&#x6027;&#xFF08;&#x5982;&#x679C;&#x6709;&#xFF09;</li>
-</ul>
-<h4 id="4341&#x67E5;&#x770B;&#x56FE;&#x7684;&#x8BFB;&#x6A21;&#x5F0F;">4.3.4.1.&#x67E5;&#x770B;&#x56FE;&#x7684;&#x8BFB;&#x6A21;&#x5F0F;</h4>
-<h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
-<p>&#x67E5;&#x770B;&#x56FE;&#x7684;&#x8BFB;&#x6A21;&#x5F0F;</p>
-<h5 id="uri">URI</h5>
-<pre><code>GET /graphspaces/${graphspace}/graphs/${graph}/graph_read_mode
-</code></pre><h5 id="uri&#x53C2;&#x6570;">URI&#x53C2;&#x6570;</h5>
-<table>
-<thead>
-<tr>
-<th>&#x540D;&#x79F0;</th>
-<th>&#x662F;&#x5426;&#x5FC5;&#x586B;</th>
-<th>&#x7C7B;&#x578B;</th>
-<th>&#x9ED8;&#x8BA4;&#x503C;</th>
-<th>&#x53D6;&#x503C;&#x8303;&#x56F4;</th>
-<th>&#x8BF4;&#x660E;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>graphspace</td>
-<td>&#x662F;</td>
-<td>String</td>
-<td></td>
-<td></td>
-<td>&#x56FE;&#x7A7A;&#x95F4;</td>
-</tr>
-<tr>
-<td>graph</td>
-<td>&#x662F;</td>
-<td>String</td>
-<td></td>
-<td></td>
-<td>&#x56FE;</td>
-</tr>
-</tbody>
-</table>
-<h5 id="body&#x53C2;&#x6570;">Body&#x53C2;&#x6570;</h5>
-<p>&#x65E0;</p>
-<h5 id="response">Response</h5>
-<table>
-<thead>
-<tr>
-<th>&#x540D;&#x79F0;</th>
-<th>&#x7C7B;&#x578B;</th>
-<th>&#x8BF4;&#x660E;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>graph_read_mode</td>
-<td>String</td>
-<td>&#x56FE;&#x6A21;&#x5F0F;</td>
-</tr>
-</tbody>
-</table>
-<h5 id="&#x4F7F;&#x7528;&#x793A;&#x4F8B;">&#x4F7F;&#x7528;&#x793A;&#x4F8B;</h5>
-<h6 id="method--url">Method &amp; Url</h6>
-<pre><code>GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph/graph_read_mode
-</code></pre><h6 id="request-body">Request Body</h6>
-<p>&#x65E0;</p>
-<h6 id="response-status">Response Status</h6>
-<pre><code class="lang-json"><span class="hljs-number">200</span>
-</code></pre>
-<h6 id="response-body">Response Body</h6>
-<pre><code class="lang-json">{
-    <span class="hljs-string">&quot;graph_read_mode&quot;</span>: <span class="hljs-string">&quot;OLTP_ONLY&quot;</span>
+<span class="hljs-attr">serializers:</span>
+<span class="hljs-bullet">  -</span> { className: org.apache.tinkerpop.gremlin.driver.ser.GraphBinaryMessageSerializerV1,
+<span class="hljs-attr">      config:</span> {
+<span class="hljs-attr">        serializeResultToString:</span> <span class="hljs-literal">false</span>,
+<span class="hljs-attr">        ioRegistries:</span> [com.baidu.hugegraph.io.HugeGraphIoRegistry]
+      }
+  }
+<span class="hljs-bullet">  -</span> { className: org.apache.tinkerpop.gremlin.driver.ser.GraphSONMessageSerializerV1d0,
+<span class="hljs-attr">      config:</span> {
+<span class="hljs-attr">        serializeResultToString:</span> <span class="hljs-literal">false</span>,
+<span class="hljs-attr">        ioRegistries:</span> [com.baidu.hugegraph.io.HugeGraphIoRegistry]
+      }
+  }
+<span class="hljs-bullet">  -</span> { className: org.apache.tinkerpop.gremlin.driver.ser.GraphSONMessageSerializerV2d0,
+<span class="hljs-attr">      config:</span> {
+<span class="hljs-attr">        serializeResultToString:</span> <span class="hljs-literal">false</span>,
+<span class="hljs-attr">        ioRegistries:</span> [com.baidu.hugegraph.io.HugeGraphIoRegistry]
+      }
+  }
+<span class="hljs-bullet">  -</span> { className: org.apache.tinkerpop.gremlin.driver.ser.GraphSONMessageSerializerV3d0,
+<span class="hljs-attr">      config:</span> {
+<span class="hljs-attr">        serializeResultToString:</span> <span class="hljs-literal">false</span>,
+<span class="hljs-attr">        ioRegistries:</span> [com.baidu.hugegraph.io.HugeGraphIoRegistry]
+      }
+  }
+<span class="hljs-attr">metrics:</span> {
+<span class="hljs-attr">  consoleReporter:</span> {enabled: <span class="hljs-literal">false</span>, interval: <span class="hljs-number">180000</span>},
+<span class="hljs-attr">  csvReporter:</span> {enabled: <span class="hljs-literal">false</span>, interval: <span class="hljs-number">180000</span>, fileName: ./metrics/gremlin-server-metrics.csv},
+<span class="hljs-attr">  jmxReporter:</span> {enabled: <span class="hljs-literal">false</span>},
+<span class="hljs-attr">  slf4jReporter:</span> {enabled: <span class="hljs-literal">false</span>, interval: <span class="hljs-number">180000</span>},
+<span class="hljs-attr">  gangliaReporter:</span> {enabled: <span class="hljs-literal">false</span>, interval: <span class="hljs-number">180000</span>, addressingMode: MULTICAST},
+<span class="hljs-attr">  graphiteReporter:</span> {enabled: <span class="hljs-literal">false</span>, interval: <span class="hljs-number">180000</span>}
 }
-</code></pre>
-<h4 id="4342&#x8BBE;&#x7F6E;&#x56FE;&#x7684;&#x8BFB;&#x6A21;&#x5F0F;">4.3.4.2.&#x8BBE;&#x7F6E;&#x56FE;&#x7684;&#x8BFB;&#x6A21;&#x5F0F;</h4>
-<h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
-<p>&#x8BBE;&#x7F6E;&#x67D0;&#x4E2A;&#x56FE;&#x7684;&#x8BFB;&#x6A21;&#x5F0F;. <strong>&#x8BE5;&#x64CD;&#x4F5C;&#x9700;&#x8981;&#x7BA1;&#x7406;&#x5458;&#x6743;&#x9650;</strong></p>
-<h5 id="uri">URI</h5>
-<pre><code>PUT /graphspaces/${graphspace}/graphs/${graph}/graph_read_mode
-</code></pre><h5 id="uri&#x53C2;&#x6570;">URI&#x53C2;&#x6570;</h5>
-<table>
-<thead>
-<tr>
-<th>&#x540D;&#x79F0;</th>
-<th>&#x662F;&#x5426;&#x5FC5;&#x586B;</th>
-<th>&#x7C7B;&#x578B;</th>
-<th>&#x9ED8;&#x8BA4;&#x503C;</th>
-<th>&#x53D6;&#x503C;&#x8303;&#x56F4;</th>
-<th>&#x8BF4;&#x660E;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>graphspace</td>
-<td>&#x662F;</td>
-<td>String</td>
-<td></td>
-<td></td>
-<td>&#x56FE;&#x7A7A;&#x95F4;</td>
-</tr>
-<tr>
-<td>graph</td>
-<td>&#x662F;</td>
-<td>String</td>
-<td></td>
-<td></td>
-<td>&#x56FE;</td>
-</tr>
-</tbody>
-</table>
-<h5 id="body&#x53C2;&#x6570;">Body&#x53C2;&#x6570;</h5>
-<table>
-<thead>
-<tr>
-<th>&#x540D;&#x79F0;</th>
-<th>&#x662F;&#x5426;&#x5FC5;&#x586B;</th>
-<th>&#x7C7B;&#x578B;</th>
-<th>&#x9ED8;&#x8BA4;&#x503C;</th>
-<th>&#x53D6;&#x503C;&#x8303;&#x56F4;</th>
-<th>&#x8BF4;&#x660E;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>ALL &#x6216;&#x8005; OLTP_ONLY</td>
-<td>&#x662F;</td>
-<td>String</td>
-<td></td>
-<td></td>
-<td>&#x5408;&#x6CD5;&#x7684;&#x56FE;&#x6A21;&#x5F0F;&#x5305;&#x62EC;&#xFF1A;OLTP_ONLY&#xFF0C;ALL</td>
-</tr>
-</tbody>
-</table>
-<h5 id="response">Response</h5>
-<table>
-<thead>
-<tr>
-<th>&#x540D;&#x79F0;</th>
-<th>&#x7C7B;&#x578B;</th>
-<th>&#x8BF4;&#x660E;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>graph_read_mode</td>
-<td>String</td>
-<td>&#x56FE;&#x6A21;&#x5F0F;</td>
-</tr>
-</tbody>
-</table>
-<h5 id="&#x4F7F;&#x7528;&#x793A;&#x4F8B;">&#x4F7F;&#x7528;&#x793A;&#x4F8B;</h5>
-<h6 id="method--url">Method &amp; Url</h6>
-<pre><code>PUT http://localhost:8080/graphspaces/gs1/graphs/hugegraph/graph_read_mode
-</code></pre><h6 id="request-body">Request Body</h6>
-<pre><code>&quot;ALL&quot;
-</code></pre><h6 id="response-status">Response Status</h6>
-<pre><code class="lang-json"><span class="hljs-number">200</span>
-</code></pre>
-<h6 id="response-body">Response Body</h6>
-<pre><code class="lang-json">{
-    <span class="hljs-string">&quot;graph_read_mode&quot;</span>: <span class="hljs-string">&quot;ALL&quot;</span>
+<span class="hljs-attr">maxInitialLineLength:</span> <span class="hljs-number">4096</span>
+<span class="hljs-attr">maxHeaderSize:</span> <span class="hljs-number">8192</span>
+<span class="hljs-attr">maxChunkSize:</span> <span class="hljs-number">8192</span>
+<span class="hljs-attr">maxContentLength:</span> <span class="hljs-number">65536</span>
+<span class="hljs-attr">maxAccumulationBufferComponents:</span> <span class="hljs-number">1024</span>
+<span class="hljs-attr">resultIterationBatchSize:</span> <span class="hljs-number">64</span>
+<span class="hljs-attr">writeBufferLowWaterMark:</span> <span class="hljs-number">32768</span>
+<span class="hljs-attr">writeBufferHighWaterMark:</span> <span class="hljs-number">65536</span>
+<span class="hljs-attr">ssl:</span> {
+<span class="hljs-attr">  enabled:</span> <span class="hljs-literal">false</span>
 }
 </code></pre>
 
@@ -2404,12 +2109,12 @@ ikanalyzer: [smart, max_word]
 
             
                 
-                <a href="variable.html" class="navigation navigation-prev " aria-label="Previous page: Variable">
+                <a href="schematemplate.html" class="navigation navigation-prev " aria-label="Previous page: SchemaTemplate">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="task.html" class="navigation navigation-next " aria-label="Next page: Task">
+                <a href="other.html" class="navigation navigation-next " aria-label="Next page: Other">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -2420,7 +2125,7 @@ ikanalyzer: [smart, max_word]
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Graphs","level":"4.2.12","depth":2,"next":{"title":"Task","level":"4.2.13","depth":2,"path":"clients/restful-api-v3/task.md","ref":"clients/restful-api-v3/task.md","articles":[]},"previous":{"title":"Variable","level":"4.2.11","depth":2,"path":"clients/restful-api-v3/variable.md","ref":"clients/restful-api-v3/variable.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"clients/restful-api-v3/graphs.md","mtime":"2022-03-08T09:34:25.519Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-03-08T09:38:23.354Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Config","level":"4.2.20","depth":2,"next":{"title":"Other","level":"4.2.21","depth":2,"path":"clients/restful-api-v3/other.md","ref":"clients/restful-api-v3/other.md","articles":[]},"previous":{"title":"SchemaTemplate","level":"4.2.19","depth":2,"path":"clients/restful-api-v3/schematemplate.md","ref":"clients/restful-api-v3/schematemplate.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"clients/restful-api-v3/config.md","mtime":"2022-03-08T09:34:20.287Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-03-08T09:38:23.354Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

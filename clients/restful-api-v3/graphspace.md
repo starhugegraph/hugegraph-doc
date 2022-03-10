@@ -279,6 +279,12 @@ PUT /graphspaces/${graphspace}
 |  ----             | ----     | ----   | ----  | ----     | ----                                    |
 | action            | 是       | String |       | update   | 标记本次操作为Update动作，取值固定         |
 | update            | 是       | Map    |       |          | 即将更新的值，**下述参数都应置于update中**|
+
+表1 update 对象
+
+|  名称             | 是否必填  | 类型  | 默认值  | 取值范围  | 说明  
+|  ----             | ----     | ----   | ----  | ----     | ----  
+| name       | 是       | String |       |          | 图空间名称
 | description       | 是       | String |       |          | 图空间的描述信息                          |
 | cpu_limit         | 是       | Int    |       | > 0      | OLTP HugeGraphServer 的 CPU 核数         |
 | memory_limit      | 是       | Int    |       | > 0      | OLTP HugeGraphServer 的内存大小，单位 GB  |
@@ -324,6 +330,7 @@ PUT http://127.0.0.1:8080/graphspaces/gs1
 {
     "action": "update",
     "update": {
+      "name": "gs1",
       "description": "1st graph space",
       "cpu_limit": 2000,
       "memory_limit": 40960,

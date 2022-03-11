@@ -44,6 +44,18 @@ POST /graphspaces/${graphspace}/graphs/${graph}
 | edge.cache_expire | 否 | Integer | 600 | [0, Integer.MAX_VALUE) | 边在缓存中过期的期限 |
 | search.text_analyzer  | 否 | String  | jieba  | [word, ansj, hanlp, smartcn, jieba, jcseg, mmseg4j, ikanalyzer] |   |
 | search.text_analyzer_mode  | 否 | String  | INDEX  |  |   |
+| graph.virtual_graph_enable  | 否 | Boolean | false |  | 是否启用虚拟图 |
+| graph.virtual_graph_batch_buffer_size  | 否 | Integer | 0 | [0, 65535) | 虚拟图攒批加载buffer大小，默认为0即关闭攒批加载，攒批加载在并发很高时对吞吐有益处，但对延迟有伤害 |
+| graph.virtual_graph_batch_size | 否 | Integer | 50 | [0, 65535) | 虚拟图攒批加载每批次的大小 |
+| graph.virtual_graph_batch_time_ms | 否 | Integer | 100 | [0, Integer.MAX_VALUE) | 虚拟图攒批加载定时周期(单位:毫秒) |
+| graph.virtual_graph_vertex_init_capacity | 否 | Integer | 1000 * 1000 | [0, Integer.MAX_VALUE) | 虚拟图缓存点的最小数量 |
+| graph.virtual_graph_vertex_max_size  | 否 | Long  | 100 * 1000 * 1000 | [0, Long.MAX_VALUE) | 虚拟图缓存点的最大数量 |
+| graph.virtual_graph_vertex_expire | 否 | Long  | 60 * 100 | [0, Long.MAX_VALUE) | 虚拟图缓存点的过期时间(单位:秒) |
+| graph.virtual_graph_edge_init_capacity | 否 | Integer | 10000 | [0, Integer.MAX_VALUE) | 虚拟图缓存边的最小数量 |
+| graph.virtual_graph_edge_max_size | 否 | Long | 1000 * 1000 | [0, Long.MAX_VALUE) | 虚拟图缓存边的最大数量 |
+| graph.virtual_graph_edge_expire  | 否 | Long  | 60 * 100 | [0, Long.MAX_VALUE) | 虚拟图缓存边的过期时间(单位:秒) |
+| graph.virtual_graph_batcher_task_threads | 否 | Integer | Math.max(4, CPUS / 2) | [1, Math.max(4, CPUS * 2)] | 虚拟图攒批加载的线程数 |
+
 
 ```
 search.text_analyzer_mode:

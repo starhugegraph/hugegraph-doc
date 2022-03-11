@@ -114,6 +114,17 @@ raft.rpc_connect_timeout         | 5000                            | The rpc con
 raft.rpc_timeout                 | 60000                           | The rpc timeout for jraft rpc.
 raft.rpc_buf_low_water_mark      | 10485760                        | The ChannelOutboundBuffer's low water mark of netty, when buffer size less than this size, the method ChannelOutboundBuffer.isWritable() will return true, it means that low downstream pressure or good network.
 raft.rpc_buf_high_water_mark     | 20971520                        | The ChannelOutboundBuffer's high water mark of netty, only when buffer size exceed this size, the method ChannelOutboundBuffer.isWritable() will return false, it means that the downstream pressure is too great to process the request or network is very congestion, upstream needs to limit rate at this time.
+graph.virtual_graph_enable       | false                           | Whether to enable the Virtual Graph
+graph.virtual_graph_batch_buffer_size  | 0                         | The size of buffer for batch load in Virtual Graph
+graph.virtual_graph_batch_size   | 50                              | The size of each batch when batch loading in Virtual Graph
+graph.virtual_graph_batch_time_ms | 100                            | Interval in milliseconds to batch load queries in buffer of Virtual Graph
+graph.virtual_graph_vertex_init_capacity | 1000 * 1000             | The minimum number of vertices cached in Virtual Graph
+graph.virtual_graph_vertex_max_size  | 100 * 1000 * 1000           | The maximum number of vertices cached in Virtual Graph
+graph.virtual_graph_vertex_expire | 60 * 100                       | The expiration time in seconds of vertex cache in Virtual Graph
+graph.virtual_graph_edge_init_capacity | 10000                     | The minimum number of edges cached in Virtual Graph
+graph.virtual_graph_edge_max_size | 1000 * 1000                    | The maximum number of edges cached in Virtual Graph
+graph.virtual_graph_edge_expire  | 60 * 100                        | The expiration time in seconds of edge cache in Virtual Graph
+graph.virtual_graph_batcher_task_threads | Math.max(4, CPUS / 2)   | The task threads of virtual graph batcher
 
 ### Cassandra 后端配置项
 

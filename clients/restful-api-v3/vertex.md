@@ -629,7 +629,7 @@ GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph/graph/vertices?label=
 ##### 使用示例
 **分页查询所有顶点，获取第一页（page不带参数值），限定3条**
 
-#### Method & Url
+##### Method & Url
 
 ```
 GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph/graph/vertices?page&limit=3

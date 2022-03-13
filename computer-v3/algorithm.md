@@ -48,7 +48,7 @@ EOF
 ##### rest-api 示例
 
 ###### Method & Url
-POST http://localhost:8080/graphspaces/{graphspace}/graphs/{hugegraph}/jobs/computerdis
+POST http://localhost:8080/graphspaces/${graphspace}/graphs/${hugegraph}/jobs/computerdis
 
 ###### Request Body
 
@@ -116,7 +116,7 @@ EOF
 ##### rest-api 示例
 
 ###### Method & Url
-POST http://localhost:8080/graphspaces/{graphspace}/graphs/{hugegraph}/jobs/computerdis
+POST http://localhost:8080/graphspaces/${graphspace}/graphs/${hugegraph}/jobs/computerdis
 
 ###### Request Body
 
@@ -182,7 +182,7 @@ EOF
 ##### rest-api 示例
 
 ###### Method & Url
-POST http://localhost:8080/graphspaces/{graphspace}/graphs/{hugegraph}/jobs/computerdis
+POST http://localhost:8080/graphspaces/${graphspace}/graphs/${hugegraph}/jobs/computerdis
 
 ###### Request Body
 
@@ -259,7 +259,7 @@ EOF
 ##### rest-api 示例
 
 ###### Method & Url
-POST http://localhost:8080/graphspaces/{graphspace}/graphs/{hugegraph}/jobs/computerdis
+POST http://localhost:8080/graphspaces/${graphspace}/graphs/${hugegraph}/jobs/computerdis
 
 ###### Request Body
 
@@ -336,7 +336,7 @@ EOF
 ##### rest-api 示例
 
 ###### Method & Url
-POST http://localhost:8080/graphspaces/{graphspace}/graphs/{hugegraph}/jobs/computerdis
+POST http://localhost:8080/graphspaces/${graphspace}/graphs/${hugegraph}/jobs/computerdis
 
 ###### Request Body
 

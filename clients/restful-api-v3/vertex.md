@@ -26,7 +26,7 @@ CUSTOMIZE_UUID   | uuid
 ##### URI
 
 ```
-POST /graphspaces/{graphspace}/graphs/{graph}/graph/vertices
+POST /graphspaces/${graphspace}/graphs/${graph}/graph/vertices
 ```
 
 ##### URI参数
@@ -108,7 +108,7 @@ POST http://localhost:8080/graphspaces/gs1/graphs/hugegraph/graph/vertices
 ##### URI
 
 ```
-POST /graphspaces/{graphspace}/graphs/{graph}/graph/vertices/batch
+POST /graphspaces/${graphspace}/graphs/${graph}/graph/vertices/batch
 ```
 
 ##### URI参数
@@ -183,7 +183,7 @@ POST http://localhost:8080/graphspaces/gs1/graphs/hugegraph/graph/vertices/batch
 ##### URI
 
 ```
-PUT /graphspaces/{graphspace}/graphs/{graph}/graph/vertices/{vertexId}?action=append
+PUT /graphspaces/${graphspace}/graphs/${graph}/graph/vertices/${vertexId}?action=append
 ```
 ##### URI参数
 | 名称        | 是否必填 | 类型   | 默认值 | 取值范围   | 说明                       |
@@ -211,7 +211,7 @@ PUT /graphspaces/{graphspace}/graphs/{graph}/graph/vertices/{vertexId}?action=ap
 ##### Method & Url
 
 ```
-PUT http://127.0.0.1:8080/graphspaces/{graphspace}/graphs/{graph}/graph/vertices/"1:marko"?action=append
+PUT http://127.0.0.1:8080/graphspaces/${graphspace}/graphs/${graph}/graph/vertices/"1:marko"?action=append
 ```
 
 ##### Request Body
@@ -316,7 +316,7 @@ PUT http://127.0.0.1:8080/graphspaces/{graphspace}/graphs/{graph}/graph/vertices
 ##### URI
 
 ```
-PUT /graphspaces/{graphspace}/graphs/{graph}/graph/vertices/batch
+PUT /graphspaces/${graphspace}/graphs/${graph}/graph/vertices/batch
 ```
 ##### URI参数
 | 名称        | 是否必填 | 类型   | 默认值 | 取值范围   | 说明                       |
@@ -348,7 +348,7 @@ PUT /graphspaces/{graphspace}/graphs/{graph}/graph/vertices/batch
 ##### Method & Url
 
 ```
-PUT http://127.0.0.1:8080/graphspaces/{graphspace}/graphs/{graph}/graph/vertices/batch
+PUT http://127.0.0.1:8080/graphspaces/${graphspace}/graphs/${graph}/graph/vertices/batch
 ```
 
 ##### Request Body
@@ -449,7 +449,7 @@ PUT http://127.0.0.1:8080/graphspaces/{graphspace}/graphs/{graph}/graph/vertices
 ##### URI
 
 ```
-PUT /graphspaces/{graphspace}/graphs/{graph}/graph/vertices/{vertexId}?action=eliminate
+PUT /graphspaces/${graphspace}/graphs/${graph}/graph/vertices/${vertexId}?action=eliminate
 ```
 
 ##### URI参数
@@ -932,7 +932,7 @@ DELETE http://localhost:8080/graphspaces/gs1/graphs/hugegraph/graph/vertices/{ve
 #####  功能介绍
 根据顶点的Id列表,批量查询顶点
 
-###### URI
+##### URI
 
 ```
 GET /graphspaces/{graphspace}/graphs/{graph}/traversers/vertices?ids={ids#1}&ids={ids#2}
@@ -946,9 +946,11 @@ GET /graphspaces/{graphspace}/graphs/{graph}/traversers/vertices?ids={ids#1}&ids
 | ids        | 是       | String |        |          | 待查询的顶点Id列表，需要包含引号，例如"1:marko"。通过多次输入来进行批量查询 |
 
 ##### Body参数
+
 无
 
 ##### Response
+
 | 名称               | 类型         | 说明                   |
 | ------------------ | ------------ | ---------------------- |
 | vertices           | List[Map]    | 获取到的顶点列表         |
@@ -959,21 +961,22 @@ GET /graphspaces/{graphspace}/graphs/{graph}/traversers/vertices?ids={ids#1}&ids
 
 
 ##### 使用示例
+
 删除id分别为"1:marko"和"2:lop"的顶点
 
-###### Method & Url
+##### Method & Url
 
 ```
 GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph/traversers/vertices?ids="1:marko"&ids="2:lop"
 ```
 
-###### Response Status
+##### Response Status
 
 ```json
 200
 ```
 
-###### Response Body
+##### Response Body
 
 ```json
 {
@@ -1037,7 +1040,7 @@ GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph/traversers/vertices?i
 #####  功能介绍
 通过指定的分片大小split_size，获取顶点分片信息（可以与 3.2.21.3 中的 Scan 配合使用来获取顶点）。
 
-###### URI
+##### URI
 
 ```
 GET /graphspaces/{graphspace}/graphs/{graph}/traversers/vertices/shards?split_size={splitSize}
@@ -1045,6 +1048,7 @@ GET /graphspaces/{graphspace}/graphs/{graph}/traversers/vertices/shards?split_si
 ```
 
 ##### URI参数
+
 | 名称        | 是否必填 | 类型   | 默认值 | 取值范围   | 说明                                     |
 | ---------- | -------- | ------ | ------ | -------- | ----------                               |
 | graphspace | 是       | String |        |          | 图空间名称                                |
@@ -1052,10 +1056,12 @@ GET /graphspaces/{graphspace}/graphs/{graph}/traversers/vertices/shards?split_si
 | splitSize  | 是       | Int    |        |           | 分片的大小 |
 
 ##### Body参数
+
 无
 
 
 ##### Response
+
 | 名称               | 类型         | 说明                   |
 | ------------------ | ------------ | ---------------------- |
 | shard              | List[Map]    | 分片信息的类表         |
@@ -1064,21 +1070,22 @@ GET /graphspaces/{graphspace}/graphs/{graph}/traversers/vertices/shards?split_si
 | length             | Int          | 分片的长度  |
 
 ##### 使用示例
+
 获取分片大小为67108864的顶点分片信息，用于进一步的Scan查询
 
-###### Method & Url
+##### Method & Url
 
 ```
 GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph/traversers/vertices/shards?split_size=67108864
 
 ```
-###### Response Status
+##### Response Status
 
 ```json
 200
 ```
 
-###### Response Body
+##### Response Body
 
 ```json
 {
@@ -1111,9 +1118,9 @@ GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph/traversers/vertices/s
 ##### 4.5.1.9.3.根据Shard信息批量获取顶点
 
 #####  功能介绍
-通过指定的分片信息批量查询顶点（Shard信息的获取参见 3.2.21.2 Shard）。
+通过指定的分片信息批量查询顶点
 
-###### URI
+##### URI
 
 ```
 GET /graphspaces/{graphspace}/graphs/{graph}/traversers/vertices/scan?start=0&end=4294967295&page={page}&page_limit={pageLimit}
@@ -1145,19 +1152,19 @@ GET /graphspaces/{graphspace}/graphs/{graph}/traversers/vertices/scan?start=0&en
 ##### 使用示例
 
 根据分片信息start=0与end=4294967295扫描顶点
-###### Method & Url
+##### Method & Url
 
 ```
 GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph/traversers/vertices/scan?start=0&end=4294967295&page=&page_limit=100
 ```
 
-###### Response Status
+##### Response Status
 
 ```json
 200
 ```
 
-###### Response Body
+##### Response Body
 
 ```json
 {

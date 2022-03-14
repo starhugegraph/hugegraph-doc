@@ -8,12 +8,12 @@
 | id         | 属性类型的id值, 同一图中，不存在同ID的两个属性类型                                                                      |
 | name       | 属性类型名称                                                                                                            |
 | data_type  | 属性类型的数据类型，包括：bool、byte、int、long、float、double、string、date、uuid、blob，默认string类型                |
-| ardinality | 属性类型的基数，包括：single、list、set，默认single                                                                     |
+| cardinality | 属性类型的基数，包括：single、list、set，默认single                                                                     |
 | properties | 属性的属性，对于属性而言，此项为空                                                                                      |
 | user_data  | 设置属性类型的通用信息，比如可设置age属性的取值范围，最小为0，最大为100；目前此项不做任何校验，只为后期拓展提供预留入口 |
 
 
-#### 4.4.1.1.创建属性
+#### 4.4.1.1.创建PropertyKey
 
 ##### 功能介绍
 创建一个PropertyKey

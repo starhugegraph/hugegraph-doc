@@ -166,7 +166,7 @@ GET /graphspaces/${graphspace}/schematemplates/${schematemplate}
 |  名称   | 是否必填  | 类型  | 默认值 | 取值范围 | 说明  |
 |  ----  | ----  | ----  | ----  | ----  | ---- |
 | graphspace  | 是 | String  |   |   | 图空间名称  |
-| schematemplate  | 是 | String  |   |   | schematemplate 的名字  |
+| schematemplate  | 是 | String  |   |   | schematemplate 的名字，schema template是指包括PropertyKey，VertexLabel, EdgeLabel和IndexLabel这些元数据的集合，使用groovy编写  |
 
 ##### Body参数
 

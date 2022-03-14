@@ -951,7 +951,7 @@ GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph/traversers/edges?ids=
 ##### 4.5.2.9.2.获取边 Shard 信息
 
 ##### 功能介绍
-通过指定的分片大小split_size，获取边分片信息（可以与 3.2.22.3 中的 Scan 配合使用来获取边）。
+通过指定的分片大小split_size，获取边分片信息（可以与 4.5.2.9.3 中的 Scan 配合使用来获取边）。
 
 
 ##### URI
@@ -1033,7 +1033,7 @@ GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph/traversers/edges/shar
 ##### 4.5.2.9.3.根据 Shard 信息批量获取边
 
 ##### 功能介绍
-通过指定的分片信息批量查询边
+通过指定的分片信息批量查询边（Shard信息的获取参见 4.5.2.9.2 Shard）
 
 ##### URI
 

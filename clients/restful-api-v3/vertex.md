@@ -38,6 +38,7 @@ POST /graphspaces/${graphspace}/graphs/${graph}/graph/vertices
 ##### Body参数
 | 名称               | 是否必填  | 类型         | 默认值  | 取值范围               | 说明                       |
 | ------------------ | -------- | ------------ | ------- | --------------------- | -------------------------- |
+| id                 | 否        | Object      | null    |                       | 顶点的ID               |
 | label              | 是       | String       |         |                       | 顶点的标签名            |
 | properties         | 是       | Map          | {}      |                       | 顶点关联的属性类       |
 
@@ -1038,7 +1039,7 @@ GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph/traversers/vertices?i
 ##### 4.5.1.9.2.获取顶点 Shard 信息
 
 #####  功能介绍
-通过指定的分片大小split_size，获取顶点分片信息（可以与 3.2.21.3 中的 Scan 配合使用来获取顶点）。
+通过指定的分片大小split_size，获取顶点分片信息（可以与 4.5.1.9.3 中的 Scan 配合使用来获取顶点）。
 
 ##### URI
 
@@ -1118,7 +1119,7 @@ GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph/traversers/vertices/s
 ##### 4.5.1.9.3.根据Shard信息批量获取顶点
 
 #####  功能介绍
-通过指定的分片信息批量查询顶点
+通过指定的分片信息批量查询顶点（Shard信息的获取参见 4.5.1.9.2 Shard）
 
 ##### URI
 

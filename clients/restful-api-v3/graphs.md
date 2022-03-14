@@ -43,7 +43,7 @@ POST /graphspaces/${graphspace}/graphs/${graph}
 | edge.cache_capacity | 否 | Long | 1000*1000L | [0, Long.MAX_VALUE) | 边缓存数目上限 |
 | edge.cache_expire | 否 | Integer | 600 | [0, Integer.MAX_VALUE) | 边在缓存中过期的期限 |
 | search.text_analyzer  | 否 | String  | jieba  | [word, ansj, hanlp, smartcn, jieba, jcseg, mmseg4j, ikanalyzer] |   |
-| search.text_analyzer_mode  | 否 | String  | INDEX  |  |   |
+| search.text_analyzer_mode  | 否 | String  | INDEX | 不同的分词器对应的模式参加表格下方说明 | 分词器工作模式  |
 | graph.virtual_graph_enable  | 否 | Boolean | false |  | 是否启用虚拟图 |
 | graph.virtual_graph_batch_buffer_size  | 否 | Integer | 0 | [0, 65535) | 虚拟图攒批加载buffer大小，默认为0即关闭攒批加载，攒批加载在并发很高时对吞吐有益处，但对延迟有伤害 |
 | graph.virtual_graph_batch_size | 否 | Integer | 50 | [0, 65535) | 虚拟图攒批加载每批次的大小 |
@@ -57,17 +57,17 @@ POST /graphspaces/${graphspace}/graphs/${graph}
 | graph.virtual_graph_batcher_task_threads | 否 | Integer | Math.max(4, CPUS / 2) | [1, Math.max(4, CPUS * 2)] | 虚拟图攒批加载的线程数 |
 
 
-```
-search.text_analyzer_mode:
 
-word: [MaximumMatching, ReverseMaximumMatching, MinimumMatching, ReverseMinimumMatching, BidirectionalMaximumMatching, BidirectionalMinimumMatching, BidirectionalMaximumMinimumMatching, FullSegmentation, MinimalWordCount, MaxNgramScore, PureEnglish]
-ansj: [BaseAnalysis, IndexAnalysis, ToAnalysis, NlpAnalysis]
-hanlp: [standard, nlp, index, nShort, shortest, speed]
-smartcn: []
-jieba: [SEARCH, INDEX]
-jcseg: [Simple, Complex]
-mmseg4j: [Simple, Complex, MaxWord]
-ikanalyzer: [smart, max_word]
+| search.text_analyzer | search.text_analyzer_mode |
+| -------------------- | ------------------------- |
+| word | [MaximumMatching, ReverseMaximumMatching, MinimumMatching, ReverseMinimumMatching, BidirectionalMaximumMatching, BidirectionalMinimumMatching, BidirectionalMaximumMinimumMatching, FullSegmentation, MinimalWordCount, MaxNgramScore, PureEnglish] |
+| ansj | [BaseAnalysis, IndexAnalysis, ToAnalysis, NlpAnalysis] |
+| hanlp | [standard, nlp, index, nShort, shortest, speed] |
+| smartcn | [] |
+| jieba | [SEARCH, INDEX] |
+| jcseg | [Simple, Complex] |
+| mmseg4j | [Simple, Complex, MaxWord] |
+| ikanalyzer | [smart, max_word] |
 ```
 
 ##### Response

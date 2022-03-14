@@ -28,7 +28,7 @@ id_strategy可选值:
 
 另外，当顶点中带有"创建时间"的属性且希望以"创建时间"属性作为计算顶点存活时间的起点时，可以设置 VertexLabel 中的 ttl_start_time 字段。
 
-#### 4.4.2.1.创建顶点类型
+#### 4.4.2.1.创建VertexLabel
 
 ##### 功能介绍
 创建一个VertexLabel
@@ -369,7 +369,7 @@ GET http://localhost:8080/graphspaces/${grphspace}/graphs/${hugegraph}/schema/ve
 }
 ```
 
-#### 8.4.2.5.删除VertexLabel
+#### 4.4.2.5.删除VertexLabel
 
 ##### 功能介绍
 根据name删除VertexLabel

@@ -1,6 +1,6 @@
 ### 4.4.4.索引类型
 
-假设已经创建好了1.1.3中的 PropertyKeys 、1.2.3中的 VertexLabels 以及 1.3.3中的 EdgeLabels
+假设已经创建好了4.4.1中的 PropertyKeys 、4.4.2中的 VertexLabels 以及 4.4.3中的 EdgeLabels
 
 index_type可选值列表
 
@@ -20,7 +20,7 @@ index_type可选值列表
 - UNIQUE: 支持属性值唯一性约束，即可以限定属性的值不重复，允许联合索引，但不支持查询
   - 单个或者多个属性的唯一性索引，不可用来查询，只可对属性的值进行限定，当出现重复值时将报错
 
-#### 4.4.4.1.创建索引类型
+#### 4.4.4.1.创建IndexLabel
 
 ##### 功能介绍
 创建一个IndexLabel, 会产生一个异步任务

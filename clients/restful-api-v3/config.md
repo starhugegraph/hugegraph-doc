@@ -60,6 +60,67 @@ PUT  http://localhost:8080/graphspaces/gs1/configs/rest
 }
 ```
 
+#### 4.14.2.设置指定服务的Rest配置
+ 
+##### 功能介绍
+
+设置指定服务的Rest配置
+
+##### URI
+
+```
+PUT graphspaces/${graphspace}/configs/rest/}{service_name}
+```
+
+##### URI参数
+
+|  名称   | 是否必填  | 类型  | 默认值  | 取值范围  | 说明  |
+|  ----  | ----  | ----  | ----  | ----  | ----  |
+|  graphspace | 是 | String  |   |   | 图空间  |
+|  service_name|  是 | String | | | 服务名 |
+
+##### Body参数
+
+|  名称   | 是否必填  | 类型  | 默认值  | 取值范围  | 说明  |
+|  ----  | ----  | ----  | ----  | ----  | ----  |
+| properties | 是 | Map  |   |   | 配置信息  |
+
+##### Response
+
+|  名称   | 类型 |  说明  |
+|  ----  | ---|  ----  |
+|  * |Map| 返回提交的Map信息 |
+
+##### 使用示例
+
+###### Method & Url
+
+```
+PUT  http://localhost:8080/graphspaces/gs1/configs/rest/sv1
+```
+
+###### Request Body
+
+```json
+{
+    "restserver.url": "http://0.0.0.0:8080",
+    "server.start_ignore_single_graph_error": "true",
+    "batch.max_write_ratio": "80",
+    "batch.max_write_threads": "0",
+    "batch.max_vertices_per_batch": "2000",
+    "batch.max_edges_per_batch": "2000",
+    "server.k8s_url": "https://127.0.0.1:6443",
+    "server.k8s_use_ca": true,
+    "server.k8s_ca": "/etc/kubernetes/ssl/ca.pem",
+    "server.k8s_client_ca": "/etc/kubernetes/ssl/kubernetes.pem",
+    "server.k8s_client_key": "/etc/kubernetes/ssl/kubernetes-key8.pem",
+    "server.k8s_oltp_image": "xx.xx.xx.xx/kgs_bd/hugegraphserver:3.0.0",
+    "k8s.internal_algorithm_image_url": "xx.xx.xx.xx/kgs_bd/hugegraph-computer-algorithm:3.x.x",
+    "k8s.internal_algorithm": "[page-rank, degree-centrality, wcc, triangle-count, rings, rings-with-filter, betweenness-centrality, closeness-centrality, lpa, links, kcore, louvain, clustering-coefficient]",
+    "k8s.algorithms": "[page-rank:com.baidu.hugegraph.computer.algorithm.centrality.pagerank.PageRankParams, degree-centrality:com.baidu.hugegraph.computer.algorithm.centrality.degree.DegreeCentralityParams, wcc:com.baidu.hugegraph.computer.algorithm.community.wcc.WccParams, triangle-count:com.baidu.hugegraph.computer.algorithm.community.trianglecount.TriangleCountParams, rings:com.baidu.hugegraph.computer.algorithm.path.rings.RingsDetectionParams, rings-with-filter:com.baidu.hugegraph.computer.algorithm.path.rings.filter.RingsDetectionWithFilterParams, betweenness-centrality:com.baidu.hugegraph.computer.algorithm.centrality.betweenness.BetweennessCentralityParams, closeness-centrality:com.baidu.hugegraph.computer.algorithm.centrality.closeness.ClosenessCentralityParams, lpa:com.baidu.hugegraph.computer.algorithm.community.lpa.LpaParams, links:com.baidu.hugegraph.computer.algorithm.path.links.LinksParams, kcore:com.baidu.hugegraph.computer.algorithm.community.kcore.KCoreParams, louvain:com.baidu.hugegraph.computer.algorithm.community.louvain.LouvainParams, clustering-coefficient:com.baidu.hugegraph.computer.algorithm.community.cc.ClusteringCoefficientParams]"
+}
+```
+
 ###### Response Status
 
 ```json
@@ -155,6 +216,78 @@ GET  http://localhost:8080/graphspaces/gs1/configs/rest
   "k8s.algorithms": "[page-rank:com.baidu.hugegraph.computer.algorithm.centrality.pagerank.PageRankParams, degree-centrality:com.baidu.hugegraph.computer.algorithm.centrality.degree.DegreeCentralityParams, wcc:com.baidu.hugegraph.computer.algorithm.community.wcc.WccParams, triangle-count:com.baidu.hugegraph.computer.algorithm.community.trianglecount.TriangleCountParams, rings:com.baidu.hugegraph.computer.algorithm.path.rings.RingsDetectionParams, rings-with-filter:com.baidu.hugegraph.computer.algorithm.path.rings.filter.RingsDetectionWithFilterParams, betweenness-centrality:com.baidu.hugegraph.computer.algorithm.centrality.betweenness.BetweennessCentralityParams, closeness-centrality:com.baidu.hugegraph.computer.algorithm.centrality.closeness.ClosenessCentralityParams, lpa:com.baidu.hugegraph.computer.algorithm.community.lpa.LpaParams, links:com.baidu.hugegraph.computer.algorithm.path.links.LinksParams, kcore:com.baidu.hugegraph.computer.algorithm.community.kcore.KCoreParams, louvain:com.baidu.hugegraph.computer.algorithm.community.louvain.LouvainParams, clustering-coefficient:com.baidu.hugegraph.computer.algorithm.community.cc.ClusteringCoefficientParams]"
 }
 ```
+
+
+#### 4.14.3.查询指定服务Rest配置
+
+##### 功能介绍
+
+查询指定服务Rest配置
+
+##### URI
+
+```
+GET graphspaces/${graphspace}/configs/rest/{service_name}
+```
+
+##### URI参数
+
+|  名称   | 是否必填  | 类型  | 默认值  | 取值范围  | 说明  |
+|  ----  | ----  | ----  | ----  | ----  | ----  |
+|  graphspace | 是 | String  |   |   | 图空间  |
+|  service_name|  是 | String | | | 服务名 |
+
+##### Body参数
+
+无
+
+##### Response
+
+|  名称   | 类型 |  说明  |
+|  ----  | ---|  ----  |
+|  * |Map| Rest配置信息 |
+
+##### 使用示例
+
+###### Method & Url
+
+```
+GET  http://localhost:8080/graphspaces/gs1/configs/rest/sv1
+```
+
+###### Request Body
+
+无
+
+###### Response Status
+
+```json
+200
+```
+
+###### Response Body
+
+```json
+{
+  "restserver.url": "http://0.0.0.0:8080",
+  "server.start_ignore_single_graph_error": "true",
+  "batch.max_write_ratio": "80",
+  "batch.max_write_threads": "0",
+  "batch.max_vertices_per_batch": "2000",
+  "batch.max_edges_per_batch": "2000",
+  "server.k8s_url": "https://127.0.0.1:6443",
+  "server.k8s_use_ca": true,
+  "server.k8s_ca": "/etc/kubernetes/ssl/ca.pem",
+  "server.k8s_client_ca": "/etc/kubernetes/ssl/kubernetes.pem",
+  "server.k8s_client_key": "/etc/kubernetes/ssl/kubernetes-key8.pem",
+  "server.k8s_oltp_image": "xx.xx.xx.xx/kgs_bd/hugegraphserver:3.0.0",
+  "k8s.internal_algorithm_image_url": "xx.xx.xx.xx/kgs_bd/hugegraph-computer-algorithm:3.x.x",
+  "k8s.internal_algorithm": "[page-rank, degree-centrality, wcc, triangle-count, rings, rings-with-filter, betweenness-centrality, closeness-centrality, lpa, links, kcore, louvain, clustering-coefficient]",
+  "k8s.algorithms": "[page-rank:com.baidu.hugegraph.computer.algorithm.centrality.pagerank.PageRankParams, degree-centrality:com.baidu.hugegraph.computer.algorithm.centrality.degree.DegreeCentralityParams, wcc:com.baidu.hugegraph.computer.algorithm.community.wcc.WccParams, triangle-count:com.baidu.hugegraph.computer.algorithm.community.trianglecount.TriangleCountParams, rings:com.baidu.hugegraph.computer.algorithm.path.rings.RingsDetectionParams, rings-with-filter:com.baidu.hugegraph.computer.algorithm.path.rings.filter.RingsDetectionWithFilterParams, betweenness-centrality:com.baidu.hugegraph.computer.algorithm.centrality.betweenness.BetweennessCentralityParams, closeness-centrality:com.baidu.hugegraph.computer.algorithm.centrality.closeness.ClosenessCentralityParams, lpa:com.baidu.hugegraph.computer.algorithm.community.lpa.LpaParams, links:com.baidu.hugegraph.computer.algorithm.path.links.LinksParams, kcore:com.baidu.hugegraph.computer.algorithm.community.kcore.KCoreParams, louvain:com.baidu.hugegraph.computer.algorithm.community.louvain.LouvainParams, clustering-coefficient:com.baidu.hugegraph.computer.algorithm.community.cc.ClusteringCoefficientParams]"
+}
+```
+
+
 
 #### 4.14.3.删除服务Rest配置
 

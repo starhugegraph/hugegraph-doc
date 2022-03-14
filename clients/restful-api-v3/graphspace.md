@@ -27,8 +27,10 @@ POST /graphspaces
 | cpu_limit  | 是 | Int  |   | > 0  |  CPU 核数 |
 | memory_limit  | 是 | Int  |   | > 0  |  内存大小，单位 GB |
 | storage_limit  | 是 | Int  |   | > 0  |  图空间的数据占据的磁盘空间上限 |
+| compute_cpu_limit  | 否 | Int  | 0 | >= 0  |  针对图计算的额外资源配置，单位GB。当该字段不配置或者配置为0时，会由cpu_limit字段的值进行覆盖 |
+| compute_memory_limit  | 否 | Int  | 0 | >= 0  |  针对图计算的额外内存配置，单位 GB。当该字段不配置或者配置为0时，会由memory_limit字段的值进行覆盖 |
 | oltp_namespace  | 是 | String  |   |   |  OLTP 的k8s命名空间 |
-| olap_namespace  | 是 | String  |   |   |  OLAP 的k8s命名空间 |
+| olap_namespace  | 是 | String  |   |   |  OLAP 的k8s命名空间。当olap_namespace和oltp_namespace的值相同时，其配置的资源限额会进行合并。 |
 | storage_namespace  | 是 | String  |   |   |  存储 的k8s命名空间 |
 | max_graph_number | 是 | Int | | > 0 | 图空间的图数目的上限 |
 | max_role_number | 是 | Int | | > 0 | 图空间的角色数目的上限 |
@@ -44,6 +46,8 @@ POST /graphspaces
 | cpu_limit  | Int |  CPU 核数上限 |
 | memory_limit  | Int |  内存大小上限，单位 GB |
 | storage_limit  | Int |  图空间的数据占据的磁盘空间上限 |
+| compute_cpu_limit  | Int  | 针对图计算的额外资源配置，单位GB |
+| compute_memory_limit  |Int | 针对图计算的额外内存配置，单位 GB |
 | oltp_namespace  | String |  OLTP 的k8s命名空间 |
 | olap_namespace  | String |  OLAP 的k8s命名空间 |
 | storage_namespace  | String |  存储的k8s命名空间 |
@@ -73,6 +77,8 @@ POST http://localhost:8080/graphspaces
   "cpu_limit": 1000,
   "memory_limit": 1024,
   "storage_limit": 1000,
+  "compute_cpu_limit": 0,
+  "compute_memory_limit": 0,
   "oltp_namespace": "hugegraph-server",
   "olap_namespace": "hugegraph-server",
   "storage_namespace": "hugegraph-server",
@@ -98,6 +104,8 @@ POST http://localhost:8080/graphspaces
   "cpu_limit": 1000,
   "memory_limit": 1024,
   "storage_limit": 1000,
+  "compute_cpu_limit": 0,
+  "compute_memory_limit": 0,
   "oltp_namespace": "hugegraph-server",
   "olap_namespace": "hugegraph-server",
   "storage_namespace": "hugegraph-server",
@@ -202,6 +210,8 @@ GET /graphspaces/${graphspace}
 | oltp_namespace  | String |  OLTP 的k8s命名空间 |
 | olap_namespace  | String |  OLAP 的k8s命名空间 |
 | storage_namespace  | String |  存储的k8s命名空间 |
+| compute_cpu_limit  | Int  | 针对图计算的额外资源配置，单位GB |
+| compute_memory_limit  |Int | 针对图计算的额外内存配置，单位 GB |
 | max_graph_number | Int | 图空间的图数目的上限 |
 | max_role_number | Int | 图空间的角色数目的上限 |
 | cpu_used  | Int |  已使用的 CPU 核数 |
@@ -242,6 +252,8 @@ GET http://127.0.0.1:8080/graphspaces/gs1
   "oltp_namespace": "hugegraph-server",
   "olap_namespace": "hugegraph-server",
   "storage_namespace": "hugegraph-server",
+  "compute_cpu_limit": 0,
+  "compute_memory_limit": 0,
   "max_graph_number": 100,
   "max_role_number": 10,
   "cpu_used": 0,
@@ -289,8 +301,10 @@ PUT /graphspaces/${graphspace}
 | cpu_limit         | 是       | Int    |       | > 0      | OLTP HugeGraphServer 的 CPU 核数         |
 | memory_limit      | 是       | Int    |       | > 0      | OLTP HugeGraphServer 的内存大小，单位 GB  |
 | storage_limit     | 是       | Int    |       | > 0      | 图空间的数据占据的磁盘空间上限             |
+| compute_cpu_limit  | 否 | Int  | 0 | >= 0  |  针对图计算的额外资源配置，单位GB。当该字段不配置或者配置为0时，会由cpu_limit字段的值进行覆盖 |
+| compute_memory_limit  | 否 | Int  | 0 | >= 0  |  针对图计算的额外内存配置，单位 GB。当该字段不配置或者配置为0时，会由memory_limit字段的值进行覆盖 |
 | oltp_namespace    | 是       | String |       |          | OLTP 的k8s命名空间                       |
-| olap_namespace    | 是       | String |       |          | OLAP 的k8s命名空间                       | 
+| olap_namespace    | 是       | String |       |          | OLAP 的k8s命名空间。当olap_namespace和oltp_namespace的值相同时，其配置的资源限额会进行合并。                    | 
 | storage_namespace | 是       | String |       |          | 存储的k8s命名空间                        |
 | max_graph_number  | 是       | Int    |       | > 0      | 图空间的图数目的上限                      |
 | max_role_number   | 是       | Int    |       | > 0      | 图空间的角色数目的上限                    |
@@ -304,6 +318,8 @@ PUT /graphspaces/${graphspace}
 | cpu_limit  | Int |  CPU 核数上限 |
 | memory_limit  | Int |  内存大小上限，单位 GB |
 | storage_limit  | Int |  图空间的数据占据的磁盘空间上限 |
+| compute_cpu_limit  | Int  | 针对图计算的额外资源配置，单位GB |
+| compute_memory_limit  |Int | 针对图计算的额外内存配置，单位 GB |
 | oltp_namespace  | String |  OLTP 的k8s命名空间 |
 | olap_namespace  | String |  OLAP 的k8s命名空间 |
 | storage_namespace  | String |  存储的k8s命名空间 |
@@ -361,6 +377,8 @@ PUT http://127.0.0.1:8080/graphspaces/gs1
   "oltp_namespace": "hugegraph-server",
   "olap_namespace": "hugegraph-server",
   "storage_namespace": "hugegraph-server",
+  "compute_cpu_limit": 0,
+  "compute_memory_limit": 0,
   "max_graph_number": 100,
   "max_role_number": 10,
   "cpu_used": 0,

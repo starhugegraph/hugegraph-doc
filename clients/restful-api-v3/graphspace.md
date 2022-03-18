@@ -17,7 +17,6 @@ POST /graphspaces
 ##### URI参数
 
 无
-
 ##### Body参数
 
 |  名称   | 是否必填  | 类型  | 默认值  | 取值范围  | 说明  |
@@ -30,8 +29,10 @@ POST /graphspaces
 | compute_cpu_limit  | 否 | Int  | 0 | >= 0  |  针对图计算的额外资源配置，单位GB。当该字段不配置或者配置为0时，会由cpu_limit字段的值进行覆盖 |
 | compute_memory_limit  | 否 | Int  | 0 | >= 0  |  针对图计算的额外内存配置，单位 GB。当该字段不配置或者配置为0时，会由memory_limit字段的值进行覆盖 |
 | oltp_namespace  | 是 | String  |   |   |  OLTP 的k8s命名空间 |
-| olap_namespace  | 是 | String  |   |   |  OLAP 的k8s命名空间。当olap_namespace和oltp_namespace的值相同时，其配置的资源限额会进行合并。 |
-| storage_namespace  | 是 | String  |   |   |  存储 的k8s命名空间 |
+| olap_namespace  | 是 | String  |   |   |  OLAP 的k8s命名空间。当olap_namespace和oltp_namespace的值相同时，其配置的资源限额会进行合并 |
+| storage_namespace  | 是 | String  |   |   | 存储 的k8s命名空间 |
+| operator_image_path | 否 | String |   |   | 图计算operator的镜像地址：在创建图空间时，允许指定对应的图计算镜像并交由K8S进行统一管理 |
+| internal_algorithm_image_url | 否 | String |  |  | 图计算的算法镜像地址：在创建图空间时，允许指定图计算的算法镜像并交由K8S进行统一管理  |
 | max_graph_number | 是 | Int | | > 0 | 图空间的图数目的上限 |
 | max_role_number | 是 | Int | | > 0 | 图空间的角色数目的上限 |
 | auth | 否 | Boolean | false | true, false | 图空间是否支持权限认证 |
@@ -51,6 +52,8 @@ POST /graphspaces
 | oltp_namespace  | String |  OLTP 的k8s命名空间 |
 | olap_namespace  | String |  OLAP 的k8s命名空间 |
 | storage_namespace  | String |  存储的k8s命名空间 |
+| operator_image_path | String | 图计算operator的镜像地址 |
+| internal_algorithm_image_url | String | 图计算的算法镜像地址 |
 | max_graph_number | Int | 图空间的图数目的上限 |
 | max_role_number | Int | 图空间的角色数目的上限 |
 | cpu_used  | Int |  已使用的 CPU 核数 |
@@ -82,6 +85,8 @@ POST http://localhost:8080/graphspaces
   "oltp_namespace": "hugegraph-server",
   "olap_namespace": "hugegraph-server",
   "storage_namespace": "hugegraph-server",
+  "operator_image_path": "127.0.0.1/hugegraph-registry/hugegraph-computer-operator:3.1.1",
+  "internal_algorithm_image_url": "127.0.0.1/hugegraph-registry/hugegraph-computer-algorithm:3.1.1",
   "max_graph_number": 100,
   "max_role_number": 10,
   "auth": false,
@@ -109,6 +114,8 @@ POST http://localhost:8080/graphspaces
   "oltp_namespace": "hugegraph-server",
   "olap_namespace": "hugegraph-server",
   "storage_namespace": "hugegraph-server",
+  "operator_image_path": "127.0.0.1/hugegraph-registry/hugegraph-computer-operator:3.1.1",
+  "internal_algorithm_image_url": "127.0.0.1/hugegraph-registry/hugegraph-computer-algorithm:3.1.1",
   "max_graph_number": 100,
   "max_role_number": 10,
   "cpu_used": 0,
@@ -210,6 +217,8 @@ GET /graphspaces/${graphspace}
 | oltp_namespace  | String |  OLTP 的k8s命名空间 |
 | olap_namespace  | String |  OLAP 的k8s命名空间 |
 | storage_namespace  | String |  存储的k8s命名空间 |
+| operator_image_path | String | 图计算operator的镜像地址 |
+| internal_algorithm_image_url | String | 图计算的算法镜像地址 |
 | compute_cpu_limit  | Int  | 针对图计算的额外资源配置，单位GB |
 | compute_memory_limit  |Int | 针对图计算的额外内存配置，单位 GB |
 | max_graph_number | Int | 图空间的图数目的上限 |
@@ -252,6 +261,8 @@ GET http://127.0.0.1:8080/graphspaces/gs1
   "oltp_namespace": "hugegraph-server",
   "olap_namespace": "hugegraph-server",
   "storage_namespace": "hugegraph-server",
+  "operator_image_path": "127.0.0.1/hugegraph-registry/hugegraph-computer-operator:3.1.1",
+  "internal_algorithm_image_url": "127.0.0.1/hugegraph-registry/hugegraph-computer-algorithm:3.1.1",
   "compute_cpu_limit": 0,
   "compute_memory_limit": 0,
   "max_graph_number": 100,
@@ -304,8 +315,10 @@ PUT /graphspaces/${graphspace}
 | compute_cpu_limit  | 否 | Int  | 0 | >= 0  |  针对图计算的额外资源配置，单位GB。当该字段不配置或者配置为0时，会由cpu_limit字段的值进行覆盖 |
 | compute_memory_limit  | 否 | Int  | 0 | >= 0  |  针对图计算的额外内存配置，单位 GB。当该字段不配置或者配置为0时，会由memory_limit字段的值进行覆盖 |
 | oltp_namespace    | 是       | String |       |          | OLTP 的k8s命名空间                       |
-| olap_namespace    | 是       | String |       |          | OLAP 的k8s命名空间。当olap_namespace和oltp_namespace的值相同时，其配置的资源限额会进行合并。                    | 
+| olap_namespace    | 是       | String |       |          | OLAP 的k8s命名空间。当olap_namespace和oltp_namespace的值相同时，其配置的资源限额会进行合并 |
 | storage_namespace | 是       | String |       |          | 存储的k8s命名空间                        |
+| operator_image_path | 否 | String |   |   | 图计算operator的镜像地址：在更新图空间时，允许指定对应的图计算镜像并交由K8S进行统一管理 |
+| internal_algorithm_image_url | 否 | String |  |  | 图计算的算法镜像地址：在更新图空间时，允许指定图计算的算法镜像并交由K8S进行统一管理  |
 | max_graph_number  | 是       | Int    |       | > 0      | 图空间的图数目的上限                      |
 | max_role_number   | 是       | Int    |       | > 0      | 图空间的角色数目的上限                    |
 
@@ -323,6 +336,8 @@ PUT /graphspaces/${graphspace}
 | oltp_namespace  | String |  OLTP 的k8s命名空间 |
 | olap_namespace  | String |  OLAP 的k8s命名空间 |
 | storage_namespace  | String |  存储的k8s命名空间 |
+| operator_image_path | String | 图计算operator的镜像地址 |
+| internal_algorithm_image_url | String | 图计算的算法镜像地址 |
 | max_graph_number | Int | 图空间的图数目的上限 |
 | max_role_number | Int | 图空间的角色数目的上限 |
 | cpu_used  | Int |  已使用的 CPU 核数 |
@@ -353,6 +368,8 @@ PUT http://127.0.0.1:8080/graphspaces/gs1
       "storage_limit": 2048,
       "oltp_namespace": "hugegraph-server",
       "olap_namespace": "hugegraph-server",
+      "operator_image_path": "127.0.0.1/hugegraph-registry/hugegraph-computer-operator:3.1.1",
+      "internal_algorithm_image_url": "127.0.0.1/hugegraph-registry/hugegraph-computer-algorithm:3.1.1",
       "max_graph_number": 1000,
       "max_role_number": 100
     }
@@ -377,6 +394,8 @@ PUT http://127.0.0.1:8080/graphspaces/gs1
   "oltp_namespace": "hugegraph-server",
   "olap_namespace": "hugegraph-server",
   "storage_namespace": "hugegraph-server",
+  "operator_image_path": "127.0.0.1/hugegraph-registry/hugegraph-computer-operator:3.1.1",
+  "internal_algorithm_image_url": "127.0.0.1/hugegraph-registry/hugegraph-computer-algorithm:3.1.1",
   "compute_cpu_limit": 0,
   "compute_memory_limit": 0,
   "max_graph_number": 100,

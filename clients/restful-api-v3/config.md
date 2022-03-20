@@ -43,20 +43,16 @@ PUT  http://localhost:8080/graphspaces/gs1/configs/rest
 ```json
 {
     "restserver.url": "http://0.0.0.0:8080",
-    "server.start_ignore_single_graph_error": "true",
+    "restserver.request_timeout": "30",
     "batch.max_write_ratio": "80",
     "batch.max_write_threads": "0",
     "batch.max_vertices_per_batch": "2000",
     "batch.max_edges_per_batch": "2000",
-    "server.k8s_url": "https://127.0.0.1:6443",
+    "exception.allow_trace": true,
     "server.k8s_use_ca": true,
-    "server.k8s_ca": "/etc/kubernetes/ssl/ca.pem",
-    "server.k8s_client_ca": "/etc/kubernetes/ssl/kubernetes.pem",
-    "server.k8s_client_key": "/etc/kubernetes/ssl/kubernetes-key8.pem",
     "server.k8s_oltp_image": "xx.xx.xx.xx/kgs_bd/hugegraphserver:3.0.0",
-    "k8s.internal_algorithm_image_url": "xx.xx.xx.xx/kgs_bd/hugegraph-computer-algorithm:3.x.x",
-    "k8s.internal_algorithm": "[page-rank, degree-centrality, wcc, triangle-count, rings, rings-with-filter, betweenness-centrality, closeness-centrality, lpa, links, kcore, louvain, clustering-coefficient]",
-    "k8s.algorithms": "[page-rank:com.baidu.hugegraph.computer.algorithm.centrality.pagerank.PageRankParams, degree-centrality:com.baidu.hugegraph.computer.algorithm.centrality.degree.DegreeCentralityParams, wcc:com.baidu.hugegraph.computer.algorithm.community.wcc.WccParams, triangle-count:com.baidu.hugegraph.computer.algorithm.community.trianglecount.TriangleCountParams, rings:com.baidu.hugegraph.computer.algorithm.path.rings.RingsDetectionParams, rings-with-filter:com.baidu.hugegraph.computer.algorithm.path.rings.filter.RingsDetectionWithFilterParams, betweenness-centrality:com.baidu.hugegraph.computer.algorithm.centrality.betweenness.BetweennessCentralityParams, closeness-centrality:com.baidu.hugegraph.computer.algorithm.centrality.closeness.ClosenessCentralityParams, lpa:com.baidu.hugegraph.computer.algorithm.community.lpa.LpaParams, links:com.baidu.hugegraph.computer.algorithm.path.links.LinksParams, kcore:com.baidu.hugegraph.computer.algorithm.community.kcore.KCoreParams, louvain:com.baidu.hugegraph.computer.algorithm.community.louvain.LouvainParams, clustering-coefficient:com.baidu.hugegraph.computer.algorithm.community.cc.ClusteringCoefficientParams]"
+    "k8s.api": true,
+    "k8s.internal_algorithm_image_url": "xx.xx.xx.xx/kgs_bd/hugegraph-computer-algorithm:3.x.x"
 }
 ```
 
@@ -104,20 +100,16 @@ PUT  http://localhost:8080/graphspaces/gs1/configs/rest/sv1
 ```json
 {
     "restserver.url": "http://0.0.0.0:8080",
-    "server.start_ignore_single_graph_error": "true",
+    "restserver.request_timeout": "30",
     "batch.max_write_ratio": "80",
     "batch.max_write_threads": "0",
     "batch.max_vertices_per_batch": "2000",
     "batch.max_edges_per_batch": "2000",
-    "server.k8s_url": "https://127.0.0.1:6443",
+    "exception.allow_trace": true,
     "server.k8s_use_ca": true,
-    "server.k8s_ca": "/etc/kubernetes/ssl/ca.pem",
-    "server.k8s_client_ca": "/etc/kubernetes/ssl/kubernetes.pem",
-    "server.k8s_client_key": "/etc/kubernetes/ssl/kubernetes-key8.pem",
     "server.k8s_oltp_image": "xx.xx.xx.xx/kgs_bd/hugegraphserver:3.0.0",
-    "k8s.internal_algorithm_image_url": "xx.xx.xx.xx/kgs_bd/hugegraph-computer-algorithm:3.x.x",
-    "k8s.internal_algorithm": "[page-rank, degree-centrality, wcc, triangle-count, rings, rings-with-filter, betweenness-centrality, closeness-centrality, lpa, links, kcore, louvain, clustering-coefficient]",
-    "k8s.algorithms": "[page-rank:com.baidu.hugegraph.computer.algorithm.centrality.pagerank.PageRankParams, degree-centrality:com.baidu.hugegraph.computer.algorithm.centrality.degree.DegreeCentralityParams, wcc:com.baidu.hugegraph.computer.algorithm.community.wcc.WccParams, triangle-count:com.baidu.hugegraph.computer.algorithm.community.trianglecount.TriangleCountParams, rings:com.baidu.hugegraph.computer.algorithm.path.rings.RingsDetectionParams, rings-with-filter:com.baidu.hugegraph.computer.algorithm.path.rings.filter.RingsDetectionWithFilterParams, betweenness-centrality:com.baidu.hugegraph.computer.algorithm.centrality.betweenness.BetweennessCentralityParams, closeness-centrality:com.baidu.hugegraph.computer.algorithm.centrality.closeness.ClosenessCentralityParams, lpa:com.baidu.hugegraph.computer.algorithm.community.lpa.LpaParams, links:com.baidu.hugegraph.computer.algorithm.path.links.LinksParams, kcore:com.baidu.hugegraph.computer.algorithm.community.kcore.KCoreParams, louvain:com.baidu.hugegraph.computer.algorithm.community.louvain.LouvainParams, clustering-coefficient:com.baidu.hugegraph.computer.algorithm.community.cc.ClusteringCoefficientParams]"
+    "k8s.api": true,
+    "k8s.internal_algorithm_image_url": "xx.xx.xx.xx/kgs_bd/hugegraph-computer-algorithm:3.x.x"
 }
 ```
 
@@ -131,21 +123,17 @@ PUT  http://localhost:8080/graphspaces/gs1/configs/rest/sv1
 
 ```json
 {
-  "restserver.url": "http://0.0.0.0:8080",
-  "server.start_ignore_single_graph_error": "true",
-  "batch.max_write_ratio": "80",
-  "batch.max_write_threads": "0",
-  "batch.max_vertices_per_batch": "2000",
-  "batch.max_edges_per_batch": "2000",
-  "server.k8s_url": "https://127.0.0.1:6443",
-  "server.k8s_use_ca": true,
-  "server.k8s_ca": "/etc/kubernetes/ssl/ca.pem",
-  "server.k8s_client_ca": "/etc/kubernetes/ssl/kubernetes.pem",
-  "server.k8s_client_key": "/etc/kubernetes/ssl/kubernetes-key8.pem",
-  "server.k8s_oltp_image": "xx.xx.xx.xx/kgs_bd/hugegraphserver:3.0.0",
-  "k8s.internal_algorithm_image_url": "xx.xx.xx.xx/kgs_bd/hugegraph-computer-algorithm:3.x.x",
-  "k8s.internal_algorithm": "[page-rank, degree-centrality, wcc, triangle-count, rings, rings-with-filter, betweenness-centrality, closeness-centrality, lpa, links, kcore, louvain, clustering-coefficient]",
-  "k8s.algorithms": "[page-rank:com.baidu.hugegraph.computer.algorithm.centrality.pagerank.PageRankParams, degree-centrality:com.baidu.hugegraph.computer.algorithm.centrality.degree.DegreeCentralityParams, wcc:com.baidu.hugegraph.computer.algorithm.community.wcc.WccParams, triangle-count:com.baidu.hugegraph.computer.algorithm.community.trianglecount.TriangleCountParams, rings:com.baidu.hugegraph.computer.algorithm.path.rings.RingsDetectionParams, rings-with-filter:com.baidu.hugegraph.computer.algorithm.path.rings.filter.RingsDetectionWithFilterParams, betweenness-centrality:com.baidu.hugegraph.computer.algorithm.centrality.betweenness.BetweennessCentralityParams, closeness-centrality:com.baidu.hugegraph.computer.algorithm.centrality.closeness.ClosenessCentralityParams, lpa:com.baidu.hugegraph.computer.algorithm.community.lpa.LpaParams, links:com.baidu.hugegraph.computer.algorithm.path.links.LinksParams, kcore:com.baidu.hugegraph.computer.algorithm.community.kcore.KCoreParams, louvain:com.baidu.hugegraph.computer.algorithm.community.louvain.LouvainParams, clustering-coefficient:com.baidu.hugegraph.computer.algorithm.community.cc.ClusteringCoefficientParams]"
+    "restserver.url": "http://0.0.0.0:8080",
+    "restserver.request_timeout": "30",
+    "batch.max_write_ratio": "80",
+    "batch.max_write_threads": "0",
+    "batch.max_vertices_per_batch": "2000",
+    "batch.max_edges_per_batch": "2000",
+    "exception.allow_trace": true,
+    "server.k8s_use_ca": true,
+    "server.k8s_oltp_image": "xx.xx.xx.xx/kgs_bd/hugegraphserver:3.0.0",
+    "k8s.api": true,
+    "k8s.internal_algorithm_image_url": "xx.xx.xx.xx/kgs_bd/hugegraph-computer-algorithm:3.x.x"
 }
 ```
 
@@ -199,21 +187,17 @@ GET  http://localhost:8080/graphspaces/gs1/configs/rest
 
 ```json
 {
-  "restserver.url": "http://0.0.0.0:8080",
-  "server.start_ignore_single_graph_error": "true",
-  "batch.max_write_ratio": "80",
-  "batch.max_write_threads": "0",
-  "batch.max_vertices_per_batch": "2000",
-  "batch.max_edges_per_batch": "2000",
-  "server.k8s_url": "https://127.0.0.1:6443",
-  "server.k8s_use_ca": true,
-  "server.k8s_ca": "/etc/kubernetes/ssl/ca.pem",
-  "server.k8s_client_ca": "/etc/kubernetes/ssl/kubernetes.pem",
-  "server.k8s_client_key": "/etc/kubernetes/ssl/kubernetes-key8.pem",
-  "server.k8s_oltp_image": "xx.xx.xx.xx/kgs_bd/hugegraphserver:3.0.0",
-  "k8s.internal_algorithm_image_url": "xx.xx.xx.xx/kgs_bd/hugegraph-computer-algorithm:3.x.x",
-  "k8s.internal_algorithm": "[page-rank, degree-centrality, wcc, triangle-count, rings, rings-with-filter, betweenness-centrality, closeness-centrality, lpa, links, kcore, louvain, clustering-coefficient]",
-  "k8s.algorithms": "[page-rank:com.baidu.hugegraph.computer.algorithm.centrality.pagerank.PageRankParams, degree-centrality:com.baidu.hugegraph.computer.algorithm.centrality.degree.DegreeCentralityParams, wcc:com.baidu.hugegraph.computer.algorithm.community.wcc.WccParams, triangle-count:com.baidu.hugegraph.computer.algorithm.community.trianglecount.TriangleCountParams, rings:com.baidu.hugegraph.computer.algorithm.path.rings.RingsDetectionParams, rings-with-filter:com.baidu.hugegraph.computer.algorithm.path.rings.filter.RingsDetectionWithFilterParams, betweenness-centrality:com.baidu.hugegraph.computer.algorithm.centrality.betweenness.BetweennessCentralityParams, closeness-centrality:com.baidu.hugegraph.computer.algorithm.centrality.closeness.ClosenessCentralityParams, lpa:com.baidu.hugegraph.computer.algorithm.community.lpa.LpaParams, links:com.baidu.hugegraph.computer.algorithm.path.links.LinksParams, kcore:com.baidu.hugegraph.computer.algorithm.community.kcore.KCoreParams, louvain:com.baidu.hugegraph.computer.algorithm.community.louvain.LouvainParams, clustering-coefficient:com.baidu.hugegraph.computer.algorithm.community.cc.ClusteringCoefficientParams]"
+    "restserver.url": "http://0.0.0.0:8080",
+    "restserver.request_timeout": "30",
+    "batch.max_write_ratio": "80",
+    "batch.max_write_threads": "0",
+    "batch.max_vertices_per_batch": "2000",
+    "batch.max_edges_per_batch": "2000",
+    "exception.allow_trace": true,
+    "server.k8s_use_ca": true,
+    "server.k8s_oltp_image": "xx.xx.xx.xx/kgs_bd/hugegraphserver:3.0.0",
+    "k8s.api": true,
+    "k8s.internal_algorithm_image_url": "xx.xx.xx.xx/kgs_bd/hugegraph-computer-algorithm:3.x.x"
 }
 ```
 
@@ -269,21 +253,17 @@ GET  http://localhost:8080/graphspaces/gs1/configs/rest/sv1
 
 ```json
 {
-  "restserver.url": "http://0.0.0.0:8080",
-  "server.start_ignore_single_graph_error": "true",
-  "batch.max_write_ratio": "80",
-  "batch.max_write_threads": "0",
-  "batch.max_vertices_per_batch": "2000",
-  "batch.max_edges_per_batch": "2000",
-  "server.k8s_url": "https://127.0.0.1:6443",
-  "server.k8s_use_ca": true,
-  "server.k8s_ca": "/etc/kubernetes/ssl/ca.pem",
-  "server.k8s_client_ca": "/etc/kubernetes/ssl/kubernetes.pem",
-  "server.k8s_client_key": "/etc/kubernetes/ssl/kubernetes-key8.pem",
-  "server.k8s_oltp_image": "xx.xx.xx.xx/kgs_bd/hugegraphserver:3.0.0",
-  "k8s.internal_algorithm_image_url": "xx.xx.xx.xx/kgs_bd/hugegraph-computer-algorithm:3.x.x",
-  "k8s.internal_algorithm": "[page-rank, degree-centrality, wcc, triangle-count, rings, rings-with-filter, betweenness-centrality, closeness-centrality, lpa, links, kcore, louvain, clustering-coefficient]",
-  "k8s.algorithms": "[page-rank:com.baidu.hugegraph.computer.algorithm.centrality.pagerank.PageRankParams, degree-centrality:com.baidu.hugegraph.computer.algorithm.centrality.degree.DegreeCentralityParams, wcc:com.baidu.hugegraph.computer.algorithm.community.wcc.WccParams, triangle-count:com.baidu.hugegraph.computer.algorithm.community.trianglecount.TriangleCountParams, rings:com.baidu.hugegraph.computer.algorithm.path.rings.RingsDetectionParams, rings-with-filter:com.baidu.hugegraph.computer.algorithm.path.rings.filter.RingsDetectionWithFilterParams, betweenness-centrality:com.baidu.hugegraph.computer.algorithm.centrality.betweenness.BetweennessCentralityParams, closeness-centrality:com.baidu.hugegraph.computer.algorithm.centrality.closeness.ClosenessCentralityParams, lpa:com.baidu.hugegraph.computer.algorithm.community.lpa.LpaParams, links:com.baidu.hugegraph.computer.algorithm.path.links.LinksParams, kcore:com.baidu.hugegraph.computer.algorithm.community.kcore.KCoreParams, louvain:com.baidu.hugegraph.computer.algorithm.community.louvain.LouvainParams, clustering-coefficient:com.baidu.hugegraph.computer.algorithm.community.cc.ClusteringCoefficientParams]"
+    "restserver.url": "http://0.0.0.0:8080",
+    "restserver.request_timeout": "30",
+    "batch.max_write_ratio": "80",
+    "batch.max_write_threads": "0",
+    "batch.max_vertices_per_batch": "2000",
+    "batch.max_edges_per_batch": "2000",
+    "exception.allow_trace": true,
+    "server.k8s_use_ca": true,
+    "server.k8s_oltp_image": "xx.xx.xx.xx/kgs_bd/hugegraphserver:3.0.0",
+    "k8s.api": true,
+    "k8s.internal_algorithm_image_url": "xx.xx.xx.xx/kgs_bd/hugegraph-computer-algorithm:3.x.x"
 }
 ```
 
@@ -324,7 +304,7 @@ DELETE graphspaces/${graphspace}/configs/rest/{service_name}/{key}
 ###### Method & Url
 
 ```
-DELETE  http://localhost:8080/graphspaces/gs1/configs/rest/sv1/server.start_ignore_single_graph_error
+DELETE  http://localhost:8080/graphspaces/gs1/configs/rest/sv1/restserver.request_timeout
 ```
 
 ###### Request Body
@@ -341,20 +321,16 @@ DELETE  http://localhost:8080/graphspaces/gs1/configs/rest/sv1/server.start_igno
 
 ```json
 {
-  "restserver.url": "http://0.0.0.0:8080",
-  "batch.max_write_ratio": "80",
-  "batch.max_write_threads": "0",
-  "batch.max_vertices_per_batch": "2000",
-  "batch.max_edges_per_batch": "2000",
-  "server.k8s_url": "https://127.0.0.1:6443",
-  "server.k8s_use_ca": true,
-  "server.k8s_ca": "/etc/kubernetes/ssl/ca.pem",
-  "server.k8s_client_ca": "/etc/kubernetes/ssl/kubernetes.pem",
-  "server.k8s_client_key": "/etc/kubernetes/ssl/kubernetes-key8.pem",
-  "server.k8s_oltp_image": "xx.xx.xx.xx/kgs_bd/hugegraphserver:3.0.0",
-  "k8s.internal_algorithm_image_url": "xx.xx.xx.xx/kgs_bd/hugegraph-computer-algorithm:3.x.x",
-  "k8s.internal_algorithm": "[page-rank, degree-centrality, wcc, triangle-count, rings, rings-with-filter, betweenness-centrality, closeness-centrality, lpa, links, kcore, louvain, clustering-coefficient]",
-  "k8s.algorithms": "[page-rank:com.baidu.hugegraph.computer.algorithm.centrality.pagerank.PageRankParams, degree-centrality:com.baidu.hugegraph.computer.algorithm.centrality.degree.DegreeCentralityParams, wcc:com.baidu.hugegraph.computer.algorithm.community.wcc.WccParams, triangle-count:com.baidu.hugegraph.computer.algorithm.community.trianglecount.TriangleCountParams, rings:com.baidu.hugegraph.computer.algorithm.path.rings.RingsDetectionParams, rings-with-filter:com.baidu.hugegraph.computer.algorithm.path.rings.filter.RingsDetectionWithFilterParams, betweenness-centrality:com.baidu.hugegraph.computer.algorithm.centrality.betweenness.BetweennessCentralityParams, closeness-centrality:com.baidu.hugegraph.computer.algorithm.centrality.closeness.ClosenessCentralityParams, lpa:com.baidu.hugegraph.computer.algorithm.community.lpa.LpaParams, links:com.baidu.hugegraph.computer.algorithm.path.links.LinksParams, kcore:com.baidu.hugegraph.computer.algorithm.community.kcore.KCoreParams, louvain:com.baidu.hugegraph.computer.algorithm.community.louvain.LouvainParams, clustering-coefficient:com.baidu.hugegraph.computer.algorithm.community.cc.ClusteringCoefficientParams]"
+    "restserver.url": "http://0.0.0.0:8080",
+    "batch.max_write_ratio": "80",
+    "batch.max_write_threads": "0",
+    "batch.max_vertices_per_batch": "2000",
+    "batch.max_edges_per_batch": "2000",
+    "exception.allow_trace": true,
+    "server.k8s_use_ca": true,
+    "server.k8s_oltp_image": "xx.xx.xx.xx/kgs_bd/hugegraphserver:3.0.0",
+    "k8s.api": true,
+    "k8s.internal_algorithm_image_url": "xx.xx.xx.xx/kgs_bd/hugegraph-computer-algorithm:3.x.x"
 }
 ```
 
@@ -409,20 +385,16 @@ DELETE  http://localhost:8080/graphspaces/gs1/configs/rest/sv1
 
 ```json
 {
-  "restserver.url": "http://0.0.0.0:8080",
-  "batch.max_write_ratio": "80",
-  "batch.max_write_threads": "0",
-  "batch.max_vertices_per_batch": "2000",
-  "batch.max_edges_per_batch": "2000",
-  "server.k8s_url": "https://127.0.0.1:6443",
-  "server.k8s_use_ca": true,
-  "server.k8s_ca": "/etc/kubernetes/ssl/ca.pem",
-  "server.k8s_client_ca": "/etc/kubernetes/ssl/kubernetes.pem",
-  "server.k8s_client_key": "/etc/kubernetes/ssl/kubernetes-key8.pem",
-  "server.k8s_oltp_image": "xx.xx.xx.xx/kgs_bd/hugegraphserver:3.0.0",
-  "k8s.internal_algorithm_image_url": "xx.xx.xx.xx/kgs_bd/hugegraph-computer-algorithm:3.x.x",
-  "k8s.internal_algorithm": "[page-rank, degree-centrality, wcc, triangle-count, rings, rings-with-filter, betweenness-centrality, closeness-centrality, lpa, links, kcore, louvain, clustering-coefficient]",
-  "k8s.algorithms": "[page-rank:com.baidu.hugegraph.computer.algorithm.centrality.pagerank.PageRankParams, degree-centrality:com.baidu.hugegraph.computer.algorithm.centrality.degree.DegreeCentralityParams, wcc:com.baidu.hugegraph.computer.algorithm.community.wcc.WccParams, triangle-count:com.baidu.hugegraph.computer.algorithm.community.trianglecount.TriangleCountParams, rings:com.baidu.hugegraph.computer.algorithm.path.rings.RingsDetectionParams, rings-with-filter:com.baidu.hugegraph.computer.algorithm.path.rings.filter.RingsDetectionWithFilterParams, betweenness-centrality:com.baidu.hugegraph.computer.algorithm.centrality.betweenness.BetweennessCentralityParams, closeness-centrality:com.baidu.hugegraph.computer.algorithm.centrality.closeness.ClosenessCentralityParams, lpa:com.baidu.hugegraph.computer.algorithm.community.lpa.LpaParams, links:com.baidu.hugegraph.computer.algorithm.path.links.LinksParams, kcore:com.baidu.hugegraph.computer.algorithm.community.kcore.KCoreParams, louvain:com.baidu.hugegraph.computer.algorithm.community.louvain.LouvainParams, clustering-coefficient:com.baidu.hugegraph.computer.algorithm.community.cc.ClusteringCoefficientParams]"
+    "restserver.url": "http://0.0.0.0:8080",
+    "batch.max_write_ratio": "80",
+    "batch.max_write_threads": "0",
+    "batch.max_vertices_per_batch": "2000",
+    "batch.max_edges_per_batch": "2000",
+    "exception.allow_trace": true,
+    "server.k8s_use_ca": true,
+    "server.k8s_oltp_image": "xx.xx.xx.xx/kgs_bd/hugegraphserver:3.0.0",
+    "k8s.api": true,
+    "k8s.internal_algorithm_image_url": "xx.xx.xx.xx/kgs_bd/hugegraph-computer-algorithm:3.x.x"
 }
 ```
 

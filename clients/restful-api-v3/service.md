@@ -108,6 +108,8 @@ POST http://localhost:8080/graphspaces/gs1/services
 }
 ```
 
+> 当用户选择 deployment_type 为 MANUAL 时，后续手动部署参考《产品文档Vx.x.x》手动部署 Hugegraph 进行安装。
+
 #### 4.2.2.列出某个图空间的所有服务
 
 ##### 功能介绍

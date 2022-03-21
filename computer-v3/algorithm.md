@@ -994,11 +994,13 @@ POST http://localhost:8080/graphspaces/{graphspace}/graphs/{hugegraph}/jobs/comp
 ###### Resquest Body
 
 ```json
-"algorithm": "subgraph-match",
+{
+  "algorithm": "subgraph-match",
   "worker": 5,
   "params": {
     "subgraph.query_graph_config": "[{\"id\":\"A\",\"label\":\"person\",},{\"id\":\"B\",\"label\":\"person\",\"property_filter\":\"$element.x > 3\"},{\"id\":\"C\",\"label\":\"person\",\"edges\":[{\"targetId\":\"A\",\"label\":\"knows\",\"property_filter\":\"$element.x > 3\"}]},{\"id\":\"D\",\"label\":\"person\",\"property_filter\":\"$element.x > 3\",\"edges\":[{\"targetId\":\"B\",\"label\":\"knows\",},{\"targetId\":\"F\",\"label\":\"knows\",\"property_filter\":\"$element.x > 3\"},{\"targetId\":\"C\",\"label\":\"knows\",},{\"targetId\":\"E\",\"label\":\"knows\",}]},{\"id\":\"E\",\"label\":\"person\",},{\"id\":\"F\",\"label\":\"person\",\"property_filter\":\"$element.x > 3\",\"edges\":[{\"targetId\":\"B\",\"label\":\"knows\",\"property_filter\":\"$element.x > 3\"},{\"targetId\":\"C\",\"label\":\"knows\",\"property_filter\":\"$element.x > 3\"}]}]"
   }
+}
 ```
 
 ###### 过滤条件示例

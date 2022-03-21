@@ -1417,6 +1417,22 @@
 <td>&#x56FE;&#x7A7A;&#x95F4;&#x7684;&#x6570;&#x636E;&#x5360;&#x636E;&#x7684;&#x78C1;&#x76D8;&#x7A7A;&#x95F4;&#x4E0A;&#x9650;</td>
 </tr>
 <tr>
+<td>compute_cpu_limit</td>
+<td>&#x5426;</td>
+<td>Int</td>
+<td>0</td>
+<td>&gt;= 0</td>
+<td>&#x9488;&#x5BF9;&#x56FE;&#x8BA1;&#x7B97;&#x7684;&#x989D;&#x5916;&#x8D44;&#x6E90;&#x914D;&#x7F6E;&#xFF0C;&#x5355;&#x4F4D;GB&#x3002;&#x5F53;&#x8BE5;&#x5B57;&#x6BB5;&#x4E0D;&#x914D;&#x7F6E;&#x6216;&#x8005;&#x914D;&#x7F6E;&#x4E3A;0&#x65F6;&#xFF0C;&#x4F1A;&#x7531;cpu_limit&#x5B57;&#x6BB5;&#x7684;&#x503C;&#x8FDB;&#x884C;&#x8986;&#x76D6;</td>
+</tr>
+<tr>
+<td>compute_memory_limit</td>
+<td>&#x5426;</td>
+<td>Int</td>
+<td>0</td>
+<td>&gt;= 0</td>
+<td>&#x9488;&#x5BF9;&#x56FE;&#x8BA1;&#x7B97;&#x7684;&#x989D;&#x5916;&#x5185;&#x5B58;&#x914D;&#x7F6E;&#xFF0C;&#x5355;&#x4F4D; GB&#x3002;&#x5F53;&#x8BE5;&#x5B57;&#x6BB5;&#x4E0D;&#x914D;&#x7F6E;&#x6216;&#x8005;&#x914D;&#x7F6E;&#x4E3A;0&#x65F6;&#xFF0C;&#x4F1A;&#x7531;memory_limit&#x5B57;&#x6BB5;&#x7684;&#x503C;&#x8FDB;&#x884C;&#x8986;&#x76D6;</td>
+</tr>
+<tr>
 <td>oltp_namespace</td>
 <td>&#x662F;</td>
 <td>String</td>
@@ -1430,7 +1446,7 @@
 <td>String</td>
 <td></td>
 <td></td>
-<td>OLAP &#x7684;k8s&#x547D;&#x540D;&#x7A7A;&#x95F4;</td>
+<td>OLAP &#x7684;k8s&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x3002;&#x5F53;olap_namespace&#x548C;oltp_namespace&#x7684;&#x503C;&#x76F8;&#x540C;&#x65F6;&#xFF0C;&#x5176;&#x914D;&#x7F6E;&#x7684;&#x8D44;&#x6E90;&#x9650;&#x989D;&#x4F1A;&#x8FDB;&#x884C;&#x5408;&#x5E76;</td>
 </tr>
 <tr>
 <td>storage_namespace</td>
@@ -1439,6 +1455,22 @@
 <td></td>
 <td></td>
 <td>&#x5B58;&#x50A8; &#x7684;k8s&#x547D;&#x540D;&#x7A7A;&#x95F4;</td>
+</tr>
+<tr>
+<td>operator_image_path</td>
+<td>&#x5426;</td>
+<td>String</td>
+<td></td>
+<td></td>
+<td>&#x56FE;&#x8BA1;&#x7B97;operator&#x7684;&#x955C;&#x50CF;&#x5730;&#x5740;&#xFF1A;&#x5728;&#x521B;&#x5EFA;&#x56FE;&#x7A7A;&#x95F4;&#x65F6;&#xFF0C;&#x5141;&#x8BB8;&#x6307;&#x5B9A;&#x5BF9;&#x5E94;&#x7684;&#x56FE;&#x8BA1;&#x7B97;&#x955C;&#x50CF;&#x5E76;&#x4EA4;&#x7531;K8S&#x8FDB;&#x884C;&#x7EDF;&#x4E00;&#x7BA1;&#x7406;</td>
+</tr>
+<tr>
+<td>internal_algorithm_image_url</td>
+<td>&#x5426;</td>
+<td>String</td>
+<td></td>
+<td></td>
+<td>&#x56FE;&#x8BA1;&#x7B97;&#x7684;&#x7B97;&#x6CD5;&#x955C;&#x50CF;&#x5730;&#x5740;&#xFF1A;&#x5728;&#x521B;&#x5EFA;&#x56FE;&#x7A7A;&#x95F4;&#x65F6;&#xFF0C;&#x5141;&#x8BB8;&#x6307;&#x5B9A;&#x56FE;&#x8BA1;&#x7B97;&#x7684;&#x7B97;&#x6CD5;&#x955C;&#x50CF;&#x5E76;&#x4EA4;&#x7531;K8S&#x8FDB;&#x884C;&#x7EDF;&#x4E00;&#x7BA1;&#x7406;</td>
 </tr>
 <tr>
 <td>max_graph_number</td>
@@ -1510,6 +1542,16 @@
 <td>&#x56FE;&#x7A7A;&#x95F4;&#x7684;&#x6570;&#x636E;&#x5360;&#x636E;&#x7684;&#x78C1;&#x76D8;&#x7A7A;&#x95F4;&#x4E0A;&#x9650;</td>
 </tr>
 <tr>
+<td>compute_cpu_limit</td>
+<td>Int</td>
+<td>&#x9488;&#x5BF9;&#x56FE;&#x8BA1;&#x7B97;&#x7684;&#x989D;&#x5916;&#x8D44;&#x6E90;&#x914D;&#x7F6E;&#xFF0C;&#x5355;&#x4F4D;GB</td>
+</tr>
+<tr>
+<td>compute_memory_limit</td>
+<td>Int</td>
+<td>&#x9488;&#x5BF9;&#x56FE;&#x8BA1;&#x7B97;&#x7684;&#x989D;&#x5916;&#x5185;&#x5B58;&#x914D;&#x7F6E;&#xFF0C;&#x5355;&#x4F4D; GB</td>
+</tr>
+<tr>
 <td>oltp_namespace</td>
 <td>String</td>
 <td>OLTP &#x7684;k8s&#x547D;&#x540D;&#x7A7A;&#x95F4;</td>
@@ -1523,6 +1565,16 @@
 <td>storage_namespace</td>
 <td>String</td>
 <td>&#x5B58;&#x50A8;&#x7684;k8s&#x547D;&#x540D;&#x7A7A;&#x95F4;</td>
+</tr>
+<tr>
+<td>operator_image_path</td>
+<td>String</td>
+<td>&#x56FE;&#x8BA1;&#x7B97;operator&#x7684;&#x955C;&#x50CF;&#x5730;&#x5740;</td>
+</tr>
+<tr>
+<td>internal_algorithm_image_url</td>
+<td>String</td>
+<td>&#x56FE;&#x8BA1;&#x7B97;&#x7684;&#x7B97;&#x6CD5;&#x955C;&#x50CF;&#x5730;&#x5740;</td>
 </tr>
 <tr>
 <td>max_graph_number</td>
@@ -1576,9 +1628,13 @@
   <span class="hljs-string">&quot;cpu_limit&quot;</span>: <span class="hljs-number">1000</span>,
   <span class="hljs-string">&quot;memory_limit&quot;</span>: <span class="hljs-number">1024</span>,
   <span class="hljs-string">&quot;storage_limit&quot;</span>: <span class="hljs-number">1000</span>,
+  <span class="hljs-string">&quot;compute_cpu_limit&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-string">&quot;compute_memory_limit&quot;</span>: <span class="hljs-number">0</span>,
   <span class="hljs-string">&quot;oltp_namespace&quot;</span>: <span class="hljs-string">&quot;hugegraph-server&quot;</span>,
   <span class="hljs-string">&quot;olap_namespace&quot;</span>: <span class="hljs-string">&quot;hugegraph-server&quot;</span>,
   <span class="hljs-string">&quot;storage_namespace&quot;</span>: <span class="hljs-string">&quot;hugegraph-server&quot;</span>,
+  <span class="hljs-string">&quot;operator_image_path&quot;</span>: <span class="hljs-string">&quot;127.0.0.1/hugegraph-registry/hugegraph-computer-operator:3.1.1&quot;</span>,
+  <span class="hljs-string">&quot;internal_algorithm_image_url&quot;</span>: <span class="hljs-string">&quot;127.0.0.1/hugegraph-registry/hugegraph-computer-algorithm:3.1.1&quot;</span>,
   <span class="hljs-string">&quot;max_graph_number&quot;</span>: <span class="hljs-number">100</span>,
   <span class="hljs-string">&quot;max_role_number&quot;</span>: <span class="hljs-number">10</span>,
   <span class="hljs-string">&quot;auth&quot;</span>: <span class="hljs-literal">false</span>,
@@ -1595,9 +1651,13 @@
   <span class="hljs-string">&quot;cpu_limit&quot;</span>: <span class="hljs-number">1000</span>,
   <span class="hljs-string">&quot;memory_limit&quot;</span>: <span class="hljs-number">1024</span>,
   <span class="hljs-string">&quot;storage_limit&quot;</span>: <span class="hljs-number">1000</span>,
+  <span class="hljs-string">&quot;compute_cpu_limit&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-string">&quot;compute_memory_limit&quot;</span>: <span class="hljs-number">0</span>,
   <span class="hljs-string">&quot;oltp_namespace&quot;</span>: <span class="hljs-string">&quot;hugegraph-server&quot;</span>,
   <span class="hljs-string">&quot;olap_namespace&quot;</span>: <span class="hljs-string">&quot;hugegraph-server&quot;</span>,
   <span class="hljs-string">&quot;storage_namespace&quot;</span>: <span class="hljs-string">&quot;hugegraph-server&quot;</span>,
+  <span class="hljs-string">&quot;operator_image_path&quot;</span>: <span class="hljs-string">&quot;127.0.0.1/hugegraph-registry/hugegraph-computer-operator:3.1.1&quot;</span>,
+  <span class="hljs-string">&quot;internal_algorithm_image_url&quot;</span>: <span class="hljs-string">&quot;127.0.0.1/hugegraph-registry/hugegraph-computer-algorithm:3.1.1&quot;</span>,
   <span class="hljs-string">&quot;max_graph_number&quot;</span>: <span class="hljs-number">100</span>,
   <span class="hljs-string">&quot;max_role_number&quot;</span>: <span class="hljs-number">10</span>,
   <span class="hljs-string">&quot;cpu_used&quot;</span>: <span class="hljs-number">0</span>,
@@ -1731,6 +1791,26 @@
 <td>&#x5B58;&#x50A8;&#x7684;k8s&#x547D;&#x540D;&#x7A7A;&#x95F4;</td>
 </tr>
 <tr>
+<td>operator_image_path</td>
+<td>String</td>
+<td>&#x56FE;&#x8BA1;&#x7B97;operator&#x7684;&#x955C;&#x50CF;&#x5730;&#x5740;</td>
+</tr>
+<tr>
+<td>internal_algorithm_image_url</td>
+<td>String</td>
+<td>&#x56FE;&#x8BA1;&#x7B97;&#x7684;&#x7B97;&#x6CD5;&#x955C;&#x50CF;&#x5730;&#x5740;</td>
+</tr>
+<tr>
+<td>compute_cpu_limit</td>
+<td>Int</td>
+<td>&#x9488;&#x5BF9;&#x56FE;&#x8BA1;&#x7B97;&#x7684;&#x989D;&#x5916;&#x8D44;&#x6E90;&#x914D;&#x7F6E;&#xFF0C;&#x5355;&#x4F4D;GB</td>
+</tr>
+<tr>
+<td>compute_memory_limit</td>
+<td>Int</td>
+<td>&#x9488;&#x5BF9;&#x56FE;&#x8BA1;&#x7B97;&#x7684;&#x989D;&#x5916;&#x5185;&#x5B58;&#x914D;&#x7F6E;&#xFF0C;&#x5355;&#x4F4D; GB</td>
+</tr>
+<tr>
 <td>max_graph_number</td>
 <td>Int</td>
 <td>&#x56FE;&#x7A7A;&#x95F4;&#x7684;&#x56FE;&#x6570;&#x76EE;&#x7684;&#x4E0A;&#x9650;</td>
@@ -1790,6 +1870,10 @@
   <span class="hljs-string">&quot;oltp_namespace&quot;</span>: <span class="hljs-string">&quot;hugegraph-server&quot;</span>,
   <span class="hljs-string">&quot;olap_namespace&quot;</span>: <span class="hljs-string">&quot;hugegraph-server&quot;</span>,
   <span class="hljs-string">&quot;storage_namespace&quot;</span>: <span class="hljs-string">&quot;hugegraph-server&quot;</span>,
+  <span class="hljs-string">&quot;operator_image_path&quot;</span>: <span class="hljs-string">&quot;127.0.0.1/hugegraph-registry/hugegraph-computer-operator:3.1.1&quot;</span>,
+  <span class="hljs-string">&quot;internal_algorithm_image_url&quot;</span>: <span class="hljs-string">&quot;127.0.0.1/hugegraph-registry/hugegraph-computer-algorithm:3.1.1&quot;</span>,
+  <span class="hljs-string">&quot;compute_cpu_limit&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-string">&quot;compute_memory_limit&quot;</span>: <span class="hljs-number">0</span>,
   <span class="hljs-string">&quot;max_graph_number&quot;</span>: <span class="hljs-number">100</span>,
   <span class="hljs-string">&quot;max_role_number&quot;</span>: <span class="hljs-number">10</span>,
   <span class="hljs-string">&quot;cpu_used&quot;</span>: <span class="hljs-number">0</span>,
@@ -1914,6 +1998,22 @@
 <td>&#x56FE;&#x7A7A;&#x95F4;&#x7684;&#x6570;&#x636E;&#x5360;&#x636E;&#x7684;&#x78C1;&#x76D8;&#x7A7A;&#x95F4;&#x4E0A;&#x9650;</td>
 </tr>
 <tr>
+<td>compute_cpu_limit</td>
+<td>&#x5426;</td>
+<td>Int</td>
+<td>0</td>
+<td>&gt;= 0</td>
+<td>&#x9488;&#x5BF9;&#x56FE;&#x8BA1;&#x7B97;&#x7684;&#x989D;&#x5916;&#x8D44;&#x6E90;&#x914D;&#x7F6E;&#xFF0C;&#x5355;&#x4F4D;GB&#x3002;&#x5F53;&#x8BE5;&#x5B57;&#x6BB5;&#x4E0D;&#x914D;&#x7F6E;&#x6216;&#x8005;&#x914D;&#x7F6E;&#x4E3A;0&#x65F6;&#xFF0C;&#x4F1A;&#x7531;cpu_limit&#x5B57;&#x6BB5;&#x7684;&#x503C;&#x8FDB;&#x884C;&#x8986;&#x76D6;</td>
+</tr>
+<tr>
+<td>compute_memory_limit</td>
+<td>&#x5426;</td>
+<td>Int</td>
+<td>0</td>
+<td>&gt;= 0</td>
+<td>&#x9488;&#x5BF9;&#x56FE;&#x8BA1;&#x7B97;&#x7684;&#x989D;&#x5916;&#x5185;&#x5B58;&#x914D;&#x7F6E;&#xFF0C;&#x5355;&#x4F4D; GB&#x3002;&#x5F53;&#x8BE5;&#x5B57;&#x6BB5;&#x4E0D;&#x914D;&#x7F6E;&#x6216;&#x8005;&#x914D;&#x7F6E;&#x4E3A;0&#x65F6;&#xFF0C;&#x4F1A;&#x7531;memory_limit&#x5B57;&#x6BB5;&#x7684;&#x503C;&#x8FDB;&#x884C;&#x8986;&#x76D6;</td>
+</tr>
+<tr>
 <td>oltp_namespace</td>
 <td>&#x662F;</td>
 <td>String</td>
@@ -1927,7 +2027,7 @@
 <td>String</td>
 <td></td>
 <td></td>
-<td>OLAP &#x7684;k8s&#x547D;&#x540D;&#x7A7A;&#x95F4;</td>
+<td>OLAP &#x7684;k8s&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x3002;&#x5F53;olap_namespace&#x548C;oltp_namespace&#x7684;&#x503C;&#x76F8;&#x540C;&#x65F6;&#xFF0C;&#x5176;&#x914D;&#x7F6E;&#x7684;&#x8D44;&#x6E90;&#x9650;&#x989D;&#x4F1A;&#x8FDB;&#x884C;&#x5408;&#x5E76;</td>
 </tr>
 <tr>
 <td>storage_namespace</td>
@@ -1936,6 +2036,22 @@
 <td></td>
 <td></td>
 <td>&#x5B58;&#x50A8;&#x7684;k8s&#x547D;&#x540D;&#x7A7A;&#x95F4;</td>
+</tr>
+<tr>
+<td>operator_image_path</td>
+<td>&#x5426;</td>
+<td>String</td>
+<td></td>
+<td></td>
+<td>&#x56FE;&#x8BA1;&#x7B97;operator&#x7684;&#x955C;&#x50CF;&#x5730;&#x5740;&#xFF1A;&#x5728;&#x66F4;&#x65B0;&#x56FE;&#x7A7A;&#x95F4;&#x65F6;&#xFF0C;&#x5141;&#x8BB8;&#x6307;&#x5B9A;&#x5BF9;&#x5E94;&#x7684;&#x56FE;&#x8BA1;&#x7B97;&#x955C;&#x50CF;&#x5E76;&#x4EA4;&#x7531;K8S&#x8FDB;&#x884C;&#x7EDF;&#x4E00;&#x7BA1;&#x7406;</td>
+</tr>
+<tr>
+<td>internal_algorithm_image_url</td>
+<td>&#x5426;</td>
+<td>String</td>
+<td></td>
+<td></td>
+<td>&#x56FE;&#x8BA1;&#x7B97;&#x7684;&#x7B97;&#x6CD5;&#x955C;&#x50CF;&#x5730;&#x5740;&#xFF1A;&#x5728;&#x66F4;&#x65B0;&#x56FE;&#x7A7A;&#x95F4;&#x65F6;&#xFF0C;&#x5141;&#x8BB8;&#x6307;&#x5B9A;&#x56FE;&#x8BA1;&#x7B97;&#x7684;&#x7B97;&#x6CD5;&#x955C;&#x50CF;&#x5E76;&#x4EA4;&#x7531;K8S&#x8FDB;&#x884C;&#x7EDF;&#x4E00;&#x7BA1;&#x7406;</td>
 </tr>
 <tr>
 <td>max_graph_number</td>
@@ -1991,6 +2107,16 @@
 <td>&#x56FE;&#x7A7A;&#x95F4;&#x7684;&#x6570;&#x636E;&#x5360;&#x636E;&#x7684;&#x78C1;&#x76D8;&#x7A7A;&#x95F4;&#x4E0A;&#x9650;</td>
 </tr>
 <tr>
+<td>compute_cpu_limit</td>
+<td>Int</td>
+<td>&#x9488;&#x5BF9;&#x56FE;&#x8BA1;&#x7B97;&#x7684;&#x989D;&#x5916;&#x8D44;&#x6E90;&#x914D;&#x7F6E;&#xFF0C;&#x5355;&#x4F4D;GB</td>
+</tr>
+<tr>
+<td>compute_memory_limit</td>
+<td>Int</td>
+<td>&#x9488;&#x5BF9;&#x56FE;&#x8BA1;&#x7B97;&#x7684;&#x989D;&#x5916;&#x5185;&#x5B58;&#x914D;&#x7F6E;&#xFF0C;&#x5355;&#x4F4D; GB</td>
+</tr>
+<tr>
 <td>oltp_namespace</td>
 <td>String</td>
 <td>OLTP &#x7684;k8s&#x547D;&#x540D;&#x7A7A;&#x95F4;</td>
@@ -2004,6 +2130,16 @@
 <td>storage_namespace</td>
 <td>String</td>
 <td>&#x5B58;&#x50A8;&#x7684;k8s&#x547D;&#x540D;&#x7A7A;&#x95F4;</td>
+</tr>
+<tr>
+<td>operator_image_path</td>
+<td>String</td>
+<td>&#x56FE;&#x8BA1;&#x7B97;operator&#x7684;&#x955C;&#x50CF;&#x5730;&#x5740;</td>
+</tr>
+<tr>
+<td>internal_algorithm_image_url</td>
+<td>String</td>
+<td>&#x56FE;&#x8BA1;&#x7B97;&#x7684;&#x7B97;&#x6CD5;&#x955C;&#x50CF;&#x5730;&#x5740;</td>
 </tr>
 <tr>
 <td>max_graph_number</td>
@@ -2061,6 +2197,8 @@
       <span class="hljs-string">&quot;storage_limit&quot;</span>: <span class="hljs-number">2048</span>,
       <span class="hljs-string">&quot;oltp_namespace&quot;</span>: <span class="hljs-string">&quot;hugegraph-server&quot;</span>,
       <span class="hljs-string">&quot;olap_namespace&quot;</span>: <span class="hljs-string">&quot;hugegraph-server&quot;</span>,
+      <span class="hljs-string">&quot;operator_image_path&quot;</span>: <span class="hljs-string">&quot;127.0.0.1/hugegraph-registry/hugegraph-computer-operator:3.1.1&quot;</span>,
+      <span class="hljs-string">&quot;internal_algorithm_image_url&quot;</span>: <span class="hljs-string">&quot;127.0.0.1/hugegraph-registry/hugegraph-computer-algorithm:3.1.1&quot;</span>,
       <span class="hljs-string">&quot;max_graph_number&quot;</span>: <span class="hljs-number">1000</span>,
       <span class="hljs-string">&quot;max_role_number&quot;</span>: <span class="hljs-number">100</span>
     }
@@ -2079,6 +2217,10 @@
   <span class="hljs-string">&quot;oltp_namespace&quot;</span>: <span class="hljs-string">&quot;hugegraph-server&quot;</span>,
   <span class="hljs-string">&quot;olap_namespace&quot;</span>: <span class="hljs-string">&quot;hugegraph-server&quot;</span>,
   <span class="hljs-string">&quot;storage_namespace&quot;</span>: <span class="hljs-string">&quot;hugegraph-server&quot;</span>,
+  <span class="hljs-string">&quot;operator_image_path&quot;</span>: <span class="hljs-string">&quot;127.0.0.1/hugegraph-registry/hugegraph-computer-operator:3.1.1&quot;</span>,
+  <span class="hljs-string">&quot;internal_algorithm_image_url&quot;</span>: <span class="hljs-string">&quot;127.0.0.1/hugegraph-registry/hugegraph-computer-algorithm:3.1.1&quot;</span>,
+  <span class="hljs-string">&quot;compute_cpu_limit&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-string">&quot;compute_memory_limit&quot;</span>: <span class="hljs-number">0</span>,
   <span class="hljs-string">&quot;max_graph_number&quot;</span>: <span class="hljs-number">100</span>,
   <span class="hljs-string">&quot;max_role_number&quot;</span>: <span class="hljs-number">10</span>,
   <span class="hljs-string">&quot;cpu_used&quot;</span>: <span class="hljs-number">0</span>,
@@ -2184,7 +2326,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"GraphSpace","level":"4.2.17","depth":2,"next":{"title":"Service","level":"4.2.18","depth":2,"path":"clients/restful-api-v3/service.md","ref":"clients/restful-api-v3/service.md","articles":[]},"previous":{"title":"Authentication","level":"4.2.16","depth":2,"path":"clients/restful-api-v3/auth.md","ref":"clients/restful-api-v3/auth.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"clients/restful-api-v3/graphspace.md","mtime":"2022-03-10T12:05:32.008Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-03-11T02:44:14.533Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"GraphSpace","level":"4.2.17","depth":2,"next":{"title":"Service","level":"4.2.18","depth":2,"path":"clients/restful-api-v3/service.md","ref":"clients/restful-api-v3/service.md","articles":[]},"previous":{"title":"Authentication","level":"4.2.16","depth":2,"path":"clients/restful-api-v3/auth.md","ref":"clients/restful-api-v3/auth.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"clients/restful-api-v3/graphspace.md","mtime":"2022-03-21T02:33:15.118Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-03-21T02:33:15.782Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

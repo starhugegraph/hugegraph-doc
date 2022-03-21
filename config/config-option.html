@@ -1862,6 +1862,61 @@
 <td>20971520</td>
 <td>The ChannelOutboundBuffer&apos;s high water mark of netty, only when buffer size exceed this size, the method ChannelOutboundBuffer.isWritable() will return false, it means that the downstream pressure is too great to process the request or network is very congestion, upstream needs to limit rate at this time.</td>
 </tr>
+<tr>
+<td>graph.virtual_graph_enable</td>
+<td>false</td>
+<td>Whether to enable the Virtual Graph</td>
+</tr>
+<tr>
+<td>graph.virtual_graph_batch_buffer_size</td>
+<td>0</td>
+<td>The size of buffer for batch load in Virtual Graph</td>
+</tr>
+<tr>
+<td>graph.virtual_graph_batch_size</td>
+<td>50</td>
+<td>The size of each batch when batch loading in Virtual Graph</td>
+</tr>
+<tr>
+<td>graph.virtual_graph_batch_time_ms</td>
+<td>100</td>
+<td>Interval in milliseconds to batch load queries in buffer of Virtual Graph</td>
+</tr>
+<tr>
+<td>graph.virtual_graph_vertex_init_capacity</td>
+<td>1000 * 1000</td>
+<td>The minimum number of vertices cached in Virtual Graph</td>
+</tr>
+<tr>
+<td>graph.virtual_graph_vertex_max_size</td>
+<td>100 <em> 1000 </em> 1000</td>
+<td>The maximum number of vertices cached in Virtual Graph</td>
+</tr>
+<tr>
+<td>graph.virtual_graph_vertex_expire</td>
+<td>60 * 100</td>
+<td>The expiration time in seconds of vertex cache in Virtual Graph</td>
+</tr>
+<tr>
+<td>graph.virtual_graph_edge_init_capacity</td>
+<td>10000</td>
+<td>The minimum number of edges cached in Virtual Graph</td>
+</tr>
+<tr>
+<td>graph.virtual_graph_edge_max_size</td>
+<td>1000 * 1000</td>
+<td>The maximum number of edges cached in Virtual Graph</td>
+</tr>
+<tr>
+<td>graph.virtual_graph_edge_expire</td>
+<td>60 * 100</td>
+<td>The expiration time in seconds of edge cache in Virtual Graph</td>
+</tr>
+<tr>
+<td>graph.virtual_graph_batcher_task_threads</td>
+<td>Math.max(4, CPUS / 2)</td>
+<td>The task threads of virtual graph batcher</td>
+</tr>
 </tbody>
 </table>
 <h3 id="cassandra-&#x540E;&#x7AEF;&#x914D;&#x7F6E;&#x9879;">Cassandra &#x540E;&#x7AEF;&#x914D;&#x7F6E;&#x9879;</h3>
@@ -2437,7 +2492,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Config Options","level":"3.2","depth":1,"next":{"title":"Config Authentication","level":"3.3","depth":1,"path":"config/config-authentication.md","ref":"config/config-authentication.md","articles":[]},"previous":{"title":"Config Guide","level":"3.1","depth":1,"path":"config/config-guide.md","ref":"config/config-guide.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"config/config-option.md","mtime":"2022-03-10T12:05:32.012Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-03-11T02:44:14.533Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Config Options","level":"3.2","depth":1,"next":{"title":"Config Authentication","level":"3.3","depth":1,"path":"config/config-authentication.md","ref":"config/config-authentication.md","articles":[]},"previous":{"title":"Config Guide","level":"3.1","depth":1,"path":"config/config-guide.md","ref":"config/config-guide.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"config/config-option.md","mtime":"2022-03-21T02:33:15.122Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-03-21T02:33:15.782Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

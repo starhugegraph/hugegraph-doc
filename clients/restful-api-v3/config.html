@@ -1429,20 +1429,110 @@
 </code></pre><h6 id="request-body">Request Body</h6>
 <pre><code class="lang-json">{
     <span class="hljs-string">&quot;restserver.url&quot;</span>: <span class="hljs-string">&quot;http://0.0.0.0:8080&quot;</span>,
-    <span class="hljs-string">&quot;server.start_ignore_single_graph_error&quot;</span>: <span class="hljs-string">&quot;true&quot;</span>,
+    <span class="hljs-string">&quot;restserver.request_timeout&quot;</span>: <span class="hljs-string">&quot;30&quot;</span>,
     <span class="hljs-string">&quot;batch.max_write_ratio&quot;</span>: <span class="hljs-string">&quot;80&quot;</span>,
     <span class="hljs-string">&quot;batch.max_write_threads&quot;</span>: <span class="hljs-string">&quot;0&quot;</span>,
     <span class="hljs-string">&quot;batch.max_vertices_per_batch&quot;</span>: <span class="hljs-string">&quot;2000&quot;</span>,
     <span class="hljs-string">&quot;batch.max_edges_per_batch&quot;</span>: <span class="hljs-string">&quot;2000&quot;</span>,
-    <span class="hljs-string">&quot;server.k8s_url&quot;</span>: <span class="hljs-string">&quot;https://127.0.0.1:6443&quot;</span>,
+    <span class="hljs-string">&quot;exception.allow_trace&quot;</span>: <span class="hljs-literal">true</span>,
     <span class="hljs-string">&quot;server.k8s_use_ca&quot;</span>: <span class="hljs-literal">true</span>,
-    <span class="hljs-string">&quot;server.k8s_ca&quot;</span>: <span class="hljs-string">&quot;/etc/kubernetes/ssl/ca.pem&quot;</span>,
-    <span class="hljs-string">&quot;server.k8s_client_ca&quot;</span>: <span class="hljs-string">&quot;/etc/kubernetes/ssl/kubernetes.pem&quot;</span>,
-    <span class="hljs-string">&quot;server.k8s_client_key&quot;</span>: <span class="hljs-string">&quot;/etc/kubernetes/ssl/kubernetes-key8.pem&quot;</span>,
     <span class="hljs-string">&quot;server.k8s_oltp_image&quot;</span>: <span class="hljs-string">&quot;xx.xx.xx.xx/kgs_bd/hugegraphserver:3.0.0&quot;</span>,
-    <span class="hljs-string">&quot;k8s.internal_algorithm_image_url&quot;</span>: <span class="hljs-string">&quot;xx.xx.xx.xx/kgs_bd/hugegraph-computer-algorithm:3.x.x&quot;</span>,
-    <span class="hljs-string">&quot;k8s.internal_algorithm&quot;</span>: <span class="hljs-string">&quot;[page-rank, degree-centrality, wcc, triangle-count, rings, rings-with-filter, betweenness-centrality, closeness-centrality, lpa, links, kcore, louvain, clustering-coefficient]&quot;</span>,
-    <span class="hljs-string">&quot;k8s.algorithms&quot;</span>: <span class="hljs-string">&quot;[page-rank:com.baidu.hugegraph.computer.algorithm.centrality.pagerank.PageRankParams, degree-centrality:com.baidu.hugegraph.computer.algorithm.centrality.degree.DegreeCentralityParams, wcc:com.baidu.hugegraph.computer.algorithm.community.wcc.WccParams, triangle-count:com.baidu.hugegraph.computer.algorithm.community.trianglecount.TriangleCountParams, rings:com.baidu.hugegraph.computer.algorithm.path.rings.RingsDetectionParams, rings-with-filter:com.baidu.hugegraph.computer.algorithm.path.rings.filter.RingsDetectionWithFilterParams, betweenness-centrality:com.baidu.hugegraph.computer.algorithm.centrality.betweenness.BetweennessCentralityParams, closeness-centrality:com.baidu.hugegraph.computer.algorithm.centrality.closeness.ClosenessCentralityParams, lpa:com.baidu.hugegraph.computer.algorithm.community.lpa.LpaParams, links:com.baidu.hugegraph.computer.algorithm.path.links.LinksParams, kcore:com.baidu.hugegraph.computer.algorithm.community.kcore.KCoreParams, louvain:com.baidu.hugegraph.computer.algorithm.community.louvain.LouvainParams, clustering-coefficient:com.baidu.hugegraph.computer.algorithm.community.cc.ClusteringCoefficientParams]&quot;</span>
+    <span class="hljs-string">&quot;k8s.api&quot;</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">&quot;k8s.internal_algorithm_image_url&quot;</span>: <span class="hljs-string">&quot;xx.xx.xx.xx/kgs_bd/hugegraph-computer-algorithm:3.x.x&quot;</span>
+}
+</code></pre>
+<h4 id="4142&#x8BBE;&#x7F6E;&#x6307;&#x5B9A;&#x670D;&#x52A1;&#x7684;rest&#x914D;&#x7F6E;">4.14.2.&#x8BBE;&#x7F6E;&#x6307;&#x5B9A;&#x670D;&#x52A1;&#x7684;Rest&#x914D;&#x7F6E;</h4>
+<h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
+<p>&#x8BBE;&#x7F6E;&#x6307;&#x5B9A;&#x670D;&#x52A1;&#x7684;Rest&#x914D;&#x7F6E;</p>
+<h5 id="uri">URI</h5>
+<pre><code>PUT graphspaces/${graphspace}/configs/rest}/{service_name}
+</code></pre><h5 id="uri&#x53C2;&#x6570;">URI&#x53C2;&#x6570;</h5>
+<table>
+<thead>
+<tr>
+<th>&#x540D;&#x79F0;</th>
+<th>&#x662F;&#x5426;&#x5FC5;&#x586B;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x9ED8;&#x8BA4;&#x503C;</th>
+<th>&#x53D6;&#x503C;&#x8303;&#x56F4;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>graphspace</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td></td>
+<td></td>
+<td>&#x56FE;&#x7A7A;&#x95F4;</td>
+</tr>
+<tr>
+<td>service_name</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td></td>
+<td></td>
+<td>&#x670D;&#x52A1;&#x540D;</td>
+</tr>
+</tbody>
+</table>
+<h5 id="body&#x53C2;&#x6570;">Body&#x53C2;&#x6570;</h5>
+<table>
+<thead>
+<tr>
+<th>&#x540D;&#x79F0;</th>
+<th>&#x662F;&#x5426;&#x5FC5;&#x586B;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x9ED8;&#x8BA4;&#x503C;</th>
+<th>&#x53D6;&#x503C;&#x8303;&#x56F4;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>properties</td>
+<td>&#x662F;</td>
+<td>Map</td>
+<td></td>
+<td></td>
+<td>&#x914D;&#x7F6E;&#x4FE1;&#x606F;</td>
+</tr>
+</tbody>
+</table>
+<h5 id="response">Response</h5>
+<table>
+<thead>
+<tr>
+<th>&#x540D;&#x79F0;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>*</td>
+<td>Map</td>
+<td>&#x8FD4;&#x56DE;&#x63D0;&#x4EA4;&#x7684;Map&#x4FE1;&#x606F;</td>
+</tr>
+</tbody>
+</table>
+<h5 id="&#x4F7F;&#x7528;&#x793A;&#x4F8B;">&#x4F7F;&#x7528;&#x793A;&#x4F8B;</h5>
+<h6 id="method--url">Method &amp; Url</h6>
+<pre><code>PUT  http://localhost:8080/graphspaces/gs1/configs/rest/sv1
+</code></pre><h6 id="request-body">Request Body</h6>
+<pre><code class="lang-json">{
+    <span class="hljs-string">&quot;restserver.url&quot;</span>: <span class="hljs-string">&quot;http://0.0.0.0:8080&quot;</span>,
+    <span class="hljs-string">&quot;restserver.request_timeout&quot;</span>: <span class="hljs-string">&quot;30&quot;</span>,
+    <span class="hljs-string">&quot;batch.max_write_ratio&quot;</span>: <span class="hljs-string">&quot;80&quot;</span>,
+    <span class="hljs-string">&quot;batch.max_write_threads&quot;</span>: <span class="hljs-string">&quot;0&quot;</span>,
+    <span class="hljs-string">&quot;batch.max_vertices_per_batch&quot;</span>: <span class="hljs-string">&quot;2000&quot;</span>,
+    <span class="hljs-string">&quot;batch.max_edges_per_batch&quot;</span>: <span class="hljs-string">&quot;2000&quot;</span>,
+    <span class="hljs-string">&quot;exception.allow_trace&quot;</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">&quot;server.k8s_use_ca&quot;</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">&quot;server.k8s_oltp_image&quot;</span>: <span class="hljs-string">&quot;xx.xx.xx.xx/kgs_bd/hugegraphserver:3.0.0&quot;</span>,
+    <span class="hljs-string">&quot;k8s.api&quot;</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">&quot;k8s.internal_algorithm_image_url&quot;</span>: <span class="hljs-string">&quot;xx.xx.xx.xx/kgs_bd/hugegraph-computer-algorithm:3.x.x&quot;</span>
 }
 </code></pre>
 <h6 id="response-status">Response Status</h6>
@@ -1450,24 +1540,20 @@
 </code></pre>
 <h6 id="response-body">Response Body</h6>
 <pre><code class="lang-json">{
-  <span class="hljs-string">&quot;restserver.url&quot;</span>: <span class="hljs-string">&quot;http://0.0.0.0:8080&quot;</span>,
-  <span class="hljs-string">&quot;server.start_ignore_single_graph_error&quot;</span>: <span class="hljs-string">&quot;true&quot;</span>,
-  <span class="hljs-string">&quot;batch.max_write_ratio&quot;</span>: <span class="hljs-string">&quot;80&quot;</span>,
-  <span class="hljs-string">&quot;batch.max_write_threads&quot;</span>: <span class="hljs-string">&quot;0&quot;</span>,
-  <span class="hljs-string">&quot;batch.max_vertices_per_batch&quot;</span>: <span class="hljs-string">&quot;2000&quot;</span>,
-  <span class="hljs-string">&quot;batch.max_edges_per_batch&quot;</span>: <span class="hljs-string">&quot;2000&quot;</span>,
-  <span class="hljs-string">&quot;server.k8s_url&quot;</span>: <span class="hljs-string">&quot;https://127.0.0.1:6443&quot;</span>,
-  <span class="hljs-string">&quot;server.k8s_use_ca&quot;</span>: <span class="hljs-literal">true</span>,
-  <span class="hljs-string">&quot;server.k8s_ca&quot;</span>: <span class="hljs-string">&quot;/etc/kubernetes/ssl/ca.pem&quot;</span>,
-  <span class="hljs-string">&quot;server.k8s_client_ca&quot;</span>: <span class="hljs-string">&quot;/etc/kubernetes/ssl/kubernetes.pem&quot;</span>,
-  <span class="hljs-string">&quot;server.k8s_client_key&quot;</span>: <span class="hljs-string">&quot;/etc/kubernetes/ssl/kubernetes-key8.pem&quot;</span>,
-  <span class="hljs-string">&quot;server.k8s_oltp_image&quot;</span>: <span class="hljs-string">&quot;xx.xx.xx.xx/kgs_bd/hugegraphserver:3.0.0&quot;</span>,
-  <span class="hljs-string">&quot;k8s.internal_algorithm_image_url&quot;</span>: <span class="hljs-string">&quot;xx.xx.xx.xx/kgs_bd/hugegraph-computer-algorithm:3.x.x&quot;</span>,
-  <span class="hljs-string">&quot;k8s.internal_algorithm&quot;</span>: <span class="hljs-string">&quot;[page-rank, degree-centrality, wcc, triangle-count, rings, rings-with-filter, betweenness-centrality, closeness-centrality, lpa, links, kcore, louvain, clustering-coefficient]&quot;</span>,
-  <span class="hljs-string">&quot;k8s.algorithms&quot;</span>: <span class="hljs-string">&quot;[page-rank:com.baidu.hugegraph.computer.algorithm.centrality.pagerank.PageRankParams, degree-centrality:com.baidu.hugegraph.computer.algorithm.centrality.degree.DegreeCentralityParams, wcc:com.baidu.hugegraph.computer.algorithm.community.wcc.WccParams, triangle-count:com.baidu.hugegraph.computer.algorithm.community.trianglecount.TriangleCountParams, rings:com.baidu.hugegraph.computer.algorithm.path.rings.RingsDetectionParams, rings-with-filter:com.baidu.hugegraph.computer.algorithm.path.rings.filter.RingsDetectionWithFilterParams, betweenness-centrality:com.baidu.hugegraph.computer.algorithm.centrality.betweenness.BetweennessCentralityParams, closeness-centrality:com.baidu.hugegraph.computer.algorithm.centrality.closeness.ClosenessCentralityParams, lpa:com.baidu.hugegraph.computer.algorithm.community.lpa.LpaParams, links:com.baidu.hugegraph.computer.algorithm.path.links.LinksParams, kcore:com.baidu.hugegraph.computer.algorithm.community.kcore.KCoreParams, louvain:com.baidu.hugegraph.computer.algorithm.community.louvain.LouvainParams, clustering-coefficient:com.baidu.hugegraph.computer.algorithm.community.cc.ClusteringCoefficientParams]&quot;</span>
+    <span class="hljs-string">&quot;restserver.url&quot;</span>: <span class="hljs-string">&quot;http://0.0.0.0:8080&quot;</span>,
+    <span class="hljs-string">&quot;restserver.request_timeout&quot;</span>: <span class="hljs-string">&quot;30&quot;</span>,
+    <span class="hljs-string">&quot;batch.max_write_ratio&quot;</span>: <span class="hljs-string">&quot;80&quot;</span>,
+    <span class="hljs-string">&quot;batch.max_write_threads&quot;</span>: <span class="hljs-string">&quot;0&quot;</span>,
+    <span class="hljs-string">&quot;batch.max_vertices_per_batch&quot;</span>: <span class="hljs-string">&quot;2000&quot;</span>,
+    <span class="hljs-string">&quot;batch.max_edges_per_batch&quot;</span>: <span class="hljs-string">&quot;2000&quot;</span>,
+    <span class="hljs-string">&quot;exception.allow_trace&quot;</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">&quot;server.k8s_use_ca&quot;</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">&quot;server.k8s_oltp_image&quot;</span>: <span class="hljs-string">&quot;xx.xx.xx.xx/kgs_bd/hugegraphserver:3.0.0&quot;</span>,
+    <span class="hljs-string">&quot;k8s.api&quot;</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">&quot;k8s.internal_algorithm_image_url&quot;</span>: <span class="hljs-string">&quot;xx.xx.xx.xx/kgs_bd/hugegraph-computer-algorithm:3.x.x&quot;</span>
 }
 </code></pre>
-<h4 id="4142&#x67E5;&#x8BE2;&#x670D;&#x52A1;rest&#x914D;&#x7F6E;">4.14.2.&#x67E5;&#x8BE2;&#x670D;&#x52A1;Rest&#x914D;&#x7F6E;</h4>
+<h4 id="4143&#x67E5;&#x8BE2;&#x670D;&#x52A1;rest&#x914D;&#x7F6E;">4.14.3.&#x67E5;&#x8BE2;&#x670D;&#x52A1;Rest&#x914D;&#x7F6E;</h4>
 <h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
 <p>&#x67E5;&#x8BE2;&#x670D;&#x52A1;Rest&#x914D;&#x7F6E;</p>
 <h5 id="uri">URI</h5>
@@ -1524,28 +1610,24 @@
 </code></pre>
 <h6 id="response-body">Response Body</h6>
 <pre><code class="lang-json">{
-  <span class="hljs-string">&quot;restserver.url&quot;</span>: <span class="hljs-string">&quot;http://0.0.0.0:8080&quot;</span>,
-  <span class="hljs-string">&quot;server.start_ignore_single_graph_error&quot;</span>: <span class="hljs-string">&quot;true&quot;</span>,
-  <span class="hljs-string">&quot;batch.max_write_ratio&quot;</span>: <span class="hljs-string">&quot;80&quot;</span>,
-  <span class="hljs-string">&quot;batch.max_write_threads&quot;</span>: <span class="hljs-string">&quot;0&quot;</span>,
-  <span class="hljs-string">&quot;batch.max_vertices_per_batch&quot;</span>: <span class="hljs-string">&quot;2000&quot;</span>,
-  <span class="hljs-string">&quot;batch.max_edges_per_batch&quot;</span>: <span class="hljs-string">&quot;2000&quot;</span>,
-  <span class="hljs-string">&quot;server.k8s_url&quot;</span>: <span class="hljs-string">&quot;https://127.0.0.1:6443&quot;</span>,
-  <span class="hljs-string">&quot;server.k8s_use_ca&quot;</span>: <span class="hljs-literal">true</span>,
-  <span class="hljs-string">&quot;server.k8s_ca&quot;</span>: <span class="hljs-string">&quot;/etc/kubernetes/ssl/ca.pem&quot;</span>,
-  <span class="hljs-string">&quot;server.k8s_client_ca&quot;</span>: <span class="hljs-string">&quot;/etc/kubernetes/ssl/kubernetes.pem&quot;</span>,
-  <span class="hljs-string">&quot;server.k8s_client_key&quot;</span>: <span class="hljs-string">&quot;/etc/kubernetes/ssl/kubernetes-key8.pem&quot;</span>,
-  <span class="hljs-string">&quot;server.k8s_oltp_image&quot;</span>: <span class="hljs-string">&quot;xx.xx.xx.xx/kgs_bd/hugegraphserver:3.0.0&quot;</span>,
-  <span class="hljs-string">&quot;k8s.internal_algorithm_image_url&quot;</span>: <span class="hljs-string">&quot;xx.xx.xx.xx/kgs_bd/hugegraph-computer-algorithm:3.x.x&quot;</span>,
-  <span class="hljs-string">&quot;k8s.internal_algorithm&quot;</span>: <span class="hljs-string">&quot;[page-rank, degree-centrality, wcc, triangle-count, rings, rings-with-filter, betweenness-centrality, closeness-centrality, lpa, links, kcore, louvain, clustering-coefficient]&quot;</span>,
-  <span class="hljs-string">&quot;k8s.algorithms&quot;</span>: <span class="hljs-string">&quot;[page-rank:com.baidu.hugegraph.computer.algorithm.centrality.pagerank.PageRankParams, degree-centrality:com.baidu.hugegraph.computer.algorithm.centrality.degree.DegreeCentralityParams, wcc:com.baidu.hugegraph.computer.algorithm.community.wcc.WccParams, triangle-count:com.baidu.hugegraph.computer.algorithm.community.trianglecount.TriangleCountParams, rings:com.baidu.hugegraph.computer.algorithm.path.rings.RingsDetectionParams, rings-with-filter:com.baidu.hugegraph.computer.algorithm.path.rings.filter.RingsDetectionWithFilterParams, betweenness-centrality:com.baidu.hugegraph.computer.algorithm.centrality.betweenness.BetweennessCentralityParams, closeness-centrality:com.baidu.hugegraph.computer.algorithm.centrality.closeness.ClosenessCentralityParams, lpa:com.baidu.hugegraph.computer.algorithm.community.lpa.LpaParams, links:com.baidu.hugegraph.computer.algorithm.path.links.LinksParams, kcore:com.baidu.hugegraph.computer.algorithm.community.kcore.KCoreParams, louvain:com.baidu.hugegraph.computer.algorithm.community.louvain.LouvainParams, clustering-coefficient:com.baidu.hugegraph.computer.algorithm.community.cc.ClusteringCoefficientParams]&quot;</span>
+    <span class="hljs-string">&quot;restserver.url&quot;</span>: <span class="hljs-string">&quot;http://0.0.0.0:8080&quot;</span>,
+    <span class="hljs-string">&quot;restserver.request_timeout&quot;</span>: <span class="hljs-string">&quot;30&quot;</span>,
+    <span class="hljs-string">&quot;batch.max_write_ratio&quot;</span>: <span class="hljs-string">&quot;80&quot;</span>,
+    <span class="hljs-string">&quot;batch.max_write_threads&quot;</span>: <span class="hljs-string">&quot;0&quot;</span>,
+    <span class="hljs-string">&quot;batch.max_vertices_per_batch&quot;</span>: <span class="hljs-string">&quot;2000&quot;</span>,
+    <span class="hljs-string">&quot;batch.max_edges_per_batch&quot;</span>: <span class="hljs-string">&quot;2000&quot;</span>,
+    <span class="hljs-string">&quot;exception.allow_trace&quot;</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">&quot;server.k8s_use_ca&quot;</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">&quot;server.k8s_oltp_image&quot;</span>: <span class="hljs-string">&quot;xx.xx.xx.xx/kgs_bd/hugegraphserver:3.0.0&quot;</span>,
+    <span class="hljs-string">&quot;k8s.api&quot;</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">&quot;k8s.internal_algorithm_image_url&quot;</span>: <span class="hljs-string">&quot;xx.xx.xx.xx/kgs_bd/hugegraph-computer-algorithm:3.x.x&quot;</span>
 }
 </code></pre>
-<h4 id="4143&#x5220;&#x9664;&#x670D;&#x52A1;rest&#x914D;&#x7F6E;">4.14.3.&#x5220;&#x9664;&#x670D;&#x52A1;Rest&#x914D;&#x7F6E;</h4>
+<h4 id="4144&#x67E5;&#x8BE2;&#x6307;&#x5B9A;&#x670D;&#x52A1;rest&#x914D;&#x7F6E;">4.14.4.&#x67E5;&#x8BE2;&#x6307;&#x5B9A;&#x670D;&#x52A1;Rest&#x914D;&#x7F6E;</h4>
 <h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
-<p>&#x5220;&#x9664;&#x670D;&#x52A1;Rest&#x914D;&#x7F6E;&#xFF0C;&#x6CE8;&#x610F;&#xFF1A;&#x53EA;&#x80FD;&#x9010;&#x6761;&#x5220;&#x9664;</p>
+<p>&#x67E5;&#x8BE2;&#x6307;&#x5B9A;&#x670D;&#x52A1;Rest&#x914D;&#x7F6E;</p>
 <h5 id="uri">URI</h5>
-<pre><code>DELETE graphspaces/${graphspace}/configs/rest/${key}
+<pre><code>GET graphspaces/${graphspace}/configs/rest/{service_name}
 </code></pre><h5 id="uri&#x53C2;&#x6570;">URI&#x53C2;&#x6570;</h5>
 <table>
 <thead>
@@ -1566,6 +1648,92 @@
 <td></td>
 <td></td>
 <td>&#x56FE;&#x7A7A;&#x95F4;</td>
+</tr>
+<tr>
+<td>service_name</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td></td>
+<td></td>
+<td>&#x670D;&#x52A1;&#x540D;</td>
+</tr>
+</tbody>
+</table>
+<h5 id="body&#x53C2;&#x6570;">Body&#x53C2;&#x6570;</h5>
+<p>&#x65E0;</p>
+<h5 id="response">Response</h5>
+<table>
+<thead>
+<tr>
+<th>&#x540D;&#x79F0;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>*</td>
+<td>Map</td>
+<td>Rest&#x914D;&#x7F6E;&#x4FE1;&#x606F;</td>
+</tr>
+</tbody>
+</table>
+<h5 id="&#x4F7F;&#x7528;&#x793A;&#x4F8B;">&#x4F7F;&#x7528;&#x793A;&#x4F8B;</h5>
+<h6 id="method--url">Method &amp; Url</h6>
+<pre><code>GET  http://localhost:8080/graphspaces/gs1/configs/rest/sv1
+</code></pre><h6 id="request-body">Request Body</h6>
+<p>&#x65E0;</p>
+<h6 id="response-status">Response Status</h6>
+<pre><code class="lang-json"><span class="hljs-number">200</span>
+</code></pre>
+<h6 id="response-body">Response Body</h6>
+<pre><code class="lang-json">{
+    <span class="hljs-string">&quot;restserver.url&quot;</span>: <span class="hljs-string">&quot;http://0.0.0.0:8080&quot;</span>,
+    <span class="hljs-string">&quot;restserver.request_timeout&quot;</span>: <span class="hljs-string">&quot;30&quot;</span>,
+    <span class="hljs-string">&quot;batch.max_write_ratio&quot;</span>: <span class="hljs-string">&quot;80&quot;</span>,
+    <span class="hljs-string">&quot;batch.max_write_threads&quot;</span>: <span class="hljs-string">&quot;0&quot;</span>,
+    <span class="hljs-string">&quot;batch.max_vertices_per_batch&quot;</span>: <span class="hljs-string">&quot;2000&quot;</span>,
+    <span class="hljs-string">&quot;batch.max_edges_per_batch&quot;</span>: <span class="hljs-string">&quot;2000&quot;</span>,
+    <span class="hljs-string">&quot;exception.allow_trace&quot;</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">&quot;server.k8s_use_ca&quot;</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">&quot;server.k8s_oltp_image&quot;</span>: <span class="hljs-string">&quot;xx.xx.xx.xx/kgs_bd/hugegraphserver:3.0.0&quot;</span>,
+    <span class="hljs-string">&quot;k8s.api&quot;</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">&quot;k8s.internal_algorithm_image_url&quot;</span>: <span class="hljs-string">&quot;xx.xx.xx.xx/kgs_bd/hugegraph-computer-algorithm:3.x.x&quot;</span>
+}
+</code></pre>
+<h4 id="4145&#x5220;&#x9664;&#x6307;&#x5B9A;&#x670D;&#x52A1;&#x7684;rest&#x914D;&#x7F6E;">4.14.5.&#x5220;&#x9664;&#x6307;&#x5B9A;&#x670D;&#x52A1;&#x7684;Rest&#x914D;&#x7F6E;</h4>
+<h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
+<p>&#x5220;&#x9664;&#x6307;&#x5B9A;&#x670D;&#x52A1;&#x7684;Rest&#x914D;&#x7F6E;&#xFF0C;&#x6CE8;&#x610F;&#xFF1A;&#x53EA;&#x80FD;&#x9010;&#x6761;&#x5220;&#x9664;</p>
+<h5 id="uri">URI</h5>
+<pre><code>DELETE graphspaces/${graphspace}/configs/rest/{service_name}/{key}
+</code></pre><h5 id="uri&#x53C2;&#x6570;">URI&#x53C2;&#x6570;</h5>
+<table>
+<thead>
+<tr>
+<th>&#x540D;&#x79F0;</th>
+<th>&#x662F;&#x5426;&#x5FC5;&#x586B;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x9ED8;&#x8BA4;&#x503C;</th>
+<th>&#x53D6;&#x503C;&#x8303;&#x56F4;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>graphspace</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td></td>
+<td></td>
+<td>&#x56FE;&#x7A7A;&#x95F4;</td>
+</tr>
+<tr>
+<td>service_name</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td></td>
+<td></td>
+<td>&#x670D;&#x52A1;&#x540D;</td>
 </tr>
 <tr>
 <td>key</td>
@@ -1598,7 +1766,7 @@
 </table>
 <h5 id="&#x4F7F;&#x7528;&#x793A;&#x4F8B;">&#x4F7F;&#x7528;&#x793A;&#x4F8B;</h5>
 <h6 id="method--url">Method &amp; Url</h6>
-<pre><code>DELETE  http://localhost:8080/graphspaces/gs1/configs/rest/server.start_ignore_single_graph_error
+<pre><code>DELETE  http://localhost:8080/graphspaces/gs1/configs/rest/sv1/restserver.request_timeout
 </code></pre><h6 id="request-body">Request Body</h6>
 <p>&#x65E0;</p>
 <h6 id="response-status">Response Status</h6>
@@ -1606,23 +1774,96 @@
 </code></pre>
 <h6 id="response-body">Response Body</h6>
 <pre><code class="lang-json">{
-  <span class="hljs-string">&quot;restserver.url&quot;</span>: <span class="hljs-string">&quot;http://0.0.0.0:8080&quot;</span>,
-  <span class="hljs-string">&quot;batch.max_write_ratio&quot;</span>: <span class="hljs-string">&quot;80&quot;</span>,
-  <span class="hljs-string">&quot;batch.max_write_threads&quot;</span>: <span class="hljs-string">&quot;0&quot;</span>,
-  <span class="hljs-string">&quot;batch.max_vertices_per_batch&quot;</span>: <span class="hljs-string">&quot;2000&quot;</span>,
-  <span class="hljs-string">&quot;batch.max_edges_per_batch&quot;</span>: <span class="hljs-string">&quot;2000&quot;</span>,
-  <span class="hljs-string">&quot;server.k8s_url&quot;</span>: <span class="hljs-string">&quot;https://127.0.0.1:6443&quot;</span>,
-  <span class="hljs-string">&quot;server.k8s_use_ca&quot;</span>: <span class="hljs-literal">true</span>,
-  <span class="hljs-string">&quot;server.k8s_ca&quot;</span>: <span class="hljs-string">&quot;/etc/kubernetes/ssl/ca.pem&quot;</span>,
-  <span class="hljs-string">&quot;server.k8s_client_ca&quot;</span>: <span class="hljs-string">&quot;/etc/kubernetes/ssl/kubernetes.pem&quot;</span>,
-  <span class="hljs-string">&quot;server.k8s_client_key&quot;</span>: <span class="hljs-string">&quot;/etc/kubernetes/ssl/kubernetes-key8.pem&quot;</span>,
-  <span class="hljs-string">&quot;server.k8s_oltp_image&quot;</span>: <span class="hljs-string">&quot;xx.xx.xx.xx/kgs_bd/hugegraphserver:3.0.0&quot;</span>,
-  <span class="hljs-string">&quot;k8s.internal_algorithm_image_url&quot;</span>: <span class="hljs-string">&quot;xx.xx.xx.xx/kgs_bd/hugegraph-computer-algorithm:3.x.x&quot;</span>,
-  <span class="hljs-string">&quot;k8s.internal_algorithm&quot;</span>: <span class="hljs-string">&quot;[page-rank, degree-centrality, wcc, triangle-count, rings, rings-with-filter, betweenness-centrality, closeness-centrality, lpa, links, kcore, louvain, clustering-coefficient]&quot;</span>,
-  <span class="hljs-string">&quot;k8s.algorithms&quot;</span>: <span class="hljs-string">&quot;[page-rank:com.baidu.hugegraph.computer.algorithm.centrality.pagerank.PageRankParams, degree-centrality:com.baidu.hugegraph.computer.algorithm.centrality.degree.DegreeCentralityParams, wcc:com.baidu.hugegraph.computer.algorithm.community.wcc.WccParams, triangle-count:com.baidu.hugegraph.computer.algorithm.community.trianglecount.TriangleCountParams, rings:com.baidu.hugegraph.computer.algorithm.path.rings.RingsDetectionParams, rings-with-filter:com.baidu.hugegraph.computer.algorithm.path.rings.filter.RingsDetectionWithFilterParams, betweenness-centrality:com.baidu.hugegraph.computer.algorithm.centrality.betweenness.BetweennessCentralityParams, closeness-centrality:com.baidu.hugegraph.computer.algorithm.centrality.closeness.ClosenessCentralityParams, lpa:com.baidu.hugegraph.computer.algorithm.community.lpa.LpaParams, links:com.baidu.hugegraph.computer.algorithm.path.links.LinksParams, kcore:com.baidu.hugegraph.computer.algorithm.community.kcore.KCoreParams, louvain:com.baidu.hugegraph.computer.algorithm.community.louvain.LouvainParams, clustering-coefficient:com.baidu.hugegraph.computer.algorithm.community.cc.ClusteringCoefficientParams]&quot;</span>
+    <span class="hljs-string">&quot;restserver.url&quot;</span>: <span class="hljs-string">&quot;http://0.0.0.0:8080&quot;</span>,
+    <span class="hljs-string">&quot;batch.max_write_ratio&quot;</span>: <span class="hljs-string">&quot;80&quot;</span>,
+    <span class="hljs-string">&quot;batch.max_write_threads&quot;</span>: <span class="hljs-string">&quot;0&quot;</span>,
+    <span class="hljs-string">&quot;batch.max_vertices_per_batch&quot;</span>: <span class="hljs-string">&quot;2000&quot;</span>,
+    <span class="hljs-string">&quot;batch.max_edges_per_batch&quot;</span>: <span class="hljs-string">&quot;2000&quot;</span>,
+    <span class="hljs-string">&quot;exception.allow_trace&quot;</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">&quot;server.k8s_use_ca&quot;</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">&quot;server.k8s_oltp_image&quot;</span>: <span class="hljs-string">&quot;xx.xx.xx.xx/kgs_bd/hugegraphserver:3.0.0&quot;</span>,
+    <span class="hljs-string">&quot;k8s.api&quot;</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">&quot;k8s.internal_algorithm_image_url&quot;</span>: <span class="hljs-string">&quot;xx.xx.xx.xx/kgs_bd/hugegraph-computer-algorithm:3.x.x&quot;</span>
 }
 </code></pre>
-<h4 id="4144&#x8BBE;&#x7F6E;&#x670D;&#x52A1;gremlin&#x914D;&#x7F6E;">4.14.4.&#x8BBE;&#x7F6E;&#x670D;&#x52A1;Gremlin&#x914D;&#x7F6E;</h4>
+<h4 id="4146&#x5220;&#x9664;&#x6307;&#x5B9A;&#x670D;&#x52A1;&#x7684;rest&#x914D;&#x7F6E;">4.14.6.&#x5220;&#x9664;&#x6307;&#x5B9A;&#x670D;&#x52A1;&#x7684;Rest&#x914D;&#x7F6E;</h4>
+<h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
+<p>&#x5220;&#x9664;&#x6307;&#x5B9A;&#x670D;&#x52A1;Rest&#x914D;&#x7F6E;&#xFF0C;&#x6CE8;&#x610F;&#xFF1A;&#x5C06;&#x4F1A;&#x6E05;&#x9664;&#x6307;&#x5B9A;&#x670D;&#x52A1;&#x7684;&#x5168;&#x90E8;&#x914D;&#x7F6E;</p>
+<h5 id="uri">URI</h5>
+<pre><code>DELETE graphspaces/${graphspace}/configs/rest/{service_name}
+</code></pre><h5 id="uri&#x53C2;&#x6570;">URI&#x53C2;&#x6570;</h5>
+<table>
+<thead>
+<tr>
+<th>&#x540D;&#x79F0;</th>
+<th>&#x662F;&#x5426;&#x5FC5;&#x586B;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x9ED8;&#x8BA4;&#x503C;</th>
+<th>&#x53D6;&#x503C;&#x8303;&#x56F4;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>graphspace</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td></td>
+<td></td>
+<td>&#x56FE;&#x7A7A;&#x95F4;</td>
+</tr>
+<tr>
+<td>service_name</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td></td>
+<td></td>
+<td>&#x670D;&#x52A1;&#x540D;</td>
+</tr>
+</tbody>
+</table>
+<h5 id="body&#x53C2;&#x6570;">Body&#x53C2;&#x6570;</h5>
+<p>&#x65E0;</p>
+<h5 id="response">Response</h5>
+<table>
+<thead>
+<tr>
+<th>&#x540D;&#x79F0;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>*</td>
+<td>Map</td>
+<td>Rest&#x914D;&#x7F6E;&#x4FE1;&#x606F;</td>
+</tr>
+</tbody>
+</table>
+<h5 id="&#x4F7F;&#x7528;&#x793A;&#x4F8B;">&#x4F7F;&#x7528;&#x793A;&#x4F8B;</h5>
+<h6 id="method--url">Method &amp; Url</h6>
+<pre><code>DELETE  http://localhost:8080/graphspaces/gs1/configs/rest/sv1
+</code></pre><h6 id="request-body">Request Body</h6>
+<p>&#x65E0;</p>
+<h6 id="response-status">Response Status</h6>
+<pre><code class="lang-json"><span class="hljs-number">200</span>
+</code></pre>
+<h6 id="response-body">Response Body</h6>
+<pre><code class="lang-json">{
+    <span class="hljs-string">&quot;restserver.url&quot;</span>: <span class="hljs-string">&quot;http://0.0.0.0:8080&quot;</span>,
+    <span class="hljs-string">&quot;batch.max_write_ratio&quot;</span>: <span class="hljs-string">&quot;80&quot;</span>,
+    <span class="hljs-string">&quot;batch.max_write_threads&quot;</span>: <span class="hljs-string">&quot;0&quot;</span>,
+    <span class="hljs-string">&quot;batch.max_vertices_per_batch&quot;</span>: <span class="hljs-string">&quot;2000&quot;</span>,
+    <span class="hljs-string">&quot;batch.max_edges_per_batch&quot;</span>: <span class="hljs-string">&quot;2000&quot;</span>,
+    <span class="hljs-string">&quot;exception.allow_trace&quot;</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">&quot;server.k8s_use_ca&quot;</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">&quot;server.k8s_oltp_image&quot;</span>: <span class="hljs-string">&quot;xx.xx.xx.xx/kgs_bd/hugegraphserver:3.0.0&quot;</span>,
+    <span class="hljs-string">&quot;k8s.api&quot;</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">&quot;k8s.internal_algorithm_image_url&quot;</span>: <span class="hljs-string">&quot;xx.xx.xx.xx/kgs_bd/hugegraph-computer-algorithm:3.x.x&quot;</span>
+}
+</code></pre>
+<h4 id="4147&#x8BBE;&#x7F6E;&#x670D;&#x52A1;gremlin&#x914D;&#x7F6E;">4.14.7.&#x8BBE;&#x7F6E;&#x670D;&#x52A1;Gremlin&#x914D;&#x7F6E;</h4>
 <h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
 <p>&#x8BBE;&#x7F6E;&#x670D;&#x52A1;Gremlin&#x914D;&#x7F6E;</p>
 <h5 id="uri">URI</h5>
@@ -1910,7 +2151,7 @@
 <span class="hljs-attr">  enabled:</span> <span class="hljs-literal">false</span>
 }
 </code></pre>
-<h4 id="4145&#x67E5;&#x8BE2;&#x670D;&#x52A1;gremlin&#x914D;&#x7F6E;">4.14.5.&#x67E5;&#x8BE2;&#x670D;&#x52A1;Gremlin&#x914D;&#x7F6E;</h4>
+<h4 id="4148&#x67E5;&#x8BE2;&#x670D;&#x52A1;gremlin&#x914D;&#x7F6E;">4.14.8.&#x67E5;&#x8BE2;&#x670D;&#x52A1;Gremlin&#x914D;&#x7F6E;</h4>
 <h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
 <p>&#x67E5;&#x8BE2;&#x670D;&#x52A1;Gremlin&#x914D;&#x7F6E;</p>
 <h5 id="uri">URI</h5>
@@ -2124,7 +2365,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Config","level":"4.2.20","depth":2,"next":{"title":"Other","level":"4.2.21","depth":2,"path":"clients/restful-api-v3/other.md","ref":"clients/restful-api-v3/other.md","articles":[]},"previous":{"title":"SchemaTemplate","level":"4.2.19","depth":2,"path":"clients/restful-api-v3/schematemplate.md","ref":"clients/restful-api-v3/schematemplate.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"clients/restful-api-v3/config.md","mtime":"2022-03-11T02:44:14.090Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-03-11T02:44:14.533Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Config","level":"4.2.20","depth":2,"next":{"title":"Other","level":"4.2.21","depth":2,"path":"clients/restful-api-v3/other.md","ref":"clients/restful-api-v3/other.md","articles":[]},"previous":{"title":"SchemaTemplate","level":"4.2.19","depth":2,"path":"clients/restful-api-v3/schematemplate.md","ref":"clients/restful-api-v3/schematemplate.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"clients/restful-api-v3/config.md","mtime":"2022-03-21T02:33:15.118Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-03-21T02:33:15.782Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

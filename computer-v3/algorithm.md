@@ -2472,6 +2472,64 @@ EOF
 }
 ```
 
+### 5.2.11.CPU资源限制
+
+##### 参数说明
+
+| 名称                   | 是否必填 | 类型    | 默认值  | 取值范围          | 说明                       |
+| ---------------------- | -------- | ------- | ------- | ----------------- | -------------------------- |
+| k8s.master_cpu | 否  | String | - | 浮点数(例如0.5,1,2.3等) | master最大CPU |
+| k8s.worker_cpu | 否  | String | - | 浮点数(例如0.5,1,2.3等) | worker最大CPU |
+
+##### 使用示例
+
+```yaml
+cat <<EOF | kubectl apply --filename -
+apiVersion: hugegraph.baidu.com/v1
+kind: HugeGraphComputerJob
+metadata:
+  namespace: hugegraph-computer-system
+  name: &jobId pagerank-beta6 # 任务ID
+spec:
+  jobId: *jobId
+  algorithmName: pagerank # 算法名
+  image: xxxxx/xxxxx:latest # 算法镜像地址
+  pullPolicy: Always # 是否重新拉取镜像
+  workerInstances: 5 # worker 实例数
+  computerConf:
+    algorithm.params_class: com.baidu.hugegraph.computer.algorithm.centrality.pagerank.PageRankParams # 算法配置类
+    pd.peers: "127.0.0.1:8686"  # pd 地址
+    hugegraph.name: "default/hugegraph" # 图空间/图名
+    job.partitions_count: "50" # 分区数
+    k8s.master_cpu: "0.5"
+    k8s.worker_cpu: "1.5"
+    k8s.master_request_memory: "100Mi"
+    k8s.worker_request_memory: "5Gi"
+    k8s.master_memory: "500Mi"
+    k8s.worker_memory: "50Gi"
+EOF
+```
+
+##### rest 示例
+
+```json
+{
+  "algorithm": "page-rank",
+  "worker": 5,
+  "params": {
+    "pagerank.alpha": "0.15",
+    "pagerank.l1DiffThreshold": "0.00001",
+    "bsp.max_super_step": "10",
+    "k8s.master_cpu": "0.5",
+    "k8s.worker_cpu": "1.5",
+    "k8s.master_request_memory": "100Mi",
+    "k8s.worker_request_memory": "5Gi",
+    "k8s.master_memory": "500Mi",
+    "k8s.worker_memory": "50Gi",
+  }
+}
+```
+
 ## 5.3.参数列表
 
 下表为图计算可设置的参数列表。参数类型为内部类型，rest api 上都需要传字符串。

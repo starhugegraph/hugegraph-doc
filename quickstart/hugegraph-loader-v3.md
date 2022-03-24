@@ -546,6 +546,7 @@ bin/mapping-convert.sh struct.json
 - username: 连接数据库的用户名，必填；
 - password: 连接数据库的密码，必填；
 - batch_size: 按页获取表数据时的一页的大小，默认为 500，选填；
+- where: 数据查询条件，仅支持数据库类型为HIVE；
 
 **MYSQL**
 

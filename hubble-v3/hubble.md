@@ -178,9 +178,9 @@ Hubble支持多用户认证、以及细粒度的权限访问控制，采用基�
     - k8s命名空间：表示通过容器方式启动的查询服务所使用的k8s namepsace，要符合k8s的命名规范。
  - 计算任务相关：
     - CPU/内存资源：所有正在运行的计算任务的资源使用上限；
-    - k8s namespace：计算任务启动时所使用的k8s namespace，要符合k8s的命名规范。
-    - Operator镜像地址：填写Operator的镜像地址。
-    - 算法镜像地址：填写算法的镜像地址。
+    - k8s namespace：计算任务启动时所使用的k8s namespace，要符合k8s的命名规范；
+    - Operator镜像地址：填写Operator的镜像地址, 在k8s的master机器上可以用docker imges拿到镜像地址；
+    - 算法镜像地址：填写算法的镜像地址, 在k8s的master机器上可以用docker imges拿到镜像地址；
  - 存储服务：
     - 设置硬盘资源：当前图空间下所有图的存储资源使用上限。
 

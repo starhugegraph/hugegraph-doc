@@ -1,7 +1,5 @@
 ## 4.12.用户&权限
 
-> 开启权限及相关配置请先参考 [权限配置](../../config/config-authentication-v3.md) 文档
-
 ### 4.12.1.用户认证与权限控制概述：
 HugeGraph支持多用户认证、以及细粒度的权限访问控制，采用基于“用户-用户组-操作-资源”的4层设计，灵活控制用户角色与权限。 
 资源描述了图数据库中的数据，比如符合某一类条件的顶点，每一个资源包括type、label、properties三个要素，共有18种type、
@@ -622,7 +620,7 @@ DELETE http://localhost:8080/graphspaces/gs1/auth/groups/all
 ##### URI
 
 ```
-PUT /graphspaces/{graphspace}/auth/groups/${id}
+PUT /graphspaces/${graphspace}/auth/groups/${id}
 ```
 
 ##### URI参数

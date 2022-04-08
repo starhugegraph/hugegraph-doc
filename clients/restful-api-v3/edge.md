@@ -20,7 +20,7 @@ EdgeId是由 `src-vertex-id + direction + label + sort-values + tgt-vertex-id` �
 ##### URI
 
 ```
-POST /graphspaces/{graphspace}/graphs/{hugegraph}/graph/edges
+POST /graphspaces/${graphspace}/graphs/${hugegraph}/graph/edges
 ```
 
 ##### URI参数
@@ -54,6 +54,7 @@ POST /graphspaces/{graphspace}/graphs/{hugegraph}/graph/edges
 ##### 使用示例
 
 创建一条从来源顶点1:peter到目标顶点2:lop的边
+
 ##### Method & Url
 
 ```
@@ -108,7 +109,7 @@ POST http://localhost:8080/graphspaces/gs1/graphs/hugegraph/graph/edges
 ##### URI
 
 ```
-POST /graphspaces/{graphspace}/graphs/{hugegraph}/graph/edges/batch?check_vertex={check_vertex}
+POST /graphspaces/${graphspace}/graphs/${hugegraph}/graph/edges/batch?check_vertex=${check_vertex}
 ```
 
 ##### URI参数
@@ -265,7 +266,7 @@ PUT http://localhost:8080/graphspaces/gs1/graphs/hugegraph/graph/edges/S1:peter>
 
 #### 4.5.2.4.批量更新边属性
 
-###### 功能介绍
+##### 功能介绍
 
 与批量更新顶点属性类似
 
@@ -828,7 +829,6 @@ DELETE /graphspaces/{graphspace}/graphs/{hugegraph}/graph/edges/{edgeId}
 ##### Response
 无
 
-----
 ##### 使用示例
 
 **仅根据Id删除边**
@@ -868,7 +868,7 @@ DELETE http://localhost:8080/graphspaces/gs1/graphs/hugegraph/graph/edges/S1:pet
 ##### 4.5.2.9.1.根据边的id列表，批量查询边
 
 
-###### URI
+##### URI
 
 ```
 GET /graphspaces/{graphspace}/graphs/{hugegraph}/traversers/edges?ids={ids}
@@ -901,18 +901,19 @@ GET /graphspaces/{graphspace}/graphs/{hugegraph}/traversers/edges?ids={ids}
 
 删除Id分别为S1:josh>1>>S2:lop和S1:josh>1>>S2:ripple的边，通过重复输入ids字段进行批量删除
 
-###### Method & Url
+##### Method & Url
 
 ```
 GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph/traversers/edges?ids="S1:josh>1>>S2:lop"&ids="S1:josh>1>>S2:ripple"
 ```
-###### Response Status
+
+##### Response Status
 
 ```json
 200
 ```
 
-###### Response Body
+##### Response Body
 
 ```json
 {
@@ -950,10 +951,10 @@ GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph/traversers/edges?ids=
 ##### 4.5.2.9.2.获取边 Shard 信息
 
 ##### 功能介绍
-通过指定的分片大小split_size，获取边分片信息（可以与 3.2.22.3 中的 Scan 配合使用来获取边）。
+通过指定的分片大小split_size，获取边分片信息（可以与 4.5.2.9.3 中的 Scan 配合使用来获取边）。
 
 
-###### URI
+##### URI
 
 ```
 GET /graphspaces/{graphspace}/graphs/{hugegraph}/traversers/edges/shards?split_size={splitSize}
@@ -982,20 +983,20 @@ GET /graphspaces/{graphspace}/graphs/{hugegraph}/traversers/edges/shards?split_s
 获取分片大小为4294967295的分片信息，用于进一步的Scan查询
 
 
-###### Method & Url
+##### Method & Url
 
 ```
 GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph/traversers/edges/shards?split_size=4294967295
 ```
 
 
-###### Response Status
+##### Response Status
 
 ```json
 200
 ```
 
-###### Response Body
+##### Response Body
 
 ```json
 {
@@ -1032,9 +1033,9 @@ GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph/traversers/edges/shar
 ##### 4.5.2.9.3.根据 Shard 信息批量获取边
 
 ##### 功能介绍
-通过指定的分片信息批量查询边（Shard信息的获取参见 2.2.9.2）。
+通过指定的分片信息批量查询边（Shard信息的获取参见 4.5.2.9.2 Shard）
 
-###### URI
+##### URI
 
 ```
 GET /graphspaces/{graphspace}/graphs/{hugegraph}/traversers/edges/scan?start={start}&end={end}&page={page}&page_limit={pageLimit}
@@ -1068,19 +1069,19 @@ GET /graphspaces/{graphspace}/graphs/{hugegraph}/traversers/edges/scan?start={st
 ##### 使用示例
 扫描查询start和end由0到3221225469边的信息
 
-###### Method & Url
+##### Method & Url
 
 ```
 GET http://localhost:8080/graphspaces/gs1/graphs/hugegraph/traversers/edges/scan?start=0&end=3221225469
 ```
 
-###### Response Status
+##### Response Status
 
 ```json
 200
 ```
 
-###### Response Body
+##### Response Body
 
 ```json
 {

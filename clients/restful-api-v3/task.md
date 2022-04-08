@@ -34,7 +34,7 @@ task_status字段的可选值:
 ##### URI
 
 ```
-GET graphspaces/{graphspace}/graphs/{hugegraph}/tasks?status={status}&limit={limit}
+GET graphspaces/${graphspace}/graphs/${hugegraph}/tasks?status=${status}&limit=${limit}
 ```
 
 ##### URI参数
@@ -107,7 +107,7 @@ GET http://localhost:8080/graphspaces/gs1/graphs/huegraph/tasks?status=SUCCESS
 ##### URI
 
 ```
-GET /graphspaces/{graphspace}/graphs/{hugegraph}/tasks/{id}
+GET /graphspaces/${graphspace}/graphs/${hugegraph}/tasks/${id}
 ```
 ##### URI参数说明
  
@@ -139,6 +139,7 @@ GET /graphspaces/{graphspace}/graphs/{hugegraph}/tasks/{id}
 ##### 使用示例
 
 查看id为2的任务的状态
+
 ##### Method & Url
 
 ```
@@ -221,7 +222,7 @@ DELETE http://localhost:8080/graphspaces/gs1/graphs/hugegraph/tasks/2?force=true
 
 #### 4.8.4.取消某个异步任务，**该异步任务必须具有处理中断的能力**
 
-假设已经通过[Gremlin API](gremlin.md)创建了一个异步任务如下：
+假设已经通过 Gremlin API 创建了一个异步任务如下：
 
 ```groovy
 "for (int i = 0; i < 10; i++) {" +
@@ -262,6 +263,7 @@ PUT /graphspaces/{graphspace}/graphs/{hugegraph}/tasks/{id}?action=cancel
 ##### 使用示例
 
 取消id为2的异步任务
+
 ##### Method & Url
 
 ```

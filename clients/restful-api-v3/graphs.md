@@ -26,21 +26,48 @@ POST /graphspaces/${graphspace}/graphs/${graph}
 | backend  | 是 | String  |   |  | 存储类型，目前仅支持hstore  |
 | serializer  | 是 | String  |   |  | 序列化类型，目前仅支持binary  |
 | store  | 是 | String  |   |  | 与图名保持一致  |
-| search.text_analyzer  | 否 | String  | jieba  | [word, ansj, hanlp, smartcn, jieba, jcseg, mmseg4j, ikanalyzer] |   |
-| search.text_analyzer_mode  | 否 | String  | INDEX  |  |   |
+| rate_limit.write | 否 | Integer | 0 | [0, Integer.MAX_VALUE) | 每秒写入/更新/删除的请求数上限，0表示不限制 |
+| rate_limit.read | 否 | Integer | 0 | [0, Integer.MAX_VALUE) | 每秒读请求数上限，0表示不限制 |
+| task.wait_timeout | 否 | Long | 10L | [0, Long.MAX_VALUE) | 异步任务的等待时间 |
+| task.input_size_limit | 否 | Integer | 10*1024*1024 | [0, 1024*1024*1024) | 任务的输入大小限制，单位字节 |
+| task.result_size_limit | 否 | Integer | 10*1024*1024 | [0, 1024*1024*1024) | 任务的结果大小限制，单位字节 |
 | task.scheduler_type | 否 | String | local | [local, etcd] | 使用何种调度器进行异步任务调度，默认为local。 调度器类型不可修改 |
+| vertex.check_customized_id_exist | 否 | Boolean | false | | 是否检查指定的顶点或边的ID是否存在 |
+| vertex.tx_capacity | 否 | Integer | 10000 | [500, 1000000) | 事务里未提交的顶点数目限制 |
+| edge.tx_capacity | 否 | Integer | 10000 | [500, 1000000) | 事务里未提交的边数目限制 |
+| schema.init_template | 否 | String | | | 创建图时用来初始化的元数据模板 |
+| schema.illegal_name_regex | 否 | String | ".*\s+$|~.*" |   | 非法的元数据名字的正则表达式 | 
+| schema.cache_capacity | 否 | Long | 10000 | [0, Long.MAX_VALUE) | 元数据缓存数目上限 |
+| vertex.cache_capacity | 否 | Long | 10*1000*1000L | [0, Long.MAX_VALUE) | 顶点缓存数目上限 |
+| vertex.cache_expire | 否 | Integer | 600 | [0, Integer.MAX_VALUE) | 顶点在缓存中过期的期限 |
+| edge.cache_capacity | 否 | Long | 1000*1000L | [0, Long.MAX_VALUE) | 边缓存数目上限 |
+| edge.cache_expire | 否 | Integer | 600 | [0, Integer.MAX_VALUE) | 边在缓存中过期的期限 |
+| search.text_analyzer  | 否 | String  | jieba  | [word, ansj, hanlp, smartcn, jieba, jcseg, mmseg4j, ikanalyzer] |   |
+| search.text_analyzer_mode  | 否 | String  | INDEX | 不同的分词器对应的模式参加表格下方说明 | 分词器工作模式  |
+| graph.virtual_graph_enable  | 否 | Boolean | false |  | 是否启用虚拟图 |
+| graph.virtual_graph_batch_buffer_size  | 否 | Integer | 0 | [0, 65535) | 虚拟图攒批加载buffer大小，默认为0即关闭攒批加载，攒批加载在并发很高时对吞吐有益处，但对延迟有伤害 |
+| graph.virtual_graph_batch_size | 否 | Integer | 50 | [0, 65535) | 虚拟图攒批加载每批次的大小 |
+| graph.virtual_graph_batch_time_ms | 否 | Integer | 100 | [0, Integer.MAX_VALUE) | 虚拟图攒批加载定时周期(单位:毫秒) |
+| graph.virtual_graph_vertex_init_capacity | 否 | Integer | 1000 * 1000 | [0, Integer.MAX_VALUE) | 虚拟图缓存点的最小数量 |
+| graph.virtual_graph_vertex_max_size  | 否 | Long  | 100 * 1000 * 1000 | [0, Long.MAX_VALUE) | 虚拟图缓存点的最大数量 |
+| graph.virtual_graph_vertex_expire | 否 | Long  | 60 * 100 | [0, Long.MAX_VALUE) | 虚拟图缓存点的过期时间(单位:秒) |
+| graph.virtual_graph_edge_init_capacity | 否 | Integer | 10000 | [0, Integer.MAX_VALUE) | 虚拟图缓存边的最小数量 |
+| graph.virtual_graph_edge_max_size | 否 | Long | 1000 * 1000 | [0, Long.MAX_VALUE) | 虚拟图缓存边的最大数量 |
+| graph.virtual_graph_edge_expire  | 否 | Long  | 60 * 100 | [0, Long.MAX_VALUE) | 虚拟图缓存边的过期时间(单位:秒) |
+| graph.virtual_graph_batcher_task_threads | 否 | Integer | Math.max(4, CPUS / 2) | [1, Math.max(4, CPUS * 2)] | 虚拟图攒批加载的线程数 |
 
-```
-search.text_analyzer_mode:
 
-word: [MaximumMatching, ReverseMaximumMatching, MinimumMatching, ReverseMinimumMatching, BidirectionalMaximumMatching, BidirectionalMinimumMatching, BidirectionalMaximumMinimumMatching, FullSegmentation, MinimalWordCount, MaxNgramScore, PureEnglish]
-ansj: [BaseAnalysis, IndexAnalysis, ToAnalysis, NlpAnalysis]
-hanlp: [standard, nlp, index, nShort, shortest, speed]
-smartcn: []
-jieba: [SEARCH, INDEX]
-jcseg: [Simple, Complex]
-mmseg4j: [Simple, Complex, MaxWord]
-ikanalyzer: [smart, max_word]
+
+| search.text_analyzer | search.text_analyzer_mode |
+| -------------------- | ------------------------- |
+| word | [MaximumMatching, ReverseMaximumMatching, MinimumMatching, ReverseMinimumMatching, BidirectionalMaximumMatching, BidirectionalMinimumMatching, BidirectionalMaximumMinimumMatching, FullSegmentation, MinimalWordCount, MaxNgramScore, PureEnglish] |
+| ansj | [BaseAnalysis, IndexAnalysis, ToAnalysis, NlpAnalysis] |
+| hanlp | [standard, nlp, index, nShort, shortest, speed] |
+| smartcn | [] |
+| jieba | [SEARCH, INDEX] |
+| jcseg | [Simple, Complex] |
+| mmseg4j | [Simple, Complex, MaxWord] |
+| ikanalyzer | [smart, max_word] |
 ```
 
 ##### Response

@@ -154,7 +154,7 @@
 ##### Method & Url
 
 ```
-POST http://localhost:8080/graphs/{hugegraph}/jobs/computerdis
+POST http://localhost:8080/graphs/${hugegraph}/jobs/computerdis
 ```
 
 ##### Response Status
@@ -176,7 +176,7 @@ POST http://localhost:8080/graphs/{hugegraph}/jobs/computerdis
 ##### Method & Url
 
 ```
-DELETE http://localhost:8080/graphs/{hugegraph}/jobs/computerdis/{task_id}
+DELETE http://localhost:8080/graphs/${hugegraph}/jobs/computerdis/${task_id}
 ```
 
 ##### Response Status
@@ -199,7 +199,7 @@ DELETE http://localhost:8080/graphs/{hugegraph}/jobs/computerdis/{task_id}
 ##### Method & Url
 
 ```
-PUT http://localhost:8080/graphs/{hugegraph}/jobs/computerdis/{task_id}
+PUT http://localhost:8080/graphs/${hugegraph}/jobs/computerdis/${task_id}
 ```
 
 ##### Response Status
@@ -221,7 +221,7 @@ PUT http://localhost:8080/graphs/{hugegraph}/jobs/computerdis/{task_id}
 ##### Method & Url
 
 ```
-GET http://localhost:8080/graphs/{hugegraph}/jobs/computerdis/{task_id}
+GET http://localhost:8080/graphs/${hugegraph}/jobs/computerdis/${task_id}
 ```
 
 ##### Response Status
@@ -257,7 +257,7 @@ GET http://localhost:8080/graphs/{hugegraph}/jobs/computerdis/{task_id}
 ##### Method & Url
 
 ```
-GET http://localhost:8080/graphs/{hugegraph}/jobs/computerdis?limit=100
+GET http://localhost:8080/graphs/${hugegraph}/jobs/computerdis?limit=100
 ```
 
 ##### Response Status

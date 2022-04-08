@@ -546,6 +546,7 @@ bin/mapping-convert.sh struct.json
 - username: 连接数据库的用户名，必填；
 - password: 连接数据库的密码，必填；
 - batch_size: 按页获取表数据时的一页的大小，默认为 500，选填；
+- where: 数据查询条件，仅支持数据库类型为HIVE；
 
 **MYSQL**
 
@@ -686,11 +687,11 @@ schema: 必填
 
 导入过程由用户提交的命令控制，用户可以通过不同的参数控制执行的具体流程。
 
-数据导入HugeGraphServer的选择有两种方式，既可以直接指定HugeGraphServer的地址，也可以通过配置meta server地址自动获取HugeGraphServer的地址。
+数据导入HugeGraphServer的选择有两种方式，既可以直接指定HugeGraphServer的地址，也可以通过配置PD server地址自动获取HugeGraphServer的地址。
 
 默认方式为直连HugeGraphServer的地址, 通过参数--host、--port指定，进行数据的导入。
 
-当采用meta server方式时，需要通过--meta-urls指定meta server地址，这样loader会自动获取相关HugeGraphServer信息，并进行数据的导入。
+当采用PD server方式时，需要通过--pd-peers指定PD server集群地址，这样loader会自动获取相关HugeGraphServer信息，并进行数据的导入。
 
 ### 2.2.6.参数说明
 
@@ -702,12 +703,9 @@ schema: 必填
 -s 或 --schema  |              |    Y    | schema文件路径
 -h 或 --host    | localhost    |         | HugeGraphServer 的地址
 -p 或 --port    | 8080         |         | HugeGraphServer 的端口号
--t 或 --meta-type   | etcd         |         | meta server类型，etcd/pd。
--m 或 --meta-urls   |              |         | meta server地址
---cluster           |  hg          |         | 图数据库所属集群，当启用meta server，且--meta-type为etcd时有效
---meta-ca           |              |         | 双向认证ca根证书，当meta server开启 SSL双向认证时使用
---meta-client-ca    |              |         | loader双向认证就的证书，当meta server开启 SSL双向认证时使用
---meta-client-key   |              |         | loader双向认证的私钥，当meta server开启 SSL双向认证时使用
+--pd-peers          |              |         | pd server地址
+--route-type        | NODE_PORT    |         | loader连接HugeGraphServer的方式，支持['BOTH', 'DDS', 'NODE_PORT']
+--cluster           |  hg          |         | 图数据库所属集群, 仅在使用PD Server方式时有效。
 --username          | null         |         | 当 HugeGraphServer 开启了权限认证时，当前图的 username
 --password          | null         |         | 当 HugeGraphServer 开启了权限认证时，当前图的 password
 --token             | null         |         | 当 HugeGraphServer 开启了权限认证时，当前图的 token

@@ -475,7 +475,7 @@ POST http://localhost:8080/graphspaces/graphspace/graphs/graph/traversers/kout
 
 ##### 适用场景
 
-参见 kout
+参见 4.7.2.1. kout 
 
 #### 4.7.2.3.K-neighbor（GET，基础版）
 
@@ -1819,7 +1819,7 @@ GET /graphspaces/${graphspace}/graphs/${graph}/traversers/paths
 ###### Method & Url
 
 ```
-GET http://localhost:8080/graphspaces/${graphspace}/graphs/{$graph}/traversers/paths?source="1:marko"&target="1:josh"&max_depth=5
+GET http://localhost:8080/graphspaces/${graphspace}/graphs/${graph}/traversers/paths?source="1:marko"&target="1:josh"&max_depth=5
 ```
 
 ###### Response Status
@@ -2433,7 +2433,7 @@ GET graphspaces/${graphspace}/graphs/${graph}/traversers/crosspoints
 ###### Method & Url
 
 ```
-GET http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/traversers/crosspoints?source="2:lop"&target="2:ripple"&max_depth=5&direction=IN
+GET http://localhost:8080/graphspaces/${graphspace}/graphs/${graph}/traversers/crosspoints?source="2:lop"&target="2:ripple"&max_depth=5&direction=IN
 ```
 
 ###### Response Body
@@ -2516,7 +2516,7 @@ POST graphspaces/${graphspace}/graphs/${graph}/traversers/customizedcrosspoints
 ###### Method & Url
 
 ```
-POST http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/traversers/customizedcrosspoints
+POST http://localhost:8080/graphspaces/${graphspace}/graphs/${graph}/traversers/customizedcrosspoints
 ```
 
 ###### Request Body
@@ -2704,7 +2704,7 @@ GET graphspaces/${graphspace}/graphs/${graph}/traversers/rings
 ###### Method & Url
 
 ```
-GET http://localhost:8080/graphspaces/{graphspace}/graphs/{graph}/traversers/rings?source="1:marko"&max_depth=3
+GET http://localhost:8080/graphspaces/${graphspace}/graphs/${graph}/traversers/rings?source="1:marko"&max_depth=3
 ```
 
 ###### Response Status

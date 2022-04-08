@@ -48,7 +48,7 @@ EOF
 ##### rest-api 示例
 
 ###### Method & Url
-POST http://localhost:8080/graphspaces/{graphspace}/graphs/{hugegraph}/jobs/computerdis
+POST http://localhost:8080/graphspaces/${graphspace}/graphs/${hugegraph}/jobs/computerdis
 
 ###### Request Body
 
@@ -116,7 +116,7 @@ EOF
 ##### rest-api 示例
 
 ###### Method & Url
-POST http://localhost:8080/graphspaces/{graphspace}/graphs/{hugegraph}/jobs/computerdis
+POST http://localhost:8080/graphspaces/${graphspace}/graphs/${hugegraph}/jobs/computerdis
 
 ###### Request Body
 
@@ -182,7 +182,7 @@ EOF
 ##### rest-api 示例
 
 ###### Method & Url
-POST http://localhost:8080/graphspaces/{graphspace}/graphs/{hugegraph}/jobs/computerdis
+POST http://localhost:8080/graphspaces/${graphspace}/graphs/${hugegraph}/jobs/computerdis
 
 ###### Request Body
 
@@ -259,7 +259,7 @@ EOF
 ##### rest-api 示例
 
 ###### Method & Url
-POST http://localhost:8080/graphspaces/{graphspace}/graphs/{hugegraph}/jobs/computerdis
+POST http://localhost:8080/graphspaces/${graphspace}/graphs/${hugegraph}/jobs/computerdis
 
 ###### Request Body
 
@@ -336,7 +336,7 @@ EOF
 ##### rest-api 示例
 
 ###### Method & Url
-POST http://localhost:8080/graphspaces/{graphspace}/graphs/{hugegraph}/jobs/computerdis
+POST http://localhost:8080/graphspaces/${graphspace}/graphs/${hugegraph}/jobs/computerdis
 
 ###### Request Body
 
@@ -454,6 +454,8 @@ POST http://localhost:8080/graphspaces/{graphspace}/graphs/{hugegraph}/jobs/comp
 | :----------------------- | :------- | :--------------------- | :----- | :-------------- | :------ |
 | bsp.max_super_step  | 否 |  Int   | 10  |1~2000        |  最大迭代次数         |
 | rings.property_filter  | 否 |  String   | {}  |  -        |  点边属性过滤条件         |
+| rings.min_ring_length  | 否 |  Int   | 0  |  -        |  输出环路的最小长度         |
+| rings.max_ring_length  | 否 |  Int   | Integer.MAX_VALUE  |  -        |  输出环路的最大长度         |
 
 ##### 额外说明
 
@@ -462,7 +464,7 @@ POST http://localhost:8080/graphspaces/{graphspace}/graphs/{hugegraph}/jobs/comp
 - vertex_filter和edge_filter可以是非必选的。对于vertex_filter和edge_filter任何一个单独来看，如果没有指定过滤条件的话将对所有对应的元素放行，如果指定了的话，那么只会对label相同并且属性满足条件的放行，未配置label的元素将直接被过滤掉。
 - property_filter用于规定属性的过滤规则，在vertex_filter中符合条件的点才会继续向下传播路径，在edge_filter中符合条件的出边才能传播，还可以用入边跟出边之间做属性比较判断过滤。不同label之间是或的关系。
 - $element、$out、$in可以理解为内置变量。$element在vertex_filter中表示当前点的属性对象。在edge_filter中$in和$out分别代表表示当前顶点的入边属性和出边属性对象。$element.xxx、$in.xxx、$out.xxx的方式获取到对应名称的属性的值。
-- property_filter使用的是Aviator规则引擎。可以支持正常的条件判断和数值计算。高级操作具体查看Aviator规则引擎文档。
+- property_filter使用的是Aviator规则引擎。可以支持正常的条件判断和数值计算。高级操作具体查看Aviator规则引擎文档。sy
 
 ##### 过滤条件参数说明
 
@@ -992,11 +994,13 @@ POST http://localhost:8080/graphspaces/{graphspace}/graphs/{hugegraph}/jobs/comp
 ###### Resquest Body
 
 ```json
-"algorithm": "subgraph-match",
+{
+  "algorithm": "subgraph-match",
   "worker": 5,
   "params": {
     "subgraph.query_graph_config": "[{\"id\":\"A\",\"label\":\"person\",},{\"id\":\"B\",\"label\":\"person\",\"property_filter\":\"$element.x > 3\"},{\"id\":\"C\",\"label\":\"person\",\"edges\":[{\"targetId\":\"A\",\"label\":\"knows\",\"property_filter\":\"$element.x > 3\"}]},{\"id\":\"D\",\"label\":\"person\",\"property_filter\":\"$element.x > 3\",\"edges\":[{\"targetId\":\"B\",\"label\":\"knows\",},{\"targetId\":\"F\",\"label\":\"knows\",\"property_filter\":\"$element.x > 3\"},{\"targetId\":\"C\",\"label\":\"knows\",},{\"targetId\":\"E\",\"label\":\"knows\",}]},{\"id\":\"E\",\"label\":\"person\",},{\"id\":\"F\",\"label\":\"person\",\"property_filter\":\"$element.x > 3\",\"edges\":[{\"targetId\":\"B\",\"label\":\"knows\",\"property_filter\":\"$element.x > 3\"},{\"targetId\":\"C\",\"label\":\"knows\",\"property_filter\":\"$element.x > 3\"}]}]"
   }
+}
 ```
 
 ###### 过滤条件示例
@@ -2460,6 +2464,64 @@ EOF
     "pagerank.alpha": "0.15",
     "pagerank.l1DiffThreshold": "0.00001",
     "bsp.max_super_step": "10",
+    "k8s.master_request_memory": "100Mi",
+    "k8s.worker_request_memory": "5Gi",
+    "k8s.master_memory": "500Mi",
+    "k8s.worker_memory": "50Gi",
+  }
+}
+```
+
+### 5.2.11.CPU资源限制
+
+##### 参数说明
+
+| 名称                   | 是否必填 | 类型    | 默认值  | 取值范围          | 说明                       |
+| ---------------------- | -------- | ------- | ------- | ----------------- | -------------------------- |
+| k8s.master_cpu | 否  | String | - | 浮点数(例如0.5,1,2.3等) | master最大CPU |
+| k8s.worker_cpu | 否  | String | - | 浮点数(例如0.5,1,2.3等) | worker最大CPU |
+
+##### 使用示例
+
+```yaml
+cat <<EOF | kubectl apply --filename -
+apiVersion: hugegraph.baidu.com/v1
+kind: HugeGraphComputerJob
+metadata:
+  namespace: hugegraph-computer-system
+  name: &jobId pagerank-beta6 # 任务ID
+spec:
+  jobId: *jobId
+  algorithmName: pagerank # 算法名
+  image: xxxxx/xxxxx:latest # 算法镜像地址
+  pullPolicy: Always # 是否重新拉取镜像
+  workerInstances: 5 # worker 实例数
+  computerConf:
+    algorithm.params_class: com.baidu.hugegraph.computer.algorithm.centrality.pagerank.PageRankParams # 算法配置类
+    pd.peers: "127.0.0.1:8686"  # pd 地址
+    hugegraph.name: "default/hugegraph" # 图空间/图名
+    job.partitions_count: "50" # 分区数
+    k8s.master_cpu: "0.5"
+    k8s.worker_cpu: "1.5"
+    k8s.master_request_memory: "100Mi"
+    k8s.worker_request_memory: "5Gi"
+    k8s.master_memory: "500Mi"
+    k8s.worker_memory: "50Gi"
+EOF
+```
+
+##### rest 示例
+
+```json
+{
+  "algorithm": "page-rank",
+  "worker": 5,
+  "params": {
+    "pagerank.alpha": "0.15",
+    "pagerank.l1DiffThreshold": "0.00001",
+    "bsp.max_super_step": "10",
+    "k8s.master_cpu": "0.5",
+    "k8s.worker_cpu": "1.5",
     "k8s.master_request_memory": "100Mi",
     "k8s.worker_request_memory": "5Gi",
     "k8s.master_memory": "500Mi",

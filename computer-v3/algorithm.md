@@ -886,7 +886,7 @@ POST http://localhost:8080/graphspaces/{graphspace}/graphs/{hugegraph}/jobs/comp
 | louvain.weightkey  | 否 |  String   | "",为空时边权重为1  | -      |  权重属性名         |
 | k8s.workerRequestMemory  | 否 |  String   | 无  | -      |  计算节点最小内存需求         |
 | k8s.jvm_options  | 否 |  String   | 无  | -      |  jvm环境内存大小，默认为32g         |
-
+louvain算法需要内存较多，计算twitter 14e数据需要至少64G内存，需要配置workerRequestMemory和jvm_options参数，其他数据根据实际情况配置
 
 ##### k8s示例
 

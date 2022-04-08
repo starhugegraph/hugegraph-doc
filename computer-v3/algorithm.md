@@ -884,7 +884,9 @@ POST http://localhost:8080/graphspaces/{graphspace}/graphs/{hugegraph}/jobs/comp
 | 名称                     | 是否必填 |  类型   | 默认值  |取值范围        |  说明                   |
 | :----------------------- | :------- | :--------------------- | :----- | :-------------- | :------ |
 | louvain.weightkey  | 否 |  String   | "",为空时边权重为1  | -      |  权重属性名         |
-
+| k8s.workerRequestMemory  | 否 |  String   | 无  | -      |  计算节点最小内存需求         |
+| k8s.jvm_options  | 否 |  String   | 无  | -      |  jvm环境内存大小，默认为32g         |
+louvain算法需要内存较多，计算twitter 14e数据需要至少64G内存，需要配置workerRequestMemory和jvm_options参数，其他数据根据实际情况配置
 
 ##### k8s示例
 
@@ -901,6 +903,8 @@ spec:
   image: xxxxx/xxxxx:latest # 算法镜像地址
   pullPolicy: Always # 是否重新拉取镜像
   workerInstances: 1 # worker 实例数
+  jvmOptions: "-Xmx64g -Xms64g"
+  workerRequestMemory: "64Gi"
   computerConf:
     algorithm.params_class: com.baidu.hugegraph.computer.algorithm.community.louvain.LouvainParams # 算法配置类
     job.partitions_count: "20" # 分区数
@@ -924,7 +928,9 @@ POST http://localhost:8080/graphspaces/{graphspace}/graphs/{hugegraph}/jobs/comp
   "algorithm": "louvain",
   "worker": 1,
   "params": {
-    "louvain.weightkey": ""
+    "louvain.weightkey": "",
+    "k8s.jvm_options": "-Xmx64g -Xms64g",
+    "k8s.workerRequestMemory": "64Gi"
   }
 }
 ```

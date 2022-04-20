@@ -85,23 +85,25 @@ POST http://localhost:8080/graphspaces/gs1/graphs/hugegraph/schema/propertykeys
 #### 4.4.1.2.更新PropertyKey
 
 ##### 功能介绍
-仅允许为已存在的 PropertyKey 添加或移除 userdata
+允许为已存在的 PropertyKey ：
+- 添加或移除 userdata
+- 修改名称
 
-PropertyKey的name、data_type等信息均不支持更改。
+PropertyKey的 data_type 等信息不支持更改。
 
 ##### URI
 ```
-PUT /graphspaces/${graphspace}/graphs/${hugegraph}/schema/propertykeys/${name}?action=append
+PUT /graphspaces/${graphspace}/graphs/${hugegraph}/schema/propertykeys/${name}?action={action}
 ```
 
 ##### URI参数
 
-| 名称       | 是否必填 | 类型   | 默认值 | 取值范围                | 说明                                              |
-| ---------- | -------- | ------ | ------ | ----------------------- | ------------------------------------------------- |
-| graphspace | 是       | String |        |                         | 图空间名称                                        |
-| hugegraph  | 是       | String |        |                         | 图名称                                            |
-| name       | 是       | String |        |                         | 属性类型名                                        |
-| action     | 是       | String |        | ["append", "eliminate"] | 表示当前行为是添加("append")还是移除("eliminate") |
+| 名称       | 是否必填 | 类型   | 默认值 | 取值范围                             | 说明                                          |
+| ---------- | -------- | ------ | ------ |----------------------------------|---------------------------------------------|
+| graphspace | 是       | String |        |                                  | 图空间名称                                       |
+| hugegraph  | 是       | String |        |                                  | 图名称                                         |
+| name       | 是       | String |        |                                  | 属性类型名                                       |
+| action     | 是       | String |        | ["append", "eliminate"，"update"] <br/><br/><br/>| 表示当前行为是添加("append")还是移除("eliminate")，还是修改名称 |
 
 ##### Body参数
 | 名称      | 是否必填 | 类型   | 默认值 | 取值范围 | 说明               |
@@ -119,7 +121,7 @@ PUT /graphspaces/${graphspace}/graphs/${hugegraph}/schema/propertykeys/${name}?a
 | properties  | List   | 新创建的属性类型的属性，固定为空 |
 | user_data   | Map    | 属性类型的通用信息               |
 
-##### 使用示例
+##### 使用示例1
 ###### Method & Url
 
 ```
@@ -157,6 +159,41 @@ PUT http://localhost:8080/graphspaces/gs1/graphs/hugegraph/schema/propertykeys/a
         "min": 0,
         "max": 100
     }
+}
+```
+
+##### 使用示例2
+
+###### Method & Url
+
+```
+PUT http://localhost:8080/graphspaces/gs1/graphs/hugegraph/schema/propertykeys/age?action=update
+```
+
+###### Request Body
+
+```json
+{
+    "name": "year"
+}
+```
+
+###### Response Status
+
+```json
+202
+```
+
+###### Response Body
+
+```json
+{
+    "id": 2,
+    "name": "year",
+    "data_type": "INT",
+    "cardinality": "SINGLE",
+    "properties": [],
+    "user_data": {}
 }
 ```
 

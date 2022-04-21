@@ -85,9 +85,7 @@ POST http://localhost:8080/graphspaces/gs1/graphs/hugegraph/schema/propertykeys
 #### 4.4.1.2.更新PropertyKey
 
 ##### 功能介绍
-允许为已存在的 PropertyKey ：
-- 添加或移除 userdata
-- 修改名称
+允许为已存在的 PropertyKey ： 添加或移除 userdata ；修改名称
 
 PropertyKey的 data_type 等信息不支持更改。
 

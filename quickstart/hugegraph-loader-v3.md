@@ -235,6 +235,7 @@ Office,388
         "format": "CSV",
         "delimiter": ",",
         "date_format": "yyyy-MM-dd HH:mm:ss",
+        "extra_date_formats": ["yyyyMMdd"],
         "time_zone": "GMT+8",
         "skipped_line": {
           "regex": "(^#|^//).*|"
@@ -288,6 +289,7 @@ Office,388
         "format": "CSV",
         "delimiter": ",",
         "date_format": "yyyy-MM-dd HH:mm:ss",
+        "extra_date_formats": ["yyyyMMdd"],
         "time_zone": "GMT+8",
         "skipped_line": {
           "regex": "(^#|^//).*|"
@@ -337,6 +339,7 @@ Office,388
         "format": "JSON",
         "delimiter": null,
         "date_format": "yyyy-MM-dd HH:mm:ss",
+        "extra_date_formats": [],
         "time_zone": "GMT+8",
         "skipped_line": {
           "regex": "(^#|^//).*|"
@@ -391,6 +394,7 @@ Office,388
         "format": "JSON",
         "delimiter": null,
         "date_format": "yyyy-MM-dd HH:mm:ss",
+        "extra_date_formats": [],
         "time_zone": "GMT+8",
         "skipped_line": {
           "regex": "(^#|^//).*|"
@@ -516,6 +520,7 @@ bin/mapping-convert.sh struct.json
   - delimiter: 文件行的列分隔符，默认以逗号`","`作为分隔符，`JSON`文件不需要指定，选填；
   - charset: 文件的编码字符集，默认`UTF-8`，选填；
   - date_format: 自定义的日期格式，默认值为 yyyy-MM-dd HH:mm:ss，选填；如果日期是以时间戳的形式呈现的，此项须写为`timestamp`（固定写法）；
+  - extra_date_formats: 自定义的其他日期格式列表，默认为空，选填；列表中每一项都是一个 date_format 指定日期格式的备用日期格式；
   - time_zone: 设置日期数据是处于哪个时区的，默认值为`GMT+8`，选填；
   - skipped_line: 想跳过的行，复合结构，目前只能配置要跳过的行的正则表达式，用子节点`regex`描述，默认不跳过任何行，选填；
   - compression: 文件的压缩格式，可选值为 NONE、GZIP、BZ2、XZ、LZMA、SNAPPY_RAW、SNAPPY_FRAMED、Z、DEFLATE、LZ4_BLOCK、LZ4_FRAMED、ORC 和 PARQUET，默认为 NONE，表示非压缩文件，选填；

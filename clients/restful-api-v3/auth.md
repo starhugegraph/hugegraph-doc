@@ -2318,3 +2318,134 @@ GET http://localhost:8080/auth/verify
   "user_id": "admin"
 }
 ```
+
+#### 4.13.3.kg用户创建(kg-user-create)
+
+##### 功能介绍
+
+创建kg用户
+
+##### URI
+
+```
+POST /auth/kgusers
+```
+
+##### URI参数
+
+无
+
+##### Body参数
+
+|  名称   | 是否必填  | 类型  | 默认值  | 取值范围              | 说明  |
+|  ----  | ----  | ----  | ----  |-------------------| ----  |
+| user_name  | 是 | String  |   | 5-16个字符、数字和下划线的组合 | 用户名称  |
+
+##### Response
+
+|  名称   | 类型  |  说明  |
+|  ----  | ----  | ----  |
+| id  | String | 用户ID  |
+| user_name  | String | 用户名称  |
+| user_password  | String | 用户密码（密文）  |
+| user_phone  | String | 用户手机（脱敏后）  |
+| user_email  | String | 用户邮箱  |
+| user_creator  | String | 创建者  |
+| user_create  | String | 创建时间  |
+| user_update  | String | 更新时间  |
+
+##### 使用示例
+
+###### Method & Url
+
+```
+POST http://localhost:8080/auth/kgusers
+```
+
+###### Request Body
+
+```json
+{
+  "user_name": "kguser1"
+}
+```
+
+###### Response Status
+
+```json
+201
+```
+
+###### Response Body
+
+```json
+{
+  "user_password": "$2a$04$m/hl2R57LEZMpJPwlmoDCOjEV8JswOxbKLQLkAQkJRxnrkX4mOqRK",
+  "user_update": "2022-05-30 22:09:26",
+  "user_name": "kguser1",
+  "user_creator": "KG",
+  "id": "kguser1",
+  "user_description": "KG user",
+  "user_create": "2022-05-30 22:09:26"
+}
+```
+
+#### 4.13.4.kg用户登录(kglogin)
+
+##### 功能介绍
+
+获取kg用户Token
+
+##### URI
+
+```
+POST /auth/kglogin
+```
+
+##### URI参数
+
+无
+
+##### Body参数
+
+| 名称           | 是否必填  | 类型  | 默认值  | 取值范围  | 说明                      |
+|--------------| ----  | ----  | ----  | ----  |-------------------------|
+| user_name    | 是 | String  |   |   | 用户名称                    |
+| sign         | 是 | String  |   | | 用户校验信息，通过用户名和日期计算md5值得到 |
+
+##### Response
+
+|  名称   | 类型 |  说明  |
+|  ----  | ---|  ----  |
+| token  |String| 系统生成的用户Token |
+
+##### 使用示例
+
+###### Method & Url
+
+```
+POST http://localhost:8080/auth/kglogin
+```
+
+###### Request Body
+
+```json
+{
+  "user_name":"kguser1",
+  "sign":"cf80787cd3925796837308ce4d5c1db8"
+}
+```
+
+###### Response Status
+
+```json
+200
+```
+
+###### Response Body
+
+```json
+{
+  "token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX25hbWUiOiJhZG1pbiIsInVzZXJfaWQiOiJhZG1pbiIsImV4cCI6MTYzODg1NDA0M30.2zOSTC98Z-UMo-QblTdPVTGsnFMN4G5dZeTV0-PCuD8"
+}
+```

@@ -2656,17 +2656,17 @@ EOF
 ### 5.5.2 算法接口
 通常情况下，一个算法包含4个类，分别继承框架的4个接口类即可
 
-#### 5.5.2.1 Computation<T>
+#### 5.5.2.1 Computation\<T\>
 算法主类，T为算法 Value 的类型 \
 以 PageRank 为例 \
-public class PageRank implements Computation<DoubleValue> \
+public class PageRank implements Computation\<DoubleValue\> \
 支持的 Value 类型在 com.baidu.hugegraph.computer.core.graph.value 中查看
 
 ##### 主要接口函数
 1. void compute0(ComputationContext context, Vertex vertex); \
 超级步中第一步执行的函数，每个顶点都会调用，通常用户初始化启动顶点。
 
-2. void compute(ComputationContext context, Vertex vertex, Iterator<M> messages); \
+2. void compute(ComputationContext context, Vertex vertex, Iterator\<M\> messages); \
 超级步的执行函数，每个顶点没步都会执行，用于计算的主要函数 \
 messages 是上一步传递过来的消息的迭代器
 

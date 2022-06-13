@@ -4971,6 +4971,182 @@ city: Beijing})<br>&#x63CF;&#x8FF0;&#xFF1A;&#x7528;&#x6237;&apos;tester&apos;&#x
   <span class="hljs-string">&quot;user_id&quot;</span>: <span class="hljs-string">&quot;admin&quot;</span>
 }
 </code></pre>
+<h4 id="4133kg&#x7528;&#x6237;&#x521B;&#x5EFA;kg-user-create">4.13.3.kg&#x7528;&#x6237;&#x521B;&#x5EFA;(kg-user-create)</h4>
+<h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
+<p>&#x521B;&#x5EFA;kg&#x7528;&#x6237;</p>
+<h5 id="uri">URI</h5>
+<pre><code>POST /auth/kgusers
+</code></pre><h5 id="uri&#x53C2;&#x6570;">URI&#x53C2;&#x6570;</h5>
+<p>&#x65E0;</p>
+<h5 id="body&#x53C2;&#x6570;">Body&#x53C2;&#x6570;</h5>
+<table>
+<thead>
+<tr>
+<th>&#x540D;&#x79F0;</th>
+<th>&#x662F;&#x5426;&#x5FC5;&#x586B;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x9ED8;&#x8BA4;&#x503C;</th>
+<th>&#x53D6;&#x503C;&#x8303;&#x56F4;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user_name</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td></td>
+<td>5-16&#x4E2A;&#x5B57;&#x7B26;&#x3001;&#x6570;&#x5B57;&#x548C;&#x4E0B;&#x5212;&#x7EBF;&#x7684;&#x7EC4;&#x5408;</td>
+<td>&#x7528;&#x6237;&#x540D;&#x79F0;</td>
+</tr>
+</tbody>
+</table>
+<h5 id="response">Response</h5>
+<table>
+<thead>
+<tr>
+<th>&#x540D;&#x79F0;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>String</td>
+<td>&#x7528;&#x6237;ID</td>
+</tr>
+<tr>
+<td>user_name</td>
+<td>String</td>
+<td>&#x7528;&#x6237;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td>user_password</td>
+<td>String</td>
+<td>&#x7528;&#x6237;&#x5BC6;&#x7801;&#xFF08;&#x5BC6;&#x6587;&#xFF09;</td>
+</tr>
+<tr>
+<td>user_phone</td>
+<td>String</td>
+<td>&#x7528;&#x6237;&#x624B;&#x673A;&#xFF08;&#x8131;&#x654F;&#x540E;&#xFF09;</td>
+</tr>
+<tr>
+<td>user_email</td>
+<td>String</td>
+<td>&#x7528;&#x6237;&#x90AE;&#x7BB1;</td>
+</tr>
+<tr>
+<td>user_creator</td>
+<td>String</td>
+<td>&#x521B;&#x5EFA;&#x8005;</td>
+</tr>
+<tr>
+<td>user_create</td>
+<td>String</td>
+<td>&#x521B;&#x5EFA;&#x65F6;&#x95F4;</td>
+</tr>
+<tr>
+<td>user_update</td>
+<td>String</td>
+<td>&#x66F4;&#x65B0;&#x65F6;&#x95F4;</td>
+</tr>
+</tbody>
+</table>
+<h5 id="&#x4F7F;&#x7528;&#x793A;&#x4F8B;">&#x4F7F;&#x7528;&#x793A;&#x4F8B;</h5>
+<h6 id="method--url">Method &amp; Url</h6>
+<pre><code>POST http://localhost:8080/auth/kgusers
+</code></pre><h6 id="request-body">Request Body</h6>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;user_name&quot;</span>: <span class="hljs-string">&quot;kguser1&quot;</span>
+}
+</code></pre>
+<h6 id="response-status">Response Status</h6>
+<pre><code class="lang-json"><span class="hljs-number">201</span>
+</code></pre>
+<h6 id="response-body">Response Body</h6>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;user_password&quot;</span>: <span class="hljs-string">&quot;$2a$04$m/hl2R57LEZMpJPwlmoDCOjEV8JswOxbKLQLkAQkJRxnrkX4mOqRK&quot;</span>,
+  <span class="hljs-string">&quot;user_update&quot;</span>: <span class="hljs-string">&quot;2022-05-30 22:09:26&quot;</span>,
+  <span class="hljs-string">&quot;user_name&quot;</span>: <span class="hljs-string">&quot;kguser1&quot;</span>,
+  <span class="hljs-string">&quot;user_creator&quot;</span>: <span class="hljs-string">&quot;KG&quot;</span>,
+  <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-string">&quot;kguser1&quot;</span>,
+  <span class="hljs-string">&quot;user_description&quot;</span>: <span class="hljs-string">&quot;KG user&quot;</span>,
+  <span class="hljs-string">&quot;user_create&quot;</span>: <span class="hljs-string">&quot;2022-05-30 22:09:26&quot;</span>
+}
+</code></pre>
+<h4 id="4134kg&#x7528;&#x6237;&#x767B;&#x5F55;kglogin">4.13.4.kg&#x7528;&#x6237;&#x767B;&#x5F55;(kglogin)</h4>
+<h5 id="&#x529F;&#x80FD;&#x4ECB;&#x7ECD;">&#x529F;&#x80FD;&#x4ECB;&#x7ECD;</h5>
+<p>&#x83B7;&#x53D6;kg&#x7528;&#x6237;Token</p>
+<h5 id="uri">URI</h5>
+<pre><code>POST /auth/kglogin
+</code></pre><h5 id="uri&#x53C2;&#x6570;">URI&#x53C2;&#x6570;</h5>
+<p>&#x65E0;</p>
+<h5 id="body&#x53C2;&#x6570;">Body&#x53C2;&#x6570;</h5>
+<table>
+<thead>
+<tr>
+<th>&#x540D;&#x79F0;</th>
+<th>&#x662F;&#x5426;&#x5FC5;&#x586B;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x9ED8;&#x8BA4;&#x503C;</th>
+<th>&#x53D6;&#x503C;&#x8303;&#x56F4;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user_name</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td></td>
+<td></td>
+<td>&#x7528;&#x6237;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td>sign</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td></td>
+<td></td>
+<td>&#x7528;&#x6237;&#x6821;&#x9A8C;&#x4FE1;&#x606F;&#xFF0C;&#x901A;&#x8FC7;&#x7528;&#x6237;&#x540D;&#x548C;&#x65E5;&#x671F;&#x8BA1;&#x7B97;md5&#x503C;&#x5F97;&#x5230;</td>
+</tr>
+</tbody>
+</table>
+<h5 id="response">Response</h5>
+<table>
+<thead>
+<tr>
+<th>&#x540D;&#x79F0;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>token</td>
+<td>String</td>
+<td>&#x7CFB;&#x7EDF;&#x751F;&#x6210;&#x7684;&#x7528;&#x6237;Token</td>
+</tr>
+</tbody>
+</table>
+<h5 id="&#x4F7F;&#x7528;&#x793A;&#x4F8B;">&#x4F7F;&#x7528;&#x793A;&#x4F8B;</h5>
+<h6 id="method--url">Method &amp; Url</h6>
+<pre><code>POST http://localhost:8080/auth/kglogin
+</code></pre><h6 id="request-body">Request Body</h6>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;user_name&quot;</span>:<span class="hljs-string">&quot;kguser1&quot;</span>,
+  <span class="hljs-string">&quot;sign&quot;</span>:<span class="hljs-string">&quot;cf80787cd3925796837308ce4d5c1db8&quot;</span>
+}
+</code></pre>
+<h6 id="response-status">Response Status</h6>
+<pre><code class="lang-json"><span class="hljs-number">200</span>
+</code></pre>
+<h6 id="response-body">Response Body</h6>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;token&quot;</span>: <span class="hljs-string">&quot;eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX25hbWUiOiJhZG1pbiIsInVzZXJfaWQiOiJhZG1pbiIsImV4cCI6MTYzODg1NDA0M30.2zOSTC98Z-UMo-QblTdPVTGsnFMN4G5dZeTV0-PCuD8&quot;</span>
+}
+</code></pre>
 
                                 
                                 </section>
@@ -5023,7 +5199,7 @@ city: Beijing})<br>&#x63CF;&#x8FF0;&#xFF1A;&#x7528;&#x6237;&apos;tester&apos;&#x
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Authentication","level":"4.2.16","depth":2,"next":{"title":"GraphSpace","level":"4.2.17","depth":2,"path":"clients/restful-api-v3/graphspace.md","ref":"clients/restful-api-v3/graphspace.md","articles":[]},"previous":{"title":"Gremlin","level":"4.2.15","depth":2,"path":"clients/restful-api-v3/gremlin.md","ref":"clients/restful-api-v3/gremlin.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"clients/restful-api-v3/auth.md","mtime":"2022-05-19T03:04:13.423Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-05-19T03:09:33.488Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Authentication","level":"4.2.16","depth":2,"next":{"title":"GraphSpace","level":"4.2.17","depth":2,"path":"clients/restful-api-v3/graphspace.md","ref":"clients/restful-api-v3/graphspace.md","articles":[]},"previous":{"title":"Gremlin","level":"4.2.15","depth":2,"path":"clients/restful-api-v3/gremlin.md","ref":"clients/restful-api-v3/gremlin.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","theme-cuav"],"pluginsConfig":{"prism":{"lang":{"flow":"typescript"}},"search":{},"theme-cuav":{"navbar":{"brand":{"logo":{"alt":"HugeGraph Database","path":"../images/logo.png"},"url":"javascript:;"},"nav":{"items":[]}},"showGitBookLink":false,"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"useGitbookIcon":false,"iconPath":"../images/favicon.ico"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"clients/restful-api-v3/auth.md","mtime":"2022-06-13T08:39:41.110Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-06-13T08:48:45.964Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

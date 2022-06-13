@@ -2698,7 +2698,7 @@ master 上执行的算法函数，一般用于汇总数据，master 上不做大
 5. void output()\
 服务器上输出内容
 
-#### 5.5.2.2 HugeOutput
+#### 5.5.2.3 HugeOutput
 用于 worker 输出的接口类，默认实现了输出顶点 Value 的功能
 
 ##### 主要接口函数
@@ -2711,7 +2711,7 @@ master 上执行的算法函数，一般用于汇总数据，master 上不做大
 3. void mergePartitions(Config config)\
 用户 hdfs 中将多个输出文件合并
 
-#### 5.5.2.2 AlgorithmParams
+#### 5.5.2.4 AlgorithmParams
 算法参数类，指定算法的各种参数
 
 ##### 主要接口函数

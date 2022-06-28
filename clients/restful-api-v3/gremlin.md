@@ -49,9 +49,12 @@ POST /gremlin
 
 表3 data对象
 
-|  名称   | 类型  |  说明  |
-|  ----  | ----  | ----  |
-| data  | Json |  具体数据 |
+| 名称         | 类型     | 说明      |
+|------------|--------|---------|
+| id         | Int    | 顶点id    |
+| lable      | String | 顶点label |
+| type       | String | 类型      |
+| properties | Json   | 属性集合    |
 
 
 ##### 使用示例
@@ -95,18 +98,9 @@ POST http://localhost:8080/gremlin
 			"label": "person",
 			"type": "vertex",
 			"properties": {
-				"city": [{
-					"id": "1:marko>city",
-					"value": "Beijing"
-				}],
-				"name": [{
-					"id": "1:marko>name",
-					"value": "marko"
-				}],
-				"age": [{
-					"id": "1:marko>age",
-					"value": 29
-				}]
+				"city": "Beijing",
+				"name": "marko",
+				"age":  29
 			}
 		}],
 		"meta": {}
@@ -174,7 +168,10 @@ POST /gremlinunzip
 
 |  名称   | 类型  |  说明  |
 |  ----  | ----  | ----  |
-| data  | Json |  具体数据 |
+| id         | Int    | 顶点id    |
+| lable      | String | 顶点label |
+| type       | String | 类型      |
+| properties | Json   | 属性集合    |
 
 
 ##### 使用示例
@@ -218,18 +215,9 @@ POST http://localhost:8080/gremlin
 			"label": "person",
 			"type": "vertex",
 			"properties": {
-				"city": [{
-					"id": "1:marko>city",
-					"value": "Beijing"
-				}],
-				"name": [{
-					"id": "1:marko>name",
-					"value": "marko"
-				}],
-				"age": [{
-					"id": "1:marko>age",
-					"value": 29
-				}]
+				"city": "Beijing",
+				"name": "marko",
+				"age": 29
 			}
 		}],
 		"meta": {}

@@ -228,7 +228,7 @@ POST http://localhost:8080/graphspaces/${graphspace}/graphs/${hugegraph}/jobs/co
 | 名称                     | 是否必填 |  类型   | 默认值  |取值范围        |  说明                   |
 | :----------------------- | :------- | :--------------------- | :----- | :-------------- | :------ |
 | closeness_centrality.weight_property  | 否 |  String   | ""，为空时边权重为1  |  -       |  权重属性名         |
-| closeness_centrality.sample_rate  | 否 |  Double   | 1.0  | (0, 1.0]        |  边的采样率  |
+| closeness_centrality.sample_rate  | 否 |  Double   | 0.01  | (0, 1.0]        |  边的采样率  |
 | input.limit_edges_in_one_vertex  | 否 |  Int   | -1  | -        |  最大出边限制         |
 
 ##### k8s示例
@@ -743,7 +743,7 @@ POST http://localhost:8080/graphspaces/{graphspace}/graphs/{hugegraph}/jobs/comp
 
 | 名称                               | 是否必填 | 类型   | 默认值 | 取值范围 | 说明         |
 | ---------------------------------- | -------- | ------ | ------ | -------- | ------------ |
-| betweenness_centrality.sample_rate | 否       | Double | 1.0    | (0, 1.0] | 边的采样率   |
+| betweenness_centrality.sample_rate | 否       | Double | 0.01    | (0, 1.0] | 边的采样率   |
 | input.limit_edges_in_one_vertex    | 否       | Int    | -1     |          | 最大出边限制 |
 
 ##### k8s 示例

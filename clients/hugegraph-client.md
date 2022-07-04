@@ -12,8 +12,9 @@ HugeGraph-Client 是操作 graph 的总入口，用户必须先创建出 HugeGra
 
 ```java
 // HugeGraphServer地址："http://localhost:8080"
+// 图的空间："DEFAULT"
 // 图的名称："hugegraph"
-HugeClient hugeClient = HugeClient.builder("http://localhost:8080", "hugegraph")
+HugeClient hugeClient = HugeClient.builder("http://localhost:8080", "DEFAULT", "hugegraph")
                                   .configTimeout(20) // 默认 20s 超时
                                   .configUser("**", "**") // 默认未开启用户权限
                                   .build();
@@ -420,6 +421,8 @@ schema.getIndexLabel("personByAge").name()
 
 #### 3.1 Vertex
 
+##### 3.1.1 创建一个顶点
+
 顶点是构成图的最基本元素，一个图中可以有非常多的顶点。下面给出一个添加顶点的例子：
 
 ```java
@@ -437,12 +440,43 @@ Vertex lop = graph.addVertex(T.label, "software", "name", "lop", "lang", "java",
 - 剩下的参数就是顶点其他属性的设置，但并非必须。
 - 调用`addVertex`方法后，顶点会立刻被插入到后端存储系统中。
 
+##### 3.1.2 批量创建顶点
+
+在创建单个顶点的基础上，可按照如下方法创建多个顶点：
+
+```java
+List<Vertex> vertices = new ArrayList<>();
+vertices.add(marko);
+vertices.add(vadas);
+vertices.add(josh);
+hugeClient.graph().addVertices(vertices);
+```
+
+##### 3.1.3 更新顶点的属性
+
+在创建顶点的基础上，可按照如下方法更新属性：
+
+```java
+marko.property("age",30);
+```
+
+##### 3.1.4 删除顶点的属性
+
+在创建顶点的基础上，可按照如下方法删除属性：
+
+```java
+marko.removeProperty("price");
+```
+
 #### 3.2 Edge
+
+##### 3.2.1 创建一条边
 
 有了点，还需要边才能构成完整的图。下面给出一个添加边的例子：
 
 ```java
 Edge knows1 = marko.addEdge("knows", vadas, "city", "Beijing");
+Edge markoCreateLop = marko.addEdge("created", lop, "date", "2020-11-11");
 ```
 
 - 由（源）顶点来调用添加边的函数，函数第一个参数为边的label，第二个参数是目标顶点，这两个参数的位置和顺序是固定的。后续的参数就是`key1 -> val1, key2 -> val2 ···`的顺序排列，设置边的属性，键值对顺序自由。
@@ -451,6 +485,81 @@ Edge knows1 = marko.addEdge("knows", vadas, "city", "Beijing");
 
 **注意：当frequency为multiple时必须要设置sortKeys对应属性类型的值。**
 
-### 4 简单示例
+##### 3.2.2 批量创建边
+
+在创建单个边的基础上，可按照如下方法创建多个边：
+
+```java
+List<Edge> edges = new ArrayList<>();
+edges.add(markoCreateLop);
+edges.add(joshCreateRipple);
+edges.add(joshCreateLop);
+edges.add(peterCreateLop);
+vertices = graph.addVertices(vertices);
+```
+
+##### 3.2.3 更新边的属性
+
+在创建边的基础上，可按照如下方法更新属性：
+
+```java
+markoCreateLop.property("date","2020-12-12");
+```
+
+##### 3.2.4 删除边的属性
+
+在创建边的基础上，可按照如下方法删除属性：
+
+```java
+markoCreateLop.removeProperty("date");
+```
+
+### 4 管理层数据
+
+#### 4.1 获取图空间
+
+用户可创建多个图空间，每个图空间下面可创建多个图，用户可使用如下代码获取图空间数据：
+```java
+hugeClient.graphSpace().listGraphSpace();
+```
+
+#### 4.2 获取图列表
+
+用户可使用如下代码获取当前图空间下的图列表，当前图空间在生成HugeClient对象时定义，代码如下：
+```java
+hugeClient.graphs().listGraph();
+```
+
+### 5 gremlin格式查询
+
+下述代码仅以执行g.V()为示例演示gremlin格式查询：
+```java
+//返回对象为可遍历ResultSet类型
+ResultSet resultSet = hugeClient.gremlin().gremlin("g.V()").execute();
+```
+
+下述代码仅演示如何对ResultSet对象进行遍历，用户可按照实际格式需要完成结果打印：
+```java
+Iterator<Result> results = resultSet.iterator();
+results.forEachRemaining(result -> {
+        System.out.println(result.getObject().getClass());
+        Object object = result.getObject();
+        if (object instanceof Vertex) {
+        System.out.println(((Vertex) object).id());
+        } else if (object instanceof Edge) {
+        System.out.println(((Edge) object).id());
+        } else if (object instanceof Path) {
+        List<Object> elements = ((Path) object).objects();
+        elements.forEach(element -> {
+        System.out.println(element.getClass());
+        System.out.println(element);
+        });
+        } else {
+        System.out.println(object);
+        }
+        });
+```
+
+### 6 简单示例
 
 简单示例见[HugeGraph-Client](/quickstart/hugegraph-client.html)

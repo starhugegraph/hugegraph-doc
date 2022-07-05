@@ -468,6 +468,31 @@ marko.property("age",30);
 marko.removeProperty("price");
 ```
 
+##### 3.1.5 根据id获取顶点
+
+在创建顶点的基础上，可按照如下方法根据id获取顶点：
+
+```java
+marko.id();//获取顶点id
+hugeClient.graph().getVertex("10001:marko");
+```
+
+##### 3.1.6 获取所有顶点
+
+在创建顶点的基础上，可按照如下方法获取所有顶点：
+
+```java
+hugeClient.graph().listVertices();
+```
+
+##### 3.1.7 根据id删除顶点
+
+在创建顶点的基础上，可按照如下方法根据id删除顶点：
+
+```java
+hugeClient.graph().removeVertex("10001:marko");
+```
+
 #### 3.2 Edge
 
 ##### 3.2.1 创建一条边
@@ -512,6 +537,31 @@ markoCreateLop.property("date","2020-12-12");
 
 ```java
 markoCreateLop.removeProperty("date");
+```
+
+##### 3.2.5 根据id获取边
+
+在创建边的基础上，可按照如下方法根据id获取边：
+
+```java
+markoCreateLop.id();//获取边id
+hugeClient.graph().getVertex("S10001:marko>10002>>S10002:lop");
+```
+
+##### 3.2.6 获取所有边
+
+在创建边的基础上，可按照如下方法获取所有边：
+
+```java
+hugeClient.graph().listEdges();
+```
+
+##### 3.2.7 根据id删除边
+
+在创建边的基础上，可按照如下方法根据id删除边：
+
+```java
+hugeClient.graph().removeEdge("S10001:marko>10002>>S10002:lop");
 ```
 
 ### 4 管理层数据

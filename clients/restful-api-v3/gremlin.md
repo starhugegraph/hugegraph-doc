@@ -47,7 +47,7 @@ POST /gremlin
 |  ----  | ----  | ----  |
 | data  | Array |  数据列表 |
 
-表3 data对象
+表3 data对象(查询类型为顶点类型)
 
 | 名称         | 类型     | 说明      |
 |------------|--------|---------|
@@ -56,8 +56,29 @@ POST /gremlin
 | type       | String | 类型      |
 | properties | Json   | 属性集合    |
 
+表4 data对象(查询类型为边类型)
 
-##### 使用示例
+| 名称         | 类型     | 说明      |
+|------------|--------|---------|
+ | id         | Int    | 边id |
+ | lable      | String | 边label |
+ | type       | String | 类型 |
+ | outV       | String | 初始顶点 |
+ | outVLabel  | String | 初始顶点label |
+ | inV         | String | 目标顶点 |
+ | inVLabel  | String | 目标顶点label |
+ | properties | Json   | 属性集合 |
+
+表5 data对象(查询类型为path类型)
+
+| 名称         | 类型     | 说明                               |
+ |--------|----------------------------------|---------|
+| id         | Int    | 边/顶点id                           |
+| labels      | String | 边/顶点label                        |
+| objects       | Json   | 边/顶点集合，objects展开内容即为上述表3和表4的顶底和边 |
+
+
+##### 使用示例(查询类型为顶点类型)
 
 ###### Method & Url
 
@@ -105,6 +126,189 @@ POST http://localhost:8080/gremlin
 		}],
 		"meta": {}
 	}
+}
+```
+
+##### 使用示例2(查询类型为边类型)
+
+###### Method & Url
+
+```
+POST http://localhost:8080/gremlin
+```
+
+###### Request Body
+
+```json
+{
+	"gremlin": "graph.traversal().E('S1:li>2>>S2:lop1')",
+	"bindings": {},
+	"language": "gremlin-groovy",
+	"aliases": {"graph":"gs1-hugegraph", "g":"__g_gs1-hugegraph"}
+}
+```
+
+###### Response Status
+
+```json
+200
+```
+
+###### Response Body
+
+```json
+{
+     "requestId": "3de127e8-6ef6-4d6e-b08c-d75c096682e2",
+     "status": {
+          "message": "",
+          "code": 200,
+          "attributes": {}
+     },
+     "result": {
+          "data": [
+               {
+                    "id": "S1:li>2>>S2:lop1",
+                    "label": "created",
+                    "type": "edge",
+                    "outV": "1:li",
+                    "outVLabel": "person",
+                    "inV": "2:lop1",
+                    "inVLabel": "software",
+                    "properties": {
+                         "city": "Shenzhen",
+                         "date": "2021-12-10 00:00:00.000"
+                    }
+               }
+          ],
+          "meta": {}
+     }
+}
+```
+
+##### 使用示例3(查询类型为path类型)
+
+###### Method & Url
+
+```
+POST http://localhost:8080/gremlin
+```
+
+###### Request Body
+
+```json
+{
+	"gremlin": "graph.traversal().E('graph.traversal().V().hasLabel('software').has('name','lop').bothE().otherV().path()')",
+	"bindings": {},
+	"language": "gremlin-groovy",
+	"aliases": {"graph":"gs1-hugegraph", "g":"__g_gs1-hugegraph"}
+}
+```
+
+###### Response Status
+
+```json
+200
+```
+
+###### Response Body
+
+```json
+{
+    "requestId": "027120b7-bc68-4a41-98c1-d8f4ddc5926e",
+    "status": {
+         "message": "",
+         "code": 200,
+         "attributes": {}
+    },
+    "result": {
+         "data": [
+              {
+                   "labels": [
+                        [],
+                        [],
+                        []
+                   ],
+                   "objects": [
+                        {
+                             "id": "2:lop",
+                             "label": "software",
+                             "type": "vertex",
+                             "properties": {
+                                  "name": "lop",
+                                  "lang": "java",
+                                  "price": 328
+                             }
+                        },
+                        {
+                             "id": "S1:marko>2>>S2:lop",
+                             "label": "created",
+                             "type": "edge",
+                             "outV": "1:marko",
+                             "outVLabel": "person",
+                             "inV": "2:lop",
+                             "inVLabel": "software",
+                             "properties": {
+                                  "city": "Shanghai",
+                                  "date": "2017-12-10 00:00:00.000"
+                             }
+                        },
+                        {
+                             "id": "1:marko",
+                             "label": "person",
+                             "type": "vertex",
+                             "properties": {
+                                  "name": "marko",
+                                  "age": 29,
+                                  "city": "Beijing"
+                             }
+                        }
+                   ]
+              },
+              {
+                   "labels": [
+                        [],
+                        [],
+                        []
+                   ],
+                   "objects": [
+                        {
+                             "id": "2:lop",
+                             "label": "software",
+                             "type": "vertex",
+                             "properties": {
+                                  "name": "lop",
+                                  "lang": "java",
+                                  "price": 328
+                             }
+                        },
+                        {
+                             "id": "S1:peter>2>>S2:lop",
+                             "label": "created",
+                             "type": "edge",
+                             "outV": "1:peter",
+                             "outVLabel": "person",
+                             "inV": "2:lop",
+                             "inVLabel": "software",
+                             "properties": {
+                                  "city": "Beijing",
+                                  "date": "2017-12-10 00:00:00.000"
+                             }
+                        },
+                        {
+                             "id": "1:peter",
+                             "label": "person",
+                             "type": "vertex",
+                             "properties": {
+                                  "name": "peter",
+                                  "age": 29,
+                                  "city": "Shanghai"
+                             }
+                        }
+                   ]
+              }
+         ],
+         "meta": {}
+    }
 }
 ```
 

@@ -312,6 +312,166 @@ POST http://localhost:8080/gremlin
 }
 ```
 
+##### 使用示例4(查询类型为顶点类型的toSet方法，即在罗列所有结果的基础上去重)
+
+###### Method & Url
+
+```
+POST http://localhost:8080/gremlin
+```
+
+###### Request Body
+
+```json
+{
+	"gremlin": "graph.traversal().V().toSet()",
+	"bindings": {},
+	"language": "gremlin-groovy",
+	"aliases": {"graph":"gs1-hugegraph", "g":"__g_gs1-hugegraph"}
+}
+```
+
+###### Response Status
+
+```json
+200
+```
+
+###### Response Body
+
+```json
+{
+    "requestId": "a0f1ba76-c4a5-4615-b9c3-5f2a04f66f4a",
+    "status": {
+        "message": "",
+        "code": 200,
+        "attributes": {
+        }
+    },
+    "result": {
+        "data": [
+            {
+                "id": "1:marko",
+                "label": "person",
+                "type": "vertex",
+                "properties": {
+                    "name": "marko",
+                    "age": 29,
+                    "city": "Beijing"
+                }
+            },
+            {
+                "id": "1:vadas",
+                "label": "person",
+                "type": "vertex",
+                "properties": {
+                    "name": "vadas",
+                    "age": 27,
+                    "city": "Hongkong"
+                }
+            },
+            {
+                "id": "1:lzm",
+                "label": "person",
+                "type": "vertex",
+                "properties": {
+                    "name": "lzm",
+                    "age": 28,
+                    "city": "Hongkong"
+                }
+            }
+        ],
+        "meta": {
+        }
+    }
+}
+```
+
+##### 使用示例5(查询类型为顶点类型的toList方法，即罗列所有结果)
+
+###### Method & Url
+
+```
+POST http://localhost:8080/gremlin
+```
+
+###### Request Body
+
+```json
+{
+	"gremlin": "graph.traversal().V().toList()",
+	"bindings": {},
+	"language": "gremlin-groovy",
+	"aliases": {"graph":"gs1-hugegraph", "g":"__g_gs1-hugegraph"}
+}
+```
+
+###### Response Status
+
+```json
+200
+```
+
+###### Response Body
+
+```json
+{
+    "requestId": "c3d34168-10dc-4e1c-a578-c20064646480",
+    "status": {
+        "message": "",
+        "code": 200,
+        "attributes": {
+        }
+    },
+    "result": {
+        "data": [
+            {
+                "id": "1:vadas",
+                "label": "person",
+                "type": "vertex",
+                "properties": {
+                    "name": "vadas",
+                    "age": 27,
+                    "city": "Hongkong"
+                }
+            },
+            {
+                "id": "1:lzm",
+                "label": "person",
+                "type": "vertex",
+                "properties": {
+                    "name": "lzm",
+                    "age": 28,
+                    "city": "Hongkong"
+                }
+            },
+            {
+                "id": "1:marko",
+                "label": "person",
+                "type": "vertex",
+                "properties": {
+                    "name": "marko",
+                    "age": 29,
+                    "city": "Beijing"
+                }
+            },
+            {
+                "id": "1:vadas",
+                "label": "person",
+                "type": "vertex",
+                "properties": {
+                    "name": "vadas",
+                    "age": 27,
+                    "city": "Hongkong"
+                }
+            }
+        ],
+        "meta": {
+        }
+    }
+}
+```
+
 注意：
 
 > 这里是直接使用图对象（hugegraph），先获取其遍历器（traversal()），再获取顶点。

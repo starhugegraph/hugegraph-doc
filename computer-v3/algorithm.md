@@ -2754,7 +2754,33 @@ master 上执行的算法函数，一般用于汇总数据，master 上不做大
 10. void data(byte[] data)  
 设置顶点附加数据
 
-#### 5.5.2.5 ComputationContext
+#### 5.5.2.6 Edge
+定点类，定义了顶点的各种属性和方法
+
+##### 主要方法：
+
+1. Id id()  
+获取边 id  
+
+2. String label()  
+获取边 label
+
+3. String name()  
+获取边名称
+
+4. Id targetId()  
+获取边的目标顶点 id
+
+5. Properties properties()  
+获取边的所有属性
+
+6. property(String key)  
+获取边的指定 key 的属性值
+
+7. boolean isInverse()  
+获取边是否是反向边
+
+#### 5.5.2.7 ComputationContext
 计算过程的重要 context
 
 ##### 主要方法：
@@ -2771,7 +2797,7 @@ master 上执行的算法函数，一般用于汇总数据，master 上不做大
 4. int superstep()  
 获取当前的步数
 
-#### 5.5.2.5 WorkerContext
+#### 5.5.2.8 WorkerContext
 worker 的 context
 
 ##### 主要方法：
@@ -2779,7 +2805,7 @@ worker 的 context
 1. Config config()  
 获取算法配置
 
-#### 5.5.2.5 Config
+#### 5.5.2.9 Config
 算法配置类，能获取算法请求里传入的各种参数
 
 ##### 主要方法：

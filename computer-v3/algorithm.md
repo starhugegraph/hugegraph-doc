@@ -2650,65 +2650,65 @@ EOF
 ## 5.5.二次开发指南
 
 ### 5.5.1 算法代码目录
-代码位于 hugegraph-computer/computer-algorithm 目录下，找到相应位置添加新算法代码即可。\
+代码位于 hugegraph-computer/computer-algorithm 目录下，找到相应位置添加新算法代码即可。  
 二次开发可参照原有算法的代码进行，PageRank 是一个比较典型的算法。
 
 ### 5.5.2 算法接口
 通常情况下，一个算法包含4个类，分别继承框架的4个接口类即可
 
 #### 5.5.2.1 Computation\<T\>
-算法主类，T为算法 Value 的类型 \
-以 PageRank 为例 \
-public class PageRank implements Computation\<DoubleValue\> \
-支持的 Value 类型在 com.baidu.hugegraph.computer.core.graph.value 中查看
+算法主类，T为算法 Value 的类型  
+以 PageRank 为例  
+public class PageRank implements Computation\<DoubleValue\>  
+支持的 Value 类型在 com.baidu.hugegraph.computer.core.graph.value 中查看  
 
 ##### 主要接口函数
-1. void compute0(ComputationContext context, Vertex vertex); \
+1. void compute0(ComputationContext context, Vertex vertex);  
 超级步中第一步执行的函数，每个顶点都会调用，通常用户初始化启动顶点。
 
-2. void compute(ComputationContext context, Vertex vertex, Iterator\<M\> messages); \
-超级步的执行函数，每个顶点没步都会执行，用于计算的主要函数 \
+2. void compute(ComputationContext context, Vertex vertex, Iterator\<M\> messages);  
+超级步的执行函数，每个顶点没步都会执行，用于计算的主要函数  
 messages 是上一步传递过来的消息的迭代器
 
-3. void init(Config config)\
+3. void init(Config config)  
 算法开始之前的初始化函数，一次算法任务只执行一次。
 
-4. void beforeSuperstep(WorkerContext context)\
+4. void beforeSuperstep(WorkerContext context)  
 每个超级步开始之前调用一次
 
-5. void afterSuperstep(WorkerContext context)\
+5. void afterSuperstep(WorkerContext context)  
 每个超级步执行结束之后调用一次
 
 #### 5.5.2.2 MasterComputation
 master 上执行的算法函数，一般用于汇总数据，master 上不做大规模计算
 
 ##### 主要接口函数
-1. void init(MasterContext context);\
+1. void init(MasterContext context);  
 算法开始之前的初始化函数，一次算法任务只执行一次。
 
-2. boolean compute(MasterComputationContext context);\
+2. boolean compute(MasterComputationContext context);  
 每个超级步调用一次，返回值用于确定算法是否继续，true 是继续迭代，false 是算法结束。
 
-3. void beforeSuperstep(MasterComputationContext context)\
+3. void beforeSuperstep(MasterComputationContext context)  
 每个超级步开始之前调用一次
 
-4. void afterSuperstep(MasterComputationContext context)\
+4. void afterSuperstep(MasterComputationContext context)  
 每个超级步执行结束之后调用一次
 
-5. void output()\
+5. void output()  
 服务器上输出内容
 
 #### 5.5.2.3 HugeOutput
 用于 worker 输出的接口类，默认实现了输出顶点 Value 的功能
 
 ##### 主要接口函数
-1. void init(Config config, int partition);\
+1. void init(Config config, int partition);  
 输出的初始化，通常用于建立输出的连接
 
-2. void write(Vertex vertex);\
+2. void write(Vertex vertex);  
 每个顶点的输出函数，每个顶点调用一次
 
-3. void mergePartitions(Config config)\
+3. void mergePartitions(Config config)  
 用户 hdfs 中将多个输出文件合并
 
 #### 5.5.2.4 AlgorithmParams
@@ -2716,5 +2716,85 @@ master 上执行的算法函数，一般用于汇总数据，master 上不做大
 
 ##### 主要接口函数
 
-1. setAlgorithmParameters(Map<String, String> params)\
+1. setAlgorithmParameters(Map<String, String> params)  
 设置参数的值
+
+#### 5.5.2.5 Vertex
+定点类，定义了顶点的各种属性和方法
+
+##### 主要方法：
+
+1. String label()  
+获取顶点 label
+
+2. Id id()  
+获取顶点 id
+
+3. int numEdges()  
+获取边的数量
+
+4. Edges edges()  
+获取所有边
+
+5. Properties properties()  
+获取顶点所有属性
+
+6. property(String key)  
+获取指定 key 的属性
+
+7. boolean active()  
+获取顶点是否激活
+
+8. void inactivate()  
+关闭顶点
+
+9. byte[] data()  
+获取顶点附加数据
+
+10. void data(byte[] data)  
+设置顶点附加数据
+
+#### 5.5.2.5 ComputationContext
+计算过程的重要 context
+
+##### 主要方法：
+
+1. void sendMessage(Id target, Value<?> value)  
+向 target 顶点发送消息，target 顶点将在下一个超级步收到这个消息
+
+2. long totalVertexCount()  
+获取所有顶点数量
+
+3. long totalEdgeCount()  
+获取所有边的数量
+
+4. int superstep()  
+获取当前的步数
+
+#### 5.5.2.5 WorkerContext
+worker 的 context
+
+##### 主要方法：
+
+1. Config config()  
+获取算法配置
+
+#### 5.5.2.5 Config
+算法配置类，能获取算法请求里传入的各种参数
+
+##### 主要方法：
+
+1. boolean getBoolean(String key, boolean defaultValue)  
+从配置中获取指定 key 的 bool 值，不存在或者类型不匹配则返回 defaultValue
+
+2. int getInt(String key, int defaultValue)  
+从配置中获取指定 key 的 int 值，不存在或者类型不匹配则返回 defaultValue
+
+3. long getLong(String key, long defaultValue)  
+从配置中获取指定 key 的 long 值，不存在或者类型不匹配则返回 defaultValue
+
+4. double getDouble(String key, double defaultValue)  
+从配置中获取指定 key 的 double 值，不存在或者类型不匹配则返回 defaultValue
+
+5. String getString(String key, String defaultValue)  
+从配置中获取指定 key 的 string 值，不存在或者类型不匹配则返回 defaultValue

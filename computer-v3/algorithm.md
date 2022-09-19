@@ -2649,9 +2649,193 @@ EOF
 
 ## 5.5.二次开发指南
 
-### 5.5.1 算法代码目录
-代码位于 hugegraph-computer/computer-algorithm 目录下，找到相应位置添加新算法代码即可。  
-二次开发可参照原有算法的代码进行，PageRank 是一个比较典型的算法。
+### 5.5.1 pagerank示例
+pagerank 代码位于 hugegraph-computer/computer-algorithm/src/main/java/com/baidu/hugegraph/computer/algorithm/centrality/pagerank 目录下，所有算法代码都位于 hugegraph-computer/computer-algorithm/src/main/java/com/baidu/hugegraph/computer/algorithm 目录下，centrality 为算法分类，pagerank 为算法名，添加新算法在相应的分类下添加算法目录即可。
+
+#### 5.5.1.1 PageRank.java
+算法在worker端的主要逻辑
+```java
+public class PageRank implements Computation<DoubleValue>
+```
+算法需继承 Computation\<T\> 类, T 类型为顶点 value 的类型，pagerank 的 value 是 double 类型，各种可用类型在 com.baidu.hugegraph.computer.core.graph.value 包中。
+
+```java
+public String name()
+```
+算法名
+
+```java
+public String category()
+```
+算法分类
+
+```java
+public void compute0(ComputationContext context, Vertex vertex)
+```
+第一个超级步的逻辑，每个顶点调一次
+
+```java
+vertex.value(this.initialValue);
+```
+设置顶点的值
+
+```java
+this.cumulativeRankAggr.aggregateValue(this.initialValue.value())
+```
+设置总 pagerank 的累加值
+
+```java
+context.sendMessageToAllEdges(vertex, this.contribValue);
+```
+将 pagerank 值发送给所有邻居，sendMessageToAllEdges 是 sendMessage 的一个简单封装
+
+```java
+public void compute(ComputationContext context, Vertex vertex, Iterator<DoubleValue> messages)
+```
+超级步计算逻辑，每个顶点调一次
+
+```java
+DoubleValue message = Combiner.combineAll(context.combiner(), messages);
+```
+将所有发给这个顶点的值累加一下
+
+```java
+public void init(Config config)
+```
+算法初始化
+
+```java
+this.alpha = config.getDouble(OPTION_ALPHA, ALPHA_DEFAULT_VALUE)
+```
+从输入参数中获取相应的配置，OPTION_ALPHA 为参数名，ALPHA_DEFAULT_VALUE 为默认值
+
+```java
+public void beforeSuperstep(WorkerContext context)
+```
+每个超级步之前执行一次
+
+```java
+DoubleValue danglingTotalRank = context.aggregatedValue(PageRank4Master.AGGR_COMULATIVE_DANGLING_PROBABILITY)
+```
+创建一个累加值用于统计所有出度为0的顶点值的和 
+
+```java
+public void afterSuperstep(WorkerContext context)
+```
+每个超级步之后调用一次
+
+```java
+context.aggregateValue(
+  PageRank4Master.AGGR_COMULATIVE_DANGLING_PROBABILITY,
+  this.danglingCumulativeAggr.aggregatedValue())
+```
+设置 danglingsum 在 worker 上的值
+
+#### 5.5.1.2 PageRank4Master.java
+PageRank 在 master 端的代码
+
+```java
+public class PageRank4Master implements MasterComputation
+```
+继承 MasterComputation 类
+
+```java
+public void init(MasterContext context)
+```
+初始化
+
+```java
+this.l1DiffThreshold = context.config().getDouble(
+  CONF_L1_NORM_DIFFERENCE_THRESHOLD_KEY,
+  CONF_L1_DIFF_THRESHOLD_DEFAULT);
+```
+获取 different 阈值配置
+
+```java
+context.registerAggregator(
+  AGGR_COMULATIVE_DANGLING_PROBABILITY,
+  ValueType.DOUBLE,
+  DoubleValueSumCombiner.class);
+```
+注册服务端的 danglingsum 值用于累加各个 worker 上报的 danglingsum
+
+```java
+double l1Diff = l1NormDifference.value();
+    if (context.superstep() > 1 && l1Diff <= this.l1DiffThreshold) {
+        return false;
+    } else {
+        return true;
+    }
+```
+判断 difference 值是否小于阈值，小于则返回 false 停止算法
+
+```java
+public void output()
+```
+在输出步骤输出一些日志
+
+#### 5.5.1.3 PageRankOutput.java
+PageRank 的输出逻辑
+
+```java
+public class PageRankOutput extends HugeOutput
+```
+继承 HugeOutput 类
+
+```java
+public void prepareSchema(HugeGraph graph) {
+    graph.schema().propertyKey(this.name())
+                          .asDouble()
+                          .writeType(WriteType.OLAP_RANGE)
+                          .ifNotExist()
+                          .create();
+    }
+```
+输出化 hugegraph 的表头，创建一个 double 类型的顶点值
+
+```java
+public HugeVertex constructHugeVertex(Vertex vertex) {
+        GraphTransaction gtx = Whitebox.invoke(this.graph().getClass(),
+                "graphTransaction", this.graph());
+        HugeVertex hugeVertex = HugeVertex.create(gtx,
+                IdGenerator.of(vertex.id().asObject()),
+                VertexLabel.OLAP_VL);
+        hugeVertex.property(this.name(),
+                ((DoubleValue) vertex.value()).value());
+        return hugeVertex;
+    }
+```
+构造一个输出时返回的 HugeVertex 结构，将这个顶点的相应属性写入 hugegraph
+
+#### 5.5.1.4 PageRankParams.java
+定义一些算法使用的基础配置
+
+```java
+public void setAlgorithmParameters(Map<String, String> params) {
+    // master 端的计算类
+    this.setIfAbsent(params, ComputerOptions.MASTER_COMPUTATION_CLASS,
+                      PageRank4Master.class.getName());
+    // worker 端的计算类
+    this.setIfAbsent(params, ComputerOptions.WORKER_COMPUTATION_CLASS,
+                      PageRank.class.getName());
+    // 算法结果类型
+    this.setIfAbsent(params, ComputerOptions.ALGORITHM_RESULT_CLASS,
+                      DoubleValue.class.getName());
+    // 算法消息的类型
+    this.setIfAbsent(params, ComputerOptions.ALGORITHM_MESSAGE_CLASS,
+                      DoubleValue.class.getName());
+    // worker 端 combiner 的类，pagerank 特有的优化
+    this.setIfAbsent(params, ComputerOptions.WORKER_COMBINER_CLASS,
+                      DoubleValueSumCombiner.class.getName());
+    // 输出类
+    this.setIfAbsent(params, ComputerOptions.OUTPUT_CLASS,
+                      PageRankOutput.class.getName());
+    // 优化边的编码，只以对端id编码，去除重复边
+    this.setIfAbsent(params, ComputerOptions.USE_FASTER_COMPOSER.name(),
+                      "targetidonlly");
+    }
+```
+设置一些算法使用的配置
 
 ### 5.5.2 算法接口
 通常情况下，一个算法包含4个类，分别继承框架的4个接口类即可
@@ -2824,3 +3008,32 @@ worker 的 context
 
 5. String getString(String key, String defaultValue)  
 从配置中获取指定 key 的 string 值，不存在或者类型不匹配则返回 defaultValue
+
+## 5.6 框架基本原理
+
+### 5.6.1 图切分方式
+![图切分方式](/images/computer/computer-bsp01.jpg)
+
+### 5.6.2 计算方式
+![计算方式](/images/computer/computer-bsp02.jpg)
+
+### 5.6.3 运行架构
+![运行架构](/images/computer/computer-bsp03.jpg)
+
+### 5.6.4 导数据流程
+![导数据流程](/images/computer/computer-bsp04.jpg)
+
+### 5.6.5 数据加载流程
+![数据加载流程](/images/computer/computer-bsp05.jpg)
+
+### 5.6.6 接收数据流程
+![接收数据流程](/images/computer/computer-bsp06.jpg)
+
+### 5.6.7 0轮超级步流程
+![0轮超级步流程](/images/computer/computer-bsp07.jpg)
+
+### 5.6.8 n轮超级步流程
+![n轮超级步流程](/images/computer/computer-bsp08.jpg)
+
+### 5.6.9 结果输出流程
+![结果输出流程](/images/computer/computer-bsp09.jpg)
